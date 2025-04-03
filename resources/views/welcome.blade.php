@@ -110,7 +110,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 				<div class="single-feature-box box-1">
 					<div class="feature-icon">
 						<img src="{{ asset('assets/images/home-one/feature-icon1.png') }}" alt="feature-icon">
@@ -126,7 +126,7 @@
 					<div class="educate-hover-box hover-bx4"></div>
 				</div>
 			</div>
-			<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 				<div class="single-feature-box box-2">
 					<div class="feature-icon">
 						<img src="{{ asset('assets/images/home-one/feature-icon2.png') }}" alt="feature-icon">
@@ -142,7 +142,23 @@
 					<div class="educate-hover-box hover-bx4"></div>
 				</div>
 			</div>
-			<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+				<div class="single-feature-box box-3">
+					<div class="feature-icon">
+						<img src="{{ asset('assets/images/home-one/feature-icon3.png') }}" alt="feature-icon">
+					</div>
+					<div class="feature-content">
+						<h4 class="feature-title">Moneyback Gaurantee</h4>
+						<p class="feature-desc">The ultimate destination for knowledge for
+							We are committed to transforming</p>
+					</div>
+					<div class="educate-hover-box hover-bx"></div>
+					<div class="educate-hover-box hover-bx2"></div>
+					<div class="educate-hover-box hover-bx3"></div>
+					<div class="educate-hover-box hover-bx4"></div>
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 				<div class="single-feature-box box-3">
 					<div class="feature-icon">
 						<img src="{{ asset('assets/images/home-one/feature-icon3.png') }}" alt="feature-icon">
@@ -328,12 +344,11 @@
 				<div class="case_study_nav">
 					<div class="case_study_menu">
 						<ul class="menu-filtering">
-							<li data-filter="*" class="current_menu_item">All Categorize</li>
-							<li data-filter=".Wordpress">Wordpress</li>
-							<li data-filter=".Business">Business</li>
-							<li data-filter=".Networking">Networking</li>
-							<li data-filter=".Finance">Finance</li>
-							<li data-filter=".Designing">Designing</li>
+							<li data-filter=".Networking">Upcomeing Courses</li>
+							<li data-filter="*" class="current_menu_item">Postgraduate And Master Programs</li>
+							<li data-filter=".Wordpress">Professional Programs</li>
+							<li data-filter=".Business">Language Programs</li>
+							<li data-filter=".Networking">Certificate Programs</li>
 						</ul>
 					</div>
 				</div>
@@ -343,7 +358,7 @@
 	<div class="container">
 		<!-- row2 -->
 		<div class="row image_load">
-			<div class="col-xl-4 col-lg-6 col-md-6 grid-item Wordpress Networking">
+			<div class="col-xl-3 col-lg-6 col-md-6 grid-item Wordpress Networking">
 				<div class="case-study-single-box">
 					<div class="case-study-thumb">
 						<img src="{{ asset('assets/images/home-one/case-thumb1.jpg') }}" alt="thumb">
@@ -390,7 +405,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-4 col-lg-6 col-md-6 grid-item Business Finance Wordpress">
+			<div class="col-xl-3 col-lg-6 col-md-6 grid-item Business Finance Wordpress">
 				<div class="case-study-single-box box-2">
 					<div class="case-study-thumb">
 						<img src="{{ asset('assets/images/home-one/case-thumb2.jpg') }}" alt="thumb">
@@ -437,7 +452,54 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-4 col-lg-6 col-md-6 grid-item Networking Designing Business">
+			<div class="col-xl-3 col-lg-6 col-md-6 grid-item Networking Designing Business">
+				<div class="case-study-single-box box-3">
+					<div class="case-study-thumb">
+						<img src="{{ asset('assets/images/home-one/case-thumb3.jpg') }}" alt="thumb">
+						<div class="case-meta-top">
+							<span>$35</span>
+						</div>
+					</div>
+					<div class="case-study-content">
+						<h5>Designing</h5>
+						<h4><a href="course.html">Creative Graphic Design 
+							with Adobe Suite</a></h4>
+						<div class="case-rating">
+							<ul>
+								<li><i class="fa-solid fa-star"></i></li>
+								<li><i class="fa-solid fa-star"></i></li>
+								<li><i class="fa-solid fa-star"></i></li>
+								<li><i class="fa-solid fa-star"></i></li>
+								<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
+							</ul>
+							<div class="case-rating-num">
+								<span>(4.5/3 Ratings)</span>
+							</div>
+						</div>
+						<div class="case-autor-box">
+							<div class="case-autor-img">
+								<img src="{{ asset('assets/images/home-one/case-autor3.png') }}" alt="autor">
+							</div>
+							<div class="case-autor-content">
+								<h3>Nelson Mendela</h3>
+								<p>Instractor</p>
+							</div>
+						</div>
+						<div class="case-course-content">
+							<div class="course-lesson">
+								<span><i class="fa-regular fa-file-lines"></i> 15 Leasons</span>
+							</div>
+							<div class="course-student">
+								<span><i class="fa-regular fa-user"></i> 1600 Students</span>
+							</div>
+						</div>
+						<div class="course-btn">
+							<a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-3 col-lg-6 col-md-6 grid-item Networking Designing Business">
 				<div class="case-study-single-box box-3">
 					<div class="case-study-thumb">
 						<img src="{{ asset('assets/images/home-one/case-thumb3.jpg') }}" alt="thumb">
