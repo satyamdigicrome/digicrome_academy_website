@@ -29,7 +29,7 @@
 		<div class="row header-top">
 			<div class="col-xxl-6 col-xl-8 col-lg-8">
 				<div class="header-top-welcome">
-					<p><img src="assets/images/home-one/top-star.png" alt="star">Welcome to <a href="/">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p>
+					<p>Welcome to <a href="/">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p>
 				</div>
 			</div>
 			<div class="col-xxl-6 col-xl-4 col-lg-4">
@@ -60,8 +60,8 @@
 		<div class="row header-wrap align-items-center">
 			<div class="col-lg-2">
 				<div class="header-logo">
-					<a class="active_logo" href="/"><img src="assets/images/logo.png" alt="logo"></a>
-					<a class="logo_two" href="/"><img src="assets/images/footer-logo.png" alt="logo"></a>
+					<a class="active_logo" href="/"><img src="assets/images/logo.webp" alt="logo"></a>
+					<a class="logo_two" href="/"><img src="assets/images/footer-logo.webp" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-8">
@@ -154,7 +154,7 @@
 		<nav class="header-menu">
 			<div class="mobile-logo">
 				<a class="logo_img" href="/" title="educate">
-				    <img src="assets/images/footer-logo.png" alt="logo">
+				    <img src="assets/images/footer-logo.webp" alt="logo">
 				</a>
 			  </div>
 			  <ul class="nav_scroll">
@@ -257,7 +257,7 @@
 		<div class="cart_items_list">
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="assets/images/inner-img/rpost-thumb1.png" alt="image_not_found">
+					<img src="assets/images/inner-img/rpost-thumb1.webp" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">	
@@ -270,7 +270,7 @@
 
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="assets/images/inner-img/rpost-thumb2.png" alt="image_not_found">
+					<img src="assets/images/inner-img/rpost-thumb2.webp" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">
@@ -283,7 +283,7 @@
 
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="assets/images/inner-img/rpost-thumb3.png" alt="image_not_found">
+					<img src="assets/images/inner-img/rpost-thumb3.webp" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">
@@ -296,7 +296,7 @@
 
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="assets/images/inner-img/rpost-thumb2.png" alt="image_not_found">
+					<img src="assets/images/inner-img/rpost-thumb2.webp" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">
@@ -337,7 +337,7 @@
 				<div class="sidebar-info-contents">
 					<div class="content-inner">
 						<div class="nav-logo">
-							<a href="/"><img src="assets/images/home-one/footer-logo.png" alt="logo"></a>
+							<a href="/"><img src="assets/images/home-one/footer-logo.webp" alt="logo"></a>
 						</div>
 						<div class="content-box">
 							<h2>About Us</h2>

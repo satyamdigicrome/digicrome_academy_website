@@ -1376,7 +1376,7 @@ ul.social-box li a:hover {
 ==============================================*/
 
 section.hero_area.style-one {
-    background: url(../images/home-one/hero1-bg.png);
+    background: url(../images/home-one/hero1-bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1656,7 +1656,7 @@ section.hero_area.style-one .hero-autor-content span {
 ==============================================*/
 
 section.hero_area.style-two {
-    background: url(../images/home-two/hero-bg2.png);
+    background: url(../images/home-two/hero-bg2.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1859,7 +1859,7 @@ section.hero_area.style-two .hero-student-content h3 {
 <-- educate hero Area css style-three -->
 ==============================================*/
 section.hero_area.style-three {
-    background: url(../images/home-three/hero-bg3.png);
+    background: url(../images/home-three/hero-bg3.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1869,7 +1869,7 @@ section.hero_area.style-three {
 }
 
 section.hero_area.style-three.four {
-    background: url(../images/home-three/hero-bg32.png);
+    background: url(../images/home-three/hero-bg32.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2097,7 +2097,7 @@ section.hero_area.style-three .hero-course-btn a i{
 ==============================================*/
 
 section.hero_area.style-four {
-    background: url(../images/home-four/hero-bg4.png);
+    background: url(../images/home-four/hero-bg4.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2314,7 +2314,7 @@ section.hero_area.style-four .hero-autor-content span {
 <-- educate hero Area css style-five -->
 ==============================================*/
 section.hero_area.style-five {
-    background: url(../images/home-five/hero-bg5.png);
+    background: url(../images/home-five/hero-bg5.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2324,7 +2324,7 @@ section.hero_area.style-five {
 }
 
 section.hero_area.style-five.two {
-    background: url(../images/home-five/hero-bg52.png);
+    background: url(../images/home-five/hero-bg52.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2617,7 +2617,7 @@ section.hero_area.style-six .hero_content {
     padding: 140px 100px 142px 100px;
     border-radius: 20px;
     background-color: #043338;
-    background: url(../images/home-six/hero-left-bg.png);
+    background: url(../images/home-six/hero-left-bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -3243,7 +3243,7 @@ section.feature-area.style-two {
 <--educate about Area Css  style-one -->
 ==============================================*/
 section.about-area.style-one {
-    background: url(../images/home-one/about-bg11.png);
+    background: url(../images/home-one/about-bg11.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -4261,7 +4261,7 @@ section.about-area.style-five.feature .about-video-icon a::before {
     width: 100px;
     height: 100px;
     line-height: 100px;
-    background: url(../images/home-five/play-img.png);
+    background: url(../images/home-five/play-img.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -4283,7 +4283,7 @@ section.about-area.style-five.feature .about-video-icon a::after {
 <--educate about Area Css  style-six -->
 ==============================================*/
 section.about-area.style-six {
-    background: url(../images/home-six/about-bg6.png);
+    background: url(../images/home-six/about-bg6.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -4877,7 +4877,7 @@ display: none;
     /* educate why choose Area css style-one */
 /* ================================================ */
 .why-choose-area.style-one {
-    background: url(../images/home-one/choose-bg1.png);
+    background: url(../images/home-one/choose-bg1.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -5341,7 +5341,7 @@ display: none;
     content: '';
     width: 70px;
     height: 70px;
-    background: url(../images/home-one/off-price-bg.png);
+    background: url(../images/home-one/off-price-bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -5575,7 +5575,7 @@ display: none;
     content: '';
     width: 70px;
     height: 70px;
-    background: url(../images/home-one/off-price-bg.png);
+    background: url(../images/home-one/off-price-bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -6162,7 +6162,7 @@ display: none;
 }
 
 .style-one.testimonial-area .owl-dot:nth-child(1) {
-    background: url(../images/home-one/testi-autor1.png) !important;
+    background: url(../images/home-one/testi-autor1.webp) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center center;
@@ -6175,7 +6175,7 @@ display: none;
 }
 
 .style-one.testimonial-area .owl-dot:nth-child(2) {
-    background: url(../images/home-one/testi-autor3.png) !important;
+    background: url(../images/home-one/testi-autor3.webp) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center center;
@@ -6187,7 +6187,7 @@ display: none;
 }
 
 .style-one.testimonial-area .owl-dot:nth-child(3) {
-    background: url(../images/home-one/testi-autor4.png) !important;
+    background: url(../images/home-one/testi-autor4.webp) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center center;
@@ -6292,7 +6292,7 @@ display: none;
     /* educate testimonial Area css style-two */
 /* ================================================ */
 .testimonial-area.style-two {
-    background: url(../images/home-two/testi-bg2.png);
+    background: url(../images/home-two/testi-bg2.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -6878,7 +6878,7 @@ display: none;
 /* ================================================ */
 
 .testimonial-area.style-six {
-    background: url(../images/home-six/testi-bg6.png);
+    background: url(../images/home-six/testi-bg6.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -6888,7 +6888,7 @@ display: none;
 .testimonial-area.style-six::before {
     position: absolute;
     content: '';
-    background: url(../images/home-six/testi-thumb6.png);
+    background: url(../images/home-six/testi-thumb6.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7303,7 +7303,7 @@ display: none;
     /* educate call to action Area css style-two */
 /* ================================================ */
 .call-to-action.style-two {
-    background: url(../images/home-three/call-to-bg2.png);
+    background: url(../images/home-three/call-to-bg2.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -7595,7 +7595,7 @@ display: none;
     /* educate blog Area css style-four */
 /* ================================================ */
 .blog-area.style-one.four {
-    background: url(../images/home-four/blog-bg4.png);
+    background: url(../images/home-four/blog-bg4.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7693,7 +7693,7 @@ display: none;
     /* educate blog Area css style-six */
 /* ================================================ */
 .blog-area.style-one.six {
-    background: url(../images/home-six/blog-bg6.png);
+    background: url(../images/home-six/blog-bg6.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -8288,7 +8288,7 @@ display: none;
 <-- educate online course Area Css style-two -->
 ===================================================*/
 .online-course-section.style-two {
-    background: url(../images/home-two/course-bg.png);
+    background: url(../images/home-two/course-bg.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -8514,7 +8514,7 @@ display: none;
 <-- educate online course Area Css style-five -->
 ===================================================*/
 .online-course-section.style-five {
-    background: url(../images/home-five/course-bg5.png);
+    background: url(../images/home-five/course-bg5.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -9069,7 +9069,7 @@ display: none;
 }
 
 .style-two .reason-content-box {
-    background: url(../images/home-two/reason-bg.png);
+    background: url(../images/home-two/reason-bg.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -9681,7 +9681,7 @@ display: none;
 }
 
 .row.addmission-bg {
-    background: url(../images/home-three/addmission-bg.png);
+    background: url(../images/home-three/addmission-bg.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -10017,7 +10017,7 @@ display: none;
     /* educate joint event area css style-two */
 /* ============================================= */
 .joint-event-area.style-two {
-    background: url(../images/home-four/event-bg4.png);
+    background: url(../images/home-four/event-bg4.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -10449,7 +10449,7 @@ display: none;
     /* educate Our Courses Area css */
 /* ============================================= */
 .our-course-area.style-four {
-    background: url(../images/home-four/course-bg4.png);
+    background: url(../images/home-four/course-bg4.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -10475,7 +10475,7 @@ display: none;
 }
 
 .style-four .course-single-box {
-    background: url(../images/home-four/box-bg.png);
+    background: url(../images/home-four/box-bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -10760,7 +10760,7 @@ display: none;
 }
 
 .style-one .single-activitie-box {
-    background: url(../images/home-four/activite-bg1.png);
+    background: url(../images/home-four/activite-bg1.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -10796,35 +10796,35 @@ display: none;
 }
 
 .style-one .single-activitie-box.box-2 {
-    background: url(../images/home-four/activite-bg2.png);
+    background: url(../images/home-four/activite-bg2.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .style-one .single-activitie-box.box-3 {
-    background: url(../images/home-four/activite-bg3.png);
+    background: url(../images/home-four/activite-bg3.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .style-one .single-activitie-box.box-4 {
-    background: url(../images/home-four/activite-bg4.png);
+    background: url(../images/home-four/activite-bg4.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .style-one .single-activitie-box.box-5 {
-    background: url(../images/home-four/activite-bg5.png);
+    background: url(../images/home-four/activite-bg5.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .style-one .single-activitie-box.box-6 {
-    background: url(../images/home-four/activite-bg6.png);
+    background: url(../images/home-four/activite-bg6.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -10917,7 +10917,7 @@ display: none;
     /* educate our program child Area css */
 /* ============================================= */
 .our-program-child-area.style-four {
-    background: url(../images/home-four/program-bg4.png);
+    background: url(../images/home-four/program-bg4.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -11485,7 +11485,7 @@ section.contact_area.style-six .contact-form button:hover{
 .breadcumb-area {
     padding: 250px 0 152px;
     position: relative;
-    background: url(../images/inner-img/breadcumb-bg.png);
+    background: url(../images/inner-img/breadcumb-bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -11493,7 +11493,7 @@ section.contact_area.style-six .contact-form button:hover{
 }
 
 .breadcumb-area.two {
-    background: url(../images/inner-img/breadcam-bg2.png);
+    background: url(../images/inner-img/breadcam-bg2.webp);
 }
 
 .breadcumb-title h4 {
@@ -15743,7 +15743,7 @@ section.contact_area.inner_section .section-sub-title.three h6 img {
   <!--Start educate Error area css-->
  ==================================================-*/
  .error-area {
-    background: url(../images/inner-img/440_bg.png);
+    background: url(../images/inner-img/440_bg.webp);
     background-repeat: no-repeat;
     background-position: center center;
     height: 925px;
@@ -15763,7 +15763,7 @@ section.contact_area.inner_section .section-sub-title.three h6 img {
     z-index: 1;
     height: 73%;
     width: 100%;
-    background: url(../images/inner-img/error_img.png);
+    background: url(../images/inner-img/error_img.webp);
     background-repeat: no-repeat;
     background-size: contain;
     top: 2%;

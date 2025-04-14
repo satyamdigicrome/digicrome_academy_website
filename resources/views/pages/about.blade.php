@@ -23,10 +23,10 @@
 			</div>
 		</div>
 		<div class="breadcumb-shape">
-			<img src="assets/images/inner-img/breadcumb-dot.png" alt="dot">
+			<img src="assets/images/inner-img/breadcumb-dot.webp" alt="dot">
 		</div>
 		<div class="breadcumb-shape2">
-			<img src="assets/images/inner-img/breadcumb-ball.png" alt="ball">
+			<img src="assets/images/inner-img/breadcumb-ball.webp" alt="ball">
 		</div>
 	</div>
 </div>
@@ -47,7 +47,7 @@
 				<div class="about-thumb-wrapper">
 					<div class="about-learn-box">
 						<div class="about-learn-icon">
-							<img src="assets/images/home-three/learn-icon.png" alt="icon">
+							<img src="assets/images/home-three/learn-icon.webp" alt="icon">
 						</div>
 						<div class="learn-title">
 							<h5>Learn Online
@@ -55,7 +55,7 @@
 						</div>
 					</div>
 					<div class="about-thumb">
-						<img src="assets/images/home-three/about-thumb31.png" alt="thumb">
+						<img src="assets/images/home-three/about-thumb31.webp" alt="thumb">
 					</div>
 					<div class="about-experience-box">
 						<div class="about-experience-count">
@@ -68,7 +68,7 @@
 						</div>	
 					</div>
 					<div class="about-shape32">
-						<img src="assets/images/home-three/about-shape32.png" alt="shape">
+						<img src="assets/images/home-three/about-shape32.webp" alt="shape">
 					</div>
 				</div>
 			</div>	
@@ -76,7 +76,7 @@
 				<div class="about_content">
 					<!-- section title -->
 					<div class="section-sub-title three">
-						<h6><img src="assets/images/inner-img/sub-title2.png" alt="icon">ABOUT US</h6>
+						<h6><img src="assets/images/inner-img/sub-title2.webp" alt="icon">ABOUT US</h6>
 					</div>
 					<div class="section_title">
 						<h1>Who We Are – Introduction to</h1>
@@ -89,13 +89,13 @@
 					</div>
 					<div class="about-iteam-list">
 						<ul>
-							<li><img src="assets/images/home-three/about-icon31.png" alt="icon">Course Catalog & Program Information</li>
-							<li><img src="assets/images/home-three/about-icon31.png" alt="icon">Online Application & Admission Process</li>
-							<li><img src="assets/images/home-three/about-icon31.png" alt="icon">Financial Aid and Scholarships</li>
+							<li><img src="assets/images/home-three/about-icon31.webp" alt="icon">Course Catalog & Program Information</li>
+							<li><img src="assets/images/home-three/about-icon31.webp" alt="icon">Online Application & Admission Process</li>
+							<li><img src="assets/images/home-three/about-icon31.webp" alt="icon">Financial Aid and Scholarships</li>
 						</ul>
 					</div>
 					<div class="about-iteam-phone">
-						<p><span><img src="assets/images/home-three/about-call.png" alt="call"></span>+ (680) 3290 570</p>
+						<p><span><img src="assets/images/home-three/about-call.webp" alt="call"></span>+ (680) 3290 570</p>
 					</div>
 					<div class="about-btn">
 						<a href="about.html">more about<i class="flaticon flaticon-right-arrow"></i></a>
@@ -116,7 +116,7 @@
 			</div>			
 		</div>
 		<div class="about-shape31">
-			<img src="assets/images/home-three/about-shape31.png" alt="shape">
+			<img src="assets/images/home-three/about-shape31.webp" alt="shape">
 		</div>
 	</div>
 </section>
@@ -138,7 +138,7 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="single-feature-box box-1">
 					<div class="feature-icon">
-						<img src="assets/images/home-three/feature-icon21.png" alt="feature-icon">
+						<img src="assets/images/home-three/feature-icon21.webp" alt="feature-icon">
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Scholarship Facility</h4>
@@ -150,7 +150,7 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="single-feature-box box-2">
 					<div class="feature-icon">
-						<img src="assets/images/home-three/feature-icon22.png" alt="feature-icon">
+						<img src="assets/images/home-three/feature-icon22.webp" alt="feature-icon">
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Book & Library Store</h4>
@@ -162,7 +162,7 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="single-feature-box box-3">
 					<div class="feature-icon">
-						<img src="assets/images/home-three/feature-icon23.png" alt="feature-icon">
+						<img src="assets/images/home-three/feature-icon23.webp" alt="feature-icon">
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Easily Online Learning</h4>
@@ -173,7 +173,7 @@
 			</div>
 		</div>
 		<div class="feature-shape21">
-			<img src="assets/images/home-three/feature-shape21.png" alt="shape">
+			<img src="assets/images/home-three/feature-shape21.webp" alt="shape">
 		</div>
 	</div>
 </section>
@@ -193,7 +193,7 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="course-design-thumb">
-					<img src="assets/images/home-one/offer-video.png" alt="thumb">
+					<img src="assets/images/home-one/offer-video.webp" alt="thumb">
 					<div class="course-video-icon">	
 						<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://www.youtube.com/watch?v=Wx48y_fOfiY"><i class="fa-classic fa-solid fa-play fa-fw"></i></a>
 					</div>
@@ -229,7 +229,7 @@
 						</div>
 					</div>
 					<div class="offer-thumb">
-						<img src="assets/images/home-one/offer-thumb.png" alt="thumb">
+						<img src="assets/images/home-one/offer-thumb.webp" alt="thumb">
 					</div>
 				</div>
 			</div>
@@ -264,7 +264,7 @@
 			</div>
 		</div>
 		<div class="call-to-shape31">
-			<img src="assets/images/home-three/call-to-arrow2.png" alt="shape">
+			<img src="assets/images/home-three/call-to-arrow2.webp" alt="shape">
 		</div>
 	</div>
 </div>
@@ -285,7 +285,7 @@
 		<div class="row section-title-space">
 			<div class="col-lg-12 text-center">
 				<div class="section-sub-title three">
-					<h6><img src="assets/images/inner-img/sub-title2.png" alt="icon">INSTRUCTOR</h6>
+					<h6><img src="assets/images/inner-img/sub-title2.webp" alt="icon">INSTRUCTOR</h6>
 				</div>
 				<div class="section_title">
 					<h1>Introducing the Educators and</h1>
@@ -297,7 +297,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-1">
 					<div class="team-thumb">
-						<img src="assets/images/home-one/team-thumb1.png" alt="thumb">
+						<img src="assets/images/home-one/team-thumb1.webp" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -333,7 +333,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-2">
 					<div class="team-thumb">
-						<img src="assets/images/home-one/team-thumb2.png" alt="thumb">
+						<img src="assets/images/home-one/team-thumb2.webp" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -369,7 +369,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-3">
 					<div class="team-thumb">
-						<img src="assets/images/home-one/team-thumb3.png" alt="thumb">
+						<img src="assets/images/home-one/team-thumb3.webp" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -405,7 +405,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-4">
 					<div class="team-thumb">
-						<img src="assets/images/home-one/team-thumb4.png" alt="thumb">
+						<img src="assets/images/home-one/team-thumb4.webp" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -459,7 +459,7 @@
 		<div class="row section-title-space">
 			<div class="col-xl-4 col-lg-12">
 				<div class="section-sub-title three">
-					<h6><img src="assets/images/inner-img/sub-title2.png" alt="icon">TESTIMONIALS</h6>
+					<h6><img src="assets/images/inner-img/sub-title2.webp" alt="icon">TESTIMONIALS</h6>
 				</div>
 				<div class="section_title">
 					<h1>All Real Experiences</h1>
@@ -468,7 +468,7 @@
 				</div>
 				<div class="testi-review-box">
 					<div class="review-image">
-						<img src="assets/images/home-three/course-instructor.png" alt="instructor">
+						<img src="assets/images/home-three/course-instructor.webp" alt="instructor">
 					</div>
 					<div class="testi-review-content">
 						<h3 class="counter">130</h3>
@@ -476,7 +476,7 @@
 						<p>Reviews</p>
 					</div>
 					<div class="testi-inner-shape">
-						<img src="assets/images/inner-img/testi-shape-in.png" alt="arrow">
+						<img src="assets/images/inner-img/testi-shape-in.webp" alt="arrow">
 					</div>
 				</div>
 			</div>
@@ -487,7 +487,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="assets/images/home-three/testi-quote.png" alt="quote">
+										<img src="assets/images/home-three/testi-quote.webp" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Impresive Learning!</h3>
@@ -510,7 +510,7 @@
 									</div>
 									<div class="testi-autor-box">
 										<div class="testi-autor">
-											<img src="assets/images/home-three/testi-autor1.png" alt="autor">
+											<img src="assets/images/home-three/testi-autor1.webp" alt="autor">
 										</div>
 										<div class="testi-autor-content">
 											<h5 class="autor-title">Anjelina Watson</h5>
@@ -524,7 +524,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="assets/images/home-three/testi-quote.png" alt="quote">
+										<img src="assets/images/home-three/testi-quote.webp" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Great Instructor!</h3>
@@ -547,7 +547,7 @@
 									</div>
 									<div class="testi-autor-box">
 										<div class="testi-autor">
-											<img src="assets/images/home-one/testi-autor3.png" alt="autor">
+											<img src="assets/images/home-one/testi-autor3.webp" alt="autor">
 										</div>
 										<div class="testi-autor-content">
 											<h5 class="autor-title">David Alexon</h5>
@@ -561,7 +561,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="assets/images/home-three/testi-quote.png" alt="quote">
+										<img src="assets/images/home-three/testi-quote.webp" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Impresive Learning!</h3>
@@ -584,7 +584,7 @@
 									</div>
 									<div class="testi-autor-box">
 										<div class="testi-autor">
-											<img src="assets/images/home-three/testi-autor1.png" alt="autor">
+											<img src="assets/images/home-three/testi-autor1.webp" alt="autor">
 										</div>
 										<div class="testi-autor-content">
 											<h5 class="autor-title">Anjelina Watson</h5>
@@ -598,7 +598,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="assets/images/home-three/testi-quote.png" alt="quote">
+										<img src="assets/images/home-three/testi-quote.webp" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Great Instructor!</h3>
@@ -621,7 +621,7 @@
 									</div>
 									<div class="testi-autor-box">
 										<div class="testi-autor">
-											<img src="assets/images/home-one/testi-autor3.png" alt="autor">
+											<img src="assets/images/home-one/testi-autor3.webp" alt="autor">
 										</div>
 										<div class="testi-autor-content">
 											<h5 class="autor-title">David Alexon</h5>

@@ -23,10 +23,10 @@
 			</div>
 		</div>
 		<div class="breadcumb-shape">
-			<img src="assets/images/inner-img/breadcumb-dot.png" alt="dot">
+			<img src="assets/images/inner-img/breadcumb-dot.webp" alt="dot">
 		</div>
 		<div class="breadcumb-shape2">
-			<img src="assets/images/inner-img/breadcumb-ball.png" alt="ball">
+			<img src="assets/images/inner-img/breadcumb-ball.webp" alt="ball">
 		</div>
 	</div>
 </div>
@@ -47,7 +47,7 @@
 			<div class="col-lg-6">
 				<!-- section title -->
 				<div class="section-sub-title three">
-					<h6><img src="assets/images/inner-img/sub-title2.png" alt="icon">GET IN TOUCH</h6>
+					<h6><img src="assets/images/inner-img/sub-title2.webp" alt="icon">GET IN TOUCH</h6>
 				</div>
 				<div class="section_title">
 					<h1>Trusted By the Genious</h1>
@@ -136,7 +136,7 @@
 			</div>
 		</div>
 		<div class="contact_shape2 dance2">
-			<img src="assets/images/inner-img/contact-shape.png" alt="shape">
+			<img src="assets/images/inner-img/contact-shape.webp" alt="shape">
 		</div>
 	</div>
 </section>

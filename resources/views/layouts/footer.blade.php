@@ -18,21 +18,21 @@
 					<div class="col-lg-12">
 						<div class="single-brand-box">
 							<div class="brand-thumb">
-							   <img src="{{ asset('assets/images/home-one/brand-img1.png') }}" alt="brand">
+							   <img src="{{ asset('assets/images/home-one/brand-img1.webp') }}" alt="brand">
 							</div>
 						</div>
 					</div>				    
 					<div class="col-lg-12">
 						<div class="single-brand-box">
 							<div class="brand-thumb">
-								<img src="{{ asset('assets/images/home-one/brand-img2.png') }}" alt="brand">
+								<img src="{{ asset('assets/images/home-one/brand-img2.webp') }}" alt="brand">
 							</div>
 						</div>
 					</div>				   
 					<div class="col-lg-12">
 						<div class="single-brand-box">
 							<div class="brand-thumb">
-								<img src="{{ asset('assets/images/home-one/brand-img3.png') }}" alt="brand">
+								<img src="{{ asset('assets/images/home-one/brand-img3.webp') }}" alt="brand">
 							</div>
 						</div>
 					</div>				    				    			    
@@ -40,13 +40,13 @@
 			</div>
 		</div>
 		<div class="brand-arrow-shape">
-			<img src="{{ asset('assets/images/home-one/brand-arrow.png') }}" alt="arrow">
+			<img src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="arrow">
 		</div>
 		<div class="brand-star-shape">
-			<img src="{{ asset('assets/images/home-one/brand-star.png') }}" alt="star">
+			<img src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
 		</div>
 		<div class="brand-line-shape">
-			<img src="{{ asset('assets/images/home-one/brand-line.png') }}" alt="line">
+			<img src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
 		</div>
 	</div>
 </div>
@@ -65,7 +65,7 @@
 		<div class="row subscribe align-items-center">
 			<div class="col-lg-4 col-md-12">
 				<div class="footer-logo">
-					<a href="index.html"><img src="assets/images/home-one/footer-logo.png" alt="logo"></a>
+					<a href="index.html"><img src="assets/images/home-one/footer-logo.webp" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-12">
@@ -96,7 +96,7 @@
 					</div>
 					<div class="footer-contact-info">
 						<div class="footer-contact-phone">
-							<p><img src="assets/images/home-one/footer-call.png" alt="call">+123 (4567) 890</p>
+							<p><img src="assets/images/home-one/footer-call.webp" alt="call">+123 (4567) 890</p>
 						</div>
 						<div class="footer-contact-address">
 							<span><i class="fa-classic fa-regular fa-envelope fa-fw"></i>example@gmail.com</span>
@@ -111,11 +111,11 @@
 					</div>
 					<div class="footer-widget-menu">
 						<ul>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="about.html">About Us</a></li>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="course.html">Our Courses</a></li>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="instructor.html">Instructors</a></li>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="contact.html">Enroll Now</a></li>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="course-details.html">Career</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="about.html">About Us</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="course.html">Our Courses</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="instructor.html">Instructors</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="contact.html">Enroll Now</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="course-details.html">Career</a></li>
 						</ul>
 					</div>
 				</div>
@@ -127,11 +127,11 @@
 					</div>
 					<div class="footer-widget-menu">
 						<ul>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="blog.html">Latest Blog</a></li>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="#">Our Galary</a></li>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="contact.html">Contact Us</a></li>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="course-details.html">Privacy Policy</a></li>
-							<li><img src="assets/images/home-one/footer-icon.png" alt="icon"><a href="faq.html">FAQ’s</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="blog.html">Latest Blog</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="#">Our Galary</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="contact.html">Contact Us</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="course-details.html">Privacy Policy</a></li>
+							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="faq.html">FAQ’s</a></li>
 						</ul>
 					</div>
 				</div>
@@ -142,7 +142,7 @@
 				</div>
 				<div class="footer-widget-blog first">
 					<div class="footer-widget-blog-thumb">
-						<img src="assets/images/home-one/footer-recent-img1.png" alt="recent-img">
+						<img src="assets/images/home-one/footer-recent-img1.webp" alt="recent-img">
 					</div>
 					<div class="footer-widget-blog-content">
 						<a href="blog-details.html">10 Proven Strategies to 
@@ -152,7 +152,7 @@
 				</div>
 				<div class="footer-widget-blog">
 					<div class="footer-widget-blog-thumb">
-						<img src="assets/images/home-one/footer-recent-img2.png" alt="recent-img">
+						<img src="assets/images/home-one/footer-recent-img2.webp" alt="recent-img">
 					</div>
 					<div class="footer-widget-blog-content">
 						<a href="blog-details.html">Trends that are shaping 
@@ -218,7 +218,7 @@
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="d-flex justify-content-between">
-                <img src="images/footer_logo.png" alt="">
+                <img src="images/footer_logo.webp" alt="">
                 <p>© 2025 DigiCrome. All rights reserved.</p>
             </div>
         </div>

@@ -29,7 +29,7 @@
 				</div>
 				<div class="hero-rating-box">
 					<div class="hero-rating-icon">
-						<img src="{{ asset('assets/images/home-one/star-icon.png') }}" alt="star">
+						<img src="{{ asset('assets/images/home-one/star-icon.webp') }}" alt="star">
 						<span>1k+</span>
 					</div>
 					<div class="hero-rating-item-box">
@@ -55,23 +55,23 @@
 			<div class="col-lg-6">
 				<div class="hero-thumb-wrapper">
 					<div class="hero-thumb">
-						<img src="{{ asset('assets/images/home-one/hero-thumb1.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="thumb">
 					</div>
 					<div class="hero-shape1 rotateme">
-						<img src="{{ asset('assets/images/home-one/hero-shape1.png') }}" alt="shape1">
+						<img src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
 					</div>
 					<div class="hero-arrow-shape">
-						<img src="{{ asset('assets/images/home-one/hero-arrow.png') }}" alt="arrow">
+						<img src="{{ asset('assets/images/home-one/hero-arrow.webp') }}" alt="arrow">
 					</div>
 					<div class="hero-dot-shape">
-						<img src="{{ asset('assets/images/home-one/hero-dot.png') }}" alt="dot">
+						<img src="{{ asset('assets/images/home-one/hero-dot.webp') }}" alt="dot">
 					</div>
 					<div class="hero-shape3 bounce-animate-3">
-						<img src="{{ asset('assets/images/home-one/hero-shape3.png') }}" alt="shape3">
+						<img src="{{ asset('assets/images/home-one/hero-shape3.webp') }}" alt="shape3">
 					</div>
 					<div class="hero-autor-box">
 						<div class="autor-thumb">
-							<img src="{{ asset('assets/images/home-one/hero-autor.png') }}" alt="autor">
+							<img src="{{ asset('assets/images/home-one/hero-autor.webp') }}" alt="autor">
 						</div>
 						<div class="hero-autor-content">
 							<h3 class="counter">130</h3>
@@ -113,7 +113,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 				<div class="single-feature-box box-1">
 					<div class="feature-icon">
-						<img src="{{ asset('assets/images/home-one/feature-icon1.png') }}" alt="feature-icon">
+						<img src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon">
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Learning Experiences</h4>
@@ -129,7 +129,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 				<div class="single-feature-box box-2">
 					<div class="feature-icon">
-						<img src="{{ asset('assets/images/home-one/feature-icon2.png') }}" alt="feature-icon">
+						<img src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon">
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Professional Instructor</h4>
@@ -145,7 +145,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 				<div class="single-feature-box box-3">
 					<div class="feature-icon">
-						<img src="{{ asset('assets/images/home-one/feature-icon3.png') }}" alt="feature-icon">
+						<img src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Moneyback Gaurantee</h4>
@@ -161,7 +161,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 				<div class="single-feature-box box-3">
 					<div class="feature-icon">
-						<img src="{{ asset('assets/images/home-one/feature-icon3.png') }}" alt="feature-icon">
+						<img src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Moneyback Gaurantee</h4>
@@ -176,10 +176,10 @@
 			</div>
 		</div>
 		<div class="feature-shape1">
-			<img src="{{ asset('assets/images/home-one/feature-shape1.png') }}" alt="shape">
+			<img src="{{ asset('assets/images/home-one/feature-shape1.webp') }}" alt="shape">
 		</div>
 		<div class="feature-shape2 rotateme">
-			<img src="{{ asset('assets/images/home-one/feature-shape2.png') }}" alt="shape2">
+			<img src="{{ asset('assets/images/home-one/feature-shape2.webp') }}" alt="shape2">
 		</div>
 	</div>
 </section>
@@ -200,16 +200,16 @@
 			<div class="col-xl-6 col-lg-12">
 				<div class="about-thumb-wrapper">
 					<div class="about-thumb">
-						<img src="{{ asset('assets/images/home-one/about-thumb1.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/about-thumb1.webp') }}" alt="thumb">
 					</div>
 					<div class="about-thumb-shape1 bounce-animate-3">
-						<img src="{{ asset('assets/images/home-one/about-shape1.png') }}" alt="shape1">
+						<img src="{{ asset('assets/images/home-one/about-shape1.webp') }}" alt="shape1">
 					</div>
 					<div class="about-thumb-shape2 rotateme">
-						<img src="{{ asset('assets/images/home-one/about-shape2.png') }}" alt="shape2">
+						<img src="{{ asset('assets/images/home-one/about-shape2.webp') }}" alt="shape2">
 					</div>
 					<div class="about-thumb-shape3">
-						<img src="{{ asset('assets/images/home-one/about-shape3.png') }}" alt="shape3">
+						<img src="{{ asset('assets/images/home-one/about-shape3.webp') }}" alt="shape3">
 					</div>
 				</div>
 			</div>	
@@ -231,12 +231,12 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="about-item-list">
-								<span><img src="{{ asset('assets/images/home-one/about-icon.png') }}" alt="icon">Innovative Learning System</span>
+								<span><img src="{{ asset('assets/images/home-one/about-icon.webp') }}" alt="icon">Innovative Learning System</span>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="about-item-list">
-								<span><img src="{{ asset('assets/images/home-one/about-icon.png') }}" alt="icon">Worldwide Intelligent Learner</span>
+								<span><img src="{{ asset('assets/images/home-one/about-icon.webp') }}" alt="icon">Worldwide Intelligent Learner</span>
 							</div>
 						</div>
 					</div>
@@ -273,10 +273,10 @@
 			</div>			
 		</div>
 		<div class="about-shape4">
-			<img src="{{ asset('assets/images/home-one/about-shape4.png') }}" alt="shape4">
+			<img src="{{ asset('assets/images/home-one/about-shape4.webp') }}" alt="shape4">
 		</div>
 		<div class="about-shape5">
-			<img src="{{ asset('assets/images/home-one/about-shape5.png') }}" alt="shape5">
+			<img src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="shape5">
 		</div>
 	</div>
 </section>
@@ -297,16 +297,16 @@
 			<div class="col-lg-12">
 				<div class="marquee">
 					<div class="marquee-block">
-						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.png') }}" alt="icon"></span>learning innovation</h3>
-						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.png') }}" alt="icon"></span>worldwide learners</h3>
-						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.png') }}" alt="icon"></span>unique knowledge</h3>
-						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.png') }}" alt="icon"></span>dream today</h3>
+						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}" alt="icon"></span>learning innovation</h3>
+						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}" alt="icon"></span>worldwide learners</h3>
+						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}" alt="icon"></span>unique knowledge</h3>
+						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}" alt="icon"></span>dream today</h3>
 					</div>
 					<div class="marquee-block">
-						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.png') }}" alt="icon"></span>learning innovation</h3>
-						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.png') }}" alt="icon"></span>worldwide learners</h3>
-						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.png') }}" alt="icon"></span>unique knowledge</h3>
-						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.png') }}" alt="icon"></span>dream today</h3>
+						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}" alt="icon"></span>learning innovation</h3>
+						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}" alt="icon"></span>worldwide learners</h3>
+						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}" alt="icon"></span>unique knowledge</h3>
+						<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}" alt="icon"></span>dream today</h3>
 					</div>
 				</div>
 			</div>
@@ -361,7 +361,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6 grid-item Wordpress Networking">
 				<div class="case-study-single-box">
 					<div class="case-study-thumb">
-						<img src="{{ asset('assets/images/home-one/case-thumb1.jpg') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/case-thumb1.webp') }}" alt="thumb">
 						<div class="case-meta-top">
 							<span>$30</span>
 						</div>
@@ -384,7 +384,7 @@
 						</div>
 						<div class="case-autor-box">
 							<div class="case-autor-img">
-								<img src="{{ asset('assets/images/home-one/case-autor.png') }}" alt="autor">
+								<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
 							</div>
 							<div class="case-autor-content">
 								<h3>John D. Alexon</h3>
@@ -408,7 +408,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6 grid-item Business Finance Wordpress">
 				<div class="case-study-single-box box-2">
 					<div class="case-study-thumb">
-						<img src="{{ asset('assets/images/home-one/case-thumb2.jpg') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/case-thumb2.webp') }}" alt="thumb">
 						<div class="case-meta-top">
 							<span>Free</span>
 						</div>
@@ -431,7 +431,7 @@
 						</div>
 						<div class="case-autor-box">
 							<div class="case-autor-img">
-								<img src="{{ asset('assets/images/home-one/case-autor2.png') }}" alt="autor">
+								<img src="{{ asset('assets/images/home-one/case-autor2.webp') }}" alt="autor">
 							</div>
 							<div class="case-autor-content">
 								<h3>David Watson</h3>
@@ -455,7 +455,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6 grid-item Networking Designing Business">
 				<div class="case-study-single-box box-3">
 					<div class="case-study-thumb">
-						<img src="{{ asset('assets/images/home-one/case-thumb3.jpg') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/case-thumb3.webp') }}" alt="thumb">
 						<div class="case-meta-top">
 							<span>$35</span>
 						</div>
@@ -478,7 +478,7 @@
 						</div>
 						<div class="case-autor-box">
 							<div class="case-autor-img">
-								<img src="{{ asset('assets/images/home-one/case-autor3.png') }}" alt="autor">
+								<img src="{{ asset('assets/images/home-one/case-autor3.webp') }}" alt="autor">
 							</div>
 							<div class="case-autor-content">
 								<h3>Nelson Mendela</h3>
@@ -502,7 +502,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6 grid-item Networking Designing Business">
 				<div class="case-study-single-box box-3">
 					<div class="case-study-thumb">
-						<img src="{{ asset('assets/images/home-one/case-thumb3.jpg') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/case-thumb3.webp') }}" alt="thumb">
 						<div class="case-meta-top">
 							<span>$35</span>
 						</div>
@@ -525,7 +525,7 @@
 						</div>
 						<div class="case-autor-box">
 							<div class="case-autor-img">
-								<img src="{{ asset('assets/images/home-one/case-autor3.png') }}" alt="autor">
+								<img src="{{ asset('assets/images/home-one/case-autor3.webp') }}" alt="autor">
 							</div>
 							<div class="case-autor-content">
 								<h3>Nelson Mendela</h3>
@@ -548,7 +548,7 @@
 			</div>
 		</div>
 		<div class="case-shape1">
-			<img src="{{ asset('assets/images/home-one/case-shape1.png') }}" alt="shape">
+			<img src="{{ asset('assets/images/home-one/case-shape1.webp') }}" alt="shape">
 		</div>
 	</div>
 </div>
@@ -583,13 +583,13 @@
 					</div>
 					<div class="choose-item-menu">
 						<ul>
-							<li><img src="{{ asset('assets/images/home-one/choose-icon1.png') }}" alt="icon">Course Management</li>
-							<li><img src="{{ asset('assets/images/home-one/choose-icon2.png') }}" alt="icon">Students Progress Tracking</li>
-							<li><img src="{{ asset('assets/images/home-one/choose-icon3.png') }}" alt="icon">Interactive Live Class</li>
-							<li><img src="{{ asset('assets/images/home-one/choose-icon4.png') }}" alt="icon">Quiz and Assignments</li>
+							<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">Course Management</li>
+							<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">Students Progress Tracking</li>
+							<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}" alt="icon">Interactive Live Class</li>
+							<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">Quiz and Assignments</li>
 						</ul>
 					</div>
-					<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.png') }}" alt="star">24/7 Hrs Ready to our support team</p>
+					<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.webp') }}" alt="star">24/7 Hrs Ready to our support team</p>
 					<div class="choose-btn">
 						<a href="choose.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
 					</div>
@@ -597,10 +597,10 @@
 			</div>
 			<div class="col-lg-5">
 				<div class="choose-thumb">
-					<img src="{{ asset('assets/images/home-one/choose-thumb1.png') }}" alt="thumb">
+					<img src="{{ asset('assets/images/home-one/choose-thumb1.webp') }}" alt="thumb">
 					<div class="choose-skill-box">
 						<div class="choose-skill-icon">
-							<img src="{{ asset('assets/images/home-one/choose-rat-icon.png') }}" alt="rat">
+							<img src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}" alt="rat">
 						</div>
 						<div class="choose-skill-content">
 							<h3 class="counter">26</h3>
@@ -609,19 +609,19 @@
 						</div>
 					</div>
 					<div class="choose-shape-dot">
-						<img src="{{ asset('assets/images/home-one/choose-dot.png') }}" alt="dot-shape">
+						<img src="{{ asset('assets/images/home-one/choose-dot.webp') }}" alt="dot-shape">
 					</div>
 					<div class="choose-shape-star">
-						<img src="{{ asset('assets/images/home-one/choose-star.png') }}" alt="star-shape">
+						<img src="{{ asset('assets/images/home-one/choose-star.webp') }}" alt="star-shape">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="choose-shape1">
-			<img src="{{ asset('assets/images/home-one/choose-shape1.png') }}" alt="shape">
+			<img src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape">
 		</div>
 		<div class="choose-shape2">
-			<img src="{{ asset('assets/images/home-one/choose-circle.png') }}" alt="shape">
+			<img src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape">
 		</div>
 	</div>
 </div>
@@ -643,7 +643,7 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="course-design-thumb">
-					<img src="{{ asset('assets/images/home-one/offer-video.png') }}" alt="thumb">
+					<img src="{{ asset('assets/images/home-one/offer-video.webp') }}" alt="thumb">
 					<div class="course-video-icon">	
 						<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://www.youtube.com/watch?v=Wx48y_fOfiY"><i class="fa-classic fa-solid fa-play fa-fw"></i></a>
 					</div>
@@ -679,7 +679,7 @@
 						</div>
 					</div>
 					<div class="offer-thumb">
-						<img src="{{ asset('assets/images/home-one/offer-thumb.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/offer-thumb.webp') }}" alt="thumb">
 					</div>
 				</div>
 			</div>
@@ -716,7 +716,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-1">
 					<div class="team-thumb">
-						<img src="{{ asset('assets/images/home-one/team-thumb1.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/team-thumb1.webp') }}" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -752,7 +752,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-2">
 					<div class="team-thumb">
-						<img src="{{ asset('assets/images/home-one/team-thumb2.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/team-thumb2.webp') }}" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -788,7 +788,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-3">
 					<div class="team-thumb">
-						<img src="{{ asset('assets/images/home-one/team-thumb3.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/team-thumb3.webp') }}" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -824,7 +824,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-4">
 					<div class="team-thumb">
-						<img src="{{ asset('assets/images/home-one/team-thumb4.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/team-thumb4.webp') }}" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -859,10 +859,10 @@
 			</div>
 		</div>
 		<div class="team-shape1">
-			<img src="{{ asset('assets/images/home-one/team-shape1.png') }}" alt="shape1">
+			<img src="{{ asset('assets/images/home-one/team-shape1.webp') }}" alt="shape1">
 		</div>
 		<div class="team-shape2">
-			<img src="{{ asset('assets/images/home-one/team-shape2.png') }}" alt="shape2">
+			<img src="{{ asset('assets/images/home-one/team-shape2.webp') }}" alt="shape2">
 		</div>
 	</div>
 </div>
@@ -898,13 +898,13 @@
 			<div class="col-lg-6">
 				<div class="testi-thumb-wrapper">
 					<div class="testimonial-thumb">
-						<img src="{{ asset('assets/images/home-one/testi-thumb.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="thumb">
 					</div>
 					<div class="testi-dot-shape">
-						<img src="{{ asset('assets/images/home-one/testi-dot.png') }}" alt="dot">
+						<img src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="dot">
 					</div>
 					<div class="testi-map-shape">
-						<img src="{{ asset('assets/images/home-one/testi-map.png') }}" alt="map">
+						<img src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="map">
 					</div>
 				</div>
 			</div>
@@ -915,7 +915,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="{{ asset('assets/images/home-one/testi-quote.png') }}" alt="quote">
+										<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Impresive Learning!</h3>
@@ -938,7 +938,7 @@
 								</div>
 								<div class="testi-autor-box">
 									<div class="testi-autor">
-										<img src="{{ asset('assets/images/home-one/testi-autor1.png') }}" alt="autor">
+										<img src="{{ asset('assets/images/home-one/testi-autor1.webp') }}" alt="autor">
 									</div>
 									<div class="testi-autor-content">
 										<h5 class="autor-title">Sonia Sara</h5>
@@ -951,7 +951,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="{{ asset('assets/images/home-one/testi-quote.png') }}" alt="quote">
+										<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Impresive Learning!</h3>
@@ -974,7 +974,7 @@
 								</div>
 								<div class="testi-autor-box">
 									<div class="testi-autor">
-										<img src="{{ asset('assets/images/home-one/testi-autor3.png') }}" alt="autor">
+										<img src="{{ asset('assets/images/home-one/testi-autor3.webp') }}" alt="autor">
 									</div>
 									<div class="testi-autor-content">
 										<h5 class="autor-title">Nur Islam</h5>
@@ -987,7 +987,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="{{ asset('assets/images/home-one/testi-quote.png') }}" alt="quote">
+										<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Impresive Learning!</h3>
@@ -1010,7 +1010,7 @@
 								</div>
 								<div class="testi-autor-box">
 									<div class="testi-autor">
-										<img src="{{ asset('assets/images/home-one/testi-autor4.png') }}" alt="autor">
+										<img src="{{ asset('assets/images/home-one/testi-autor4.webp') }}" alt="autor">
 									</div>
 									<div class="testi-autor-content">
 										<h5 class="autor-title">Saifur Rahman</h5>
@@ -1049,7 +1049,7 @@
 				<div class="call-to-wrapper">
 					<div class="call-to-box">
 						<div class="call-to-icon">
-							<img src="{{ asset('assets/images/home-one/call-icon.png') }}" alt="icon">
+							<img src="{{ asset('assets/images/home-one/call-icon.webp') }}" alt="icon">
 						</div>
 						<div class="call-to-content">
 							<h6>Call Anytime</h6>
@@ -1057,14 +1057,14 @@
 						</div>
 					</div>
 					<div class="call-to-arrow">
-						<img src="{{ asset('assets/images/home-one/call-arrow.png') }}" alt="arrow">
+						<img src="{{ asset('assets/images/home-one/call-arrow.webp') }}" alt="arrow">
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4">
 				<div class="call-logo-box">
 					<div class="call-to-logo">
-						<img src="{{ asset('assets/images/home-one/call-logo.png') }}" alt="logo">
+						<img src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="logo">
 					</div>
 					<div class="call-rating">
 						<p><span>890+</span> Trustpilot 4.9 Ratings</p>
@@ -1106,21 +1106,21 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="single-blog-box box-1">
 					<div class="single-blog-thumb">
-						<img src="{{ asset('assets/images/home-one/blog-thumb1.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/blog-thumb1.webp') }}" alt="thumb">
 						<div class="blog-meta-top">
 							<span>28 JAN</span>
 						</div>
 					</div>
 					<div class="blog-content">
 						<div class="blog-author">
-							<h4><img src="{{ asset('assets/images/home-one/blog-autor1.png') }}" alt="autor">John D. Alexon</h4>
+							<h4><img src="{{ asset('assets/images/home-one/blog-autor1.webp') }}" alt="autor">John D. Alexon</h4>
 						</div>
 						<div class="blog-title">
 							<h3><a href="blog-details.html">10 Proven Strategies to excel
 								Online Learning</a></h3>
 						</div>
 						<div class="blog-btn">
-							<a href="blog-details.html">Continue Reading <img src="{{ asset('assets/images/home-one/blog-icon1.png') }}" alt="icon"></a>
+							<a href="blog-details.html">Continue Reading <img src="{{ asset('assets/images/home-one/blog-icon1.webp') }}" alt="icon"></a>
 						</div>
 					</div>
 				</div>
@@ -1128,21 +1128,21 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="single-blog-box box-2">
 					<div class="single-blog-thumb">
-						<img src="{{ asset('assets/images/home-one/blog-thumb2.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/blog-thumb2.webp') }}" alt="thumb">
 						<div class="blog-meta-top">
 							<span>29 JAN</span>
 						</div>
 					</div>
 					<div class="blog-content">
 						<div class="blog-author">
-							<h4><img src="{{ asset('assets/images/home-one/blog-autor2.png') }}" alt="autor">Anjelina Watson</h4>
+							<h4><img src="{{ asset('assets/images/home-one/blog-autor2.webp') }}" alt="autor">Anjelina Watson</h4>
 						</div>
 						<div class="blog-title">
 							<h3><a href="blog-details.html">Trends that are shaping the 
 								Learning experience</a></h3>
 						</div>
 						<div class="blog-btn">
-							<a href="blog-details.html">Continue Reading <img src="{{ asset('assets/images/home-one/blog-icon2.png') }}" alt="icon"></a>
+							<a href="blog-details.html">Continue Reading <img src="{{ asset('assets/images/home-one/blog-icon2.webp') }}" alt="icon"></a>
 						</div>
 					</div>
 				</div>
@@ -1150,21 +1150,21 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="single-blog-box box-3">
 					<div class="single-blog-thumb">
-						<img src="{{ asset('assets/images/home-one/blog-thumb3.png') }}" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/blog-thumb3.webp') }}" alt="thumb">
 						<div class="blog-meta-top">
 							<span>30 JAN</span>
 						</div>
 					</div>
 					<div class="blog-content">
 						<div class="blog-author">
-							<h4><img src="{{ asset('assets/images/home-one/blog-autor3.png') }}" alt="autor">David X. Barmer</h4>
+							<h4><img src="{{ asset('assets/images/home-one/blog-autor3.webp') }}" alt="autor">David X. Barmer</h4>
 						</div>
 						<div class="blog-title">
 							<h3><a href="blog-details.html">Learning is the Key soft skills
 								and Professional</a></h3>
 						</div>
 						<div class="blog-btn">
-							<a href="blog-details.html">Continue Reading <img src="{{ asset('assets/images/home-one/blog-icon3.png') }}" alt="icon"></a>
+							<a href="blog-details.html">Continue Reading <img src="{{ asset('assets/images/home-one/blog-icon3.webp') }}" alt="icon"></a>
 						</div>
 					</div>
 				</div>

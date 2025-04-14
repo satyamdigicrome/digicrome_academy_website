@@ -24,10 +24,10 @@
 			</div>
 		</div>
 		<div class="breadcumb-shape">
-			<img src="assets/images/inner-img/breadcumb-dot.png" alt="dot">
+			<img src="assets/images/inner-img/breadcumb-dot.webp" alt="dot">
 		</div>
 		<div class="breadcumb-shape2">
-			<img src="assets/images/inner-img/breadcumb-ball.png" alt="ball">
+			<img src="assets/images/inner-img/breadcumb-ball.webp" alt="ball">
 		</div>
 	</div>
 </div>
@@ -49,21 +49,21 @@
 					<div class="col-xl-6 col-lg-12 col-md-6">
 						<div class="single-blog-box box-1">
 							<div class="single-blog-thumb">
-								<img src="assets/images/home-one/blog-thumb1.png" alt="thumb">
+								<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
 								<div class="blog-meta-top">
 									<span>28 JAN</span>
 								</div>
 							</div>
 							<div class="blog-content">
 								<div class="blog-author">
-									<h4><img src="assets/images/home-one/blog-autor1.png" alt="autor">John D. Alexon</h4>
+									<h4><img src="assets/images/home-one/blog-autor1.webp" alt="autor">John D. Alexon</h4>
 								</div>
 								<div class="blog-title">
 									<h3><a href="blog-details.html">10 Proven Strategies to excel
 										Online Learning</a></h3>
 								</div>
 								<div class="blog-btn">
-									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon1.png" alt="icon"></a>
+									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon1.webp" alt="icon"></a>
 								</div>
 							</div>
 						</div>
@@ -71,21 +71,21 @@
 					<div class="col-xl-6 col-lg-12 col-md-6">
 						<div class="single-blog-box box-3">
 							<div class="single-blog-thumb">
-								<img src="assets/images/home-one/blog-thumb3.png" alt="thumb">
+								<img src="assets/images/home-one/blog-thumb3.webp" alt="thumb">
 								<div class="blog-meta-top">
 									<span>30 JAN</span>
 								</div>
 							</div>
 							<div class="blog-content">
 								<div class="blog-author">
-									<h4><img src="assets/images/home-one/blog-autor3.png" alt="autor">David X. Barmer</h4>
+									<h4><img src="assets/images/home-one/blog-autor3.webp" alt="autor">David X. Barmer</h4>
 								</div>
 								<div class="blog-title">
 									<h3><a href="blog-details.html">Learning is the Key soft skills
 										and Professional</a></h3>
 								</div>
 								<div class="blog-btn">
-									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon3.png" alt="icon"></a>
+									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon3.webp" alt="icon"></a>
 								</div>
 							</div>
 						</div>
@@ -93,21 +93,21 @@
 					<div class="col-xl-6 col-lg-12 col-md-6">
 						<div class="single-blog-box box-3">
 							<div class="single-blog-thumb">
-								<img src="assets/images/home-one/blog-thumb3.png" alt="thumb">
+								<img src="assets/images/home-one/blog-thumb3.webp" alt="thumb">
 								<div class="blog-meta-top">
 									<span>30 JAN</span>
 								</div>
 							</div>
 							<div class="blog-content">
 								<div class="blog-author">
-									<h4><img src="assets/images/home-one/blog-autor3.png" alt="autor">David X. Barmer</h4>
+									<h4><img src="assets/images/home-one/blog-autor3.webp" alt="autor">David X. Barmer</h4>
 								</div>
 								<div class="blog-title">
 									<h3><a href="blog-details.html">Learning is the Key soft skills
 										and Professional</a></h3>
 								</div>
 								<div class="blog-btn">
-									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon3.png" alt="icon"></a>
+									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon3.webp" alt="icon"></a>
 								</div>
 							</div>
 						</div>
@@ -115,21 +115,21 @@
 					<div class="col-xl-6 col-lg-12 col-md-6">
 						<div class="single-blog-box box-2">
 							<div class="single-blog-thumb">
-								<img src="assets/images/home-one/blog-thumb2.png" alt="thumb">
+								<img src="assets/images/home-one/blog-thumb2.webp" alt="thumb">
 								<div class="blog-meta-top">
 									<span>29 JAN</span>
 								</div>
 							</div>
 							<div class="blog-content">
 								<div class="blog-author">
-									<h4><img src="assets/images/home-one/blog-autor2.png" alt="autor">Anjelina Watson</h4>
+									<h4><img src="assets/images/home-one/blog-autor2.webp" alt="autor">Anjelina Watson</h4>
 								</div>
 								<div class="blog-title">
 									<h3><a href="blog-details.html">Trends that are shaping the 
 										Learning experience</a></h3>
 								</div>
 								<div class="blog-btn">
-									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon2.png" alt="icon"></a>
+									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon2.webp" alt="icon"></a>
 								</div>
 							</div>
 						</div>
@@ -137,21 +137,21 @@
 					<div class="col-xl-6 col-lg-12 col-md-6">
 						<div class="single-blog-box box-2">
 							<div class="single-blog-thumb">
-								<img src="assets/images/home-one/blog-thumb2.png" alt="thumb">
+								<img src="assets/images/home-one/blog-thumb2.webp" alt="thumb">
 								<div class="blog-meta-top">
 									<span>29 JAN</span>
 								</div>
 							</div>
 							<div class="blog-content">
 								<div class="blog-author">
-									<h4><img src="assets/images/home-one/blog-autor2.png" alt="autor">Anjelina Watson</h4>
+									<h4><img src="assets/images/home-one/blog-autor2.webp" alt="autor">Anjelina Watson</h4>
 								</div>
 								<div class="blog-title">
 									<h3><a href="blog-details.html">Trends that are shaping the 
 										Learning experience</a></h3>
 								</div>
 								<div class="blog-btn">
-									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon2.png" alt="icon"></a>
+									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon2.webp" alt="icon"></a>
 								</div>
 							</div>
 						</div>
@@ -159,21 +159,21 @@
 					<div class="col-xl-6 col-lg-12 col-md-6">
 						<div class="single-blog-box box-3">
 							<div class="single-blog-thumb">
-								<img src="assets/images/home-one/blog-thumb3.png" alt="thumb">
+								<img src="assets/images/home-one/blog-thumb3.webp" alt="thumb">
 								<div class="blog-meta-top">
 									<span>30 JAN</span>
 								</div>
 							</div>
 							<div class="blog-content">
 								<div class="blog-author">
-									<h4><img src="assets/images/home-one/blog-autor3.png" alt="autor">David X. Barmer</h4>
+									<h4><img src="assets/images/home-one/blog-autor3.webp" alt="autor">David X. Barmer</h4>
 								</div>
 								<div class="blog-title">
 									<h3><a href="blog-details.html">Learning is the Key soft skills
 										and Professional</a></h3>
 								</div>
 								<div class="blog-btn">
-									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon3.png" alt="icon"></a>
+									<a href="blog-details.html">Continue Reading <img src="assets/images/home-one/blog-icon3.webp" alt="icon"></a>
 								</div>
 							</div>
 						</div>
@@ -219,7 +219,7 @@
 						<!-- widget recent post -->
 						<div class="widget-recent-post d-flex">
 							<div class="rpost-thumb">
-								<a href="#"><img src="assets/images/inner-img/rpost-thumb1.png" alt="post thumb"></a>
+								<a href="#"><img src="assets/images/inner-img/rpost-thumb1.webp" alt="post thumb"></a>
 							</div>
 							<div class="rpost-content">
 								<div class="rpost-title">
@@ -232,7 +232,7 @@
 						<!-- widget recent post -->
 						<div class="widget-recent-post d-flex">
 							<div class="rpost-thumb">
-								<a href="#"><img src="assets/images/inner-img/rpost-thumb2.png" alt="post thumb"></a>
+								<a href="#"><img src="assets/images/inner-img/rpost-thumb2.webp" alt="post thumb"></a>
 							</div>
 							<div class="rpost-content">
 								<div class="rpost-title">
@@ -245,7 +245,7 @@
 						<!-- widget recent post -->
 						<div class="widget-recent-post d-flex">
 							<div class="rpost-thumb">
-								<a href="#"><img src="assets/images/inner-img/rpost-thumb3.png" alt="post thumb"></a>
+								<a href="#"><img src="assets/images/inner-img/rpost-thumb3.webp" alt="post thumb"></a>
 							</div>
 							<div class="rpost-content">
 								<div class="rpost-title">

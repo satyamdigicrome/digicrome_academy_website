@@ -22,10 +22,10 @@
 			</div>
 		</div>
 		<div class="bread-shape">
-			<img src="assets/images/inner-img/book-hand.png" alt="book">
+			<img src="assets/images/inner-img/book-hand.webp" alt="book">
 		</div>
 		<div class="bread-dot2">
-			<img src="assets/images/inner-img/bread-dot.png" alt="dot">
+			<img src="assets/images/inner-img/bread-dot.webp" alt="dot">
 		</div>
 	</div>
 </div>
@@ -53,7 +53,7 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="course-details-box">
 					<div class="course-details-thumb">
-						<img src="assets/images/inner-img/course-thumb1.png" alt="thumb">
+						<img src="assets/images/inner-img/course-thumb1.webp" alt="thumb">
 						<div class="course-meta-top">
 							<span>Business</span>
 						</div>
@@ -93,7 +93,7 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="course-details-box">
 					<div class="course-details-thumb">
-						<img src="assets/images/inner-img/course-thumb3.png" alt="thumb">
+						<img src="assets/images/inner-img/course-thumb3.webp" alt="thumb">
 						<div class="course-meta-top">
 							<span>Networking</span>
 						</div>
@@ -133,7 +133,7 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="course-details-box">
 					<div class="course-details-thumb">
-						<img src="assets/images/inner-img/course-thumb3.png" alt="thumb">
+						<img src="assets/images/inner-img/course-thumb3.webp" alt="thumb">
 						<div class="course-meta-top">
 							<span>Finance</span>
 						</div>
@@ -173,7 +173,7 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="course-details-box">
 					<div class="course-details-thumb">
-						<img src="assets/images/inner-img/course-thumb4.png" alt="thumb">
+						<img src="assets/images/inner-img/course-thumb4.webp" alt="thumb">
 						<div class="course-meta-top">
 							<span>Designing</span>
 						</div>
@@ -213,7 +213,7 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="course-details-box">
 					<div class="course-details-thumb">
-						<img src="assets/images/inner-img/course-thumb5.png" alt="thumb">
+						<img src="assets/images/inner-img/course-thumb5.webp" alt="thumb">
 						<div class="course-meta-top">
 							<span>Coding</span>
 						</div>
@@ -253,7 +253,7 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="course-details-box">
 					<div class="course-details-thumb">
-						<img src="assets/images/inner-img/course-thumb6.png" alt="thumb">
+						<img src="assets/images/inner-img/course-thumb6.webp" alt="thumb">
 						<div class="course-meta-top">
 							<span>Business</span>
 						</div>
