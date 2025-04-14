@@ -29,7 +29,7 @@
 		<div class="row header-top">
 			<div class="col-xxl-6 col-xl-8 col-lg-8">
 				<div class="header-top-welcome">
-					<p><img src="assets/images/home-one/top-star.png" alt="star">Welcome to <a href="index.html">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p>
+					<p><img src="assets/images/home-one/top-star.png" alt="star">Welcome to <a href="/">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p>
 				</div>
 			</div>
 			<div class="col-xxl-6 col-xl-4 col-lg-4">
@@ -60,20 +60,20 @@
 		<div class="row header-wrap align-items-center">
 			<div class="col-lg-2">
 				<div class="header-logo">
-					<a class="active_logo" href="index.html"><img src="assets/images/logo.png" alt="logo"></a>
-					<a class="logo_two" href="index.html"><img src="assets/images/footer-logo.png" alt="logo"></a>
+					<a class="active_logo" href="/"><img src="assets/images/logo.png" alt="logo"></a>
+					<a class="logo_two" href="/"><img src="assets/images/footer-logo.png" alt="logo"></a>
 				</div>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-8">
 				<div class="header-menu">
 					<ul class="nav_scroll">
-						<li><a href="#">Home</a>
+						<li><a href="/">Home</a>
 						</li>
 						<li><a href="{{ route('about') }}">About</a></li>
 						{{-- <li><a href="#">pages<i class="bi bi-chevron-down"></i></a>
 							<ul class="sub_menu">
 								<li><a href="{{ route('about') }}">About Us</a></li>
-								<li><a href="course.html">Courses</a></li>
+								<li><a href="{{ route('course') }}">Courses</a></li>
 								<li><a href="course-details.html">Courses Details</a></li>
 								<li><a href="instructor.html">Instructor</a></li>						
 								<li><a href="instructor-details.html">Instructor Details</a></li>
@@ -89,7 +89,7 @@
 						</li> --}}
 						<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
 							<ul class="sub_menu">
-								<li><a href="course.html">Courses</a></li>
+								<li><a href="{{ route('course') }}">Courses</a></li>
 								<li><a href="course-details.html">Courses Details</a></li>
 							</ul>
 						</li>
@@ -101,32 +101,42 @@
 								<li><a href="checkout.html">Checkout</a></li>
 							</ul>
 						</li> --}}
+						<li><a href="{{ route('corporate_services') }}">Corporate Services </a>
 						<li><a href="{{ route('blog') }}">Blog </a>
+						<li><a href="{{ route('payments') }}">Payments </a>
 							{{-- <ul class="sub_menu">
 								<li><a href="{{ route('blog') }}">Blog</a></li>
 								<li><a href="blog-details.html">Blog Details</a></li>
 							</ul> --}}
 						</li>
 						<li><a href="{{ route('contact') }}">Contact</a></li>
+						<li><a href="#">More<i class="bi bi-chevron-down"></i></a>
+					<ul class="sub_menu">
+						<li><a href="{{ route('who_we_are') }}">Who we are</a></li>
+						<li><a href="{{ route('success_stories') }}">Success stories</a></li>
+						<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
+						<li><a href="{{ route('career') }}">Career</a></li>
+					</ul>
+				</li>
 					</ul>				
 				</div>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-2">
 				<div class="header-right-wrapper">
 					<div class="header-sidebar">
-						<div class="header-src-btn">
+						{{-- <div class="header-src-btn">
 							<div class="search-box-btn search-box-outer"><i class="fa-solid fa-magnifying-glass"></i></div>
-						</div>&nbsp;&nbsp;
+						</div>&nbsp;&nbsp; --}}
 						{{-- <button class="cart_btn headers-button" type="button">
 							<i class="fa-solid fa-cart-shopping"></i>
 							<small class="cart_counter">0</small>
 						</button> --}}
-						<div class="header-btn">
-							<a href="{{ route('contact') }}">Contact<i class="flaticon flaticon-right-arrow"></i></a>
+						<div class="header-btn search-box-btn search-box-outer">
+							<a href="#">Contact<i class="flaticon flaticon-right-arrow"></i></a>
 						</div>
-						<div class="header-sidbar-button navSidebar-button">
+						{{-- <div class="header-sidbar-button navSidebar-button">
 							<a href="#"><i class="bi bi-justify-left"></i></a>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>
@@ -143,14 +153,14 @@
 	<div class="mobile-menu">
 		<nav class="header-menu">
 			<div class="mobile-logo">
-				<a class="logo_img" href="index.html" title="educate">
+				<a class="logo_img" href="/" title="educate">
 				    <img src="assets/images/footer-logo.png" alt="logo">
 				</a>
 			  </div>
 			  <ul class="nav_scroll">
-				<li><a href="#">Home</a>
+				<li><a href="/">Home</a>
 					{{-- <ul class="sub_menu">
-						<li><a href="index.html">Home Version 01</a></li>
+						<li><a href="/">Home Version 01</a></li>
 						<li><a href="index-2.html">Home Version 02</a></li>
 						<li><a href="index-3.html">Home Version 03</a></li>
 						<li><a href="index-4.html">Home Version 04</a></li>
@@ -162,7 +172,7 @@
 				{{-- <li><a href="#">pages<i class="bi bi-chevron-down"></i></a>
 					<ul class="sub_menu">
 						<li><a href="{{ route('about') }}">About Us</a></li>
-						<li><a href="course.html">Courses</a></li>
+						<li><a href="{{ route('course') }}">Courses</a></li>
 						<li><a href="course-details.html">Courses Details</a></li>
 						<li><a href="instructor.html">Instructor</a></li>						
 						<li><a href="instructor-details.html">Instructor Details</a></li>
@@ -178,7 +188,7 @@
 				</li> --}}
 				<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
 					<ul class="sub_menu">
-						<li><a href="course.html">Courses</a></li>
+						<li><a href="{{ route('course') }}">Courses</a></li>
 						<li><a href="course-details.html">Courses Details</a></li>
 					</ul>
 				</li>
@@ -190,13 +200,23 @@
 						<li><a href="checkout.html">Checkout</a></li>
 					</ul>
 				</li> --}}
+				<li><a href="{{ route('corporate_services') }}">Corporate Services </a>
 				<li><a href="{{ route('blog') }}">Blog</a>
+				<li><a href="{{ route('payments') }}">Payments </a>
 					{{-- <ul class="sub_menu">
 						<li><a href="{{ route('blog') }}">Blog</a></li>
 						<li><a href="blog-details.html">Blog Details</a></li>
 					</ul> --}}
 				</li>
 				<li><a href="{{ route('contact') }}">Contact</a></li>
+				<li><a href="#">More<i class="bi bi-chevron-down"></i></a>
+					<ul class="sub_menu">
+						<li><a href="{{ route('who_we_are') }}">Who we are</a></li>
+						<li><a href="{{ route('success_stories') }}">Success stories</a></li>
+						<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
+						<li><a href="{{ route('career') }}">Career</a></li>
+					</ul>
+				</li>
 			</ul>	
 		</nav>
 	</div>
@@ -214,7 +234,7 @@
 <form method="post" action="#">
 	<div class="form-group">
 		<input id="search1" type="search" name="search-field" value="" placeholder="Search Here" required="">
-		<button type="submit"><i class="fas fa-search"></i></button>
+		<button  type="submit"><i class="fas fa-search"></i></button>
 	</div>
 </form>
 </div>
@@ -302,11 +322,6 @@
 <!-- End Cart Side Bar -->
 <!--==================================================-->
 
-
-
-
-
-
 <!-- Sidebar Cart Item -->
 <div class="xs-sidebar-group info-group">
 	<div class="xs-overlay xs-bg-black"></div>
@@ -322,7 +337,7 @@
 				<div class="sidebar-info-contents">
 					<div class="content-inner">
 						<div class="nav-logo">
-							<a href="index.html"><img src="assets/images/home-one/footer-logo.png" alt="logo"></a>
+							<a href="/"><img src="assets/images/home-one/footer-logo.png" alt="logo"></a>
 						</div>
 						<div class="content-box">
 							<h2>About Us</h2>
@@ -356,6 +371,3 @@
 	</div>
 </div>
 <!--End Sidebar Cart Item -->
-
-
-
