@@ -74,7 +74,7 @@
 							<ul class="sub_menu">
 								<li><a href="{{ route('about') }}">About Us</a></li>
 								<li><a href="{{ route('course') }}">Courses</a></li>
-								<li><a href="course-details.html">Courses Details</a></li>
+								<li><a href="{{ route('course_details') }}">Courses Details</a></li>
 								<li><a href="instructor.html">Instructor</a></li>						
 								<li><a href="instructor-details.html">Instructor Details</a></li>
 								<li><a href="event.html">Event</a></li>	
@@ -89,10 +89,17 @@
 						</li> --}}
 						<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
 							<ul class="sub_menu">
-								<li><a href="{{ route('course') }}">Courses</a></li>
-								<li><a href="course-details.html">Courses Details</a></li>
+							<li><a href="{{ route('course') }}">Upcomming Courses</a></li>
+							@foreach($header_collections as $collection)
+									<li>
+										<a href="{{ route('course.category', $collection->id) }}">
+											{{ $collection->name }}
+										</a>
+									</li>
+								@endforeach
 							</ul>
 						</li>
+						
 						{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>
 							<ul class="sub_menu">
 								<li><a href="shop.html">shop</a></li>
@@ -116,6 +123,8 @@
 						<li><a href="{{ route('success_stories') }}">Success stories</a></li>
 						<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
 						<li><a href="{{ route('career') }}">Career</a></li>
+						<li><a href="{{ route('media_presence') }}">Media Presence</a></li>
+
 					</ul>
 				</li>
 					</ul>				
@@ -173,7 +182,7 @@
 					<ul class="sub_menu">
 						<li><a href="{{ route('about') }}">About Us</a></li>
 						<li><a href="{{ route('course') }}">Courses</a></li>
-						<li><a href="course-details.html">Courses Details</a></li>
+						<li><a href="{{ route('course_details') }}">Courses Details</a></li>
 						<li><a href="instructor.html">Instructor</a></li>						
 						<li><a href="instructor-details.html">Instructor Details</a></li>
 						<li><a href="event.html">Event</a></li>	
@@ -189,7 +198,7 @@
 				<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
 					<ul class="sub_menu">
 						<li><a href="{{ route('course') }}">Courses</a></li>
-						<li><a href="course-details.html">Courses Details</a></li>
+						{{-- <li><a href="{{ route('course_details') }}">Courses Details</a></li> --}}
 					</ul>
 				</li>
 				{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>

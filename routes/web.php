@@ -12,6 +12,8 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ReferController;
 use App\Http\Controllers\WhoweareController;
 use App\Http\Controllers\SucessStoriesController;
+use App\Http\Controllers\MediaPresenceController ;
+
 
 
 
@@ -43,6 +45,14 @@ Route::get('/career', [CareerController::class, 'index'])->name('career');
 Route::get('/refer_and_earn', [ReferController::class, 'index'])->name('refer_and_earn');
 Route::get('/who_we_are', [WhoweareController::class, 'index'])->name('who_we_are');
 Route::get('/success_stories', [SucessStoriesController::class, 'index'])->name('success_stories');
+Route::get('/media_presence', [MediaPresenceController ::class, 'index'])->name('media_presence');
+Route::get('/course_details', [CourseController ::class, 'course_details'])->name('course_details');
+Route::get('/blog_details', [BlogController ::class, 'blog_details'])->name('blog_details');
+
+Route::get('/courses/category/{id}', [CourseController::class, 'showByCategory'])->name('course.category');
+
+
+
 
 
 

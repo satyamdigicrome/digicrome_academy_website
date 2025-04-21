@@ -691,7 +691,100 @@
 <!-- end educate course design offer Area -->
 <!--==================================================-->
 
+<section class="video-slider">
+	<div class="container">
+	  <h2 class="text-center mb-5" style="color: #f29c12;">Our Featured Videos</h2>
+	  <div id="vimeoCarousel" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+  
+		  <div class="carousel-item active">
+			<div class="row justify-content-center">
+			  <div class="col-md-6 col-lg-4 mb-4">
+				<div class="video-card">
+				  <iframe src="https://player.vimeo.com/video/76979871" frameborder="0" allowfullscreen></iframe>
+				  <div class="video-title">Exploring the Mountains</div>
+				</div>
+			  </div>
+			  <div class="col-md-6 col-lg-4 mb-4">
+				<div class="video-card">
+				  <iframe src="https://player.vimeo.com/video/22439234" frameborder="0" allowfullscreen></iframe>
+				  <div class="video-title">Creative Animation</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+  
+		  <div class="carousel-item">
+			<div class="row justify-content-center">
+			  <div class="col-md-6 col-lg-4 mb-4">
+				<div class="video-card">
+				  <iframe src="https://player.vimeo.com/video/146022717" frameborder="0" allowfullscreen></iframe>
+				  <div class="video-title">Nature Walk</div>
+				</div>
+			  </div>
+			  <div class="col-md-6 col-lg-4 mb-4">
+				<div class="video-card">
+				  <iframe src="https://player.vimeo.com/video/1084537" frameborder="0" allowfullscreen></iframe>
+				  <div class="video-title">Art in Motion</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+  
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon"></span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="next">
+		  <span class="carousel-control-next-icon"></span>
+		</button>
+	  </div>
+	</div>
+  </section>
+  <style>
+    .video-slider {
+      background-color: #fef8f1;
+      padding: 40px 0;
+    }
 
+    .video-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(242, 156, 18, 0.85);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-card:hover .video-title {
+      opacity: 1;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #f29c12;
+      border-radius: 50%;
+    }
+  </style>
 
 
 <!--==================================================-->
@@ -1079,11 +1172,77 @@
 <!--==================================================-->
 <!-- end educate call to action Area -->
 <!--==================================================-->
+<section class="py-5" >
+	<div class="container text-center">
+	  <h1 class="fw-bold" style="color: #f29c12;">Data Science with AI Certification Course Journey</h1>
+	  {{-- <p class="mb-4 fs-5 text-muted">Knowing us before growing with us” your Success way!</p> --}}
+	  <img src="{{ asset('assets/images/home-one/phase.webp') }}" alt="Vision Image" class="img-fluid rounded shadow-lg"  />
+	</div>
+  </section>
+  
 
 
 
-
-
+<div class="why-choose-area style-one">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-7">
+				<div class="choose-content">
+					<!-- section title -->
+					<div class="section-sub-title">
+						<h6>Explore Exciting Career Opportunities in Data Science and AI</h6>
+					</div>
+					<div class="section_title">
+						<h1>Understand different roles</h1>
+						<h1>And learn effortlessly.</h1>
+					</div>
+					<div class="section-title-desc">
+						<p>Discover the limitless opportunities in the dynamic field of data science and artificial intelligence. Dive into a world of endless possibilities as you prepare for a highly demanded career.</p>
+					</div>
+					<div class="choose-item-menu">
+						<ul>
+							<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">400 + Global Companies</li>
+							<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">8 LPA Average CTC</li>
+							<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}" alt="icon">32.7 LPA Highest CTC</li>
+							<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">84 % Average Hike</li>
+						</ul>
+					</div>
+					<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.webp') }}" alt="star">Embark on a journey of innovation in data science and AI.</p>
+					<div class="choose-btn">
+						<a href="choose.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-5">
+				<div class="choose-thumb">
+					<img src="{{ asset('assets/images/home-one/roles.webp') }}" alt="	thumb">
+					{{-- <div class="choose-skill-box">
+						<div class="choose-skill-icon">
+							<img src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}" alt="rat">
+						</div>
+						<div class="choose-skill-content">
+							<h3 class="counter">26</h3>
+							<span>+</span>
+							<p>Years of Experiences</p>
+						</div>
+					</div> --}}
+					<div class="choose-shape-dot">
+						{{-- <img src="{{ asset('assets/images/home-one/choose-dot.webp') }}" alt="dot-shape"> --}}
+					</div>
+					<div class="choose-shape-star">
+						{{-- <img src="{{ asset('assets/images/home-one/choose-star.webp') }}" alt="star-shape"> --}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="choose-shape1">
+			{{-- <img src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape"> --}}
+		</div>
+		<div class="choose-shape2">
+			{{-- <img src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape"> --}}
+		</div>
+	</div>
+</div>
 <!--==================================================-->
 <!-- start educate blog Area -->
 <!--==================================================-->
@@ -1172,6 +1331,330 @@
 		</div>
 	</div>
 </div>
+<section class="company-form contactpage-form" style=" padding-top:10px;">
+    <div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
+    <!-- <h1 class="section__title"  style="text-align: center; padding-bottom:40px;"><b>Unveiling <span class="yellow-bg"> Digicrome<img src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png" alt=""></span> Distinct Culture</b></h1> -->
+        
+    </div>
+            <div class="">
+                <div class="gall-inn">
+                    <div class="col-sm-6 col-md-2">
+                        <div class="gal-im animate animate__animated animate__slow" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2a.webp" class="gal-siz-1" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                        <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2b.webp" class="gal-siz-2" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2c.webp" class="gal-siz-2" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                        <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2d.webp" class="gal-siz-1" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-2">
+                        <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2e.webp" class="gal-siz-1" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                        <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2f.webp" class="gal-siz-2" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2g.webp" class="gal-siz-2" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                        <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2h.webp" class="gal-siz-1" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2i.webp" class="gal-siz-2" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                        <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+                            <img src="https://digicrome.com/public/www/seoimg/2j.webp" class="gal-siz-1" alt="digicrome_images" loading="lazy">
+                            <div class="txt">
+                                <span>Digicrome</span>
+                                <h4>Fun @ Days</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<style>
+		.wedd-gall {
+		margin-bottom: 90px;
+		float: left;
+		width: 100%;
+	}
+	
+	.wedd-gall-pg {
+		margin: 100px 0 80px 0;
+	}
+	
+	.wedd-gall-pg-v1 {
+		width: 100%;
+		float: left;
+		margin: 100px 0 90px 0;
+	}
+	
+	.wedd-gall-pg-v1 .img-wrapper img {
+		height: 350px;
+	}
+	
+	.gal-im {
+		margin-bottom: 30px;
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.gall-inn {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	
+	.gal-im:hover {}
+	
+	.gal-im:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(45deg, #633214cc, transparent);
+		transition: all 0.5s ease;
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	.gal-im img {
+		width: 100%;
+		transition: all 0.5s ease;
+		object-fit: cover;
+	}
+	
+	.gal-im img.gal-siz-1 {
+		height: 300px;
+	}
+	
+	.gal-im img.gal-siz-2 {
+		height: 45vh;
+	}
+	
+	.gal-im:hover img {
+		filter: grayscale(0);
+		transform: scale(1.2);
+	}
+	
+	.gal-im .txt {
+		padding: 30px 30px 35px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		/* transition: all 0.5s ease; */
+		z-index: 1;
+	}
+	
+	.gal-im .txt:before {
+		content: '';
+		position: absolute;
+		bottom: 22px;
+		left: 0;
+		right: 0;
+		width: 0%;
+		height: 1px;
+		background: #ffffff6b;
+		transition: all 0.5s ease;
+	}
+	
+	.gal-im .txt span {
+		text-transform: uppercase;
+		font-family: var(--tit-font);
+		font-size: 12px;
+		letter-spacing: 2px;
+		transition: all 0.5s ease;
+		position: relative;
+		left: -30px;
+		opacity: 0;
+	}
+	
+	.gal-im .txt h4 {
+		font-family: var(--tit-font);
+		font-size: 24px;
+		transition: all 0.5s ease;
+		position: relative;
+		left: -30px;
+		opacity: 0;
+	}
+	
+	.gal-im:hover span,
+	.gal-im:hover h4 {
+		color: #fff;
+	}
+	
+	.gal-im:hover .txt:before {
+		width: 100%;
+		transition-delay: 0.4s;
+	}
+	
+	.gal-im:hover:before {
+		opacity: 1;
+	}
+	
+	.gal-im:hover .txt span {
+		left: 0px;
+		opacity: 1;
+		transition-delay: 0.2s;
+	}
+	
+	.gal-im:hover .txt h4 {
+		left: 0px;
+		opacity: 1;
+		transition-delay: 0.3s;
+	}
+	
+	.gal-im:hover {}
+	
+	/* gallry end */
+		.career {
+			color: black;
+	
+		}
+	
+		.content {
+			background-color: orange;
+			height: 500px;
+		}
+	
+		.button-container {
+			background-color: rgba(0, 0, 0, 0.2);
+			text-align: center;
+			padding: 10px;
+			padding-top: 150px;
+			font-family: var(--pix-heading-font), sans-serif !important;
+		}
+	
+		/* Styles for the button */
+		.custom-button {
+			display: inline-block;
+			background-color: #007BFF;
+			/* Set the button background color */
+			color: #FFFFFF;
+			/* Set the button text color */
+			border: none;
+			padding: 10px 20px;
+			/* Adjust the padding as needed */
+			border-radius: 5px;
+			/* Add rounded corners if desired */
+			font-size: 16px;
+			/* Set the font size */
+			font-weight: bold;
+			/* Set font weight to bold for a professional look */
+			font-family: Arial, sans-serif;
+			/* Use a professional font (change as needed) */
+			text-align: center;
+			line-height: 1.4;
+			/* Adjust the line height as needed to control line spacing */
+		}
+	
+		.big-text {
+			color: white;
+			font-size: 54px;
+			/* Adjust the font size as needed */
+			font-weight: bold;
+			/* Add bold font weight for a professional look */
+			margin-bottom: 10px;
+			/* Add space between lines */
+		}
+	
+		.ul {
+			display: block;
+			list-style-type: disc;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			padding-inline-start: 40px;
+		}
+		.section__title span.yellow-bg-big img {
+	  bottom: 15px;
+	  width: 120%;
+	  -webkit-animation: section-animation-2 3s infinite;
+	  animation: section-animation-2 3s infinite;
+	}
+	.section__title span.yellow-bg-sm img {
+	  bottom: 10px;
+	  width: 120%;
+	  -webkit-animation: section-animation-2 3s infinite;
+	  animation: section-animation-2 3s infinite;
+	}
+	#teem img {
+		filter: grayscale(100%); /* Set the image to black and white by default */
+		transition: filter 0.3s; /* Add a smooth transition effect */
+	  }
+	
+	  #teem img:hover {
+		filter: grayscale(0%); /* Remove the grayscale filter on hover */
+	  }
+	  .big-text {
+		color: white;
+		line-height: 1.5; Adjust the line height for better spacing on mobile
+	  }
+	  @media (max-width: 767px) {
+		/* Media query for screens with a maximum width of 767px (typical mobile screens) */
+		.big-text {
+		  font-size: 26px; /* Adjust the font size for mobile screens */
+		  line-height: 1.5; /* Adjust the line height for better spacing on mobile */
+		}
+	  }
+	</style>
 <!--==================================================-->
 <!-- end educate blog Area -->
 <!--==================================================-->

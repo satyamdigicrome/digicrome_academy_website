@@ -7,6 +7,16 @@
 <!--==================================================-->
 <!-- Start educate Breadcumb Area -->
 <!--==================================================-->
+<style>
+	.section-title-desc p{
+		margin: 0px;
+		font-size: 11px;
+
+	}
+	section.about-area.style-three .section-title-desc p{
+		margin: 0px;
+	}
+	</style>
 <div class="breadcumb-area d-flex">
 	<div class="container">
 		<div class="row align-items-center">
@@ -23,10 +33,10 @@
 			</div>
 		</div>
 		<div class="breadcumb-shape">
-			<img src="assets/images/inner-img/breadcumb-dot.webp" alt="dot">
+			<img src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
 		</div>
 		<div class="breadcumb-shape2">
-			<img src="assets/images/inner-img/breadcumb-ball.webp" alt="ball">
+			<img src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
 		</div>
 	</div>
 </div>
@@ -47,7 +57,7 @@
 				<div class="about-thumb-wrapper">
 					<div class="about-learn-box">
 						<div class="about-learn-icon">
-							<img src="assets/images/home-three/learn-icon.webp" alt="icon">
+							<img src="{{ asset('assets/images/home-three/learn-icon.webp') }}" alt="icon">
 						</div>
 						<div class="learn-title">
 							<h5>Learn Online
@@ -55,7 +65,7 @@
 						</div>
 					</div>
 					<div class="about-thumb">
-						<img src="assets/images/home-three/about-thumb31.webp" alt="thumb">
+						<img src="{{ asset('assets/images/home-three/about-thumb31.webp') }}" alt="thumb">
 					</div>
 					<div class="about-experience-box">
 						<div class="about-experience-count">
@@ -68,7 +78,7 @@
 						</div>	
 					</div>
 					<div class="about-shape32">
-						<img src="assets/images/home-three/about-shape32.webp" alt="shape">
+						<img src="{{ asset('assets/images/home-three/about-shape32.webp') }}" alt="shape">
 					</div>
 				</div>
 			</div>	
@@ -76,33 +86,39 @@
 				<div class="about_content">
 					<!-- section title -->
 					<div class="section-sub-title three">
-						<h6><img src="assets/images/inner-img/sub-title2.webp" alt="icon">ABOUT US</h6>
-					</div>
-					<div class="section_title">
-						<h1>Who We Are – Introduction to</h1>
-						<h1>Educate Online Platform</h1>
+						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">ABOUT US</h6>
 					</div>
 					<div class="section-title-desc">
-						<p>Educate the ultimate destination for knowledge seekers and educators alike. 
-							We are committed to transforming special education impact global channels 
-							without standards compliant systems</p>
+						<p>Digicrome is a leading ed-tech platform that helps students and professionals build successful careers with high-quality training. Our goal is to provide industry-focused skills through expert-designed courses.</p>
 					</div>
-					<div class="about-iteam-list">
-						<ul>
-							<li><img src="assets/images/home-three/about-icon31.webp" alt="icon">Course Catalog & Program Information</li>
-							<li><img src="assets/images/home-three/about-icon31.webp" alt="icon">Online Application & Admission Process</li>
-							<li><img src="assets/images/home-three/about-icon31.webp" alt="icon">Financial Aid and Scholarships</li>
-						</ul>
+					<div class="section-title-desc">
+						<p>We offer 50+ live classes monthly across 60+ countries, impacting over 10,000 learners globally. Our programs include live interactive sessions, real-world projects, and a 12-month internship to ensure hands-on learning.</p>
 					</div>
+					<div class="section-title-desc">
+					<p>Our courses cover Data Science with AI, Data Science with Python, Business Development with Project Management, Full Stack Development, Cybersecurity, Big Data, Investment Banking, Digital Marketing, DevOps, Machine Learning, Advanced Python, Deep Learning, and NLP.</p>
+					</div>
+					<div class="section-title-desc">
+						<p>We train students in the latest tools and software like ChatGPT, OpenAI, GeminiAI, DeepSeek.AI, Apache Hadoop, SAS Software, MATLAB, Jupyter, Python, TensorFlow, Scikit-learn, Tableau, and Power BI to keep them industry-ready.</p>
+					</div>
+					<div class="section-title-desc">
+						<p>At Digicrome, we focus on personalized mentorship, industry-ready curriculum, and 100% job assistance, ensuring every student is job-ready from day one. With a strong network of 500+ global hiring partners, our learners achieve up to 120% salary hikes and secure placements in top companies worldwide.</p>
+					</div>
+						<div class="about-iteam-list">
+							<ul>
+								<li><img src="{{ asset('assets/images/home-three/about-icon31.webp') }}" alt="icon">Course Catalog & Program Information</li>
+								<li><img src="{{ asset('assets/images/home-three/about-icon31.webp') }}" alt="icon">Online Application & Admission Process</li>
+								<li><img src="{{ asset('assets/images/home-three/about-icon31.webp') }}" alt="icon">Financial Aid and Scholarships</li>
+							</ul>
+						</div>
 					<div class="about-iteam-phone">
-						<p><span><img src="assets/images/home-three/about-call.webp" alt="call"></span>+ (680) 3290 570</p>
+						<p><span><img src="{{ asset('assets/images/home-three/about-call.webp') }}" alt="call"></span>+ (680) 3290 570</p>
 					</div>
 					<div class="about-btn">
 						<a href="about.html">more about<i class="flaticon flaticon-right-arrow"></i></a>
 					</div>
 					<div class="about-education-box">
 						<div class="education-icon">
-							<span><i class="bi bi-check-lg"></i></span>
+							<img src="{{ asset('assets/images/home-one/msme.webp') }}" alt="call">
 						</div>
 						<div class="education-content">
 							<p>Trusted Online
@@ -116,7 +132,7 @@
 			</div>			
 		</div>
 		<div class="about-shape31">
-			<img src="assets/images/home-three/about-shape31.webp" alt="shape">
+			<img src="{{ asset('assets/images/home-three/about-shape31.webp') }}" alt="shape">
 		</div>
 	</div>
 </section>
@@ -138,42 +154,39 @@
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="single-feature-box box-1">
 					<div class="feature-icon">
-						<img src="assets/images/home-three/feature-icon21.webp" alt="feature-icon">
+						<img src="{{ asset('assets/images/home-three/feature-icon21.webp') }}" alt="feature-icon">
 					</div>
 					<div class="feature-content">
-						<h4 class="feature-title">Scholarship Facility</h4>
-						<p class="feature-desc">The ultimate destination knowledge
-							We are committed to learn</p>
+						<h4 class="feature-title">Flexible learning</h4>
+						<p class="feature-desc">Flexible learning is the formal education method that focuses on increasing flexibility in the time, location, teaching, and other aspects of the learning.Flexible learning is a principle of practice in formal education.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="single-feature-box box-2">
 					<div class="feature-icon">
-						<img src="assets/images/home-three/feature-icon22.webp" alt="feature-icon">
+						<img src="{{ asset('assets/images/home-three/feature-icon22.webp') }}" alt="feature-icon">
 					</div>
 					<div class="feature-content">
-						<h4 class="feature-title">Book & Library Store</h4>
-						<p class="feature-desc">The ultimate destination knowledge
-							We are committed to learn</p>
+						<h4 class="feature-title">Regular Assessments</h4>
+						<p class="feature-desc">The regular assessment of students serves critical educational and life-learning functions. It focuses the efforts of educators and students on mastering important material.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-6 col-md-6">
 				<div class="single-feature-box box-3">
 					<div class="feature-icon">
-						<img src="assets/images/home-three/feature-icon23.webp" alt="feature-icon">
+						<img src="{{ asset('assets/images/home-three/feature-icon23.webp') }}" alt="feature-icon">
 					</div>
 					<div class="feature-content">
-						<h4 class="feature-title">Easily Online Learning</h4>
-						<p class="feature-desc">The ultimate destination knowledge
-							We are committed to learn</p>
+						<h4 class="feature-title">Cost-effective</h4>
+						<p class="feature-desc">Cost-effectiveness analysis is an evaluation tool Methods of cost-effectiveness analysis can assist the planner in evaluating educational programs. This concept should be broadened to include.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="feature-shape21">
-			<img src="assets/images/home-three/feature-shape21.webp" alt="shape">
+			<img src="{{ asset('assets/images/home-three/feature-shape21.webp') }}" alt="shape">
 		</div>
 	</div>
 </section>
@@ -182,7 +195,56 @@
 <!--==================================================-->
 
 
-
+<section class="py-5" style="background-color: #fef8f1;">
+	<div class="container text-center">
+	  <!-- Headings -->
+	  <h2 class="fw-bold mb-2" style="color: #f29c12;">Our Journey</h2>
+	  <h5 class="text-muted mb-3">From 2019 to Infinity</h5>
+	  <p class="mb-5">We've been growing steadily year by year. Here's a glance at our progress through the years — and where we're headed.</p>
+  
+	  <!-- Horizontal Timeline -->
+	  <div class="position-relative d-flex justify-content-between align-items-start flex-wrap border-top pt-4" style="border-color: #f29c12;">
+		<!-- Timeline Item -->
+		<div class="text-center flex-fill mx-2" style="min-width: 120px;">
+		  <div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;"></div>
+		  <h6 class="fw-bold" style="color: #f29c12;">2019</h6>
+		  <p class="small text-muted">Small team, big dreams.</p>
+		</div>
+  
+		<div class="text-center flex-fill mx-2" style="min-width: 120px;">
+		  <div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;"></div>
+		  <h6 class="fw-bold" style="color: #f29c12;">2020</h6>
+		  <p class="small text-muted">First major project.</p>
+		</div>
+  
+		<div class="text-center flex-fill mx-2" style="min-width: 120px;">
+		  <div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;"></div>
+		  <h6 class="fw-bold" style="color: #f29c12;">2021</h6>
+		  <p class="small text-muted">Team expansion.</p>
+		</div>
+  
+		<div class="text-center flex-fill mx-2" style="min-width: 120px;">
+		  <div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;"></div>
+		  <h6 class="fw-bold" style="color: #f29c12;">2022</h6>
+		  <p class="small text-muted">Nationwide reach.</p>
+		</div>
+  
+		<div class="text-center flex-fill mx-2" style="min-width: 120px;">
+		  <div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;"></div>
+		  <h6 class="fw-bold" style="color: #f29c12;">2023</h6>
+		  <p class="small text-muted">International growth.</p>
+		</div>
+  
+		<!-- Rocket End -->
+		<div class="text-center flex-fill mx-2" style="min-width: 120px;">
+		  <img src="https://cdn-icons-png.flaticon.com/512/3210/3210034.png" alt="Rocket" width="40" class="mb-2">
+		  <h6 class="fw-bold" style="color: #f29c12;">2024 & Beyond</h6>
+		  <p class="small text-muted">To the stars!</p>
+		</div>
+	  </div>
+	</div>
+  </section>
+  
 
 
 <!--==================================================-->
@@ -193,7 +255,7 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="course-design-thumb">
-					<img src="assets/images/home-one/offer-video.webp" alt="thumb">
+					<img src="{{ asset('assets/images/home-one/offer-video.webp') }}" alt="thumb">
 					<div class="course-video-icon">	
 						<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://www.youtube.com/watch?v=Wx48y_fOfiY"><i class="fa-classic fa-solid fa-play fa-fw"></i></a>
 					</div>
@@ -229,7 +291,7 @@
 						</div>
 					</div>
 					<div class="offer-thumb">
-						<img src="assets/images/home-one/offer-thumb.webp" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/offer-thumb.webp') }}" alt="thumb">
 					</div>
 				</div>
 			</div>
@@ -264,7 +326,7 @@
 			</div>
 		</div>
 		<div class="call-to-shape31">
-			<img src="assets/images/home-three/call-to-arrow2.webp" alt="shape">
+			<img src="{{ asset('assets/images/home-three/call-to-arrow2.webp') }}" alt="shape">
 		</div>
 	</div>
 </div>
@@ -285,7 +347,7 @@
 		<div class="row section-title-space">
 			<div class="col-lg-12 text-center">
 				<div class="section-sub-title three">
-					<h6><img src="assets/images/inner-img/sub-title2.webp" alt="icon">INSTRUCTOR</h6>
+					<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">INSTRUCTOR</h6>
 				</div>
 				<div class="section_title">
 					<h1>Introducing the Educators and</h1>
@@ -297,7 +359,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-1">
 					<div class="team-thumb">
-						<img src="assets/images/home-one/team-thumb1.webp" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/team-thumb1.webp') }}" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -333,7 +395,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-2">
 					<div class="team-thumb">
-						<img src="assets/images/home-one/team-thumb2.webp" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/team-thumb2.webp') }}" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -369,7 +431,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-3">
 					<div class="team-thumb">
-						<img src="assets/images/home-one/team-thumb3.webp" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/team-thumb3.webp') }}" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -405,7 +467,7 @@
 			<div class="col-xl-3 col-lg-6 col-md-6">
 				<div class="single-team-box box-4">
 					<div class="team-thumb">
-						<img src="assets/images/home-one/team-thumb4.webp" alt="thumb">
+						<img src="{{ asset('assets/images/home-one/team-thumb4.webp') }}" alt="thumb">
 						<div class="team-social-icon">
 							<div class="team-social">
 								<ul>
@@ -459,7 +521,7 @@
 		<div class="row section-title-space">
 			<div class="col-xl-4 col-lg-12">
 				<div class="section-sub-title three">
-					<h6><img src="assets/images/inner-img/sub-title2.webp" alt="icon">TESTIMONIALS</h6>
+					<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">TESTIMONIALS</h6>
 				</div>
 				<div class="section_title">
 					<h1>All Real Experiences</h1>
@@ -468,7 +530,7 @@
 				</div>
 				<div class="testi-review-box">
 					<div class="review-image">
-						<img src="assets/images/home-three/course-instructor.webp" alt="instructor">
+						<img src="{{ asset('assets/images/home-three/course-instructor.webp') }}" alt="instructor">
 					</div>
 					<div class="testi-review-content">
 						<h3 class="counter">130</h3>
@@ -476,7 +538,7 @@
 						<p>Reviews</p>
 					</div>
 					<div class="testi-inner-shape">
-						<img src="assets/images/inner-img/testi-shape-in.webp" alt="arrow">
+						<img src="{{ asset('assets/images/inner-img/testi-shape-in.webp') }}" alt="arrow">
 					</div>
 				</div>
 			</div>
@@ -487,7 +549,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="assets/images/home-three/testi-quote.webp" alt="quote">
+										<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Impresive Learning!</h3>
@@ -510,7 +572,7 @@
 									</div>
 									<div class="testi-autor-box">
 										<div class="testi-autor">
-											<img src="assets/images/home-three/testi-autor1.webp" alt="autor">
+											<img src="{{ asset('assets/images/home-three/testi-autor1.webp') }}" alt="autor">
 										</div>
 										<div class="testi-autor-content">
 											<h5 class="autor-title">Anjelina Watson</h5>
@@ -524,7 +586,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="assets/images/home-three/testi-quote.webp" alt="quote">
+										<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Great Instructor!</h3>
@@ -547,7 +609,7 @@
 									</div>
 									<div class="testi-autor-box">
 										<div class="testi-autor">
-											<img src="assets/images/home-one/testi-autor3.webp" alt="autor">
+											<img src="{{ asset('assets/images/home-one/testi-autor3.webp') }}" alt="autor">
 										</div>
 										<div class="testi-autor-content">
 											<h5 class="autor-title">David Alexon</h5>
@@ -561,7 +623,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="assets/images/home-three/testi-quote.webp" alt="quote">
+										<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Impresive Learning!</h3>
@@ -584,7 +646,7 @@
 									</div>
 									<div class="testi-autor-box">
 										<div class="testi-autor">
-											<img src="assets/images/home-three/testi-autor1.webp" alt="autor">
+											<img src="{{ asset('assets/images/home-three/testi-autor1.webp') }}" alt="autor">
 										</div>
 										<div class="testi-autor-content">
 											<h5 class="autor-title">Anjelina Watson</h5>
@@ -598,7 +660,7 @@
 							<div class="testi-box">
 								<div class="single-testi-box">
 									<div class="testi-quote">
-										<img src="assets/images/home-three/testi-quote.webp" alt="quote">
+										<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
 									</div>
 									<div class="testi-title">
 										<h3>Great Instructor!</h3>
@@ -621,7 +683,7 @@
 									</div>
 									<div class="testi-autor-box">
 										<div class="testi-autor">
-											<img src="assets/images/home-one/testi-autor3.webp" alt="autor">
+											<img src="assets/images/home-one/testi-autor3.webp') }}" alt="autor">
 										</div>
 										<div class="testi-autor-content">
 											<h5 class="autor-title">David Alexon</h5>

@@ -2349,10 +2349,10 @@ section.course-details-area.style-inner .event-info-btn a {
     padding: 35px 2px 35px 2px;
 }
 
-.header-menu ul li a::before {
+/* .header-menu ul li a::before {
     position: inherit;
     background:transparent;
-}
+} */
 
 .header-menu ul li a:hover {
     color: var(--titile-color);
@@ -3587,10 +3587,10 @@ section.course-details-area.style-inner .event-sidebar::before {
     padding: 35px 2px 35px 2px;
 }
 
-.header-menu ul li a::before {
+/* .header-menu ul li a::before {
     position: inherit;
     background:transparent;
-}
+} */
 
 .header-menu ul li a:hover {
     color: var(--titile-color);
@@ -5110,10 +5110,10 @@ section.course-details-area.style-inner .event-sidebar-wrapper {
     padding: 35px 2px 35px 2px;
 }
 
-.header-menu ul li a::before {
+/* .header-menu ul li a::before {
     position: inherit;
     background:transparent;
-}
+} */
 
 .header-menu ul li a:hover {
     color: var(--titile-color);
@@ -6793,10 +6793,10 @@ section.course-details-area.style-inner .event-sidebar-wrapper {
     padding: 35px 2px 35px 2px;
 }
 
-.header-menu ul li a::before {
+/* .header-menu ul li a::before {
     position: inherit;
     background:transparent;
-}
+} */
 
 .header-menu ul li a:hover {
     color: var(--titile-color);
@@ -8652,10 +8652,10 @@ section.course-details-area.style-inner .event-sidebar-wrapper {
     padding: 35px 2px 35px 2px;
 }
 
-.header-menu ul li a::before {
+/* .header-menu ul li a::before {
     position: inherit;
     background:transparent;
-}
+} */
 
 .header-menu ul li a:hover {
     color: var(--titile-color);

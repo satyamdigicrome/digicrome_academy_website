@@ -114,7 +114,7 @@
 							</div>
 							<div class="col-lg-6 col-md-6">
 								<div class="form-box">
-									<input type="text" name="name" placeholder="Select Subjects *">
+									<input type="text" name="name" placeholder="Select Subjects *"	>
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12">
