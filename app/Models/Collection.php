@@ -21,10 +21,16 @@ class Collection extends Model
         'us_position',
         'status',
         'user_id',
+        'image',
+        'slug',
     ];
     public function courses()
 {
     return $this->hasMany(Course::class);
 }
+public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
 }

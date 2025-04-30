@@ -56,6 +56,8 @@
         });
     }
 
+    
+
         // sticky
         var wind = $(window);
         var sticky = $('#sticky-header');

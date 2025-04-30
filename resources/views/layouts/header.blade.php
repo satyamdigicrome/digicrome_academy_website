@@ -60,13 +60,31 @@
 		<div class="row header-wrap align-items-center">
 			<div class="col-lg-2">
 				<div class="header-logo">
-					<a class="active_logo" href="/"><img src="assets/images/logo.webp" alt="logo"></a>
-					<a class="logo_two" href="/"><img src="assets/images/footer-logo.webp" alt="logo"></a>
+					<a class="active_logo" href="/"><img src="{{ asset('assets/images/logo.webp') }}" alt="logo"></a>
+					<a class="logo_two" href="/"><img src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-8">
 				<div class="header-menu">
 					<ul class="nav_scroll">
+						<li>
+							<a href="#"  style=" background-color: #f29c12; border-radius: 8px; padding: 3px 7px; color: #1a1447; display: flex; align-items: center; gap: 5px;">
+								<i class="bi bi-journal-bookmark-fill"></i> <!-- Icon before text -->
+								Courses
+								<i class="bi bi-chevron-down"></i>
+							</a>
+							<ul class="sub_menu">
+								<li><a href="{{ route('course') }}">Upcoming Courses</a></li>
+								@foreach($header_collections as $collection)
+									<li>
+										<a href="{{ route('course.category', $collection->slug) }}">
+											{{ $collection->name }}
+										</a>
+									</li>
+								@endforeach
+							</ul>
+						</li>
+						
 						<li><a href="/">Home</a>
 						</li>
 						<li><a href="{{ route('about') }}">About</a></li>
@@ -87,18 +105,7 @@
 								<li><a href="{{ route('contact') }}">Contact</a></li>
 							</ul>
 						</li> --}}
-						<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
-							<ul class="sub_menu">
-							<li><a href="{{ route('course') }}">Upcomming Courses</a></li>
-							@foreach($header_collections as $collection)
-									<li>
-										<a href="{{ route('course.category', $collection->id) }}">
-											{{ $collection->name }}
-										</a>
-									</li>
-								@endforeach
-							</ul>
-						</li>
+						
 						
 						{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>
 							<ul class="sub_menu">
@@ -127,6 +134,11 @@
 
 					</ul>
 				</li>
+				<li>
+					<div class="header-src-btn">
+					<div class="search-box-btn search-box-outer"><i class="fa-solid fa-magnifying-glass"></i></div>
+				</div>&nbsp;&nbsp;
+			</li>
 					</ul>				
 				</div>
 			</div>
@@ -163,7 +175,7 @@
 		<nav class="header-menu">
 			<div class="mobile-logo">
 				<a class="logo_img" href="/" title="educate">
-				    <img src="assets/images/footer-logo.webp" alt="logo">
+				    <img src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo">
 				</a>
 			  </div>
 			  <ul class="nav_scroll">
@@ -197,8 +209,14 @@
 				</li> --}}
 				<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
 					<ul class="sub_menu">
-						<li><a href="{{ route('course') }}">Courses</a></li>
-						{{-- <li><a href="{{ route('course_details') }}">Courses Details</a></li> --}}
+						<li><a href="{{ route('course') }}">Upcoming Courses</a></li>
+						@foreach($header_collections as $collection)
+							<li>
+								<a href="{{ route('course.category', $collection->slug) }}">
+									{{ $collection->name }}
+								</a>
+							</li>
+						@endforeach
 					</ul>
 				</li>
 				{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>
@@ -226,6 +244,7 @@
 						<li><a href="{{ route('career') }}">Career</a></li>
 					</ul>
 				</li>
+				
 			</ul>	
 		</nav>
 	</div>
@@ -266,7 +285,7 @@
 		<div class="cart_items_list">
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="assets/images/inner-img/rpost-thumb1.webp" alt="image_not_found">
+					<img src="{{ asset('assets/images/inner-img/rpost-thumb1.webp') }}" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">	
@@ -279,7 +298,7 @@
 
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="assets/images/inner-img/rpost-thumb2.webp" alt="image_not_found">
+					<img src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">
@@ -292,7 +311,7 @@
 
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="assets/images/inner-img/rpost-thumb3.webp" alt="image_not_found">
+					<img src="{{ asset('assets/images/inner-img/rpost-thumb3.webp') }}" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">
@@ -305,7 +324,7 @@
 
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="assets/images/inner-img/rpost-thumb2.webp" alt="image_not_found">
+					<img src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">
@@ -346,7 +365,7 @@
 				<div class="sidebar-info-contents">
 					<div class="content-inner">
 						<div class="nav-logo">
-							<a href="/"><img src="assets/images/home-one/footer-logo.webp" alt="logo"></a>
+							<a href="/"><img src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
 						</div>
 						<div class="content-box">
 							<h2>About Us</h2>

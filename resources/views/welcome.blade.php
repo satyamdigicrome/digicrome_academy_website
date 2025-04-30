@@ -1335,8 +1335,8 @@
     <div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
     <!-- <h1 class="section__title"  style="text-align: center; padding-bottom:40px;"><b>Unveiling <span class="yellow-bg"> Digicrome<img src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png" alt=""></span> Distinct Culture</b></h1> -->
         
-    </div>
-            <div class="">
+    </div> 
+             <div>
                 <div class="gall-inn">
                     <div class="col-sm-6 col-md-2">
                         <div class="gal-im animate animate__animated animate__slow" data-ani="animate__flipInX">

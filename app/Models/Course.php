@@ -30,11 +30,25 @@ class Course extends Model
         'meta_description',
         'has_faqs',
         'status',
-        'user_id'
+        'user_id',
+        'image',
     ];
     public function collection()
 {
     return $this->belongsTo(Collection::class);
 }
+public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function keyPoints()
+{
+    return $this->belongsToMany(KeyPoint::class);
+}
+public function faqs()
+{
+    return $this->hasMany(Faq::class);
+}
+
 
 }

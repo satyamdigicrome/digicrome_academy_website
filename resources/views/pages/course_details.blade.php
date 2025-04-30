@@ -10,7 +10,7 @@
 
 
 
-
+@if ($course->course_free == 1)
 <!--==================================================-->
 <!-- Start educate Breadcumb Area -->
 <!--==================================================-->
@@ -156,7 +156,7 @@
 @media (max-width: 767px) {
     .ds-banner-mobile {
         background-position: 5% center;
-        padding: 80% 0;
+        padding: 0px;
     }
 }
 
@@ -480,7 +480,7 @@ style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.
    <div class="row">
       <div class="col-lg-6 col-12">
          <div class="course-heading-banner col-flex">
-            <h2>Post Graduate Program In Data Science with Artificial Intelligence <br> <small>in collaboration with</small> </h2>
+            <h2>{{ $course->name }}<br> <small>in collaboration with</small> </h2>
                            <img src='https://digicrome.com/public/www/images/pgp/mslogo.png' class='ds-logo lazyload'> 
             <div class="black-box">
                <span class="yellow-text">Aligned with competency standards set by Microsoft & IBM.</span>
@@ -609,9 +609,9 @@ style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.
 <!--==================================================-->
 <!-- End educate Breadcumb Area -->
 <!--==================================================-->
+@else
 
-
-{{-- <div class="breadcumb-area two d-flex">
+<div class="breadcumb-area two d-flex">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-lg-12">
@@ -622,7 +622,7 @@ style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.
 					<ul>
 						<li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
 						<li><a href="course.html">course<span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-						<li>Business innovation and development</li>
+						<li>{{ $course->name }}</li>
 					</ul>
 				</div>
 			</div>
@@ -672,7 +672,242 @@ style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.
 			<img src="assets/images/inner-img/bread-dot.webp" alt="dot">
 		</div>
 	</div>
-</div> --}}
+</div>
+@endif
+
+<!--==================================================-->
+<!-- my coustom section start -->
+<!--==================================================-->
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">What Our Program Offers?</h2>
+    
+    <div class="bg-white rounded shadow p-4">
+        <div class="row">
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-chart-line" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 1
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-cogs" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 2
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-users" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 3
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-laptop-code" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 4
+                </h5>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-lightbulb" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 5
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-shield-alt" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 6
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-chart-pie" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 7
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-comments" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 8
+                </h5>
+            </div>
+        </div>
+		<div class="row">
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-lightbulb" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 5
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-shield-alt" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 6
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-chart-pie" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 7
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-comments" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 8
+                </h5>
+            </div>
+        </div>
+		<div class="row">
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-lightbulb" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 5
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-shield-alt" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 6
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-chart-pie" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 7
+                </h5>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <h5>
+                    <i class="fas fa-comments" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
+                    Feature 8
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<section class="py-5 bg-light">
+	<div class="container text-center">
+	  <h2 class="mb-5 display-5 fw-bold" style="color: #f29c12;">What Sets Digicrome Apart?</h2>
+  
+	  <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+  
+		  <!-- Slide 1 -->
+		  <div class="carousel-item active">
+			<div class="row">
+			  <!-- Card 1 -->
+			  <div class="col-md-3">
+				<div class="card shadow rounded-4 mb-4">
+				  <div class="card-body text-center">
+					<i class="bi bi-lightbulb display-5 text-primary mb-3"></i>
+					<h5 class="card-title">Innovative Learning</h5>
+					<p class="card-text small text-muted">Tech-driven learning experiences.</p>
+					<a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal" data-bs-target="#staticModal">Read More</a>
+				  </div>
+				</div>
+			  </div>
+  
+			  <!-- Card 2 -->
+			  <div class="col-md-3">
+				<div class="card shadow rounded-4 mb-4">
+				  <div class="card-body text-center">
+					<i class="bi bi-person-check display-5 text-success mb-3"></i>
+					<h5 class="card-title">Expert Mentors</h5>
+					<p class="card-text small text-muted">Guided by top professionals.</p>
+					<a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal" data-bs-target="#staticModal">Read More</a>
+				  </div>
+				</div>
+			  </div>
+  
+			  <!-- Card 3 -->
+			  <div class="col-md-3">
+				<div class="card shadow rounded-4 mb-4">
+				  <div class="card-body text-center">
+					<i class="bi bi-globe display-5 text-info mb-3"></i>
+					<h5 class="card-title">Global Certifications</h5>
+					<p class="card-text small text-muted">Recognized worldwide.</p>
+					<a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal" data-bs-target="#staticModal">Read More</a>
+				  </div>
+				</div>
+			  </div>
+  
+			  <!-- Card 4 -->
+			  <div class="col-md-3">
+				<div class="card shadow rounded-4 mb-4">
+				  <div class="card-body text-center">
+					<i class="bi bi-clock-history display-5 text-warning mb-3"></i>
+					<h5 class="card-title">Flexible Learning</h5>
+					<p class="card-text small text-muted">Learn at your pace.</p>
+					<a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal" data-bs-target="#staticModal">Read More</a>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+  
+		  <!-- Slide 2 -->
+		  <div class="carousel-item">
+			<div class="row">
+			  <!-- Card 5 -->
+			  <div class="col-md-3">
+				<div class="card shadow rounded-4 mb-4">
+				  <div class="card-body text-center">
+					<i class="bi bi-people display-5 text-danger mb-3"></i>
+					<h5 class="card-title">Community Support</h5>
+					<p class="card-text small text-muted">Engage with learners worldwide.</p>
+					<a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal" data-bs-target="#staticModal">Read More</a>
+				  </div>
+				</div>
+			  </div>
+  
+			  <!-- Add more cards here if needed -->
+			</div>
+		  </div>
+  
+		</div>
+  
+		<!-- Carousel controls -->
+		<button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+		  <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+		</button>
+	  </div>
+	</div>
+  </section>
+  
+  <!-- Single Bootstrap Modal -->
+  <div class="modal fade" id="staticModal" tabindex="-1" aria-labelledby="staticModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content rounded-4">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="staticModalLabel">More About Digicrome</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  <p>
+			Digicrome is redefining modern education through innovation, expert mentorship, and globally trusted certified programs. Whether you're looking for tech-driven content, real-world skill-building, or a flexible learning platform, Digicrome has it all.
+		  </p>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+<!--==================================================-->
+<!-- my coustom section end -->
+<!--==================================================-->
 
 
 <!--==================================================-->
@@ -706,138 +941,48 @@ style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.
 							</ul>
 							<div class="course-details-list-desc">
 								<p>Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
 									We are committed to transforming special education impact global</p>
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+									Educate the ultimate destination for knowledge seekers and educators alike distinctively restore installed
+									We are committed to transforming special education impact global
+
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- Start Accordion -->
-				<div class="accordion-title">
-					<h2>Course Curriculum</h2>
-				</div>
-				<div class="tab_container">
-					<div id="tab1" class="tab_content">
-						<ul class="accordion">
-							<li>
-								<a><span> What is the Best Extension for Marketing?</span><i class="bi bi-chevron-right"></i></a>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Introduction to Business Innovation</span>
-									<span class="duration">01:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Types of innovation (product, process, business model, etc.)</span>
-									<span class="duration">02:30:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Case studies of successful business innovations</span>
-									<span class="duration">03:40:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Brainstorming and ideation techniques</span>
-									<span class="duration">04:20:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Conducting market analysis and trend</span>
-									<span class="duration">05:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-							</li>
-							<li>
-								<a><span>Market Research & Identifying</span><i class="bi bi-chevron-right"></i></a>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Introduction to Business Innovation</span>
-									<span class="duration">01:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Types of innovation (product, process, business model, etc.)</span>
-									<span class="duration">02:30:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Case studies of successful business innovations</span>
-									<span class="duration">03:40:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Brainstorming and ideation techniques</span>
-									<span class="duration">04:20:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Conducting market analysis and trend</span>
-									<span class="duration">05:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-							</li>
-							<li>
-								<a><span> Business Model Innovation</span><i class="bi bi-chevron-right"></i></a>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Introduction to Business Innovation</span>
-									<span class="duration">01:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Types of innovation (product, process, business model, etc.)</span>
-									<span class="duration">02:30:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Case studies of successful business innovations</span>
-									<span class="duration">03:40:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Brainstorming and ideation techniques</span>
-									<span class="duration">04:20:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Conducting market analysis and trend</span>
-									<span class="duration">05:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-							</li>
-							<li>
-								<a><span>Digital Transformation & Emerging</span><i class="bi bi-chevron-right"></i></a>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Introduction to Business Innovation</span>
-									<span class="duration">01:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Types of innovation (product, process, business model, etc.)</span>
-									<span class="duration">02:30:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Case studies of successful business innovations</span>
-									<span class="duration">03:40:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Brainstorming and ideation techniques</span>
-									<span class="duration">04:20:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Conducting market analysis and trend</span>
-									<span class="duration">05:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-							</li>
-							<li>
-								<a><span>Funding & Scaling Innovation</span><i class="bi bi-chevron-right"></i></a>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Introduction to Business Innovation</span>
-									<span class="duration">01:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Types of innovation (product, process, business model, etc.)</span>
-									<span class="duration">02:30:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Case studies of successful business innovations</span>
-									<span class="duration">03:40:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Brainstorming and ideation techniques</span>
-									<span class="duration">04:20:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-								<p>
-									<span class="title"><i class="fa-solid fa-circle-play"></i>Conducting market analysis and trend</span>
-									<span class="duration">05:00:12<i class="fa-regular fa-eye"></i></span>
-								</p>
-							</li>
-						</ul>
-					</div>
-				</div>
+				
 				<!-- End Accordion -->
-				<div class="course-details-instructors">
+				{{-- <div class="course-details-instructors">
 					<div class="course-instructors-content">
 						<div class="instructors-thumb">
 							<a href="#"><img src="assets/images/inner-img/instructor-details-thumb.webp" alt="Instructor image"></a>
@@ -995,10 +1140,10 @@ style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.
 							</ul>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 			<div class="col-xxl-4 col-xl-4 col-lg-5 col-md-12">
-				<div class="event-sidebar-wrapper">
+				<div class="event-sidebar-wrapper" style="margin-top: 0px;">
 					<div class="event-sidebar">
 						<div class="event-sidebar-thumb">
 							<img src="assets/images/inner-img/course-thumb1.webp" alt="thumb">
@@ -1019,24 +1164,7 @@ style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.
 									</div>
 									<span class="value-dollar">$60</span>
 								</li>
-								<li>
-									<div class="label">
-										<i class="fa-solid fa-user"></i>Instructor
-									</div>
-									<span class="value">John D. Alexon</span>
-								</li>
-								<li>
-									<div class="label">
-										<i class="fa-solid fa-book"></i> Lessons
-									</div>
-									<span class="value">10 Lessons</span>
-								</li>
-								<li>
-									<div class="label">
-										<i class="fa-regular fa-circle-user"></i> Enrolled
-									</div>
-									<span class="value">120 Students</span>
-								</li>
+								
 								<li>
 									<div class="label">
 										<i class="fa-regular fa-circle-check"></i>Certifications
@@ -1071,6 +1199,503 @@ style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.
 		</div>
 	</div>
 </section>
+<section>
+<div class="container">
+	<div class="row">
+			<div class="container text-center">
+				<h2>Course Curriculum</h2>
+			</div>
+			<div class="tab_container">
+				<div id="tab1" class="tab_content">
+					<div class="accordion" id="marketingAccordion">
+<!-- Accordion Item 1 -->
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingOne">
+  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	What is the Best Extension for Marketing?
+  </button>
+</h2>
+<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#marketingAccordion">
+  <div class="accordion-body">
+	<p><i class="fa-solid fa-circle-play"></i> Introduction to Business Innovation <span class="duration">01:00:12 <i class="fa-regular fa-eye"></i></span></p>
+	<p><i class="fa-solid fa-circle-play"></i> Types of innovation (product, process, business model, etc.) <span class="duration">02:30:12 <i class="fa-regular fa-eye"></i></span></p>
+	<p><i class="fa-solid fa-circle-play"></i> Case studies of successful business innovations <span class="duration">03:40:12 <i class="fa-regular fa-eye"></i></span></p>
+	<p><i class="fa-solid fa-circle-play"></i> Brainstorming and ideation techniques <span class="duration">04:20:12 <i class="fa-regular fa-eye"></i></span></p>
+	<p><i class="fa-solid fa-circle-play"></i> Conducting market analysis and trend <span class="duration">05:00:12 <i class="fa-regular fa-eye"></i></span></p>
+  </div>
+</div>
+</div>
+
+<!-- Repeat for other accordion items -->
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingTwo">
+  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	Market Research & Identifying
+  </button>
+</h2>
+<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#marketingAccordion">
+  <div class="accordion-body">
+	<!-- Duplicate same list content or update accordingly -->
+	<p><i class="fa-solid fa-circle-play"></i> Introduction to Business Innovation <span class="duration">01:00:12 <i class="fa-regular fa-eye"></i></span></p>
+	<!-- ... other content ... -->
+  </div>
+</div>
+</div>
+
+<!-- Add other sections similarly -->
+</div>
+
+				</div>
+			</div>
+			<div class="arrow-wrapper">
+				<div class="arrow-body"></div>
+				<div class="arrow-head"></div>
+			  </div>
+			  
+<style>
+	.arrow-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.arrow-body {
+  width: 6px;
+  height: 60px;
+  background-color: #f29c12;
+}
+
+.arrow-head {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid #f29c12;
+}
+
+.feature-box {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 40px;
+}
+.feature-box p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.section-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  border-bottom: 3px solid #007bff;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.usces-img {
+  width: 100%;
+  max-width: 120px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tool-logo {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  background-color: #fff;
+}
+.section-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  border-bottom: 3px solid #007bff;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.stat-box {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+.case-box {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+}
+.case-box:hover {
+  transform: translateY(-6px);
+}
+.step-box {
+      background-color: #f8f9fa;
+      border: 2px solid #0d6efd;
+      border-radius: 15px;
+      padding: 20px;
+      min-width: 200px;
+      max-width: 220px;
+      text-align: center;
+      margin: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .step-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    }
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #0d6efd;
+    }
+
+
+	</style>
+	<div class="feature-box container">
+		<div class="row  my-5">
+  <div class="col-12">
+    <h2 class="section-heading">Internship Program</h2>
+  </div>
+</div>
+
+		<div class="row">
+		  <div class="col-md-6">
+			<p><i class="bi bi-check-circle-fill text-success"></i> Web Scraping from different websites</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Movement Detection with Computer vision</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Model Deployment in Cloud Services</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Data cleaning with Excel and Python</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Data Visualization with Power BI and Tableau</p>
+		  </div>
+		  <div class="col-md-6">
+			<p><i class="bi bi-check-circle-fill text-success"></i> Model Accuracy Optimization</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Smart Product Recommendations</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Voice Command NLP Models</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Autonomous Deep Learning Solutions</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> ML Database Integration</p>
+		  </div>
+		</div>
+	  </div>
+	  <div class="arrow-wrapper">
+		<div class="arrow-body"></div>
+		<div class="arrow-head"></div>
+	  </div>
+	  <div class="feature-box container">
+		<div class="row  my-5">
+  <div class="col-12">
+    <h2 class="section-heading">Soft Skills Program</h2>
+  </div>
+</div>
+
+		<div class="row">
+		  <div class="col-md-6">
+			<p><i class="bi bi-check-circle-fill text-success"></i> Web Scraping from different websites</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Movement Detection with Computer vision</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Model Deployment in Cloud Services</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Data cleaning with Excel and Python</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Data Visualization with Power BI and Tableau</p>
+		  </div>
+		  <div class="col-md-6">
+			<p><i class="bi bi-check-circle-fill text-success"></i> Model Accuracy Optimization</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Smart Product Recommendations</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Voice Command NLP Models</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> Autonomous Deep Learning Solutions</p>
+			<p><i class="bi bi-check-circle-fill text-success"></i> ML Database Integration</p>
+		  </div>
+		</div>
+
+	  </div>
+	  <div class="arrow-wrapper">
+		<div class="arrow-body"></div>
+		<div class="arrow-head"></div>
+	  </div>
+
+
+	  <div class="row justify-content-center my-4">
+		<div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
+		  <img src="https://digicrome.com/public/www/images/usces.png" class="usces-img" alt="Logo 1">
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
+		  <img src="https://digicrome.com/public/www/images/usces.png" class="usces-img" alt="Logo 2">
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
+		  <img src="https://digicrome.com/public/www/images/usces.png" class="usces-img" alt="Logo 3">
+		</div>
+	  </div>
+	  
+	  
+	  
+
+	</div>
+</div>
+</section>
+<section>
+	<div class="container my-5">
+		<h2 class="section-heading text-center mb-4">Languages and Tools Covered</h2>
+
+	  
+</section>
+<section>
+	<section class="my-5">
+		<div class="container">
+		  <div class="row text-center g-4">
+			<div class="col-md-3">
+			  <div class="stat-box p-4 rounded shadow-sm">
+				<h5 class="mb-2">Happy Students</h5>
+				<h2 class="text-primary fw-bold">20,000+</h2>
+			  </div>
+			</div>
+			<div class="col-md-3">
+			  <div class="stat-box p-4 rounded shadow-sm">
+				<h5 class="mb-2">Average Rating</h5>
+				<h2 class="text-warning fw-bold">4.8 ⭐</h2>
+			  </div>
+			</div>
+			<div class="col-md-3">
+			  <div class="stat-box p-4 rounded shadow-sm">
+				<h5 class="mb-2">Average Salary Hike</h5>
+				<h2 class="text-success fw-bold">80%</h2>
+			  </div>
+			</div>
+			<div class="col-md-3">
+			  <div class="stat-box p-4 rounded shadow-sm">
+				<h5 class="mb-2">Average Package</h5>
+				<h2 class="text-danger fw-bold">₹-- LPA</h2> <!-- Add value if available -->
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	  <section class="my-5">
+		<div class="container">
+		  <h2 class="text-center mb-4">Case Studies</h2>
+		  <div class="row g-4 text-center">
+			
+			<div class="col-md-3">
+			  <div class="case-box p-4 rounded shadow-sm h-100">
+				<h5 class="mb-3 fw-bold">Analyzing Student Performance</h5>
+				<p class="text-muted">Use data on student grades, attendance, and demographics to identify factors influencing academic success.</p>
+			  </div>
+			</div>
+			
+			<div class="col-md-3">
+			  <div class="case-box p-4 rounded shadow-sm h-100">
+				<h5 class="mb-3 fw-bold">Analyzing Social Media Sentiment</h5>
+				<p class="text-muted">Train a sentiment analysis model to classify posts as positive, negative, or neutral.</p>
+			  </div>
+			</div>
+			
+			<div class="col-md-3">
+			  <div class="case-box p-4 rounded shadow-sm h-100">
+				<h5 class="mb-3 fw-bold">Developing a Chatbot</h5>
+				<p class="text-muted">Build a simple chatbot using NLP techniques and rule-based decision making.</p>
+			  </div>
+			</div>
+			
+			<div class="col-md-3">
+			  <div class="case-box p-4 rounded shadow-sm h-100">
+				<h5 class="mb-3 fw-bold">Predicting Flight Delays</h5>
+				<p class="text-muted">Analyze airline and weather data to develop a model predicting flight delays.</p>
+			  </div>
+			</div>
+			
+		  </div>
+		</div>
+	  </section>
+	  
+	  
+</section>
+<section class="my-5">
+	<div class="container">
+	  <h2 class="text-center mb-4">Our Collaborations</h2>
+	  <div class="row justify-content-center text-center g-3">
+		<div class="col-6 col-sm-4 col-md-2">
+		  <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm" alt="Image 1">
+		</div>
+		<div class="col-6 col-sm-4 col-md-2">
+		  <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm" alt="Image 2">
+		</div>
+		<div class="col-6 col-sm-4 col-md-2">
+		  <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm" alt="Image 3">
+		</div>
+		<div class="col-6 col-sm-4 col-md-2">
+		  <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm" alt="Image 4">
+		</div>
+		<div class="col-6 col-sm-4 col-md-2">
+		  <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm" alt="Image 5">
+		</div>
+	  </div>
+	</div>
+  </section>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Application Process for Digicrome</h2>
+    <div class="d-flex justify-content-center flex-wrap">
+      <div class="step-box">
+        <div class="step-title">Career Consultation</div>
+        <p>Assess eligibility with our Career Counsellor.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-title">Personalized Guidance</div>
+        <p>Receive an acceptance letter if eligible.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-title">Easy Registration</div>
+        <p>Pay the booking amount to confirm your seat.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-title">Start Upskilling</div>
+        <p>Access the curriculum and begin your journey.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-title">Ongoing Support</div>
+        <p>Receive continuous mentorship and career assistance.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="session-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center">
+          <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png" alt="Live Session Image" class="session-img">
+        </div>
+        <div class="col-md-6 session-text">
+          <h2 class="session-title">Live Interactive Sessions</h2>
+          <p>
+            Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers. 
+            The live sessions will help deepen your understanding while keeping you connected throughout the program.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="session-section">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <div class="col-md-6 session-text">
+          <h2 class="session-title">Live Interactive Sessions</h2>
+          <p>
+            Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers. 
+            The live sessions will help deepen your understanding while keeping you connected throughout the program.
+          </p>
+        </div>
+		<div class="col-md-6 text-center">
+			<img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png" alt="Live Session Image" class="session-img">
+		  </div>
+      </div>
+    </div>
+  </section>
+  <section class="session-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center">
+          <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png" alt="Live Session Image" class="session-img">
+        </div>
+        <div class="col-md-6 session-text">
+          <h2 class="session-title">Live Interactive Sessions</h2>
+          <p>
+            Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers. 
+            The live sessions will help deepen your understanding while keeping you connected throughout the program.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="session-section">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <div class="col-md-6 session-text">
+          <h2 class="session-title">Live Interactive Sessions</h2>
+          <p>
+            Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers. 
+            The live sessions will help deepen your understanding while keeping you connected throughout the program.
+          </p>
+        </div>
+		<div class="col-md-6 text-center">
+			<img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png" alt="Live Session Image" class="session-img">
+		  </div>
+      </div>
+    </div>
+  </section>
+  <section class="session-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center">
+          <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png" alt="Live Session Image" class="session-img">
+        </div>
+        <div class="col-md-6 session-text">
+          <h2 class="session-title">Live Interactive Sessions</h2>
+          <p>
+            Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers. 
+            The live sessions will help deepen your understanding while keeping you connected throughout the program.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="session-section">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <div class="col-md-6 session-text">
+          <h2 class="session-title">Live Interactive Sessions</h2>
+          <p>
+            Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers. 
+            The live sessions will help deepen your understanding while keeping you connected throughout the program.
+          </p>
+        </div>
+		<div class="col-md-6 text-center">
+			<img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png" alt="Live Session Image" class="session-img">
+		  </div>
+      </div>
+    </div>
+  </section>
+  <section class="session-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center">
+          <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png" alt="Live Session Image" class="session-img">
+        </div>
+        <div class="col-md-6 session-text">
+          <h2 class="session-title">Live Interactive Sessions</h2>
+          <p>
+            Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers. 
+            The live sessions will help deepen your understanding while keeping you connected throughout the program.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="session-section">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <div class="col-md-6 session-text">
+          <h2 class="session-title">Live Interactive Sessions</h2>
+          <p>
+            Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers. 
+            The live sessions will help deepen your understanding while keeping you connected throughout the program.
+          </p>
+        </div>
+		<div class="col-md-6 text-center">
+			<img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png" alt="Live Session Image" class="session-img">
+		  </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
 <!--==================================================-->
 	<!--End educate-details-course-area -->
 <!--==================================================-->

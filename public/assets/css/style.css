@@ -349,7 +349,7 @@ a.logo_two {
 }
 
 .header-menu ul li a:hover{
-    color:var(--color-white);
+    color:#f29c12;
 }
 
 .header-menu ul li a:hover i{
