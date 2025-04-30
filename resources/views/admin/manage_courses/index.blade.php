@@ -51,7 +51,7 @@
                             </div>
                         </td>
                         <td>
-                            <form action="#" method="POST">
+                            <form action="{{route('course.destroy',$course->id)}}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this Logo?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn-outline-danger">

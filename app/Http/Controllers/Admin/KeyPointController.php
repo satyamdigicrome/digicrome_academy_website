@@ -36,7 +36,7 @@ class KeyPointController extends Controller
         KeyPoint::create([
             'image' => $imagePath,
             'name' => $request->name,
-            'course_id' => $courseId,
+            'course_id' => $courseId,   
             'user_id' => $userId,
         ]);
     }

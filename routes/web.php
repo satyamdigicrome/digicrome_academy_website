@@ -17,6 +17,14 @@ use App\Http\Controllers\Admin\AdminCourseController;
 use App\Http\Controllers\Admin\KeyPointController;
 use App\Http\Controllers\Admin\ApartController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\ExtraController;
+use App\Http\Controllers\Admin\CasestudyController;
+use App\Http\Controllers\Admin\PlacementController;
+use App\Http\Controllers\Admin\LogoController;
+
+
+
+
 
 
 
@@ -41,6 +49,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admin/manage-courses', [AdminCourseController::class, 'index'])->name('admin.manage_courses');
     Route::get('/admin/courses/create', [AdminCourseController::class, 'create'])->name('course.create');
     Route::post('/admin/courses', [AdminCourseController::class, 'store'])->name('course.store');
+    Route::delete('/admin/courses{id}', [AdminCourseController::class, 'destroy'])->name('course.destroy');
     Route::get('/courses/{id}/edit', [AdminCourseController::class, 'edit'])->name('courses.edit');
     Route::put('/courses/{id}', [AdminCourseController::class, 'update'])->name('courses.update');
     Route::get('/keypoints', [KeyPointController::class, 'index'])->name('keypoints.index');
@@ -52,6 +61,23 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admin/faqs', [FaqController::class, 'create'])->name('faqs.create');
     Route::post('/admin/faqs', [FaqController::class, 'store'])->name('faqs.store');
     Route::delete('/admin/faqs/{id}', [FaqController::class, 'destroy'])->name('faqs.destroy');
+    Route::get('/admin/extra', [ExtraController::class, 'index'])->name('extra.index');
+    Route::post('/admin/extra', [ExtraController::class, 'store'])->name('extra.store');
+    Route::delete('/admin/extra/{id}', [ExtraController::class, 'destroy'])->name('extra.destroy');
+    Route::get('/extras', [ExtraController::class, 'filter'])->name('extra.filter');
+    Route::get('/case-studies', [CasestudyController::class, 'index'])->name('casestudy.index');
+    Route::post('/case-studies', [CaseStudyController::class, 'store'])->name('casestudy.store');
+    Route::delete('/admin/caseStudy{id}', [CaseStudyController::class, 'destroy'])->name('caseStudy.destroy');
+    Route::get('/placement', [PlacementController::class, 'index'])->name('placement.index');
+    Route::post('/placement', [PlacementController::class, 'store'])->name('placement.store');
+    Route::delete('/admin/placement{id}', [PlacementController::class, 'destroy'])->name('placement.destroy');
+    Route::get('/logos', [LogoController::class, 'index'])->name('logos.index');
+    Route::post('/logos', [LogoController::class, 'store'])->name('logos.store');
+    Route::delete('/admin/logos{id}', [LogoController::class, 'destroy'])->name('logos.destroy');
+
+
+
+
     // Add routes for edit, update, and delete as needed
 });
 

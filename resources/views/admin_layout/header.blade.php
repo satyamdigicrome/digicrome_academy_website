@@ -42,10 +42,16 @@
                         <li><a class="dropdown-item" href="{{ route('keypoints.index') }}">Key Points Manage</a></li>
                         <li><a class="dropdown-item" href="{{ route('aparts.index') }}">Manage Aparts</a></li>
                         <li><a class="dropdown-item" href="{{ route('faqs.create') }}">Manage FAQ</a></li>
+                        <li><a class="dropdown-item" href="{{ route('extra.index') }}">Extra</a></li>
+                        <li><a class="dropdown-item" href="{{ route('casestudy.index') }}">Case Studys</a></li>
+
+
 
 
                     </ul>
                 </div>
+                <a class="nav-link text-dark px-3" href="{{route('placement.index')}}"><i class="bi bi-people"></i> Placement</a>
+                <a class="nav-link text-dark px-3" href="{{route('logos.index')}}"><i class="bi bi-people"></i> Logo</a>
 
                 <a class="nav-link text-dark px-3" href="#"><i class="bi bi-gear"></i> Settings</a>
             </nav>
