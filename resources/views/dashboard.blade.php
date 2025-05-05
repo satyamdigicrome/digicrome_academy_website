@@ -8,7 +8,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <h1 class="text-2xl font-bold mb-4">Welcome to Your Dashboard!</h1>
-                    <p class="mb-4">Here you can manage your courses and Website.</p>
+                    <p class="mb-4">Here you can manage your courses and Websites.</p>
 
                     <!-- Logout Button -->
                     <form method="POST" action="{{ route('logout') }}">
