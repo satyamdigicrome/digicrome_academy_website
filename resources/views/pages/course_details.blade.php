@@ -472,6 +472,17 @@
     }
 }
 }
+.skill-box {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .skill-box:hover {
+      transform: translateY(-5px);
+    }
 </style>
 <div class="nedesign">
 <section class="courses-details ds-banner ds-banner-mobile"
@@ -1441,6 +1452,44 @@ style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.
 		<h2 class="section-heading text-center mb-4">Languages and Tools Covered</h2>
 
 	  
+</section>
+<section>
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="skill-box">
+          <h5>Frontend Development</h5>
+          <p>Build beautiful and responsive user interfaces.</p>
+          <hr>
+          <p>Skill Needed: <a href="#">HTML, CSS, JavaScript</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="skill-box">
+          <h5>Backend Development</h5>
+          <p>Manage data and server-side logic efficiently.</p>
+          <hr>
+          <p>Skill Needed: <a href="#">PHP, Node.js, MySQL</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="skill-box">
+          <h5>UI/UX Design</h5>
+          <p>Create user-friendly and intuitive designs.</p>
+          <hr>
+          <p>Skill Needed: <a href="#">Figma, Adobe XD</a></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="skill-box">
+          <h5>Mobile App Development</h5>
+          <p>Develop apps for Android and iOS platforms.</p>
+          <hr>
+          <p>Skill Needed: <a href="#">Flutter, React Native</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <section>
 	<section class="my-5">
