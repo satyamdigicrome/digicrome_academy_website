@@ -43,7 +43,7 @@ public function user()
     }
     public function keypoints()
 {
-    return $this->hasMany(Keypoint::class);
+    return $this->hasMany(KeyPoint::class);
 }
 
 public function faqs()
