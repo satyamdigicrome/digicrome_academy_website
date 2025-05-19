@@ -47,7 +47,7 @@ class AdminCourseController extends Controller
             'meta_description' => 'nullable|string|max:255',
             'has_faqs' => 'required|boolean',
             'status' => 'required|boolean',
-            'course_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'course_image' => 'required|image|mimes:webp|max:2048',
         ]);
 
         // Handle the image upload
@@ -114,7 +114,7 @@ class AdminCourseController extends Controller
             'meta_description' => 'nullable|string',
             'has_faqs' => 'required|boolean',
             'status' => 'required|boolean',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Optional image upload
+            'image' => 'nullable|image|mimes:webp|max:2048', // Optional image upload
         ]);
 
         // Find the course by ID

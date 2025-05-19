@@ -19,14 +19,7 @@
         </div>
         
         
-        <!-- Initialize CKEditor -->
-        <script>
-            ClassicEditor
-                .create(document.querySelector('#paragraph'))
-                .catch(error => {
-                    console.error(error);
-                });
-        </script>
+       
         
 
         <div class="mb-3">
@@ -40,6 +33,20 @@
 
         <button type="submit" class="btn btn-primary">Add Case Study</button>
     </form>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#paragraph'))
+            .then(editor => {
+                // Sync CKEditor content back to the textarea before form submission
+                editor.model.document.on('change:data', () => {
+                    document.querySelector('#paragraph').value = editor.getData();
+                });
+            })
+            .catch(error => {
+                console.error('CKEditor error:', error);
+            });
+    </script>
+    
 </div>
 <div class="container mt-4">
     <h2 class="mb-4">Manage Case Studies</h2>

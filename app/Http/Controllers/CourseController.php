@@ -14,13 +14,12 @@ class CourseController extends Controller
     }
 
     public function course_details($slug)
-    {
-        // Fetch the course by slug
-        $course = Course::where('slug', $slug)->firstOrFail(); // This will throw a 404 if the course is not found
-        
-        // Return the view with the course data
-        return view('pages.course_details', compact('course'));
-    }
+{
+    $course = Course::with(['keypoints', 'aparts'])->where('slug', $slug)->firstOrFail();
+    return view('pages.course_details', compact('course'));
+}
+
+
     public function showByCategory($slug)
 {
     // Fetch the collection by slug

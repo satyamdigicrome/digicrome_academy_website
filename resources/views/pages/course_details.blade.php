@@ -544,8 +544,7 @@
     }
     </style>
     <div class="nedesign">
-    <section class="courses-details ds-banner ds-banner-mobile"
-    style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.jpg);">
+    <section class="courses-details ds-banner ds-banner-mobile" style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.jpg);">
     <div class="container-fluid">
       <div class="row">
       <div class="col-lg-6 col-12">
@@ -750,114 +749,32 @@
   <!-- my coustom section start -->
   <!--==================================================-->
   <div class="container my-5">
-    <h2 class="text-center mb-4">What Our Program Offers?</h2>
+    <h2 class="text-center mb-2" style="font-size: 2rem;">
+      What Our <span style="color: #f29c12;">Program</span> Offers?
+  </h2>
+  <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+      Discover the key features and benefits you’ll gain from joining our program.
+  </p>
+  
 
     <div class="bg-white rounded shadow p-4">
-    <div class="row">
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-chart-line" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 1
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-cogs" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 2
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-users" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 3
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-laptop-code" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 4
-      </h5>
-      </div>
+      @foreach($course->keypoints->chunk(4) as $chunk)
+    <div class="row mb-4"> <!-- gap between rows -->
+        @foreach($chunk as $keypoint)
+            <div class="col-md-3 mb-3">
+                <div class="d-flex align-items-center">
+                    <img src="{{ asset('storage/' . $keypoint->image) }}" 
+                         alt="{{ $keypoint->name }}" 
+                         style="width: 24px; height: 24px; object-fit: cover; margin-right: 10px;">
+                    <span>{{ $keypoint->name }}</span>
+                </div>
+            </div>
+        @endforeach
     </div>
-    <hr>
-    <div class="row">
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-lightbulb" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 5
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-shield-alt" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 6
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-chart-pie" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 7
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-comments" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 8
-      </h5>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-lightbulb" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 5
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-shield-alt" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 6
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-chart-pie" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 7
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-comments" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 8
-      </h5>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-lightbulb" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 5
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-shield-alt" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 6
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-chart-pie" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 7
-      </h5>
-      </div>
-      <div class="col-md-3 text-center mb-4">
-      <h5>
-        <i class="fas fa-comments" style="font-size: 30px; color: #f29c12; margin-right: 10px;"></i>
-        Feature 8
-      </h5>
-      </div>
-    </div>
+@endforeach
+
+    
+      
     </div>
   </div>
   <section class="py-5 bg-light">
@@ -869,80 +786,28 @@
 
       <!-- Slide 1 -->
       <div class="carousel-item active">
-        <div class="row">
-        <!-- Card 1 -->
-        <div class="col-md-3">
-          <div class="card shadow rounded-4 mb-4">
-          <div class="card-body text-center">
-            <i class="bi bi-lightbulb display-5 text-primary mb-3"></i>
-            <h5 class="card-title">Innovative Learning</h5>
-            <p class="card-text small text-muted">Tech-driven learning experiences.</p>
-            <a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal"
-            data-bs-target="#staticModal">Read More</a>
-          </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="col-md-3">
-          <div class="card shadow rounded-4 mb-4">
-          <div class="card-body text-center">
-            <i class="bi bi-person-check display-5 text-success mb-3"></i>
-            <h5 class="card-title">Expert Mentors</h5>
-            <p class="card-text small text-muted">Guided by top professionals.</p>
-            <a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal"
-            data-bs-target="#staticModal">Read More</a>
-          </div>
+        @foreach($course->aparts->chunk(4) as $chunkIndex => $apartChunk)
+        <div class="carousel-item {{ $chunkIndex == 0 ? 'active' : '' }}">
+          <div class="row">
+            @foreach($apartChunk as $apart)
+              <div class="col-md-3">
+                <div class="card shadow rounded-4 mb-4">
+                  <div class="card-body text-center">
+                    <img src="{{ asset('storage/' . $apart->image) }}" class="mb-3" style="height: 50px;">
+                    <h5 class="card-title">{{ $apart->heading }}</h5>
+                    <p class="card-text small text-muted">{{ $apart->tagline }}</p>
+                    <a href="#" class="d-block fw-semibold text-warning" data-bs-toggle="modal"
+                       data-bs-target="#staticModal" data-paragraph="{{ $apart->paragraph }}"
+                       data-heading="{{ $apart->heading }}">
+                       Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            @endforeach
           </div>
         </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-3">
-          <div class="card shadow rounded-4 mb-4">
-          <div class="card-body text-center">
-            <i class="bi bi-globe display-5 text-info mb-3"></i>
-            <h5 class="card-title">Global Certifications</h5>
-            <p class="card-text small text-muted">Recognized worldwide.</p>
-            <a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal"
-            data-bs-target="#staticModal">Read More</a>
-          </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-md-3">
-          <div class="card shadow rounded-4 mb-4">
-          <div class="card-body text-center">
-            <i class="bi bi-clock-history display-5 text-warning mb-3"></i>
-            <h5 class="card-title">Flexible Learning</h5>
-            <p class="card-text small text-muted">Learn at your pace.</p>
-            <a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal"
-            data-bs-target="#staticModal">Read More</a>
-          </div>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="row">
-        <!-- Card 5 -->
-        <div class="col-md-3">
-          <div class="card shadow rounded-4 mb-4">
-          <div class="card-body text-center">
-            <i class="bi bi-people display-5 text-danger mb-3"></i>
-            <h5 class="card-title">Community Support</h5>
-            <p class="card-text small text-muted">Engage with learners worldwide.</p>
-            <a href="#" class="d-block fw-semibold" style="color: #f29c12;" data-bs-toggle="modal"
-            data-bs-target="#staticModal">Read More</a>
-          </div>
-          </div>
-        </div>
-
-        <!-- Add more cards here if needed -->
-        </div>
-      </div>
+      @endforeach
 
       </div>
 
@@ -959,21 +824,31 @@
   <!-- Single Bootstrap Modal -->
   <div class="modal fade" id="staticModal" tabindex="-1" aria-labelledby="staticModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content rounded-4">
-      <div class="modal-header">
-      <h5 class="modal-title" id="staticModalLabel">More About Digicrome</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content rounded-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticModalLabel">More Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modalParagraph">Loading...</p>
+        </div>
       </div>
-      <div class="modal-body">
-      <p>
-        Digicrome is redefining modern education through innovation, expert mentorship, and globally trusted certified
-        programs. Whether you're looking for tech-driven content, real-world skill-building, or a flexible learning
-        platform, Digicrome has it all.
-      </p>
-      </div>
-    </div>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var modal = document.getElementById('staticModal');
+        modal.addEventListener('show.bs.modal', function (event) {
+            var trigger = event.relatedTarget;
+            var paragraph = trigger.getAttribute('data-paragraph');
+            var heading = trigger.getAttribute('data-heading');
+            
+            modal.querySelector('.modal-title').textContent = heading;
+            modal.querySelector('#modalParagraph').innerHTML = paragraph;
+        });
+    });
+    </script>
+      
   <!--==================================================-->
   <!-- my coustom section end -->
   <!--==================================================-->
@@ -988,88 +863,7 @@
         <div class="course-details-heading">
         <h2 class="course-details-title">Course Overview</h2>
         </div>
-        <div class="course-details-content">
-        <p class="description">Educate the ultimate destination for knowledge seekers and educators alike
-          distinctively restore installed
-          We are committed to transforming special education impact global channels base information with user
-          without standards compliant systems base information with</p>
-        <p class="description-2">Quickly deploy performance based architectures vis-a-vis business bandwidth.
-          Professionally disseminate
-          best-of-breed customer service and virtual catalysts for change. Proactively visualize professional
-          paradigms
-          for robust imperatives. Seamlessly matrix robust infrastructures for premium innovation</p>
-        </div>
-        <div class="course-details-content">
-        <h3 class="course-details-content-title">What you’ll Learn?</h3>
-        <div class="course-post-details-list">
-          <ul>
-          <li><img src="assets/images/inner-img/learn-icon.webp" alt="icon">Covering essential topics like
-            entrepreneurship, marketing</li>
-          <li><img src="assets/images/inner-img/learn-icon.webp" alt="icon">Regular live sessions with industry
-            professionals for real-time learning.</li>
-          <li><img src="assets/images/inner-img/learn-icon.webp" alt="icon">Interactive tests to reinforce
-            knowledge and track progress.</li>
-          <li><img src="assets/images/inner-img/learn-icon.webp" alt="icon">Learning from successful business
-            models and failures.</li>
-          <li><img src="assets/images/inner-img/learn-icon.webp" alt="icon">A recognized certificate to boost
-            credibility.</li>
-          </ul>
-          <div class="course-details-list-desc">
-          <p>Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-            installed
-            We are committed to transforming special education impact global
-            Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-            installed
-            We are committed to transforming special education impact global
-            Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-            installed
-            We are committed to transforming special education impact global</p>
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-          Educate the ultimate destination for knowledge seekers and educators alike distinctively restore
-          installed
-          We are committed to transforming special education impact global
-
-          </div>
-        </div>
-        </div>
+        {!! $course->description !!}
       </div>
       <!-- Start Accordion -->
 
@@ -1242,7 +1036,7 @@
           <img src="assets/images/inner-img/course-thumb1.webp" alt="thumb">
           <div class="course-video-icon">
           <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
-            href="https://www.youtube.com/watch?v=Wx48y_fOfiY"><i
+            href="{{ asset('storage/' . $course->image) }}"><i
             class="fa-classic fa-solid fa-play fa-fw"></i></a>
           </div>
         </div>
@@ -1257,7 +1051,19 @@
             <div class="label">
             <i class="fa-solid fa-dollar-sign"></i>Price
             </div>
-            <span class="value-dollar">$60</span>
+            <span class="value-dollar"> {{ $course->price }}₹</span>
+          </li>
+          <li>
+            <div class="label">
+            <i class="fa-solid fa-dollar-sign"></i>US Price
+            </div>
+            <span class="value-dollar">${{ $course->us_price }}</span>
+          </li>
+          <li>
+            <div class="label">
+            <i class="fa-solid fa-dollar-sign"></i>Dubai Price
+            </div>
+            <span class="value-dollar">{{ $course->dubai_price }}AED</span>
           </li>
 
           <li>

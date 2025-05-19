@@ -41,14 +41,21 @@ public function user()
     {
         return $this->belongsTo(User::class);
     }
-    public function keyPoints()
+    public function keypoints()
 {
-    return $this->belongsToMany(KeyPoint::class);
+    return $this->hasMany(Keypoint::class);
 }
+
 public function faqs()
 {
     return $this->hasMany(Faq::class);
 }
+public function aparts()
+{
+    return $this->hasMany(Apart::class);
+}
+
+
 
 
 }

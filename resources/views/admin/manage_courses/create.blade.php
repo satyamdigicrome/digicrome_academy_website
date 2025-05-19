@@ -181,18 +181,26 @@
             <textarea class="form-control" id="description" name="description" required></textarea>
         </div>
         
-        <!-- Initialize CKEditor -->
-        <script>
-            ClassicEditor
-                .create(document.querySelector('#description'))
-                .catch(error => {
-                    console.error(error);
-                });
-        </script>
+        
+        
         
 
         <button type="submit" class="btn btn-primary">Add Course</button>
         <a href="{{ route('admin.manage_courses') }}" class="btn btn-secondary">Cancel</a>
     </form>
+    <!-- Initialize CKEditor -->
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#description'))
+            .then(editor => {
+                // Sync content to the textarea on change
+                editor.model.document.on('change:data', () => {
+                    document.querySelector('#description').value = editor.getData();
+                });
+            })
+            .catch(error => {
+                console.error('CKEditor error:', error);
+            });
+    </script>
 </div>
 @endsection
