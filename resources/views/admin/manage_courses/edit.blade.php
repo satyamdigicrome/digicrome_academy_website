@@ -199,11 +199,24 @@
             </div>
         </div>
         <div class="row">
-            <div class="form-group">
+            <div class="form-group col-12">
                 <label for="description">Course Description</label>
                 <textarea class="form-control" id="description" name="description" required>{{ $course->description }}</textarea>
             </div>
         </div>
+        
+        <!-- Include CKEditor CDN -->
+       
+        
+        <!-- Initialize CKEditor -->
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#description'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+        
     
         <button type="submit" class="btn btn-primary">Update Course</button>
     </form>

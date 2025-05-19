@@ -41,6 +41,16 @@
                     <label for="paragraph" class="form-label">Paragraph</label>
                     <textarea class="form-control" name="paragraph" id="paragraph" rows="4" placeholder="Enter paragraph" required></textarea>
                 </div>
+                                
+                <!-- Initialize CKEditor -->
+                <script>
+                    ClassicEditor
+                        .create(document.querySelector('#paragraph'))
+                        .catch(error => {
+                            console.error(error);
+                        });
+                </script>
+                
 
                 <div class="mb-3">
                     <label for="course_id" class="form-label">Select Course</label>

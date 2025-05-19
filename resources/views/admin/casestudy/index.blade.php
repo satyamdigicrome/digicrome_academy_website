@@ -17,6 +17,17 @@
             <label for="paragraph" class="form-label">Paragraph</label>
             <textarea class="form-control" id="paragraph" name="paragraph" rows="3" required></textarea>
         </div>
+        
+        
+        <!-- Initialize CKEditor -->
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#paragraph'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+        
 
         <div class="mb-3">
             <label for="courses" class="form-label">Select Courses</label>

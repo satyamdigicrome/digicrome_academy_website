@@ -180,13 +180,19 @@
             <label for="description">Description</label>
             <textarea class="form-control" id="description" name="description" required></textarea>
         </div>
+        
+        <!-- Initialize CKEditor -->
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#description'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+        
 
         <button type="submit" class="btn btn-primary">Add Course</button>
         <a href="{{ route('admin.manage_courses') }}" class="btn btn-secondary">Cancel</a>
     </form>
-    <script>
-        // Initialize CKEditor for the description field
-        CKEDITOR.replace('description');
-    </script>
 </div>
 @endsection
