@@ -1399,38 +1399,16 @@
     <div class="container">
       <h2 class="text-center mb-4">Case Studies</h2>
       <div class="row g-4 text-center">
-
-      <div class="col-md-3">
-        <div class="case-box p-4 rounded shadow-sm h-100">
-        <h5 class="mb-3 fw-bold">Analyzing Student Performance</h5>
-        <p class="text-muted">Use data on student grades, attendance, and demographics to identify factors
-          influencing academic success.</p>
-        </div>
+        @foreach($course->caseStudies as $case)
+          <div class="col-md-3">
+            <div class="case-box p-4 rounded shadow-sm h-100">
+              <h5 class="mb-3 fw-bold">{{ $case->heading }}</h5>
+              <p class="text-muted">{!! $case->paragraph !!}</p>
+            </div>
+          </div>
+        @endforeach
       </div>
-
-      <div class="col-md-3">
-        <div class="case-box p-4 rounded shadow-sm h-100">
-        <h5 class="mb-3 fw-bold">Analyzing Social Media Sentiment</h5>
-        <p class="text-muted">Train a sentiment analysis model to classify posts as positive, negative, or neutral.
-        </p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="case-box p-4 rounded shadow-sm h-100">
-        <h5 class="mb-3 fw-bold">Developing a Chatbot</h5>
-        <p class="text-muted">Build a simple chatbot using NLP techniques and rule-based decision making.</p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="case-box p-4 rounded shadow-sm h-100">
-        <h5 class="mb-3 fw-bold">Predicting Flight Delays</h5>
-        <p class="text-muted">Analyze airline and weather data to develop a model predicting flight delays.</p>
-        </div>
-      </div>
-
-      </div>
+      
     </div>
     </section>
 

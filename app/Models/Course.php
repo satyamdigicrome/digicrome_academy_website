@@ -70,6 +70,11 @@ public function projects()
 {
     return $this->hasMany(Project::class);
 }
+public function caseStudies()
+{
+    return $this->hasMany(CaseStudy::class);
+}
+
 
 
 

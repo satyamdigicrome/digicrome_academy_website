@@ -21,11 +21,13 @@ class CourseController extends Controller
         'faqs',
         'extraPartOne',
         'extraPartTwo',
-        'projects'
+        'projects',
+        'caseStudies' // add this line
     ])->where('slug', $slug)->firstOrFail();
 
     return view('pages.course_details', compact('course'));
 }
+
 
 
 
