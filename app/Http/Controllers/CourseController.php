@@ -15,9 +15,20 @@ class CourseController extends Controller
 
     public function course_details($slug)
 {
-    $course = Course::with(['keypoints', 'aparts'])->where('slug', $slug)->firstOrFail();
+    $course = Course::with([
+        'keypoints',
+        'aparts',
+        'faqs',
+        'extraPartOne',
+        'extraPartTwo',
+        'projects'
+    ])->where('slug', $slug)->firstOrFail();
+
     return view('pages.course_details', compact('course'));
 }
+
+
+
 
 
     public function showByCategory($slug)

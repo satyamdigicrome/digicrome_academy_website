@@ -793,7 +793,7 @@
               <div class="col-md-3">
                 <div class="card shadow rounded-4 mb-4">
                   <div class="card-body text-center">
-                    <img src="{{ asset('storage/' . $apart->image) }}" class="mb-3" style="height: 50px;">
+                    <img src="{{ asset('storage/' . $apart->image) }}" class="mb-3 mx-auto d-block" style="height: 50px;">
                     <h5 class="card-title">{{ $apart->heading }}</h5>
                     <p class="card-text small text-muted">{{ $apart->tagline }}</p>
                     <a href="#" class="d-block fw-semibold text-warning" data-bs-toggle="modal"
@@ -1033,7 +1033,7 @@
       <div class="event-sidebar-wrapper" style="margin-top: 0px;">
         <div class="event-sidebar">
         <div class="event-sidebar-thumb">
-          <img src="assets/images/inner-img/course-thumb1.webp" alt="thumb">
+          <img src="{{ asset('storage/' . $course->image) }}" alt="thumb">
           <div class="course-video-icon">
           <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
             href="{{ asset('storage/' . $course->image) }}"><i
@@ -1109,49 +1109,32 @@
       <div class="tab_container">
       <div id="tab1" class="tab_content">
         <div class="accordion" id="marketingAccordion">
-        <!-- Accordion Item 1 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-            aria-expanded="true" aria-controls="collapseOne">
-            What is the Best Extension for Marketing?
-          </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-          data-bs-parent="#marketingAccordion">
-          <div class="accordion-body">
-            <p><i class="fa-solid fa-circle-play"></i> Introduction to Business Innovation <span
-              class="duration">01:00:12 <i class="fa-regular fa-eye"></i></span></p>
-            <p><i class="fa-solid fa-circle-play"></i> Types of innovation (product, process, business model,
-            etc.) <span class="duration">02:30:12 <i class="fa-regular fa-eye"></i></span></p>
-            <p><i class="fa-solid fa-circle-play"></i> Case studies of successful business innovations <span
-              class="duration">03:40:12 <i class="fa-regular fa-eye"></i></span></p>
-            <p><i class="fa-solid fa-circle-play"></i> Brainstorming and ideation techniques <span
-              class="duration">04:20:12 <i class="fa-regular fa-eye"></i></span></p>
-            <p><i class="fa-solid fa-circle-play"></i> Conducting market analysis and trend <span
-              class="duration">05:00:12 <i class="fa-regular fa-eye"></i></span></p>
+          @if($course->faqs->count())
+          <div class="accordion my-4" id="faqAccordion">
+              @foreach($course->faqs as $index => $faq)
+              <div class="accordion-item border border-warning-subtle">
+                  <h2 class="accordion-header" id="heading{{ $index }}">
+                      <button class="accordion-button {{ $index !== 0 ? 'collapsed' : '' }}" type="button"
+                          data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}"
+                          aria-expanded="{{ $index === 0 ? 'true' : 'false' }}" aria-controls="collapse{{ $index }}"
+                          style="color: #f29c12;">
+                          {{ $faq->question }}
+                      </button>
+                  </h2>
+                  <div id="collapse{{ $index }}"
+                      class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
+                      aria-labelledby="heading{{ $index }}" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                          {!! nl2br(e($faq->answer)) !!}
+                      </div>
+                  </div>
+              </div>
+              @endforeach
           </div>
-          </div>
-        </div>
-
-        <!-- Repeat for other accordion items -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Market Research & Identifying
-          </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-          data-bs-parent="#marketingAccordion">
-          <div class="accordion-body">
-            <!-- Duplicate same list content or update accordingly -->
-            <p><i class="fa-solid fa-circle-play"></i> Introduction to Business Innovation <span
-              class="duration">01:00:12 <i class="fa-regular fa-eye"></i></span></p>
-            <!-- ... other content ... -->
-          </div>
-          </div>
-        </div>
+          @else
+          <p class="text-muted">No FAQs available for this course.</p>
+          @endif
+          
 
         <!-- Add other sections similarly -->
         </div>
@@ -1285,22 +1268,22 @@
         </div>
       </div>
 
-      <div class="row">
+      @if($course->extraPartOne->count())
+<div class="row mb-4">
+    @foreach($course->extraPartOne->chunk(ceil($course->extraPartOne->count() / 2)) as $chunk)
         <div class="col-md-6">
-        <p><i class="bi bi-check-circle-fill text-success"></i> Web Scraping from different websites</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Movement Detection with Computer vision</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Model Deployment in Cloud Services</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Data cleaning with Excel and Python</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Data Visualization with Power BI and Tableau</p>
+            @foreach($chunk as $item)
+                <p>
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    {{ $item->heading }}
+                </p>
+            @endforeach
         </div>
-        <div class="col-md-6">
-        <p><i class="bi bi-check-circle-fill text-success"></i> Model Accuracy Optimization</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Smart Product Recommendations</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Voice Command NLP Models</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Autonomous Deep Learning Solutions</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> ML Database Integration</p>
-        </div>
-      </div>
+    @endforeach
+</div>
+@endif
+
+
       </div>
       <div class="arrow-wrapper">
       <div class="arrow-body"></div>
@@ -1313,22 +1296,24 @@
         </div>
       </div>
 
-      <div class="row">
+      @if($course->extraPartTwo->count())
+<div class="row mt-4">
+    <div class="col-12 mb-2">
+        <h5 class="text-warning fw-bold">Additional Highlights</h5>
+    </div>
+    @foreach($course->extraPartTwo->chunk(ceil($course->extraPartTwo->count() / 2)) as $chunk)
         <div class="col-md-6">
-        <p><i class="bi bi-check-circle-fill text-success"></i> Web Scraping from different websites</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Movement Detection with Computer vision</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Model Deployment in Cloud Services</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Data cleaning with Excel and Python</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Data Visualization with Power BI and Tableau</p>
+            @foreach($chunk as $item)
+                <p>
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    {{ $item->heading }}
+                </p>
+            @endforeach
         </div>
-        <div class="col-md-6">
-        <p><i class="bi bi-check-circle-fill text-success"></i> Model Accuracy Optimization</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Smart Product Recommendations</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Voice Command NLP Models</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> Autonomous Deep Learning Solutions</p>
-        <p><i class="bi bi-check-circle-fill text-success"></i> ML Database Integration</p>
-        </div>
-      </div>
+    @endforeach
+</div>
+@endif
+
 
       </div>
       <div class="arrow-wrapper">
@@ -1363,40 +1348,20 @@
   </section>
   <section>
     <div class="container my-5">
-    <div class="row g-4">
-      <div class="col-md-3">
-      <div class="skill-box">
-        <h5>Frontend Development</h5>
-        <p>Build beautiful and responsive user interfaces.</p>
-        <hr>
-        <p>Skill Needed: <a href="#">HTML, CSS, JavaScript</a></p>
-      </div>
-      </div>
-      <div class="col-md-3">
-      <div class="skill-box">
-        <h5>Backend Development</h5>
-        <p>Manage data and server-side logic efficiently.</p>
-        <hr>
-        <p>Skill Needed: <a href="#">PHP, Node.js, MySQL</a></p>
-      </div>
-      </div>
-      <div class="col-md-3">
-      <div class="skill-box">
-        <h5>UI/UX Design</h5>
-        <p>Create user-friendly and intuitive designs.</p>
-        <hr>
-        <p>Skill Needed: <a href="#">Figma, Adobe XD</a></p>
-      </div>
-      </div>
-      <div class="col-md-3">
-      <div class="skill-box">
-        <h5>Mobile App Development</h5>
-        <p>Develop apps for Android and iOS platforms.</p>
-        <hr>
-        <p>Skill Needed: <a href="#">Flutter, React Native</a></p>
-      </div>
-      </div>
-    </div>
+      @if ($course->projects->count())
+      <div class="row g-4">
+          @foreach ($course->projects as $project)
+          <div class="col-md-3">
+              <div class="skill-box">
+                  <h5>{{ $project->heading }}</h5>
+                  <p>{!! $project->paragraph !!}</p>
+                  <hr>
+              </div>
+          </div>
+          @endforeach
+      </div>  
+      @endif
+      
     </div>
   </section>
   <section>

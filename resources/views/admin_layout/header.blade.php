@@ -44,6 +44,8 @@
                         <li><a class="dropdown-item" href="{{ route('faqs.create') }}">Manage FAQ</a></li>
                         <li><a class="dropdown-item" href="{{ route('extra.index') }}">Extra</a></li>
                         <li><a class="dropdown-item" href="{{ route('casestudy.index') }}">Case Studys</a></li>
+                        <li><a class="dropdown-item" href="{{ route('project.index') }}">Projects</a></li>
+
 
 
 

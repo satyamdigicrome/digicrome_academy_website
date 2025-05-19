@@ -21,6 +21,8 @@ use App\Http\Controllers\Admin\ExtraController;
 use App\Http\Controllers\Admin\CasestudyController;
 use App\Http\Controllers\Admin\PlacementController;
 use App\Http\Controllers\Admin\LogoController;
+use App\Http\Controllers\Admin\ProjectController;
+
 
 
 
@@ -74,6 +76,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/logos', [LogoController::class, 'index'])->name('logos.index');
     Route::post('/logos', [LogoController::class, 'store'])->name('logos.store');
     Route::delete('/admin/logos{id}', [LogoController::class, 'destroy'])->name('logos.destroy');
+    Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
+    Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
+    Route::delete('/project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
 
 
 

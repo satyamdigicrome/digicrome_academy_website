@@ -55,6 +55,23 @@ public function aparts()
     return $this->hasMany(Apart::class);
 }
 
+// For part 1
+public function extraPartOne()
+{
+    return $this->hasMany(Extra::class)->where('part', 1);
+}
+
+// For part 2
+public function extraPartTwo()
+{
+    return $this->hasMany(Extra::class)->where('part', 2);
+}
+public function projects()
+{
+    return $this->hasMany(Project::class);
+}
+
+
 
 
 
