@@ -43,6 +43,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" type="text/css" media="all">
 
     <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all">	
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
