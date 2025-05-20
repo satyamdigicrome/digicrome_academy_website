@@ -84,13 +84,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/keyfeature', [KeyFeatureController::class, 'index'])->name('keyfeature.index');
     Route::post('/keyfeature', [KeyFeatureController::class, 'store'])->name('keyfeature.store');
     Route::delete('/keyfeature/{keyfeature}', [KeyFeatureController::class, 'destroy'])->name('keyfeature.destroy');
-    Route::get('/search-courses', [CourseController::class, 'searchCourses'])->name('search.courses');
 
 
 
 
     // Add routes for edit, update, and delete as needed
 });
+Route::get('/search-courses', [CourseController::class, 'searchCourses'])->name('search.courses');
 
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
