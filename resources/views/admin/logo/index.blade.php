@@ -26,6 +26,7 @@
                 <option value="certification_partner">Certification Partner</option>
                 <option value="awords">Awards</option>
                 <option value="companies">Companies</option>
+                <option value="tools">Tools</option>
                 <option value="gallery">Gallery</option>
                 <option value="certificate">Certificate</option>
             </select>

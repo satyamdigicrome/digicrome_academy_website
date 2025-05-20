@@ -82,7 +82,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
     Route::delete('/project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
     Route::get('/keyfeature', [KeyFeatureController::class, 'index'])->name('keyfeature.index');
-    Route::post('/aparts', [KeyFeatureController::class, 'store'])->name('keyfeature.store');
+    Route::post('/keyfeature', [KeyFeatureController::class, 'store'])->name('keyfeature.store');
     Route::delete('/keyfeature/{keyfeature}', [KeyFeatureController::class, 'destroy'])->name('keyfeature.destroy');
     Route::get('/search-courses', [CourseController::class, 'searchCourses'])->name('search.courses');
 
