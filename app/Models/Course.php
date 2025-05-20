@@ -74,6 +74,11 @@ public function caseStudies()
 {
     return $this->hasMany(CaseStudy::class);
 }
+public function keyFeatures()
+{
+    return $this->hasMany(KeyFeature::class);
+}
+
 
 
 

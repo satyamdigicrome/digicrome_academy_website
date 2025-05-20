@@ -24,7 +24,8 @@ class CourseController extends Controller
         'extraPartOne',
         'extraPartTwo',
         'projects',
-        'caseStudies'
+        'caseStudies',
+        'keyFeatures'
     ])->where('slug', $slug)->firstOrFail();
 
     // Get all placements (not filtered by course)

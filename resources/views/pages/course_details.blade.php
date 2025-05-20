@@ -1493,6 +1493,16 @@
       .placement-overlay small {
         font-size: 12px;
       }
+      .session-img {
+    max-width: 250px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: block;
+}
+
+
     </style>
     
     <div class="row justify-content-center text-center g-3">
@@ -1541,146 +1551,34 @@
     </div>
     </div>
   </div>
+  @foreach ($course->keyFeatures as $index => $feature)
   <section class="session-section">
     <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center">
-      <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png"
-        alt="Live Session Image" class="session-img">
+      <div class="row align-items-center">
+        @if ($index % 2 == 0)
+          {{-- Image Left, Text Right --}}
+          <div class="col-md-6 text-center">
+            <img src="{{ asset('storage/' . $feature->image) }}" alt="{{ $feature->heading }}" class="session-img">
+          </div>
+          <div class="col-md-6 session-text">
+            <h2 class="session-title">{{ $feature->heading }}</h2>
+            <p>{!! $feature->paragraph !!}</p>
+          </div>
+        @else
+          {{-- Text Left, Image Right --}}
+          <div class="col-md-6 session-text">
+            <h2 class="session-title">{{ $feature->heading }}</h2>
+            <p>{!! $feature->paragraph !!}</p>
+          </div>
+          <div class="col-md-6 text-center">
+            <img src="{{ asset('storage/' . $feature->image) }}" alt="{{ $feature->heading }}" class="session-img">
+          </div>
+        @endif
       </div>
-      <div class="col-md-6 session-text">
-      <h2 class="session-title">Live Interactive Sessions</h2>
-      <p>
-        Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers.
-        The live sessions will help deepen your understanding while keeping you connected throughout the program.
-      </p>
-      </div>
-    </div>
     </div>
   </section>
-  <section class="session-section">
-    <div class="container">
-    <div class="row align-items-center">
+@endforeach
 
-      <div class="col-md-6 session-text">
-      <h2 class="session-title">Live Interactive Sessions</h2>
-      <p>
-        Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers.
-        The live sessions will help deepen your understanding while keeping you connected throughout the program.
-      </p>
-      </div>
-      <div class="col-md-6 text-center">
-      <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png"
-        alt="Live Session Image" class="session-img">
-      </div>
-    </div>
-    </div>
-  </section>
-  <section class="session-section">
-    <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center">
-      <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png"
-        alt="Live Session Image" class="session-img">
-      </div>
-      <div class="col-md-6 session-text">
-      <h2 class="session-title">Live Interactive Sessions</h2>
-      <p>
-        Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers.
-        The live sessions will help deepen your understanding while keeping you connected throughout the program.
-      </p>
-      </div>
-    </div>
-    </div>
-  </section>
-  <section class="session-section">
-    <div class="container">
-    <div class="row align-items-center">
-
-      <div class="col-md-6 session-text">
-      <h2 class="session-title">Live Interactive Sessions</h2>
-      <p>
-        Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers.
-        The live sessions will help deepen your understanding while keeping you connected throughout the program.
-      </p>
-      </div>
-      <div class="col-md-6 text-center">
-      <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png"
-        alt="Live Session Image" class="session-img">
-      </div>
-    </div>
-    </div>
-  </section>
-  <section class="session-section">
-    <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center">
-      <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png"
-        alt="Live Session Image" class="session-img">
-      </div>
-      <div class="col-md-6 session-text">
-      <h2 class="session-title">Live Interactive Sessions</h2>
-      <p>
-        Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers.
-        The live sessions will help deepen your understanding while keeping you connected throughout the program.
-      </p>
-      </div>
-    </div>
-    </div>
-  </section>
-  <section class="session-section">
-    <div class="container">
-    <div class="row align-items-center">
-
-      <div class="col-md-6 session-text">
-      <h2 class="session-title">Live Interactive Sessions</h2>
-      <p>
-        Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers.
-        The live sessions will help deepen your understanding while keeping you connected throughout the program.
-      </p>
-      </div>
-      <div class="col-md-6 text-center">
-      <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png"
-        alt="Live Session Image" class="session-img">
-      </div>
-    </div>
-    </div>
-  </section>
-  <section class="session-section">
-    <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center">
-      <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png"
-        alt="Live Session Image" class="session-img">
-      </div>
-      <div class="col-md-6 session-text">
-      <h2 class="session-title">Live Interactive Sessions</h2>
-      <p>
-        Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers.
-        The live sessions will help deepen your understanding while keeping you connected throughout the program.
-      </p>
-      </div>
-    </div>
-    </div>
-  </section>
-  <section class="session-section">
-    <div class="container">
-    <div class="row align-items-center">
-
-      <div class="col-md-6 session-text">
-      <h2 class="session-title">Live Interactive Sessions</h2>
-      <p>
-        Join instructor-led live sessions where you can ask questions, join discussions, and engage with peers.
-        The live sessions will help deepen your understanding while keeping you connected throughout the program.
-      </p>
-      </div>
-      <div class="col-md-6 text-center">
-      <img src="https://us.ingrade.io/wp-content/uploads/2024/12/Point___1_-removebg-preview-300x300.png"
-        alt="Live Session Image" class="session-img">
-      </div>
-    </div>
-    </div>
-  </section>
   <!--==================================================-->
   <!--End educate-details-course-area -->
   <!--==================================================-->

@@ -22,6 +22,8 @@ use App\Http\Controllers\Admin\CasestudyController;
 use App\Http\Controllers\Admin\PlacementController;
 use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\KeyFeatureController;
+
 
 
 
@@ -79,6 +81,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
     Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
     Route::delete('/project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
+    Route::get('/keyfeature', [KeyFeatureController::class, 'index'])->name('keyfeature.index');
+    Route::post('/aparts', [KeyFeatureController::class, 'store'])->name('keyfeature.store');
+    Route::delete('/keyfeature/{keyfeature}', [KeyFeatureController::class, 'destroy'])->name('keyfeature.destroy');
 
 
 
