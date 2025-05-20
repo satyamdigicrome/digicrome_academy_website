@@ -54,11 +54,15 @@ class ApartController extends Controller
 
     public function destroy(Apart $apart)
     {
-        // Delete the image from storage
-        Storage::disk('public')->delete($apart->image);
-        
+        // Check if image is not null and exists in storage
+        if ($apart->image && Storage::disk('public')->exists($apart->image)) {
+            Storage::disk('public')->delete($apart->image);
+        }
+    
         // Delete the apart record
         $apart->delete();
+    
         return redirect()->route('aparts.index')->with('success', 'Apart deleted successfully.');
     }
+    
 }
