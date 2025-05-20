@@ -257,15 +257,65 @@
 <!-- Start Search Popup -->
 <!--==================================================-->
 <div class="search-popup">
-<button class="close-search style-two"><i class="fas fa-times"></i></button>
-<button class="close-search"><i class="fas fa-arrow-up"></i></button>
-<form method="post" action="#">
-	<div class="form-group">
-		<input id="search1" type="search" name="search-field" value="" placeholder="Search Here" required="">
-		<button  type="submit"><i class="fas fa-search"></i></button>
-	</div>
-</form>
+    <button class="close-search style-two"><i class="fas fa-times"></i></button>
+    <button class="close-search"><i class="fas fa-arrow-up"></i></button>
+    <form method="GET" action="#">
+        <div class="form-group position-relative">
+            <input id="search1" type="search" name="search-field" placeholder="Search courses..." autocomplete="off">
+            <button type="submit"><i class="fas fa-search"></i></button>
+
+            <!-- Result dropdown -->
+        </div>
+		<div id="search-results" class="bg-white border rounded shadow p-2 position-absolute w-100" style="z-index: 999; display: none;"></div>
+
+    </form>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#search1').on('input', function() {
+        let query = $(this).val();
+        if (query.length > 1) {
+            $.ajax({
+                url: "{{ route('search.courses') }}",
+                type: "GET",
+                data: { query: query },
+                success: function(data) {
+                    let results = $('#search-results');
+                    results.empty().show();
+
+                    if (data.length > 0) {
+                        data.forEach(course => {
+                            results.append(`
+                                <a href="/upcoming-courses/${course.slug}" class="d-flex align-items-center mb-2 text-dark text-decoration-none">
+                                    <img src="/storage/${course.image}" class="me-2" width="50" height="50" style="object-fit: cover; border-radius: 6px;">
+                                    <div>
+                                        <div><strong>${course.name}</strong></div>
+                                        <small class="text-muted">${course.tag_line}</small>
+                                    </div>
+                                </a>
+                            `);
+                        });
+                    } else {
+                        results.append('<p class="text-muted">No courses found.</p>');
+                    }
+                }
+            });
+        } else {
+            $('#search-results').hide().empty();
+        }
+    });
+
+    // Hide when clicked outside
+    $(document).click(function(e) {
+        if (!$(e.target).closest('.form-group').length) {
+            $('#search-results').hide().empty();
+        }
+    });
+});
+</script>
+
 <!--==================================================-->
 <!-- End Search Popup -->
 <!--==================================================-->

@@ -1595,127 +1595,51 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xl-4 col-lg-6 col-md-6">
-      <div class="course-details-box">
-        <div class="course-details-thumb">
-        <img src="assets/images/inner-img/course-thumb1.webp" alt="thumb">
-        <div class="course-meta-top">
-          <span>Business</span>
-        </div>
-        </div>
-        <div class="course-details-content">
-        <h4><a href="course.html">Business Innovation And
-          Development</a></h4>
-        <div class="course-rating">
-          <ul>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-          </ul>
-          <div class="course-rating-num">
-          <span>(4.5/3 Ratings)</span>
+      @foreach($courses->take(3) as $course)
+          <div class="col-xl-4 col-lg-6 col-md-6">
+              <div class="course-details-box">
+                  <div class="course-details-thumb">
+                      <img src="{{ asset($course->image) }}" alt="thumb">
+                      <div class="course-meta-top">
+                          <span>{{ $course->tag_line }}</span>
+                      </div>
+                  </div>
+                  <div class="course-details-content">
+                      <h4><a href="#">{{ $course->name }}</a></h4>
+                      <div class="course-rating">
+                          <ul>
+                              @for($i = 0; $i < 5; $i++)
+                                  <li><i class="fa-solid fa-star{{ $i < $course->rating ? '' : '-half' }}"></i></li>
+                              @endfor
+                          </ul>
+                          <div class="course-rating-num">
+                              <span>({{ $course->rating }}/{{ $course->ratings_count }} Ratings)</span>
+                          </div>
+                          <div class="course-price">
+                              <h3>${{ $course->price }}</h3>
+                          </div>
+                      </div>
+                      <div class="course-details-list">
+                          <div class="course-lesson">
+                              <span><i class="fa-regular fa-file-lines"></i> {{ $course->lessons_count }} Lessons</span>
+                          </div>
+                          <div class="course-student">
+                              <span><i class="fa-regular fa-user"></i> {{ $course->students_count }} Students</span>
+                          </div>
+                      </div>
+                      <div class="course-btn">
+                          <a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="btn">
+                              ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="course-price">
-          <h3>$60</h3>
-          </div>
-        </div>
-        <div class="course-details-list">
-          <div class="course-lesson">
-          <span><i class="fa-regular fa-file-lines"></i> 16 Leasons</span>
-          </div>
-          <div class="course-student">
-          <span><i class="fa-regular fa-user"></i> 1500 Students</span>
-          </div>
-        </div>
-        <div class="course-btn">
-          <a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6">
-      <div class="course-details-box">
-        <div class="course-details-thumb">
-        <img src="assets/images/inner-img/course-thumb3.webp" alt="thumb">
-        <div class="course-meta-top">
-          <span>Networking</span>
-        </div>
-        </div>
-        <div class="course-details-content">
-        <h4><a href="course.html">Fundamentals of Network
-          And Domains</a></h4>
-        <div class="course-rating">
-          <ul>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-          </ul>
-          <div class="course-rating-num">
-          <span>(4.5/3 Ratings)</span>
-          </div>
-          <div class="course-price">
-          <h3>Free</h3>
-          </div>
-        </div>
-        <div class="course-details-list">
-          <div class="course-lesson">
-          <span><i class="fa-regular fa-file-lines"></i> 10 Leasons</span>
-          </div>
-          <div class="course-student">
-          <span><i class="fa-regular fa-user"></i> 190 Students</span>
-          </div>
-        </div>
-        <div class="course-btn">
-          <a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6">
-      <div class="course-details-box">
-        <div class="course-details-thumb">
-        <img src="assets/images/inner-img/course-thumb3.webp" alt="thumb">
-        <div class="course-meta-top">
-          <span>Finance</span>
-        </div>
-        </div>
-        <div class="course-details-content">
-        <h4><a href="course.html">Banking Management for
-          Economics Industry</a></h4>
-        <div class="course-rating">
-          <ul>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-solid fa-star"></i></li>
-          <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-          </ul>
-          <div class="course-rating-num">
-          <span>(4.5/3 Ratings)</span>
-          </div>
-          <div class="course-price">
-          <h3>$80 <del>$100</del></h3>
-          </div>
-        </div>
-        <div class="course-details-list">
-          <div class="course-lesson">
-          <span><i class="fa-regular fa-file-lines"></i> 20 Leasons</span>
-          </div>
-          <div class="course-student">
-          <span><i class="fa-regular fa-user"></i> 890 Students</span>
-          </div>
-        </div>
-        <div class="course-btn">
-          <a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-        </div>
-        </div>
-      </div>
-      </div>
-    </div>
+      @endforeach
+  </div>
+  
+
+
     </div>
   </div>
   <!--==================================================-->

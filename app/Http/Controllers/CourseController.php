@@ -30,10 +30,22 @@ class CourseController extends Controller
 
     // Get all placements (not filtered by course)
     $placements = Placement::all();
+    $courses = Course::latest()->take(3)->get();
 
-    return view('pages.course_details', compact('course', 'placements'));
+    return view('pages.course_details', compact('courses','course', 'placements'));
 }
 
+public function searchCourses(Request $request)
+{
+    $query = $request->get('query');
+
+    $courses = Course::where('name', 'like', '%' . $query . '%')
+        ->select('name', 'slug', 'image', 'tag_line')
+        ->limit(5)
+        ->get();
+
+    return response()->json($courses);
+}
 
 
 
