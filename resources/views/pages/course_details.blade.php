@@ -15,6 +15,21 @@
     <!-- Start educate Breadcumb Area -->
     <!--==================================================-->
     <style>
+      .date-border {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* centers horizontally */
+        justify-content: center; /* centers vertically (optional) */
+        text-align: center;
+      }
+    
+      .date-border img {
+        display: block;
+        margin-bottom: 5px;
+        max-width: 60px; /* optional: control image size */
+      }
+    </style>
+    <style>
     .nedesign {
     margin-top: 102px;
 
@@ -1104,7 +1119,12 @@
     <div class="container">
     <div class="row">
       <div class="container text-center">
-      <h2>Course Curriculum</h2>
+      <h2 class="text-center mb-2" style="font-size: 2rem;">
+        Our <span style="color: #f29c12;">Course </span> Curriculum
+    </h2>
+    <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+        Discover the key features and benefits you’ll gain from joining our program.
+    </p>
       </div>
       <div class="tab_container">
       <div id="tab1" class="tab_content">
@@ -1397,7 +1417,12 @@
     </section>
     <section class="my-5">
     <div class="container">
-      <h2 class="text-center mb-4">Case Studies</h2>
+      <h2 class="text-center mb-2" style="font-size: 2rem;">
+        Our <span style="color: #f29c12;">Case </span> Studies
+    </h2>
+    <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+        Discover the key features and benefits you’ll gain from joining our program.
+    </p>
       <div class="row g-4 text-center">
         @foreach($course->caseStudies as $case)
           <div class="col-md-3">
@@ -1416,33 +1441,83 @@
   </section>
   <section class="my-5">
     <div class="container">
-    <h2 class="text-center mb-4">Our Collaborations</h2>
+    <h2 class="text-center mb-2" style="font-size: 2rem;">
+      Our <span style="color: #f29c12;">Collaborations </span> Studies
+  </h2>
+  <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+      Discover the key features and benefits you’ll gain from joining our program.
+  </p>
+    <style>
+      .placement-box {
+        position: relative;
+        width: 170px;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+    
+      .placement-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    
+      .placement-box:hover {
+        transform: scale(1.03);
+      }
+    
+      .placement-overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        color: #f29c12;
+        padding: 10px 5px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+    
+      .placement-box:hover .placement-overlay {
+        opacity: 1;
+      }
+    
+      .placement-overlay h6 {
+        margin: 0;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    
+      .placement-overlay small {
+        font-size: 12px;
+      }
+    </style>
+    
     <div class="row justify-content-center text-center g-3">
-      <div class="col-6 col-sm-4 col-md-2">
-      <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm"
-        alt="Image 1">
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-      <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm"
-        alt="Image 2">
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-      <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm"
-        alt="Image 3">
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-      <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm"
-        alt="Image 4">
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-      <img src="https://us.ingrade.io/wp-content/uploads/2025/01/10.png" class="img-fluid rounded shadow-sm"
-        alt="Image 5">
-      </div>
+      @foreach ($placements as $placement)
+        <div class="col-6 col-sm-4 col-md-2">
+          <div class="placement-box">
+            <img src="{{ asset('storage/' . $placement->image) }}" alt="{{ $placement->name }}">
+            <div class="placement-overlay">
+              <h6>{{ $placement->name }}</h6>
+              <small>{{ $placement->position }}</small>
+            </div>
+          </div>
+        </div>
+      @endforeach
     </div>
+    
     </div>
   </section>
   <div class="container my-5">
-    <h2 class="text-center mb-4">Application Process for Digicrome</h2>
+    <h2 class="text-center mb-2" style="font-size: 2rem;">
+      Application <span style="color: #f29c12;">Process </span> for Digicrome
+  </h2>
+  <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+      Discover the key features and benefits you’ll gain from joining our program.
+  </p>
     <div class="d-flex justify-content-center flex-wrap">
     <div class="step-box">
       <div class="step-title">Career Consultation</div>

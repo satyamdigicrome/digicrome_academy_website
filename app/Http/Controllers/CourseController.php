@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Collection;
 use App\Models\Course;
+use App\Models\Placement;
+
 class CourseController extends Controller
 {
     public function index()
@@ -22,11 +24,15 @@ class CourseController extends Controller
         'extraPartOne',
         'extraPartTwo',
         'projects',
-        'caseStudies' // add this line
+        'caseStudies'
     ])->where('slug', $slug)->firstOrFail();
 
-    return view('pages.course_details', compact('course'));
+    // Get all placements (not filtered by course)
+    $placements = Placement::all();
+
+    return view('pages.course_details', compact('course', 'placements'));
 }
+
 
 
 
