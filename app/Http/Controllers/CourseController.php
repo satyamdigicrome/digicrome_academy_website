@@ -35,7 +35,7 @@ class CourseController extends Controller
     $placements = Placement::all();
     $courses = Course::latest()->take(3)->get();
     $companyLogos = Logo::where('type', 'companies')->get();
-    $plainLogos = Logo::where('type', 'companies')->get();
+    $plainLogos = Logo::where('type', 'tools')->get();
 
 
     return view('pages.course_details', compact('courses','course', 'placements','companyLogos','plainLogos'));

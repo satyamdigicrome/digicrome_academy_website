@@ -271,14 +271,14 @@
 
     <div class="Other-logo-list owl-carousel">
       @foreach($companyLogos as $logo)
-          <div class="col-lg-2 col-md-3 col-4 mb-4">
-            <div class="single-brand-box text-center">
-              <div class="brand-thumb">
-                <img src="{{ asset('storage/' . $logo->image) }}" alt="Company Logo" class="img-fluid">
-              </div>
-            </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="single-brand-box text-center">
+          <div class="brand-thumb">
+            <img src="{{ asset('storage/'.$logo->image) }}" alt="brand" class="img-fluid">
           </div>
-        @endforeach		    				    			    
+        </div>
+      </div>
+    @endforeach 				    			    
     </div>
   </div>
     
@@ -811,9 +811,9 @@
     <div class="row justify-content-center mt-4">
       @foreach($plainLogos as $logo)
         <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-          <div class="single-brand-box text-center">
+          <div class="single-brand-box text-center">  
             <div class="brand-thumb">
-              <img src="{{ asset($logo->image) }}" alt="brand" class="img-fluid">
+              <img src="{{ asset('storage/'.$logo->image) }}" alt="brand" class="img-fluid">
             </div>
           </div>
         </div>
