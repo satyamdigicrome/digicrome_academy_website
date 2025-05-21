@@ -175,6 +175,54 @@
         }
     })
 
+    
+    $('.logo-list').owlCarousel({
+        loop: true,
+         margin: 25,
+         autoplay: true,
+         slideTransition: 'linear',
+            autoplayTimeout: 4000,
+            autoplaySpeed: 4000,
+            autoplayHoverPause: true,
+         nav: false,
+         responsive: {
+             0: {
+                 items: 3
+             },
+             600: {
+                 items: 4
+             },
+             1000: {
+                 items: 10
+             }
+         }
+    });
+    $('.Other-logo-list').owlCarousel({
+        loop: true,
+        margin: 4,
+        autoplay: true,
+       slideTransition: 'linear',
+           autoplayTimeout: 4000,
+           autoplaySpeed: 4000,
+           autoplayHoverPause: true,
+        nav: false,
+        rtl: true,
+        responsive: {
+            0: {
+                items: 3
+            },
+            600: {
+                items: 4
+            },
+            1000: {
+                items: 10
+            }
+        }
+    });
+    
+    
+
+
 
     // brand list Active
     $('.brand-list').owlCarousel({

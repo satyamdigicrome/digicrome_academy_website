@@ -41,11 +41,13 @@
                         <li><a class="dropdown-item" href="{{ route('admin.manage_courses') }}">All Courses</a></li>
                         <li><a class="dropdown-item" href="{{ route('keypoints.index') }}">Key Points Manage</a></li>
                         <li><a class="dropdown-item" href="{{ route('aparts.index') }}">Manage Aparts</a></li>
-                        <li><a class="dropdown-item" href="{{ route('faqs.create') }}">Manage FAQ</a></li>
+                        <li><a class="dropdown-item" href="{{ route('modules.create') }}">Manage Modules</a></li>
                         <li><a class="dropdown-item" href="{{ route('extra.index') }}">Extra</a></li>
                         <li><a class="dropdown-item" href="{{ route('casestudy.index') }}">Case Studys</a></li>
                         <li><a class="dropdown-item" href="{{ route('project.index') }}">Projects</a></li>
                         <li><a class="dropdown-item" href="{{ route('keyfeature.index') }}">keyfeature</a></li>
+                        <li><a class="dropdown-item" href="{{ route('faqs.create') }}">Manage FAQ</a></li>
+
 
 
 

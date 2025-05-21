@@ -23,6 +23,9 @@ use App\Http\Controllers\Admin\PlacementController;
 use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\KeyFeatureController;
+use App\Http\Controllers\Admin\ModuleController;
+
+
 
 
 
@@ -84,6 +87,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/keyfeature', [KeyFeatureController::class, 'index'])->name('keyfeature.index');
     Route::post('/keyfeature', [KeyFeatureController::class, 'store'])->name('keyfeature.store');
     Route::delete('/keyfeature/{keyfeature}', [KeyFeatureController::class, 'destroy'])->name('keyfeature.destroy');
+    Route::get('/admin/modules', [ModuleController::class, 'create'])->name('modules.create');
+    Route::post('/admin/modules', [ModuleController::class, 'store'])->name('modules.store');
+    Route::delete('/admin/modules/{id}', [ModuleController::class, 'destroy'])->name('modules.destroy');
 
 
 

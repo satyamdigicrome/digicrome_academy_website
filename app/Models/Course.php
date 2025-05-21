@@ -78,7 +78,10 @@ public function keyFeatures()
 {
     return $this->hasMany(KeyFeature::class);
 }
-
+public function modules()
+{
+    return $this->hasMany(Module::class);
+}
 
 
 
