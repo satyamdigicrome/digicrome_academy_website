@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Collection;
 use App\Models\Course;
 use App\Models\Placement;
+use App\Models\Logo;
+
 
 class CourseController extends Controller
 {
@@ -32,8 +34,11 @@ class CourseController extends Controller
     // Get all placements (not filtered by course)
     $placements = Placement::all();
     $courses = Course::latest()->take(3)->get();
+    $companyLogos = Logo::where('type', 'companies')->get();
+    $plainLogos = Logo::where('type', 'companies')->get();
 
-    return view('pages.course_details', compact('courses','course', 'placements'));
+
+    return view('pages.course_details', compact('courses','course', 'placements','companyLogos','plainLogos'));
 }
 
 public function searchCourses(Request $request)

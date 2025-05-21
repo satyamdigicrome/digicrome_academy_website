@@ -254,52 +254,31 @@
     </h2>
   <div class="container-fluid custom-width">
     <div class="logo-list owl-carousel">
-      <div class="col-lg-12">
-        <div class="single-brand-box">
-          <div class="brand-thumb">
-             <img src="{{ asset('assets/images/home-one/brand-img1.webp') }}" alt="brand">
+      <div class="row">
+        @foreach($companyLogos as $logo)
+          <div class="col-lg-2 col-md-3 col-4 mb-4">
+            <div class="single-brand-box text-center">
+              <div class="brand-thumb">
+                <img src="{{ asset('storage/' . $logo->image) }}" alt="Company Logo" class="img-fluid">
+              </div>
+            </div>
           </div>
-        </div>
-      </div>				    
-      <div class="col-lg-12">
-        <div class="single-brand-box">
-          <div class="brand-thumb">
-            <img src="{{ asset('assets/images/home-one/brand-img2.webp') }}" alt="brand">
-          </div>
-        </div>
-      </div>				   
-      <div class="col-lg-12">
-        <div class="single-brand-box">
-          <div class="brand-thumb">
-            <img src="{{ asset('assets/images/home-one/brand-img3.webp') }}" alt="brand">
-          </div>
-        </div>
-      </div>				    				    			    
+        @endforeach
+      </div>
+                             
     </div>
 
 
     <div class="Other-logo-list owl-carousel">
-      <div class="col-lg-12">
-        <div class="single-brand-box">
-          <div class="brand-thumb">
-             <img src="{{ asset('assets/images/home-one/brand-img1.webp') }}" alt="brand">
+      @foreach($companyLogos as $logo)
+          <div class="col-lg-2 col-md-3 col-4 mb-4">
+            <div class="single-brand-box text-center">
+              <div class="brand-thumb">
+                <img src="{{ asset('storage/' . $logo->image) }}" alt="Company Logo" class="img-fluid">
+              </div>
+            </div>
           </div>
-        </div>
-      </div>				    
-      <div class="col-lg-12">
-        <div class="single-brand-box">
-          <div class="brand-thumb">
-            <img src="{{ asset('assets/images/home-one/brand-img2.webp') }}" alt="brand">
-          </div>
-        </div>
-      </div>				   
-      <div class="col-lg-12">
-        <div class="single-brand-box">
-          <div class="brand-thumb">
-            <img src="{{ asset('assets/images/home-one/brand-img3.webp') }}" alt="brand">
-          </div>
-        </div>
-      </div>				    				    			    
+        @endforeach		    				    			    
     </div>
   </div>
     
@@ -763,19 +742,63 @@
       <div class="arrow-head"></div>
       </div>
 
+      <!-- Certificates Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
 
-      <div class="row justify-content-center my-4">
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
-        <img src="https://digicrome.com/public/www/images/usces.png" class="usces-img" alt="Logo 1">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
-        <img src="https://digicrome.com/public/www/images/usces.png" class="usces-img" alt="Logo 2">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
-        <img src="https://digicrome.com/public/www/images/usces.png" class="usces-img" alt="Logo 3">
-      </div>
+      <!-- Left: Certificate Names -->
+      <div class="col-md-4">
+        <h4 class="mb-4 fw-bold" style="font-size: 2rem;">Certificates</h4>
+        <div class="d-flex flex-column gap-3">
+          <div class="certificate-box active" data-image="https://digicrome.com/public/www/images/cirt1111.png">
+            <span><strong>Our Certificate</strong></span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </div>
+          <div class="certificate-box" data-image="https://digicrome.com/public/www/images/cirt1111.png">
+            <span><strong>Internship Certificate</strong></span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </div>
+          <div class="certificate-box" data-image="https://digicrome.com/public/www/images/cirt1111.png">
+            <span><strong>Microsoft Certificate</strong></span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </div>
+          <div class="certificate-box" data-image="https://digicrome.com/public/www/images/cirt1111.png">
+            <span><strong>IBM Certificate</strong></span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </div>
+        </div>
       </div>
 
+      <!-- Right: Image Preview -->
+      <div class="col-md-8 d-flex align-items-center justify-content-center">
+        <img id="certificate-preview" src="https://digicrome.com/public/www/images/cirt1111.png"
+             class="img-fluid rounded shadow-lg border border-light" style="max-height: 450px;" alt="Certificate">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const boxes = document.querySelectorAll('.certificate-box');
+  const preview = document.getElementById('certificate-preview');
+
+  boxes.forEach(box => {
+    box.addEventListener('click', () => {
+      boxes.forEach(b => b.classList.remove('active'));
+      box.classList.add('active');
+      preview.src = box.getAttribute('data-image');
+    });
+  });
+</script>
+
+<style>
+ 
+
+</style>
+      
+          
 
 
 
@@ -785,7 +808,18 @@
   <section>
     <div class="container my-5">
     <h2 class="section-heading text-center mb-4">Languages and Tools Covered</h2>
-
+    <div class="row justify-content-center mt-4">
+      @foreach($plainLogos as $logo)
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
+          <div class="single-brand-box text-center">
+            <div class="brand-thumb">
+              <img src="{{ asset($logo->image) }}" alt="brand" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+    
 
   </section>
   <section>
