@@ -253,23 +253,32 @@
       Trusted by 100 <span style="color: #f29c12;">world's best</span> companies
     </h2>
   <div class="container-fluid custom-width">
-    <div class="logo-list owl-carousel">
-      <div class="row">
-        @foreach($companyLogos as $logo)
-          <div class="col-lg-2 col-md-3 col-4 mb-4">
-            <div class="single-brand-box text-center">
-              <div class="brand-thumb">
-                <img src="{{ asset('storage/' . $logo->image) }}" alt="Company Logo" class="img-fluid">
-              </div>
-            </div>
+    <div class="Other-logo-list owl-carousel">
+      @foreach($companyLogos as $logo)
+      <div class="col-lg-12">
+        <div class="single-brand-box">
+          <div class="brand-thumb">
+             <img src="{{ asset('storage/'.$logo->image) }}" alt="brand">
           </div>
-        @endforeach
-      </div>
-                             
+        </div>
+      </div>	
+      @endforeach 			    
+      			   
+      			    				    			    
     </div>
 
-
-    <div class="Other-logo-list owl-carousel">
+    <div class="logo-list owl-carousel">
+      @foreach($companyLogos as $logo)
+      <div class="col-lg-12">
+        <div class="single-brand-box">
+          <div class="brand-thumb">
+             <img src="{{ asset('storage/'.$logo->image) }}" alt="brand">
+          </div>
+        </div>
+      </div>	
+      @endforeach 				    				    			    
+    </div>
+    {{-- <div class="Other-logo-list owl-carousel">
       @foreach($companyLogos as $logo)
       <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
         <div class="single-brand-box text-center">
@@ -279,7 +288,7 @@
         </div>
       </div>
     @endforeach 				    			    
-    </div>
+    </div> --}}
   </div>
     
   </section>
