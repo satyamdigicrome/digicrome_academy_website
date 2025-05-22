@@ -45,6 +45,7 @@ class AdminCourseController extends Controller
             'meta_title' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:255',
+            'about' => 'nullable|string|max:255',
             'has_faqs' => 'required|boolean',
             'status' => 'required|boolean',
             'course_image' => 'required|image|mimes:webp|max:2048',
@@ -73,6 +74,7 @@ class AdminCourseController extends Controller
         $course->meta_title = $request->meta_title;
         $course->meta_keywords = $request->meta_keywords;
         $course->meta_description = $request->meta_description;
+        $course->about = $request->about;
         $course->has_faqs = $request->has_faqs;
         $course->status = $request->status;
         $course->user_id = Auth::id(); // Assuming the user is authenticated
@@ -112,6 +114,7 @@ class AdminCourseController extends Controller
             'meta_title' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string',
+            'about' => 'nullable|string',
             'has_faqs' => 'required|boolean',
             'status' => 'required|boolean',
             'image' => 'nullable|image|mimes:webp|max:2048', // Optional image upload

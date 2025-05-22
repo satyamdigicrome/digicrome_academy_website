@@ -195,7 +195,10 @@
             </div>
     
             <div class="col-md-4">
-                <!-- Empty column for spacing -->
+                <div class="form-group">
+                    <label for="about">About</label>
+                    <textarea class="form-control" id="about" name="about">{{ $course->about }}</textarea>
+                </div>
             </div>
         </div>
         <div class="row">

@@ -28,6 +28,7 @@ class Course extends Model
         'meta_title',
         'meta_keywords',
         'meta_description',
+        'about',
         'has_faqs',
         'status',
         'user_id',

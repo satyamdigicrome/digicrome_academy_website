@@ -157,7 +157,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="collection_id">Collection</label>
                     <select class="form-control" id="collection_id" name="collection_id" required>
@@ -167,10 +167,16 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="course_image">Course Image</label>
                     <input type="file" class="form-control" id="course_image" name="course_image" accept="image/*" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="about">About</label>
+                    <textarea class="form-control" id="about" name="about"></textarea>
                 </div>
             </div>
         </div>
