@@ -7,7 +7,7 @@ use App\Models\Collection;
 use App\Models\Course;
 use App\Models\Placement;
 use App\Models\Logo;
-
+use Illuminate\Support\Facades\Cache;
 
 class CourseController extends Controller
 {
@@ -19,26 +19,51 @@ class CourseController extends Controller
 
     public function course_details($slug)
 {
+    // Eager load only required fields for better performance
     $course = Course::with([
-        'keypoints',
-        'aparts',
-        'faqs',
-        'extraPartOne',
-        'extraPartTwo',
-        'projects',
-        'caseStudies',
-        'keyFeatures',
-        'modules',
-    ])->where('slug', $slug)->firstOrFail();
+        'keypoints:id,course_id,name,image',
+        'aparts:id,course_id,image,heading,tagline,paragraph',
+        'faqs:id,course_id,question,answer',
+        'extraPartOne:id,course_id,heading',
+        'extraPartTwo:id,course_id,heading',
+        'projects:id,course_id,heading,paragraph',
+        'caseStudies:id,course_id,heading,paragraph',
+        'keyFeatures:id,course_id,heading,paragraph,image',
+        'modules:id,course_id,question,answer',
+    ])
+    ->select('id', 'name', 'slug', 'description', 'image', 'tag_line','about','course_free') // load only needed course fields
+    ->where('slug', $slug)
+    ->firstOrFail();
 
-    // Get all placements (not filtered by course)
-    $placements = Placement::all();
-    $courses = Course::latest()->take(3)->get();
-    $companyLogos = Logo::where('type', 'companies')->get();
-    $plainLogos = Logo::where('type', 'tools')->get();
+    // Cache commonly used data for 60 minutes
+    $courses = Cache::remember('latest_courses', 60, function () {
+        return Course::latest()->take(3)->get(['id', 'name', 'slug', 'image', 'tag_line']);
+    });
 
+    $placements = Cache::remember('placements', 60, function () {
+        return Placement::all(['id', 'name', 'image']);
+    });
 
-    return view('pages.course_details', compact('courses','course', 'placements','companyLogos','plainLogos'));
+    $companyLogos = Cache::remember('company_logos', 60, function () {
+        return Logo::where('type', 'companies')->get(['id', 'image']);
+    });
+
+    $plainLogos = Cache::remember('tool_logos', 60, function () {
+        return Logo::where('type', 'tools')->get(['id', 'image']);
+    });
+
+    $certificate = Cache::remember('certificate_logo', 60, function () {
+        return Logo::where('type', 'certification_partner')->get(['id', 'image']);
+    });
+
+    return view('pages.course_details', compact(
+        'course',
+        'courses',
+        'placements',
+        'companyLogos',
+        'plainLogos',
+        'certificate'
+    ));
 }
 
 public function searchCourses(Request $request)

@@ -15,7 +15,8 @@
     <!--==================================================-->
 
     <div class="nedesign">
-    <section class="courses-details ds-banner ds-banner-mobile" style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.jpg);">
+    <section class="courses-details ds-banner ds-banner-mobile"
+    style="background-image: url(https://digicrome.com/public/www/images/pgp/banner.jpg);">
     <div class="container-fluid">
       <div class="row">
       <div class="col-lg-6 col-12">
@@ -248,116 +249,51 @@
     </div>
   </div>
 
-  <section class="logo-slider-section py-5">
-    <h2 class="text-center mb-4" style="font-size: 2rem;">
-      Trusted by 100 <span style="color: #f29c12;">world's best</span> companies
-    </h2>
-  <div class="container-fluid custom-width">
-    <div class="Other-logo-list owl-carousel">
-      @foreach($companyLogos as $logo)
-      <div class="col-lg-12">
-        <div class="single-brand-box">
-          <div class="brand-thumb">
-             <img src="{{ asset('storage/'.$logo->image) }}" alt="brand">
-          </div>
-        </div>
-      </div>	
-      @endforeach 			    
-      			   
-      			    				    			    
-    </div>
+  <x-logo-slider :companyLogos="$companyLogos" />
 
-    <div class="logo-list owl-carousel">
-      @foreach($companyLogos as $logo)
-      <div class="col-lg-12">
-        <div class="single-brand-box">
-          <div class="brand-thumb">
-             <img src="{{ asset('storage/'.$logo->image) }}" alt="brand">
-          </div>
-        </div>
-      </div>	
-      @endforeach 				    				    			    
-    </div>
-    {{-- <div class="Other-logo-list owl-carousel">
-      @foreach($companyLogos as $logo)
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
-        <div class="single-brand-box text-center">
-          <div class="brand-thumb">
-            <img src="{{ asset('storage/'.$logo->image) }}" alt="brand" class="img-fluid">
-          </div>
-        </div>
-      </div>
-    @endforeach 				    			    
-    </div> --}}
-  </div>
-    
-  </section>
-  
+
 
 
   <section class="py-5 bg-light">
     <div class="container text-center">
     <div class="container py-5" style="text-align: left;">
       <div class="row align-items-center">
-        
-        <!-- Left: About Company Text -->
-        <div class="col-md-6 mb-4 mb-md-0">
-          <h2 class="mb-5 display-5 fw-bold">About the Program</h2>
-          <p>
-            Our Certified Investment Banking Operations Professional (CIBOP™) program has been guiding finance professionals for over a decade, shaping careers and turning dreams into reality.
-<br>
-            Focused on real-world scenarios and insights from industry experts, the refined curriculum of our investment banking course addresses intricacies in securities operations, wealth and asset management, financial market, risk management, and anti-money laundering. Imarticus offers more than just a certification,  it delivers a transformative experience, propelling you toward greatness in the investment banking operations realm.
-          </p>
-        </div>
-    
-        <!-- Right: Company Image -->
-        <div class="col-md-6 text-center">
-          <img src="https://cdn.pegasus.imarticus.org/cibop_new/about/about_w.webp" alt="Company Image" class="img-fluid">
-        </div>
-    
+
+      <!-- Left: About Company Text -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2 class="mb-5 display-5 fw-bold">About the Program</h2>
+        <p>
+        {{ $course->about }}
+        </p>
+      </div>
+
+      <!-- Right: Company Image -->
+      <div class="col-md-6 text-center">
+        <img src="{{ asset('assets/images/About-Page.webp') }}" alt="Company Image" class="img-fluid">
+      </div>
+
       </div>
     </div>
-    <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        @foreach($course->aparts->chunk(4) as $chunkIndex => $apartChunk)
-      <div class="carousel-item {{ $chunkIndex == 0 ? 'active' : '' }}">
-      <div class="row">
-        @foreach($apartChunk as $apart)
-      <div class="col-md-3">
-      <div class="card shadow rounded-4 mb-4">
+    <div class="brand-list owl-carousel owl-theme">
+      @foreach($course->aparts as $apart)
+      <div class="item">
+      <div class="card shadow rounded-4 mb-4 h-100">
       <div class="card-body text-center">
       <img src="{{ asset('storage/' . $apart->image) }}" class="mb-3 mx-auto d-block"
-        style="height: 50px;">
+        style="height: 70px; width: 70px;">
       <h5 class="card-title">{{ $apart->heading }}</h5>
       <p class="card-text small text-muted">{{ $apart->tagline }}</p>
-      <a href="#" class="d-block fw-semibold text-warning" data-bs-toggle="modal"
-        data-bs-target="#staticModal" data-paragraph="{{ $apart->paragraph }}"
-        data-heading="{{ $apart->heading }}">
+      <a href="#" class="d-block fw-semibold text-warning" data-bs-toggle="modal" data-bs-target="#staticModal"
+        data-paragraph="{{ $apart->paragraph }}" data-heading="{{ $apart->heading }}">
         Read More
       </a>
       </div>
       </div>
       </div>
-      @endforeach
-      </div>
-      </div>
-      @endforeach
-
-      </div>
-
-      <!-- Carousel controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
-      </button>
-      </div>
+    @endforeach
     </div>
-    
+
+
   </section>
 
 
@@ -590,19 +526,19 @@
           <ul>
           <li>
             <div class="label">
-            <i class="fa-solid fa-dollar-sign"></i>Price
+            Price
             </div>
             <span class="value-dollar"> {{ $course->price }}₹</span>
           </li>
           <li>
             <div class="label">
-            <i class="fa-solid fa-dollar-sign"></i>US Price
+            US Price
             </div>
             <span class="value-dollar">${{ $course->us_price }}</span>
           </li>
           <li>
             <div class="label">
-            <i class="fa-solid fa-dollar-sign"></i>Dubai Price
+            Dubai Price
             </div>
             <span class="value-dollar">{{ $course->dubai_price }}AED</span>
           </li>
@@ -686,130 +622,63 @@
 
       </div>
       </div>
-      <div class="arrow-wrapper">
-      <div class="arrow-body"></div>
-      <div class="arrow-head"></div>
-      </div>
-
-      <div class="feature-box container">
-      <div class="row  my-5">
-        <div class="col-12">
-        <h2 class="section-heading">Internship Program</h2>
+      
+      <div class="row my-5">
+        <div class="col-12 d-flex align-items-center gap-3">
+          <div style="width: 35px; height: 35px; background-color: #f29c12; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+            1
+          </div>
+          <h2 class="section-heading mb-0">Internship Program</h2>
         </div>
-      </div>
-
-      @if($course->extraPartOne->count())
-      <div class="row mb-4">
-        @foreach($course->extraPartOne->chunk(ceil($course->extraPartOne->count() / 2)) as $chunk)
-        <div class="col-md-6">
-        @foreach($chunk as $item)
-      <p>
-        <i class="bi bi-check-circle-fill text-success"></i>
-        {{ $item->heading }}
-      </p>
-      @endforeach
-        </div>
-      @endforeach
-      </div>
-    @endif
-
-
-      </div>
-      <div class="arrow-wrapper">
-      <div class="arrow-body"></div>
-      <div class="arrow-head"></div>
       </div>
       <div class="feature-box container">
-      <div class="row  my-5">
-        <div class="col-12">
-        <h2 class="section-heading">Soft Skills Program</h2>
+        @if($course->extraPartOne->count())
+        <div class="row mb-4">
+          @foreach($course->extraPartOne->chunk(ceil($course->extraPartOne->count() / 2)) as $chunk)
+          <div class="col-md-6">
+            @foreach($chunk as $item)
+            <p>
+              <i class="bi bi-check-circle-fill text-success"></i>
+              {{ $item->heading }}
+            </p>
+            @endforeach
+          </div>
+          @endforeach
+        </div>
+        @endif
+      </div>
+      <div class="row my-5">
+        <div class="col-12 d-flex align-items-center gap-3">
+          <div style="width: 35px; height: 35px; background-color: #f29c12; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+            2
+          </div>
+          <h2 class="section-heading mb-0">Soft Skills Program</h2>
         </div>
       </div>
-
-      @if($course->extraPartTwo->count())
-      <div class="row mt-4">
-        <div class="col-12 mb-2">
-        <h5 class="text-warning fw-bold">Additional Highlights</h5>
+      <div class="feature-box container">      
+        @if($course->extraPartTwo->count())
+        <div class="row mt-4">
+          <div class="col-12 mb-2">
+            <h5 class="text-warning fw-bold">Additional Highlights</h5>
+          </div>
+          @foreach($course->extraPartTwo->chunk(ceil($course->extraPartTwo->count() / 2)) as $chunk)
+          <div class="col-md-6">
+            @foreach($chunk as $item)
+            <p>
+              <i class="bi bi-check-circle-fill text-success"></i>
+              {{ $item->heading }}
+            </p>
+            @endforeach
+          </div>
+          @endforeach
         </div>
-        @foreach($course->extraPartTwo->chunk(ceil($course->extraPartTwo->count() / 2)) as $chunk)
-        <div class="col-md-6">
-        @foreach($chunk as $item)
-      <p>
-        <i class="bi bi-check-circle-fill text-success"></i>
-        {{ $item->heading }}
-      </p>
-      @endforeach
-        </div>
-      @endforeach
+        @endif
       </div>
-    @endif
-
-
-      </div>
-      <div class="arrow-wrapper">
-      <div class="arrow-body"></div>
-      <div class="arrow-head"></div>
-      </div>
+      
+      
 
       <!-- Certificates Section -->
-<section class="py-5">
-  <div class="container">
-    <div class="row">
-
-      <!-- Left: Certificate Names -->
-      <div class="col-md-4">
-        <h4 class="mb-4 fw-bold" style="font-size: 2rem;">Certificates</h4>
-        <div class="d-flex flex-column gap-3">
-          <div class="certificate-box active" data-image="https://digicrome.com/public/www/images/cirt1111.png">
-            <span><strong>Our Certificate</strong></span>
-            <i class="bi bi-arrow-right-circle-fill"></i>
-          </div>
-          <div class="certificate-box" data-image="https://digicrome.com/public/www/images/cirt1111.png">
-            <span><strong>Internship Certificate</strong></span>
-            <i class="bi bi-arrow-right-circle-fill"></i>
-          </div>
-          <div class="certificate-box" data-image="https://digicrome.com/public/www/images/cirt1111.png">
-            <span><strong>Microsoft Certificate</strong></span>
-            <i class="bi bi-arrow-right-circle-fill"></i>
-          </div>
-          <div class="certificate-box" data-image="https://digicrome.com/public/www/images/cirt1111.png">
-            <span><strong>IBM Certificate</strong></span>
-            <i class="bi bi-arrow-right-circle-fill"></i>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: Image Preview -->
-      <div class="col-md-8 d-flex align-items-center justify-content-center">
-        <img id="certificate-preview" src="https://digicrome.com/public/www/images/cirt1111.png"
-             class="img-fluid rounded shadow-lg border border-light" style="max-height: 450px;" alt="Certificate">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<script>
-  const boxes = document.querySelectorAll('.certificate-box');
-  const preview = document.getElementById('certificate-preview');
-
-  boxes.forEach(box => {
-    box.addEventListener('click', () => {
-      boxes.forEach(b => b.classList.remove('active'));
-      box.classList.add('active');
-      preview.src = box.getAttribute('data-image');
-    });
-  });
-</script>
-
-<style>
- 
-
-</style>
-      
-          
-
-
+      <x-course-curriculum :course="$course" />
 
     </div>
     </div>
@@ -818,17 +687,22 @@
     <div class="container my-5">
     <h2 class="section-heading text-center mb-4">Languages and Tools Covered</h2>
     <div class="row justify-content-center mt-4">
-      @foreach($plainLogos as $logo)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-          <div class="single-brand-box text-center">  
-            <div class="brand-thumb">
-              <img src="{{ asset('storage/'.$logo->image) }}" alt="brand" class="img-fluid">
-            </div>
-          </div>
+      <div class="container py-4" style="max-width: 1000px;">
+      <div class="row">
+        @foreach($plainLogos as $logo)
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3 d-flex justify-content-center">
+      <div class="single-brand-box text-center">
+        <div class="brand-thumb">
+        <img src="{{ asset('storage/' . $logo->image) }}" alt="brand" class="img-fluid" style="max-height: 60px;">
         </div>
+      </div>
+      </div>
       @endforeach
+      </div>
+      </div>
+
     </div>
-    
+
 
   </section>
   <section>
@@ -849,80 +723,37 @@
 
     </div>
   </section>
-  
-  <section class="mt-5">
-    <h2 class="text-center mb-2" style="font-size: 2rem;">
-      Trusted by   <span style="color: #f29c12;">millions of learners</span> around the world
-      </h2>
-      <div class="container">
-        <div class="row justify-content-center mt-4">
-        <div class="col-lg-2">
-          <div class="single-brand-box">
-            <div class="brand-thumb">
-               <img src="https://webcdn.imarticus.org/adhoc/Frame13.svg" alt="brand">
-            </div>
-          </div>
-        </div>				    
-        <div class="col-lg-2">
-          <div class="single-brand-box">
-            <div class="brand-thumb">
-              <img src="https://webcdn.imarticus.org/adhoc/Frame14.svg" alt="brand">
-            </div>
-          </div>
-        </div>				   
-        <div class="col-lg-2">
-          <div class="single-brand-box">
-            <div class="brand-thumb">
-              <img src="https://webcdn.imarticus.org/adhoc/Frame15.svg" alt="brand">
-            </div>
-          </div>
-        </div>	
-        <div class="col-lg-2">
-          <div class="single-brand-box">
-            <div class="brand-thumb">
-              <img src="https://webcdn.imarticus.org/iso-fix/Web.webp" alt="brand">
-            </div>
-          </div>
-        </div>	
-        <div class="col-lg-2">
-          <div class="single-brand-box">
-            <div class="brand-thumb">
-              <img src="https://webcdn.imarticus.org/adhoc/Frame17.webp" alt="brand">
-            </div>
-          </div>
-        </div>	
-      </div>			    				    			    
-      </div>
-  
-      
-  </section>
-  
-  <section>
-    <section class="my-5">
+
+
+  <x-trusted-brands />
+
+
+  <section class="mt-4">
+    <section class="py-5" style="background-color: #f9f9f9;">
     <div class="container">
-      <div class="row text-center g-4">
+      <div class="row g-4 text-center">
       <div class="col-md-3">
-        <div class="stat-box p-4 rounded shadow-sm">
-        <h5 class="mb-2">Happy Students</h5>
-        <h2 class="text-primary fw-bold">20,000+</h2>
+        <div class="stat-box p-4 rounded shadow-sm bg-white h-100">
+        <h5 class="mb-2 text-muted">Happy Students</h5>
+        <h2 class="text-primary fw-bold display-6">20,000+</h2>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="stat-box p-4 rounded shadow-sm">
-        <h5 class="mb-2">Average Rating</h5>
-        <h2 class="text-warning fw-bold">4.8 ⭐</h2>
+        <div class="stat-box p-4 rounded shadow-sm bg-white h-100">
+        <h5 class="mb-2 text-muted">Average Rating</h5>
+        <h2 class="text-warning fw-bold display-6">4.8 <span>⭐</span></h2>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="stat-box p-4 rounded shadow-sm">
-        <h5 class="mb-2">Average Salary Hike</h5>
-        <h2 class="text-success fw-bold">80%</h2>
+        <div class="stat-box p-4 rounded shadow-sm bg-white h-100">
+        <h5 class="mb-2 text-muted">Average Salary Hike</h5>
+        <h2 class="text-success fw-bold display-6">80%</h2>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="stat-box p-4 rounded shadow-sm">
-        <h5 class="mb-2">Average Package</h5>
-        <h2 class="text-danger fw-bold">₹-- LPA</h2> <!-- Add value if available -->
+        <div class="stat-box p-4 rounded shadow-sm bg-white h-100">
+        <h5 class="mb-2 text-muted">Average Package</h5>
+        <h2 class="text-danger fw-bold display-6">₹-- LPA</h2>
         </div>
       </div>
       </div>
@@ -952,6 +783,7 @@
 
 
   </section>
+
   <section class="my-5">
     <div class="container">
     <h2 class="text-center mb-2" style="font-size: 2rem;">
@@ -977,35 +809,42 @@
     </div>
   </section>
   <div class="container my-5">
-    <h2 class="text-center mb-2" style="font-size: 2rem;">
-    Application <span style="color: #f29c12;">Process </span> for Digicrome
+    <h2 class="text-center mb-3 fw-bold" style="font-size: 2.2rem;">
+    Application <span style="color: #f29c12;">Process</span> for Digicrome
     </h2>
-    <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+    <p class="text-center text-muted mb-5" style="font-size: 1.1rem;">
     Discover the key features and benefits you’ll gain from joining our program.
     </p>
-    <div class="d-flex justify-content-center flex-wrap">
-    <div class="step-box">
-      <div class="step-title">Career Consultation</div>
-      <p>Assess eligibility with our Career Counsellor.</p>
+
+    <div class="d-flex justify-content-between align-items-start flex-wrap px-md-5 gap-4">
+    <div class="text-center" style="flex: 1; min-width: 140px;">
+      <div class="circle-step mb-2">1</div>
+      <div class="fw-semibold">Career Consultation</div>
+      <div class="text-muted small">Assess eligibility</div>
     </div>
-    <div class="step-box">
-      <div class="step-title">Personalized Guidance</div>
-      <p>Receive an acceptance letter if eligible.</p>
+    <div class="text-center" style="flex: 1; min-width: 140px;">
+      <div class="circle-step mb-2">2</div>
+      <div class="fw-semibold">Personalized Guidance</div>
+      <div class="text-muted small">Acceptance letter</div>
     </div>
-    <div class="step-box">
-      <div class="step-title">Easy Registration</div>
-      <p>Pay the booking amount to confirm your seat.</p>
+    <div class="text-center" style="flex: 1; min-width: 140px;">
+      <div class="circle-step mb-2">3</div>
+      <div class="fw-semibold">Easy Registration</div>
+      <div class="text-muted small">Pay booking amount</div>
     </div>
-    <div class="step-box">
-      <div class="step-title">Start Upskilling</div>
-      <p>Access the curriculum and begin your journey.</p>
+    <div class="text-center" style="flex: 1; min-width: 140px;">
+      <div class="circle-step mb-2">4</div>
+      <div class="fw-semibold">Start Upskilling</div>
+      <div class="text-muted small">Access curriculum</div>
     </div>
-    <div class="step-box">
-      <div class="step-title">Ongoing Support</div>
-      <p>Receive continuous mentorship and career assistance.</p>
+    <div class="text-center" style="flex: 1; min-width: 140px;">
+      <div class="circle-step mb-2">5</div>
+      <div class="fw-semibold">Ongoing Support</div>
+      <div class="text-muted small">Mentorship & guidance</div>
     </div>
     </div>
   </div>
+
   @foreach ($course->keyFeatures as $index => $feature)
     <section class="session-section">
     <div class="container">
@@ -1079,63 +918,8 @@
   <!--==================================================-->
   <!-- Start educate-details-course-area style-inner -->
   <!--==================================================-->
-  <div class="educate-details-course-area style-inner details">
-    <div class="container">
-    <div class="row align-items-center section-title-space">
-      <div class="col-lg-12">
-      <div class="section_title text-center">
-        <h1>Course you may like</h1>
-      </div>
-      </div>
-    </div>
-    <div class="row">
-      @foreach($courses->take(3) as $course)
-      <div class="col-xl-4 col-lg-6 col-md-6">
-      <div class="course-details-box">
-      <div class="course-details-thumb">
-      <img src="{{ asset($course->image) }}" alt="thumb">
-      <div class="course-meta-top">
-        <span>{{ $course->tag_line }}</span>
-      </div>
-      </div>
-      <div class="course-details-content">
-      <h4><a href="#">{{ $course->name }}</a></h4>
-      <div class="course-rating">
-        <ul>
-        @for($i = 0; $i < 5; $i++)
-      <li><i class="fa-solid fa-star{{ $i < $course->rating ? '' : '-half' }}"></i></li>
-      @endfor
-        </ul>
-        <div class="course-rating-num">
-        <span>({{ $course->rating }}/{{ $course->ratings_count }} Ratings)</span>
-        </div>
-        <div class="course-price">
-        <h3>${{ $course->price }}</h3>
-        </div>
-      </div>
-      <div class="course-details-list">
-        <div class="course-lesson">
-        <span><i class="fa-regular fa-file-lines"></i> {{ $course->lessons_count }} Lessons</span>
-        </div>
-        <div class="course-student">
-        <span><i class="fa-regular fa-user"></i> {{ $course->students_count }} Students</span>
-        </div>
-      </div>
-      <div class="course-btn">
-        <a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="btn">
-        ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
-        </a>
-      </div>
-      </div>
-      </div>
-      </div>
-    @endforeach
-    </div>
+  <x-suggested-courses :courses="$courses" />
 
-
-
-    </div>
-  </div>
   <!--==================================================-->
   <!--End educate-details-course-area -->
   <!--==================================================-->
