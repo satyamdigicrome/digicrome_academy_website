@@ -225,7 +225,7 @@
     What Our <span style="color: #f29c12;">Program</span> Offers?
     </h2>
     <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-    Discover the key features and benefits you’ll gain from joining our program.
+      Discover the key features and benefits you’ll gain from joining our program
     </p>
 
 
@@ -235,8 +235,12 @@
       @foreach($chunk as $keypoint)
       <div class="col-md-3 mb-3">
       <div class="d-flex align-items-center">
-      <img src="{{ asset('storage/' . $keypoint->image) }}" alt="{{ $keypoint->name }}"
-      style="width: 24px; height: 24px; object-fit: cover; margin-right: 10px;">
+        <img 
+        src="{{ asset('storage/' . $keypoint->image) }}" 
+        alt="{{ $keypoint->name }}" 
+        loading="lazy"
+        style="width: 24px; height: 24px; object-fit: cover; margin-right: 10px;">
+      
       <span>{{ $keypoint->name }}</span>
       </div>
       </div>
@@ -726,6 +730,83 @@
 
 
   <x-trusted-brands />
+  <div class="brand-area style-one mt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <!-- Main heading -->
+          <div class="section_title mb-4">
+            <h1 class="display-5 fw-bold">Moments of Honour</h1>
+          </div>
+        
+          <!-- Description -->
+          <p class="mb-4">
+            In our EdTech journey of <b> more than a decade,</b> we have received numerous awards.<br>
+            Some of the recent notable awards we have received in analytics are:
+          </p>
+        
+          <!-- List of awards with cup icons aligned -->
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-start mb-2">
+              <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
+              <span><b> Successpreneur Award 2023 </b> being the best analytics EdTech business</span>
+            </li>
+            <li class="d-flex align-items-start">
+              <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
+              <span><b>Most Promising Digital Learning Platform 2023</b> for being one of the most promising digital learning platforms</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-7 mt-4">
+          <div class="brand-list owl-carousel">
+            <div class="col-lg-12">
+              <div class="single-brand-box">
+                <div class="brand-thumb">
+                   <img src="{{ asset('assets/images/Awards/Award-2018.webp') }}" alt="brand">
+                </div>
+              </div>
+            </div>				    
+            <div class="col-lg-12">
+              <div class="single-brand-box">
+                <div class="brand-thumb">
+                  <img src="{{ asset('assets/images/Awards/Award-2023_V2.webp') }}" alt="brand">
+                </div>
+              </div>
+            </div>				   
+            <div class="col-lg-12">
+              <div class="single-brand-box">
+                <div class="brand-thumb">
+                  <img src="{{ asset('assets/images/Awards/Award-2020.webp') }}" alt="brand">
+                </div>
+              </div>
+            </div>			
+            <div class="col-lg-12">
+              <div class="single-brand-box">
+                <div class="brand-thumb">
+                  <img src="{{ asset('assets/images/Awards/Award-2021.webp') }}" alt="brand">
+                </div>
+              </div>
+            </div>	
+            <div class="col-lg-12">
+              <div class="single-brand-box">
+                <div class="brand-thumb">
+                  <img src="{{ asset('assets/images/Awards/Award-2022.webp') }}" alt="brand">
+                </div>
+              </div>
+            </div>	
+            <div class="col-lg-12">
+              <div class="single-brand-box">
+                <div class="brand-thumb">
+                  <img src="{{ asset('assets/images/Awards/Award-2023.webp') }}" alt="brand">
+                </div>
+              </div>
+            </div>		    				    			    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <section class="mt-4">
@@ -781,6 +862,157 @@
     </div>
     </section>
 
+
+  </section>
+  <section>
+    
+
+  <div class="testimonial-area style-one">
+		<div class="container">
+			<div class="row section-title-space align-items-center">
+				<div class="col-lg-6">
+					<div class="section-sub-title">
+						<h6>TESTIMONIALS</h6>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="section_title">
+						<h1>Real Experiences From Our</h1>
+						<h1>Dedicated Learners</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="testi-thumb-wrapper">
+						<div class="testimonial-thumb">
+							<img src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="thumb">
+						</div>
+						<div class="testi-dot-shape">
+							<img src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="dot">
+						</div>
+						<div class="testi-map-shape">
+							<img src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="map">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="row">
+						<div class="testi-list owl-carousel">
+							<div class="col-lg-12">
+								<div class="testi-box">
+									<div class="single-testi-box">
+										<div class="testi-quote">
+											<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
+										</div>
+										<div class="testi-title">
+											<h3>Impresive Learning!</h3>
+										</div>
+										<div class="testi-desc">
+											<p>Educate the ultimate destination for knowledge seekers and
+												educators we are committed to transforming special education
+												impact global channels without standards compliant systems
+												attractive learning opinions.</p>
+										</div>
+										<div class="testi-ratting">
+											<ul>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
+											</ul>
+										</div>
+									</div>
+									<div class="testi-autor-box">
+										<div class="testi-autor">
+											<img src="{{ asset('assets/images/home-one/testi-autor1.webp') }}" alt="autor">
+										</div>
+										<div class="testi-autor-content">
+											<h5 class="autor-title">Sonia Sara</h5>
+											<p class="autor-desi">Students</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="testi-box">
+									<div class="single-testi-box">
+										<div class="testi-quote">
+											<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
+										</div>
+										<div class="testi-title">
+											<h3>Impresive Learning!</h3>
+										</div>
+										<div class="testi-desc">
+											<p>Educate the ultimate destination for knowledge seekers and
+												educators we are committed to transforming special education
+												impact global channels without standards compliant systems
+												attractive learning opinions.</p>
+										</div>
+										<div class="testi-ratting">
+											<ul>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
+											</ul>
+										</div>
+									</div>
+									<div class="testi-autor-box">
+										<div class="testi-autor">
+											<img src="{{ asset('assets/images/home-one/testi-autor3.webp') }}" alt="autor">
+										</div>
+										<div class="testi-autor-content">
+											<h5 class="autor-title">Nur Islam</h5>
+											<p class="autor-desi">Students</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="testi-box">
+									<div class="single-testi-box">
+										<div class="testi-quote">
+											<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
+										</div>
+										<div class="testi-title">
+											<h3>Impresive Learning!</h3>
+										</div>
+										<div class="testi-desc">
+											<p>Educate the ultimate destination for knowledge seekers and
+												educators we are committed to transforming special education
+												impact global channels without standards compliant systems
+												attractive learning opinions.</p>
+										</div>
+										<div class="testi-ratting">
+											<ul>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-solid fa-star"></i></li>
+												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
+											</ul>
+										</div>
+									</div>
+									<div class="testi-autor-box">
+										<div class="testi-autor">
+											<img src="{{ asset('assets/images/home-one/testi-autor4.webp') }}" alt="autor">
+										</div>
+										<div class="testi-autor-content">
+											<h5 class="autor-title">Saifur Rahman</h5>
+											<p class="autor-desi">Students</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
   </section>
 
@@ -844,9 +1076,22 @@
     </div>
     </div>
   </div>
+  <section class="container-fluid p-20" style="border: 1px solid #ddd;">
+    <img src="{{ asset('assets/images/Start-Here-Course-Page-01.webp') }} " alt="Full Screen Image">
+  </section>
+
+<div class="bg-light py-5 mt-20">
+  <h2 class="text-center mb-2" style="font-size: 2rem;">
+    Our <span style="color: #f29c12;">Collaborations </span> Studies
+  </h2>
+  <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+    Discover the key features and benefits you’ll gain from joining our program.
+  </p>
+</div>
 
   @foreach ($course->keyFeatures as $index => $feature)
-    <section class="session-section">
+    <section class="session-section bg-light py-5 mt-2">
+      
     <div class="container">
     <div class="row align-items-center">
       @if ($index % 2 == 0)

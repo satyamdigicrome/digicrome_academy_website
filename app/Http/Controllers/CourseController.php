@@ -31,7 +31,7 @@ class CourseController extends Controller
         'keyFeatures:id,course_id,heading,paragraph,image',
         'modules:id,course_id,question,answer',
     ])
-    ->select('id', 'name', 'slug', 'description', 'image', 'tag_line','about','course_free') // load only needed course fields
+    ->select('id', 'name', 'slug', 'description', 'image', 'tag_line','about','course_free','us_price','dubai_price','price') // load only needed course fields
     ->where('slug', $slug)
     ->firstOrFail();
 
