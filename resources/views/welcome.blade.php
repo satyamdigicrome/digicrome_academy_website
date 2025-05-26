@@ -53,7 +53,7 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div class="hero-thumb-wrapper">
+					<div class="hero-thumb-wrapper"> 
 						<div class="hero-thumb">
 							<img src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="thumb">
 						</div>
