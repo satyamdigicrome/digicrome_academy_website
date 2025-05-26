@@ -65,7 +65,7 @@
 		<div class="row subscribe align-items-center">
 			<div class="col-lg-4 col-md-12">
 				<div class="footer-logo">
-					<a href="index.html"><img src="assets/images/home-one/footer-logo.webp" alt="logo"></a>
+					<a href="#"><img src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-12">
@@ -74,7 +74,7 @@
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-12">
-				<form action="https://formspree.io/f/myyleorq" method="POST">
+				<form action="#" method="POST">
 					<div class="subscribe-box">
 						<span><i class="fa-classic fa-regular fa-envelope fa-fw"></i></span>
 						<input type="text" name="Email" placeholder="Enter Your Email" required="">
@@ -96,7 +96,7 @@
 					</div>
 					<div class="footer-contact-info">
 						<div class="footer-contact-phone">
-							<p><img src="assets/images/home-one/footer-call.webp" alt="call">+123 (4567) 890</p>
+							<p><img src="{{ asset('assets/images/home-one/footer-call.webp') }}" alt="call">+123 (4567) 890</p>
 						</div>
 						<div class="footer-contact-address">
 							<span><i class="fa-classic fa-regular fa-envelope fa-fw"></i>example@gmail.com</span>
@@ -111,11 +111,11 @@
 					</div>
 					<div class="footer-widget-menu">
 						<ul>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="about.html">About Us</a></li>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="course.html">Our Courses</a></li>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="instructor.html">Instructors</a></li>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="contact.html">Enroll Now</a></li>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="course-details.html">Career</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="about.html">About Us</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="course.html">Our Courses</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="instructor.html">Instructors</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="contact.html">Enroll Now</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="course-details.html">Career</a></li>
 						</ul>
 					</div>
 				</div>
@@ -127,11 +127,11 @@
 					</div>
 					<div class="footer-widget-menu">
 						<ul>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="blog.html">Latest Blog</a></li>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="#">Our Galary</a></li>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="contact.html">Contact Us</a></li>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="course-details.html">Privacy Policy</a></li>
-							<li><img src="assets/images/home-one/footer-icon.webp" alt="icon"><a href="faq.html">FAQ’s</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="blog.html">Latest Blog</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="#">Our Galary</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="contact.html">Contact Us</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="course-details.html">Privacy Policy</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="faq.html">FAQ's</a></li>
 						</ul>
 					</div>
 				</div>
@@ -152,7 +152,7 @@
 				</div>
 				<div class="footer-widget-blog">
 					<div class="footer-widget-blog-thumb">
-						<img src="assets/images/home-one/footer-recent-img2.webp" alt="recent-img">
+						<img src="{{ asset('assets/images/home-one/footer-recent-img2.webp') }}" alt="recent-img">
 					</div>
 					<div class="footer-widget-blog-content">
 						<a href="blog-details.html">Trends that are shaping 
