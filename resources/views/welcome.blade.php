@@ -12,11 +12,10 @@
 				<div class="col-lg-6">
 					<!-- hero content -->
 					<div class="hero_content">
-						<h5><i class="bi bi-check2"></i>100% Satisfaction Gaurantee</h5>
-						<h1>Growup Your Learning</h1>
-						<h1>Skills with Educate</h1>
-						<p><strong>Educate</strong> the ultimate destination for knowledge seekers and educators alike.
-							We are committed to transforming education</p>
+						<h5><i class="bi bi-check2"></i>Your future skills are just a click away</h5>
+						<h1>Kick-start your career </h1>
+						<h1>with Digicrome</h1>
+						<p>Learn the <strong>most in-demand skills</strong> of today and tomorrow, and become the one everyone wants to hire in your field.</p>
 						<!-- hero button -->
 						<div class="hero-button">
 							<div class="hero-btn">
@@ -29,7 +28,7 @@
 					</div>
 					<div class="hero-rating-box">
 						<div class="hero-rating-icon">
-							<img src="{{ asset('assets/images/home-one/star-icon.webp') }}" alt="star">
+							{{-- <img src="{{ asset('assets/images/home-one/star-icon.webp') }}" alt="star"> --}}
 							<span>1k+</span>
 						</div>
 						<div class="hero-rating-item-box">
@@ -46,8 +45,7 @@
 								<span>(4.7 Ratings)</span>
 							</div>
 							<div class="hero-rating-des">
-								<p>Students learn daily with
-									educate platform</p>
+								<p>learners skill up daily. Don’t get left behind.</p>
 							</div>
 						</div>
 					</div>
@@ -100,8 +98,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Interactive Online Learning</h1>
-						<h1>Key Features & Benefits</h1>
+						<h1>Climb your career ladder </h1>
+						<h1>with world-class Professional.</h1>
 					</div>
 				</div>
 			</div>
@@ -112,9 +110,8 @@
 							<img src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Learning Experiences</h4>
-							<p class="feature-desc">The ultimate destination for knowledge for
-								We are committed to transforming</p>
+							<h4 class="feature-title">500+ Hiring Partners</h4>
+							<p class="feature-desc">We guarantee placement assistance, so we have tied up with 500+ global partners to assist students in securing job opportunities.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -128,9 +125,8 @@
 							<img src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Professional Instructor</h4>
-							<p class="feature-desc">The ultimate destination for knowledge for
-								We are committed to transforming</p>
+							<h4 class="feature-title">45+ Industry-Relevant Projects</h4>
+							<p class="feature-desc">Work on our industry-based live projects to harness top-level industry experience and make way to a winning career.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -144,9 +140,8 @@
 							<img src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Moneyback Gaurantee</h4>
-							<p class="feature-desc">The ultimate destination for knowledge for
-								We are committed to transforming</p>
+							<h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
+							<p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong foundation. Get 24/7 assistance available for assignments.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -160,9 +155,8 @@
 							<img src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Moneyback Gaurantee</h4>
-							<p class="feature-desc">The ultimate destination for knowledge for
-								We are committed to transforming</p>
+							<h4 class="feature-title">Job Ready Program</h4>
+							<p class="feature-desc">Exclusive placement cell dedicated to students completing the course, we help secure job opportunities. So far, 5,000+ students have been employed.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -211,25 +205,23 @@
 							<h6>ABOUT US</h6>
 						</div>
 						<div class="section_title">
-							<h1>Who We Are – Introduction to</h1>
-							<h1>Educate Online Platform</h1>
+							<h1>Who Are We – Introduction to</h1>
+							<h1>Digicrome Online Platform</h1>
 						</div>
 						<div class="section-title-desc">
-							<p>Educate the ultimate destination for knowledge seekers and educators alike.
-								We are committed to transforming special education impact global channels
-								without standards compliant systems</p>
+							<p>We are a globally reputed online education academy. We skill up students and professionals with must-have IT and Business skills. Through expert-led, certification-backed training, we bridge the gap between learning and industry demands.</p>
 						</div>
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="about-item-list">
 									<span><img src="{{ asset('assets/images/home-one/about-icon.webp') }}"
-											alt="icon">Innovative Learning System</span>
+											alt="icon">Globally Recognized Certifications</span>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="about-item-list">
 									<span><img src="{{ asset('assets/images/home-one/about-icon.webp') }}"
-											alt="icon">Worldwide Intelligent Learner</span>
+											alt="icon">Industry-Approved Curriculum</span>
 								</div>
 							</div>
 						</div>
@@ -241,20 +233,18 @@
 										<span>+</span>
 									</div>
 									<div class="about-item-desc">
-										<p>Expert and Professional
-											all Instructor</p>
+										<p>Expert Trainers with Industry Experience</p>
 									</div>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="about-item-box two">
 									<div class="about-iteam-count">
-										<h3 class="counter">6</h3>
+										<h3 class="counter">19</h3>
 										<span>k+</span>
 									</div>
 									<div class="about-item-desc last">
-										<p>Enrolled Students all<br>
-											Over the World</p>
+										<p>Students from Across the Globe </p>
 									</div>
 								</div>
 							</div>
@@ -335,213 +325,152 @@
 					<div class="case_study_nav">
 						<div class="case_study_menu">
 							<ul class="menu-filtering">
-								<li data-filter=".Networking">Upcomeing Courses</li>
-								<li data-filter="*" class="current_menu_item">Postgraduate And Master Programs</li>
-								<li data-filter=".Wordpress">Professional Programs</li>
-								<li data-filter=".Business">Language Programs</li>
-								<li data-filter=".Networking">Certificate Programs</li>
-							</ul>
+								<li class="current_menu_item" data-filter=".Upcoming">Upcoming Courses</li>
+								@foreach($collections as $collection)
+								  <li data-filter=".{{ Str::slug($collection->name) }}">{{ $collection->name }}</li>
+								@endforeach
+							  </ul>					  
+							
+							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container">
-			<!-- row2 -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+			  var grid = document.querySelector('.image_load');
+			  var iso = new Isotope(grid, {
+				itemSelector: '.grid-item',
+				layoutMode: 'fitRows'
+			  });
+		  
+			  var filterButtons = document.querySelectorAll('.menu-filtering li');
+		  
+			  filterButtons.forEach(function (button) {
+				button.addEventListener('click', function () {
+				  filterButtons.forEach(btn => btn.classList.remove('current_menu_item'));
+				  this.classList.add('current_menu_item');
+				  var filterValue = this.getAttribute('data-filter');
+				  iso.arrange({ filter: filterValue });
+				});
+			  });
+		  
+			  // Show Upcoming by default
+			  iso.arrange({ filter: '.Upcoming' });
+			});
+		  </script>
+		  
+		  
+		  <div class="container">
 			<div class="row image_load">
-				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Wordpress Networking">
+				{{-- Upcoming Courses --}}
+				@foreach($upcomingCourses as $course)
+				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
 					<div class="case-study-single-box">
-						<div class="case-study-thumb">
-							<img src="{{ asset('assets/images/home-one/case-thumb1.webp') }}" alt="thumb">
-							<div class="case-meta-top">
-								<span>$30</span>
-							</div>
-						</div>
-						<div class="case-study-content">
-							<h5>Business</h5>
-							<h4><a href="course.html">Business Innovation And
-									Development</a></h4>
-							<div class="case-rating">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-								<div class="case-rating-num">
-									<span>(4.5/3 Ratings)</span>
+							{{-- Use same HTML course card template --}}
+							<div class="case-study-thumb">
+								<img src="{{ asset('assets/images/home-one/case-thumb1.webp') }}" alt="thumb">
+								<div class="case-meta-top">
+									<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
 								</div>
 							</div>
-							<div class="case-autor-box">
-								<div class="case-autor-img">
-									<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
+							<div class="case-study-content">
+								<h5>Upcoming</h5>
+								<h4><a href="#">{{ $course->name }}</a></h4>
+								<div class="case-rating">
+									<ul>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star-half-stroke"></i></li>
+									</ul>
+									<div class="case-rating-num">
+										<span>(4.5/3 Ratings)</span>
+									</div>
 								</div>
-								<div class="case-autor-content">
-									<h3>John D. Alexon</h3>
-									<p>Instractor</p>
+								<div class="case-autor-box">
+									<div class="case-autor-img">
+										<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
+									</div>
+									<div class="case-autor-content">
+										<h3>Instructor</h3>
+										<p>Instructor</p>
+									</div>
 								</div>
-							</div>
-							<div class="case-course-content">
-								<div class="course-lesson">
-									<span><i class="fa-regular fa-file-lines"></i> 12 Leasons</span>
+								<div class="case-course-content">
+									<div class="course-lesson">
+										<span><i class="fa-regular fa-file-lines"></i> 12 Lessons</span>
+									</div>
+									<div class="course-student">
+										<span><i class="fa-regular fa-user"></i> 1200 Students</span>
+									</div>
 								</div>
-								<div class="course-student">
-									<span><i class="fa-regular fa-user"></i> 1200 Students</span>
+								<div class="course-btn">
+									<a href="#">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
 								</div>
-							</div>
-							<div class="course-btn">
-								<a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Business Finance Wordpress">
-					<div class="case-study-single-box box-2">
-						<div class="case-study-thumb">
-							<img src="{{ asset('assets/images/home-one/case-thumb2.webp') }}" alt="thumb">
-							<div class="case-meta-top">
-								<span>Free</span>
-							</div>
-						</div>
-						<div class="case-study-content">
-							<h5>Networking</h5>
-							<h4><a href="course.html">Fundamentals of Network
-									And Domains</a></h4>
-							<div class="case-rating">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-								<div class="case-rating-num">
-									<span>(4.5/3 Ratings)</span>
-								</div>
-							</div>
-							<div class="case-autor-box">
-								<div class="case-autor-img">
-									<img src="{{ asset('assets/images/home-one/case-autor2.webp') }}" alt="autor">
-								</div>
-								<div class="case-autor-content">
-									<h3>David Watson</h3>
-									<p>Instractor</p>
-								</div>
-							</div>
-							<div class="case-course-content">
-								<div class="course-lesson">
-									<span><i class="fa-regular fa-file-lines"></i> 16 Leasons</span>
-								</div>
-								<div class="course-student">
-									<span><i class="fa-regular fa-user"></i> 1500 Students</span>
-								</div>
-							</div>
-							<div class="course-btn">
-								<a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Networking Designing Business">
-					<div class="case-study-single-box box-3">
-						<div class="case-study-thumb">
-							<img src="{{ asset('assets/images/home-one/case-thumb3.webp') }}" alt="thumb">
-							<div class="case-meta-top">
-								<span>$35</span>
+				@endforeach
+			
+				{{-- Courses by Collection --}}
+				@foreach($collections as $collection)
+					@foreach($collection->courses as $course)
+						<div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }}">
+							<div class="case-study-single-box">
+								{{-- Same card HTML reused --}}
+								<div class="case-study-thumb">
+									<img src="{{ asset('assets/images/home-one/case-thumb1.webp') }}" alt="thumb">
+									<div class="case-meta-top">
+										<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
+									</div>
+								</div>
+								<div class="case-study-content">
+									<h5>{{ $collection->name }}</h5>
+									<h4><a href="#">{{ $course->name }}</a></h4>
+									<div class="case-rating">
+										<ul>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star-half-stroke"></i></li>
+										</ul>
+										<div class="case-rating-num">
+											<span>(4.5/3 Ratings)</span>
+										</div>
+									</div>
+									<div class="case-autor-box">
+										<div class="case-autor-img">
+											<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
+										</div>
+										<div class="case-autor-content">
+											<h3>Instructor</h3>
+											<p>Instructor</p>
+										</div>
+									</div>
+									<div class="case-course-content">
+										<div class="course-lesson">
+											<span><i class="fa-regular fa-file-lines"></i> 12 Lessons</span>
+										</div>
+										<div class="course-student">
+											<span><i class="fa-regular fa-user"></i> 1200 Students</span>
+										</div>
+									</div>
+									<div class="course-btn">
+										<a href="#">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="case-study-content">
-							<h5>Designing</h5>
-							<h4><a href="course.html">Creative Graphic Design
-									with Adobe Suite</a></h4>
-							<div class="case-rating">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-								<div class="case-rating-num">
-									<span>(4.5/3 Ratings)</span>
-								</div>
-							</div>
-							<div class="case-autor-box">
-								<div class="case-autor-img">
-									<img src="{{ asset('assets/images/home-one/case-autor3.webp') }}" alt="autor">
-								</div>
-								<div class="case-autor-content">
-									<h3>Nelson Mendela</h3>
-									<p>Instractor</p>
-								</div>
-							</div>
-							<div class="case-course-content">
-								<div class="course-lesson">
-									<span><i class="fa-regular fa-file-lines"></i> 15 Leasons</span>
-								</div>
-								<div class="course-student">
-									<span><i class="fa-regular fa-user"></i> 1600 Students</span>
-								</div>
-							</div>
-							<div class="course-btn">
-								<a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Networking Designing Business">
-					<div class="case-study-single-box box-3">
-						<div class="case-study-thumb">
-							<img src="{{ asset('assets/images/home-one/case-thumb3.webp') }}" alt="thumb">
-							<div class="case-meta-top">
-								<span>$35</span>
-							</div>
-						</div>
-						<div class="case-study-content">
-							<h5>Designing</h5>
-							<h4><a href="course.html">Creative Graphic Design
-									with Adobe Suite</a></h4>
-							<div class="case-rating">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-								<div class="case-rating-num">
-									<span>(4.5/3 Ratings)</span>
-								</div>
-							</div>
-							<div class="case-autor-box">
-								<div class="case-autor-img">
-									<img src="{{ asset('assets/images/home-one/case-autor3.webp') }}" alt="autor">
-								</div>
-								<div class="case-autor-content">
-									<h3>Nelson Mendela</h3>
-									<p>Instractor</p>
-								</div>
-							</div>
-							<div class="case-course-content">
-								<div class="course-lesson">
-									<span><i class="fa-regular fa-file-lines"></i> 15 Leasons</span>
-								</div>
-								<div class="course-student">
-									<span><i class="fa-regular fa-user"></i> 1600 Students</span>
-								</div>
-							</div>
-							<div class="course-btn">
-								<a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
+					@endforeach
+				@endforeach
 			</div>
-			<div class="case-shape1">
-				<img src="{{ asset('assets/images/home-one/case-shape1.webp') }}" alt="shape">
-			</div>
+			
 		</div>
+		
 	</div>
 	<!--==================================================-->
 	<!--End educate case study Area -->
@@ -559,28 +488,27 @@
 							<h6>why choose us?</h6>
 						</div>
 						<div class="section_title">
-							<h1>Innovative and effective</h1>
-							<h1>learning approaches</h1>
+							<h1>We Bring You Closer To</h1>
+							<h1>A Successful Career</h1>
 						</div>
 						<div class="section-title-desc">
-							<p>Educate the ultimate destination for knowledge seekers and educators alike.
-								We are committed to transforming special education impact global channels
-								without standards compliant systems</p>
+							<p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we support you from basic to advanced. As one of the best data science institutes in India, and the top Data science institute in Noida, we make career shifts smooth. Quickly apply and work for your success.</p>
 						</div>
 						<div class="choose-item-menu">
 							<ul>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">Course
-									Management</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">Students
-									Progress Tracking</li>
+								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">Weekly Live Sessions
+								</li>
+								<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">Select a convenient batch time
+								</li>
 								<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
-										alt="icon">Interactive Live Class</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">Quiz and
-									Assignments</li>
+										alt="icon">Get Placement Assistance
+									</li>
+								<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">Get a Salary Hike
+								</li>
 							</ul>
 						</div>
 						<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.webp') }}"
-								alt="star">24/7 Hrs Ready to our support team</p>
+								alt="star">24/7 Mentor Support Available </p>
 						<div class="choose-btn">
 							<a href="choose.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
 						</div>
@@ -678,48 +606,66 @@
 	<section class="video-slider">
 		<div class="container">
 			<h2 class="text-center mb-5" style="color: #f29c12;">Our Featured Videos</h2>
+			<style>
+				.video-card {
+				  position: relative;
+				  padding-top: 177.78%; /* 9:16 ratio */
+				  overflow: hidden;
+				  border-radius: 12px;
+				  background: #000;
+				  cursor: pointer;
+				}
+			  
+				.video-card iframe {
+				  position: absolute;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  height: 100%;
+				  pointer-events: none;
+				}
+			  
+				.video-title {
+				  text-align: center;
+				  font-size: 14px;
+				  margin-top: 8px;
+				  font-weight: 500;
+				}
+			  </style>
+			  
+			  
 			<div id="vimeoCarousel" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-inner">
-
 					<div class="carousel-item active">
-						<div class="row justify-content-center">
-							<div class="col-md-6 col-lg-4 mb-4">
-								<div class="video-card">
-									<iframe src="https://player.vimeo.com/video/76979871" frameborder="0"
-										allowfullscreen></iframe>
-									<div class="video-title">Exploring the Mountains</div>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-4 mb-4">
-								<div class="video-card">
-									<iframe src="https://player.vimeo.com/video/22439234" frameborder="0"
-										allowfullscreen></iframe>
-									<div class="video-title">Creative Animation</div>
-								</div>
-							</div>
+					  <div class="row justify-content-center">
+						<div class="col-6 col-md-3 mb-4">
+						  <div class="video-card" data-vimeo="https://player.vimeo.com/video/76979871">
+							<iframe src="https://player.vimeo.com/video/76979871" frameborder="0" allowfullscreen></iframe>
+							<div class="video-title">Exploring the Mountains</div>
+						  </div>
 						</div>
-					</div>
-
-					<div class="carousel-item">
-						<div class="row justify-content-center">
-							<div class="col-md-6 col-lg-4 mb-4">
-								<div class="video-card">
-									<iframe src="https://player.vimeo.com/video/146022717" frameborder="0"
-										allowfullscreen></iframe>
-									<div class="video-title">Nature Walk</div>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-4 mb-4">
-								<div class="video-card">
-									<iframe src="https://player.vimeo.com/video/1084537" frameborder="0"
-										allowfullscreen></iframe>
-									<div class="video-title">Art in Motion</div>
-								</div>
-							</div>
+						<div class="col-6 col-md-3 mb-4">
+						  <div class="video-card" data-vimeo="https://player.vimeo.com/video/22439234">
+							<iframe src="https://player.vimeo.com/video/22439234" frameborder="0" allowfullscreen></iframe>
+							<div class="video-title">Creative Animation</div>
+						  </div>
 						</div>
+						<div class="col-6 col-md-3 mb-4">
+						  <div class="video-card" data-vimeo="https://player.vimeo.com/video/146022717">
+							<iframe src="https://player.vimeo.com/video/146022717" frameborder="0" allowfullscreen></iframe>
+							<div class="video-title">Nature Walk</div>
+						  </div>
+						</div>
+						<div class="col-6 col-md-3 mb-4">
+						  <div class="video-card" data-vimeo="https://player.vimeo.com/video/1084537">
+							<iframe src="https://player.vimeo.com/video/1084537" frameborder="0" allowfullscreen></iframe>
+							<div class="video-title">Art in Motion</div>
+						  </div>
+						</div>
+					  </div>
 					</div>
-
-				</div>
+				  </div>
+				  
 				<button class="carousel-control-prev" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon"></span>
 				</button>
@@ -728,6 +674,17 @@
 				</button>
 			</div>
 		</div>
+		<!-- Vimeo Modal -->
+<div class="modal fade" id="vimeoModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+	  <div class="modal-content bg-dark text-white">
+		<div class="modal-body modal-video">
+		  <iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
 	</section>
 	<style>
 		.video-slider {
@@ -786,8 +743,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Introducing the Educators and</h1>
-						<h1>Professional Instructor</h1>
+						<h1>Meet the Mentors </h1>
+						<h1>Behind Your Growth</h1>
 					</div>
 				</div>
 			</div>
@@ -961,8 +918,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Real Experiences From Our</h1>
-						<h1>Dedicated Learners</h1>
+						<h1>What Students Say About </h1>
+						<h1>Digicrome Experience</h1>
 					</div>
 				</div>
 			</div>
@@ -1120,7 +1077,7 @@
 							</div>
 							<div class="call-to-content">
 								<h6>Call Anytime</h6>
-								<h4>+123 (4567) 890</h4>
+								<h4>01203133869</h4>
 							</div>
 						</div>
 						<div class="call-to-arrow">
@@ -1159,16 +1116,15 @@
 					<div class="choose-content">
 						<!-- section title -->
 						<div class="section-sub-title">
-							<h6>Explore Exciting Career Opportunities in Data Science and AI</h6>
+							<h6>Explore Career Opportunities in the most future-oriented sector</h6>
 						</div>
 						<div class="section_title">
-							<h1>Understand different roles</h1>
-							<h1>And learn effortlessly.</h1>
+							<h1>Build skills. Grab opportunities.</h1>
+							<h1> Start now.</h1>
 						</div>
 						<div class="section-title-desc">
-							<p>Discover the limitless opportunities in the dynamic field of data science and artificial
-								intelligence. Dive into a world of endless possibilities as you prepare for a highly
-								demanded career.</p>
+							<p>Become a professional at what you learn. Start from scratch and make your way to a career full of growth, opportunities, and success. Begin today and build your future right.
+							</p>
 						</div>
 						<div class="choose-item-menu">
 							<ul>
@@ -1183,7 +1139,8 @@
 							</ul>
 						</div>
 						<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.webp') }}"
-								alt="star">Embark on a journey of innovation in data science and AI.</p>
+								alt="star">Don't Stay Stuck, Expand Your Potential Today 
+							</p>
 						<div class="choose-btn">
 							<a href="choose.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
 						</div>
@@ -1233,7 +1190,7 @@
 				<div class="col-lg-6">
 					<div class="section_title">
 						<h1>Read the Latest Insights and</h1>
-						<h1>Updates Educate Blog</h1>
+						<h1>Updates Digicrome Blog</h1>
 					</div>
 				</div>
 			</div>

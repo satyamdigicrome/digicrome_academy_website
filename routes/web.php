@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\KeyFeatureController;
 use App\Http\Controllers\Admin\ModuleController;
+use App\Http\Controllers\HomeController;
 
 
 
@@ -38,10 +39,10 @@ use App\Http\Controllers\Admin\ModuleController;
 
 
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
