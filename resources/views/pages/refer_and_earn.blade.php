@@ -65,22 +65,15 @@
     <div class="container">
     <h2 class="text-center mb-4">Refer a Friend</h2>
     <p class="text-center mb-4">Fill out the form to refer someone and help them start their journey.</p>
-
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-      <form>
-        <div class="mb-3">
-        <label for="friendName" class="form-label">Friend's Name</label>
-        <input type="text" class="form-control" id="friendName" placeholder="Enter friend's full name">
-        </div>
-        <div class="mb-3">
-        <label for="friendEmail" class="form-label">Friend's Email</label>
-        <input type="email" class="form-control" id="friendEmail" placeholder="Enter friend's email address">
-        </div>
-        <div class="mb-3">
-        <label for="friendPhone" class="form-label">Friend's Phone</label>
-        <input type="tel" class="form-control" id="friendPhone" placeholder="Enter friend's phone number">
-        </div>
+     <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="#">
+          <input type="text" placeholder="Freind's Name " required />
+          <input type="text" placeholder="Freind's Contact no." required />
+          <input type="password" placeholder="Freind's Mail" required />
+        </form>
+      </div>
         <div class="d-grid">
         <button type="submit" class="btn btn-theme btn-lg">Submit Referral</button>
         </div>
@@ -97,68 +90,136 @@
     </div>
   </section>
   <style>
-    :root {
-    --theme-color: #f29c12;
-    }
 
-    .hero {
-    background-color: var(--theme-color);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-    }
+.wrapper {
+  position: relative;
+  max-width: 470px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px
+    30px
+    120px;
+  background: #4070f4;
+  box-shadow: 0
+    5px
+    10px
+    rgba(
+      0,
+      0,
+      0,   0.1
+    );
+  overflow: hidden;
+}
+.form.login {
+  position: absolute;
+  left: 50%;
+  bottom: -86%;
+  transform: translateX(
+    -50%
+  );
+  width: calc(
+    100% +
+      220px
+  );
+  padding: 20px
+    140px;
+  border-radius: 50%;
+  height: 100%;
+  background: #fff;
+  transition: all
+    0.6s
+    ease;
+}
+.wrapper.active
+  .form.login {
+  bottom: -15%;
+  border-radius: 35%;
+  box-shadow: 0 -5px
+    10px rgba(0, 0, 0, 0.1);
+}
+.form
+  header {
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.form.login
+  header {
+  color: #333;
+  opacity: 0.6;
+}
+.wrapper.active
+  .form.login
+  header {
+  opacity: 1;
+}
+.wrapper.active
+  .signup
+  header {
+  opacity: 0.6;
+}
+.wrapper
+  form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+form
+  input {
+  height: 60px;
+  outline: none;
+  border: none;
+  padding: 0
+    15px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 8px;
+  background: #fff;
+}
+.form.login
+  input {
+  border: 1px
+    solid
+    #aaa;
+}
+.form.login
+  input:focus {
+  box-shadow: 0
+    1px 0
+    #ddd;
+}
+form
+  .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.checkbox
+  input[type="checkbox"] {
+  height: 16px;
+  width: 16px;
+  accent-color: #fff;
+  cursor: pointer;
+}
+form
+  .checkbox
+  label {
+  cursor: pointer;
+  color: #fff;
+}
+form a {
+  color: #333;
+  text-decoration: none;
+}
+form
+  a:hover {
+  text-decoration: underline;
+}
 
-    .step-icon {
-    font-size: 40px;
-    color: var(--theme-color);
-    }
 
-    .refer-code-box {
-    background: #fff7e6;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .refer-code {
-    font-size: 20px;
-    font-weight: bold;
-    background-color: var(--theme-color);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    display: inline-block;
-    margin: 10px 0;
-    }
-
-    .btn-theme {
-    background-color: var(--theme-color);
-    color: white;
-    }
-
-    .btn-theme:hover {
-    background-color: #e0890c;
-    color: white;
-    }
-
-    .faq-question {
-    font-weight: bold;
-    }
-
-    .form-section {
-    background-color: #fff3e0;
-    padding: 60px 20px;
-    border-top: 4px solid var(--theme-color);
-    }
-
-    .form-section h2 {
-    color: var(--theme-color);
-    }
-
-    .form-control:focus {
-    border-color: var(--theme-color);
-    box-shadow: 0 0 0 0.2rem rgba(242, 156, 18, 0.25);
-    }
   </style>
 @endsection
