@@ -24,10 +24,13 @@ class HomeController extends Controller
     $companyLogos = Cache::remember('company_logos', 60, function () {
             return Logo::where('type', 'companies')->get(['id', 'image']);
         });
+    $associationLogos = Cache::remember('association_logos', 60, function () {
+        return Logo::where('type', 'association')->get(['id', 'image']);
+    });
     $studentStories = StudentStory::latest()->get(); 
     $testimonials = Testimonial::latest()->get();
 
-    return view('welcome', compact('collections', 'upcomingCourses','companyLogos','studentStories','testimonials'));
+    return view('welcome', compact('collections', 'upcomingCourses','companyLogos','studentStories','testimonials','associationLogos'));
 }
 
 }

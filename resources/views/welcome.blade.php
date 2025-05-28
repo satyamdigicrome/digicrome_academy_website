@@ -176,54 +176,7 @@
 	<!--==================================================-->
 	<!-- End educate feature Area-->
 	<!--==================================================-->
-	<div class="brand-area style-one">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-5">
-					<div class="section-sub-title">
-						<h6>In Association With:</h6>
-					</div>
-					<div class="section_title">
-						<h1>In Association With:</h1>
-					</div>
-				</div>
-				<div class="col-lg-7">
-					<div class="brand-list owl-carousel">
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-								   <img src="{{ asset('assets/images/home-one/brand-img1.webp') }}" alt="brand">
-								</div>
-							</div>
-						</div>				    
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('assets/images/home-one/brand-img2.webp') }}" alt="brand">
-								</div>
-							</div>
-						</div>				   
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('assets/images/home-one/brand-img3.webp') }}" alt="brand">
-								</div>
-							</div>
-						</div>				    				    			    
-					</div>
-				</div>
-			</div>
-			<div class="brand-arrow-shape">
-				<img src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="arrow">
-			</div>
-			<div class="brand-star-shape">
-				<img src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
-			</div>
-			<div class="brand-line-shape">
-				<img src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
-			</div>
-		</div>
-	</div>
+
 	<div class="container">
 		<x-logo-slider :companyLogos="$companyLogos" />
 
@@ -315,13 +268,49 @@
 			</div>
 		</div>
 	</section>
+	<div class="brand-area style-one">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="section-sub-title">
+						<h6>In Association With:</h6>
+					</div>
+					<div class="section_title">
+						<h1>In Association With:</h1>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<div class="brand-list owl-carousel">
+						@foreach($associationLogos as $logo)
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+								   <img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+								</div>
+							</div>
+						</div>
+						@endforeach
+					</div>
+				</div>
+			</div>
+			<div class="brand-arrow-shape">
+				<img src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="arrow">
+			</div>
+			<div class="brand-star-shape">
+				<img src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
+			</div>
+			<div class="brand-line-shape">
+				<img src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
+			</div>
+		</div>
+	</div>
 	<!--==================================================-->
 	<!-- End educate About Area -->
 	<!--==================================================-->
 	<!--==================================================-->
 	<!-- Start educate Marquee Area-->
 	<!--==================================================-->
-	<div class="marquee-section">
+	{{-- <div class="marquee-section">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12">
@@ -350,7 +339,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!--==================================================-->
 	<!-- End educate Marquee Area-->
 	<!--==================================================-->
