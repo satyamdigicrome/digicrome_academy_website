@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="breadcumb-area d-flex">
+<div class="payment-img d-flex">
     <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-12">

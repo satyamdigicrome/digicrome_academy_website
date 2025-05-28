@@ -11500,6 +11500,34 @@ section.contact_area.style-six .contact-form button:hover{
     background-position: center center;
     margin-top: -101px;
 }
+.contact-img {
+    padding: 250px 0 152px;
+    position: relative;
+    background: url(../images/inner-img/Contact-Banner_28-May.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: -101px;
+}
+.payment-img {
+    padding: 250px 0 152px;
+    position: relative;
+    background: url(../images/inner-img/Payment-Banner_28-May.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: -101px;
+}
+.who-img {
+    padding: 250px 0 152px;
+    position: relative;
+    background: url(../images/inner-img/who.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: -101px;
+}
+
 
 
 .breadcumb-area.two {
