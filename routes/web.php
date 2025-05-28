@@ -24,6 +24,9 @@ use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\KeyFeatureController;
 use App\Http\Controllers\Admin\ModuleController;
+use App\Http\Controllers\Admin\SucessController;
+use App\Http\Controllers\Admin\TestimonialController;
+
 
 
 
@@ -90,7 +93,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admin/modules', [ModuleController::class, 'create'])->name('modules.create');
     Route::post('/admin/modules', [ModuleController::class, 'store'])->name('modules.store');
     Route::delete('/admin/modules/{id}', [ModuleController::class, 'destroy'])->name('modules.destroy');
-
+    Route::get('/sucess_stories', [SucessController::class, 'index'])->name('sucess_stories');
+    Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonial');
 
 
 

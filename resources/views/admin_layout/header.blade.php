@@ -31,6 +31,9 @@
             <nav class="nav justify-content-center py-2">
                 <a class="nav-link text-dark px-3" href="#"><i class="bi bi-house-door"></i> Home</a>
                 <a class="nav-link text-dark px-3" href="#"><i class="bi bi-people"></i> Manage Users</a>
+                <a class="nav-link text-dark px-3" href="{{ route('sucess_stories') }}"><i class="bi bi-people"></i> Manage Stories</a>
+                <a class="nav-link text-dark px-3" href="{{ route('testimonial') }}"><i class="bi bi-people"></i> Testimonial</a>
+
 
                 <!-- Dropdown for Manage Courses -->
                 <div class="nav-item dropdown">
