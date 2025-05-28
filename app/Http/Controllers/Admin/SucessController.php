@@ -21,7 +21,7 @@ class SucessController extends Controller
         'position' => 'required|string',
         'companyname' => 'required|string',
         'stoire' => 'required|string',
-        'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+        'image' => 'required|image|mimes:webp|max:2048',
     ]);
 
     $imagePath = $request->file('image')->store('student_images', 'public');
@@ -34,7 +34,7 @@ class SucessController extends Controller
         'companyname' => $request->companyname,
         'stoire' => $request->stoire,
         'image' => $imagePath,
-        'userid' => $userId, // ✅ corrected field name
+        'userid' => $userId, 
     ]);
 
     return redirect()->back()->with('success', 'Story added successfully!');

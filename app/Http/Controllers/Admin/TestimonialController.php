@@ -23,7 +23,7 @@ class TestimonialController extends Controller
             'rating' => 'required|integer|min:1|max:5',
             'name' => 'required|string|max:255',
             'profession' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'nullable|image|mimes:webp|max:2048',
         ]);
 
         $imagePath = null;

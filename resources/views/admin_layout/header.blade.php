@@ -33,6 +33,7 @@
                 <a class="nav-link text-dark px-3" href="#"><i class="bi bi-people"></i> Manage Users</a>
                 <a class="nav-link text-dark px-3" href="{{ route('sucess_stories') }}"><i class="bi bi-people"></i> Manage Stories</a>
                 <a class="nav-link text-dark px-3" href="{{ route('testimonial') }}"><i class="bi bi-people"></i> Testimonial</a>
+                <a class="nav-link text-dark px-3" href="{{ route('blogs.index') }}"><i class="bi bi-people"></i> Blogs</a>
 
 
                 <!-- Dropdown for Manage Courses -->
@@ -50,15 +51,9 @@
                         <li><a class="dropdown-item" href="{{ route('project.index') }}">Projects</a></li>
                         <li><a class="dropdown-item" href="{{ route('keyfeature.index') }}">keyfeature</a></li>
                         <li><a class="dropdown-item" href="{{ route('faqs.create') }}">Manage FAQ</a></li>
-
-
-
-
-
-
-
                     </ul>
-                </div>
+                    
+                </div>                
                 <a class="nav-link text-dark px-3" href="{{route('placement.index')}}"><i class="bi bi-people"></i> Placement</a>
                 <a class="nav-link text-dark px-3" href="{{route('logos.index')}}"><i class="bi bi-people"></i> Logo</a>
 

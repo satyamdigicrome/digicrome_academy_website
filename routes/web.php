@@ -27,6 +27,8 @@ use App\Http\Controllers\Admin\ModuleController;
 use App\Http\Controllers\Admin\SucessController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+
 
 
 
@@ -101,7 +103,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/success-stories/{id}', [SucessController::class, 'destroy'])->name('success.destroy');
     Route::post('testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
     Route::delete('/testimonials/{id}', [SucessController::class, 'destroy'])->name('testimonials.destroy');
-
+    Route::get('blogs', [AdminBlogController::class, 'index'])->name('blogs.index');
+    Route::get('blogs/create', [AdminBlogController::class, 'create'])->name('blogs.create');
+    Route::post('blogs', [AdminBlogController::class, 'store'])->name('blogs.store');
+    Route::get('blogs/{id}/edit', [AdminBlogController::class, 'edit'])->name('blogs.edit');
+    Route::put('blogs/{id}', [AdminBlogController::class, 'update'])->name('blogs.update');
+    Route::delete('blogs/{id}', [AdminBlogController::class, 'destroy'])->name('blogs.destroy');
 
     // Add routes for edit, update, and delete as needed
 });
@@ -120,7 +127,7 @@ Route::get('/who_we_are', [WhoweareController::class, 'index'])->name('who_we_ar
 Route::get('/success_stories', [SucessStoriesController::class, 'index'])->name('success_stories');
 Route::get('/media_presence', [MediaPresenceController ::class, 'index'])->name('media_presence');
 Route::get('/upcoming-courses/{slug}', [CourseController::class, 'course_details'])->name('course_details');
-Route::get('/blog_details', [BlogController ::class, 'blog_details'])->name('blog_details');
+Route::get('/blog/{slug}', [BlogController::class, 'blog_details'])->name('blog.details');
 
 Route::get('/our-courses/{slug}', [CourseController::class, 'showByCategory'])->name('course.category');
 
