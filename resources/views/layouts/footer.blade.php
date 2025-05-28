@@ -96,10 +96,10 @@
 					</div>
 					<div class="footer-contact-info">
 						<div class="footer-contact-phone">
-							<p><img src="{{ asset('assets/images/home-one/footer-call.webp') }}" alt="call">+123 (4567) 890</p>
+							<p><img src="{{ asset('assets/images/home-one/footer-call.webp') }}" alt="call">01203133869</p>
 						</div>
 						<div class="footer-contact-address">
-							<span><i class="fa-classic fa-regular fa-envelope fa-fw"></i>example@gmail.com</span>
+							<span><i class="fa-classic fa-regular fa-envelope fa-fw"></i>info@digicrome.com</span>
 						</div>
 					</div>
 				</div>
@@ -111,11 +111,11 @@
 					</div>
 					<div class="footer-widget-menu">
 						<ul>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="about.html">About Us</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="course.html">Our Courses</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="instructor.html">Instructors</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="contact.html">Enroll Now</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="course-details.html">Career</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('about') }}">About Us</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('course') }}">Upcoming Courses</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('corporate_services') }}">Corporate Services</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('blog') }}">Blog</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('payments') }}">Payments</a></li>
 						</ul>
 					</div>
 				</div>
@@ -127,11 +127,11 @@
 					</div>
 					<div class="footer-widget-menu">
 						<ul>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="blog.html">Latest Blog</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="#">Our Galary</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="contact.html">Contact Us</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="course-details.html">Privacy Policy</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="faq.html">FAQ's</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('who_we_are') }}">Who we are</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('success_stories') }}">Success stories</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('media_presence') }}">Media Presence</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="#">Privacy Policy</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="#">FAQ's</a></li>
 						</ul>
 					</div>
 				</div>
