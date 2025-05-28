@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Collection;
+use App\Models\StudentStory;
+use App\Models\Testimonial;
 use App\Models\Logo;
 use Illuminate\Support\Facades\Cache;
 class HomeController extends Controller
@@ -22,7 +24,10 @@ class HomeController extends Controller
     $companyLogos = Cache::remember('company_logos', 60, function () {
             return Logo::where('type', 'companies')->get(['id', 'image']);
         });
-    return view('welcome', compact('collections', 'upcomingCourses','companyLogos'));
+    $studentStories = StudentStory::latest()->get(); 
+    $testimonials = Testimonial::latest()->get();
+
+    return view('welcome', compact('collections', 'upcomingCourses','companyLogos','studentStories','testimonials'));
 }
 
 }

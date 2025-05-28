@@ -7,57 +7,74 @@
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <form class="p-4 border rounded shadow bg-light">
+      <form class="p-4 border rounded shadow bg-light" action="{{ route('success.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="mb-3 text-center">
-          <label for="imageInput" class="btn btn-primary w-100">Choose an image</label>
-          <input type="file" id="imageInput" accept="image/*" hidden>
+            <label for="image" class="btn btn-primary w-100">Choose an image</label>
+            <input type="file" id="image" name="image" accept="image/*" hidden required>
+        </div>
+    
+        <div class="mb-3">
+            <label for="studentname" class="form-label">Name:</label>
+            <input type="text" id="studentname" name="studentname" class="form-control" required>
+        </div>
+    
+        <div class="mb-3">
+            <label for="position" class="form-label">Position:</label>
+            <input type="text" id="position" name="position" class="form-control" required>
+        </div>
+    
+        <div class="mb-3">
+            <label for="companyname" class="form-label">Company name</label>
+            <input type="text" id="companyname" name="companyname" class="form-control" required>
         </div>
 
         <div class="mb-3">
-          <label for="name" class="form-label">Name:</label>
-          <input type="text" id="name" name="name" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Position:</label>
-          <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Package:</label>
-          <input type="text" id="message" name="message" class="form-control" required>
-        </div>
+          <label for="stoire" class="form-label">Stories</label>
+          <textarea id="stoire" name="stoire" class="form-control" rows="4" required></textarea>
+      </div>
+      
+    
         <div class="d-grid">
-          <button type="submit" class="btn btn-success">Add Your Success Story</button>
+            <button type="submit" class="btn btn-success">Add Your Success Story</button>
         </div>
-      </form>
+    </form>
+    
     </div>
   </div>
 </div>
   <h2>User Success Stories</h2>
-  <table>
+  <table class="table mt-4">
     <thead>
-      <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Package</th>
-        <th>User ID</th>
-        <th>Actions</th>
-      </tr>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Package</th>
+            <th>User ID</th>
+            <th>Actions</th>
+        </tr>
     </thead>
     <tbody>
-      <tr>
-        <td data-label="Image"><img src="https://via.placeholder.com/50" alt="User Image"></td>
-        <td data-label="Name">Jane Doe</td>
-        <td data-label="Position">Software Engineer</td>
-        <td data-label="Package">$90,000</td>
-        <td data-label="User ID">U12345</td>
-        <td class="actions" data-label="Actions">
-      
-          <button class="delete-btn">Delete</button>
-        </td>
-      </tr>
+        @foreach($stories as $story)
+        <tr>
+            <td><img src="{{ asset('storage/' . $story->image) }}" width="50" alt="User Image"></td>
+            <td>{{ $story->studentname }}</td>
+            <td>{{ $story->position }}</td>
+            <td>{{ $story->companyname }}</td>
+            <td>{{ $story->userid }}</td>
+            <td>
+                <form action="{{ route('success.destroy', $story->id) }}" method="POST" onsubmit="return confirm('Are you sure to delete?')">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
     </tbody>
-  </table>
+</table>
+
 
  <style>
 

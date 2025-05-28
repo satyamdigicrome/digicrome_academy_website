@@ -994,114 +994,46 @@
 				<div class="col-lg-6">
 					<div class="row">
 						<div class="testi-list owl-carousel">
-							<div class="col-lg-12">
-								<div class="testi-box">
-									<div class="single-testi-box">
-										<div class="testi-quote">
-											<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
-										</div>
-										<div class="testi-title">
-											<h3>Impresive Learning!</h3>
-										</div>
-										<div class="testi-desc">
-											<p>Educate the ultimate destination for knowledge seekers and
-												educators we are committed to transforming special education
-												impact global channels without standards compliant systems
-												attractive learning opinions.</p>
-										</div>
-										<div class="testi-ratting">
-											<ul>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-											</ul>
-										</div>
-									</div>
-									<div class="testi-autor-box">
-										<div class="testi-autor">
-											<img src="{{ asset('assets/images/home-one/testi-autor1.webp') }}" alt="autor">
-										</div>
-										<div class="testi-autor-content">
-											<h5 class="autor-title">Sonia Sara</h5>
-											<p class="autor-desi">Students</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="testi-box">
-									<div class="single-testi-box">
-										<div class="testi-quote">
-											<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
-										</div>
-										<div class="testi-title">
-											<h3>Impresive Learning!</h3>
-										</div>
-										<div class="testi-desc">
-											<p>Educate the ultimate destination for knowledge seekers and
-												educators we are committed to transforming special education
-												impact global channels without standards compliant systems
-												attractive learning opinions.</p>
-										</div>
-										<div class="testi-ratting">
-											<ul>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-											</ul>
-										</div>
-									</div>
-									<div class="testi-autor-box">
-										<div class="testi-autor">
-											<img src="{{ asset('assets/images/home-one/testi-autor3.webp') }}" alt="autor">
-										</div>
-										<div class="testi-autor-content">
-											<h5 class="autor-title">Nur Islam</h5>
-											<p class="autor-desi">Students</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="testi-box">
-									<div class="single-testi-box">
-										<div class="testi-quote">
-											<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
-										</div>
-										<div class="testi-title">
-											<h3>Impresive Learning!</h3>
-										</div>
-										<div class="testi-desc">
-											<p>Educate the ultimate destination for knowledge seekers and
-												educators we are committed to transforming special education
-												impact global channels without standards compliant systems
-												attractive learning opinions.</p>
-										</div>
-										<div class="testi-ratting">
-											<ul>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-											</ul>
-										</div>
-									</div>
-									<div class="testi-autor-box">
-										<div class="testi-autor">
-											<img src="{{ asset('assets/images/home-one/testi-autor4.webp') }}" alt="autor">
-										</div>
-										<div class="testi-autor-content">
-											<h5 class="autor-title">Saifur Rahman</h5>
-											<p class="autor-desi">Students</p>
-										</div>
-									</div>
-								</div>
-							</div>
+							@foreach ($testimonials as $testimonial)
+<div class="col-lg-12">
+    <div class="testi-box">
+        <div class="single-testi-box">
+            <div class="testi-quote">
+                <img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
+            </div>
+            <div class="testi-title">
+                <h3>{{ $testimonial->tagline }}</h3>
+            </div>
+            <div class="testi-desc">
+                <p>{{ $testimonial->review }}</p>
+            </div>
+            <div class="testi-ratting">
+                <ul>
+                    @for ($i = 1; $i <= 5; $i++)
+                        @if ($i <= floor($testimonial->rating))
+                            <li><i class="fa-solid fa-star"></i></li>
+                        @elseif ($i == ceil($testimonial->rating) && $testimonial->rating != floor($testimonial->rating))
+                            <li><i class="fa-solid fa-star-half-stroke fa-fw"></i></li>
+                        @else
+                            <li><i class="fa-regular fa-star"></i></li>
+                        @endif
+                    @endfor
+                </ul>
+            </div>
+        </div>
+        <div class="testi-autor-box">
+            <div class="testi-autor">
+                <img src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width: 60px; height: 60px; border-radius: 50%;">
+            </div>
+            <div class="testi-autor-content">
+                <h5 class="autor-title">{{ $testimonial->name }}</h5>
+                <p class="autor-desi">{{ $testimonial->profession }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+
 						</div>
 					</div>
 				</div>
@@ -1158,7 +1090,7 @@
 			<div class="row section-title-space">
 				<div class="col-xl-4 col-lg-12">
 					<div class="section-sub-title three">
-						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">TESTIMONIALS</h6>
+						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Story</h6>
 					</div>
 					<div class="section_title">
 						<h1>All Real Experiences</h1>
@@ -1184,155 +1116,40 @@
 						<div class="testi-list-inner owl-carousel">
 							<div class="col-lg-12">
 								<div class="testi-box">
-									<div class="single-testi-box">
-										<div class="testi-quote">
-											<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
-										</div>
-										<div class="testi-title">
-											<h3>Impresive Learning!</h3>
-										</div>
-										<div class="testi-desc">
-											<p>Educate ultimate destination knowledge
-												seekers and educators we are committed
-												to transforming special education impact
-												channels without standards compliant-is
-												systems attractive learning</p>
-										</div>
-										<div class="testi-ratting">
-											<ul>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-											</ul>
-										</div>
-										<div class="testi-autor-box">
-											<div class="testi-autor">
-												<img src="{{ asset('assets/images/home-three/testi-autor1.webp') }}"
-													alt="autor">
+									@foreach ($studentStories as $story)
+										<div class="single-testi-box">
+											<div class="testi-quote">
+												<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
 											</div>
-											<div class="testi-autor-content">
-												<h5 class="autor-title">Anjelina Watson</h5>
-												<p class="autor-desi">UI Designer</p>
+											<div class="testi-title">
+												<h3>Success Story</h3>
+											</div>
+											<div class="testi-desc">
+												<p>{{ $story->stoire }}</p>
+											</div>
+											<div class="testi-ratting">
+												<ul>
+													<li><i class="fa-solid fa-star"></i></li>
+													<li><i class="fa-solid fa-star"></i></li>
+													<li><i class="fa-solid fa-star"></i></li>
+													<li><i class="fa-solid fa-star"></i></li>
+													<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
+												</ul>
+											</div>
+											<div class="testi-autor-box">
+												<div class="testi-autor">
+													<img src="{{ asset('storage/' . $story->image) }}" alt="author" class="rounded-circle img-fluid" style="width: 70px; height: 70px; object-fit: cover;">
+												</div>
+												<div class="testi-autor-content">
+													<h5 class="autor-title">{{ $story->studentname }}</h5>
+													<p class="autor-desi">{{ $story->position }} at {{ $story->companyname }}</p>
+												</div>
 											</div>
 										</div>
-									</div>
+									@endforeach
 								</div>
 							</div>
-							<div class="col-lg-12">
-								<div class="testi-box">
-									<div class="single-testi-box">
-										<div class="testi-quote">
-											<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
-										</div>
-										<div class="testi-title">
-											<h3>Great Instructor!</h3>
-										</div>
-										<div class="testi-desc">
-											<p>Educate ultimate destination knowledge
-												seekers and educators we are committed
-												to transforming special education impact
-												channels without standards compliant-is
-												systems attractive learning</p>
-										</div>
-										<div class="testi-ratting">
-											<ul>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-											</ul>
-										</div>
-										<div class="testi-autor-box">
-											<div class="testi-autor">
-												<img src="{{ asset('assets/images/home-one/testi-autor3.webp') }}"
-													alt="autor">
-											</div>
-											<div class="testi-autor-content">
-												<h5 class="autor-title">David Alexon</h5>
-												<p class="autor-desi">UI Designer</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="testi-box">
-									<div class="single-testi-box">
-										<div class="testi-quote">
-											<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
-										</div>
-										<div class="testi-title">
-											<h3>Impresive Learning!</h3>
-										</div>
-										<div class="testi-desc">
-											<p>Educate ultimate destination knowledge
-												seekers and educators we are committed
-												to transforming special education impact
-												channels without standards compliant-is
-												systems attractive learning</p>
-										</div>
-										<div class="testi-ratting">
-											<ul>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-											</ul>
-										</div>
-										<div class="testi-autor-box">
-											<div class="testi-autor">
-												<img src="{{ asset('assets/images/home-three/testi-autor1.webp') }}"
-													alt="autor">
-											</div>
-											<div class="testi-autor-content">
-												<h5 class="autor-title">Anjelina Watson</h5>
-												<p class="autor-desi">UI Designer</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="testi-box">
-									<div class="single-testi-box">
-										<div class="testi-quote">
-											<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
-										</div>
-										<div class="testi-title">
-											<h3>Great Instructor!</h3>
-										</div>
-										<div class="testi-desc">
-											<p>Educate ultimate destination knowledge
-												seekers and educators we are committed
-												to transforming special education impact
-												channels without standards compliant-is
-												systems attractive learning</p>
-										</div>
-										<div class="testi-ratting">
-											<ul>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-solid fa-star"></i></li>
-												<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-											</ul>
-										</div>
-										<div class="testi-autor-box">
-											<div class="testi-autor">
-												<img src="assets/images/home-one/testi-autor3.webp') }}" alt="autor">
-											</div>
-											<div class="testi-autor-content">
-												<h5 class="autor-title">David Alexon</h5>
-												<p class="autor-desi">UI Designer</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>

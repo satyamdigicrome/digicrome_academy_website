@@ -97,7 +97,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/admin/modules/{id}', [ModuleController::class, 'destroy'])->name('modules.destroy');
     Route::get('/sucess_stories', [SucessController::class, 'index'])->name('sucess_stories');
     Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonial');
-
+    Route::post('/success-stories', [SucessController::class, 'store'])->name('success.store');
+    Route::delete('/success-stories/{id}', [SucessController::class, 'destroy'])->name('success.destroy');
+    Route::post('testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
+    Route::delete('/testimonials/{id}', [SucessController::class, 'destroy'])->name('testimonials.destroy');
 
 
     // Add routes for edit, update, and delete as needed

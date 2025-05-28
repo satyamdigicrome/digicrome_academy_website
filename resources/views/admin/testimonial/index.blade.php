@@ -9,40 +9,42 @@
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <form class="p-4 border rounded shadow bg-light">
-        <div class="mb-3 text-center">
-          <label for="imageInput" class="btn btn-primary w-100">Choose an image</label>
-          <input type="file" id="imageInput" accept="image/*" hidden>
-        </div>
-
+      <form action="{{ route('testimonials.store') }}" method="POST" enctype="multipart/form-data" class="p-4 border rounded shadow bg-light">
+        @csrf
+    
         <div class="mb-3">
-          <label for="name" class="form-label">Name:</label>
-          <input type="text" id="name" name="name" class="form-control" required>
+            <label for="tagline" class="form-label">Tagline</label>
+            <input type="text" id="tagline" name="tagline" class="form-control" required>
         </div>
+    
         <div class="mb-3">
-          <label for="position" class="form-label">Position:</label>
-          <input type="text" id="position" name="position" class="form-control" required>
+            <label for="review" class="form-label">Review</label>
+            <textarea id="review" name="review" class="form-control" rows="4" required></textarea>
         </div>
-         <div class="mb-3">
-          <label for="email" class="form-label">Review Paragraph:</label>
-          <input type="text" id="review paragraph" name="review paragraph" class="form-control" required>
-        </div>
+    
         <div class="mb-3">
-          <label for="email" class="form-label">Sub Title:</label>
-          <input type="text" id="subtitle" name="subtitle" class="form-control" required>
+            <label for="rating" class="form-label">Rating (1 to 5)</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" class="form-control" required>
         </div>
-         <label>Your Rating</label>
-       <div class="rating">
-      <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
-      <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-      <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
-      <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-      <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
-    </div>
-        <div class="d-grid">
-          <button type="submit" class="btn btn-success">Submit your testimonial</button>
+    
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
         </div>
-      </form>
+    
+        <div class="mb-3">
+            <label for="profession" class="form-label">Profession</label>
+            <input type="text" id="profession" name="profession" class="form-control" required>
+        </div>
+    
+        <div class="mb-3">
+            <label for="image" class="form-label">Image (optional)</label>
+            <input type="file" id="image" name="image" accept="image/*" class="form-control">
+        </div>
+    
+        <button type="submit" class="btn btn-success">Add Testimonial</button>
+    </form>
+    
     </div>
   </div>
 </div>
@@ -71,31 +73,45 @@
 </style>
 
  <h2>User Testimonials Stories</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Package</th>
-        <th>User ID</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-label="Image"><img src="https://via.placeholder.com/50" alt="User Image"></td>
-        <td data-label="Name">Jane Doe</td>
-        <td data-label="Position">Software Engineer</td>
-        <td data-label="Package">$90,000</td>
-        <td data-label="User ID">U12345</td>
-        <td class="actions" data-label="Actions">
-      
-          <button class="delete-btn">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+ <table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Profession</th>
+      <th>Tagline</th>
+      <th>Rating</th>
+      <th>User ID</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($testimonials as $testimonial)
+    <tr>
+      <td data-label="Image">
+        @if($testimonial->image)
+          <img src="{{ asset('storage/' . $testimonial->image) }}" alt="User Image" style="width:50px; height:50px; border-radius:50%;">
+        @else
+          <img src="https://via.placeholder.com/50" alt="No Image" style="border-radius:50%;">
+        @endif
+      </td>
+      <td data-label="Name">{{ $testimonial->name }}</td>
+      <td data-label="Profession">{{ $testimonial->profession }}</td>
+      <td data-label="Tagline">{{ $testimonial->tagline }}</td>
+      <td data-label="Rating">{{ $testimonial->rating }}/5</td>
+      <td data-label="User ID">{{ $testimonial->user_id }}</td>
+      <td class="actions" data-label="Actions">
+        <form action="{{ route('testimonials.destroy', $testimonial->id) }}" method="POST" onsubmit="return confirm('Delete this testimonial?');">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger btn-sm delete-btn">Delete</button>
+        </form>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+
 
  <style>
 
