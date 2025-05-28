@@ -394,7 +394,7 @@
             color: #fff;
         }
     </style>
-    <div class="breadcumb-area d-flex">
+    <div class="who-img d-flex">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">

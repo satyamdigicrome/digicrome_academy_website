@@ -7,7 +7,7 @@
 		<!--==================================================-->
 		<!-- Start educate Breadcumb Area -->
 		<!--==================================================-->
-		<div class="breadcumb-area d-flex">
+		<div class="contact-img d-flex">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-12">

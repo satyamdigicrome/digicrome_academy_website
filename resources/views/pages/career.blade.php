@@ -318,7 +318,7 @@
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 30px;">
                     <div>
                         <img src="https://digicrome.com/public/www/seoimg/1e.webp" alt="digicrome_Image"
-                            style="width: 110px; height: 110px; border-radius: 5%; background-color:orange;">
+                            style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 38%;">
                         <h4 style="padding-top:20px; ">Building Outstanding Careers</h4>
                         <p
                             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
@@ -330,7 +330,7 @@
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 30px;">
                     <div>
                         <img src="https://digicrome.com/public/www/seoimg/1f.webp" alt="digicrome_Image"
-                            style="width: 110px; height: 110px; border-radius: 5%; background-color:orange;">
+                            style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px; ">Empowering Women at Work</h4>
                         <p
                             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
@@ -341,7 +341,7 @@
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 30px;">
                     <div>
                         <img src="https://digicrome.com/public/www/seoimg/1g.webp" alt="digicrome_Image"
-                            style="width: 110px; height: 110px; border-radius: 5%; background-color:orange;">
+                            style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px; ">Enjoying Fun with Responsibility</h4>
                         <p
                             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
@@ -462,7 +462,7 @@
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 70px;">
                     <div>
                         <img src="https://digicrome.com/public/www/seoimg/3c.webp" alt="Image"
-                            style="width: 110px; height: 110px; border-radius: 50%; background-color:orange;">
+                            style="width: 110px; height: 110px; border-radius: 50%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px;  ">Develop Future-Ready Skills</h4>
                         <p
                             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
@@ -474,7 +474,7 @@
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 70px;">
                     <div>
                         <img src="https://digicrome.com/public/www/seoimg/3a.webp" alt="Image"
-                            style="width: 110px; height: 110px; border-radius: 50%; background-color:orange;">
+                            style="width: 110px; height: 110px; border-radius: 50%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px;  ">Learn from the Best</h4>
                         <p
                             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
@@ -486,7 +486,7 @@
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 70px;">
                     <div>
                         <img src="https://digicrome.com/public/www/seoimg/3b.webp" alt="Image"
-                            style="width: 110px; height: 110px; border-radius: 50%; background-color:orange;">
+                            style="width: 110px; height: 110px; border-radius: 50%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px;  ">Gain a Global Perspective</h4>
                         <p
                             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">

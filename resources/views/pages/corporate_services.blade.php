@@ -5,7 +5,7 @@
 @section('content')
 
 
-	<div class="breadcumb-area d-flex">
+	<div class="corporate-img d-flex">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-12">
@@ -445,7 +445,7 @@
 							</div>
 							<div class="call_info">
 								<p>Call us Anytime</p>
-								<h3>+123 - (4567) - 890</h3>
+								<h3>01203133869</h3>
 							</div>
 						</div>
 						<div class="call-do-action-info">
@@ -454,7 +454,7 @@
 							</div>
 							<div class="call_info">
 								<p>Call us Anytime</p>
-								<h3>example@gmail.com</h3>
+								<h3>info@digicrome.com</h3>
 							</div>
 						</div>
 						<div class="call-do-action-info">
@@ -463,7 +463,7 @@
 							</div>
 							<div class="call_info">
 								<p>Our Locations</p>
-								<span>102/B Soltek New Elephant Road <br>California, USA</span>
+								<span>C-108, Second Floor, Block C, Sector 02,  <br>Noida, Uttar Pradesh 201301</span>
 							</div>
 						</div>
 					</div>
