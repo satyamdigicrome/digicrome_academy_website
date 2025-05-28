@@ -40,9 +40,9 @@
 	<div class="blog-area style-one blog">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-12">
 					<div class="row">
-						<div class="col-xl-6 col-lg-12 col-md-6">
+						<div class="col-xl-4 col-lg-12 col-md-4">
 							<div class="single-blog-box box-1">
 								<div class="single-blog-thumb">
 									<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
@@ -66,122 +66,194 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-6 col-lg-12 col-md-6">
-							<div class="single-blog-box box-3">
+						<div class="col-xl-4 col-lg-12 col-md-4">
+							<div class="single-blog-box box-1">
 								<div class="single-blog-thumb">
-									<img src="assets/images/home-one/blog-thumb3.webp" alt="thumb">
+									<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
 									<div class="blog-meta-top">
-										<span>30 JAN</span>
+										<span>28 JAN</span>
 									</div>
 								</div>
 								<div class="blog-content">
 									<div class="blog-author">
-										<h4><img src="assets/images/home-one/blog-autor3.webp" alt="autor">David X. Barmer
+										<h4><img src="assets/images/home-one/blog-autor1.webp" alt="autor">John D. Alexon
 										</h4>
 									</div>
 									<div class="blog-title">
-										<h3><a href="blog-details.html">Learning is the Key soft skills
-												and Professional</a></h3>
+										<h3><a href="blog-details.html">10 Proven Strategies to excel
+												Online Learning</a></h3>
 									</div>
 									<div class="blog-btn">
 										<a href="blog-details.html">Continue Reading <img
-												src="assets/images/home-one/blog-icon3.webp" alt="icon"></a>
+												src="assets/images/home-one/blog-icon1.webp" alt="icon"></a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-6 col-lg-12 col-md-6">
-							<div class="single-blog-box box-3">
+						<div class="col-xl-4 col-lg-12 col-md-4">
+							<div class="single-blog-box box-1">
 								<div class="single-blog-thumb">
-									<img src="assets/images/home-one/blog-thumb3.webp" alt="thumb">
+									<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
 									<div class="blog-meta-top">
-										<span>30 JAN</span>
+										<span>28 JAN</span>
 									</div>
 								</div>
 								<div class="blog-content">
 									<div class="blog-author">
-										<h4><img src="assets/images/home-one/blog-autor3.webp" alt="autor">David X. Barmer
+										<h4><img src="assets/images/home-one/blog-autor1.webp" alt="autor">John D. Alexon
 										</h4>
 									</div>
 									<div class="blog-title">
-										<h3><a href="blog-details.html">Learning is the Key soft skills
-												and Professional</a></h3>
+										<h3><a href="blog-details.html">10 Proven Strategies to excel
+												Online Learning</a></h3>
 									</div>
 									<div class="blog-btn">
 										<a href="blog-details.html">Continue Reading <img
-												src="assets/images/home-one/blog-icon3.webp" alt="icon"></a>
+												src="assets/images/home-one/blog-icon1.webp" alt="icon"></a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-6 col-lg-12 col-md-6">
-							<div class="single-blog-box box-2">
+						<div class="col-xl-4 col-lg-12 col-md-4">
+							<div class="single-blog-box box-1">
 								<div class="single-blog-thumb">
-									<img src="assets/images/home-one/blog-thumb2.webp" alt="thumb">
+									<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
 									<div class="blog-meta-top">
-										<span>29 JAN</span>
+										<span>28 JAN</span>
 									</div>
 								</div>
 								<div class="blog-content">
 									<div class="blog-author">
-										<h4><img src="assets/images/home-one/blog-autor2.webp" alt="autor">Anjelina Watson
+										<h4><img src="assets/images/home-one/blog-autor1.webp" alt="autor">John D. Alexon
 										</h4>
 									</div>
 									<div class="blog-title">
-										<h3><a href="blog-details.html">Trends that are shaping the
-												Learning experience</a></h3>
+										<h3><a href="blog-details.html">10 Proven Strategies to excel
+												Online Learning</a></h3>
 									</div>
 									<div class="blog-btn">
 										<a href="blog-details.html">Continue Reading <img
-												src="assets/images/home-one/blog-icon2.webp" alt="icon"></a>
+												src="assets/images/home-one/blog-icon1.webp" alt="icon"></a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-6 col-lg-12 col-md-6">
-							<div class="single-blog-box box-2">
+						<div class="col-xl-4 col-lg-12 col-md-4">
+							<div class="single-blog-box box-1">
 								<div class="single-blog-thumb">
-									<img src="assets/images/home-one/blog-thumb2.webp" alt="thumb">
+									<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
 									<div class="blog-meta-top">
-										<span>29 JAN</span>
+										<span>28 JAN</span>
 									</div>
 								</div>
 								<div class="blog-content">
 									<div class="blog-author">
-										<h4><img src="assets/images/home-one/blog-autor2.webp" alt="autor">Anjelina Watson
+										<h4><img src="assets/images/home-one/blog-autor1.webp" alt="autor">John D. Alexon
 										</h4>
 									</div>
 									<div class="blog-title">
-										<h3><a href="blog-details.html">Trends that are shaping the
-												Learning experience</a></h3>
+										<h3><a href="blog-details.html">10 Proven Strategies to excel
+												Online Learning</a></h3>
 									</div>
 									<div class="blog-btn">
 										<a href="blog-details.html">Continue Reading <img
-												src="assets/images/home-one/blog-icon2.webp" alt="icon"></a>
+												src="assets/images/home-one/blog-icon1.webp" alt="icon"></a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-6 col-lg-12 col-md-6">
-							<div class="single-blog-box box-3">
+						<div class="col-xl-4 col-lg-12 col-md-4">
+							<div class="single-blog-box box-1">
 								<div class="single-blog-thumb">
-									<img src="assets/images/home-one/blog-thumb3.webp" alt="thumb">
+									<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
 									<div class="blog-meta-top">
-										<span>30 JAN</span>
+										<span>28 JAN</span>
 									</div>
 								</div>
 								<div class="blog-content">
 									<div class="blog-author">
-										<h4><img src="assets/images/home-one/blog-autor3.webp" alt="autor">David X. Barmer
+										<h4><img src="assets/images/home-one/blog-autor1.webp" alt="autor">John D. Alexon
 										</h4>
 									</div>
 									<div class="blog-title">
-										<h3><a href="blog-details.html">Learning is the Key soft skills
-												and Professional</a></h3>
+										<h3><a href="blog-details.html">10 Proven Strategies to excel
+												Online Learning</a></h3>
 									</div>
 									<div class="blog-btn">
 										<a href="blog-details.html">Continue Reading <img
-												src="assets/images/home-one/blog-icon3.webp" alt="icon"></a>
+												src="assets/images/home-one/blog-icon1.webp" alt="icon"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-12 col-md-4">
+							<div class="single-blog-box box-1">
+								<div class="single-blog-thumb">
+									<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
+									<div class="blog-meta-top">
+										<span>28 JAN</span>
+									</div>
+								</div>
+								<div class="blog-content">
+									<div class="blog-author">
+										<h4><img src="assets/images/home-one/blog-autor1.webp" alt="autor">John D. Alexon
+										</h4>
+									</div>
+									<div class="blog-title">
+										<h3><a href="blog-details.html">10 Proven Strategies to excel
+												Online Learning</a></h3>
+									</div>
+									<div class="blog-btn">
+										<a href="blog-details.html">Continue Reading <img
+												src="assets/images/home-one/blog-icon1.webp" alt="icon"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-12 col-md-4">
+							<div class="single-blog-box box-1">
+								<div class="single-blog-thumb">
+									<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
+									<div class="blog-meta-top">
+										<span>28 JAN</span>
+									</div>
+								</div>
+								<div class="blog-content">
+									<div class="blog-author">
+										<h4><img src="assets/images/home-one/blog-autor1.webp" alt="autor">John D. Alexon
+										</h4>
+									</div>
+									<div class="blog-title">
+										<h3><a href="blog-details.html">10 Proven Strategies to excel
+												Online Learning</a></h3>
+									</div>
+									<div class="blog-btn">
+										<a href="blog-details.html">Continue Reading <img
+												src="assets/images/home-one/blog-icon1.webp" alt="icon"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-12 col-md-4">
+							<div class="single-blog-box box-1">
+								<div class="single-blog-thumb">
+									<img src="assets/images/home-one/blog-thumb1.webp" alt="thumb">
+									<div class="blog-meta-top">
+										<span>28 JAN</span>
+									</div>
+								</div>
+								<div class="blog-content">
+									<div class="blog-author">
+										<h4><img src="assets/images/home-one/blog-autor1.webp" alt="autor">John D. Alexon
+										</h4>
+									</div>
+									<div class="blog-title">
+										<h3><a href="blog-details.html">10 Proven Strategies to excel
+												Online Learning</a></h3>
+									</div>
+									<div class="blog-btn">
+										<a href="blog-details.html">Continue Reading <img
+												src="assets/images/home-one/blog-icon1.webp" alt="icon"></a>
 									</div>
 								</div>
 							</div>
@@ -197,7 +269,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				{{-- <div class="col-lg-4">
 					<div class="blog-right-sidebar">
 						<div class="widget widget_search">
 							<div class="search">
@@ -279,7 +351,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 	</div>
