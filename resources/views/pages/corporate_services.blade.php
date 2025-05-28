@@ -47,121 +47,98 @@
 
 					<!-- Logo Grid -->
 					<div class="row g-3">
-						<!-- Repeat this block for 16 logos -->
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
+						@foreach($companyLogos->take(16) as $logo)
+							<div class="col-3 text-center">
+								<img src="{{ asset('storage/' . $logo->image) }}" alt="Logo" class="img-fluid">
+							</div>
+						@endforeach
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
 
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
+	<div class="brand-area style-one mt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<!-- Main heading -->
+					<div class="section_title mb-4">
+						<h1 class="display-5 fw-bold">Moments of Honour</h1>
+					</div>
+	
+					<!-- Description -->
+					<p class="mb-4">
+						In our EdTech journey of <b> more than a decade,</b> we have received numerous awards.<br>
+						Some of the recent notable awards we have received in analytics are:
+					</p>
+	
+					<!-- List of awards with cup icons aligned -->
+					<ul class="list-unstyled">
+						<li class="d-flex align-items-start mb-2">
+							<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
+							<span><b> Successpreneur Award 2023 </b> being the best analytics EdTech business</span>
+						</li>
+						<li class="d-flex align-items-start">
+							<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
+							<span><b>Most Promising Digital Learning Platform 2023</b> for being one of the most promising
+								digital
+								learning platforms</span>
+						</li>
+					</ul>
+				</div>
+	
+				<div class="col-lg-7 mt-4">
+					<div class="brand-list owl-carousel">
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2018.webp') }}" alt="brand">
+								</div>
+							</div>
 						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2023_V2.webp') }}" alt="brand">
+								</div>
+							</div>
 						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2020.webp') }}" alt="brand">
+								</div>
+							</div>
 						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2021.webp') }}" alt="brand">
+								</div>
+							</div>
 						</div>
-
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2022.webp') }}" alt="brand">
+								</div>
+							</div>
 						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
-
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
-						</div>
-						<div class="col-3 text-center">
-							<img src="https://digicrome.com/public/www/seoimg/1.webp" alt="Logo" class="img-fluid">
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2023.webp') }}" alt="brand">
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<section class="py-5" style="background-color: #fff8f0;">
-		<div class="container text-center">
-			<!-- Heading -->
-			<h2 class="fw-bold mb-4" style="color: #f29c12;">Awards & Recognition</h2>
-			<p class="text-muted mb-5">Celebrating our proud moments and achievements.</p>
+	</div>
 
-			<!-- Carousel -->
-			<div id="awardCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-				<div class="carousel-inner">
-
-					<!-- Slide 1 -->
-					<div class="carousel-item active">
-						<div class="row justify-content-center g-3">
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 1"></div>
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 2"></div>
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 3"></div>
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 4"></div>
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 5"></div>
-						</div>
-					</div>
-
-					<!-- Slide 2 -->
-					<div class="carousel-item">
-						<div class="row justify-content-center g-3">
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 6"></div>
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 7"></div>
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 8"></div>
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 9"></div>
-							<div class="col-2"><img src="https://digicrome.com/public/storage/1563/1710923239.webp"
-									class="img-fluid rounded shadow" alt="Award 10"></div>
-						</div>
-					</div>
-
-					<!-- Add more slides as needed -->
-
-				</div>
-
-				<!-- Controls -->
-				<button class="carousel-control-prev" type="button" data-bs-target="#awardCarousel" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" style="filter: invert(1);"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#awardCarousel" data-bs-slide="next">
-					<span class="carousel-control-next-icon" style="filter: invert(1);"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</div>
-		</div>
-	</section>
 	<div class="case-study-area style-one">
 		<div class="container">
 			<div class="row align-items-center section-title-space">
@@ -182,251 +159,184 @@
 					<div class="case_study_nav">
 						<div class="case_study_menu">
 							<ul class="menu-filtering">
-								<li data-filter=".Networking">Upcomeing Courses</li>
-								<li data-filter="*" class="current_menu_item">Postgraduate And Master Programs</li>
-								<li data-filter=".Wordpress">Professional Programs</li>
-								<li data-filter=".Business">Language Programs</li>
-								<li data-filter=".Networking">Certificate Programs</li>
-							</ul>
+								<li class="current_menu_item" data-filter=".Upcoming">Upcoming Courses</li>
+								@foreach($collections as $collection)
+								  <li data-filter=".{{ Str::slug($collection->name) }}">{{ $collection->name }}</li>
+								@endforeach
+							  </ul>					  
+							
+							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container">
-			<!-- row2 -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+			  var grid = document.querySelector('.image_load');
+			  var iso = new Isotope(grid, {
+				itemSelector: '.grid-item',
+				layoutMode: 'fitRows'
+			  });
+		  
+			  var filterButtons = document.querySelectorAll('.menu-filtering li');
+		  
+			  filterButtons.forEach(function (button) {
+				button.addEventListener('click', function () {
+				  filterButtons.forEach(btn => btn.classList.remove('current_menu_item'));
+				  this.classList.add('current_menu_item');
+				  var filterValue = this.getAttribute('data-filter');
+				  iso.arrange({ filter: filterValue });
+				});
+			  });
+		  
+			  // Show Upcoming by default
+			  iso.arrange({ filter: '.Upcoming' });
+			});
+		  </script>
+		  
+		  
+		  <div class="container">
 			<div class="row image_load">
-				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Wordpress Networking">
-					<div class="case-study-single-box">
-						<div class="case-study-thumb">
-							<img src="{{ asset('assets/images/home-one/case-thumb1.webp') }}" alt="thumb">
-							<div class="case-meta-top">
-								<span>$30</span>
+				{{-- Upcoming Courses --}}
+				@foreach($upcomingCourses as $course)
+				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
+					<div class="case-study-single-box"> 
+							{{-- Use same HTML course card template --}}
+							<div class="case-study-thumb">
+								<img src="{{ asset('storage/' . $course->image) }}" alt="thumb">
+								{{-- <div class="case-meta-top">
+									<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
+								</div> --}}
 							</div>
-						</div>
-						<div class="case-study-content">
-							<h5>Business</h5>
-							<h4><a href="course.html">Business Innovation And
-									Development</a></h4>
-							<div class="case-rating">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-								<div class="case-rating-num">
-									<span>(4.5/3 Ratings)</span>
+							<div class="case-study-content">
+								<h5>Upcoming</h5>
+								<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
+								<div class="case-rating">
+									<ul>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star-half-stroke"></i></li>
+									</ul>
+									<div class="case-rating-num">
+										<span>(4.5/3 Ratings)</span>
+									</div>
 								</div>
-							</div>
-							<div class="case-autor-box">
-								<div class="case-autor-img">
-									<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
+								{{-- <div class="case-autor-box">
+									<div class="case-autor-img">
+										<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
+									</div>
+									<div class="case-autor-content">
+										<h3>Instructor</h3>
+										<p>Instructor</p>
+									</div>
+								</div> --}}
+								{{-- <div class="case-course-content">
+									<div class="course-lesson">
+										<span><i class="fa-regular fa-file-lines"></i> 12 Lessons</span>
+									</div>
+									<div class="course-student">
+										<span><i class="fa-regular fa-user"></i> 1200 Students</span>
+									</div>
+								</div> --}}
+								<br><br>
+								<div class="course-btn">
+									<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
 								</div>
-								<div class="case-autor-content">
-									<h3>John D. Alexon</h3>
-									<p>Instractor</p>
-								</div>
-							</div>
-							<div class="case-course-content">
-								<div class="course-lesson">
-									<span><i class="fa-regular fa-file-lines"></i> 12 Leasons</span>
-								</div>
-								<div class="course-student">
-									<span><i class="fa-regular fa-user"></i> 1200 Students</span>
-								</div>
-							</div>
-							<div class="course-btn">
-								<a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Business Finance Wordpress">
-					<div class="case-study-single-box box-2">
-						<div class="case-study-thumb">
-							<img src="{{ asset('assets/images/home-one/case-thumb2.webp') }}" alt="thumb">
-							<div class="case-meta-top">
-								<span>Free</span>
-							</div>
-						</div>
-						<div class="case-study-content">
-							<h5>Networking</h5>
-							<h4><a href="course.html">Fundamentals of Network
-									And Domains</a></h4>
-							<div class="case-rating">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-								<div class="case-rating-num">
-									<span>(4.5/3 Ratings)</span>
-								</div>
-							</div>
-							<div class="case-autor-box">
-								<div class="case-autor-img">
-									<img src="{{ asset('assets/images/home-one/case-autor2.webp') }}" alt="autor">
-								</div>
-								<div class="case-autor-content">
-									<h3>David Watson</h3>
-									<p>Instractor</p>
-								</div>
-							</div>
-							<div class="case-course-content">
-								<div class="course-lesson">
-									<span><i class="fa-regular fa-file-lines"></i> 16 Leasons</span>
-								</div>
-								<div class="course-student">
-									<span><i class="fa-regular fa-user"></i> 1500 Students</span>
-								</div>
-							</div>
-							<div class="course-btn">
-								<a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Networking Designing Business">
-					<div class="case-study-single-box box-3">
-						<div class="case-study-thumb">
-							<img src="{{ asset('assets/images/home-one/case-thumb3.webp') }}" alt="thumb">
-							<div class="case-meta-top">
-								<span>$35</span>
+				@endforeach
+			
+				{{-- Courses by Collection --}}
+				@foreach($collections as $collection)
+					@foreach($collection->courses as $course)
+						<div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }}">
+							<div class="case-study-single-box">
+								{{-- Same card HTML reused --}}
+								<div class="case-study-thumb">
+									<img src="{{ asset('storage/' . $course->image) }}" alt="thumb">
+									{{-- <div class="case-meta-top">
+										<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
+									</div> --}}
+								</div>
+								<div class="case-study-content">
+									<h5>{{ $collection->name }}</h5>
+									<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
+									<div class="case-rating">
+										<ul>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star-half-stroke"></i></li>
+										</ul>
+										<div class="case-rating-num">
+											<span>(4.5/3 Ratings)</span>
+										</div>
+									</div>
+									{{-- <div class="case-autor-box">
+										<div class="case-autor-img">
+											<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
+										</div>
+										<div class="case-autor-content">
+											<h3>Instructor</h3>
+											<p>Instructor</p>
+										</div>
+									</div>
+									<div class="case-course-content">
+										<div class="course-lesson">
+											<span><i class="fa-regular fa-file-lines"></i> 12 Lessons</span>
+										</div>
+										<div class="course-student">
+											<span><i class="fa-regular fa-user"></i> 1200 Students</span>
+										</div>
+									</div> --}}
+									<br><br>
+									<div class="course-btn">
+										<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="case-study-content">
-							<h5>Designing</h5>
-							<h4><a href="course.html">Creative Graphic Design
-									with Adobe Suite</a></h4>
-							<div class="case-rating">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-								<div class="case-rating-num">
-									<span>(4.5/3 Ratings)</span>
-								</div>
-							</div>
-							<div class="case-autor-box">
-								<div class="case-autor-img">
-									<img src="{{ asset('assets/images/home-one/case-autor3.webp') }}" alt="autor">
-								</div>
-								<div class="case-autor-content">
-									<h3>Nelson Mendela</h3>
-									<p>Instractor</p>
-								</div>
-							</div>
-							<div class="case-course-content">
-								<div class="course-lesson">
-									<span><i class="fa-regular fa-file-lines"></i> 15 Leasons</span>
-								</div>
-								<div class="course-student">
-									<span><i class="fa-regular fa-user"></i> 1600 Students</span>
-								</div>
-							</div>
-							<div class="course-btn">
-								<a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Networking Designing Business">
-					<div class="case-study-single-box box-3">
-						<div class="case-study-thumb">
-							<img src="{{ asset('assets/images/home-one/case-thumb3.webp') }}" alt="thumb">
-							<div class="case-meta-top">
-								<span>$35</span>
-							</div>
-						</div>
-						<div class="case-study-content">
-							<h5>Designing</h5>
-							<h4><a href="course.html">Creative Graphic Design
-									with Adobe Suite</a></h4>
-							<div class="case-rating">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-								<div class="case-rating-num">
-									<span>(4.5/3 Ratings)</span>
-								</div>
-							</div>
-							<div class="case-autor-box">
-								<div class="case-autor-img">
-									<img src="{{ asset('assets/images/home-one/case-autor3.webp') }}" alt="autor">
-								</div>
-								<div class="case-autor-content">
-									<h3>Nelson Mendela</h3>
-									<p>Instractor</p>
-								</div>
-							</div>
-							<div class="case-course-content">
-								<div class="course-lesson">
-									<span><i class="fa-regular fa-file-lines"></i> 15 Leasons</span>
-								</div>
-								<div class="course-student">
-									<span><i class="fa-regular fa-user"></i> 1600 Students</span>
-								</div>
-							</div>
-							<div class="course-btn">
-								<a href="course.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
+					@endforeach
+				@endforeach
 			</div>
-			<div class="case-shape1">
-				<img src="{{ asset('assets/images/home-one/case-shape1.webp') }}" alt="shape">
-			</div>
+			
 		</div>
+		
 	</div>
 	<section class="py-5" style="background-color: #fff8f0;">
 		<div class="container text-center">
 			<div class="row g-4 justify-content-center">
-
-				<div class="col-6 col-md-4 col-lg-2">
-					<h3 class="fw-bold" style="color: #f29c12;">5/6</h3>
-					<p class="mb-0">Learners experienced<br>career advancement</p>
-				</div>
-
-				<div class="col-6 col-md-4 col-lg-2">
-					<h3 class="fw-bold" style="color: #f29c12;">87%</h3>
-					<p class="mb-0">Achieved the<br>program objectives</p>
-				</div>
-
-				<div class="col-6 col-md-4 col-lg-2">
-					<h3 class="fw-bold" style="color: #f29c12;">82%</h3>
-					<p class="mb-0">Gained better clarity<br>on the subject</p>
-				</div>
-
-				<div class="col-6 col-md-4 col-lg-2">
-					<h3 class="fw-bold" style="color: #f29c12;">1k+</h3>
-					<p class="mb-0">Industry Experts<br>& Mentors</p>
-				</div>
-
-				<div class="col-6 col-md-4 col-lg-2">
-					<h3 class="fw-bold" style="color: #f29c12;">71%</h3>
-					<p class="mb-0">Feel confident applying<br>skills on the job</p>
-				</div>
-
-				<div class="col-6 col-md-4 col-lg-2">
-					<h3 class="fw-bold" style="color: #f29c12;">93%</h3>
-					<p class="mb-0">Program<br>completion rate</p>
-				</div>
-
+				@php
+					$stats = [
+						['icon' => 'fa-chart-line', 'value' => '5/6', 'text' => 'Learners experienced career advancement'],
+						['icon' => 'fa-bullseye', 'value' => '87%', 'text' => 'Achieved the program objectives'],
+						['icon' => 'fa-lightbulb', 'value' => '82%', 'text' => 'Gained better clarity on the subject'],
+						['icon' => 'fa-users', 'value' => '1k+', 'text' => 'Industry Experts & Mentors'],
+						['icon' => 'fa-briefcase', 'value' => '71%', 'text' => 'Feel confident applying skills on the job'],
+						['icon' => 'fa-check-circle', 'value' => '93%', 'text' => 'Program completion rate'],
+					];
+				@endphp
+	
+				@foreach($stats as $stat)
+					<div class="col-6 col-md-4 col-lg-2">
+						<div class="p-3 bg-white rounded-3 shadow-sm h-100">
+							<div class="mb-2">
+								<i class="fa {{ $stat['icon'] }} fa-2x text-warning"></i>
+							</div>
+							<h2 class="fw-bold text-warning" style="font-size: 2rem;">{{ $stat['value'] }}</h2>
+							<p class="mb-0 small">{{ $stat['text'] }}</p>
+						</div>
+					</div>
+				@endforeach
 			</div>
 		</div>
 	</section>
+	
 	<section class="feature-area style-one">
 		<div class="container">
 			<div class="row align-items-center section-title-space">
@@ -437,8 +347,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Interactive Online Learning</h1>
-						<h1>Key Features & Benefits</h1>
+						<h1>Climb your career ladder </h1>
+						<h1>with world-class Professional.</h1>
 					</div>
 				</div>
 			</div>
@@ -449,9 +359,8 @@
 							<img src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Learning Experiences</h4>
-							<p class="feature-desc">The ultimate destination for knowledge for
-								We are committed to transforming</p>
+							<h4 class="feature-title">500+ Hiring Partners</h4>
+							<p class="feature-desc">We guarantee placement assistance, so we have tied up with 500+ global partners to assist students in securing job opportunities.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -465,9 +374,8 @@
 							<img src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Professional Instructor</h4>
-							<p class="feature-desc">The ultimate destination for knowledge for
-								We are committed to transforming</p>
+							<h4 class="feature-title">45+ Industry-Relevant Projects</h4>
+							<p class="feature-desc">Work on our industry-based live projects to harness top-level industry experience and make way to a winning career.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -481,9 +389,8 @@
 							<img src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Moneyback Gaurantee</h4>
-							<p class="feature-desc">The ultimate destination for knowledge for
-								We are committed to transforming</p>
+							<h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
+							<p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong foundation. Get 24/7 assistance available for assignments.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -497,9 +404,8 @@
 							<img src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Moneyback Gaurantee</h4>
-							<p class="feature-desc">The ultimate destination for knowledge for
-								We are committed to transforming</p>
+							<h4 class="feature-title">Job Ready Program</h4>
+							<p class="feature-desc">Exclusive placement cell dedicated to students completing the course, we help secure job opportunities. So far, 5,000+ students have been employed.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
