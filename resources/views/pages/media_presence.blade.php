@@ -113,6 +113,10 @@
     </div>
   </section>
   <style>
+    h2{
+      font-size: 20px;
+      font-weight: 600;
+    }
     :root {
     --theme-color: #f29c12;
     }
