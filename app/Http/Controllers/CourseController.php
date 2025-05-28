@@ -19,7 +19,6 @@ class CourseController extends Controller
 
     public function course_details($slug)
 {
-    // Eager load only required fields for better performance
     $course = Course::with([
         'keypoints:id,course_id,name,image',
         'aparts:id,course_id,image,heading,tagline,paragraph',
@@ -35,7 +34,6 @@ class CourseController extends Controller
     ->where('slug', $slug)
     ->firstOrFail();
 
-    // Cache commonly used data for 60 minutes
     $courses = Cache::remember('latest_courses', 60, function () {
         return Course::latest()->take(3)->get(['id', 'name', 'slug', 'image', 'tag_line']);
     });

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Collection;
+use App\Models\Logo;
+use Illuminate\Support\Facades\Cache;
 class HomeController extends Controller
 {
     public function index()
@@ -17,8 +19,10 @@ class HomeController extends Controller
                              ->where('status', 1)
                              ->limit(4) // Just to be safe, limit to 4
                              ->get();
-
-    return view('welcome', compact('collections', 'upcomingCourses'));
+    $companyLogos = Cache::remember('company_logos', 60, function () {
+            return Logo::where('type', 'companies')->get(['id', 'image']);
+        });
+    return view('welcome', compact('collections', 'upcomingCourses','companyLogos'));
 }
 
 }

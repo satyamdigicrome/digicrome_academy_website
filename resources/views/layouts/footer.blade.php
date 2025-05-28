@@ -2,7 +2,7 @@
 <!--==================================================-->
 <!-- start educate brand Area -->
 <!--==================================================-->
-<div class="brand-area style-one">
+{{-- <div class="brand-area style-one">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-5">
@@ -49,7 +49,7 @@
 			<img src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
 		</div>
 	</div>
-</div>
+</div> --}}
 
 <!--==================================================-->
 <!-- end educate brand Area -->
