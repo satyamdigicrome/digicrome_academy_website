@@ -11491,6 +11491,16 @@ section.contact_area.style-six .contact-form button:hover{
     background-position: center center;
     margin-top: -101px;
 }
+.corporate-img {
+    padding: 250px 0 152px;
+    position: relative;
+    background: url(../images/inner-img/Corporate-Services-Banner_28-May.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: -101px;
+}
+
 
 .breadcumb-area.two {
     background: url(../images/inner-img/breadcam-bg2.webp);
