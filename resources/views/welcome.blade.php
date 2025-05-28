@@ -237,7 +237,7 @@
 				<div class="col-xl-6 col-lg-12">
 					<div class="about-thumb-wrapper">
 						<div class="about-thumb">
-							<img src="{{ asset('assets/images/home-one/about-thumb1.webp') }}" alt="thumb" style ="transform: scaleX(-1);">
+							<img src="{{ asset('assets/images/home-one/about-thumb1.webp') }}" alt="thumb">
 						</div>
 						<div class="about-thumb-shape1 bounce-animate-3">
 							<img src="{{ asset('assets/images/home-one/about-shape1.webp') }}" alt="shape1">

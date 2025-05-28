@@ -9,11 +9,10 @@
 	<!--==================================================-->
 	<style>
 		.section-title-desc p {
-			margin: 0px;
-			font-size: 11px;
+			font-size: 13px;
+			font-weight: 700;
 
 		}
-
 		section.about-area.style-three .section-title-desc p {
 			margin: 0px;
 		}
@@ -128,26 +127,36 @@
 						<div class="about-btn">
 							<a href="about.html">more about<i class="flaticon flaticon-right-arrow"></i></a>
 						</div>
-						<div class="about-education-box">
-							<div class="education-icon">
-								<img src="{{ asset('assets/images/home-one/msme.webp') }}" alt="call">
-							</div>
-							<div class="education-content">
-								<p>Trusted Online
-									And offline Best
-									Educations
-								</p>
-								<span>John Doe</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="about-shape31">
-				<img src="{{ asset('assets/images/home-three/about-shape31.webp') }}" alt="shape">
-			</div>
-		</div>
+
+<div class="about-education-box">
+  <div class="education-icon">
+    <img src="{{ asset('assets/images/home-one/msme.webp') }}" alt="call">
+  </div>
+  <div class="education-content">
+    <p>Trusted Online<br>
+      And offline Best<br>
+      Educations
+    </p>
+    <span>John Doe</span>
+  </div>
+</div>
+
+<div class="about-shape31">
+  <img src="{{ asset('assets/images/home-three/about-shape31.webp') }}" alt="shape">
+</div>
+
 	</section>
+	<style>
+	 .about-education-box{
+        margin-right: 50%;
+		height: 25%;
+        width: 40%;
+		}
+		.education-content
+		 {
+    margin-left: 20%;
+     }
+	</style>
 	<!--==================================================-->
 	<!-- End educate About Area -->
 	<!--==================================================-->

@@ -10,11 +10,11 @@
       <div class="col-lg-12">
       <div class="breadcumb-content">
         <div class="breadcumb-title">
-        <h4>Media Presence</h4>
+        <h4>Payments</h4>
         </div>
         <ul>
         <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-        <li>Media Presence</li>
+        <li>Payments</li>
         </ul>
       </div>
       </div>
