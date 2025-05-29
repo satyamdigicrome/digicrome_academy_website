@@ -72,7 +72,7 @@
 								
 
 										<p class="blog-desc2">
-											{!! nl2br(e($blog->blog)) !!}
+											{!! $blog->blog !!}
 										</p>
 							{{-- <div class="pagination_container">
 								<!-- pagination item -->

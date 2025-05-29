@@ -9,6 +9,7 @@ use App\Models\StudentStory;
 use App\Models\Testimonial;
 use App\Models\Logo;
 use App\Models\Blog;
+use App\Models\Content;
 use Illuminate\Support\Facades\Cache;
 class HomeController extends Controller
 {
@@ -36,5 +37,21 @@ class HomeController extends Controller
 
     return view('welcome', compact('collections', 'upcomingCourses','companyLogos','studentStories','testimonials','associationLogos','blogs'));
 }
+
+    public function privacy()
+    {
+        $contents = Content::where('content_type', 'Polocy')->latest()->get();
+        return view('pages.privacy_and_polocy',compact('contents'));
+    }
+    public function terms()
+    {
+        $contents = Content::where('content_type', 'Terms')->latest()->get();
+        return view('pages.trum_and_condition',compact('contents'));
+    }
+    public function disclaimer()
+    {
+        $contents = Content::where('content_type', 'Disclaimer')->latest()->get();
+        return view('pages.disclaimer',compact('contents'));
+    }
 
 }

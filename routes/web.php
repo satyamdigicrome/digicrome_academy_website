@@ -28,6 +28,7 @@ use App\Http\Controllers\Admin\SucessController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+use App\Http\Controllers\Admin\ContantController;
 
 
 
@@ -109,6 +110,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('blogs/{id}/edit', [AdminBlogController::class, 'edit'])->name('blogs.edit');
     Route::put('blogs/{id}', [AdminBlogController::class, 'update'])->name('blogs.update');
     Route::delete('blogs/{id}', [AdminBlogController::class, 'destroy'])->name('blogs.destroy');
+    Route::post('/admin/extra/store', [ContantController::class, 'store'])->name('admin.extra.store');
+    Route::delete('/admin/extra/{id}', [ContantController::class, 'destroy'])->name('admin.extra.destroy');
+    Route::get('/contant', [ContantController::class, 'index'])->name('contant.index');
+
 
     // Add routes for edit, update, and delete as needed
 });
@@ -128,8 +133,10 @@ Route::get('/success_stories', [SucessStoriesController::class, 'index'])->name(
 Route::get('/media_presence', [MediaPresenceController ::class, 'index'])->name('media_presence');
 Route::get('/upcoming-courses/{slug}', [CourseController::class, 'course_details'])->name('course_details');
 Route::get('/blog/{slug}', [BlogController::class, 'blog_details'])->name('blog.details');
-
 Route::get('/our-courses/{slug}', [CourseController::class, 'showByCategory'])->name('course.category');
+Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
+Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('terms-and-conditions');
+Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy-policy');
 
 
 

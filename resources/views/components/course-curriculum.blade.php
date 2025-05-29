@@ -6,19 +6,19 @@
       <div class="col-md-4">
         <h4 class="mb-4 fw-bold" style="font-size: 2rem;">Certificates</h4>
         <div class="d-flex flex-column gap-3">
-        <div class="certificate-box active" data-image="https://digicrome.com/public/www/images/cirt1111.png">
+        <div class="certificate-box active" data-image="{{ asset('assets/images/certificate/dc.webp') }}">
           <span><strong>Our Certificate</strong></span>
           <i class="bi bi-arrow-right-circle-fill"></i>
         </div>
-        <div class="certificate-box" data-image="https://digicrome.com/public/www/images/cirt1111.png">
+        <div class="certificate-box" data-image="{{ asset('assets/images/certificate/intern.webp') }}">
           <span><strong>Internship Certificate</strong></span>
           <i class="bi bi-arrow-right-circle-fill"></i>
         </div>
-        <div class="certificate-box" data-image="https://digicrome.com/public/www/images/cirt1111.png">
+        <div class="certificate-box" data-image="{{ asset('assets/images/certificate/mic.webp') }}">
           <span><strong>Microsoft Certificate</strong></span>
           <i class="bi bi-arrow-right-circle-fill"></i>
         </div>
-        <div class="certificate-box" data-image="https://digicrome.com/public/www/images/cirt1111.png">
+        <div class="certificate-box" data-image="{{ asset('assets/images/certificate/ibm.webp') }}">
           <span><strong>IBM Certificate</strong></span>
           <i class="bi bi-arrow-right-circle-fill"></i>
         </div>
@@ -27,7 +27,7 @@
 
       <!-- Right: Image Preview -->
       <div class="col-md-8 d-flex align-items-center justify-content-center">
-        <img id="certificate-preview" src="https://digicrome.com/public/www/images/cirt1111.png"
+        <img id="certificate-preview" src="{{ asset('assets/images/certificate/dc.webp') }}"
         class="img-fluid rounded shadow-lg border border-light" style="max-height: 450px;" alt="Certificate">
       </div>
 

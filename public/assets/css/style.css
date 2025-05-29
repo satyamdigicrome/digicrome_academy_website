@@ -16066,6 +16066,12 @@ p.lead {
         font: bold 2em "Inter", sans-serif;
     }
 }
+.ap-logo{
+    width: 185px;
+    border: 2px solid;
+    border-radius: 13px;
+    padding: 4px
+}
 
 
 

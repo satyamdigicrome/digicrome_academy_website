@@ -1,4 +1,3 @@
-
 <!--==================================================-->
 <!-- start educate brand Area -->
 <!--==================================================-->
@@ -129,35 +128,25 @@
 						<ul>
 							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('who_we_are') }}">Who we are</a></li>
 							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('success_stories') }}">Success stories</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('media_presence') }}">Media Presence</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="#">Privacy Policy</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="#">FAQ's</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('terms-and-conditions') }}">terms-and-conditions</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('privacy-policy') }}">Privacy-Policy</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-3 col-lg-4 col-md-6">
 				<div class="footer-widget-title">
-					<h4>Recent Posts</h4>
+					<h4>Our Application</h4>
 				</div>
 				<div class="footer-widget-blog first">
 					<div class="footer-widget-blog-thumb">
-						<img src="assets/images/home-one/footer-recent-img1.webp" alt="recent-img">
-					</div>
-					<div class="footer-widget-blog-content">
-						<a href="blog-details.html">10 Proven Strategies to 
-							Online Learning</a>
-						<p>8 Jan, 2025</p>
+						<img src="{{ asset('assets/images/playimg.png') }}" alt="recent-img" class="ap-logo">
 					</div>
 				</div>
 				<div class="footer-widget-blog">
 					<div class="footer-widget-blog-thumb">
-						<img src="{{ asset('assets/images/home-one/footer-recent-img2.webp') }}" alt="recent-img">
-					</div>
-					<div class="footer-widget-blog-content">
-						<a href="blog-details.html">Trends that are shaping 
-							the Learning...</a>
-						<p>8 Jan, 2025</p>
+						<img src="{{ asset('assets/images/apple.png') }}" alt="recent-img" class="ap-logo">
 					</div>
 				</div>
 			</div>
@@ -228,7 +217,7 @@
 			<div class="row footer-bottom">
 				<div class="col-lg-6">
 					<div class="footer-bottom-desc">
-						<p>Copyright 2020-2025 Digicrome Pvt Ltd. All Rights Reserved</p>
+						<p>© 2025 <a href="index.html">Educate</a>. Designed By Dream IT Solution</p>
 					</div>
 				</div>
 				<div class="col-lg-6">

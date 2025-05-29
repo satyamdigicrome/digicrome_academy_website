@@ -58,58 +58,9 @@
           }
 
          </style>
-
-  <!-- Referral Code Box -->
-  <section id="referral" class="py-5 bg-light">
-    <div class="container">
-    <div class="refer-code-box">
-      <h3>Your Referral Code</h3>
-      <div class="refer-code">DIGIREF123</div>
-      <button class="btn mt-2">Copy Code</button>
-      <p class="mt-3">Or share: <br> <a href="#">https://digicrome.com/ref/DIGIREF123</a></p>
-    </div>
-    </div>
-  </section>
-<style>
-  h3{
-   font-size: 20px;
-   font-weight: 500;
-  }
-  .refer-code{
-    font-size: 20px;
-   font-weight: 600;
-  }
-.btn {
-  background-color: #FFA500;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.mt-3 {
-  margin-top: 1rem; /* Adds top spacing */
-}
-
-p {
-  font-size: 20px;
-  color: brown
-}
-
-p a {
-  margin-top: 5px;
-  color: brown;
-  text-decoration: none;
-  font-weight: 500;
-  word-break: break-all; 
-  transition: color 0.3s ease;
-}
-
-</style>
-
-  <form class="referral-form">
+<div class="row p-4">
+	<div class="col-lg-6">
+	<form class="referral-form">
     <h2>Referral Form</h2>
     <div class="form-group">
       <label for="yourName">Your Name</label>
@@ -135,12 +86,22 @@ p a {
       <label for="message">Personal Message (Optional)</label>
       <textarea id="message" name="message" rows="4"></textarea>
     </div>
-
     <button type="submit" class="submit-btn">Submit Referral</button>
   </form>
+      </div>
+
+			<div class="col-lg-6">
+		  <h1>Heading</h1>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam, possimus voluptates veritatis blanditiis, fuga dicta temporibus aspernatur debitis dolores reiciendis incidunt eum doloribus ad, accusamus consectetur laboriosam nemo reprehenderit.</p>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam, possimus voluptates veritatis blanditiis, fuga dicta temporibus aspernatur debitis dolores reiciendis incidunt eum doloribus ad, accusamus consectetur laboriosam nemo reprehenderit.</p>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam, possimus voluptates veritatis blanditiis, fuga dicta temporibus aspernatur debitis dolores reiciendis incidunt eum doloribus ad, accusamus consectetur laboriosam nemo reprehenderit.</p>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam, possimus voluptates veritatis blanditiis, fuga dicta temporibus aspernatur debitis dolores reiciendis incidunt eum doloribus ad, accusamus consectetur laboriosam nemo reprehenderit.</p>
+
+    </div>
+		</div>
 
 <style>
-     .referral-form {
+  .referral-form {
     margin: 30px auto;
     padding: 30px;
     background: white;
@@ -150,12 +111,11 @@ p a {
     max-width: 500px;
   }
     .referral-form h2 {
-     margin-bottom: 40px;
+   margin-bottom: 40px;
     font-weight: 900;
     font-size: 30px;
     color: #110101;
     text-align: center;
-    
     }
 
     .form-group {
@@ -196,14 +156,23 @@ p a {
     .submit-btn:hover {
       background-color: #ffff;
     }
+
+    h1 {
+      margin:50px;
+    font-weight: 900;
+    font-size: 30px;
+    color: #110101;
+    text-align: center;
+    }
+
   </style>
   <!-- Final CTA -->
   <section class="py-5 text-center text-white" style="background-color: var(--theme-color);">
     <div class="container">
     <h2 class="mb-4">Start Earning with Every Referral!</h2>
-    <a href="#referral-form" class="btn btn-light btn-lg">Refer Now</a>
+    <a href="#referral-form" class="btn ap-logo btn-lg">Refer Now</a>
     </div>
   </section>
-  <style>
+
 
 @endsection

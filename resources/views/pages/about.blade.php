@@ -128,7 +128,7 @@
 							<a href="about.html">more about<i class="flaticon flaticon-right-arrow"></i></a>
 						</div> --}}
 
-<div class="about-education-box">
+{{-- <div class="about-education-box">
   <div class="education-icon">
     <img src="{{ asset('assets/images/home-one/msme.webp') }}" alt="call">
   </div>
@@ -139,7 +139,7 @@
     </p>
     <span>John Doe</span>
   </div>
-</div>
+</div> --}}
 
 <div class="about-shape31">
   <img src="{{ asset('assets/images/home-three/about-shape31.webp') }}" alt="shape">
@@ -160,6 +160,24 @@
 	<!--==================================================-->
 	<!-- End educate About Area -->
 	<!--==================================================-->
+	<div class="container my-5">
+		<div class="row align-items-center">
+		  <!-- Image Side -->
+		  <div class="col-md-6 mb-4 mb-md-0">
+			<img src="{{ asset('assets/images/home-one/msme.webp') }}" alt="Education Image" class="img-fluid rounded shadow">
+		  </div>
+		  <!-- Content Side -->
+		  <div class="col-md-6">
+			<div class="p-3">
+			  <h3 class="mb-3">Trusted Online and Offline Education</h3>
+			  <p class="text-muted">
+				Empowering learners through innovative, accessible, and high-quality education experiences—wherever you are.
+			  </p>
+			  <span class="fw-bold text-primary">John Doe</span>
+			</div>
+		  </div>
+		</div>
+	  </div>
 	<!--==================================================-->
 	<!-- Start educate feature Area style-two -->
 	<!--==================================================-->
