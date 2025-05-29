@@ -1,0 +1,114 @@
+@extends('admin_layout.app')
+
+@section('title', 'Add keyfeature')
+
+@section('content')
+<div class="container mt-4">
+    <h2 class="mb-4">Add New keyfeature</h2>
+
+    <div class="card mb-5">
+        <div class="card-header bg-white fw-bold">Add keyfeature Details</div>
+        <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form action="{{ route('keyfeature.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" class="form-control" name="image" id="image" accept="image/*" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="heading" class="form-label">Heading</label>
+                    <input type="text" class="form-control" name="heading" id="heading" placeholder="Enter heading" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="paragraph" class="form-label">Paragraph</label>
+                    <textarea class="form-control" name="paragraph" id="paragraph" rows="4" placeholder="Enter paragraph" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="course_id" class="form-label">Select Course</label>
+                    <select class="form-select" name="course_id[]" id="course_id" multiple required>
+                        @foreach($courses as $course)
+                            <option value="{{ $course->id }}">{{ $course->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add keyfeature</button>
+            </form>
+            <script>
+                ClassicEditor
+                    .create(document.querySelector('#paragraph'))
+                    .then(editor => {
+                        // Sync manually (optional but useful)
+                        editor.model.document.on('change:data', () => {
+                            document.querySelector('#paragraph').value = editor.getData();
+                        });
+                    })
+                    .catch(error => {
+                        console.error('CKEditor error:', error);
+                    });
+            </script>
+            
+        </div>
+    </div>
+</div>
+<div class="container mt-4">
+    <h2 class="mb-4">keyfeatures Management</h2>
+
+    <h4 class="mb-3">Existing keyfeatures</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th style="width: 60px;">Image</th>
+                    <th>Heading</th>
+                    <th>Tagline</th>
+                    <th>Paragraph</th>
+                    <th>Course</th>
+                    <th>User</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($keyfeature as $keyfeature)
+                    <tr>
+                        <td>
+                            <img src="{{ asset('storage/' . $keyfeature->image) }}" alt="Image" style="height: 40px; width: 40px; object-fit: cover; border-radius: 4px;">
+                        </td>
+                        <td>{{ $keyfeature->heading }}</td>
+                        <td>{{ $keyfeature->tagline }}</td>
+                        <td>{{ $keyfeature->paragraph }}</td>
+                        <td>{{ $keyfeature->course->name ?? 'N/A' }}</td>
+                        <td>{{ $keyfeature->user->name ?? 'N/A' }}</td>
+                        <td>
+                            <form action="{{ route('keyfeature.destroy', $keyfeature) }}" method="POST" onsubmit="return confirm('Are you sure?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="7" class="text-center text-muted">No keyfeature records found.</td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
+</div>
+@endsection
+                   
