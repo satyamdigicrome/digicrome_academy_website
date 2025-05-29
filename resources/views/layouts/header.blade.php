@@ -447,4 +447,57 @@ $(document).ready(function() {
 		</div>
 	</div>
 </div>
+<style>
+    .bottom-fixed-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 10px 0;
+        z-index: 9999;
+        box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+        font-size: 14px;
+    }
+    .bottom-fixed-bar .btn {
+        margin: 0 8px;
+        font-size: 13px;
+        padding: 6px 12px;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
+        border-radius: 20px;
+    }
+    .btn-whatsapp {
+        background-color: #25D366;
+        color: white;
+    }
+    .btn-whatsapp:hover {
+        background-color: #1ebe5d;
+        color: white;
+    }
+    .btn-callback {
+        background-color: #343a40;
+        color: white;
+    }
+    .btn-callback:hover {
+        background-color: #23272b;
+        color: white;
+    }
+    .bottom-fixed-bar i {
+        margin-right: 6px;
+    }
+</style>
+
+<div class="bottom-fixed-bar text-center">
+    <span class="me-2">Need help? Reach us instantly:</span>
+    <a href="https://wa.me/919999999999" target="_blank" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> Say Hi on WhatsApp
+    </a>
+    <a href="#callbackModal" data-bs-toggle="modal" class="btn btn-callback">
+        <i class="fas fa-phone-alt"></i> Request a Callback
+    </a>
+</div>
+
+
 <!--End Sidebar Cart Item -->

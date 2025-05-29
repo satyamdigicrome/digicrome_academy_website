@@ -53,9 +53,23 @@
                         <li><a class="dropdown-item" href="{{ route('faqs.create') }}">Manage FAQ</a></li>
                     </ul>
                     
-                </div>                
-                <a class="nav-link text-dark px-3" href="{{route('placement.index')}}"><i class="bi bi-people"></i> Placement</a>
+                </div>     
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark px-3" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-journal-text"></i> More Pages
+                    </a>
+                    <ul class="dropdown-menu">
+                        <a class="nav-link text-dark px-3" href="{{route('placement.index')}}"><i class="bi bi-people"></i> Placement</a>
                 <a class="nav-link text-dark px-3" href="{{route('logos.index')}}"><i class="bi bi-people"></i> Logo</a>
+                <a class="nav-link text-dark px-3" href="{{route('contant.index')}}"><i class="bi bi-people"></i> privacy-policy</a>
+                <a class="nav-link text-dark px-3" href="#"><i class="bi bi-people"></i> Meta Section</a>
+
+
+
+                    </ul>
+                    
+                </div>            
+                
 
                 <a class="nav-link text-dark px-3" href="#"><i class="bi bi-gear"></i> Settings</a>
             </nav>
