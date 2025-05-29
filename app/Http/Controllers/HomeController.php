@@ -8,6 +8,7 @@ use App\Models\Collection;
 use App\Models\StudentStory;
 use App\Models\Testimonial;
 use App\Models\Logo;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Cache;
 class HomeController extends Controller
 {
@@ -29,8 +30,11 @@ class HomeController extends Controller
     });
     $studentStories = StudentStory::latest()->get(); 
     $testimonials = Testimonial::latest()->get();
+    $blogs = Blog::where('status', 'published')
+    ->orderByDesc('created_at')
+    ->get();
 
-    return view('welcome', compact('collections', 'upcomingCourses','companyLogos','studentStories','testimonials','associationLogos'));
+    return view('welcome', compact('collections', 'upcomingCourses','companyLogos','studentStories','testimonials','associationLogos','blogs'));
 }
 
 }

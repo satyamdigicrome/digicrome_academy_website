@@ -925,6 +925,12 @@
 <!--==================================================-->
 <!--End educate-details-course-area -->
 <!--==================================================-->
+<h2 class="text-center mb-2" style="font-size: 2rem;">
+    Our <span style="color: #f29c12;">Collaborations </span> Studies
+</h2>
+<p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+    Discover the key features and benefits you’ll gain from joining our program.
+</p>
 <section>
     <div class="container">
         <div class="tab_container">

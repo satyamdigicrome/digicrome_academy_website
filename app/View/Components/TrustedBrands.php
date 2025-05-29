@@ -14,15 +14,16 @@ class TrustedBrands extends Component
      * @param array|null $logos
      */
     public function __construct($logos = null)
-    {
-        $this->logos = $logos ?? [
-            "https://webcdn.imarticus.org/adhoc/Frame13.svg",
-            "https://webcdn.imarticus.org/adhoc/Frame14.svg",
-            "https://webcdn.imarticus.org/adhoc/Frame15.svg",
-            "https://webcdn.imarticus.org/iso-fix/Web.webp",
-            "https://webcdn.imarticus.org/adhoc/Frame17.webp",
-        ];
-    }
+{
+    $this->logos = $logos ?? [
+        asset('assets/images/reviwe/Ambition-Box-Review.webp'),
+        asset('assets/images/reviwe/Facebook-Review.webp'),
+        asset('assets/images/reviwe/Glassdoor-Review.webp'),
+        asset('assets/images/reviwe/Google-Review.webp'),
+        asset('assets/images/reviwe/Trustpilot-Review.webp'),
+    ];
+}
+
 
     public function render()
     {

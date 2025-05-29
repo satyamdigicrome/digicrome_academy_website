@@ -19,10 +19,11 @@
 						<!-- hero button -->
 						<div class="hero-button">
 							<div class="hero-btn">
-								<a href="contact.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
-							</div>
+								<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
+							  </div>
+							  
 							<div class="hero-course-btn">
-								<a href="course.html">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
+								<a href="{{ route('course') }}">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
 							</div>
 						</div>
 					</div>
@@ -255,7 +256,7 @@
 							</div>
 						</div>
 						<div class="about-btn">
-							<a href="about.html">more about<i class="flaticon flaticon-right-arrow"></i></a>
+							<a href="{{ route('about') }}">more about<i class="flaticon flaticon-right-arrow"></i></a>
 						</div>
 					</div>
 				</div>
@@ -553,7 +554,7 @@
 						<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.webp') }}"
 								alt="star">24/7 Mentor Support Available </p>
 						<div class="choose-btn">
-							<a href="choose.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
+							<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
 						</div>
 					</div>
 				</div>
@@ -628,7 +629,7 @@
 								</div>
 							</div>
 							<div class="course-offer-btn">
-								<a href="course-details.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+								<a href="javascript:void(0);" onclick="openModal()">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
 							</div>
 							<div class="course-offer-discount">
 								<h5>10%</h5>
@@ -776,7 +777,7 @@
 	<!--==================================================-->
 	<!-- Start educate team Area -->
 	<!--==================================================-->
-	<div class="team-area style-one">
+	{{-- <div class="team-area style-one">
 		<div class="container">
 			<div class="row section-title-space">
 				<div class="col-lg-6">
@@ -944,7 +945,7 @@
 				<img src="{{ asset('assets/images/home-one/team-shape2.webp') }}" alt="shape2">
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!--==================================================-->
 	<!-- end educate team Area -->
 	<!--==================================================-->
@@ -1103,9 +1104,10 @@
 				<div class="col-xl-8 col-lg-12">
 					<div class="row">
 						<div class="testi-list-inner owl-carousel">
+							@foreach ($studentStories as $story)
+
 							<div class="col-lg-12">
 								<div class="testi-box">
-									@foreach ($studentStories as $story)
 										<div class="single-testi-box">
 											<div class="testi-quote">
 												<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
@@ -1135,9 +1137,9 @@
 												</div>
 											</div>
 										</div>
-									@endforeach
 								</div>
 							</div>
+							@endforeach
 							
 						</div>
 					</div>
@@ -1189,7 +1191,7 @@
 								alt="star">Don't Stay Stuck, Expand Your Potential Today 
 							</p>
 						<div class="choose-btn">
-							<a href="choose.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
+							<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
 						</div>
 					</div>
 				</div>
@@ -1242,77 +1244,43 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xl-4 col-lg-6 col-md-6">
-					<div class="single-blog-box box-1">
-						<div class="single-blog-thumb">
-							<img src="{{ asset('assets/images/home-one/blog-thumb1.webp') }}" alt="thumb">
-							<div class="blog-meta-top">
-								<span>28 JAN</span>
+				<div class="row">
+					@foreach($blogs as $blog)
+						<div class="col-xl-4 col-lg-12 col-md-4">
+							<div class="single-blog-box box-1">
+								<div class="single-blog-thumb">
+									<img src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb" class="img-fluid">
+									<div class="blog-meta-top">
+										<span>{{ \Carbon\Carbon::parse($blog->created_at)->format('d M') }}</span>
+									</div>
+								</div>
+								<div class="blog-content">
+									<div class="blog-author">
+										<h4 style="display: flex; align-items: center; gap: 10px;">
+											@if($blog->author_image)
+												<img src="{{ asset('storage/' . $blog->author_image) }}" alt="author" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+											@endif
+											{{ $blog->author_name }}
+										</h4>
+									</div>
+									
+									<div class="blog-title">
+										<h3>
+											<a href="{{ route('blog.details', $blog->slug) }}">
+												{{ $blog->heading }}
+											</a>
+										</h3>
+									</div>
+									<div class="blog-btn">
+										<a href="{{ route('blog.details', $blog->slug) }}">
+											Continue Reading
+											<img src="{{ asset('assets/images/home-one/blog-icon1.webp') }}" alt="icon">
+										</a>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="blog-content">
-							<div class="blog-author">
-								<h4><img src="{{ asset('assets/images/home-one/blog-autor1.webp') }}" alt="autor">John D.
-									Alexon</h4>
-							</div>
-							<div class="blog-title">
-								<h3><a href="blog-details.html">10 Proven Strategies to excel
-										Online Learning</a></h3>
-							</div>
-							<div class="blog-btn">
-								<a href="blog-details.html">Continue Reading <img
-										src="{{ asset('assets/images/home-one/blog-icon1.webp') }}" alt="icon"></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6">
-					<div class="single-blog-box box-2">
-						<div class="single-blog-thumb">
-							<img src="{{ asset('assets/images/home-one/blog-thumb2.webp') }}" alt="thumb">
-							<div class="blog-meta-top">
-								<span>29 JAN</span>
-							</div>
-						</div>
-						<div class="blog-content">
-							<div class="blog-author">
-								<h4><img src="{{ asset('assets/images/home-one/blog-autor2.webp') }}" alt="autor">Anjelina
-									Watson</h4>
-							</div>
-							<div class="blog-title">
-								<h3><a href="blog-details.html">Trends that are shaping the
-										Learning experience</a></h3>
-							</div>
-							<div class="blog-btn">
-								<a href="blog-details.html">Continue Reading <img
-										src="{{ asset('assets/images/home-one/blog-icon2.webp') }}" alt="icon"></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6">
-					<div class="single-blog-box box-3">
-						<div class="single-blog-thumb">
-							<img src="{{ asset('assets/images/home-one/blog-thumb3.webp') }}" alt="thumb">
-							<div class="blog-meta-top">
-								<span>30 JAN</span>
-							</div>
-						</div>
-						<div class="blog-content">
-							<div class="blog-author">
-								<h4><img src="{{ asset('assets/images/home-one/blog-autor3.webp') }}" alt="autor">David X.
-									Barmer</h4>
-							</div>
-							<div class="blog-title">
-								<h3><a href="blog-details.html">Learning is the Key soft skills
-										and Professional</a></h3>
-							</div>
-							<div class="blog-btn">
-								<a href="blog-details.html">Continue Reading <img
-										src="{{ asset('assets/images/home-one/blog-icon3.webp') }}" alt="icon"></a>
-							</div>
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
@@ -1666,7 +1634,286 @@
 	<!--==================================================-->
 	<!-- end educate blog Area -->
 	<!--==================================================-->
-
+	<style>
+		/* Modal Overlay */
+		.modal {
+		  display: none;
+		  position: fixed;
+		  z-index: 9999;
+		  left: 0; top: 0;
+		  width: 100%; height: 100%;
+		  overflow: auto;
+		  background-color: rgba(0, 0, 0, 0.6);
+		  padding: 20px;
+		  box-sizing: border-box;
+		}
+		
+		/* Modal Content Box */
+		.modal-content {
+		  background-color: #fff;
+		  border-radius: 10px;
+		  max-width: 900px;
+		  margin: auto;
+		  padding: 0;
+		  overflow: hidden;
+		  animation: fadeIn 0.4s ease-in-out;
+		}
+		
+		/* Modal Header */
+		.modal-header {
+		  padding: 15px 20px;
+		  font-size: 20px;
+		  font-weight: bold;
+		  background-color: #f29c12;
+		  color: #fff;
+		  position: relative;
+		}
+		
+		/* Close Button */
+		.close-btn {
+		  color: #fff;
+		  position: absolute;
+		  right: 20px;
+		  top: 12px;
+		  font-size: 26px;
+		  cursor: pointer;
+		}
+		
+		/* Modal Body */
+		.modal-body {
+		  display: flex;
+		  flex-direction: row;
+		  flex-wrap: wrap;
+		  padding: 20px;
+		  gap: 20px;
+		  background: #f9f9f9;
+		}
+		
+		/* Form Container */
+		.popup-container {
+		  display: flex;
+		  flex-direction: row;
+		  flex-wrap: wrap;
+		  width: 100%;
+		  justify-content: center;
+		  align-items: center;
+		}
+		
+		.popup-form {
+		  display: flex;
+		  flex-direction: row;
+		  flex-wrap: wrap;
+		  width: 100%;
+		}
+		
+		.form-container {
+		  display: flex;
+		  flex-wrap: wrap;
+		  width: 100%;
+		  background-color: white;
+		  border-radius: 10px;
+		  overflow: hidden;
+		  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+		}
+		
+		/* Image Section */
+		.form-container img {
+		  width: 100%;
+		  max-width: 400px;
+		  object-fit: cover;
+		}
+		
+		/* Form Section */
+		form.form {
+		  flex: 1;
+		  padding: 20px;
+		  box-sizing: border-box;
+		}
+		
+		form h2 {
+		  margin-bottom: 20px;
+		}
+		
+		.form-field {
+		  margin-bottom: 15px;
+		  width: 100%;
+		}
+		
+		.form-field input,
+		.form-field select {
+		  width: 100%;
+		  padding: 12px;
+		  border: 1px solid #ccc;
+		  border-radius: 6px;
+		  font-size: 14px;
+		  box-sizing: border-box;
+		}
+		
+		form p {
+		  font-size: 14px;
+		  color: #333;
+		}
+		
+		form a {
+		  color: #f29c12;
+		  text-decoration: none;
+		}
+		
+		form button {
+		  background-color: #f29c12;
+		  color: white;
+		  border: none;
+		  padding: 12px 20px;
+		  font-size: 16px;
+		  cursor: pointer;
+		  border-radius: 6px;
+		  transition: background-color 0.3s ease;
+		}
+		
+		form button:hover {
+		  background-color: #d8880e;
+		}
+		
+		/* Responsive Design */
+		@media screen and (max-width: 768px) {
+		  .modal-body {
+			flex-direction: column;
+		  }
+		
+		  .form-container {
+			flex-direction: column;
+		  }
+		
+		  .form-container img {
+			max-width: 100%;
+			height: auto;
+		  }
+		
+		  form.form {
+			padding: 15px;
+		  }
+		
+		  .modal-content {
+			width: 100%;
+		  }
+		}
+		
+		/* Animation */
+		@keyframes fadeIn {
+		  from {opacity: 0; transform: scale(0.9);}
+		  to {opacity: 1; transform: scale(1);}
+		}
+		</style>
+		
+	
+	<!-- Modal -->
+	<div id="formModal" class="modal">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <span class="close-btn" onclick="closeModal()">&times;</span>
+		  Need help? Call us now at 0120 313 3869 or request a quick callback!
+		</div>
+		<div class="modal-body">
+			<div class="popup-container">
+				<div class="popup-form">
+					<div class="form-container">
+					<img src="https://digicrome.com/public/www/images/popupform.png" alt="Image Description">
+					<form style="width:100%; background:transparent; margin:0px;"class="form" method="post" action="https://demo.digicrome.com/post_lead.php">       
+								<input type="hidden" name="_token" value="flHgMe4mVAgPNJsDLZgDd2qjmzPVwSYtKh5iECGf">   
+						<h2 style="    color: #f29c12;">REGISTER FOR QUICK CALLBACK</h2>  
+						<div class="form-field">
+							 <!--<label style="color:#fff;" for="name">Name:</label> -->
+							<input type="text" id="name" name="name" placeholder="Name">
+						</div>
+						<div class="form-field">
+							 <!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
+							<input type="tel" id="mobile" name="mobile" placeholder="Mobile Number">
+						</div>
+						<div class="form-field">
+							 <!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
+							<input type="email" id="gmail" name="email" placeholder="E-mail ID:">
+						</div>
+						 <div class="form-field">
+							 <!--<label style="color:#fff;" for="city">City:</label> -->
+							<input type="text" id="city" name="address" placeholder="City">
+						</div>
+						<div class="form-field">
+							 <!--<label style="color:#fff;" for="Qualification">Qualification:</label> -->
+							<input type="text" id="qualification" name="title" placeholder="Qualification">
+						</div>
+						<div class="form-field">
+				<!--<label style="color:#fff;" for="qualification">Experience:</label> -->
+				<select class="selecttype" id="qualification" name="profession">
+					<option value="" disabled selected>Select Experience</option>
+					<option value="Working Professional - Technincal Roles">Working Professional - Technincal Roles</option>
+					<option value="Working Professional - Non Technincal">Working Professional - Non Technincal</option>
+					<option value="College Student - Final Year">College Student - Final Year</option>
+					<option value="College Student - 1st to pre-final Year">College Student - 1st to pre-final Year</option>
+					<option value="Other">Other</option>
+				</select>
+			</div>
+			
+						<div class="form-field">
+							<input type="hidden" id="mobile" name="source" Value="Workshop" placeholder="Mobile Number">
+						</div>
+						<div class="form-field">
+							<input type="hidden" id="mobile" name="country" value="india" placeholder="Mobile Number">
+						</div>
+						<div class="form-field">
+							<input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
+						</div>
+						<div class="form-field">
+							<input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
+						</div>
+						<!--<div class="form-field">-->
+						<!--    <input type="text" id="mobile" name="profession" placeholder="Mobile Number">-->
+						<!--</div>-->
+						<div class="form-field">
+							<input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
+						</div>
+						
+						<p style="    line-height: 30px;">By submitting the form, you agree to our <a href="https://digicrome.com/terms-and-conditions">Terms and Conditions</a>  and our <a href="https://digicrome.com/privacy-policy">Privacy Policy.</a> </p><br>
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+			</div>	
+		</div>
+	  </div>
+	</div>
+	</div>
+	
+	<script>
+		// Show modal on page load
+		window.onload = function () {
+		  openModal();
+		};
+	  
+		// Function to open modal (also reusable on button click)
+		function openModal() {
+		  document.getElementById("formModal").style.display = "block";
+		}
+	  
+		// Function to close modal
+		function closeModal() {
+		  document.getElementById("formModal").style.display = "none";
+		}
+	  
+		// Optional: Prevent actual form submission (only if needed for testing)
+		document.getElementById("professionalForm").addEventListener("submit", function (e) {
+		  e.preventDefault();
+		  alert("Form submitted!");
+		  closeModal();
+		});
+	  
+		// Optional: Close if clicking outside the modal content
+		window.onclick = function (event) {
+		  const modal = document.getElementById("formModal");
+		  if (event.target === modal) {
+			modal.style.display = "none";
+		  }
+		};
+	  </script>
+	  
 
 
 @endsection

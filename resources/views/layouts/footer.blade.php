@@ -228,7 +228,7 @@
 			<div class="row footer-bottom">
 				<div class="col-lg-6">
 					<div class="footer-bottom-desc">
-						<p>© 2025 <a href="index.html">Educate</a>. Designed By Dream IT Solution</p>
+						<p>Copyright 2020-2025 Digicrome Pvt Ltd. All Rights Reserved</p>
 					</div>
 				</div>
 				<div class="col-lg-6">
