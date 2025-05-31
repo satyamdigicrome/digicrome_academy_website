@@ -45,11 +45,11 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($courses as $course)
+                @foreach($courses as $course) 
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="course-details-box">
                             <div class="course-details-thumb">
-                                <img src="{{ asset($course->image) }}" alt="thumb">
+                                <img src="{{ asset('storage/' .$course->image) }}" alt="thumb">
                                 <div class="course-meta-top">
                                     <span>{{ $course->tag_line }}</span>
                                 </div>
@@ -57,19 +57,19 @@
                             <div class="course-details-content">
                                 <h4><a href="#">{{ $course->name }}</a></h4>
                                 <div class="course-rating">
-                                    <ul>
+                                    {{-- <ul>
                                         @for($i = 0; $i < 5; $i++)
                                             <li><i class="fa-solid fa-star{{ $i < $course->rating ? '' : '-half' }}"></i></li>
                                         @endfor
-                                    </ul>
-                                    <div class="course-rating-num">
+                                    </ul> --}}
+                                    {{-- <div class="course-rating-num">
                                         <span>({{ $course->rating }}/{{ $course->ratings_count }} Ratings)</span>
-                                    </div>
+                                    </div> --}}
                                     <div class="course-price">
-                                        <h3>${{ $course->price }}</h3>
+                                        <h3>{{ $course->price }}₹</h3>
                                     </div>
                                 </div>
-                                <div class="course-details-list">
+                                {{-- <div class="course-details-list">
                                     <div class="course-lesson">
                                         <span><i class="fa-reg  ular fa-file-lines"></i> {{ $course->lessons_count }}
                                             Lessons</span>
@@ -77,7 +77,7 @@
                                     <div class="course-student">
                                         <span><i class="fa-regular fa-user"></i> {{ $course->students_count }} Students</span>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="course-btn">
                                     <a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="btn">ENROL NOW<i
                                             class="flaticon flaticon-right-arrow"></i></a>

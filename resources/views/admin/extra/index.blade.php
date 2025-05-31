@@ -115,7 +115,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <form action="{{ route('extra.destroy', $extra) }}" method="POST" onsubmit="return confirm('Are you sure?')">
+                                    <form action="{{ route('extra.destroys', $extra) }}" method="POST" onsubmit="return confirm('Are you sure?')">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-danger">Delete</button>

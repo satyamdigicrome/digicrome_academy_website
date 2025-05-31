@@ -30,7 +30,7 @@
 					<div class="hero-rating-box">
 						<div class="hero-rating-icon">
 							{{-- <img src="{{ asset('assets/images/home-one/star-icon.webp') }}" alt="star"> --}}
-							<span>1k+</span>
+							<span>10k+</span>
 						</div>
 						<div class="hero-rating-item-box">
 							<div class="hero-star-icon">
@@ -46,7 +46,7 @@
 								<span>(4.7 Ratings)</span>
 							</div>
 							<div class="hero-rating-des">
-								<p>learners skill up daily. Don’t get left behind.</p>
+								<p>Successful Learners</p>
 							</div>
 						</div>
 					</div>
@@ -540,12 +540,12 @@
 						</div>
 						<div class="choose-item-menu">
 							<ul>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">Weekly Live Sessions
+								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">Weekend Live Sessions
 								</li>
 								<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">Select a convenient batch time
 								</li>
 								<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
-										alt="icon">Get Placement Assistance
+										alt="icon">Get Placement Guarantee Aid
 									</li>
 								<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">Get a Salary Hike
 								</li>
@@ -594,7 +594,7 @@
 	<!--==================================================-->
 	<!-- Start educate course design offer Area -->
 	<!--==================================================-->
-	<div class="course-design-offer-area style-one">
+	{{-- <div class="course-design-offer-area style-one">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
@@ -643,73 +643,74 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!--==================================================-->
 	<!-- end educate course design offer Area -->
 	<!--==================================================-->
 	<section class="video-slider">
 		<div class="container">
 			<h2 class="text-center mb-5" style="color: #f29c12;">Our Featured Videos</h2>
+	
 			<style>
 				.video-card {
-				  position: relative;
-				  padding-top: 177.78%; /* 9:16 ratio */
-				  overflow: hidden;
-				  border-radius: 12px;
-				  background: #000;
-				  cursor: pointer;
+					position: relative;
+					padding-top: 177.78%; /* 9:16 ratio */
+					overflow: hidden;
+					border-radius: 12px;
+					background: #000;
+					cursor: pointer;
 				}
-			  
+	
 				.video-card iframe {
-				  position: absolute;
-				  top: 0;
-				  left: 0;
-				  width: 100%;
-				  height: 100%;
-				  pointer-events: none;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					pointer-events: none;
 				}
-			  
+	
 				.video-title {
-				  text-align: center;
-				  font-size: 14px;
-				  margin-top: 8px;
-				  font-weight: 500;
+					text-align: center;
+					font-size: 14px;
+					margin-top: 8px;
+					font-weight: 500;
+					color: #fff;
 				}
-			  </style>
-			  
-			  
+	
+				.modal-video iframe {
+					width: 100%;
+					height: 500px;
+				}
+			</style>
+	
 			<div id="vimeoCarousel" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-					  <div class="row justify-content-center">
-						<div class="col-6 col-md-3 mb-4">
-						  <div class="video-card" data-vimeo="https://player.vimeo.com/video/76979871">
-							<iframe src="https://player.vimeo.com/video/76979871" frameborder="0" allowfullscreen></iframe>
-							<div class="video-title">Exploring the Mountains</div>
-						  </div>
+						<div class="row justify-content-center">
+							@php
+								$videos = [
+									['id' => '943625641', 'title' => 'Video 1'],
+									['id' => '884272580', 'title' => 'Video 2'],
+									['id' => '855610358', 'title' => 'Video 3'],
+									['id' => '858148584', 'title' => 'Video 4'],
+								];
+							@endphp
+	
+							@foreach ($videos as $video)
+								<div class="col-6 col-md-3 mb-4">
+									<div class="video-card" data-bs-toggle="modal" data-bs-target="#vimeoModal"
+										data-vimeo="https://player.vimeo.com/video/{{ $video['id'] }}">
+										<iframe src="https://player.vimeo.com/video/{{ $video['id'] }}?background=1"
+											frameborder="0" allowfullscreen></iframe>
+										<div class="video-title">{{ $video['title'] }}</div>
+									</div>
+								</div>
+							@endforeach
 						</div>
-						<div class="col-6 col-md-3 mb-4">
-						  <div class="video-card" data-vimeo="https://player.vimeo.com/video/22439234">
-							<iframe src="https://player.vimeo.com/video/22439234" frameborder="0" allowfullscreen></iframe>
-							<div class="video-title">Creative Animation</div>
-						  </div>
-						</div>
-						<div class="col-6 col-md-3 mb-4">
-						  <div class="video-card" data-vimeo="https://player.vimeo.com/video/146022717">
-							<iframe src="https://player.vimeo.com/video/146022717" frameborder="0" allowfullscreen></iframe>
-							<div class="video-title">Nature Walk</div>
-						  </div>
-						</div>
-						<div class="col-6 col-md-3 mb-4">
-						  <div class="video-card" data-vimeo="https://player.vimeo.com/video/1084537">
-							<iframe src="https://player.vimeo.com/video/1084537" frameborder="0" allowfullscreen></iframe>
-							<div class="video-title">Art in Motion</div>
-						  </div>
-						</div>
-					  </div>
 					</div>
-				  </div>
-				  
+				</div>
+	
 				<button class="carousel-control-prev" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon"></span>
 				</button>
@@ -718,18 +719,38 @@
 				</button>
 			</div>
 		</div>
+	
 		<!-- Vimeo Modal -->
-<div class="modal fade" id="vimeoModal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-lg">
-	  <div class="modal-content bg-dark text-white">
-		<div class="modal-body modal-video">
-		  <iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+		<div class="modal fade" id="vimeoModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content bg-dark text-white">
+					<div class="modal-body modal-video">
+						<iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
 		</div>
-	  </div>
-	</div>
-  </div>
-  
+	
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const videoCards = document.querySelectorAll('.video-card');
+				const vimeoPlayer = document.getElementById('vimeoPlayer');
+				const modal = document.getElementById('vimeoModal');
+	
+				videoCards.forEach(card => {
+					card.addEventListener('click', function () {
+						const videoUrl = this.getAttribute('data-vimeo') + '?autoplay=1';
+						vimeoPlayer.src = videoUrl;
+					});
+				});
+	
+				modal.addEventListener('hidden.bs.modal', function () {
+					vimeoPlayer.src = '';
+				});
+			});
+		</script>
 	</section>
+	
 	<style>
 		.video-slider {
 			background-color: #fef8f1;
@@ -1092,7 +1113,7 @@
 							<img src="{{ asset('assets/images/home-three/course-instructor.webp') }}" alt="instructor">
 						</div>
 						<div class="testi-review-content">
-							<h3 class="counter">130</h3>
+							<h3 class="counter">250</h3>
 							<span>+</span>
 							<p>Reviews</p>
 						</div>
@@ -1112,13 +1133,13 @@
 											<div class="testi-quote">
 												<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
 											</div>
-											<div class="testi-title">
+											{{-- <div class="testi-title">
 												<h3>Success Story</h3>
-											</div>
+											</div> --}}
 											<div class="testi-desc">
 												<p>{{ $story->stoire }}</p>
 											</div>
-											<div class="testi-ratting">
+											{{-- <div class="testi-ratting">
 												<ul>
 													<li><i class="fa-solid fa-star"></i></li>
 													<li><i class="fa-solid fa-star"></i></li>
@@ -1126,10 +1147,10 @@
 													<li><i class="fa-solid fa-star"></i></li>
 													<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
 												</ul>
-											</div>
+											</div> --}}
 											<div class="testi-autor-box">
 												<div class="testi-autor">
-													<img src="{{ asset('storage/' . $story->image) }}" alt="author" class="rounded-circle img-fluid" style="width: 70px; height: 70px; object-fit: cover;">
+													<img src="{{ asset('storage/' . $story->image) }}" alt="author" class="rounded-circle img-fluid" style="width: 70px; height: 70px; ">
 												</div>
 												<div class="testi-autor-content">
 													<h5 class="autor-title">{{ $story->studentname }}</h5>
@@ -1177,13 +1198,13 @@
 						</div>
 						<div class="choose-item-menu">
 							<ul>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">400 +
+								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">500 +
 									Global Companies</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">8 LPA
+								<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">12-15 LPA
 									Average CTC</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}" alt="icon">32.7 LPA
+								<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}" alt="icon">25-27 LPA
 									Highest CTC</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">84 %
+								<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">120 %
 									Average Hike</li>
 							</ul>
 						</div>
@@ -1245,7 +1266,7 @@
 			</div>
 			<div class="row">
 				<div class="row">
-					@foreach($blogs as $blog)
+					@foreach($blogs->take(3) as $blog)
 						<div class="col-xl-4 col-lg-12 col-md-4">
 							<div class="single-blog-box box-1">
 								<div class="single-blog-thumb">
@@ -1817,7 +1838,7 @@
 			<div class="popup-container">
 				<div class="popup-form">
 					<div class="form-container">
-					<img src="https://digicrome.com/public/www/images/popupform.png" alt="Image Description">
+					<img src="{{ asset('assets/images/www.webp') }}" alt="Image Description">
 					<form style="width:100%; background:transparent; margin:0px;"class="form" method="post" action="https://demo.digicrome.com/post_lead.php">       
 								<input type="hidden" name="_token" value="flHgMe4mVAgPNJsDLZgDd2qjmzPVwSYtKh5iECGf">   
 						<h2 style="    color: #f29c12;">REGISTER FOR QUICK CALLBACK</h2>  

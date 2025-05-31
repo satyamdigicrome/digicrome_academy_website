@@ -499,10 +499,10 @@
                 @endif
             </div>
             <!-- Certificates Section -->
-            <x-course-curriculum :course="$course" />
+            {{-- <x-course-curriculum :course="$course" /> --}}
         </div>
     </div>
-</section>
+</section>        
 <section>
     <div class="container my-5">
         <h2 class="section-heading text-center mb-4">Languages and Tools Covered</h2>

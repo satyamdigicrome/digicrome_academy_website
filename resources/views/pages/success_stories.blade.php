@@ -27,58 +27,77 @@
     </div>
     </div>
   </div>
-  <!-- Stats/Highlights -->
-  <section class="py-5 bg-light text-center">
-    <div class="container">
+<!-- Stats Section -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
     <div class="row g-4">
       <div class="col-md-4">
-      <h2>5000+</h2>
-      <p>Students Placed</p>
+        <h2 class="fw-bold display-5 text-primary">5000+</h2>
+        <p class="mb-0 fs-5">Students Placed</p>
       </div>
       <div class="col-md-4">
-      <h2>100+</h2>
-      <p>Top Companies</p>
+        <h2 class="fw-bold display-5 text-primary">100+</h2>
+        <p class="mb-0 fs-5">Top Companies</p>
       </div>
       <div class="col-md-4">
-      <h2>100%</h2>
-      <p>Career Growth Support</p>
+        <h2 class="fw-bold display-5 text-primary">100%</h2>
+        <p class="mb-0 fs-5">Career Growth Support</p>
       </div>
     </div>
-    </div>
-  </section>
-  <!-- Student Success Stories -->
-  <section class="py-5">
-    <div class="container">
-    <h2 class="mb-5 text-center">Meet Our Champions</h2>
+  </div>
+</section>
 
+<!-- Student Success Stories -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="mb-5 text-center fw-bold">Meet Our Champions</h2>
     <div class="row g-4">
-      <!-- Repeat this card for each student -->
       @foreach ($studentStories as $story)
       <div class="col-md-6 col-lg-4">
-      <div class="card student-card p-3">
-        <img src="{{ asset('storage/' . $story->image) }}" class="card-img-top rounded-circle mx-auto d-block mt-3"
-        style="width: 120px;" alt="Student Photo">
-        <div class="card-body text-center">
-        <h5 class="card-title">{{ $story->studentname }}</h5>
-        <span class="digicrome-tag mb-2">{{ $story->position }}</span>
-        <p class="card-text">{{ $story->stoire }}</p>
-          <h3 class="card-title">{{ $story->companyname }}</h3>
+        <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
+          <img src="{{ asset('storage/' . $story->image) }}"
+            alt="Student Photo"
+            class="rounded-circle mx-auto mb-3"
+            style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #f29c12;">
+          
+          <div class="card-body">
+            <h5 class="fw-bold mb-1">{{ $story->studentname }}</h5>
+            <span class="badge bg-warning text-dark mb-2">{{ $story->position }}</span>
+            <p class="text-muted small">{{ $story->stoire }}</p>
+            <h6 class="text-primary fw-semibold mt-3">{{ $story->companyname }}</h6>
+          </div>
         </div>
       </div>
-      </div>
       @endforeach
+    </div>
+  </div>
+</section>
 
-      <!-- Add more cards as needed -->
-    </div>
-    </div>
-  </section>
-  <!-- Call to Action -->
-  <section class="py-5 text-center text-white" style="background: #6a11cb;">
-    <div class="container">
-    <h2 class="mb-4">Ready to start your success story?</h2>
-    <a href="#" class="btn btn-light btn-lg">Join Digicrome Today</a>
-    </div>
-  </section>
+<style>
+  .card.student-card {
+  transition: transform 0.3s ease;
+}
+
+.card.student-card:hover {
+  transform: translateY(-5px);
+}
+
+.badge {
+  font-size: 0.9rem;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+}
+
+.text-primary {
+  color: #f29c12 !important;
+}
+
+  </style>
+
   <style>
     .hero {
     background: linear-gradient(to right, #6a11cb, #2575fc);

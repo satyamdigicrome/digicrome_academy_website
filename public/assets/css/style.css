@@ -1369,14 +1369,12 @@ ul.social-box li a:hover {
     color: #fff;
 }
 
-
-
 /*===========================================
 <-- educate hero Area css style-one -->
 ==============================================*/
 
 section.hero_area.style-one {
-    background: url(../images/home-one/hero1-bg.webp);
+    /* background: url(../images/home-one/hero1-bg.webp); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

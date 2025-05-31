@@ -52,7 +52,7 @@ public function destroy($id)
 }
 public function filter(Request $request)
 {
-    $query = Extra::query();
+    $query = Extra::query(); 
 
     // Filter by course_id if provided
     if ($request->filled('course_id')) {

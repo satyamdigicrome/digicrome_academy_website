@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\KeyFeatureController;
 use App\Http\Controllers\Admin\ModuleController;
 use App\Http\Controllers\Admin\SucessController;
+use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
@@ -78,7 +79,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/admin/faqs/{id}', [FaqController::class, 'destroy'])->name('faqs.destroy');
     Route::get('/admin/extra', [ExtraController::class, 'index'])->name('extra.index');
     Route::post('/admin/extra', [ExtraController::class, 'store'])->name('extra.store');
-    Route::delete('/admin/extra/{id}', [ExtraController::class, 'destroy'])->name('extra.destroy');
+    Route::delete('/admin/extras/{id}', [ExtraController::class, 'destroy'])->name('extra.destroys');
     Route::get('/extras', [ExtraController::class, 'filter'])->name('extra.filter');
     Route::get('/case-studies', [CasestudyController::class, 'index'])->name('casestudy.index');
     Route::post('/case-studies', [CaseStudyController::class, 'store'])->name('casestudy.store');
@@ -113,13 +114,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/admin/extra/store', [ContantController::class, 'store'])->name('admin.extra.store');
     Route::delete('/admin/extra/{id}', [ContantController::class, 'destroy'])->name('admin.extra.destroy');
     Route::get('/contant', [ContantController::class, 'index'])->name('contant.index');
-
+    Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
+    Route::post('/videos/store', [VideoController::class, 'store'])->name('videos.store');
+    Route::delete('/videos/{id}', [VideoController::class, 'destroy'])->name('videos.destroy');
 
     // Add routes for edit, update, and delete as needed
 });
 Route::get('/search-courses', [CourseController::class, 'searchCourses'])->name('search.courses');
-
-
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
