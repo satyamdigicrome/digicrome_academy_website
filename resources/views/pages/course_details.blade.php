@@ -178,23 +178,23 @@
                 <div class="row breadcumb-autor">
                     <div class="col-lg-4 col-md-4">
                         <div class="breadcumb-autor-box">
-                            <div class="breadcumb-autor">
-                                <img src="assets/images/inner-img/breadcumb-autor.webp" alt="autor">
-                            </div>
-                            <div class="breadcumb-autor-content">
+                            {{-- <div class="breadcumb-autor">
+                                <img src="{{ asset('assets/images/inner-img/breadcumb-autor.webp') }}" alt="autor">
+                            </div> --}}
+                            {{-- <div class="breadcumb-autor-content">
                                 <h5>John D. Alexon</h5>
                                 <p>Instractor</p>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
-                        <div class="breadcumb-category">
+                        {{-- <div class="breadcumb-category">
                             <span>Course Category</span>
                             <h6>Business</h6>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="col-lg-4 col-md-4">
-                        <div class="breadcumb-ratting">
+                        {{-- <div class="breadcumb-ratting">
                             <div class="reviews"><span>3 Ratings</span></div>
                             <div class="breadcumb-star">
                                 <ul>
@@ -208,14 +208,14 @@
                             <div class="breadcumb-ratting-num">
                                 <span>(4.5)</span>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-4"></div>
         </div>
         <div class="bread-dot">
-            <img src="assets/images/inner-img/bread-dot.webp" alt="dot">
+            <img src="{{ asset('assets/images/inner-img/bread-dot.webp') }}" alt="dot">
         </div>
     </div>
 </div>
@@ -249,6 +249,7 @@
 </div>
 @endif
 <x-logo-slider :companyLogos="$companyLogos" />
+
 <section class="py-5 bg-light">
     <div class="container text-center">
         <div class="container py-5" style="text-align: left;">
@@ -354,7 +355,7 @@
                                     <div class="label">
                                         Price
                                     </div>
-                                    <span class="value-dollar"> {{ $course->price }}₹</span>
+                                    <span class="value-dollar"> {{ $course->price }}₹ + GST</span>
                                 </li>
                                 <li>
                                     <div class="label">
@@ -405,104 +406,108 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="container text-center">
-                <h2 class="text-center mb-2" style="font-size: 2rem;">
-                    Our <span style="color: #f29c12;">Course </span> Curriculum
-                </h2>
-                <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                    Discover the key features and benefits you’ll gain from joining our program.
-                </p>
-            </div>
-            <div class="tab_container">
-                <div id="tab1" class="tab_content">
-                    <div class="accordion" id="marketingAccordion">
-                        @if($course->modules->count())
-                        <div class="accordion my-4" id="moduleAccordion">
-                            @foreach($course->modules as $index => $module)
-                            <div class="accordion-item border border-warning-subtle">
-                                <h2 class="accordion-header" id="heading{{ $index }}">
-                                    <button class="accordion-button {{ $index !== 0 ? 'collapsed' : '' }}" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}"
-                                        aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
-                                        aria-controls="collapse{{ $index }}" style="color: #f29c12;">
-                                        {{ $module->question }}
-                                    </button>
-                                </h2>
-                                <div id="collapse{{ $index }}"
-                                    class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
-                                    aria-labelledby="heading{{ $index }}" data-bs-parent="#moduleAccordion">
-                                    <div class="accordion-body">
-                                        {!! nl2br(e($module->answer)) !!}
-                                    </div>
-                                </div>
+            @if($course->modules->count())
+    <div class="container text-center">
+        <h2 class="text-center mb-2" style="font-size: 2rem;">
+            Our <span style="color: #f29c12;">Course </span> Curriculum
+        </h2>
+        <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+            Discover the key features and benefits you’ll gain from joining our program.
+        </p>
+    </div>
+
+    <div class="tab_container">
+        <div id="tab1" class="tab_content">
+            <div class="accordion my-4" id="moduleAccordion">
+                @foreach($course->modules as $index => $module)
+                    <div class="accordion-item border border-warning-subtle">
+                        <h2 class="accordion-header" id="heading{{ $index }}">
+                            <button class="accordion-button {{ $index !== 0 ? 'collapsed' : '' }}" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}"
+                                aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
+                                aria-controls="collapse{{ $index }}" style="color: #f29c12;">
+                                {{ $module->question }}
+                            </button>
+                        </h2>
+                        <div id="collapse{{ $index }}"
+                            class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
+                            aria-labelledby="heading{{ $index }}" data-bs-parent="#moduleAccordion">
+                            <div class="accordion-body">
+                                {!! nl2br(e($module->answer)) !!}
                             </div>
-                            @endforeach
                         </div>
-                        @else
-                        <p class="text-muted">No FAQs available for this course.</p>
-                        @endif
-                        <!-- Add other sections similarly -->
                     </div>
-                </div>
+                @endforeach
             </div>
-            <div class="row my-5">
-                <div class="col-12 d-flex align-items-center gap-3">
-                    <div
-                        style="width: 35px; height: 35px; background-color: #f29c12; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-                        1
-                    </div>
-                    <h2 class="section-heading mb-0">Internship Program</h2>
-                </div>
+        </div>
+    </div>
+@endif
+
+
+@if($course->extraPartOne->count())
+<div class="row my-5">
+    <div class="col-12 d-flex align-items-center gap-3">
+        <div
+            style="width: 35px; height: 35px; background-color: #f29c12; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+            1
+        </div>
+        <h2 class="section-heading mb-0">Internship Program</h2>
+    </div>
+</div>
+
+<div class="feature-box container">
+    <div class="row mb-4">
+        @foreach($course->extraPartOne->chunk(ceil($course->extraPartOne->count() / 2)) as $chunk)
+            <div class="col-md-6">
+                @foreach($chunk as $item)
+                    <p>
+                        <i class="bi bi-check-circle-fill text-success"></i>
+                        {{ $item->heading }}
+                    </p>
+                @endforeach
             </div>
-            <div class="feature-box container">
-                @if($course->extraPartOne->count())
-                <div class="row mb-4">
-                    @foreach($course->extraPartOne->chunk(ceil($course->extraPartOne->count() / 2)) as $chunk)
-                    <div class="col-md-6">
-                        @foreach($chunk as $item)
-                        <p>
-                            <i class="bi bi-check-circle-fill text-success"></i>
-                            {{ $item->heading }}
-                        </p>
-                        @endforeach
-                    </div>
-                    @endforeach
-                </div>
-                @endif
+        @endforeach
+    </div>
+</div>
+@endif
+
+
+@if($course->extraPartTwo->count())
+<div class="row my-5">
+    <div class="col-12 d-flex align-items-center gap-3">
+        <div
+            style="width: 35px; height: 35px; background-color: #f29c12; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+            2
+        </div>
+        <h2 class="section-heading mb-0">Soft Skills Program</h2>
+    </div>
+</div>
+
+<div class="feature-box container">
+    <div class="row mt-4">
+        <div class="col-12 mb-2">
+            <h5 class="text-warning fw-bold">Additional Highlights</h5>
+        </div>
+        @foreach($course->extraPartTwo->chunk(ceil($course->extraPartTwo->count() / 2)) as $chunk)
+            <div class="col-md-6">
+                @foreach($chunk as $item)
+                    <p>
+                        <i class="bi bi-check-circle-fill text-success"></i>
+                        {{ $item->heading }}
+                    </p>
+                @endforeach
             </div>
-            <div class="row my-5">
-                <div class="col-12 d-flex align-items-center gap-3">
-                    <div
-                        style="width: 35px; height: 35px; background-color: #f29c12; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-                        2
-                    </div>
-                    <h2 class="section-heading mb-0">Soft Skills Program</h2>
-                </div>
-            </div>
-            <div class="feature-box container">
-                @if($course->extraPartTwo->count())
-                <div class="row mt-4">
-                    <div class="col-12 mb-2">
-                        <h5 class="text-warning fw-bold">Additional Highlights</h5>
-                    </div>
-                    @foreach($course->extraPartTwo->chunk(ceil($course->extraPartTwo->count() / 2)) as $chunk)
-                    <div class="col-md-6">
-                        @foreach($chunk as $item)
-                        <p>
-                            <i class="bi bi-check-circle-fill text-success"></i>
-                            {{ $item->heading }}
-                        </p>
-                        @endforeach
-                    </div>
-                    @endforeach
-                </div>
-                @endif
-            </div>
+        @endforeach
+    </div>
+</div>
+@endif
+
             <!-- Certificates Section -->
             {{-- <x-course-curriculum :course="$course" /> --}}
         </div>
     </div>
 </section>        
+@if($plainLogos->count())
 <section>
     <div class="container my-5">
         <h2 class="section-heading text-center mb-4">Languages and Tools Covered</h2>
@@ -522,7 +527,10 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
+@endif
+
 <section>
     <div class="container my-5">
         @if ($course->projects->count())
@@ -925,12 +933,14 @@
 <!--==================================================-->
 <!--End educate-details-course-area -->
 <!--==================================================-->
+@if($course->faqs->count())
 <h2 class="text-center mb-2" style="font-size: 2rem;">
-    Our <span style="color: #f29c12;">Collaborations </span> Studies
+    Our <span style="color: #f29c12;">Our </span> FAQ
 </h2>
 <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
     Discover the key features and benefits you’ll gain from joining our program.
 </p>
+@endif
 <section>
     <div class="container">
         <div class="tab_container">
@@ -958,8 +968,6 @@
                         </div>
                         @endforeach
                     </div>
-                    @else
-                    <p class="text-muted">No FAQs available for this course.</p>
                     @endif
                     <!-- Add other sections similarly -->
                 </div>
@@ -970,7 +978,7 @@
 <!--==================================================-->
 <!-- Start educate-details-course-area style-inner -->
 <!--==================================================-->
-<x-suggested-courses :courses="$courses" />
+{{-- <x-suggested-courses :courses="$courses" /> --}}
 <!--==================================================-->
 <!--End educate-details-course-area -->
 <!--==================================================-->

@@ -13,9 +13,14 @@ class CourseController extends Controller
 {
     public function index()
     {
-        $courses = Course::where('course_upcoming', 1)->get();
+        $courses = Course::where('course_upcoming', 1)
+            ->orderByRaw('ISNULL(position), position ASC') // MySQL-specific syntax
+            ->get();
+    
         return view('pages.course', compact('courses')); 
     }
+    
+
 
     public function course_details($slug)
 {
@@ -46,9 +51,10 @@ class CourseController extends Controller
         return Logo::where('type', 'companies')->get(['id', 'image']);
     });
 
-    $plainLogos = Cache::remember('tool_logos', 60, function () {
-        return Logo::where('type', 'tools')->get(['id', 'image']);
-    });
+    $plainLogos = Logo::where('type', 'tools')
+    ->where('course_id', $course->id)
+    ->get(['id', 'image']);
+
 
     $certificate = Cache::remember('certificate_logo', 60, function () {
         return Logo::where('type', 'certification_partner')->get(['id', 'image']);

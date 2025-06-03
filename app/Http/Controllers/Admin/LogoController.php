@@ -5,13 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Logo;
+use App\Models\Course;
+
 
 class LogoController extends Controller
 {
     public function index()
     {
         $logos = Logo::all();
-        return view('admin.logo.index', compact('logos'));
+        $courses = Course::all();
+        return view('admin.logo.index', compact('logos','courses'));
     }
 
     // Store a newly created logo in storage
@@ -22,7 +25,9 @@ class LogoController extends Controller
             'type' => 'required|string|max:255',
             'name' => 'required|string|max:255',
             'country' => 'required|string|max:255',
+            'course_id' => 'nullable|exists:courses,id',
         ]);
+        
 
         // Handle the image upload
         $imagePath = $request->file('image')->store('logo', 'public');
@@ -35,7 +40,9 @@ class LogoController extends Controller
             'type' => $request->type,
             'name' => $request->name,
             'country' => $request->country,
+            'course_id' => $request->course_id,
         ]);
+        
 
         return redirect()->route('logos.index')->with('success', 'Logo created successfully.');
     }

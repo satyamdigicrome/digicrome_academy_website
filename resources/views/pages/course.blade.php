@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="course-details-content">
-                                <h4><a href="#">{{ $course->name }}</a></h4>
+                                <h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
                                 <div class="course-rating">
                                     {{-- <ul>
                                         @for($i = 0; $i < 5; $i++)
@@ -66,7 +66,7 @@
                                         <span>({{ $course->rating }}/{{ $course->ratings_count }} Ratings)</span>
                                     </div> --}}
                                     <div class="course-price">
-                                        <h3>{{ $course->price }}₹</h3>
+                                        <h3>{{ $course->price }}₹ + GST</h3>
                                     </div>
                                 </div>
                                 {{-- <div class="course-details-list">

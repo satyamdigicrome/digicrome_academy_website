@@ -31,6 +31,15 @@
                 <option value="certificate">Certificate</option>
             </select>
         </div>
+        <div class="mb-3" id="course-selector" style="display: none;">
+            <label for="course_id" class="form-label">Select Course</label>
+            <select class="form-select" id="course_id" name="course_id">
+                <option value="">-- Select Course --</option>
+                @foreach($courses as $course)
+                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                @endforeach
+            </select>
+        </div>
         
         <div class="mb-3">
             <label for="country" class="form-label">Country</label>
@@ -39,6 +48,22 @@
 
         <button type="submit" class="btn btn-primary">Add Logo</button>
     </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const typeSelect = document.getElementById('type');
+            const courseSelector = document.getElementById('course-selector');
+    
+            typeSelect.addEventListener('change', function () {
+                if (typeSelect.value === 'tools') {
+                    courseSelector.style.display = 'block';
+                } else {
+                    courseSelector.style.display = 'none';
+                    document.getElementById('course_id').value = ''; // Clear selection if hidden
+                }
+            });
+        });
+    </script>
+    
 </div>
 <div class="container mt-4">
     <h2 class="mb-4">Manage Logos</h2>

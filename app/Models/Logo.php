@@ -15,6 +15,7 @@ class Logo extends Model
         'user_id',
         'type',
         'name',
+        'course_id',
         'country',
     ];
 
@@ -23,4 +24,9 @@ class Logo extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function course()
+{
+    return $this->belongsTo(Course::class);
+}
+
 }
