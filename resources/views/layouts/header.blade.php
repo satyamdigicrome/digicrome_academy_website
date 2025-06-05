@@ -223,15 +223,15 @@
 
 						{{-- Custom Static Categories --}}
 						<li>
-							<a href="{{ route('course', ['ids' => '1,2,3', 'name' => 'Data Science and AI']) }}">
-								Data Science and AI
+							<a href="{{ route('course', ['ids' => '1,3,55', 'name' => 'Data Science and AI']) }}">
+								Data Science with Artificial Intelligence
 							</a>
 						</li>
 						<li>
-							<a href="{{ route('course', ['ids' => '4', 'name' => 'Investment Banking']) }}">
+							<a href="{{ route('course', ['ids' => '61', 'name' => 'Investment Banking']) }}">
 								Investment Banking
 							</a>
-						</li>
+						</li>	
 				
 						{{-- Dynamic Categories from Collection --}}
 						@foreach($header_collections as $collection)
