@@ -274,7 +274,7 @@
             Our <span style="color: #f29c12;">Course </span> Curriculum
         </h2>
         <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-            Discover the key features and benefits you’ll gain from joining our program.
+            100% Trusted And Golden Opportunities With Key Features That will Help You To Transform Your Career
         </p>
     </div>
 
@@ -347,9 +347,9 @@
 
 <div class="feature-box container">
     <div class="row mt-4">
-        <div class="col-12 mb-2">
+        {{-- <div class="col-12 mb-2">
             <h5 class="text-warning fw-bold">Additional Highlights</h5>
-        </div>
+        </div> --}}
         @foreach($course->extraPartTwo->chunk(ceil($course->extraPartTwo->count() / 2)) as $chunk)
             <div class="col-md-6">
                 @foreach($chunk as $item)
@@ -496,7 +496,7 @@
             <div class="row g-4 text-center">
                 <div class="col-md-3">
                     <div class="stat-box p-4 rounded shadow-sm bg-white h-100">
-                        <h5 class="mb-2 text-muted">Happy Students</h5>
+                        <h5 class="mb-2 text-muted">Happy Learners</h5>
                         <h2 class="text-primary fw-bold display-6">20,000+</h2>
                     </div>
                 </div>
@@ -515,7 +515,7 @@
                 <div class="col-md-3">
                     <div class="stat-box p-4 rounded shadow-sm bg-white h-100">
                         <h5 class="mb-2 text-muted">Average Package</h5>
-                        <h2 class="text-danger fw-bold display-6">₹-- LPA</h2>
+                        <h2 class="text-danger fw-bold display-6">₹ 8 LPA</h2>
                     </div>
                 </div>
             </div>
@@ -527,7 +527,7 @@
                 Our <span style="color: #f29c12;">Case </span> Studies
             </h2>
             <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                Discover the key features and benefits you’ll gain from joining our program.
+                Insights Of All The Learner Recent Learners
             </p>
             <div class="row g-4 text-center">
                 @foreach($course->caseStudies as $case)
@@ -544,151 +544,83 @@
 </section>
 <section>
     <div class="testimonial-area style-one">
-        <div class="container">
-            <div class="row section-title-space align-items-center">
-                <div class="col-lg-6">
-                    <div class="section-sub-title">
-                        <h6>TESTIMONIALS</h6>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="section_title">
-                        <h1>Real Experiences From Our</h1>
-                        <h1>Dedicated Learners</h1>
-                    </div>
-                </div>
+		<div class="container">
+			<div class="row section-title-space align-items-center">
+				<div class="col-lg-6">
+					<div class="section-sub-title">
+						<h6>TESTIMONIALS</h6>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="section_title">
+						<h1>What Students Say About </h1>
+						<h1>Digicrome Experience</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="testi-thumb-wrapper">
+						<div class="testimonial-thumb">
+							<img src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="thumb">
+						</div>
+						<div class="testi-dot-shape">
+							<img src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="dot">
+						</div>
+						<div class="testi-map-shape">
+							<img src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="map">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="row">
+						<div class="testi-list owl-carousel">
+							@foreach ($testimonials as $testimonial)
+<div class="col-lg-12">
+    <div class="testi-box">
+        <div class="single-testi-box">
+            <div class="testi-quote">
+                <img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
             </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="testi-thumb-wrapper">
-                        <div class="testimonial-thumb">
-                            <img src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="thumb">
-                        </div>
-                        <div class="testi-dot-shape">
-                            <img src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="dot">
-                        </div>
-                        <div class="testi-map-shape">
-                            <img src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="map">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="testi-list owl-carousel">
-                            <div class="col-lg-12">
-                                <div class="testi-box">
-                                    <div class="single-testi-box">
-                                        <div class="testi-quote">
-                                            <img src="{{ asset('assets/images/home-one/testi-quote.webp') }}"
-                                                alt="quote">
-                                        </div>
-                                        <div class="testi-title">
-                                            <h3>Impresive Learning!</h3>
-                                        </div>
-                                        <div class="testi-desc">
-                                            <p>Educate the ultimate destination for knowledge seekers and
-                                                educators we are committed to transforming special education
-                                                impact global channels without standards compliant systems
-                                                attractive learning opinions.</p>
-                                        </div>
-                                        <div class="testi-ratting">
-                                            <ul>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="testi-autor-box">
-                                        <div class="testi-autor">
-                                            <img src="{{ asset('assets/images/home-one/testi-autor1.webp') }}"
-                                                alt="autor">
-                                        </div>
-                                        <div class="testi-autor-content">
-                                            <h5 class="autor-title">Sonia Sara</h5>
-                                            <p class="autor-desi">Students</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="testi-box">
-                                    <div class="single-testi-box">
-                                        <div class="testi-quote">
-                                            <img src="{{ asset('assets/images/home-one/testi-quote.webp') }}"
-                                                alt="quote">
-                                        </div>
-                                        <div class="testi-title">
-                                            <h3>Impresive Learning!</h3>
-                                        </div>
-                                        <div class="testi-desc">
-                                            <p>Educate the ultimate destination for knowledge seekers and
-                                                educators we are committed to transforming special education
-                                                impact global channels without standards compliant systems
-                                                attractive learning opinions.</p>
-                                        </div>
-                                        <div class="testi-ratting">
-                                            <ul>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="testi-autor-box">
-                                        <div class="testi-autor">
-                                            <img src="{{ asset('assets/images/home-one/testi-autor3.webp') }}"
-                                                alt="autor">
-                                        </div>
-                                        <div class="testi-autor-content">
-                                            <h5 class="autor-title">Nur Islam</h5>
-                                            <p class="autor-desi">Students</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="testi-box">
-                                    <div class="single-testi-box">
-                                        <div class="testi-quote">
-                                            <img src="{{ asset('assets/images/home-one/testi-quote.webp') }}"
-                                                alt="quote">
-                                        </div>
-                                        <div class="testi-title">
-                                            <h3>Impresive Learning!</h3>
-                                        </div>
-                                        <div class="testi-desc">
-                                            <p>Educate the ultimate destination for knowledge seekers and
-                                                educators we are committed to transforming special education
-                                                impact global channels without standards compliant systems
-                                                attractive learning opinions.</p>
-                                        </div>
-                                        <div class="testi-ratting">
-                                            <ul>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-solid fa-star"></i></li>
-                                                <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="testi-autor-box">
-                                        <div class="testi-autor">
-                                            <img src="{{ asset('assets/images/home-one/testi-autor4.webp') }}"
-                                                alt="autor">
-                                        </div>
-                                        <div class="testi-autor-content">
-                                            <h5 class="autor-title">Saifur Rahman</h5>
-                                            <p class="autor-desi">Students</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="testi-title">
+                <h3>{{ $testimonial->tagline }}</h3>
+            </div>
+            <div class="testi-desc">
+                <p>{{ $testimonial->review }}</p>
+            </div>
+            <div class="testi-ratting">
+                <ul>
+                    @for ($i = 1; $i <= 5; $i++)
+                        @if ($i <= floor($testimonial->rating))
+                            <li><i class="fa-solid fa-star"></i></li>
+                        @elseif ($i == ceil($testimonial->rating) && $testimonial->rating != floor($testimonial->rating))
+                            <li><i class="fa-solid fa-star-half-stroke fa-fw"></i></li>
+                        @else
+                            <li><i class="fa-regular fa-star"></i></li>
+                        @endif
+                    @endfor
+                </ul>
+            </div>
+        </div>
+        <div class="testi-autor-box">
+            <div class="testi-autor">
+                <img src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width: 60px; height: 60px; border-radius: 50%;">
+            </div>
+            <div class="testi-autor-content">
+                <h5 class="autor-title">{{ $testimonial->name }}</h5>
+                <p class="autor-desi">{{ $testimonial->profession }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
                         </div>
                     </div>
                 </div>
@@ -699,11 +631,11 @@
 <section class="my-5">
     <div class="container">
         <h2 class="text-center mb-2" style="font-size: 2rem;">
-            Our <span style="color: #f29c12;">Collaborations </span> Studies
+            Our <span style="color: #f29c12;">Placed Learners </span> In Different Big Firms
         </h2>
-        <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+        {{-- <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
             Discover the key features and benefits you’ll gain from joining our program.
-        </p>
+        </p> --}}
         <div class="row justify-content-center text-center g-3">
             @foreach ($placements as $placement)
             <div class="col-6 col-sm-4 col-md-2">
@@ -724,7 +656,7 @@
         Application <span style="color: #f29c12;">Process</span> for Digicrome
     </h2>
     <p class="text-center text-muted mb-5" style="font-size: 1.1rem;">
-        Discover the key features and benefits you’ll gain from joining our program.
+        Our Acknowledged features offerings
     </p>
     <div class="d-flex justify-content-between align-items-start flex-wrap px-md-5 gap-4">
         <div class="text-center" style="flex: 1; min-width: 140px;">
@@ -759,10 +691,10 @@
 </section>
 <div class="bg-light py-5 mt-20">
     <h2 class="text-center mb-2" style="font-size: 2rem;">
-        Our <span style="color: #f29c12;">Collaborations </span> Studies
+        Our <span style="color: #f29c12;">Course </span> Comes with Offerings
     </h2>
     <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-        Discover the key features and benefits you’ll gain from joining our program.
+        By Joining Our Program, Underlying Are The Key Featuers You Will Get
     </p>
 </div>
 @foreach ($course->keyFeatures as $index => $feature)
@@ -797,10 +729,10 @@
 <!--==================================================-->
 @if($course->faqs->count())
 <h2 class="text-center mb-2" style="font-size: 2rem;">
-    Our <span style="color: #f29c12;">Our </span> FAQ
+   <span style="color: #f29c12;">Our </span> FAQs
 </h2>
 <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-    Discover the key features and benefits you’ll gain from joining our program.
+    Imperative FAQs About Us!
 </p>
 @endif
 <section>

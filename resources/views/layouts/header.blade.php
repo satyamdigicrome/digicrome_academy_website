@@ -76,12 +76,12 @@
 							<ul class="sub_menu">
 								{{-- Custom Static Categories --}}
 								<li>
-									<a href="{{ route('course', ['ids' => '1,2,3', 'name' => 'Data Science and AI']) }}">
+									<a href="{{ route('course', ['ids' => '1,3,55', 'name' => 'Data Science and AI']) }}">
 										Data Science with Artificial Intelligence
 									</a>
 								</li>
 								<li>
-									<a href="{{ route('course', ['ids' => '4', 'name' => 'Investment Banking']) }}">
+									<a href="{{ route('course', ['ids' => '61', 'name' => 'Investment Banking']) }}">
 										Investment Banking
 									</a>
 								</li>						
@@ -141,7 +141,7 @@
 						<li><a href="{{ route('success_stories') }}">Success stories</a></li>
 						<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
 						<li><a href="{{ route('career') }}">Career</a></li>
-						<li><a href="{{ route('media_presence') }}">Media Presence</a></li>
+						{{-- <li><a href="{{ route('media_presence') }}">Media Presence</a></li> --}}
 
 					</ul>
 				</li>

@@ -79,6 +79,7 @@
                                         <span><i class="fa-regular fa-user"></i> {{ $course->students_count }} Students</span>
                                     </div>
                                 </div> --}}
+                                <br>
                                
 					<div style="bottom: 17px; position: absolute;">
 						{{-- ENROL NOW Button --}}

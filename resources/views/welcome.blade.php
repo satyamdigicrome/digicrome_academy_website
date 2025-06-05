@@ -459,6 +459,7 @@
                             {{ $course->tag_line }}
                         </p>
                     @endif
+					<br>
 					<div style="bottom: 17px; position: absolute;">
 						{{-- ENROL NOW Button --}}
 						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">
@@ -540,6 +541,7 @@
                             {{ $course->tag_line }}
                         </p>
                     @endif
+					<br>
 					<div style="bottom: 17px; position: absolute;">
 						{{-- ENROL NOW Button --}}
 						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">

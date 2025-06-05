@@ -1,6 +1,6 @@
 <section class="mt-5">
     <h2 class="text-center mb-2" style="font-size: 2rem;">
-      Trusted by <span style="color: #f29c12;">millions of learners</span> around the world
+      Trusted by <span style="color: #f29c12;">millions of learners</span> around the Globe
     </h2>
     <div class="container">
       <div class="row justify-content-center mt-4">

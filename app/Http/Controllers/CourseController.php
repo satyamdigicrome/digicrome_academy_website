@@ -7,6 +7,8 @@ use App\Models\Collection;
 use App\Models\Course;
 use App\Models\Placement;
 use App\Models\Logo;
+use App\Models\Testimonial;
+
 use Illuminate\Support\Facades\Cache;
 
 class CourseController extends Controller
@@ -60,6 +62,7 @@ class CourseController extends Controller
     $certificate = Cache::remember('certificate_logo', 60, function () {
         return Logo::where('type', 'certification_partner')->get(['id', 'image']);
     });
+    $testimonials = Testimonial::latest()->get();
 
     return view('pages.course_details', compact(
         'course',
@@ -67,7 +70,8 @@ class CourseController extends Controller
         'placements',
         'companyLogos',
         'plainLogos',
-        'certificate'
+        'certificate',
+        'testimonials'
     ));
 }
 
