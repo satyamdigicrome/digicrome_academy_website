@@ -91,12 +91,29 @@
       </div>
 
 			<div class="col-lg-6">
-		  <h1>Heading</h1>
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam, possimus voluptates veritatis blanditiis, fuga dicta temporibus aspernatur debitis dolores reiciendis incidunt eum doloribus ad, accusamus consectetur laboriosam nemo reprehenderit.</p>
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam, possimus voluptates veritatis blanditiis, fuga dicta temporibus aspernatur debitis dolores reiciendis incidunt eum doloribus ad, accusamus consectetur laboriosam nemo reprehenderit.</p>
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam, possimus voluptates veritatis blanditiis, fuga dicta temporibus aspernatur debitis dolores reiciendis incidunt eum doloribus ad, accusamus consectetur laboriosam nemo reprehenderit.</p>
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam, possimus voluptates veritatis blanditiis, fuga dicta temporibus aspernatur debitis dolores reiciendis incidunt eum doloribus ad, accusamus consectetur laboriosam nemo reprehenderit.</p>
-
+              <h2 style=" font-size:30px; color: #f29c12; font-weight: 700;">Affiliate Program</h2>
+              <p class="lead text-muted">Digicrome offers a vast imperative program for your career growth and transition. We also offer an affiliate program!</p>
+            
+              <div class="card-body">
+                <p class="mb-3">
+                  We provide a stipend of <strong>₹5000</strong> for every successful referral. Follow the steps below to get started:
+                </p>
+                <ol class="mb-4">
+                  <li>Get the referral form</li>
+                  <li>Register your name</li>
+                  <li>Enter your email ID</li>
+                  <li>Add your friend’s email address (if applicable)</li>
+                  <li>Customize your personal message</li>
+                  <li>Your reference is now recorded</li>
+                  <li>Once your referral results in an admission</li>
+                  <li>You receive a handsome reward of <strong>₹5000</strong></li>
+                  <li>Unlimited earning potential with resources</li>
+                  <li>So what are you waiting for? Start earning & referring Today!!!
+                  </li>
+                </ol>
+              </div>
+            </div>
+        
     </div>
 		</div>
 

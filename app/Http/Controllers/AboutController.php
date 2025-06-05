@@ -15,6 +15,7 @@ class AboutController extends Controller
         $testimonials = Testimonial::latest()->get();
         $blogs = Blog::where('status', 'published')
         ->orderByDesc('created_at')
+        ->limit(3)
         ->get();
         return view('pages.about',compact('studentStories','testimonials','blogs')); 
     }

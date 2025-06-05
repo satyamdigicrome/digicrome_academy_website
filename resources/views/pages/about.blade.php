@@ -81,9 +81,9 @@
 				<div class="col-xl-6 col-lg-12">
 					<div class="about_content">
 						<!-- section title -->
-						<div class="section-sub-title three">
+						{{-- <div class="section-sub-title three">
 							<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">ABOUT US</h6>
-						</div>
+						</div> --}}
 						<div class="section-title-desc">
 							<p>Digicrome is a leading ed-tech platform that helps students and professionals build
 								successful careers with high-quality training. Our goal is to provide industry-focused
@@ -169,11 +169,11 @@
 		  <!-- Content Side -->
 		  <div class="col-md-6">
 			<div class="p-3">
-			  <h3 class="mb-3">Trusted Online and Offline Education</h3>
+			  <h3 class="mb-3" style="font-style: italic;">Certified - Online/Offiline Learning Platform </h3>
 			  <p class="text-muted">
-				Empowering learners through innovative, accessible, and high-quality education experiences—wherever you are.
+				Start Learning from anywhere you are, with innovative, creative and effective solutions
 			  </p>
-			  <span class="fw-bold text-primary">John Doe</span>
+			  {{-- <span class="fw-bold text-primary">John Doe</span> --}}
 			</div>
 		  </div>
 		</div>
@@ -232,7 +232,7 @@
 	<!--==================================================-->
 	<!-- End educate feature Area-->
 	<!--==================================================-->
-	<section class="py-5" style="background-color: #fef8f1;">
+	{{-- <section class="py-5" style="background-color: #fef8f1;">
 		<div class="container text-center">
 			<!-- Headings -->
 			<h2 class="fw-bold mb-2" style="color: #f29c12;">Our Journey</h2>
@@ -287,7 +287,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<!--==================================================-->
 	<!-- Start educate course design offer Area -->
 	<!--==================================================-->
@@ -352,8 +352,8 @@
 			<div class="row align-items-center">
 				<div class="col-lg-6">
 					<div class="call-to-title">
-						<h3>Your Learning Journey Begins Here</h3>
-						<h3>Explore – all programs Today</h3>
+						<h3>Start learning from Anywhere!</h3>
+						<h3>Anytime, get a free trial.</h3>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -545,7 +545,7 @@
 			<div class="row section-title-space">
 				<div class="col-xl-4 col-lg-12">
 					<div class="section-sub-title three">
-						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Story</h6>
+						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Storys</h6>
 					</div>
 					<div class="section_title">
 						<h1>All Real Experiences</h1>
@@ -617,7 +617,7 @@
 			<div class="row section-title-space align-items-center">
 				<div class="col-lg-6">
 					<div class="section-sub-title">
-						<h6>TESTIMONIALS</h6>
+						<h6 style="font-weight: bold; word-spacing: 8px;">Student's Perspectives</h6>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -740,13 +740,13 @@
 			<div class="row section-title-space">
 				<div class="col-lg-6">
 					<div class="section-sub-title">
-						<h6>LATEST BLOG</h6>
+						<h6>LATEST BLOGS & RECENT UPDATES</h6>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Read the Latest Insights and</h1>
-						<h1>Updates Digicrome Blog</h1>
+						<h1>Read out our latest updates</h1>
+						<h1> from digicrome</h1>
 					</div>
 				</div>
 			</div>

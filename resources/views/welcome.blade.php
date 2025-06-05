@@ -13,8 +13,8 @@
 					<!-- hero content -->
 					<div class="hero_content">
 						<h5><i class="bi bi-check2"></i>Your future skills are just a click away</h5>
-						<h1>Kick-start your career </h1>
-						<h1>with Digicrome</h1>
+						<h1>Start building your</h1>
+						<h1>future with a better career transition</h1>
 						<p>Learn the <strong>most in-demand skills</strong> of today and tomorrow, and become the one everyone wants to hire in your field.</p>
 						<!-- hero button -->
 						<div class="hero-button">
@@ -99,8 +99,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Climb your career ladder </h1>
-						<h1>with world-class Professional.</h1>
+						<h2 style="font-size: 30px; font-weight: bold;">Get Expertise & Hands On Advancement </h2 >
+						<h2 style="font-size: 30px; font-weight: bold;">In Your Career With Best Industry Experts!</h2 >
 					</div>
 				</div>
 			</div>
@@ -273,11 +273,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5">
-					<div class="section-sub-title">
-						<h6>In Association With:</h6>
-					</div>
 					<div class="section_title">
-						<h1>In Association With:</h1>
+						<h1>In Associated With:</h1>
+					</div>
+					<div class="section-sub-title">
+						<h6 style="text-transform: capitalize; position: static; line-height: 30px; padding: 0px;">Government affiliated program , that shapes the learner’s future and approach towards industry ready !</h6 style=" line-height: 30px;">
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -420,7 +420,7 @@
 							<div class="case-study-content">
 								<h5>Upcoming</h5>
 								<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
-								<div class="case-rating">
+								{{-- <div class="case-rating">
 									<ul>
 										<li><i class="fa-solid fa-star"></i></li>
 										<li><i class="fa-solid fa-star"></i></li>
@@ -431,7 +431,7 @@
 									<div class="case-rating-num">
 										<span>(4.5/3 Ratings)</span>
 									</div>
-								</div>
+								</div> --}}
 								{{-- <div class="case-autor-box">
 									<div class="case-autor-img">
 										<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
@@ -649,152 +649,145 @@
 	<!--==================================================-->
 	<section class="video-slider">
 		<div class="container">
-			<h2 class="text-center mb-5" style="color: #f29c12;">Our Featured Videos</h2>
-	
-			<style>
-				.video-card {
-					position: relative;
-					padding-top: 177.78%; /* 9:16 ratio */
-					overflow: hidden;
-					border-radius: 12px;
-					background: #000;
-					cursor: pointer;
-				}
-	
-				.video-card iframe {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					pointer-events: none;
-				}
-	
-				.video-title {
-					text-align: center;
-					font-size: 14px;
-					margin-top: 8px;
-					font-weight: 500;
-					color: #fff;
-				}
-	
-				.modal-video iframe {
-					width: 100%;
-					height: 500px;
-				}
-			</style>
-	
-			<div id="vimeoCarousel" class="carousel slide" data-bs-ride="carousel">
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<div class="row justify-content-center">
-							@php
-								$videos = [
-									['id' => '943625641', 'title' => 'Video 1'],
-									['id' => '884272580', 'title' => 'Video 2'],
-									['id' => '855610358', 'title' => 'Video 3'],
-									['id' => '858148584', 'title' => 'Video 4'],
-								];
-							@endphp
-	
-							@foreach ($videos as $video)
-								<div class="col-6 col-md-3 mb-4">
-									<div class="video-card" data-bs-toggle="modal" data-bs-target="#vimeoModal"
-										data-vimeo="https://player.vimeo.com/video/{{ $video['id'] }}">
-										<iframe src="https://player.vimeo.com/video/{{ $video['id'] }}?background=1"
-											frameborder="0" allowfullscreen></iframe>
-										<div class="video-title">{{ $video['title'] }}</div>
-									</div>
-								</div>
-							@endforeach
-						</div>
-					</div>
-				</div>
-	
-				<button class="carousel-control-prev" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="next">
-					<span class="carousel-control-next-icon"></span>
-				</button>
+			<h2 class="text-center mb-2 mt-2" style="font-size: 2rem;">
+				<span style="color: #f29c12;">Featured </span> Testimonials
+			</h2>
+			<p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+				Presenting you our recent feedbacks- Have a look
+			</p>
+	  
+		  <div id="vimeoCarousel" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<!-- Owl Carousel for Reels -->
+<div class="owl-carousel reels-carousel">
+	@php
+$videos = [
+    ['id' => '1090423210', 'title' => 'Vishal'],
+    ['id' => '1090423173', 'title' => 'Richard Carter'],
+    ['id' => '1090423142', 'title' => 'Vipin Chauhan'],
+    ['id' => '1090423114', 'title' => 'Vikas Singh'],
+    ['id' => '1090423092', 'title' => 'Varsha Upadhyaya'],
+    ['id' => '1090423068', 'title' => 'Sunel Nayan'],
+    ['id' => '1090423037', 'title' => 'Saloni Singh'],
+    ['id' => '1090423009', 'title' => 'Rohit Chaudhary'],
+    ['id' => '1090422975', 'title' => 'Radhi'],
+    ['id' => '1090422937', 'title' => 'Michael Diaz'],
+    ['id' => '1090422896', 'title' => 'Khusboo Gupta'],
+    ['id' => '1090422866', 'title' => 'Kayla Ewell'],
+    ['id' => '1090422828', 'title' => 'Kartik Mehta'],
+    ['id' => '1090422806', 'title' => 'Karan'],
+    ['id' => '1090422772', 'title' => 'Justin Brooks'],
+    ['id' => '1090422744', 'title' => 'Jeffery George'],
+    ['id' => '1090422705', 'title' => 'Eilish Algee'],
+    ['id' => '1090422678', 'title' => 'Anshika'],
+    ['id' => '1090422646', 'title' => 'Anis Khan'],
+    ['id' => '1090422607', 'title' => 'Abhishek Ranjan'],
+    ['id' => '1090422572', 'title' => 'Abhishek Prajapati'],
+    ['id' => '1090422548', 'title' => 'Davis Johson'],
+    ['id' => '1090422495', 'title' => 'Alejandro Cruz'],
+];
+@endphp
+  
+	@foreach ($videos as $video)
+	  <div class="video-card" data-bs-toggle="modal" data-bs-target="#vimeoModal"
+		data-vimeo="https://player.vimeo.com/video/{{ $video['id'] }}">
+		<iframe src="https://player.vimeo.com/video/{{ $video['id'] }}?background=1"
+		  frameborder="0" allowfullscreen></iframe>
+		<div class="video-title">{{ $video['title'] }}</div>
+	  </div>
+	@endforeach
+  </div>
+  
+			  </div>
 			</div>
+	  
+			<button class="carousel-control-prev" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon"></span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="next">
+			  <span class="carousel-control-next-icon"></span>
+			</button>
+		  </div>
 		</div>
-	
+	  
 		<!-- Vimeo Modal -->
 		<div class="modal fade" id="vimeoModal" tabindex="-1" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered modal-lg">
-				<div class="modal-content bg-dark text-white">
-					<div class="modal-body modal-video">
-						<iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-					</div>
-				</div>
+		  <div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content bg-dark text-white">
+			  <div class="modal-body modal-video">
+				<iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+			  </div>
 			</div>
+		  </div>
 		</div>
-	
+	  
+		<!-- JS Script -->
 		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				const videoCards = document.querySelectorAll('.video-card');
-				const vimeoPlayer = document.getElementById('vimeoPlayer');
-				const modal = document.getElementById('vimeoModal');
-	
-				videoCards.forEach(card => {
-					card.addEventListener('click', function () {
-						const videoUrl = this.getAttribute('data-vimeo') + '?autoplay=1';
-						vimeoPlayer.src = videoUrl;
-					});
-				});
-	
-				modal.addEventListener('hidden.bs.modal', function () {
-					vimeoPlayer.src = '';
-				});
+		  document.addEventListener("DOMContentLoaded", function () {
+			const videoCards = document.querySelectorAll('.video-card');
+			const vimeoPlayer = document.getElementById('vimeoPlayer');
+			const modal = document.getElementById('vimeoModal');
+	  
+			videoCards.forEach(card => {
+			  card.addEventListener('click', function () {
+				const videoUrl = this.getAttribute('data-vimeo') + '?autoplay=1';
+				vimeoPlayer.src = videoUrl;
+			  });
 			});
+	  
+			modal.addEventListener('hidden.bs.modal', function () {
+			  vimeoPlayer.src = '';
+			});
+		  });
 		</script>
-	</section>
-	
-	<style>
-		.video-slider {
-			background-color: #fef8f1;
-			padding: 40px 0;
-		}
+	  </section>
+	  
+	  <!-- Updated Style Only -->
+	  <style>
+		.reels-carousel .video-card {
+  position: relative;
+  padding-top: 177.78%; /* 9:16 aspect ratio */
+  overflow: hidden;
+  border-radius: 15px;
+  background: #000;
+  cursor: pointer;
+}
 
-		.video-card {
-			position: relative;
-			overflow: hidden;
-			border-radius: 15px;
-			transition: transform 0.3s ease;
-			max-width: 100%;
-			aspect-ratio: 16 / 9;
-		}
+.reels-carousel .video-card iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  object-fit: cover;
+}
 
-		.video-card iframe {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
+.reels-carousel .video-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(242, 156, 18, 0.85);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-		.video-title {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			background: rgba(242, 156, 18, 0.85);
-			color: white;
-			text-align: center;
-			padding: 10px;
-			font-weight: bold;
-			opacity: 0;
-			transition: opacity 0.3s ease;
-		}
+.reels-carousel .video-card:hover .video-title {
+  opacity: 1;
+}
 
-		.video-card:hover .video-title {
-			opacity: 1;
+	  
+		.modal-video iframe {
+		  width: 100%;
+		  height: 500px;
 		}
-
-		.carousel-control-prev-icon,
-		.carousel-control-next-icon {
-			background-color: #f29c12;
-			border-radius: 50%;
-		}
-	</style>
+	  </style>
+	  
 	<!--==================================================-->
 	<!-- Start educate team Area -->
 	<!--==================================================-->
@@ -1063,8 +1056,8 @@
 			<div class="row align-items-center call-to-bg">
 				<div class="col-xl-5 col-lg-4">
 					<div class="call-to-title">
-						<h3>Learn Anytime, Anywhere</h3>
-						<h3>Start Your Free Trial!</h3>
+						<h3>Start learning from Anywhere!</h3>
+						<h3>Anytime, get a free trial.</h3>
 					</div>
 				</div>
 				<div class="col-xl-4 col-lg-4">
@@ -1101,7 +1094,7 @@
 			<div class="row section-title-space">
 				<div class="col-xl-4 col-lg-12">
 					<div class="section-sub-title three">
-						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Story</h6>
+						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Storys</h6>
 					</div>
 					<div class="section_title">
 						<h1>All Real Experiences</h1>
@@ -1173,7 +1166,9 @@
 	<!--==================================================-->
 	<section class="py-5">
 		<div class="container text-center">
-			<h1 class="fw-bold" style="color: #f29c12;">Data Science with AI Certification Course Journey</h1>
+			<h2 class="text-center mb-4" style="font-size: 2rem;">
+				Our <span style="color: #f29c12;">Data Science with AI  </span> Certification Course Journey
+			</h2>
 			{{-- <p class="mb-4 fs-5 text-muted">Knowing us before growing with us” your Success way!</p> --}}
 			<img src="{{ asset('assets/images/home-one/phase.webp') }}" alt="Vision Image"
 				class="img-fluid rounded shadow-lg" />
@@ -1259,8 +1254,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Read the Latest Insights and</h1>
-						<h1>Updates Digicrome Blog</h1>
+						<h1>Read out our latest updates</h1>
+						<h1> from digicrome</h1>
 					</div>
 				</div>
 			</div>
@@ -1308,6 +1303,9 @@
 	</div>
 	<section class="company-form contactpage-form" style=" padding-top:10px;">
 		<div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
+			<h2 class="text-center mb-2" style="font-size: 2rem;">
+				Meet <span style="color: #f29c12;">Our Team</span> 
+			</h2>
 			<!-- <h1 class="section__title"  style="text-align: center; padding-bottom:40px;"><b>Unveiling <span class="yellow-bg"> Digicrome<img src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png" alt=""></span> Distinct Culture</b></h1> -->
 
 		</div>
@@ -1315,91 +1313,91 @@
 			<div class="gall-inn">
 				<div class="col-sm-6 col-md-2">
 					<div class="gal-im animate animate__animated animate__slow" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2a.webp" class="gal-siz-1" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc1.webp') }}" class="gal-siz-1" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2b.webp" class="gal-siz-2" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc2.webp') }}" class="gal-siz-2" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-3">
 					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2c.webp" class="gal-siz-2" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc3.webp') }}" class="gal-siz-2" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2d.webp" class="gal-siz-1" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc4.webp') }}" class="gal-siz-1" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-2">
 					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2e.webp" class="gal-siz-1" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc5.webp') }}" class="gal-siz-1" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2f.webp" class="gal-siz-2" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc6.webp') }}" class="gal-siz-2" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-3">
 					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2g.webp" class="gal-siz-2" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc7.webp') }}" class="gal-siz-2" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2h.webp" class="gal-siz-1" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc8.webp') }}" class="gal-siz-1" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2i.webp" class="gal-siz-2" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc9.webp') }}" class="gal-siz-2" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="https://digicrome.com/public/www/seoimg/2j.webp" class="gal-siz-1" alt="digicrome_images"
+						<img src="{{ asset('assets/images/dc/dc10.webp') }}" class="gal-siz-1" alt="digicrome_images"
 							loading="lazy">
 						<div class="txt">
 							<span>Digicrome</span>
-							<h4>Fun @ Days</h4>
+							<h4>Our People, Our Pride</h4>
 						</div>
 					</div>
 				</div>
@@ -1429,7 +1427,6 @@
 		}
 
 		.gal-im {
-			margin-bottom: 30px;
 			position: relative;
 			overflow: hidden;
 		}
@@ -1832,7 +1829,7 @@
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <span class="close-btn" onclick="closeModal()">&times;</span>
-		  Need help? Call us now at 0120 313 3869 or request a quick callback!
+		  Need help? Call us now at 0120 313 3869 or request a quick call!
 		</div>
 		<div class="modal-body">
 			<div class="popup-container">
@@ -1841,7 +1838,7 @@
 					<img src="{{ asset('assets/images/www.webp') }}" alt="Image Description">
 					<form style="width:100%; background:transparent; margin:0px;"class="form" method="post" action="https://demo.digicrome.com/post_lead.php">       
 								<input type="hidden" name="_token" value="flHgMe4mVAgPNJsDLZgDd2qjmzPVwSYtKh5iECGf">   
-						<h2 style="    color: #f29c12;">REGISTER FOR QUICK CALLBACK</h2>  
+						<h2 style="    color: #f29c12;"> Register now!! And get a quick call</h2>  
 						<div class="form-field">
 							 <!--<label style="color:#fff;" for="name">Name:</label> -->
 							<input type="text" id="name" name="name" placeholder="Name">

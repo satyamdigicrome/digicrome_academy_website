@@ -173,55 +173,24 @@
                 items: 1
             }
         }
-    })
-
-    
-    $('.logo-list').owlCarousel({
+    })  
+    $('.reels-carousel').owlCarousel({
+        items: 5,
         loop: true,
-         margin: 25,
-         autoplay: true,
-         slideTransition: 'linear',
-            autoplayTimeout: 4000,
-            autoplaySpeed: 4000,
-            autoplayHoverPause: true,
-         nav: false,
-         responsive: {
-             0: {
-                 items: 3
-             },
-             600: {
-                 items: 4
-             },
-             1000: {
-                 items: 10
-             }
-         }
-    });
-    $('.Other-logo-list').owlCarousel({
-        loop: true,
-        margin: 4,
+        margin: 15,
+        dots: true,
         autoplay: true,
-       slideTransition: 'linear',
-           autoplayTimeout: 4000,
-           autoplaySpeed: 4000,
-           autoplayHoverPause: true,
-        nav: false,
-        rtl: true,
+        autoplayTimeout: 3000,
+        smartSpeed: 800,
+        slideBy: 1,
         responsive: {
-            0: {
-                items: 3
-            },
-            600: {
-                items: 4
-            },
-            1000: {
-                items: 10
-            }
+          0: { items: 1 },
+          576: { items: 2 },
+          768: { items: 3 },
+          992: { items: 4 },
+          1200: { items: 5 }
         }
-    });
-    
-    
-
+      });
 
 
     // brand list Active

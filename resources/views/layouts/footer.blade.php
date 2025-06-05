@@ -69,7 +69,7 @@
 			</div>
 			<div class="col-lg-4 col-md-12">
 				<div class="footer-subcribe-title">
-					<h3>SUBSCRIB <span>NEWSLETTER</span></h3>
+					<h3>SUBSCRIBE <span>NEWSLETTER</span></h3>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-12">
@@ -152,7 +152,7 @@
 			</div>
 		</div>
 	</div>
-    <div class="container">
+    {{-- <div class="container">
         <!-- Postgraduate & Master Programs -->
         <div class="row">
             <div class="col-12">
@@ -211,7 +211,7 @@
                 <p>© 2025 DigiCrome. All rights reserved.</p>
             </div>
         </div>
-    </div>
+    </div> --}}
 	<div class="footer-bottom-area">
 		<div class="container">
 			<div class="row footer-bottom">
@@ -293,3 +293,4 @@
 	<script src="{{ asset('assets/js/jquery.barfiller.js') }}"></script>
 	<!-- theme js -->
 	<script src="{{ asset('assets/js/theme.js') }}"></script>
+	
