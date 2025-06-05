@@ -6,16 +6,21 @@
 	<!--==================================================-->
 	<!-- Start educate Hero Area Area style-one -->
 	<!--==================================================-->
+	<style>
+		#sticky-header{
+    margin-bottom: 0px !important;
+}
+	</style>
 	<section class="hero_area style-one d-flex align-items-center">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-6">
 					<!-- hero content -->
 					<div class="hero_content">
-						<h5><i class="bi bi-check2"></i>Your future skills are just a click away</h5>
+						<h5><i class="bi bi-check2"></i>Enhance Your future skills, with just a click</h5>
 						<h1>Start building your</h1>
 						<h1>future with a better career transition</h1>
-						<p>Learn the <strong>most in-demand skills</strong> of today and tomorrow, and become the one everyone wants to hire in your field.</p>
+						<p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and position yourself as the top choice for employers in your industry.</p>
 						<!-- hero button -->
 						<div class="hero-button">
 							<div class="hero-btn">
@@ -215,7 +220,7 @@
 							<h1>Digicrome Online Platform</h1>
 						</div>
 						<div class="section-title-desc">
-							<p>We are a globally reputed online education academy. We skill up students and professionals with must-have IT and Business skills. Through expert-led, certification-backed training, we bridge the gap between learning and industry demands.</p>
+							<p>We are a globally reputed online educational academy. We skill up students and professionals with must-have IT and Business skills. Through expert-led, certification-backed training, we bridge the gap between learning and industry demands.</p>
 						</div>
 						<div class="row">
 							<div class="col-lg-6">
@@ -261,9 +266,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="about-shape4">
+			{{-- <div class="about-shape4">
 				<img src="{{ asset('assets/images/home-one/about-shape4.webp') }}" alt="shape4">
-			</div>
+			</div> --}}
 			<div class="about-shape5">
 				<img src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="shape5">
 			</div>
@@ -357,8 +362,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Our Courses – Comprehensive</h1>
-						<h1>Available all programs</h1>
+						<h1>Our Courses - Comprehensive For</h1>
+						<h1>All Available Programs</h1>
 					</div>
 				</div>
 			</div>
@@ -449,10 +454,34 @@
 										<span><i class="fa-regular fa-user"></i> 1200 Students</span>
 									</div>
 								</div> --}}
-								<br><br>
+								@if($course->tag_line)
+                        <p style="margin: 10px 0 5px; font-size: 14px; color: #555;">
+                            {{ $course->tag_line }}
+                        </p>
+                    @endif
+					<div style="bottom: 17px; position: absolute;">
+						{{-- ENROL NOW Button --}}
+						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">
+							<a href="{{ route('course_details', ['slug' => $course->slug]) }}"
+							   style="background-color: #15c1fa; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
+								ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
+							</a>
+						</div>
+	
+						{{-- Horizontal line --}}
+						<hr style="border-top: 1px solid #ccc; margin: 10px 0;">
+	
+						{{-- Duration --}}
+						@if($course->course_duration)
+							<p style="font-size: 14px; color: #15c1fa; margin-bottom: 0;">
+								<i class="fa fa-clock-o"></i> Duration: {{ $course->course_duration }}
+							</p>
+						@endif
+					</div>
+								{{-- <br><br>
 								<div class="course-btn">
 									<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-								</div>
+								</div> --}}
 							</div>
 						</div>
 					</div>
@@ -473,7 +502,7 @@
 								<div class="case-study-content">
 									<h5>{{ $collection->name }}</h5>
 									<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
-									<div class="case-rating">
+									{{-- <div class="case-rating">
 										<ul>
 											<li><i class="fa-solid fa-star"></i></li>
 											<li><i class="fa-solid fa-star"></i></li>
@@ -484,7 +513,7 @@
 										<div class="case-rating-num">
 											<span>(4.5/3 Ratings)</span>
 										</div>
-									</div>
+									</div> --}}
 									{{-- <div class="case-autor-box">
 										<div class="case-autor-img">
 											<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
@@ -502,10 +531,34 @@
 											<span><i class="fa-regular fa-user"></i> 1200 Students</span>
 										</div>
 									</div> --}}
-									<br><br>
+									{{-- <br><br>
 									<div class="course-btn">
 										<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-									</div>
+									</div> --}}
+									@if($course->tag_line)
+                        <p style="margin: 10px 0 5px; font-size: 14px; color: #555;">
+                            {{ $course->tag_line }}
+                        </p>
+                    @endif
+					<div style="bottom: 17px; position: absolute;">
+						{{-- ENROL NOW Button --}}
+						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">
+							<a href="{{ route('course_details', ['slug' => $course->slug]) }}"
+							   style="background-color: #15c1fa; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
+								ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
+							</a>
+						</div>
+	
+						{{-- Horizontal line --}}
+						<hr style="border-top: 1px solid #ccc; margin: 10px 0;">
+	
+						{{-- Duration --}}
+						@if($course->course_duration)
+							<p style="font-size: 14px; color: #15c1fa; margin-bottom: 0;">
+								<i class="fa fa-clock-o"></i> Duration: {{ $course->course_duration }}
+							</p>
+						@endif
+					</div>
 								</div>
 							</div>
 						</div>
@@ -536,7 +589,7 @@
 							<h1>A Successful Career</h1>
 						</div>
 						<div class="section-title-desc">
-							<p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we support you from basic to advanced. As one of the best data science institutes in India, and the top Data science institute in Noida, we make career shifts smooth. Quickly apply and work for your success.</p>
+							<p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we support you from basic to advanced. As one of the best data science institutes in India, and the top Data science institute in Metropolitan cities, we make career shifts smooth. Quickly apply and work for your success.</p>
 						</div>
 						<div class="choose-item-menu">
 							<ul>
@@ -1094,7 +1147,7 @@ $videos = [
 			<div class="row section-title-space">
 				<div class="col-xl-4 col-lg-12">
 					<div class="section-sub-title three">
-						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Storys</h6>
+						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Stories</h6>
 					</div>
 					<div class="section_title">
 						<h1>All Real Experiences</h1>
@@ -1184,8 +1237,8 @@ $videos = [
 							<h6>Explore Career Opportunities in the most future-oriented sector</h6>
 						</div>
 						<div class="section_title">
-							<h1>Build skills. Grab opportunities.</h1>
-							<h1> Start now.</h1>
+							<h1>Build Skills. Grab Opportunities.</h1>
+							<h1> Start Now.</h1>
 						</div>
 						<div class="section-title-desc">
 							<p>Become a professional at what you learn. Start from scratch and make your way to a career full of growth, opportunities, and success. Begin today and build your future right.
@@ -1249,7 +1302,7 @@ $videos = [
 			<div class="row section-title-space">
 				<div class="col-lg-6">
 					<div class="section-sub-title">
-						<h6>LATEST BLOG</h6>
+						<h6>LATEST BLOGS</h6>
 					</div>
 				</div>
 				<div class="col-lg-6">

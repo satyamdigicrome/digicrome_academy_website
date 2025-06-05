@@ -423,12 +423,12 @@
                 <div class="col-lg-6 col-md-12" style="padding-left: 10%;">
                     <h5 style="color: #43505b; font-weight: 700; "><b>Digicrome Academy is the</b></h5>
                     <span style="font-size: 43px; font-family: Inter, sans-serif; color: #f29c12;"><b>
-                            <b> Global IT Upskilling<br> Edtech </b>
+                            <b> Global IT Upskilling<br> Edtech Platform</b>
                         </b></span>
                     <hr>
 
                     <span style="text-align: justify; font-size: 18px; color: #43505b; font-family:arial;">
-                        Platform. By providing top-tier mentorship and tech-driven programs
+                        By providing top-tier mentorship and tech-driven programs
                         in the native language of learners worldwide, we empower individuals with the
                         ability to excel in the IT Sector job market.
                     </span><br><br>

@@ -79,10 +79,30 @@
                                         <span><i class="fa-regular fa-user"></i> {{ $course->students_count }} Students</span>
                                     </div>
                                 </div> --}}
-                                <div class="course-btn">
+                               
+					<div style="bottom: 17px; position: absolute;">
+						{{-- ENROL NOW Button --}}
+						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">
+							<a href="{{ route('course_details', ['slug' => $course->slug]) }}"
+							   style="background-color: #f29c12; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
+								ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
+							</a>
+						</div>
+	
+						{{-- Horizontal line --}}
+						<hr style="border-top: 1px solid #ccc; margin: 10px 0;">
+	
+						{{-- Duration --}}
+						@if($course->course_duration)
+							<p style="font-size: 14px; color: #f29c12; margin-bottom: 0;">
+								<i class="fa fa-clock-o"></i> Duration: {{ $course->course_duration }}
+							</p>
+						@endif
+					</div>
+                                {{-- <div class="course-btn">
                                     <a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="btn">ENROL NOW<i
                                             class="flaticon flaticon-right-arrow"></i></a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

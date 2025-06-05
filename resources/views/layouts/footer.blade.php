@@ -59,7 +59,7 @@
 <!--==================================================-->
 <!-- Start educate Footer Area -->
 <!--==================================================-->
-<div class="footer-area">
+<div class="footer-area" style="    margin-bottom: 45px;">
 	<div class="container">
 		<div class="row subscribe align-items-center">
 			<div class="col-lg-4 col-md-12">
@@ -89,9 +89,7 @@
 						<h4>Get in Touch</h4>
 					</div>
 					<div class="footer-desc">
-						<p>Educate the ultimate destination for 
-							We are committed to transforming
-							without standards</p>
+						<p>Master yourself as per the ever-increasing demand of professional in Data science and AI firms. Start your journey towards 80% salay hike, TODAY!</p>
 					</div>
 					<div class="footer-contact-info">
 						<div class="footer-contact-phone">
@@ -128,7 +126,7 @@
 						<ul>
 							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('who_we_are') }}">Who we are</a></li>
 							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('success_stories') }}">Success stories</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('terms-and-conditions') }}">terms-and-conditions</a></li>
+							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('terms-and-conditions') }}">Terms And Conditions</a></li>
 							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
 							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('privacy-policy') }}">Privacy-Policy</a></li>
 						</ul>
@@ -217,7 +215,7 @@
 			<div class="row footer-bottom">
 				<div class="col-lg-6">
 					<div class="footer-bottom-desc">
-						<p>© 2025 <a href="index.html">Educate</a>. Designed By Dream IT Solution</p>
+						<p>Copyright 2020-2025 Digicrome Pvt Ltd. All Rights Reserved</p>
 					</div>
 				</div>
 				<div class="col-lg-6">

@@ -252,6 +252,7 @@ p.subtitle {
     z-index: 2;
     margin-bottom: -102px;
     border-bottom: 1px solid  rgba(30,30,30,0.10196078431372549);
+    background: #fff;
 }
 
 .educate-header-area.inner-style {
@@ -1367,6 +1368,9 @@ ul.social-box li a {
 ul.social-box li a:hover {
     background:var(--primary-color);
     color: #fff;
+}
+#sticky-header{
+    margin-bottom: 89px;
 }
 
 /*===========================================
@@ -4677,7 +4681,7 @@ display: none;
 
 .style-one .case-study-content h4 a{
     display: inline-block;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 32px;
     color: var(--title-color);
     font-weight: 500;

@@ -190,7 +190,7 @@
 							<img src="{{ asset('assets/images/home-three/feature-icon21.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Flexible learning</h4>
+							<h4 class="feature-title">Flexible Learning</h4>
 							<p class="feature-desc">Flexible learning is the formal education method that focuses on
 								increasing flexibility in the time, location, teaching, and other aspects of the
 								learning.Flexible learning is a principle of practice in formal education.</p>
@@ -216,7 +216,7 @@
 							<img src="{{ asset('assets/images/home-three/feature-icon23.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
-							<h4 class="feature-title">Cost-effective</h4>
+							<h4 class="feature-title">Cost-Effective</h4>
 							<p class="feature-desc">Cost-effectiveness analysis is an evaluation tool Methods of
 								cost-effectiveness analysis can assist the planner in evaluating educational programs. This
 								concept should be broadened to include.</p>
@@ -545,7 +545,7 @@
 			<div class="row section-title-space">
 				<div class="col-xl-4 col-lg-12">
 					<div class="section-sub-title three">
-						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Storys</h6>
+						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Stories</h6>
 					</div>
 					<div class="section_title">
 						<h1>All Real Experiences</h1>

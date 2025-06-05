@@ -1,6 +1,6 @@
 <section class="logo-slider-section py-5">
   <h2 class="text-center mb-4" style="font-size: 2rem;">
-    Trusted by <span style="color: #f29c12;">world's best</span> companies
+    Trusted by <span style="color: #f29c12;">world's best</span> Organisations
   </h2>
   <div class="container-fluid custom-width">
 

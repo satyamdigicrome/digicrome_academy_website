@@ -29,7 +29,7 @@
   <section class="py-5">
     <div class="container text-center">
     <h2 class="mb-5">How It Works</h2>
-    <div class="row g-4">
+    {{-- <div class="row g-4">
       <div class="col-md-4">
       <div class="step-icon mb-3">🔗</div>
       <h5>1.Share</h5>
@@ -45,7 +45,7 @@
       <h5>3.You Earn</h5>
       <p>You get rewards once they enroll successfully!</p>
       </div>
-    </div>
+    </div> --}}
     </div>
   </section>
          <style>
@@ -58,72 +58,75 @@
           }
 
          </style>
-<div class="row p-4">
-	<div class="col-lg-6">
-	<form class="referral-form">
-    <h2>Referral Form</h2>
-    <div class="form-group">
-      <label for="yourName">Your Name</label>
-      <input type="text" id="yourName" name="yourName" required />
-    </div>
-
-    <div class="form-group">
-      <label for="yourEmail">Your Email</label>
-      <input type="email" id="yourEmail" name="yourEmail" required />
-    </div>
-
-    <div class="form-group">
-      <label for="friendName">Friend's Name</label>
-      <input type="text" id="friendName" name="friendName" required />
-    </div>
-
-    <div class="form-group">
-      <label for="friendEmail">Friend's Email</label>
-      <input type="email" id="friendEmail" name="friendEmail" required />
-    </div>
-
-    <div class="form-group">
-      <label for="message">Personal Message (Optional)</label>
-      <textarea id="message" name="message" rows="4"></textarea>
-    </div>
-    <button type="submit" class="submit-btn">Submit Referral</button>
-  </form>
+<div class="container py-5">
+  <div class="row align-items-start g-5">
+    
+    <!-- Referral Form -->
+    <div class="col-lg-6">
+      <div class="p-4 shadow rounded bg-white">
+        <h2 class="mb-4" style="color: #f29c12; font-weight: 700;">Referral Form</h2>
+        <form class="referral-form">
+          <div class="mb-3">
+            <label for="yourName" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="yourName" name="yourName" required>
+          </div>
+          <div class="mb-3">
+            <label for="yourEmail" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="yourEmail" name="yourEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="friendName" class="form-label">Friend's Name</label>
+            <input type="text" class="form-control" id="friendName" name="friendName" required>
+          </div>
+          <div class="mb-3">
+            <label for="friendEmail" class="form-label">Friend's Email</label>
+            <input type="email" class="form-control" id="friendEmail" name="friendEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Personal Message (Optional)</label>
+            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn" style="background-color: #f29c12; color: white;">Submit Referral</button>
+        </form>
       </div>
-
-			<div class="col-lg-6">
-              <h2 style=" font-size:30px; color: #f29c12; font-weight: 700;">Affiliate Program</h2>
-              <p class="lead text-muted">Digicrome offers a vast imperative program for your career growth and transition. We also offer an affiliate program!</p>
-            
-              <div class="card-body">
-                <p class="mb-3">
-                  We provide a stipend of <strong>₹5000</strong> for every successful referral. Follow the steps below to get started:
-                </p>
-                <ol class="mb-4">
-                  <li>Get the referral form</li>
-                  <li>Register your name</li>
-                  <li>Enter your email ID</li>
-                  <li>Add your friend’s email address (if applicable)</li>
-                  <li>Customize your personal message</li>
-                  <li>Your reference is now recorded</li>
-                  <li>Once your referral results in an admission</li>
-                  <li>You receive a handsome reward of <strong>₹5000</strong></li>
-                  <li>Unlimited earning potential with resources</li>
-                  <li>So what are you waiting for? Start earning & referring Today!!!
-                  </li>
-                </ol>
-              </div>
-            </div>
-        
     </div>
+
+    <!-- Affiliate Program Info -->
+    <div class="col-lg-6">
+      <div class="p-4 shadow rounded bg-white">
+        <h2 class="mb-3" style="color: #f29c12; font-weight: 700;">Affiliate Program</h2>
+        <p class="text-muted mb-3">
+          Digicrome offers a powerful program for your career growth and transition. You can also earn with our affiliate program!
+        </p>
+        <p class="mb-3">
+          We provide a stipend of <strong>₹5000</strong> for every successful referral. Just follow the steps below:
+        </p>
+        <ol class="mb-3 ps-3">
+          <li>Access the referral form</li>
+          <li>Register your name and email ID</li>
+          <li>Add your friend’s name and email</li>
+          <li>Optionally customize a message</li>
+          <li>Your referral is recorded</li>
+          <li>Once the referral leads to an admission</li>
+          <li>You earn <strong>₹5000</strong> instantly</li>
+          <li>No limits – Refer & Earn unlimited times!</li>
+        </ol>
+        <p class="fw-bold text-dark">So what are you waiting for? Start earning by referring today!</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 		</div>
 
 <style>
   .referral-form {
-    margin: 30px auto;
-    padding: 30px;
+    /* margin: 30px auto; */
+    /* padding: 30px; */
     background: white;
     border-radius: 10px;
-    box-shadow: 3px 3px wheat, -1em 0 0.4em blanchedalmond;
+    /* box-shadow: 3px 3px wheat, -1em 0 0.4em blanchedalmond; */
     width: 90%;
     max-width: 500px;
   }

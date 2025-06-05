@@ -398,7 +398,7 @@
 									<i class="fas fa-envelope-open"></i>
 								</div>
 								<div class="call_info">
-									<p>Call us Anytime</p>
+									<p>Mail us Anytime</p>
 									<h3>info@digicrome.com</h3>
 								</div>
 							</div>
@@ -407,7 +407,7 @@
 									<i class="fas fa-map-marker-alt"></i>
 								</div>
 								<div class="call_info">
-									<p>Our Locations</p>
+									<p>Our Location</p>
 									<span>Address: C-108, Second Floor, Block C, Sector 02<br>Noida, Uttar Pradesh 201301</span>
 								</div>
 							</div>
