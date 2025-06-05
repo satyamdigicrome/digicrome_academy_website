@@ -633,24 +633,25 @@
         <h2 class="text-center mb-2" style="font-size: 2rem;">
             Our <span style="color: #f29c12;">Placed Learners </span> In Different Big Firms
         </h2>
-        {{-- <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-            Discover the key features and benefits you’ll gain from joining our program.
-        </p> --}}
-        <div class="row justify-content-center text-center g-3">
+
+        <div class="owl-carousel cards-carousel text-center">
             @foreach ($placements as $placement)
-            <div class="col-6 col-sm-4 col-md-2">
-                <div class="placement-box">
-                    <img src="{{ asset('storage/' . $placement->image) }}" alt="{{ $placement->name }}">
-                    <div class="placement-overlay">
-                        <h6>{{ $placement->name }}</h6>
-                        <small>{{ $placement->position }}</small>
+                <div class="placement-box" style="padding: 5px;">
+                    <div style="border-radius: 6px; overflow: hidden; box-shadow: 0 0 5px rgba(0,0,0,0.1); background: #fff;">
+                        <img src="{{ asset('storage/' . $placement->image) }}" alt="{{ $placement->name }}" style="width: 100%; height: auto;">
+                        <div class="placement-overlay p-2">
+                            <h6 style="margin: 0; font-size: 14px;">{{ $placement->name }}</h6>
+                            <small style="font-size: 12px;">{{ $placement->position }}</small>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
-</section>
+
+
+
+
 <div class="container my-5">
     <h2 class="text-center mb-3 fw-bold" style="font-size: 2.2rem;">
         Application <span style="color: #f29c12;">Process</span> for Digicrome

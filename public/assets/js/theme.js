@@ -191,7 +191,20 @@
           1200: { items: 5 }
         }
       });
-
+      $('.cards-carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+            0: { items: 2 },
+            576: { items: 3 },
+            768: { items: 4 },
+            992: { items: 5 },
+            1200: { items: 6 }
+        }
+    });
 
     // brand list Active
     $('.brand-list').owlCarousel({

@@ -1390,6 +1390,12 @@ section.hero_area.style-one .hero_content {
     z-index: 1;
     padding-top: 120px;
 }
+@media (max-width: 767.98px) {
+    section.hero_area.style-one .hero_content {
+        padding: 47px !important;
+    }
+}
+
 
 section.hero_area.style-one .hero_content h5 {
     display: inline-block;
@@ -1579,6 +1585,13 @@ section.hero_area.style-one .hero-thumb-wrapper {
     position: relative;
     padding-top: 95px;
 }
+@media (max-width: 767.98px) {
+    section.hero_area.style-one .hero-thumb-wrapper {
+        margin-top: 54vh !important;
+        padding-top: 0 !important;
+    }
+}
+
 
 section.hero_area.style-one .hero-thumb {
     text-align: right;
@@ -2874,6 +2887,14 @@ section.feature-area.style-one {
     padding: 110px 0 120px;
     position: relative;
 }
+@media (max-width: 767.98px) {
+    section.feature-area.style-one {
+        padding: 110px 0 120px;
+        position: relative;
+        margin-top: 37vh;
+    }
+}
+
 
 .style-one .single-feature-box{
     border-radius: 20px;

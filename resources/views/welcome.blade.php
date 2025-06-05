@@ -13,7 +13,7 @@
 	</style>
 	<section class="hero_area style-one d-flex align-items-center">
 		<div class="container">
-			<div class="row align-items-center">
+			<div class="row align-items-center flex-column-reverse flex-lg-row">
 				<div class="col-lg-6">
 					<!-- hero content -->
 					<div class="hero_content">

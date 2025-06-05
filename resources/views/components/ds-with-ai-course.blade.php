@@ -95,7 +95,7 @@
         <div class="container">
             <div class="banner-detail">
                 <div class="date-border width">
-                    <h2>Courses<br> Features</h2>
+                    <h2>Courses Features</h2>
                     <div class="fill-btn">
                         <a data-bs-toggle="modal" data-bs-target="#brochure"
                             href="https://digicrome.com/public/storage/1659/1739358305.pdf" download=""
