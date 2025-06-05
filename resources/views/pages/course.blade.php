@@ -67,7 +67,7 @@
                                         <span>({{ $course->rating }}/{{ $course->ratings_count }} Ratings)</span>
                                     </div> --}}
                                     <div class="course-price">
-                                        <h3>{{ $course->price }}₹ + GST</h3>
+                                        <h3>{{ number_format($course->price, 0) }} + GST</h3>
                                     </div>
                                 </div>
                                 {{-- <div class="course-details-list">

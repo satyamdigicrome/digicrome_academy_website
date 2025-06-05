@@ -217,7 +217,7 @@
                                     <div class="label">
                                         Price
                                     </div>
-                                    <span class="value-dollar"> {{ $course->price }}₹ + GST</span>
+                                    <span class="value-dollar"> {{ number_format($course->price, 0) }} + GST</span>
                                 </li>
                                 <li>
                                     <div class="label">
