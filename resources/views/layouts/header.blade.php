@@ -74,7 +74,18 @@
 								<i class="bi bi-chevron-down"></i>
 							</a>
 							<ul class="sub_menu">
-								<li><a href="{{ route('course') }}">Upcoming Courses</a></li>
+								{{-- Custom Static Categories --}}
+								<li>
+									<a href="{{ route('course', ['ids' => '1,2,3', 'name' => 'Data Science and AI']) }}">
+										Data Science with Artificial Intelligence
+									</a>
+								</li>
+								<li>
+									<a href="{{ route('course', ['ids' => '4', 'name' => 'Investment Banking']) }}">
+										Investment Banking
+									</a>
+								</li>						
+								{{-- Dynamic Categories from Collection --}}
 								@foreach($header_collections as $collection)
 									<li>
 										<a href="{{ route('course.category', $collection->slug) }}">
@@ -209,7 +220,20 @@
 				</li> --}}
 				<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
 					<ul class="sub_menu">
-						<li><a href="{{ route('course') }}">Upcoming Courses</a></li>
+
+						{{-- Custom Static Categories --}}
+						<li>
+							<a href="{{ route('course', ['ids' => '1,2,3', 'name' => 'Data Science and AI']) }}">
+								Data Science and AI
+							</a>
+						</li>
+						<li>
+							<a href="{{ route('course', ['ids' => '4', 'name' => 'Investment Banking']) }}">
+								Investment Banking
+							</a>
+						</li>
+				
+						{{-- Dynamic Categories from Collection --}}
 						@foreach($header_collections as $collection)
 							<li>
 								<a href="{{ route('course.category', $collection->slug) }}">
@@ -426,10 +450,10 @@ $(document).ready(function() {
 						<div class="contact-info">
 							<h2>Contact Info</h2>
 							<ul class="list-style-one">
-								<li><span class="icon flaticon-email"></span>Chicago 12, Melborne City, USA</li>
-								<li><span> <i class="bi bi-telephone-inbound"></i> </span>(+001) 123-456-7890</li>
-								<li><span><i class="bi bi-geo-alt"></i></span>Example @gmail.com</li>
-								<li><span><i class="bi bi-clock"></i></span>Week Days: 09.00 to 18.00 Sunday: Closed
+								<li><span class="icon flaticon-email"></span>C-108, Second Floor, Block C, Sector 02, Noida, Uttar Pradesh 201301</li>
+								<li><span> <i class="bi bi-telephone-inbound"></i> </span>01203133869</li>
+								<li><span><i class="bi bi-geo-alt"></i></span>info@digicrome.com</li>
+								<li><span><i class="bi bi-clock"></i></span>Week Days: 10.30 to 19.00 Sunday: Closed
 								</li>
 							</ul>
 						</div>
@@ -491,12 +515,12 @@ $(document).ready(function() {
 
 <div class="bottom-fixed-bar text-center">
     <span class="me-2">Need help? Reach us instantly:</span>
-    <a href="https://wa.me/919999999999" target="_blank" class="btn btn-whatsapp">
+    <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
         <i class="fab fa-whatsapp"></i> Say Hi on WhatsApp
     </a>
-    <a href="#callbackModal" data-bs-toggle="modal" class="btn btn-callback">
-        <i class="fas fa-phone-alt"></i> Request a Callback
-    </a>
+    <a href="tel:01203133869" class="btn btn-callback">
+		<i class="fas fa-phone-alt"></i> Request a Callback
+	</a>	
 </div>
 
 

@@ -1837,7 +1837,7 @@ $videos = [
 					<div class="form-container">
 					<img src="{{ asset('assets/images/www.webp') }}" alt="Image Description">
 					<form style="width:100%; background:transparent; margin:0px;"class="form" method="post" action="https://demo.digicrome.com/post_lead.php">       
-								<input type="hidden" name="_token" value="flHgMe4mVAgPNJsDLZgDd2qjmzPVwSYtKh5iECGf">   
+								@csrf  
 						<h2 style="    color: #f29c12;"> Register now!! And get a quick call</h2>  
 						<div class="form-field">
 							 <!--<label style="color:#fff;" for="name">Name:</label> -->
@@ -1872,7 +1872,7 @@ $videos = [
 			</div>
 			
 						<div class="form-field">
-							<input type="hidden" id="mobile" name="source" Value="Workshop" placeholder="Mobile Number">
+							<input type="hidden" id="mobile" name="source" Value="Home Page" placeholder="Mobile Number">
 						</div>
 						<div class="form-field">
 							<input type="hidden" id="mobile" name="country" value="india" placeholder="Mobile Number">
@@ -1890,7 +1890,7 @@ $videos = [
 							<input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
 						</div>
 						
-						<p style="    line-height: 30px;">By submitting the form, you agree to our <a href="https://digicrome.com/terms-and-conditions">Terms and Conditions</a>  and our <a href="https://digicrome.com/privacy-policy">Privacy Policy.</a> </p><br>
+						<p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms and Conditions</a>  and our <a href="https://digicrome.com/privacy-policy">Privacy Policy.</a> </p><br>
 						<button type="submit">Submit</button>
 					</form>
 				</div>

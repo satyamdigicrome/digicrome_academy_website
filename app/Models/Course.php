@@ -32,6 +32,7 @@ class Course extends Model
         'has_faqs',
         'status',
         'user_id',
+        'collection_id',
         'image',
     ];
     public function collection()

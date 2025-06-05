@@ -12,11 +12,12 @@
                 <div class="col-lg-12">
                     <div class="breadcumb-content text-center">
                         <div class="breadcumb-title">
-                            <h4>{{ isset($collection) ? 'Courses in ' . $collection->name : 'Upcoming Courses' }}</h4>
+                            <h4>{{ $name ?? (isset($collection) ? 'Courses in ' . $collection->name : 'Courses') }}</h4>
+
                         </div>
                         <ul>
                             <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-                            <li>{{ isset($collection) ? 'Courses in ' . $collection->name : 'Upcoming Courses' }}</li>
+                            <li>{{ $name ?? (isset($collection) ? 'Courses in ' . $collection->name : 'Courses') }}</li>
                         </ul>
                     </div>
                 </div>
@@ -40,7 +41,7 @@
             <div class="row align-items-center section-title-space">
                 <div class="col-lg-12">
                     <div class="section_title text-center">
-                        <h1>{{ isset($collection) ? 'Courses in ' . $collection->name : 'Upcoming Courses' }}</h1>
+                        <h1>{{ $name ?? (isset($collection) ? 'Courses in ' . $collection->name : 'Courses') }}</h1>
                     </div>
                 </div>
             </div>

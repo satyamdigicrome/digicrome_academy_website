@@ -89,8 +89,9 @@ class AdminCourseController extends Controller
 
     public function edit($id)
     {
-        $course = Course::findOrFail($id); // Fetch the course by ID
-        return view('admin.manage_courses.edit', compact('course')); // Pass the course to the edit view
+        $course = Course::findOrFail($id);
+        $collections = Collection::all(); // Fetch the course by ID
+        return view('admin.manage_courses.edit', compact('course','collections')); // Pass the course to the edit view
     }
 
     public function update(Request $request, $id)
@@ -117,6 +118,7 @@ class AdminCourseController extends Controller
             'about' => 'nullable|string',
             'has_faqs' => 'required|boolean',
             'status' => 'required|boolean',
+            'collection_id' => 'required|exists:collections,id',
             'image' => 'nullable|image|mimes:webp|max:2048', // Optional image upload
         ]);
 

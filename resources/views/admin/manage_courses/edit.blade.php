@@ -202,6 +202,22 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="collection_id">Collection</label>
+                    <select class="form-control" id="collection_id" name="collection_id" required>
+                        @foreach($collections as $collection)
+                            <option value="{{ $collection->id }}"
+                                {{ $course->collection_id == $collection->id ? 'selected' : '' }}>
+                                {{ $collection->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
             <div class="form-group col-12">
                 <label for="description">Course Description</label>
                 <textarea class="form-control" id="description" name="description" required>{{ $course->description }}</textarea>

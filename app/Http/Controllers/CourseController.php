@@ -11,13 +11,14 @@ use Illuminate\Support\Facades\Cache;
 
 class CourseController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $courses = Course::where('course_upcoming', 1)
-            ->orderByRaw('ISNULL(position), position ASC') // MySQL-specific syntax
-            ->get();
-    
-        return view('pages.course', compact('courses')); 
+        $ids = explode(',', $request->ids); // convert string to array
+    $name = $request->name;
+
+    $courses = Course::whereIn('id', $ids)->get();
+
+    return view('pages.course', compact('courses', 'name')); 
     }
     
 
@@ -25,7 +26,7 @@ class CourseController extends Controller
     public function course_details($slug)
 {
     $course = Course::with([
-        'keypoints:id,course_id,name,image',
+        'keypoints:id,course_id,name',
         'aparts:id,course_id,image,heading,tagline,paragraph',
         'faqs:id,course_id,question,answer',
         'extraPartOne:id,course_id,heading',
