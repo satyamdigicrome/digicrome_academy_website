@@ -20,13 +20,21 @@
 						<h5><i class="bi bi-check2"></i>Enhance Your future skills, with just a click</h5>
 						<h1>Start building your</h1>
 						<h1>future with a better career transition</h1>
+						<div style="text-align: left; margin: 10px 0; width: 60%;">
+							<div style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
+								<small style="font-size: 14px; color: #555;">In collaboration with</small>
+								<img src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}" 
+									 class="ds-logo lazyload" 
+									 alt="MS Logo" 
+									 style="width: 100%; height: auto; margin-top: 5px;">
+							</div>
+						</div>
 						<p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and position yourself as the top choice for employers in your industry.</p>
 						<!-- hero button -->
 						<div class="hero-button">
 							<div class="hero-btn">
 								<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
 							  </div>
-							  
 							<div class="hero-course-btn">
 								<a href="{{ route('course') }}">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
 							</div>
@@ -48,7 +56,7 @@
 								</ul>
 							</div>
 							<div class="hero-rating-num">
-								<span>(4.7 Ratings)</span>
+								<span>(4.8 Ratings)</span>
 							</div>
 							<div class="hero-rating-des">
 								<p>Successful Learners</p>
@@ -61,9 +69,9 @@
 						<div class="hero-thumb">
 							<img src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="thumb">
 						</div>
-						<div class="hero-shape1 rotateme">
-							<img src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
-						</div>
+							{{-- <div class="hero-shape1 rotateme">
+								<img src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
+							</div> --}}
 						<div class="hero-arrow-shape">
 							<img src="{{ asset('assets/images/home-one/hero-arrow.webp') }}" alt="arrow">
 						</div>
@@ -171,12 +179,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="feature-shape1">
+			{{-- <div class="feature-shape1">
 				<img src="{{ asset('assets/images/home-one/feature-shape1.webp') }}" alt="shape">
 			</div>
 			<div class="feature-shape2 rotateme">
 				<img src="{{ asset('assets/images/home-one/feature-shape2.webp') }}" alt="shape2">
-			</div>
+			</div> --}}
 		</div>
 	</section>
 	<!--==================================================-->
@@ -362,8 +370,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Our Courses - Comprehensive For</h1>
-						<h1>All Available Programs</h1>
+						<h1>Our Courses – Comprehensive</h1>
+						<h1>Available all programs</h1>
 					</div>
 				</div>
 			</div>
@@ -377,8 +385,6 @@
 								  <li data-filter=".{{ Str::slug($collection->name) }}">{{ $collection->name }}</li>
 								@endforeach
 							  </ul>					  
-							
-							
 						</div>
 					</div>
 				</div>
@@ -423,20 +429,20 @@
 								</div> --}}
 							</div>
 							<div class="case-study-content">
-								<h5>Upcoming</h5>
+								<h5>Courses</h5>
 								<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
-								{{-- <div class="case-rating">
-									<ul>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star-half-stroke"></i></li>
-									</ul>
-									<div class="case-rating-num">
-										<span>(4.5/3 Ratings)</span>
-									</div>
-								</div> --}}
+								<div class="case-rating">
+									{{-- <ul>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star-half-stroke"></i></li>
+										</ul> --}}
+										<div class="case-rating-num">
+											<span>Duration: {{ $course->course_duration }}</span>
+										</div>
+								</div>
 								{{-- <div class="case-autor-box">
 									<div class="case-autor-img">
 										<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
@@ -454,35 +460,10 @@
 										<span><i class="fa-regular fa-user"></i> 1200 Students</span>
 									</div>
 								</div> --}}
-								@if($course->tag_line)
-                        <p style="margin: 10px 0 5px; font-size: 14px; color: #555;">
-                            {{ $course->tag_line }}
-                        </p>
-                    @endif
-					<br>
-					<div style="bottom: 17px; position: absolute;">
-						{{-- ENROL NOW Button --}}
-						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">
-							<a href="{{ route('course_details', ['slug' => $course->slug]) }}"
-							   style="background-color: #15c1fa; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
-								ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
-							</a>
-						</div>
-	
-						{{-- Horizontal line --}}
-						<hr style="border-top: 1px solid #ccc; margin: 10px 0;">
-	
-						{{-- Duration --}}
-						@if($course->course_duration)
-							<p style="font-size: 14px; color: #15c1fa; margin-bottom: 0;">
-								<i class="fa fa-clock-o"></i> Duration: {{ $course->course_duration }}
-							</p>
-						@endif
-					</div>
-								{{-- <br><br>
+								<br><br>
 								<div class="course-btn">
 									<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-								</div> --}}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -503,18 +484,18 @@
 								<div class="case-study-content">
 									<h5>{{ $collection->name }}</h5>
 									<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
-									{{-- <div class="case-rating">
-										<ul>
+									<div class="case-rating">
+										{{-- <ul>
 											<li><i class="fa-solid fa-star"></i></li>
 											<li><i class="fa-solid fa-star"></i></li>
 											<li><i class="fa-solid fa-star"></i></li>
 											<li><i class="fa-solid fa-star"></i></li>
 											<li><i class="fa-solid fa-star-half-stroke"></i></li>
-										</ul>
+										</ul> --}}
 										<div class="case-rating-num">
-											<span>(4.5/3 Ratings)</span>
+											<span>Duration: {{ $course->course_duration }}</span>
 										</div>
-									</div> --}}
+									</div>
 									{{-- <div class="case-autor-box">
 										<div class="case-autor-img">
 											<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
@@ -532,35 +513,10 @@
 											<span><i class="fa-regular fa-user"></i> 1200 Students</span>
 										</div>
 									</div> --}}
-									{{-- <br><br>
+									<br><br>
 									<div class="course-btn">
 										<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-									</div> --}}
-									@if($course->tag_line)
-                        <p style="margin: 10px 0 5px; font-size: 14px; color: #555;">
-                            {{ $course->tag_line }}
-                        </p>
-                    @endif
-					<br>
-					<div style="bottom: 17px; position: absolute;">
-						{{-- ENROL NOW Button --}}
-						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">
-							<a href="{{ route('course_details', ['slug' => $course->slug]) }}"
-							   style="background-color: #15c1fa; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
-								ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
-							</a>
-						</div>
-	
-						{{-- Horizontal line --}}
-						<hr style="border-top: 1px solid #ccc; margin: 10px 0;">
-	
-						{{-- Duration --}}
-						@if($course->course_duration)
-							<p style="font-size: 14px; color: #15c1fa; margin-bottom: 0;">
-								<i class="fa fa-clock-o"></i> Duration: {{ $course->course_duration }}
-							</p>
-						@endif
-					</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -649,7 +605,7 @@
 	<!--==================================================-->
 	<!-- Start educate course design offer Area -->
 	<!--==================================================-->
-	{{-- <div class="course-design-offer-area style-one">
+	<div class="course-design-offer-area style-one">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
@@ -657,7 +613,7 @@
 						<img src="{{ asset('assets/images/home-one/offer-video.webp') }}" alt="thumb">
 						<div class="course-video-icon">
 							<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
-								href="https://www.youtube.com/watch?v=Wx48y_fOfiY"><i
+								href="https://youtu.be/HLiQiTTbX8g"><i
 									class="fa-classic fa-solid fa-play fa-fw"></i></a>
 						</div>
 					</div>
@@ -665,9 +621,9 @@
 				<div class="col-lg-6">
 					<div class="single-course-offer-box">
 						<div class="course-offer-content">
-							<h6>Designing</h6>
-							<h4>Creative Graphic Design</h4>
-							<h4>With Adobe Suite</h4>
+							<h6>Digicrome</h6>
+							<h4>Data Science With</h4>
+							<h4>Artificial Intelligence</h4>
 							<div class="offer-rating">
 								<ul>
 									<li><i class="fa-solid fa-star"></i></li>
@@ -677,19 +633,17 @@
 									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
 								</ul>
 								<div class="offer-rating-rate">
-									<span>(4.5/3 Ratings)</span>
+									<span>(4.8/3 Ratings)</span>
 								</div>
-								<div class="course-offer-price">
-									<span>$35 <del>$60</del></span>
-								</div>
+								<br><br>
 							</div>
 							<div class="course-offer-btn">
 								<a href="javascript:void(0);" onclick="openModal()">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
 							</div>
-							<div class="course-offer-discount">
+							{{-- <div class="course-offer-discount">
 								<h5>10%</h5>
 								<span>off</span>
-							</div>
+							</div> --}}
 						</div>
 						<div class="offer-thumb">
 							<img src="{{ asset('assets/images/home-one/offer-thumb.webp') }}" alt="thumb">
@@ -698,7 +652,7 @@
 				</div>
 			</div>
 		</div>
-	</div> --}}
+	</div>
 	<!--==================================================-->
 	<!-- end educate course design offer Area -->
 	<!--==================================================-->
@@ -718,29 +672,24 @@
 <div class="owl-carousel reels-carousel">
 	@php
 $videos = [
-    ['id' => '1090423210', 'title' => 'Vishal'],
-    ['id' => '1090423173', 'title' => 'Richard Carter'],
-    ['id' => '1090423142', 'title' => 'Vipin Chauhan'],
-    ['id' => '1090423114', 'title' => 'Vikas Singh'],
-    ['id' => '1090423092', 'title' => 'Varsha Upadhyaya'],
-    ['id' => '1090423068', 'title' => 'Sunel Nayan'],
-    ['id' => '1090423037', 'title' => 'Saloni Singh'],
-    ['id' => '1090423009', 'title' => 'Rohit Chaudhary'],
-    ['id' => '1090422975', 'title' => 'Radhi'],
-    ['id' => '1090422937', 'title' => 'Michael Diaz'],
-    ['id' => '1090422896', 'title' => 'Khusboo Gupta'],
-    ['id' => '1090422866', 'title' => 'Kayla Ewell'],
-    ['id' => '1090422828', 'title' => 'Kartik Mehta'],
-    ['id' => '1090422806', 'title' => 'Karan'],
-    ['id' => '1090422772', 'title' => 'Justin Brooks'],
-    ['id' => '1090422744', 'title' => 'Jeffery George'],
-    ['id' => '1090422705', 'title' => 'Eilish Algee'],
-    ['id' => '1090422678', 'title' => 'Anshika'],
-    ['id' => '1090422646', 'title' => 'Anis Khan'],
-    ['id' => '1090422607', 'title' => 'Abhishek Ranjan'],
-    ['id' => '1090422572', 'title' => 'Abhishek Prajapati'],
-    ['id' => '1090422548', 'title' => 'Davis Johson'],
-    ['id' => '1090422495', 'title' => 'Alejandro Cruz'],
+    ['id' => '1090448297', 'title' => 'Sunel Nayan'],
+    ['id' => '1090448240', 'title' => 'Saloni Singh'],
+    ['id' => '1090448212', 'title' => 'Rohit Chaudhary'],
+    ['id' => '1090448177', 'title' => 'Radhi'],
+    ['id' => '1090448145', 'title' => 'Michael Diaz'],
+    ['id' => '1090448103', 'title' => 'Khusboo Gupta'],
+    ['id' => '1090448071', 'title' => 'Kayla Ewell'],
+    ['id' => '1090448028', 'title' => 'Kartik Mehta'],
+    ['id' => '1090447977', 'title' => 'Karan'],
+    ['id' => '1090447927', 'title' => 'Justin Brooks'],
+    ['id' => '1090447883', 'title' => 'Jeffery George'],
+    ['id' => '1090447830', 'title' => 'Eilish Algee'],
+    ['id' => '1090447781', 'title' => 'Anshika'],
+    ['id' => '1090447722', 'title' => 'Anis Khan'],
+    ['id' => '1090447680', 'title' => 'Abhishek Ranjan'],
+    ['id' => '1090447597', 'title' => 'Abhishek Prajapati'],
+    ['id' => '1090447523', 'title' => 'Davis Johson'],
+    ['id' => '1090447477', 'title' => 'Alejandro Cruz'],
 ];
 @endphp
   

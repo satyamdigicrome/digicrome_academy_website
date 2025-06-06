@@ -1388,7 +1388,7 @@ section.hero_area.style-one {
 section.hero_area.style-one .hero_content {
     position: relative;
     z-index: 1;
-    padding-top: 120px;
+    /* padding-top: 120px; */
 }
 @media (max-width: 767.98px) {
     section.hero_area.style-one .hero_content {
@@ -1583,7 +1583,7 @@ section.hero_area.style-one .hero-rating-des p {
 
 section.hero_area.style-one .hero-thumb-wrapper {
     position: relative;
-    padding-top: 95px;
+    /* padding-top: 95px; */
 }
 @media (max-width: 767.98px) {
     section.hero_area.style-one .hero-thumb-wrapper {
@@ -2884,7 +2884,7 @@ section.hero_area.style-six .hero-autor-content span {
 <-- educate feature Area Css  style-one -->
 ==============================================*/
 section.feature-area.style-one {
-    padding: 110px 0 120px;
+    /* padding: 110px 0 120px; */
     position: relative;
 }
 @media (max-width: 767.98px) {

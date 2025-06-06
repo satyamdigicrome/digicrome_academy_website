@@ -66,9 +66,9 @@
                                     {{-- <div class="course-rating-num">
                                         <span>({{ $course->rating }}/{{ $course->ratings_count }} Ratings)</span>
                                     </div> --}}
-                                    <div class="course-price">
+                                    {{-- <div class="course-price">
                                         <h3>{{ number_format($course->price, 0) }} + GST</h3>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 {{-- <div class="course-details-list">
                                     <div class="course-lesson">
@@ -85,7 +85,7 @@
 						{{-- ENROL NOW Button --}}
 						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">
 							<a href="{{ route('course_details', ['slug' => $course->slug]) }}"
-							   style="background-color: #f29c12; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
+							   style="background-color: #2d3e5f; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
 								ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
 							</a>
 						</div>
@@ -95,7 +95,7 @@
 	
 						{{-- Duration --}}
 						@if($course->course_duration)
-							<p style="font-size: 14px; color: #f29c12; margin-bottom: 0;">
+							<p style="font-size: 14px; color: #2d3e5f; margin-bottom: 0;">
 								<i class="fa fa-clock-o"></i> Duration: {{ $course->course_duration }}
 							</p>
 						@endif

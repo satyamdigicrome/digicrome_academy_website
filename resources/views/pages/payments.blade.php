@@ -28,7 +28,9 @@
     </div>
   </div>
   <div class="dropdown" id="customDropdown">
-    <button class="dropdown-toggle" onclick="toggleDropdown()">Select Country</button>
+    <button class="dropdown-toggle" onclick="toggleDropdown()" id="selectedCountryBtn">
+      Select Country
+    </button>
     <div class="dropdown-menu" id="dropdownMenu">
       <div class="dropdown-columns" id="dropdownColumns">
         <!-- Country list will appear here in 4 columns -->
@@ -39,6 +41,7 @@
   <script>
     const dropdownMenu = document.getElementById('dropdownMenu');
     const dropdownColumns = document.getElementById('dropdownColumns');
+    const selectedCountryBtn = document.getElementById('selectedCountryBtn');
   
     function toggleDropdown() {
       dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
@@ -50,19 +53,44 @@
       }
     });
   
-    // Fetch and populate
-    fetch('https://restcountries.com/v3.1/all')
+    // Fetch and populate using the working API
+    fetch('https://countriesnow.space/api/v0.1/countries/flag/images')
       .then(res => res.json())
-      .then(countries => {
-        countries.sort((a, b) => a.name.common.localeCompare(b.name.common));
-        countries.forEach(country => {
-          const link = document.createElement('a');
-          link.href = '#';
-          link.innerHTML = `
-            <img src="${country.flags.svg}" alt="${country.name.common} flag">
-            ${country.name.common}
-          `;
-          dropdownColumns.appendChild(link);
+      .then(response => {
+        const countries = response.data;
+        countries.sort((a, b) => a.name.localeCompare(b.name));
+  
+        const columnCount = 4;
+        const columnData = Array.from({ length: columnCount }, () => []);
+  
+        countries.forEach((country, i) => {
+          const index = i % columnCount;
+          columnData[index].push(country);
+        });
+  
+        dropdownColumns.innerHTML = '';
+  
+        columnData.forEach(col => {
+          const column = document.createElement('div');
+          column.className = 'column';
+  
+          col.forEach(country => {
+            const link = document.createElement('a');
+            link.innerHTML = `
+              <img src="${country.flag}" alt="${country.name} flag">
+              ${country.name}
+            `;
+            link.onclick = () => {
+              selectedCountryBtn.innerHTML = `
+                <img src="${country.flag}" alt="${country.name} flag">
+                ${country.name}
+              `;
+              dropdownMenu.style.display = 'none';
+            };
+            column.appendChild(link);
+          });
+  
+          dropdownColumns.appendChild(column);
         });
       })
       .catch(error => {
@@ -77,13 +105,17 @@
     }
 
     .dropdown-toggle {
-      padding: 10px;
-      background-color: #f29c12;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
+    padding: 10px 16px;
+    background-color: #f29c12;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -119,6 +151,13 @@
       width: 20px;
       margin-right: 8px;
     }
+    
+  .dropdown-toggle img {
+    width: 20px;
+    height: 14px;
+    object-fit: contain;
+  }
+  
   </style>
 
 <section style="padding: 40px; background-color: #f8f9fa;">
@@ -130,13 +169,14 @@
   <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
     <!-- PayU Payment -->
     <div style="width: 90%; max-width: 700px; text-align: center;">
-      <img src="{{ asset('assets/images/payu.webp') }}" alt="Pay with PayU" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <a href="https://pmny.in/UrN1I4c33yXF">
+      <img src="{{ asset('assets/images/payu.webp') }}" alt="Pay with PayU" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></a>
       <p style="margin-top: 10px; font-size: 18px; color: #333;">Pay via PayU</p>
     </div>
 
     <!-- Razorpay Payment -->
-    <div style="width: 90%; max-width: 700px; text-align: center;">
-      <img src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <div style="width: 90%; max-width: 700px; text-align: center;"><a href="https://rzp.io/l/MBT3RH7">
+      <img src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><a>
       <p style="margin-top: 10px; font-size: 18px; color: #333;">Pay via Razorpay</p>
     </div>
 

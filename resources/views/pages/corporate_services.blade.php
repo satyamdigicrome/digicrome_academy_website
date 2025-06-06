@@ -164,8 +164,6 @@
 								  <li data-filter=".{{ Str::slug($collection->name) }}">{{ $collection->name }}</li>
 								@endforeach
 							  </ul>					  
-							
-							
 						</div>
 					</div>
 				</div>
@@ -210,19 +208,19 @@
 								</div> --}}
 							</div>
 							<div class="case-study-content">
-								<h5>Upcoming</h5>
+								<h5>Courses</h5>
 								<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
 								<div class="case-rating">
-									<ul>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star-half-stroke"></i></li>
-									</ul>
-									<div class="case-rating-num">
-										<span>(4.5/3 Ratings)</span>
-									</div>
+									{{-- <ul>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star"></i></li>
+											<li><i class="fa-solid fa-star-half-stroke"></i></li>
+										</ul> --}}
+										<div class="case-rating-num">
+											<span>Duration: {{ $course->course_duration }}</span>
+										</div>
 								</div>
 								{{-- <div class="case-autor-box">
 									<div class="case-autor-img">
@@ -308,6 +306,10 @@
 		</div>
 		
 	</div>
+
+
+
+
 	<section class="py-5" style="background-color: #fff8f0;">
 		<div class="container text-center">
 			<div class="row g-4 justify-content-center">
