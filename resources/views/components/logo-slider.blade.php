@@ -62,12 +62,12 @@
 
 /* Scroll left to right (top row) */
 .marquee-left .logo-track {
-  animation: scrollLeftToRight 60s linear infinite;
+  animation: scrollLeftToRight 120s linear infinite;
 }
 
 /* Scroll right to left (bottom row) */
 .marquee-right .logo-track {
-  animation: scrollRightToLeft 60s linear infinite;
+  animation: scrollRightToLeft 120s linear infinite;
 }
 
 /* Animations */
