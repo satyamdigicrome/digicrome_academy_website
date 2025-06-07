@@ -193,7 +193,7 @@
       });
       $('.cards-carousel').owlCarousel({
         loop: true,
-        nav: true,
+        nav: false,
         dots: false,
         autoplay: true,
         autoplayTimeout: 3000,
@@ -207,7 +207,7 @@
     });
     $('.projects-carousel').owlCarousel({
         loop: true,
-        nav: true,
+        nav: false,
         dots: false,
         autoplay: true,
         autoplayTimeout: 3000,
