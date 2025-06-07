@@ -68,10 +68,10 @@
 				<div class="header-menu">
 					<ul class="nav_scroll">
 						<li>
-							<a href="#"  style=" background-color: #f29c12; border-radius: 8px; padding: 3px 7px; color: #1a1447; display: flex; align-items: center; gap: 5px;">
-								<i class="bi bi-journal-bookmark-fill"></i> <!-- Icon before text -->
+							<a href="#"  style=" background-color: #1c1647; border: 2px solid #fff; border-radius: 8px; padding: 3px 7px; color: #fff; display: flex; align-items: center; gap: 5px;">
+								<i style="color: #fff" class="bi bi-journal-bookmark-fill"></i> <!-- Icon before text -->
 								Courses
-								<i class="bi bi-chevron-down"></i>
+								<i style="color: #fff" class="bi bi-chevron-down"></i>
 							</a>
 							<ul class="sub_menu">
 								{{-- Custom Static Categories --}}
@@ -163,8 +163,8 @@
 							<i class="fa-solid fa-cart-shopping"></i>
 							<small class="cart_counter">0</small>
 						</button> --}}
-						<div class="header-btn search-box-btn search-box-outer">
-							<a href="#">Contact<i class="flaticon flaticon-right-arrow"></i></a>
+						<div class="header-btn search-box-btn search-box-outer" >
+							<a style="border: 2px solid #fff; color: #fff; background-color: #1c1647;" href="{{ route('contact') }}">Contact<i  style="color: #fff"class="flaticon flaticon-right-arrow"></i></a>
 						</div>
 						{{-- <div class="header-sidbar-button navSidebar-button">
 							<a href="#"><i class="bi bi-justify-left"></i></a>

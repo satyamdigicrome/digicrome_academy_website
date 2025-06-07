@@ -76,12 +76,10 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="course_online_payment">Online Payment Available?</label>
-                    <select class="form-control" id="course_online_payment" name="course_online_payment" required>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
-                    </select>
+                    <label for="course_online_payment">Batch Date</label>
+                    <input type="text" class="form-control" id="course_online_payment" name="course_online_payment" required>
                 </div>
+                
             </div>
             <div class="col-md-4">
                 <div class="form-group">

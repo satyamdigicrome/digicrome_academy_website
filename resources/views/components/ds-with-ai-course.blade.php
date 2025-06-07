@@ -8,12 +8,12 @@
 	</style>
 <div class="nedesign">
     <section class="courses-details ds-banner ds-banner-mobile"
-        style="background-image: url({{ asset('assets/images/ds-withai-course/banner.jpg') }});">
+        style="background-image: url({{ asset('assets/images/ds-withai-course/Banner-Image.png') }}); background-color:#565656; ">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <div class="course-heading-banner col-flex">
-                        <h2>{{ $course->name }}<br> <small>in collaboration with</small> </h2>
+                        <h2 style="color: #fff;">{{ $course->name }}<br> <small>in collaboration with</small> </h2>
                         <img src='{{ asset('assets/images/ds-withai-course/mslogo.png') }}' class='ds-logo lazyload'>
                         <div class="black-box">
                             <span class="yellow-text">Aligned with competency standards set by Microsoft & IBM.</span>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="offset-lg-2 col-lg-4">
                     <div class="course-heading-banner text-center">
-                        <h2><small>Best Data Science Course in India</small></h2>
+                        <h2><small style=" color: #fff;">Best Data Science Course in India</small></h2>
                     </div>
                     <div class="ai-box flex">
                         <div class="cont text-center">
@@ -63,7 +63,7 @@
                     <div class="course-specification">
                         <div class="box">
                             <p>
-                                26-Apr-2025 </p>
+                                {{ $course->course_online_payment }}  </p>
                             <span>Next Batch <br> starts on</span>
                         </div>
                         <div class="box">
@@ -89,7 +89,7 @@
                         <div class="fill-btn">
                             <a data-bs-toggle="modal" data-bs-target="#brochure"
                                 href="https://digicrome.com/public/storage/1659/1739358305.pdf" download=""
-                                style="color:#fff">Download
+                               >Download
                                 Brochure</a>
                         </div>
                         <!--<button type="button" class="fill-btn" href="#form1" data-toggle="modal" data-target="#buy-form" onclick="buNow('102')">Apply-->
@@ -103,8 +103,9 @@
         <div class="container">
             <div class="banner-detail">
                 <div class="date-border width">
-                    <h2>Courses Features</h2>
-                    <div class="fill-btn">
+                    <h2 style="color:#fff;">Courses Features</h2>
+                    <div class="fill-btn" style="color: #fff;  background: #1c1647;
+                    border: 2px solid;">
                         <a data-bs-toggle="modal" data-bs-target="#brochure"
                             href="https://digicrome.com/public/storage/1659/1739358305.pdf" download=""
                             style="color:#fff">Download
@@ -134,7 +135,7 @@
                     <img src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}" class="lazyload"
                         alt="data science programs near me">
                     <p style="color: #f8b700">
-                        26-Apr-2025 </p>
+                        {{ $course->course_online_payment }} </p>
                     <span>Next Batch starts on</span>
                 </div>
                 <div class="date-border">

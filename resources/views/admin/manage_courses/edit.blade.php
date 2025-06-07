@@ -91,16 +91,12 @@
                 </select>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="form-group">
-                <label for="course_online_payment">Online Payment Available?</label>
-                <select class="form-control" id="course_online_payment" name="course_online_payment">
-                    <option value="1" {{ $course->course_online_payment ? 'selected' : '' }}>Yes</option>
-                    <option value="0" {{ !$course->course_online_payment ? 'selected' : '' }}>No</option>
-                </select>
+                <label for="course_online_payment">Batch Date</label>
+                <input type="text" class="form-control" id="course_online_payment" name="course_online_payment" value="{{ $course->course_online_payment }}" required>
             </div>
-        </div>
+        </div>        
     </div>
 
     <div class="row">
