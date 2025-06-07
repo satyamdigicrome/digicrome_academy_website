@@ -393,16 +393,24 @@
 </section>
 @endif
 
-<section>
-    <div class="container my-5">
+<section style="background-color: #f8f9fa;">
+    <div class="container py-5">
         @if ($course->projects->count())
+        <div class="text-center mb-5">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #333;">Real-World Sample Projects</h2>
+            <p style="font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto;">
+                Get hands-on experience with real-world inspired projects. These are some examples of what you'll build during the course.
+            </p>
+        </div>
+
         <div class="row g-4">
             @foreach ($course->projects as $project)
             <div class="col-md-3">
-                <div class="skill-box">
-                    <h5>{{ $project->heading }}</h5>
-                    <p>{!! $project->paragraph !!}</p>
-                    <hr>
+                <div class="project-box h-100">
+                    <div class="inner-box">
+                        <h5 style="line-height: 31px;" class="project-title">{{ $project->heading }}</h5>
+                        <p class="project-desc">{!! $project->paragraph !!}</p>
+                    </div>
                 </div>
             </div>
             @endforeach
@@ -410,6 +418,7 @@
         @endif
     </div>
 </section>
+
 <x-trusted-brands />
 <div class="brand-area style-one mt-4">
     <div class="container">

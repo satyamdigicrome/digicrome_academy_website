@@ -1,3 +1,11 @@
+	<style>
+		#sticky-header{
+    margin-bottom: 0px !important;
+}
+.nedesign {
+    margin-top: 0px;
+}
+	</style>
 <div class="nedesign">
     <section class="courses-details ds-banner ds-banner-mobile"
         style="background-image: url({{ asset('assets/images/ds-withai-course/banner.jpg') }});">
