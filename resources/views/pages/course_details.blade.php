@@ -397,7 +397,7 @@
     <div class="container py-5">
         @if ($course->projects->count())
         <div class="text-center mb-5">
-            <h2 style="font-size: 2.5rem; font-weight: 700; color: #333;">Real-World Sample Projects</h2>
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #333;">Sample Projects You'll Build</h2>
             <p style="font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto;">
                 Get hands-on experience with real-world inspired projects. These are some examples of what you'll build during the course.
             </p>
