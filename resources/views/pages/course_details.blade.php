@@ -403,10 +403,10 @@
             </p>
         </div>
 
-        <div class="row g-4">
+        <div class="owl-carousel projects-carousel">
             @foreach ($course->projects as $project)
-            <div class="col-md-3">
-                <div class="project-box h-100">
+            <div class="item">
+                <div class="project-box mx-2">
                     <div class="inner-box">
                         <h5 style="line-height: 31px;" class="project-title">{{ $project->heading }}</h5>
                         <p class="project-desc">{!! $project->paragraph !!}</p>

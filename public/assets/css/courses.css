@@ -784,6 +784,7 @@ display: block;
   padding: 25px;
   border-left: 5px solid #f29c12;
   transition: all 0.3s ease-in-out;
+  min-height: 100%; 
 }
 
 .project-box:hover {
