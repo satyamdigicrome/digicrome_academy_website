@@ -29,13 +29,19 @@ class HomeController extends Controller
     $associationLogos = Cache::remember('association_logos', 60, function () {
         return Logo::where('type', 'association')->get(['id', 'image']);
     });
+    $certificate = Cache::remember('certification_partner', 60, function () {
+        return Logo::where('type', 'certification_partner')->get(['id', 'image']);
+    });
+    $awords = Cache::remember('awords', 60, function () {
+        return Logo::where('type', 'awords')->get(['id', 'image']);
+    });
     $studentStories = StudentStory::latest()->get(); 
     $testimonials = Testimonial::latest()->get();
     $blogs = Blog::where('status', 'published')
     ->orderByDesc('created_at')
     ->get();
 
-    return view('welcome', compact('collections', 'upcomingCourses','companyLogos','studentStories','testimonials','associationLogos','blogs'));
+    return view('welcome', compact('collections', 'upcomingCourses','companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords'));
 }
 
     public function privacy()
