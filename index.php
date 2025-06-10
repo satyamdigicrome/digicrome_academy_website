@@ -1,21 +1,21 @@
 <?php
 
-/**
- * Laravel - A PHP Framework For Web Artisans
- *
- * @package  Laravel
- * @author   Taylor Otwell <taylor@laravel.com>
- */
+// This runs only once when someone visits dc.com
 
-$uri = urldecode(
-    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? ''
-);
+// Detect the visitor's IP address
+$ip = $_SERVER['REMOTE_ADDR'] ?? '';
 
-// This file allows us to emulate Apache's "mod_rewrite" functionality from the
-// built-in PHP web server. This provides a convenient way to test a Laravel
-// application without having installed a "real" web server software here.
-if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
-    return false;
+// Get geolocation data from ip-api.com
+$geoData = @json_decode(file_get_contents("http://ip-api.com/json/{$ip}"), true);
+
+// Default to India if geo lookup fails
+$country = $geoData['countryCode'] ?? 'IN';
+
+// If visitor is from India, load the main Laravel app
+if ($country === 'IN') {
+    require_once __DIR__ . '/public/index.php';
+} else {
+    require_once __DIR__ . '/us';
 }
 
-require_once __DIR__.'/public/index.php';
+exit;

@@ -119,7 +119,7 @@ class AdminCourseController extends Controller
             'has_faqs' => 'required|boolean',
             'status' => 'required|boolean',
             'collection_id' => 'required|exists:collections,id',
-            'image' => 'nullable|image|mimes:webp|max:2048', // Optional image upload
+            'image' => 'nullable|image|mimes:webp|max:2048',
         ]);
 
         // Find the course by ID

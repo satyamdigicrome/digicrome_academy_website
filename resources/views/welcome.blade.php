@@ -195,6 +195,8 @@
 		<x-logo-slider :companyLogos="$companyLogos" />
 
 	</div>
+
+	
 	<!--==================================================-->
 	<!-- Start educate About Area style-one -->
 	<!--==================================================-->
@@ -321,6 +323,85 @@
 	<!--==================================================-->
 	<!-- End educate About Area -->
 	<!--==================================================-->
+	<div class="brand-area style-one mt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 mt-4">
+					<div class="brand-list owl-carousel">
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2018.webp') }}" alt="brand">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2023_V2.webp') }}" alt="brand">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2020.webp') }}" alt="brand">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2021.webp') }}" alt="brand">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2022.webp') }}" alt="brand">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('assets/images/Awards/Award-2023.webp') }}" alt="brand">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-5">
+					<!-- Main heading -->
+					<div class="section_title mb-4">
+						<h1 class="display-5 fw-bold">Moments of Honour</h1>
+					</div>
+	
+					<!-- Description -->
+					<p class="mb-4">
+						In our EdTech journey of <b> more than a decade,</b> we have received numerous awards.<br>
+						Some of the recent notable awards we have received in analytics are:
+					</p>
+	
+					<!-- List of awards with cup icons aligned -->
+					<ul class="list-unstyled">
+						<li class="d-flex align-items-start mb-2">
+							<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
+							<span><b> Successpreneur Award 2023 </b> being the best analytics EdTech business</span>
+						</li>
+						<li class="d-flex align-items-start">
+							<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
+							<span><b>Most Promising Digital Learning Platform 2023</b> for being one of the most promising
+								digital
+								learning platforms</span>
+						</li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+	</div>
 	<!--==================================================-->
 	<!-- Start educate Marquee Area-->
 	<!--==================================================-->

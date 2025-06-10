@@ -8,16 +8,14 @@
 
 @section('content')
 @if ($course->course_free == 1)
-<!--==================================================-->
-<!-- Start educate Breadcumb Area -->
-<!--==================================================-->
+
 <x-ds-with-ai-course :course="$course" />
 
-
-<!--==================================================-->
-<!-- End educate Breadcumb Area -->
-<!--==================================================-->
 @else
+
+
+
+
 <div class="breadcumb-area two d-flex">
     <div class="container">
         <div class="row align-items-center">
