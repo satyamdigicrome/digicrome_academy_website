@@ -19,10 +19,12 @@
         <div class="row align-items-center">
           <!-- Left Column -->
           <div class="col-md-6">
-            <div class="d-flex align-items-center gap-3 mb-4">
-              <img src="{{ asset('assets/images/card1.png') }}" width="190" height="120" alt="Logo 1" />
-              <img src="{{ asset('assets/images/Card.png') }}" width="319" height="58" alt="Logo 2"style="border: 2px solid #f29c12; border-radius: 5px;" />
-            </div>
+            <div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4">
+                <img src="{{ asset('assets/images/card1.webp') }}" width="190" height="120" alt="Logo 1" />
+                <img src="{{ asset('assets/images/Card.webp') }}" width="319" height="58" alt="Logo 2"
+                     style="border: 2px solid #f29c12; border-radius: 5px;" />
+              </div>
+              
     
             <h1 class="fw-bold text-capitalize text-dark" style="font-size: 43px;">{{ $course->name }}</h1>
             
@@ -120,10 +122,12 @@
    <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <img src="{{ asset('assets/images/card1.png') }}" width="190" height="120" alt="Logo 1" />
-                    <img src="{{ asset('assets/images/Card.png') }}" width="319" height="58" alt="Logo 2" style="border: 2px solid #f29c12; border-radius: 5px;" />
-                </div>
+                <div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4">
+                    <img src="{{ asset('assets/images/card1.webp') }}" width="190" height="120" alt="Logo 1" />
+                    <img src="{{ asset('assets/images/Card.webp') }}" width="319" height="58" alt="Logo 2"
+                         style="border: 2px solid #f29c12; border-radius: 5px;" />
+                  </div>
+                  
         
                 <h1 class="fw-bold text-capitalize text-dark" style="font-size: 43px;">{{ $course->name }}</h1>
                 

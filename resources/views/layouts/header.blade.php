@@ -34,10 +34,10 @@
 			</div>
 			<div class="col-xxl-6 col-xl-4 col-lg-4">
 				<div class="header-top-right">
-					<div class="educate-header-from">
+					{{-- <div class="educate-header-from">
 						<a class="login-btn" href="sign-in.html"><i class="bi bi-arrow-right-circle"></i>Login</a>
 						<a class="sign-up-btn" href="sign-up.html"><i class="bi bi-person-plus"></i>Register</a>
-					</div>
+					</div> --}}
 				</div>
 			</div>
 		</div>

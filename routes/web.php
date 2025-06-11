@@ -50,6 +50,7 @@ use App\Http\Controllers\Admin\MetaController;
 
 
 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -141,6 +142,9 @@ Route::get('/who_we_are', [WhoweareController::class, 'index'])->name('who_we_ar
 Route::get('/success_stories', [SucessStoriesController::class, 'index'])->name('success_stories');
 Route::get('/media_presence', [MediaPresenceController ::class, 'index'])->name('media_presence');
 Route::get('/upcoming-courses/{slug}', [CourseController::class, 'course_details'])->name('course_details');
+Route::redirect('/upcoming-courses/{slug}', '/courses/{slug}', 301);
+Route::get('/courses/{slug}', [CourseController::class, 'course_details'])->name('www.products.show');
+
 Route::get('/blog/{slug}', [BlogController::class, 'blog_details'])->name('blog.details');
 Route::get('/our-courses/{slug}', [CourseController::class, 'showByCategory'])->name('course.category');
 Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
