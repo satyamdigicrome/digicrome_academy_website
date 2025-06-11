@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+@section('title', $meta->title  ?? 'Digicrome')
+@section('meta_description', $meta->description  ?? 'Digicrome')
+@section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
+
+@include('components.lead-form-popup')
+
 
 
     <style>
@@ -292,8 +297,8 @@
                         <br> If this resonates with your aspirations, we warmly welcome you to
                         become<br> a part of our team. Together, we can strive for even greater success</span>
                     <br><br><br>
-                    <button class="custom-button" style="background-color: white; color:black;"> Explore open
-                        position</button>
+                    <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
+                        class="bi bi-whatsapp"></i>Book Now</a>
                     <br><br><br>
                     <p style="color: white;"> <strong>Disclaimer:</strong>Digicrome in no way encourages any recruitment fee
                         from the candidates.
@@ -510,10 +515,8 @@
                         <h2 id="talk">Talk to our team directly</h2>
                         <p style="font-weight: 400;font-size: 18px;color: #0072bc;margin: 0 0 30px;">Reach out to us and
                             your career guide will get in touch with you shortly</p>
-                        <a href="https://api.whatsapp.com/send/?phone=01203133869&text&type=phone_number&app_absent=0"
-                            class="btn2 btn-warning"><i class="bi bi-whatsapp"></i> Enquire Now</a>
-                        <button type="button" class="btn1 btn-warning"><i
-                                class="bi bi-telephone-fill"></i>01203133869</button>
+                            <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
+                                class="bi bi-whatsapp"></i>Book Now</a>
 
                     </div>
                 </div>

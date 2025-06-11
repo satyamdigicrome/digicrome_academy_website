@@ -8,6 +8,8 @@ use App\Models\Course;
 use App\Models\Placement;
 use App\Models\Logo;
 use App\Models\Testimonial;
+use App\Models\Metatag;
+
 
 use Illuminate\Support\Facades\Cache;
 
@@ -19,8 +21,9 @@ class CourseController extends Controller
     $name = $request->name;
 
     $courses = Course::whereIn('id', $ids)->get();
+    $meta = Metatag::where('page_name', 'Course')->first();
 
-    return view('pages.course', compact('courses', 'name')); 
+    return view('pages.course', compact('courses','meta', 'name')); 
     }
     
 
@@ -38,7 +41,7 @@ class CourseController extends Controller
         'keyFeatures:id,course_id,heading,paragraph,image',
         'modules:id,course_id,question,answer',
     ])
-    ->select('id', 'name', 'slug', 'description', 'image', 'tag_line','about','course_free','us_price','dubai_price','price') // load only needed course fields
+    ->select('id', 'name', 'slug', 'description', 'browser', 'meta_title', 'meta_description', 'meta_keywords', 'image','banner_image', 'tag_line','about','course_free','us_price','dubai_price','price') // load only needed course fields
     ->where('slug', $slug)
     ->firstOrFail();
 
@@ -52,6 +55,9 @@ class CourseController extends Controller
 
     $companyLogos = Cache::remember('company_logos', 60, function () {
         return Logo::where('type', 'companies')->get(['id', 'image']);
+    });
+    $awords = Cache::remember('awords', 60, function () {
+        return Logo::where('type', 'awords')->get(['id', 'image']);
     });
 
     $plainLogos = Logo::where('type', 'tools')
@@ -71,7 +77,8 @@ class CourseController extends Controller
         'companyLogos',
         'plainLogos',
         'certificate',
-        'testimonials'
+        'testimonials',
+        'awords'
     ));
 }
 

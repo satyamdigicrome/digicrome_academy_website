@@ -1,6 +1,7 @@
 @extends('layouts.app')
-
-@section('title', 'Home Page')
+@section('title', $meta->title  ?? 'Digicrome')
+@section('meta_description', $meta->description  ?? 'Digicrome')
+@section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
   <div class="breadcumb-area d-flex">

@@ -34,6 +34,8 @@ class Course extends Model
         'user_id',
         'collection_id',
         'image',
+        'browser',
+        'banner_image',
     ];
     public function collection()
 {

@@ -4,7 +4,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="noindex, nofollow">
 
-    <title>{{ config('app.name', 'Digicrome') }}</title>
+    <title>@yield('title', 'Default Title')</title>
+    <meta name="description" content="@yield('meta_description', 'Default description')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Default keywords')">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />

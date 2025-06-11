@@ -75,10 +75,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="course_free">Is Course Free?</label>
-                <select class="form-control" id="course_free" name="course_free">
-                    <option value="1" {{ $course->course_free ? 'selected' : '' }}>Yes</option>
-                    <option value="0" {{ !$course->course_free ? 'selected' : '' }}>No</option>
-                </select>
+                <input type="text" class="form-control" id="course_free" name="course_free" value="{{ $course->course_free }}">
             </div>
         </div>
 
@@ -200,6 +197,13 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
+                    <label for="banner_image">Banner Image</label>
+                    <input type="file" class="form-control" id="banner_image" name="banner_image">
+                    <small class="form-text text-muted">Leave blank to keep the current image.</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
                     <label for="collection_id">Collection</label>
                     <select class="form-control" id="collection_id" name="collection_id" required>
                         @foreach($collections as $collection)
@@ -210,6 +214,17 @@
                         @endforeach
                     </select>
                 </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="browser">Upload Browser PDF</label>
+                    <input type="file" class="form-control" name="browser" accept="application/pdf">
+                    
+                    @if($course->browser)
+                        <a href="{{ asset('storage/' . $course->browser) }}" target="_blank">View Current PDF</a>
+                    @endif
+                </div>
+                
             </div>
             
         </div>

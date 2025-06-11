@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+@section('title', $meta->title  ?? 'Digicrome')
+@section('meta_description', $meta->description  ?? 'Digicrome')
+@section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
+@include('components.lead-form-popup')
+
 
 	<!--==================================================-->
 	<!-- Start educate Breadcumb Area -->
@@ -326,7 +330,7 @@
 								</div>
 							</div>
 							<div class="course-offer-btn">
-								<a href="course-details.html">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+								<a href="javascript:void(0);" onclick="openModal()">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
 							</div>
 							<div class="course-offer-discount">
 								<h5>10%</h5>

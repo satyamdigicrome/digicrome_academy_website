@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\StudentStory;
 use App\Models\Testimonial;
 use App\Models\Blog;
+use App\Models\Metatag;
 
 class AboutController extends Controller
 {
@@ -17,6 +18,8 @@ class AboutController extends Controller
         ->orderByDesc('created_at')
         ->limit(3)
         ->get();
-        return view('pages.about',compact('studentStories','testimonials','blogs')); 
+        $meta = Metatag::where('page_name', 'About')->first();
+
+        return view('pages.about',compact('studentStories','testimonials','meta','blogs')); 
     }
 }

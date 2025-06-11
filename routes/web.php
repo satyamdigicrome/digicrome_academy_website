@@ -6,6 +6,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LeadsController;
 use App\Http\Controllers\CorporateServicesController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\CareerController;
@@ -30,6 +31,8 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\ContantController;
+use App\Http\Controllers\Admin\MetaController;
+
 
 
 
@@ -117,6 +120,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
     Route::post('/videos/store', [VideoController::class, 'store'])->name('videos.store');
     Route::delete('/videos/{id}', [VideoController::class, 'destroy'])->name('videos.destroy');
+    Route::get('/meta_tag', [MetaController::class, 'index'])->name('meta');
+    Route::post('/store', [MetaController::class, 'store'])->name('meta.store');
+    Route::delete('/meta/delete/{id}', [MetaController::class, 'destroy'])->name('meta.delete');
+
+
 
     // Add routes for edit, update, and delete as needed
 });
@@ -138,7 +146,17 @@ Route::get('/our-courses/{slug}', [CourseController::class, 'showByCategory'])->
 Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
 Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('terms-and-conditions');
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy-policy');
+Route::post('/store-lead', [LeadsController::class, 'store'])->name('store.lead');
+Route::post('/leads', [LeadsController::class, 'leadsstore'])->name('lead.store');
 
+Route::get('/test-mail', function () {
+    Mail::raw('Test email from Laravel', function ($message) {
+        $message->to('digicromeleads@gmail.com')
+                ->subject('Test Mail');
+    });
+
+    return 'Mail Sent';
+});
 
 
 

@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+@section('title', $meta->title  ?? 'Digicrome')
+@section('meta_description', $meta->description  ?? 'Digicrome')
+@section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
+@include('components.lead-form-popup')
+
   
 
     <style>
@@ -432,10 +436,10 @@
                         in the native language of learners worldwide, we empower individuals with the
                         ability to excel in the IT Sector job market.
                     </span><br><br>
-                    <a href="https://digicrome.com/our-courses/postgraduate-and-master-programs" class="btn2 btn-warning"><i
-                            class="bi bi-whatsapp"></i>Explore Courses</a>
-                    <a href="https://digicrome.com/#ajax-form" class="btn1 btn-warning"><i
-                            class="bi bi-telephone-fill"></i>Apply For Counselling</a>
+                    <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
+                            class="bi bi-whatsapp"></i>Book Now</a>
+                    {{-- <a href="https://digicrome.com/#ajax-form" class="btn1 btn-warning"><i
+                            class="bi bi-telephone-fill"></i>Apply For Counselling</a> --}}
 
 
                 </div>

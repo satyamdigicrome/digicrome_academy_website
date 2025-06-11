@@ -145,11 +145,11 @@
 
 					</ul>
 				</li>
-				<li>
+				{{-- <li>
 					<div class="header-src-btn">
 					<div class="search-box-btn search-box-outer"><i class="fa-solid fa-magnifying-glass"></i></div>
 				</div>&nbsp;&nbsp;
-			</li>
+			</li> --}}
 					</ul>				
 				</div>
 			</div>
@@ -164,7 +164,7 @@
 							<small class="cart_counter">0</small>
 						</button> --}}
 						<div class="header-btn search-box-btn search-box-outer" >
-							<a style="border: 2px solid #fff; color: #fff; background-color: #1c1647;" href="{{ route('contact') }}">Contact<i  style="color: #fff"class="flaticon flaticon-right-arrow"></i></a>
+							<a style="border: 2px solid #fff; color: #fff; background-color: #1c1647;" href="#">Search<i class="fa-solid fa-magnifying-glass" style="color: #fff"></i></a>
 						</div>
 						{{-- <div class="header-sidbar-button navSidebar-button">
 							<a href="#"><i class="bi bi-justify-left"></i></a>

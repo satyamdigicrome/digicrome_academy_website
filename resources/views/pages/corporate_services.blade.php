@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+@section('title', $meta->title  ?? 'Digicrome')
+@section('meta_description', $meta->description  ?? 'Digicrome')
+@section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
 
@@ -67,13 +69,13 @@
 					<div class="section_title mb-4">
 						<h1 class="display-5 fw-bold">Moments of Honour</h1>
 					</div>
-	
+
 					<!-- Description -->
 					<p class="mb-4">
 						In our EdTech journey of <b> more than a decade,</b> we have received numerous awards.<br>
 						Some of the recent notable awards we have received in analytics are:
 					</p>
-	
+
 					<!-- List of awards with cup icons aligned -->
 					<ul class="list-unstyled">
 						<li class="d-flex align-items-start mb-2">
@@ -88,51 +90,18 @@
 						</li>
 					</ul>
 				</div>
-	
+
 				<div class="col-lg-7 mt-4">
 					<div class="brand-list owl-carousel">
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('assets/images/Awards/Award-2018.webp') }}" alt="brand">
+						@foreach($awords as $logo)
+							<div class="col-lg-12">
+								<div class="single-brand-box">
+									<div class="brand-thumb">
+										<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('assets/images/Awards/Award-2023_V2.webp') }}" alt="brand">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('assets/images/Awards/Award-2020.webp') }}" alt="brand">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('assets/images/Awards/Award-2021.webp') }}" alt="brand">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('assets/images/Awards/Award-2022.webp') }}" alt="brand">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('assets/images/Awards/Award-2023.webp') }}" alt="brand">
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</div>
 			</div>
@@ -478,43 +447,71 @@
 							<h4>CONTACT US</h4>
 							<h1>Feel Free to Contact Us</h1>
 						</div>
-						<form action="https://formspree.io/f/myyleorq" method="POST">
-							<div class="row">
-								<div class="col-lg-6 col-md-6">
-									<div class="form-box">
-										<input type="text" name="name" placeholder="Your Name *">
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6">
-									<div class="form-box">
-										<input type="text" name="name" placeholder="Phone No">
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6">
-									<div class="form-box">
-										<input type="email" name="name" placeholder="Enter E-Mail *">
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6">
-									<div class="form-box">
-										<input type="text" name="name" placeholder="Select Subjects *">
-									</div>
-								</div>
-								<div class="col-lg-12 col-md-12">
-									<div class="form-box message">
-										<textarea name="message" id="message" cols="30" rows="10"
-											placeholder="Write Message :"></textarea>
-									</div>
-								</div>
-								<div class="checkbox">
-									<input type="checkbox" id="vehicle1" name="vehicle1" value="agree">
-									<label for="vehicle1">Agree with Terms and Conditions</label>
-								</div>
-								<div class="contact-form">
-									<button type="submit">Send Message</button>
-								</div>
-							</div>
-						</form>
+						<form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
+                            action="https://demo.digicrome.com/post_lead.php">
+                            @csrf
+                            <h2 style="    color: #f29c12;"> Register now!! And get a quick call</h2>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="name">Name:</label> -->
+                                <input type="text" id="name" name="name" placeholder="Name">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
+                                <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
+                                <input type="email" id="gmail" name="email" placeholder="E-mail ID:">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="city">City:</label> -->
+                                <input type="text" id="city" name="address" placeholder="City">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="Qualification">Qualification:</label> -->
+                                <input type="text" id="qualification" name="title" placeholder="Qualification">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="qualification">Experience:</label> -->
+                                <select class="selecttype" id="qualification" name="profession">
+                                    <option value="" disabled selected>Select Experience</option>
+                                    <option value="Working Professional - Technincal Roles">Working Professional -
+                                        Technincal Roles</option>
+                                    <option value="Working Professional - Non Technincal">Working Professional - Non
+                                        Technincal</option>
+                                    <option value="College Student - Final Year">College Student - Final Year</option>
+                                    <option value="College Student - 1st to pre-final Year">College Student - 1st to
+                                        pre-final Year</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="source" Value="Home Page"
+                                    placeholder="Mobile Number">
+                            </div>
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="country" value="india"
+                                    placeholder="Mobile Number">
+                            </div>
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
+                            </div>
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
+                            </div>
+                            <!--<div class="form-field">-->
+                            <!--    <input type="text" id="mobile" name="profession" placeholder="Mobile Number">-->
+                            <!--</div>-->
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
+                            </div>
+
+                            <p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms
+                                    and Conditions</a> and our <a href="https://digicrome.com/privacy-policy">Privacy
+                                    Policy.</a> </p><br>
+                            <button type="submit">Submit</button>
+                        </form>
 						<div id="status"></div>
 					</div>
 				</div>

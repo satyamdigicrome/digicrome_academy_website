@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\Metatag;
+
 
 class BlogController extends Controller
 {
@@ -13,7 +15,9 @@ class BlogController extends Controller
                 ->orderByDesc('created_at')
                 ->get();
 
-    return view('pages.blog', compact('blogs'));
+    $meta = Metatag::where('page_name', 'Blog')->first();
+
+    return view('pages.blog', compact('blogs','meta'));
 }
 public function blog_details($slug)
 {

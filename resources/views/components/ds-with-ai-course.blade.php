@@ -87,8 +87,7 @@
                             <span>Hiring <br> Partners</span>
                         </div>
                         <div class="fill-btn">
-                            <a data-bs-toggle="modal" data-bs-target="#brochure"
-                                href="https://digicrome.com/public/storage/1659/1739358305.pdf" download=""
+                            <a data-bs-toggle="modal" data-bs-target="#leadPopup" download=""
                                >Download
                                 Brochure</a>
                         </div>
@@ -106,8 +105,8 @@
                     <h2 style="color:#fff;">Courses Features</h2>
                     <div class="fill-btn" style="color: #fff;  background: #1c1647;
                     border: 2px solid;">
-                        <a data-bs-toggle="modal" data-bs-target="#brochure"
-                            href="https://digicrome.com/public/storage/1659/1739358305.pdf" download=""
+                        <a data-bs-toggle="modal" data-bs-target="#leadPopup"
+                             download=""
                             style="color:#fff">Download
                             Brochure</a>
                     </div>

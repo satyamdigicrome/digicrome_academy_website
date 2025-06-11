@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+
+@section('title', $blog->meta_title ?? $blog->heading)
+@section('meta_description', $blog->meta_description ?? 'Digicrome')
+@section('meta_keywords', $blog->meta_keywords ?? 'Digicrome')
 
 @section('content')
 

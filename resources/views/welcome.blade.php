@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+@section('title', $meta->title  ?? 'Digicrome')
+@section('meta_description', $meta->description  ?? 'Digicrome')
+@section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
 	<!--==================================================-->
 	<!-- Start educate Hero Area Area style-one -->
 	<!--==================================================-->
 	<style>
-		#sticky-header{
-    margin-bottom: 0px !important;
-}
+		#sticky-header {
+			margin-bottom: 0px !important;
+		}
 	</style>
 	<section class="hero_area style-one d-flex align-items-center">
 		<div class="container">
@@ -21,20 +23,21 @@
 						<h1>Start building your</h1>
 						<h1>future with a better career transition</h1>
 						<div style="text-align: left; margin: 10px 0; width: 60%;">
-							<div style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
+							<div
+								style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
 								<small style="font-size: 14px; color: #555;">In collaboration with</small>
-								<img src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}" 
-									 class="ds-logo lazyload" 
-									 alt="MS Logo" 
-									 style="width: 100%; height: auto; margin-top: 5px;">
+								<img src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}" class="ds-logo lazyload"
+									alt="MS Logo" style="width: 100%; height: auto; margin-top: 5px;">
 							</div>
 						</div>
-						<p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and position yourself as the top choice for employers in your industry.</p>
+						<p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and
+							position yourself as the top choice for employers in your industry.</p>
 						<!-- hero button -->
 						<div class="hero-button">
 							<div class="hero-btn">
-								<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
-							  </div>
+								<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
+										class="flaticon flaticon-right-arrow"></i></a>
+							</div>
 							<div class="hero-course-btn">
 								<a href="{{ route('course') }}">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
 							</div>
@@ -65,13 +68,13 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div class="hero-thumb-wrapper"> 
+					<div class="hero-thumb-wrapper">
 						<div class="hero-thumb">
 							<img src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="thumb">
 						</div>
-							{{-- <div class="hero-shape1 rotateme">
-								<img src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
-							</div> --}}
+						{{-- <div class="hero-shape1 rotateme">
+							<img src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
+						</div> --}}
 						<div class="hero-arrow-shape">
 							<img src="{{ asset('assets/images/home-one/hero-arrow.webp') }}" alt="arrow">
 						</div>
@@ -112,8 +115,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h2 style="font-size: 30px; font-weight: bold;">Get Expertise & Hands On Advancement </h2 >
-						<h2 style="font-size: 30px; font-weight: bold;">In Your Career With Best Industry Experts!</h2 >
+						<h2 style="font-size: 30px; font-weight: bold;">Get Expertise & Hands On Advancement </h2>
+						<h2 style="font-size: 30px; font-weight: bold;">In Your Career With Best Industry Experts!</h2>
 					</div>
 				</div>
 			</div>
@@ -125,7 +128,8 @@
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">500+ Hiring Partners</h4>
-							<p class="feature-desc">We guarantee placement assistance, so we have tied up with 500+ global partners to assist students in securing job opportunities.</p>
+							<p class="feature-desc">We guarantee placement assistance, so we have tied up with 500+ global
+								partners to assist students in securing job opportunities.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -140,7 +144,8 @@
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">45+ Industry-Relevant Projects</h4>
-							<p class="feature-desc">Work on our industry-based live projects to harness top-level industry experience and make way to a winning career.</p>
+							<p class="feature-desc">Work on our industry-based live projects to harness top-level industry
+								experience and make way to a winning career.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -155,7 +160,8 @@
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
-							<p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong foundation. Get 24/7 assistance available for assignments.</p>
+							<p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong
+								foundation. Get 24/7 assistance available for assignments.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -170,7 +176,8 @@
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">Job Ready Program</h4>
-							<p class="feature-desc">Exclusive placement cell dedicated to students completing the course, we help secure job opportunities. So far, 5,000+ students have been employed.</p>
+							<p class="feature-desc">Exclusive placement cell dedicated to students completing the course, we
+								help secure job opportunities. So far, 5,000+ students have been employed.</p>
 						</div>
 						<div class="educate-hover-box hover-bx"></div>
 						<div class="educate-hover-box hover-bx2"></div>
@@ -196,7 +203,7 @@
 
 	</div>
 
-	
+
 	<!--==================================================-->
 	<!-- Start educate About Area style-one -->
 	<!--==================================================-->
@@ -230,7 +237,9 @@
 							<h1>Digicrome Online Platform</h1>
 						</div>
 						<div class="section-title-desc">
-							<p>We are a globally reputed online educational academy. We skill up students and professionals with must-have IT and Business skills. Through expert-led, certification-backed training, we bridge the gap between learning and industry demands.</p>
+							<p>We are a globally reputed online educational academy. We skill up students and professionals
+								with must-have IT and Business skills. Through expert-led, certification-backed training, we
+								bridge the gap between learning and industry demands.</p>
 						</div>
 						<div class="row">
 							<div class="col-lg-6">
@@ -292,19 +301,21 @@
 						<h1>In Associated With:</h1>
 					</div>
 					<div class="section-sub-title">
-						<h6 style="text-transform: capitalize; position: static; line-height: 30px; padding: 0px;">Government affiliated program , that shapes the learner’s future and approach towards industry ready !</h6 style=" line-height: 30px;">
+						<h6 style="text-transform: capitalize; position: static; line-height: 30px; padding: 0px;">
+							Government affiliated program , that shapes the learner’s future and approach towards
+							industry ready !</h6 style=" line-height: 30px;">
 					</div>
 				</div>
 				<div class="col-lg-7">
 					<div class="brand-list owl-carousel">
 						@foreach($associationLogos as $logo)
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-								   <img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+							<div class="col-lg-12">
+								<div class="single-brand-box">
+									<div class="brand-thumb">
+										<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+									</div>
 								</div>
 							</div>
-						</div>
 						@endforeach
 					</div>
 				</div>
@@ -329,13 +340,13 @@
 				<div class="col-lg-7 mt-4">
 					<div class="brand-list owl-carousel">
 						@foreach($certificate as $logo)
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+							<div class="col-lg-12">
+								<div class="single-brand-box">
+									<div class="brand-thumb">
+										<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+									</div>
 								</div>
 							</div>
-						</div>
 						@endforeach
 					</div>
 				</div>
@@ -345,26 +356,28 @@
 					<div class="section_title mb-4">
 						<h1 class="display-5 fw-bold">Our Certification Partners</h1>
 					</div>
-	
+
 					<!-- Description -->
 					<p class="mb-4">
 						Empowering learners through globally recognized certifications with industry-leading organizations.
 					</p>
-	
+
 					<!-- List of awards with cup icons aligned -->
 					<ul class="list-unstyled">
 						<li class="d-flex align-items-start mb-2">
 							<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-							<span><b> Trusted Collaboration: </b> We work with top-tier certification bodies to ensure every course meets international standards.</span>
+							<span><b> Trusted Collaboration: </b> We work with top-tier certification bodies to ensure every
+								course meets international standards.</span>
 						</li>
 						<li class="d-flex align-items-start">
 							<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-							<span><b>Career-Boosting Credentials: </b> fEarn certifications that enhance your professional profile and open doors to global opportunities.
+							<span><b>Career-Boosting Credentials: </b> fEarn certifications that enhance your professional
+								profile and open doors to global opportunities.
 
 							</span>
 						</li>
 					</ul>
-				</div>				
+				</div>
 			</div>
 		</div>
 	</div>
@@ -429,9 +442,9 @@
 							<ul class="menu-filtering">
 								<li class="current_menu_item" data-filter=".Upcoming">Upcoming Courses</li>
 								@foreach($collections as $collection)
-								  <li data-filter=".{{ Str::slug($collection->name) }}">{{ $collection->name }}</li>
+									<li data-filter=".{{ Str::slug($collection->name) }}">{{ $collection->name }}</li>
 								@endforeach
-							  </ul>					  
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -439,35 +452,35 @@
 		</div>
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
-			  var grid = document.querySelector('.image_load');
-			  var iso = new Isotope(grid, {
-				itemSelector: '.grid-item',
-				layoutMode: 'fitRows'
-			  });
-		  
-			  var filterButtons = document.querySelectorAll('.menu-filtering li');
-		  
-			  filterButtons.forEach(function (button) {
-				button.addEventListener('click', function () {
-				  filterButtons.forEach(btn => btn.classList.remove('current_menu_item'));
-				  this.classList.add('current_menu_item');
-				  var filterValue = this.getAttribute('data-filter');
-				  iso.arrange({ filter: filterValue });
+				var grid = document.querySelector('.image_load');
+				var iso = new Isotope(grid, {
+					itemSelector: '.grid-item',
+					layoutMode: 'fitRows'
 				});
-			  });
-		  
-			  // Show Upcoming by default
-			  iso.arrange({ filter: '.Upcoming' });
+
+				var filterButtons = document.querySelectorAll('.menu-filtering li');
+
+				filterButtons.forEach(function (button) {
+					button.addEventListener('click', function () {
+						filterButtons.forEach(btn => btn.classList.remove('current_menu_item'));
+						this.classList.add('current_menu_item');
+						var filterValue = this.getAttribute('data-filter');
+						iso.arrange({ filter: filterValue });
+					});
+				});
+
+				// Show Upcoming by default
+				iso.arrange({ filter: '.Upcoming' });
 			});
-		  </script>
-		  
-		  
-		  <div class="container">
+		</script>
+
+
+		<div class="container">
 			<div class="row image_load">
 				{{-- Upcoming Courses --}}
 				@foreach($upcomingCourses as $course)
-				<div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
-					<div class="case-study-single-box"> 
+					<div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
+						<div class="case-study-single-box">
 							{{-- Use same HTML course card template --}}
 							<div class="case-study-thumb">
 								<img src="{{ asset('storage/' . $course->image) }}" alt="thumb">
@@ -477,18 +490,19 @@
 							</div>
 							<div class="case-study-content">
 								<h5>Courses</h5>
-								<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
+								<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
+								</h4>
 								<div class="case-rating">
 									{{-- <ul>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star-half-stroke"></i></li>
-										</ul> --}}
-										<div class="case-rating-num">
-											<span>Duration: {{ $course->course_duration }}</span>
-										</div>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star"></i></li>
+										<li><i class="fa-solid fa-star-half-stroke"></i></li>
+									</ul> --}}
+									<div class="case-rating-num">
+										<span>Duration: {{ $course->course_duration }}</span>
+									</div>
 								</div>
 								{{-- <div class="case-autor-box">
 									<div class="case-autor-img">
@@ -509,13 +523,14 @@
 								</div> --}}
 								<br><br>
 								<div class="course-btn">
-									<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+									<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i
+											class="flaticon flaticon-right-arrow"></i></a>
 								</div>
 							</div>
 						</div>
 					</div>
 				@endforeach
-			
+
 				{{-- Courses by Collection --}}
 				@foreach($collections as $collection)
 					@foreach($collection->courses as $course)
@@ -530,7 +545,8 @@
 								</div>
 								<div class="case-study-content">
 									<h5>{{ $collection->name }}</h5>
-									<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
+									<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
+									</h4>
 									<div class="case-rating">
 										{{-- <ul>
 											<li><i class="fa-solid fa-star"></i></li>
@@ -562,7 +578,8 @@
 									</div> --}}
 									<br><br>
 									<div class="course-btn">
-										<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+										<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i
+												class="flaticon flaticon-right-arrow"></i></a>
 									</div>
 								</div>
 							</div>
@@ -570,9 +587,9 @@
 					@endforeach
 				@endforeach
 			</div>
-			
+
 		</div>
-		
+
 	</div>
 	<!--==================================================-->
 	<!--End educate case study Area -->
@@ -594,25 +611,32 @@
 							<h1>A Successful Career</h1>
 						</div>
 						<div class="section-title-desc">
-							<p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we support you from basic to advanced. As one of the best data science institutes in India, and the top Data science institute in Metropolitan cities, we make career shifts smooth. Quickly apply and work for your success.</p>
+							<p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we
+								support you from basic to advanced. As one of the best data science institutes in India, and
+								the top Data science institute in Metropolitan cities, we make career shifts smooth. Quickly
+								apply and work for your success.</p>
 						</div>
 						<div class="choose-item-menu">
 							<ul>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">Weekend Live Sessions
+								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">Weekend
+									Live Sessions
 								</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">Select a convenient batch time
+								<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">Select a
+									convenient batch time
 								</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
-										alt="icon">Get Placement Guarantee Aid
-									</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">Get a Salary Hike
+								<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}" alt="icon">Get
+									Placement Guarantee Aid
+								</li>
+								<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">Get a
+									Salary Hike
 								</li>
 							</ul>
 						</div>
 						<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.webp') }}"
 								alt="star">24/7 Mentor Support Available </p>
 						<div class="choose-btn">
-							<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
+							<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
+									class="flaticon flaticon-right-arrow"></i></a>
 						</div>
 					</div>
 				</div>
@@ -657,13 +681,13 @@
 					<div class="section_title mb-4">
 						<h1 class="display-5 fw-bold">Moments of Honour</h1>
 					</div>
-	
+
 					<!-- Description -->
 					<p class="mb-4">
 						In our EdTech journey of <b> more than a decade,</b> we have received numerous awards.<br>
 						Some of the recent notable awards we have received in analytics are:
 					</p>
-	
+
 					<!-- List of awards with cup icons aligned -->
 					<ul class="list-unstyled">
 						<li class="d-flex align-items-start mb-2">
@@ -678,17 +702,17 @@
 						</li>
 					</ul>
 				</div>
-	
+
 				<div class="col-lg-7 mt-4">
 					<div class="brand-list owl-carousel">
 						@foreach($awords as $logo)
-						<div class="col-lg-12">
-							<div class="single-brand-box">
-								<div class="brand-thumb">
-									<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+							<div class="col-lg-12">
+								<div class="single-brand-box">
+									<div class="brand-thumb">
+										<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+									</div>
 								</div>
 							</div>
-						</div>
 						@endforeach
 					</div>
 				</div>
@@ -706,8 +730,7 @@
 						<img src="{{ asset('assets/images/home-one/offer-video.webp') }}" alt="thumb">
 						<div class="course-video-icon">
 							<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
-								href="https://youtu.be/HLiQiTTbX8g"><i
-									class="fa-classic fa-solid fa-play fa-fw"></i></a>
+								href="https://youtu.be/HLiQiTTbX8g"><i class="fa-classic fa-solid fa-play fa-fw"></i></a>
 						</div>
 					</div>
 				</div>
@@ -731,7 +754,8 @@
 								<br><br>
 							</div>
 							<div class="course-offer-btn">
-								<a href="javascript:void(0);" onclick="openModal()">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+								<a href="javascript:void(0);" onclick="openModal()">ENROL NOW<i
+										class="flaticon flaticon-right-arrow"></i></a>
 							</div>
 							{{-- <div class="course-offer-discount">
 								<h5>10%</h5>
@@ -757,134 +781,136 @@
 			<p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
 				Presenting you our recent feedbacks- Have a look
 			</p>
-	  
-		  <div id="vimeoCarousel" class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-inner">
-			  <div class="carousel-item active">
-				<!-- Owl Carousel for Reels -->
-<div class="owl-carousel reels-carousel">
-	@php
-$videos = [
-    ['id' => '1090448297', 'title' => 'Sunel Nayan'],
-    ['id' => '1090448240', 'title' => 'Saloni Singh'],
-    ['id' => '1090448212', 'title' => 'Rohit Chaudhary'],
-    ['id' => '1090448177', 'title' => 'Radhi'],
-    ['id' => '1090448145', 'title' => 'Michael Diaz'],
-    ['id' => '1090448103', 'title' => 'Khusboo Gupta'],
-    ['id' => '1090448071', 'title' => 'Kayla Ewell'],
-    ['id' => '1090448028', 'title' => 'Kartik Mehta'],
-    ['id' => '1090447977', 'title' => 'Karan'],
-    ['id' => '1090447927', 'title' => 'Justin Brooks'],
-    ['id' => '1090447883', 'title' => 'Jeffery George'],
-    ['id' => '1090447830', 'title' => 'Eilish Algee'],
-    ['id' => '1090447781', 'title' => 'Anshika'],
-    ['id' => '1090447722', 'title' => 'Anis Khan'],
-    ['id' => '1090447680', 'title' => 'Abhishek Ranjan'],
-    ['id' => '1090447597', 'title' => 'Abhishek Prajapati'],
-    ['id' => '1090447523', 'title' => 'Davis Johson'],
-    ['id' => '1090447477', 'title' => 'Alejandro Cruz'],
-];
-@endphp
-  
-	@foreach ($videos as $video)
-	  <div class="video-card" data-bs-toggle="modal" data-bs-target="#vimeoModal"
-		data-vimeo="https://player.vimeo.com/video/{{ $video['id'] }}">
-		<iframe src="https://player.vimeo.com/video/{{ $video['id'] }}?background=1"
-		  frameborder="0" allowfullscreen></iframe>
-		<div class="video-title">{{ $video['title'] }}</div>
-	  </div>
-	@endforeach
-  </div>
-  
-			  </div>
+
+			<div id="vimeoCarousel" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<!-- Owl Carousel for Reels -->
+						<div class="owl-carousel reels-carousel">
+							@php
+								$videos = [
+									['id' => '1090448297', 'title' => 'Sunel Nayan'],
+									['id' => '1090448240', 'title' => 'Saloni Singh'],
+									['id' => '1090448212', 'title' => 'Rohit Chaudhary'],
+									['id' => '1090448177', 'title' => 'Radhi'],
+									['id' => '1090448145', 'title' => 'Michael Diaz'],
+									['id' => '1090448103', 'title' => 'Khusboo Gupta'],
+									['id' => '1090448071', 'title' => 'Kayla Ewell'],
+									['id' => '1090448028', 'title' => 'Kartik Mehta'],
+									['id' => '1090447977', 'title' => 'Karan'],
+									['id' => '1090447927', 'title' => 'Justin Brooks'],
+									['id' => '1090447883', 'title' => 'Jeffery George'],
+									['id' => '1090447830', 'title' => 'Eilish Algee'],
+									['id' => '1090447781', 'title' => 'Anshika'],
+									['id' => '1090447722', 'title' => 'Anis Khan'],
+									['id' => '1090447680', 'title' => 'Abhishek Ranjan'],
+									['id' => '1090447597', 'title' => 'Abhishek Prajapati'],
+									['id' => '1090447523', 'title' => 'Davis Johson'],
+									['id' => '1090447477', 'title' => 'Alejandro Cruz'],
+								];
+							@endphp
+
+							@foreach ($videos as $video)
+								<div class="video-card" data-bs-toggle="modal" data-bs-target="#vimeoModal"
+									data-vimeo="https://player.vimeo.com/video/{{ $video['id'] }}">
+									<iframe src="https://player.vimeo.com/video/{{ $video['id'] }}?background=1" frameborder="0"
+										allowfullscreen></iframe>
+									<div class="video-title">{{ $video['title'] }}</div>
+								</div>
+							@endforeach
+						</div>
+
+					</div>
+				</div>
+
+				<button class="carousel-control-prev" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</button>
 			</div>
-	  
-			<button class="carousel-control-prev" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="prev">
-			  <span class="carousel-control-prev-icon"></span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#vimeoCarousel" data-bs-slide="next">
-			  <span class="carousel-control-next-icon"></span>
-			</button>
-		  </div>
 		</div>
-	  
+
 		<!-- Vimeo Modal -->
 		<div class="modal fade" id="vimeoModal" tabindex="-1" aria-hidden="true">
-		  <div class="modal-dialog modal-dialog-centered modal-lg">
-			<div class="modal-content bg-dark text-white">
-			  <div class="modal-body modal-video">
-				<iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-			  </div>
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content bg-dark text-white">
+					<div class="modal-body modal-video">
+						<iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen"
+							allowfullscreen></iframe>
+					</div>
+				</div>
 			</div>
-		  </div>
 		</div>
-	  
+
 		<!-- JS Script -->
 		<script>
-		  document.addEventListener("DOMContentLoaded", function () {
-			const videoCards = document.querySelectorAll('.video-card');
-			const vimeoPlayer = document.getElementById('vimeoPlayer');
-			const modal = document.getElementById('vimeoModal');
-	  
-			videoCards.forEach(card => {
-			  card.addEventListener('click', function () {
-				const videoUrl = this.getAttribute('data-vimeo') + '?autoplay=1';
-				vimeoPlayer.src = videoUrl;
-			  });
+			document.addEventListener("DOMContentLoaded", function () {
+				const videoCards = document.querySelectorAll('.video-card');
+				const vimeoPlayer = document.getElementById('vimeoPlayer');
+				const modal = document.getElementById('vimeoModal');
+
+				videoCards.forEach(card => {
+					card.addEventListener('click', function () {
+						const videoUrl = this.getAttribute('data-vimeo') + '?autoplay=1';
+						vimeoPlayer.src = videoUrl;
+					});
+				});
+
+				modal.addEventListener('hidden.bs.modal', function () {
+					vimeoPlayer.src = '';
+				});
 			});
-	  
-			modal.addEventListener('hidden.bs.modal', function () {
-			  vimeoPlayer.src = '';
-			});
-		  });
 		</script>
-	  </section>
-	  
-	  <!-- Updated Style Only -->
-	  <style>
+	</section>
+
+	<!-- Updated Style Only -->
+	<style>
 		.reels-carousel .video-card {
-  position: relative;
-  padding-top: 177.78%; /* 9:16 aspect ratio */
-  overflow: hidden;
-  border-radius: 15px;
-  background: #000;
-  cursor: pointer;
-}
-
-.reels-carousel .video-card iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  object-fit: cover;
-}
-
-.reels-carousel .video-title {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(242, 156, 18, 0.85);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.reels-carousel .video-card:hover .video-title {
-  opacity: 1;
-}
-
-	  
-		.modal-video iframe {
-		  width: 100%;
-		  height: 500px;
+			position: relative;
+			padding-top: 177.78%;
+			/* 9:16 aspect ratio */
+			overflow: hidden;
+			border-radius: 15px;
+			background: #000;
+			cursor: pointer;
 		}
-	  </style>
-	  
+
+		.reels-carousel .video-card iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			object-fit: cover;
+		}
+
+		.reels-carousel .video-title {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background: rgba(242, 156, 18, 0.85);
+			color: white;
+			text-align: center;
+			padding: 10px;
+			font-weight: bold;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.reels-carousel .video-card:hover .video-title {
+			opacity: 1;
+		}
+
+
+		.modal-video iframe {
+			width: 100%;
+			height: 500px;
+		}
+	</style>
+
 	<!--==================================================-->
 	<!-- Start educate team Area -->
 	<!--==================================================-->
@@ -1096,44 +1122,45 @@ $videos = [
 					<div class="row">
 						<div class="testi-list owl-carousel">
 							@foreach ($testimonials as $testimonial)
-<div class="col-lg-12">
-    <div class="testi-box">
-        <div class="single-testi-box">
-            <div class="testi-quote">
-                <img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
-            </div>
-            <div class="testi-title">
-                <h3>{{ $testimonial->tagline }}</h3>
-            </div>
-            <div class="testi-desc">
-                <p>{{ $testimonial->review }}</p>
-            </div>
-            <div class="testi-ratting">
-                <ul>
-                    @for ($i = 1; $i <= 5; $i++)
-                        @if ($i <= floor($testimonial->rating))
-                            <li><i class="fa-solid fa-star"></i></li>
-                        @elseif ($i == ceil($testimonial->rating) && $testimonial->rating != floor($testimonial->rating))
-                            <li><i class="fa-solid fa-star-half-stroke fa-fw"></i></li>
-                        @else
-                            <li><i class="fa-regular fa-star"></i></li>
-                        @endif
-                    @endfor
-                </ul>
-            </div>
-        </div>
-        <div class="testi-autor-box">
-            <div class="testi-autor">
-                <img src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width: 60px; height: 60px; border-radius: 50%;">
-            </div>
-            <div class="testi-autor-content">
-                <h5 class="autor-title">{{ $testimonial->name }}</h5>
-                <p class="autor-desi">{{ $testimonial->profession }}</p>
-            </div>
-        </div>
-    </div>
-</div>
-@endforeach
+								<div class="col-lg-12">
+									<div class="testi-box">
+										<div class="single-testi-box">
+											<div class="testi-quote">
+												<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
+											</div>
+											<div class="testi-title">
+												<h3>{{ $testimonial->tagline }}</h3>
+											</div>
+											<div class="testi-desc">
+												<p>{{ $testimonial->review }}</p>
+											</div>
+											<div class="testi-ratting">
+												<ul>
+													@for ($i = 1; $i <= 5; $i++)
+														@if ($i <= floor($testimonial->rating))
+															<li><i class="fa-solid fa-star"></i></li>
+														@elseif ($i == ceil($testimonial->rating) && $testimonial->rating != floor($testimonial->rating))
+															<li><i class="fa-solid fa-star-half-stroke fa-fw"></i></li>
+														@else
+															<li><i class="fa-regular fa-star"></i></li>
+														@endif
+													@endfor
+												</ul>
+											</div>
+										</div>
+										<div class="testi-autor-box">
+											<div class="testi-autor">
+												<img src="{{ asset('storage/' . $testimonial->image) }}" alt="author"
+													style="width: 60px; height: 60px; border-radius: 50%;">
+											</div>
+											<div class="testi-autor-content">
+												<h5 class="autor-title">{{ $testimonial->name }}</h5>
+												<p class="autor-desi">{{ $testimonial->profession }}</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							@endforeach
 
 						</div>
 					</div>
@@ -1144,7 +1171,7 @@ $videos = [
 	<!--==================================================-->
 	<!-- end educate testimonial Area -->
 	<!--==================================================-->
-	
+
 	<!--==================================================-->
 	<!-- Start educate call to action Area -->
 	<!--==================================================-->
@@ -1191,7 +1218,8 @@ $videos = [
 			<div class="row section-title-space">
 				<div class="col-xl-4 col-lg-12">
 					<div class="section-sub-title three">
-						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Stories</h6>
+						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Stories
+						</h6>
 					</div>
 					<div class="section_title">
 						<h1>All Real Experiences</h1>
@@ -1217,8 +1245,8 @@ $videos = [
 						<div class="testi-list-inner owl-carousel">
 							@foreach ($studentStories as $story)
 
-							<div class="col-lg-12">
-								<div class="testi-box">
+								<div class="col-lg-12">
+									<div class="testi-box">
 										<div class="single-testi-box">
 											<div class="testi-quote">
 												<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
@@ -1240,18 +1268,20 @@ $videos = [
 											</div> --}}
 											<div class="testi-autor-box">
 												<div class="testi-autor">
-													<img src="{{ asset('storage/' . $story->image) }}" alt="author" class="rounded-circle img-fluid" style="width: 70px; height: 70px; ">
+													<img src="{{ asset('storage/' . $story->image) }}" alt="author"
+														class="rounded-circle img-fluid" style="width: 70px; height: 70px; ">
 												</div>
 												<div class="testi-autor-content">
 													<h5 class="autor-title">{{ $story->studentname }}</h5>
-													<p class="autor-desi">{{ $story->position }} at {{ $story->companyname }}</p>
+													<p class="autor-desi">{{ $story->position }} at {{ $story->companyname }}
+													</p>
 												</div>
 											</div>
 										</div>
+									</div>
 								</div>
-							</div>
 							@endforeach
-							
+
 						</div>
 					</div>
 				</div>
@@ -1264,7 +1294,7 @@ $videos = [
 	<section class="py-5">
 		<div class="container text-center">
 			<h2 class="text-center mb-4" style="font-size: 2rem;">
-				Our <span style="color: #f29c12;">Data Science with AI  </span> Certification Course Journey
+				Our <span style="color: #f29c12;">Data Science with AI </span> Certification Course Journey
 			</h2>
 			{{-- <p class="mb-4 fs-5 text-muted">Knowing us before growing with us” your Success way!</p> --}}
 			<img src="{{ asset('assets/images/home-one/phase.webp') }}" alt="Vision Image"
@@ -1285,7 +1315,8 @@ $videos = [
 							<h1> Start Now.</h1>
 						</div>
 						<div class="section-title-desc">
-							<p>Become a professional at what you learn. Start from scratch and make your way to a career full of growth, opportunities, and success. Begin today and build your future right.
+							<p>Become a professional at what you learn. Start from scratch and make your way to a career
+								full of growth, opportunities, and success. Begin today and build your future right.
 							</p>
 						</div>
 						<div class="choose-item-menu">
@@ -1301,10 +1332,11 @@ $videos = [
 							</ul>
 						</div>
 						<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.webp') }}"
-								alt="star">Don't Stay Stuck, Expand Your Potential Today 
-							</p>
+								alt="star">Don't Stay Stuck, Expand Your Potential Today
+						</p>
 						<div class="choose-btn">
-							<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
+							<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
+									class="flaticon flaticon-right-arrow"></i></a>
 						</div>
 					</div>
 				</div>
@@ -1371,12 +1403,13 @@ $videos = [
 									<div class="blog-author">
 										<h4 style="display: flex; align-items: center; gap: 10px;">
 											@if($blog->author_image)
-												<img src="{{ asset('storage/' . $blog->author_image) }}" alt="author" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+												<img src="{{ asset('storage/' . $blog->author_image) }}" alt="author"
+													style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
 											@endif
 											{{ $blog->author_name }}
 										</h4>
 									</div>
-									
+
 									<div class="blog-title">
 										<h3>
 											<a href="{{ route('blog.details', $blog->slug) }}">
@@ -1401,7 +1434,7 @@ $videos = [
 	<section class="company-form contactpage-form" style=" padding-top:10px;">
 		<div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
 			<h2 class="text-center mb-2" style="font-size: 2rem;">
-				Meet <span style="color: #f29c12;">Our Team</span> 
+				Meet <span style="color: #f29c12;">Our Team</span>
 			</h2>
 			<!-- <h1 class="section__title"  style="text-align: center; padding-bottom:40px;"><b>Unveiling <span class="yellow-bg"> Digicrome<img src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png" alt=""></span> Distinct Culture</b></h1> -->
 
@@ -1752,283 +1785,300 @@ $videos = [
 	<style>
 		/* Modal Overlay */
 		.modal {
-		  display: none;
-		  position: fixed;
-		  z-index: 9999;
-		  left: 0; top: 0;
-		  width: 100%; height: 100%;
-		  overflow: auto;
-		  background-color: rgba(0, 0, 0, 0.6);
-		  padding: 20px;
-		  box-sizing: border-box;
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.6);
+			padding: 20px;
+			box-sizing: border-box;
 		}
-		
+
 		/* Modal Content Box */
 		.modal-content {
-		  background-color: #fff;
-		  border-radius: 10px;
-		  max-width: 900px;
-		  margin: auto;
-		  padding: 0;
-		  overflow: hidden;
-		  animation: fadeIn 0.4s ease-in-out;
+			background-color: #fff;
+			border-radius: 10px;
+			max-width: 900px;
+			margin: auto;
+			padding: 0;
+			overflow: hidden;
+			animation: fadeIn 0.4s ease-in-out;
 		}
-		
+
 		/* Modal Header */
 		.modal-header {
-		  padding: 15px 20px;
-		  font-size: 20px;
-		  font-weight: bold;
-		  background-color: #f29c12;
-		  color: #fff;
-		  position: relative;
+			padding: 15px 20px;
+			font-size: 20px;
+			font-weight: bold;
+			background-color: #f29c12;
+			color: #fff;
+			position: relative;
 		}
-		
+
 		/* Close Button */
 		.close-btn {
-		  color: #fff;
-		  position: absolute;
-		  right: 20px;
-		  top: 12px;
-		  font-size: 26px;
-		  cursor: pointer;
+			color: #fff;
+			position: absolute;
+			right: 20px;
+			top: 12px;
+			font-size: 26px;
+			cursor: pointer;
 		}
-		
+
 		/* Modal Body */
 		.modal-body {
-		  display: flex;
-		  flex-direction: row;
-		  flex-wrap: wrap;
-		  padding: 20px;
-		  gap: 20px;
-		  background: #f9f9f9;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 20px;
+			gap: 20px;
+			background: #f9f9f9;
 		}
-		
+
 		/* Form Container */
 		.popup-container {
-		  display: flex;
-		  flex-direction: row;
-		  flex-wrap: wrap;
-		  width: 100%;
-		  justify-content: center;
-		  align-items: center;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
 		}
-		
+
 		.popup-form {
-		  display: flex;
-		  flex-direction: row;
-		  flex-wrap: wrap;
-		  width: 100%;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			width: 100%;
 		}
-		
+
 		.form-container {
-		  display: flex;
-		  flex-wrap: wrap;
-		  width: 100%;
-		  background-color: white;
-		  border-radius: 10px;
-		  overflow: hidden;
-		  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			background-color: white;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 		}
-		
+
 		/* Image Section */
 		.form-container img {
-		  width: 100%;
-		  max-width: 400px;
-		  object-fit: cover;
+			width: 100%;
+			max-width: 400px;
+			object-fit: cover;
 		}
-		
+
 		/* Form Section */
 		form.form {
-		  flex: 1;
-		  padding: 20px;
-		  box-sizing: border-box;
+			flex: 1;
+			padding: 20px;
+			box-sizing: border-box;
 		}
-		
+
 		form h2 {
-		  margin-bottom: 20px;
+			margin-bottom: 20px;
 		}
-		
+
 		.form-field {
-		  margin-bottom: 15px;
-		  width: 100%;
+			margin-bottom: 15px;
+			width: 100%;
 		}
-		
+
 		.form-field input,
 		.form-field select {
-		  width: 100%;
-		  padding: 12px;
-		  border: 1px solid #ccc;
-		  border-radius: 6px;
-		  font-size: 14px;
-		  box-sizing: border-box;
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			font-size: 14px;
+			box-sizing: border-box;
 		}
-		
+
 		form p {
-		  font-size: 14px;
-		  color: #333;
+			font-size: 14px;
+			color: #333;
 		}
-		
+
 		form a {
-		  color: #f29c12;
-		  text-decoration: none;
+			color: #f29c12;
+			text-decoration: none;
 		}
-		
+
 		form button {
-		  background-color: #f29c12;
-		  color: white;
-		  border: none;
-		  padding: 12px 20px;
-		  font-size: 16px;
-		  cursor: pointer;
-		  border-radius: 6px;
-		  transition: background-color 0.3s ease;
+			background-color: #f29c12;
+			color: white;
+			border: none;
+			padding: 12px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 6px;
+			transition: background-color 0.3s ease;
 		}
-		
+
 		form button:hover {
-		  background-color: #d8880e;
+			background-color: #d8880e;
 		}
-		
+
 		/* Responsive Design */
 		@media screen and (max-width: 768px) {
-		  .modal-body {
-			flex-direction: column;
-		  }
-		
-		  .form-container {
-			flex-direction: column;
-		  }
-		
-		  .form-container img {
-			max-width: 100%;
-			height: auto;
-		  }
-		
-		  form.form {
-			padding: 15px;
-		  }
-		
-		  .modal-content {
-			width: 100%;
-		  }
+			.modal-body {
+				flex-direction: column;
+			}
+
+			.form-container {
+				flex-direction: column;
+			}
+
+			.form-container img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			form.form {
+				padding: 15px;
+			}
+
+			.modal-content {
+				width: 100%;
+			}
 		}
-		
+
 		/* Animation */
 		@keyframes fadeIn {
-		  from {opacity: 0; transform: scale(0.9);}
-		  to {opacity: 1; transform: scale(1);}
+			from {
+				opacity: 0;
+				transform: scale(0.9);
+			}
+
+			to {
+				opacity: 1;
+				transform: scale(1);
+			}
 		}
-		</style>
-		
-	
+	</style>
+
+
 	<!-- Modal -->
 	<div id="formModal" class="modal">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <span class="close-btn" onclick="closeModal()">&times;</span>
-		  Need help? Call us now at 0120 313 3869 or request a quick call!
-		</div>
-		<div class="modal-body">
-			<div class="popup-container">
-				<div class="popup-form">
-					<div class="form-container">
-					<img src="{{ asset('assets/images/www.webp') }}" alt="Image Description">
-					<form style="width:100%; background:transparent; margin:0px;"class="form" method="post" action="https://demo.digicrome.com/post_lead.php">       
-								@csrf  
-						<h2 style="    color: #f29c12;"> Register now!! And get a quick call</h2>  
-						<div class="form-field">
-							 <!--<label style="color:#fff;" for="name">Name:</label> -->
-							<input type="text" id="name" name="name" placeholder="Name">
-						</div>
-						<div class="form-field">
-							 <!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
-							<input type="tel" id="mobile" name="mobile" placeholder="Mobile Number">
-						</div>
-						<div class="form-field">
-							 <!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
-							<input type="email" id="gmail" name="email" placeholder="E-mail ID:">
-						</div>
-						 <div class="form-field">
-							 <!--<label style="color:#fff;" for="city">City:</label> -->
-							<input type="text" id="city" name="address" placeholder="City">
-						</div>
-						<div class="form-field">
-							 <!--<label style="color:#fff;" for="Qualification">Qualification:</label> -->
-							<input type="text" id="qualification" name="title" placeholder="Qualification">
-						</div>
-						<div class="form-field">
-				<!--<label style="color:#fff;" for="qualification">Experience:</label> -->
-				<select class="selecttype" id="qualification" name="profession">
-					<option value="" disabled selected>Select Experience</option>
-					<option value="Working Professional - Technincal Roles">Working Professional - Technincal Roles</option>
-					<option value="Working Professional - Non Technincal">Working Professional - Non Technincal</option>
-					<option value="College Student - Final Year">College Student - Final Year</option>
-					<option value="College Student - 1st to pre-final Year">College Student - 1st to pre-final Year</option>
-					<option value="Other">Other</option>
-				</select>
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close-btn" onclick="closeModal()">&times;</span>
+				Need help? Call us now at 0120 313 3869 or request a quick call!
 			</div>
-			
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="source" Value="Home Page" placeholder="Mobile Number">
+			<div class="modal-body">
+				<div class="popup-container">
+					<div class="popup-form">
+						<div class="form-container">
+							<img src="{{ asset('assets/images/www.webp') }}" alt="Image Description">
+							<form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
+								action="https://demo.digicrome.com/post_lead.php">
+								@csrf
+								<h2 style="    color: #f29c12;"> Register now!! And get a quick call</h2>
+								<div class="form-field">
+									<!--<label style="color:#fff;" for="name">Name:</label> -->
+									<input type="text" id="name" name="name" placeholder="Name">
+								</div>
+								<div class="form-field">
+									<!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
+									<input type="tel" id="mobile" name="mobile" placeholder="Mobile Number">
+								</div>
+								<div class="form-field">
+									<!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
+									<input type="email" id="gmail" name="email" placeholder="E-mail ID:">
+								</div>
+								<div class="form-field">
+									<!--<label style="color:#fff;" for="city">City:</label> -->
+									<input type="text" id="city" name="address" placeholder="City">
+								</div>
+								<div class="form-field">
+									<!--<label style="color:#fff;" for="Qualification">Qualification:</label> -->
+									<input type="text" id="qualification" name="title" placeholder="Qualification">
+								</div>
+								<div class="form-field">
+									<!--<label style="color:#fff;" for="qualification">Experience:</label> -->
+									<select class="selecttype" id="qualification" name="profession">
+										<option value="" disabled selected>Select Experience</option>
+										<option value="Working Professional - Technincal Roles">Working Professional -
+											Technincal Roles</option>
+										<option value="Working Professional - Non Technincal">Working Professional - Non
+											Technincal</option>
+										<option value="College Student - Final Year">College Student - Final Year</option>
+										<option value="College Student - 1st to pre-final Year">College Student - 1st to
+											pre-final Year</option>
+										<option value="Other">Other</option>
+									</select>
+								</div>
+
+								<div class="form-field">
+									<input type="hidden" id="mobile" name="source" Value="Home Page"
+										placeholder="Mobile Number">
+								</div>
+								<div class="form-field">
+									<input type="hidden" id="mobile" name="country" value="india"
+										placeholder="Mobile Number">
+								</div>
+								<div class="form-field">
+									<input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
+								</div>
+								<div class="form-field">
+									<input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
+								</div>
+								<!--<div class="form-field">-->
+								<!--    <input type="text" id="mobile" name="profession" placeholder="Mobile Number">-->
+								<!--</div>-->
+								<div class="form-field">
+									<input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
+								</div>
+
+								<p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms
+										and Conditions</a> and our <a href="https://digicrome.com/privacy-policy">Privacy
+										Policy.</a> </p><br>
+								<button type="submit">Submit</button>
+							</form>
 						</div>
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="country" value="india" placeholder="Mobile Number">
-						</div>
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
-						</div>
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
-						</div>
-						<!--<div class="form-field">-->
-						<!--    <input type="text" id="mobile" name="profession" placeholder="Mobile Number">-->
-						<!--</div>-->
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
-						</div>
-						
-						<p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms and Conditions</a>  and our <a href="https://digicrome.com/privacy-policy">Privacy Policy.</a> </p><br>
-						<button type="submit">Submit</button>
-					</form>
+					</div>
 				</div>
-			</div>	
+			</div>
 		</div>
-	  </div>
 	</div>
-	</div>
-	
+
 	<script>
 		// Show modal on page load
 		window.onload = function () {
-		  openModal();
+			openModal();
 		};
-	  
+
 		// Function to open modal (also reusable on button click)
 		function openModal() {
-		  document.getElementById("formModal").style.display = "block";
+			document.getElementById("formModal").style.display = "block";
 		}
-	  
+
 		// Function to close modal
 		function closeModal() {
-		  document.getElementById("formModal").style.display = "none";
+			document.getElementById("formModal").style.display = "none";
 		}
-	  
+
 		// Optional: Prevent actual form submission (only if needed for testing)
 		document.getElementById("professionalForm").addEventListener("submit", function (e) {
-		  e.preventDefault();
-		  alert("Form submitted!");
-		  closeModal();
+			e.preventDefault();
+			alert("Form submitted!");
+			closeModal();
 		});
-	  
+
 		// Optional: Close if clicking outside the modal content
 		window.onclick = function (event) {
-		  const modal = document.getElementById("formModal");
-		  if (event.target === modal) {
-			modal.style.display = "none";
-		  }
+			const modal = document.getElementById("formModal");
+			if (event.target === modal) {
+				modal.style.display = "none";
+			}
 		};
-	  </script>
-	  
+	</script>
+
 
 
 @endsection

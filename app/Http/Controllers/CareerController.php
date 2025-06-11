@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Metatag;
 
 class CareerController extends Controller
 {
     public function index()
     {
-        return view('pages.career'); 
+        $meta = Metatag::where('page_name', 'Career')->first();
+
+        return view('pages.career',compact('meta')); 
     }
 }

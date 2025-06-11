@@ -807,3 +807,45 @@ display: block;
   line-height: 1.6;
   font-style: italic;
 }
+ /* Styles for breadcumb-area with responsive padding */
+/* Mobile first: large padding */
+.breadcumb-area.two.d-flex {
+  padding-top: 150px;
+  padding-bottom: 0;
+  /* Optional: other styling can go here */
+}
+
+/* Desktop and above: smaller padding */
+@media (min-width: 1024px) {
+  .breadcumb-area.two.d-flex {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+}
+.features-strip {
+  margin-top: -60px; /* Moves the strip halfway up */
+  z-index: 2;
+}
+
+.white-strip {
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  backdrop-filter: blur(12px);          /* Blur effect */
+  -webkit-backdrop-filter: blur(12px);  /* Safari support */
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  padding: 2rem;
+  position: relative;
+  z-index: 5;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+}
+
+
+.features-box i {
+  transition: transform 0.3s ease;
+}
+
+.features-box:hover i {
+  transform: scale(1.1);
+}
+
+

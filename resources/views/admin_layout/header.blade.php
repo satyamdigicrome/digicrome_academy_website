@@ -62,7 +62,7 @@
                         <a class="nav-link text-dark px-3" href="{{route('placement.index')}}"><i class="bi bi-people"></i> Placement</a>
                 <a class="nav-link text-dark px-3" href="{{route('logos.index')}}"><i class="bi bi-people"></i> Logo</a>
                 <a class="nav-link text-dark px-3" href="{{route('contant.index')}}"><i class="bi bi-people"></i> privacy-policy</a>
-                <a class="nav-link text-dark px-3" href="#"><i class="bi bi-people"></i> Meta Section</a>
+                <a class="nav-link text-dark px-3" href="{{route('meta')}}"><i class="bi bi-people"></i> Meta Section</a>
 
 
 

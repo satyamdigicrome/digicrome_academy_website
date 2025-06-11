@@ -49,9 +49,13 @@ class AdminCourseController extends Controller
             'has_faqs' => 'required|boolean',
             'status' => 'required|boolean',
             'course_image' => 'required|image|mimes:webp|max:2048',
+            'banner_image' => 'required|image|mimes:webp|max:2048',
+
         ]);
 
         // Handle the image upload
+        $imagePath = $request->file('banner_image')->store('courses', 'public');
+
         $imagePath = $request->file('course_image')->store('courses', 'public');
 
         // Create a new course instance
@@ -79,6 +83,8 @@ class AdminCourseController extends Controller
         $course->status = $request->status;
         $course->user_id = Auth::id(); // Assuming the user is authenticated
         $course->image = $imagePath; // Save the image path in the database
+        $course->banner_image = $imagePath; // Save the image path in the database
+
 
         // Save the course to the database
         $course->save();
@@ -104,7 +110,7 @@ class AdminCourseController extends Controller
             'tag_line' => 'nullable|string|max:255',
             'corporate' => 'required|boolean',
             'description' => 'required|string',
-            'course_free' => 'required|boolean',
+            'course_free' => 'required|string',
             'course_upcoming' => 'required|boolean',
             'course_online_payment' => 'required|string',
             'course_duration' => 'nullable|string|max:255',
@@ -120,6 +126,10 @@ class AdminCourseController extends Controller
             'status' => 'required|boolean',
             'collection_id' => 'required|exists:collections,id',
             'image' => 'nullable|image|mimes:webp|max:2048',
+            'banner_image' => 'nullable|image|mimes:webp|max:2048',
+            'browser' => 'nullable|mimes:pdf|max:5120', 
+
+
         ]);
 
         // Find the course by ID
@@ -127,15 +137,27 @@ class AdminCourseController extends Controller
         $course->slug = $request->input('slug');
 
         // Update the course with the validated data
-        $course->update($request->except('image')); // Exclude image from mass assignment
+        $course->update($request->except('image', 'banner_image'));
 
-        // Handle image upload if a new image is provided
         if ($request->hasFile('image')) {
-            // Assuming you have a method to handle image upload
             $path = $request->file('image')->store('courses', 'public');
-            $course->image = $path; // Update the image path in the course
-            $course->save(); // Save the course with the new image path
+            $course->image = $path;
         }
+        
+        // Handle banner_image upload
+        if ($request->hasFile('banner_image')) {
+            $bannerPath = $request->file('banner_image')->store('banner', 'public');
+            $course->banner_image = $bannerPath;
+        }
+        // Handle browser PDF upload
+        if ($request->hasFile('browser')) {
+            $browserPath = $request->file('browser')->store('browser_pdfs', 'public');
+            $course->browser = $browserPath;
+        }
+
+        
+        // Save updated paths if either image was updated
+        $course->save();
 
         // Redirect back to the courses index with a success message
         return redirect()->route('admin.manage_courses')->with('success', 'Course updated successfully.');

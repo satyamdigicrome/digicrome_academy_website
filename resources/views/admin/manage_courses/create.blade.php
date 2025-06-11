@@ -173,12 +173,21 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
+                    <label for="banner_image">Banner Image</label>
+                    <input type="file" class="form-control" id="banner_image" name="banner_image" accept="image/*" required>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
                     <label for="about">About</label>
                     <textarea class="form-control" id="about" name="about"></textarea>
                 </div>
             </div>
         </div>
-
         <!-- Full-width description field -->
         <div class="form-group">
             <label for="description">Description</label>

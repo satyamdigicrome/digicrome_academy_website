@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+@section('title', $course->meta_title ?? $course->name)
+@section('meta_description', $course->meta_description ?? $course->name)
+@section('meta_keywords', $course->meta_keywords ?? $course->name)
 
 @push('styles')
 <link href="{{ asset('assets/css/courses.css') }}" rel="stylesheet">
@@ -11,27 +13,155 @@
 
 <x-ds-with-ai-course :course="$course" />
 
-@else
-
-
-
-
+@elseif ($course->course_free == 2)
 <div class="breadcumb-area two d-flex">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-12">
-                <div class="breadcumb-content">
-                    <div class="breadcumb-title">
-                        <h4>Courses Details</h4>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-                        <li><a href="course.html">course<span><i class="fa-solid fa-arrow-right-long"></i></span></a>
-                        </li>
-                        <li>{{ $course->name }}</li>
-                    </ul>
-                </div>
+          <!-- Left Column -->
+          <div class="col-md-6">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <img src="{{ asset('assets/images/card1.png') }}" width="190" height="120" alt="Logo 1" />
+              <img src="{{ asset('assets/images/Card.png') }}" width="319" height="58" alt="Logo 2"style="border: 2px solid #f29c12; border-radius: 5px;" />
             </div>
+    
+            <h1 class="fw-bold text-capitalize text-dark" style="font-size: 43px;">{{ $course->name }}</h1>
+            
+            <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
+                <i class="fa-solid fa-shield-halved text-primary me-2"></i>
+                100% Job Assurance Investment Banking <br />
+                Course for Finance Graduates with 0-3 Years <br />
+                of Work Experience
+              </p>
+              
+              <p class="text-dark fs-6 mb-2">
+                <i class="fa-solid fa-briefcase text-success me-2"></i>
+                Learn from global experts and get certified by Digicrome
+              </p>
+              
+              <p class="text-dark fs-6 mb-2">
+                <i class="fa-solid fa-clock text-warning me-2"></i>
+                Suitable for Final Years, Graduates and Early Professionals
+              </p>
+              
+              <p class="text-dark fs-6 mb-0">
+                <i class="fa-solid fa-trophy text-danger me-2"></i>
+                You`re guaranteed to find something that`s right for you.
+              </p>
+              
+    
+            <div class="mt-4 d-flex gap-3">
+                @if($course->browser)
+
+                <button class="btn btn-outline-primary" style="background-color: #1c1647;" data-bs-toggle="modal" data-bs-target="#leadPopup">
+                    <i class="fa fa-download me-2"></i>Download Brochure
+                </button>
+                @endif
+                
+                <a href="javascript:void(0);" 
+                class="btn btn-primary" 
+                style="background-color: #1c1647;" 
+                data-bs-toggle="modal" 
+                data-bs-target="#applyNowPopup">
+                <i class="fa fa-paper-plane me-2"></i>Apply Now
+             </a>
+             
+            </div>
+          </div>
+          <div class="col-md-6 text-end">
+            <img src="{{ asset('assets/images/3.png') }}" class="img-fluid" alt="CIBOP" />
+          </div>
+        </div>
+        <d  iv class="feature-strip position-relative mt-5">
+            <div class="container">
+              <div class="white-strip shadow-lg rounded-4 p-4 d-flex flex-wrap justify-content-between align-items-center gap-4">
+                <div class="features-box text-center flex-fill min-w-0">
+                    <div class="date-border">
+                        <img src="{{ asset('assets/images/ds-withai-course/banner-icon-1.png') }}" class="lazyload"
+                            alt="data science program institute">
+                        <p class="icon-plus">5000</p>
+                        <span>Career Transformed</span>
+                    </div>
+                </div>
+                <div class="features-box text-center flex-fill min-w-0">
+                    <div class="date-border">
+                        <img src="{{ asset('assets/images/ds-withai-course/banner-icon-2.png') }}" class="lazyload"
+                            alt="data science programs">
+                        <p>12 Months</p>
+                        <span>Live Internship</span>
+                    </div>
+                </div>
+                <div class="features-box text-center flex-fill min-w-0">
+                    <div class="date-border">
+                        <img src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}" class="lazyload"
+                            alt="best online data science programs">
+                        <p>11 Months</p>
+                        <span>Live Online Classes</span>
+                    </div>
+                </div>
+                <div class="features-box text-center flex-fill min-w-0">
+                    <img src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}" class="lazyload"
+                    alt="data science programs near me">
+                <p style="color: #f8b700">
+                    {{ $course->course_online_payment }} </p>
+                <span>Next Batch starts on</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+</div>
+@else
+<div class="breadcumb-area two d-flex"
+     @if ($course->banner_image)
+         style="background: url('{{ asset('storage/' . $course->banner_image) }}') no-repeat center center / cover;"
+     @endif>
+
+   <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <img src="{{ asset('assets/images/card1.png') }}" width="190" height="120" alt="Logo 1" />
+                    <img src="{{ asset('assets/images/Card.png') }}" width="319" height="58" alt="Logo 2" style="border: 2px solid #f29c12; border-radius: 5px;" />
+                </div>
+        
+                <h1 class="fw-bold text-capitalize text-dark" style="font-size: 43px;">{{ $course->name }}</h1>
+                
+                <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
+                    <i class="fa-solid fa-shield-halved text-primary me-2"></i>
+                    100% Job Assurance in {{ $course->name }}
+                  </p>
+                  
+                  <p class="text-dark fs-6 mb-2">
+                    <i class="fa-solid fa-briefcase text-success me-2"></i>
+                    Learn from global experts and get certified by Digicrome
+                  </p>
+                  
+                  <p class="text-dark fs-6 mb-2">
+                    <i class="fa-solid fa-clock text-warning me-2"></i>
+                    Suitable for Final Years, Graduates and Early Professionals
+                  </p>
+                  
+                  <p class="text-dark fs-6 mb-0">
+                    <i class="fa-solid fa-trophy text-danger me-2"></i>
+                    You`re guaranteed to find something that`s right for you.
+                  </p>
+                  
+        
+                <div class="mt-4 d-flex gap-3">
+                    @if($course->browser)
+
+                  <a href="your-brochure-link.pdf" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#leadPopup" style="background-color: #1c1647;">
+                    <i class="fa fa-download me-2"></i>Download Brochure
+                  </a>
+                  @endif
+
+                  <a data-bs-toggle="modal" 
+                  data-bs-target="#applyNowPopup" class="btn btn-primary" style="background-color: #1c1647;">
+                    <i class="fa fa-paper-plane me-2"></i>Apply Now
+                  </a>
+                </div>
+              </div>
         </div>
         <div class="row">
             <div class="col-xl-6 col-lg-8">
@@ -74,9 +204,9 @@
             </div>
             <div class="col-xl-6 col-lg-4"></div>
         </div>
-        <div class="bread-dot">
+        {{-- <div class="bread-dot">
             <img src="{{ asset('assets/images/inner-img/bread-dot.webp') }}" alt="dot">
-        </div>
+        </div> --}}
     </div>
 </div>
 @endif
@@ -244,19 +374,64 @@
                             </ul>
                         </div>
                         <div class="event-info-btn">
-                            <a href="course.html">BOOK NOW<i class="flaticon flaticon-right-arrow"></i></a>
+                            <a data-bs-toggle="modal" 
+                            data-bs-target="#applyNowPopup">BOOK NOW<i class="flaticon flaticon-right-arrow"></i></a>
                         </div>
                         <div class="course-share-title">
                             <h5>Share Now</h5>
                         </div>
-                        <div class="course-share-icon">
-                            <ul class="share-icon">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
-                            </ul>
-                        </div>
+                        @php
+    $currentUrl = urlencode(url()->current());
+    $rawUrl = url()->current();
+    $courseTitle = urlencode($course->name ?? 'Check this course');
+@endphp
+
+<div class="course-share-icon">
+    <ul class="share-icon">
+
+        <!-- WhatsApp -->
+        <li>
+            <a href="https://wa.me/?text={{ $courseTitle }}%20{{ $currentUrl }}" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </li>
+
+        <!-- Messenger -->
+        <li>
+            <a href="fb-messenger://share/?link={{ $currentUrl }}" target="_blank">
+                <i class="fab fa-facebook-messenger"></i>
+            </a>
+        </li>
+
+        <!-- Instagram (no direct share) -->
+        <li>
+            <a href="https://www.instagram.com/" target="_blank" title="Open Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+
+        <!-- Copy Link -->
+        <li>
+            <a href="javascript:void(0);" onclick="copyCourseLink()" title="Copy Link">
+                <i class="fa fa-link"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+<!-- JavaScript for Copy Link -->
+<script>
+    function copyCourseLink() {
+        const link = "{{ $rawUrl }}";
+        navigator.clipboard.writeText(link).then(function () {
+            alert('Course link copied to clipboard!');
+        }, function (err) {
+            alert('Failed to copy link.');
+        });
+    }
+</script>
+
                     </div>
                 </div>
             </div>
@@ -451,51 +626,37 @@
 
             <div class="col-lg-7 mt-4">
                 <div class="brand-list owl-carousel">
-                    <div class="col-lg-12">
-                        <div class="single-brand-box">
-                            <div class="brand-thumb">
-                                <img src="{{ asset('assets/images/Awards/Award-2018.webp') }}" alt="brand">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="single-brand-box">
-                            <div class="brand-thumb">
-                                <img src="{{ asset('assets/images/Awards/Award-2023_V2.webp') }}" alt="brand">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="single-brand-box">
-                            <div class="brand-thumb">
-                                <img src="{{ asset('assets/images/Awards/Award-2020.webp') }}" alt="brand">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="single-brand-box">
-                            <div class="brand-thumb">
-                                <img src="{{ asset('assets/images/Awards/Award-2021.webp') }}" alt="brand">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="single-brand-box">
-                            <div class="brand-thumb">
-                                <img src="{{ asset('assets/images/Awards/Award-2022.webp') }}" alt="brand">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="single-brand-box">
-                            <div class="brand-thumb">
-                                <img src="{{ asset('assets/images/Awards/Award-2023.webp') }}" alt="brand">
-                            </div>
-                        </div>
-                    </div>
+                    @foreach($awords as $logo)
+						<div class="col-lg-12">
+							<div class="single-brand-box">
+								<div class="brand-thumb">
+									<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+								</div>
+							</div>
+						</div>
+						@endforeach
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="container">
+    <h2 class="text-center mb-2" style="font-size: 2rem;">
+        Our <span style="color: #f29c12;">Placed Learners </span> In Different Big Firms
+    </h2>
+
+    <div class="owl-carousel cards-carousel text-center">
+        @foreach ($placements as $placement)
+            <div class="placement-box" style="padding: 5px;">
+                <div style="border-radius: 6px; overflow: hidden; box-shadow: 0 0 5px rgba(0,0,0,0.1); background: #fff;">
+                    <img src="{{ asset('storage/' . $placement->image) }}" alt="{{ $placement->name }}" style="width: 100%; height: auto;">
+                    <div class="placement-overlay p-2">
+                        <h6 style="margin: 0; font-size: 14px;">{{ $placement->name }}</h6>
+                        <small style="font-size: 12px;">{{ $placement->position }}</small>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 </div>
 <section class="mt-4">
@@ -637,25 +798,7 @@
     </div>
 </section>
 <section class="my-5">
-    <div class="container">
-        <h2 class="text-center mb-2" style="font-size: 2rem;">
-            Our <span style="color: #f29c12;">Placed Learners </span> In Different Big Firms
-        </h2>
-
-        <div class="owl-carousel cards-carousel text-center">
-            @foreach ($placements as $placement)
-                <div class="placement-box" style="padding: 5px;">
-                    <div style="border-radius: 6px; overflow: hidden; box-shadow: 0 0 5px rgba(0,0,0,0.1); background: #fff;">
-                        <img src="{{ asset('storage/' . $placement->image) }}" alt="{{ $placement->name }}" style="width: 100%; height: auto;">
-                        <div class="placement-overlay p-2">
-                            <h6 style="margin: 0; font-size: 14px;">{{ $placement->name }}</h6>
-                            <small style="font-size: 12px;">{{ $placement->position }}</small>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
+    
 
 
 
@@ -785,6 +928,120 @@
 <!--==================================================-->
 <!--End educate-details-course-area -->
 <!--==================================================-->
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="leadPopup" tabindex="-1" aria-labelledby="leadPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content p-3">
+        <form id="leadForm">
+          @csrf
+          <input type="hidden" name="course_id" value="{{ $course->id }}">
+          <h4 class="text-warning mb-3">Register now!! And get a quick call</h4>
+  
+          <input type="text" name="name" placeholder="Name" class="form-control mb-2" required>
+          <input type="tel" name="mobile" placeholder="Mobile Number" class="form-control mb-2" required>
+          <input type="email" name="email" placeholder="E-mail ID" class="form-control mb-2" required>
+          <input type="text" name="address" placeholder="City" class="form-control mb-2">
+          <input type="text" name="title" placeholder="Qualification" class="form-control mb-2">
+          
+          <select name="profession" class="form-select mb-3">
+            <option value="" disabled selected>Select Experience</option>
+            <option value="Working Professional - Technincal Roles">Working Professional - Technical Roles</option>
+            <option value="Working Professional - Non Technincal">Working Professional - Non Technical</option>
+            <option value="College Student - Final Year">College Student - Final Year</option>
+            <option value="College Student - 1st to pre-final Year">College Student - 1st to pre-final Year</option>
+            <option value="Other">Other</option>
+          </select>
+  
+          <p>By submitting the form, you agree to our <a href="#">Terms and Conditions</a> and <a href="https://digicrome.com/privacy-policy">Privacy Policy</a>.</p>
+  
+          <button type="submit" class="btn btn-primary w-100">Download Brochure</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Apply Now Modal -->
+<div class="modal fade" id="applyNowPopup" tabindex="-1" aria-labelledby="applyNowPopupLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="padding: 20px; border-radius: 10px;">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary" id="applyNowPopupLabel">Register Now! And Get a Quick Call</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="POST" action="{{ route('lead.store') }}">
+          @csrf
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="tel" name="phone" class="form-control" placeholder="Mobile Number" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" name="email" class="form-control" placeholder="E-mail ID" required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" name="address" class="form-control" placeholder="City">
+              </div>
+              <div class="col-md-6">
+                <input type="text" name="qualification" class="form-control" placeholder="Qualification">
+              </div>
+              <div class="col-md-6">
+                <select name="experience" class="form-select">
+                  <option value="" disabled selected>Select Experience</option>
+                  <option value="Working Professional - Technical Roles">Working Professional - Technical Roles</option>
+                  <option value="Working Professional - Non-Technical">Working Professional - Non-Technical</option>
+                  <option value="College Student - Final Year">College Student - Final Year</option>
+                  <option value="College Student - 1st to Pre-Final Year">College Student - 1st to Pre-Final Year</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <input type="hidden" name="page_name" value="{{ $course->name }}">
+              <input type="hidden" name="source" value="Apply Now">
+              <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
+            </div>
+            <p class="mt-3">By submitting the form, you agree to our <a href="#">Terms and Conditions</a> and our <a href="/privacy-policy">Privacy Policy</a>.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let form = e.target;
+        let formData = new FormData(form);
+    
+        fetch("{{ route('store.lead') }}", {
+            method: "POST",
+            headers: {
+                'X-CSRF-TOKEN': form.querySelector('[name=_token]').value
+            },
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success && data.download_url) {
+                // Close modal
+                var modal = bootstrap.Modal.getInstance(document.getElementById('leadPopup'));
+                modal.hide();
+    
+                // Trigger brochure download
+                window.open(data.download_url, '_blank');
+            } else {
+                alert("Submission failed!");
+            }
+        })
+        .catch(err => {
+            console.error("Error:", err);
+        });
+    });
+    </script>
+      
 <!--==================================================-->
 <!-- Start educate Footer Area -->
 <!--==================================================-->
