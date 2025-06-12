@@ -9,7 +9,7 @@
 	<!--==================================================-->
 	<!-- Start educate Breadcumb Area -->
 	<!--==================================================-->
-	<div class="breadcumb-area d-flex">
+	{{-- <div class="breadcumb-area d-flex">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-12">
@@ -31,7 +31,57 @@
 				<img src="assets/images/inner-img/breadcumb-ball.webp" alt="ball">
 			</div>
 		</div>
-	</div>
+	</div> --}}
+	<section class="hero_area style-three four d-flex align-items-center">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6">
+					<!-- hero content -->
+					<div class="hero_content">
+						<h5 data-animation="fadeInUp" data-delay="100ms">
+							<i class="bi bi-check2"></i> 100% Satisfaction Guarantee
+						</h5>
+						<h1 data-animation="fadeInUp" data-delay="100ms">
+							Stay Informed, Stay Inspired
+						</h1>
+						<h1 data-animation="fadeInUp" data-delay="100ms">
+							With <span>Educate University Blogs</span>
+						</h1>
+						<p data-animation="fadeInUp" data-delay="100ms">
+							Explore insightful articles, expert opinions, and the latest trends in education. 
+							At Educate, we empower learners and educators through knowledge and innovation.
+						</p>
+						
+							<!-- hero button -->						
+						<div class="hero-button" data-animation="fadeInUp" data-delay="100ms">
+							{{-- <div class="hero-btn">
+								<a href="contact.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
+							</div>
+							<div class="hero-course-btn">
+								<a href="course.html">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
+							</div> --}}
+						</div>
+						<div class="hero-shape31">
+							<img src="assets/images/home-three/hero-shape31.webp" alt="hero-shape">
+						</div>
+						<div class="hero-shape32">
+							<img src="assets/images/home-three/hero-shape32.webp" alt="hero-shape">
+						</div>
+						<div class="hero-shape33">
+							<img src="assets/images/home-three/hero-shape33.webp" alt="hero-shape">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6"></div>
+			</div>
+		</div>
+	</section>
+	<style>
+		#sticky-header{
+    margin-bottom: 0px !important;
+}
+
+	</style>   
 	<!--==================================================-->
 	<!-- End educate Breadcumb Area -->
 	<!--==================================================-->

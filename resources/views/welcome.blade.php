@@ -38,9 +38,9 @@
 								<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
 										class="flaticon flaticon-right-arrow"></i></a>
 							</div>
-							<div class="hero-course-btn">
+							{{-- <div class="hero-course-btn">
 								<a href="{{ route('course') }}">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 					<div class="hero-rating-box">
@@ -331,6 +331,73 @@
 			</div>
 		</div>
 	</div>
+	<section class="about-area style-five">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-xl-6 col-lg-6">
+				<div class="about-thumb-wrapper">
+					<div class="about-thumb">
+						<img src="{{ asset('assets/images/digi.png') }}" alt="thumb">
+						{{-- <div class="about-line-shape">
+							<img src="assets/images/home-five/about-line5.webp" alt="line">
+						</div>
+						<div class="about-thumb-shape">
+							<img src="assets/images/home-five/about-shape52.webp" alt="all-student">
+						</div> --}}
+						<div class="about-call-box">
+							<div class="call-icon">
+								<span><i class="fa-solid fa-phone"></i></span>
+							</div>
+							<div class="call-content">
+								<h5>Call Us:</h5>
+								<h3>01203133869</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<div class="col-xl-6 col-lg-6">
+				<div class="about_content">
+					<!-- section title -->
+					<div class="section-sub-title">
+						<h6>Our Achievement</h6>
+					</div>
+					<div class="section_title">
+						<h1>Honoring Digicrome's Excellence</h1>
+						<h1>at the Excellency Iconic Awards 2023</h1>
+					</div>
+					<div class="section-title-desc two">
+						<p>
+							Digicrome was honored with the prestigious <strong>Excellency Iconic Award 2023</strong> for its outstanding contribution to innovative and accessible education. 
+							This recognition celebrates our commitment to delivering high-quality training and empowering learners across the globe.
+						</p>
+						<p>
+							Combining a rich legacy with cutting-edge technology, we foster both academic and personal growth. 
+							Conveniently architecting meta-services through world-class whiteboard learning experiences, we continue to set new benchmarks in the education sector.
+						</p>
+					</div>
+{{-- 					
+					<div class="about-item-list">
+						<ul>
+							<li><i class="bi bi-check-lg"></i>Expert Teacher</li>
+							<li><i class="bi bi-check-lg"></i>Educational Psychology</li>
+							<li><i class="bi bi-check-lg"></i>Lifelong Learning</li>
+						</ul>
+					</div> --}}
+					<div class="about-btn">
+						<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
+					</div>
+				</div>
+			</div>			
+		</div>
+		{{-- <div class="about-shape51">
+			<img src="assets/images/home-five/about-shape51.webp" alt="shape51">
+		</div>
+		<div class="about-shape53">
+			<img src="assets/images/home-five/about-shape53.webp" alt="shape53">
+		</div> --}}
+	</div>
+</section>
 	<!--==================================================-->
 	<!-- End educate About Area -->
 	<!--==================================================-->

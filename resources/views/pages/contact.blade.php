@@ -379,7 +379,7 @@
 						</div>
 						<div class="section_title">
 							<h1>Trusted By the Genious</h1>
-							<h1>People with EducateX</h1>
+							<h1>People with Digicrome</h1>
 						</div>
 						<div class="section-title-desc">
 							<p>Media leadership skills before cross-media innovation main technology

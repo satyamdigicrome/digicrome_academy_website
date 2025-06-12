@@ -1587,7 +1587,7 @@ section.hero_area.style-one .hero-thumb-wrapper {
 }
 @media (max-width: 767.98px) {
     section.hero_area.style-one .hero-thumb-wrapper {
-        margin-top: 54vh !important;
+        margin-top: 73vh !important;
         padding-top: 0 !important;
     }
 }
@@ -1874,7 +1874,7 @@ section.hero_area.style-two .hero-student-content h3 {
 <-- educate hero Area css style-three -->
 ==============================================*/
 section.hero_area.style-three {
-    background: url(../images/home-three/hero-bg3.webp);
+    background: url(../images/banner.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

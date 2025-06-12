@@ -8723,7 +8723,7 @@ section.hero_area.style-one .hero-course-btn a::before {
 }
 
 section.hero_area.style-one .hero-rating-box {
-    display: block;
+    display: none;
 }
 
 section.hero_area.style-one .hero-dot-shape {
