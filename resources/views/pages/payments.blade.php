@@ -198,7 +198,6 @@
     <p style="font-size: 18px; color: #555;">Select a convenient option below to make your payment</p>
   </div>
 
-  @if($userCountry === 'India')
   {{-- Show Indian Payment Options --}}
   <section id="india-payment" style="padding: 40px; background-color: #f8f9fa;">
   <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
@@ -222,7 +221,6 @@
     </div>
   </div>
   </section>
-  @else
   {{-- Show Payment Cards for Other Countries --}}
   <section id="global-payment" style="display: none; padding: 40px; background-color: #f8f9fa;">
   <div class="container" style="border: 2px solid; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
@@ -402,7 +400,6 @@ color: #999;
 </div>
 </div>
 </section>
-  @endif
   
 </section>
  
