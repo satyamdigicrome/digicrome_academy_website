@@ -296,6 +296,7 @@
 			</div>
 		</div>
 	</section>
+	@if($userCountry === 'India')
 	<div class="brand-area style-one">
 		<div class="container">
 			<div class="row">
@@ -334,6 +335,8 @@
 			</div>
 		</div>
 	</div>
+	@else
+						@endif
 	<section class="about-area style-five">
 	<div class="container">
 		<div class="row align-items-center">

@@ -25,10 +25,18 @@ class HomeController extends Controller
         $query->where('status', 1)->limit(4); // Limit to 4 courses per collection
     }])->where('status', 1)->orderBy('position')->get();
 
-    $upcomingCourses = Course::where('status', 1)
-                             ->orderByRaw('ISNULL(position), position ASC')
-                             ->limit(4) // Just to be safe, limit to 4
-                             ->get();
+    if ($userCountry === 'India') {
+        // Show all upcoming courses in India
+        $upcomingCourses = Course::where('status', 1)
+                                 ->orderByRaw('ISNULL(position), position ASC')
+                                 ->limit(4)
+                                 ->get();
+    } else {
+        // Show only specific course IDs for other countries
+        $upcomingCourses = Course::where('status', 1)
+                                 ->whereIn('id', [60, 58, 3, 61])
+                                 ->get();
+    }
     $companyLogos = Cache::remember('company_logos', 60, function () {
             return Logo::where('type', 'companies')->get(['id', 'image']);
         });
