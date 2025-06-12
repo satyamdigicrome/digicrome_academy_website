@@ -48,7 +48,7 @@ class HomeController extends Controller
     ->orderByDesc('created_at')
     ->get();
 
-    return view('welcome', compact('collections', 'upcomingCourses','companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta'));
+    return view('welcome', compact('collections', 'upcomingCourses', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta'));
 }
 
     public function privacy()
