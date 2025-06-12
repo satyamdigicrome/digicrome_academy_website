@@ -33,10 +33,10 @@
         </div>
     </div> --}}
     <div class="hero-slider owl-carousel">
-        <section class="hero_area style-three d-flex align-items-center">
+        <section class="hero_area style-three d-flex align-items-center" style="height: 600px;">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
                         <!-- hero content -->
                         <div class="hero_content" >
                             <h5 data-animation="fadeInUp" style="color:black;" data-delay="100ms">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6"></div>
+                    <div class="col-lg-4"></div>
                 </div>
             </div>
         </section>

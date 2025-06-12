@@ -291,7 +291,7 @@
             <!-- Result dropdown -->
         </div>
 		<div id="search-results" class="bg-white border rounded shadow p-2 position-absolute w-100" style="z-index: 999; display: none;"></div>
-
+ 
     </form>
 </div>
 
