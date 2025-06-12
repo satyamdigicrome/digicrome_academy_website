@@ -22,6 +22,7 @@
 						<h5><i class="bi bi-check2"></i>Enhance Your future skills, with just a click</h5>
 						<h1>Start building your</h1>
 						<h1>future with a better career transition</h1>
+						@if($userCountry === 'India')
 						<div style="text-align: left; margin: 10px 0; width: 60%;">
 							<div
 								style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
@@ -30,6 +31,8 @@
 									alt="MS Logo" style="width: 100%; height: auto; margin-top: 5px;">
 							</div>
 						</div>
+						@else
+						@endif
 						<p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and
 							position yourself as the top choice for employers in your industry.</p>
 						<!-- hero button -->

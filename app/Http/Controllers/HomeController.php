@@ -12,10 +12,15 @@ use App\Models\Blog;
 use App\Models\Content;
 use App\Models\Metatag;
 use Illuminate\Support\Facades\Cache;
+use Stevebauman\Location\Facades\Location;
+
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
 {
+    $position = Location::get($request->ip());
+    $userCountry = $position->countryName ?? 'Unknown';
+
     $collections = Collection::with(['courses' => function ($query) {
         $query->where('status', 1)->limit(4); // Limit to 4 courses per collection
     }])->where('status', 1)->orderBy('position')->get();
