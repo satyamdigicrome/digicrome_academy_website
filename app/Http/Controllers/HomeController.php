@@ -34,7 +34,7 @@ class HomeController extends Controller
     } else {
         // Show only specific course IDs for other countries
         $upcomingCourses = Course::where('status', 1)
-                                 ->whereIn('id', [60, 58, 3, 61])
+                                 ->whereIn('id', [60, 58, 55, 61])
                                  ->get();
     }
     $companyLogos = Cache::remember('company_logos', 60, function () {

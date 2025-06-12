@@ -164,6 +164,7 @@
 	<!--==================================================-->
 	<!-- End educate About Area -->
 	<!--==================================================-->
+	@if($userCountry === 'India')
 	<div class="container my-5">
 		<div class="row align-items-center">
 		  <!-- Image Side -->
@@ -182,6 +183,8 @@
 		  </div>
 		</div>
 	  </div>
+	  @else
+	@endif
 	<!--==================================================-->
 	<!-- Start educate feature Area style-two -->
 	<!--==================================================-->
