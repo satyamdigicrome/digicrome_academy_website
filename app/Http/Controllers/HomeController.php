@@ -40,6 +40,14 @@ class HomeController extends Controller
     $companyLogos = Cache::remember('company_logos', 60, function () {
             return Logo::where('type', 'companies')->get(['id', 'image']);
         });
+        $gallery = Cache::remember('gallery_' . $userCountry, 60, function () use ($userCountry) {
+            if ($userCountry === 'India') {
+                return Logo::where('type', 'gallery')->where('country', 'IN')->get(['id', 'image', 'name']);
+            } else {
+                return Logo::where('type', 'gallery')->where('country', 'US')->get(['id', 'image', 'name']);
+            }
+        });
+    
     $associationLogos = Cache::remember('association_logos', 60, function () {
         return Logo::where('type', 'association')->get(['id', 'image']);
     });
@@ -56,7 +64,7 @@ class HomeController extends Controller
     ->orderByDesc('created_at')
     ->get();
 
-    return view('welcome', compact('collections', 'upcomingCourses', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta'));
+    return view('welcome', compact('collections', 'upcomingCourses', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta'));
 }
 
     public function privacy()

@@ -123,7 +123,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-					<div class="single-feature-box box-1">
+					<div class="single-feature-box box-3">
 						<div class="feature-icon">
 							<img src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon">
 						</div>
@@ -139,7 +139,7 @@
 					</div>
 				</div>
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-					<div class="single-feature-box box-2">
+					<div class="single-feature-box box-3">
 						<div class="feature-icon">
 							<img src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon">
 						</div>
@@ -668,7 +668,7 @@
 	<!--==================================================-->
 	<!-- Start educate why choose Area -->
 	<!--==================================================-->
-	<div class="why-choose-area style-one">
+	<div class="why-choose-area style-one" style="background: rgb(240 251 255)">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-7">
@@ -1117,7 +1117,7 @@
 	<!--==================================================-->
 	<!-- Start educate testimonial Area -->
 	<!--==================================================-->
-	<div class="testimonial-area style-one">
+	{{-- <div class="testimonial-area style-one">
 		<div class="container">
 			<div class="row section-title-space align-items-center">
 				<div class="col-lg-6">
@@ -1195,7 +1195,77 @@
 				</div>
 			</div>
 		</div>
+	</div> --}}
+	<div class="testimonial-area style-two mt-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<!-- section title -->
+				<div class="section-sub-title two">
+					<h6><img src="assets/images/home-two/subtitle-icon.webp" alt="icon">TESTIMONIALS</h6>
+				</div>
+				<div class="section_title two">
+					<h1>What Students Say About</h1>
+					<h1>Digicrome Experience</h1>
+				</div>
+				<div class="section-title-desc two">
+					<p>Students love the hands-on learning, expert mentors, and real-world projects that make the Digicrome experience truly exceptional.</p>
+				</div>
+				<div class="testi-mentor-btn">
+					<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
+						class="flaticon flaticon-right-arrow"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<div class="row">
+					<div class="testi-list2 owl-carousel">
+						@foreach ($testimonials as $testimonial)
+						<div class="col-lg-12">
+							<div class="single-testi-box">
+								<div class="testi-quote" style="font-size:18px; font-weight:600; color:#f29c12; margin:10px 0;">
+									{{ $testimonial->tagline }}
+								</div>
+								
+								<div class="testi-desc">
+									<p>“{{ $testimonial->review }}</p>
+								</div>
+								<div class="testi-ratting" style="display:flex; list-style:none; padding:0; margin:0;">
+									@for ($i = 1; $i <= 5; $i++)
+										@if ($i <= floor($testimonial->rating))
+											<li style="color:gold; margin-right:2px; text-shadow: 0 0 5px gold;">
+												<i class="fa-solid fa-star"></i>
+											</li>
+										@elseif ($i == ceil($testimonial->rating) && $testimonial->rating != floor($testimonial->rating))
+											<li style="color:gold; margin-right:2px; text-shadow: 0 0 5px gold;">
+												<i class="fa-solid fa-star-half-stroke fa-fw"></i>
+											</li>
+										@else
+											<li style="color:gold; margin-right:2px; text-shadow: 0 0 5px gold;">
+												<i class="fa-regular fa-star"></i>
+											</li>
+										@endif
+									@endfor
+								</div>
+								
+							</div>
+							<div class="testi-autor-box">
+								<div class="testi-autor">
+									<img src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
+								</div>
+								
+								<div class="testi-autor-content">
+									<h5 class="autor-title">{{ $testimonial->name }}</h5>
+									<p class="autor-desi">{{ $testimonial->profession }}</p>
+								</div>
+							</div>
+						</div>
+						@endforeach
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+</div>
 	<!--==================================================-->
 	<!-- end educate testimonial Area -->
 	<!--==================================================-->
@@ -1203,7 +1273,7 @@
 	<!--==================================================-->
 	<!-- Start educate call to action Area -->
 	<!--==================================================-->
-	<div class="call-to-action style-one">
+	{{-- <div class="call-to-action style-one">
 		<div class="container">
 			<div class="row align-items-center call-to-bg">
 				<div class="col-xl-5 col-lg-4">
@@ -1240,7 +1310,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<div class="testimonial-area style-inner">
 		<div class="container">
 			<div class="row section-title-space">
@@ -1329,7 +1399,7 @@
 				class="img-fluid rounded shadow-lg" />
 		</div>
 	</section>
-	<div class="why-choose-area style-one">
+	<div class="why-choose-area style-one" style="background: rgb(240 251 255)">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-7">
@@ -1459,226 +1529,93 @@
 			</div>
 		</div>
 	</div>
-	@if($userCountry === 'India')
-	<section class="company-form contactpage-form" style=" padding-top:10px;">
+	{{-- @if($userCountry === 'India') --}}
+	<section class="company-form contactpage-form" style="padding-top:10px;">
 		<div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
 			<h2 class="text-center mb-2" style="font-size: 2rem;">
 				Meet <span style="color: #f29c12;">Our Team</span>
 			</h2>
-			<!-- <h1 class="section__title"  style="text-align: center; padding-bottom:40px;"><b>Unveiling <span class="yellow-bg"> Digicrome<img src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png" alt=""></span> Distinct Culture</b></h1> -->
-
 		</div>
-		<div>
-			<div class="gall-inn">
-				<div class="col-sm-6 col-md-2">
-					<div class="gal-im animate animate__animated animate__slow" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc1.webp') }}" class="gal-siz-1" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
-					</div>
-					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc2.webp') }}" class="gal-siz-2" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc3.webp') }}" class="gal-siz-2" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
-					</div>
-					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc4.webp') }}" class="gal-siz-1" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-2">
-					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc5.webp') }}" class="gal-siz-1" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
-					</div>
-					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc6.webp') }}" class="gal-siz-2" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc7.webp') }}" class="gal-siz-2" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
-					</div>
-					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc8.webp') }}" class="gal-siz-1" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc9.webp') }}" class="gal-siz-2" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
-					</div>
-					<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-						<img src="{{ asset('assets/images/dc/dc10.webp') }}" class="gal-siz-1" alt="digicrome_images"
-							loading="lazy">
-						<div class="txt">
-							<span>Digicrome</span>
-							<h4>Our People, Our Pride</h4>
-						</div>
+	
+		<div class=" galary owl-carousel ">
+			@foreach($gallery as $photo)
+			<div class="item">
+				<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
+					<img src="{{ asset('storage/' . $photo->image) }}" class="gal-siz-1" alt="digicrome_images" loading="lazy">
+					<div class="txt">
+						<span>Digicrome</span>
+						<h4>{{ $photo->name }}</h4>
 					</div>
 				</div>
 			</div>
-		</div>
+			@endforeach
 		</div>
 	</section>
-	@else
-	@endif
+	
+	{{-- @else --}}
+	{{-- @endif --}}
 
 	<!--==================================================-->
 	<!-- end educate blog Area -->
 	<!--==================================================-->
 
 	<!-- Modal -->
-	<div id="formModal" class="modal">
+	<div id="formModal" class="modal" id="mm" >
 		<div class="modal-content">
-			<div class="modal-header">
-				<span class="close-btn" onclick="closeModal()">&times;</span>
-				Need help? Call us now at 0120 313 3869 or request a quick call!
+			<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+				<h3 style="color:#f29c12; font-size:18px; margin:0;">Get a Quick Call</h3>
+				<span onclick="closeModal()" style="font-size:22px; cursor:pointer; color:#555;">&times;</span>
 			</div>
-			<div class="modal-body">
-				<div class="popup-container">
-					<div class="popup-form">
-						<div class="form-container">
-							<img src="{{ asset('assets/images/www.webp') }}" alt="Image Description">
-							<form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
-								action="https://demo.digicrome.com/post_lead.php">
-								@csrf
-								<h2 style="    color: #f29c12;"> Register now!! And get a quick call</h2>
-								<div class="form-field">
-									<!--<label style="color:#fff;" for="name">Name:</label> -->
-									<input type="text" id="name" name="name" placeholder="Name">
-								</div>
-								<div class="form-field">
-									<!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
-									<input type="tel" id="mobile" name="mobile" placeholder="Mobile Number">
-								</div>
-								<div class="form-field">
-									<!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
-									<input type="email" id="gmail" name="email" placeholder="E-mail ID:">
-								</div>
-								<div class="form-field">
-									<!--<label style="color:#fff;" for="city">City:</label> -->
-									<input type="text" id="city" name="address" placeholder="City">
-								</div>
-								<div class="form-field">
-									<!--<label style="color:#fff;" for="Qualification">Qualification:</label> -->
-									<input type="text" id="qualification" name="title" placeholder="Qualification">
-								</div>
-								<div class="form-field">
-									<!--<label style="color:#fff;" for="qualification">Experience:</label> -->
-									<select class="selecttype" id="qualification" name="profession">
-										<option value="" disabled selected>Select Experience</option>
-										<option value="Working Professional - Technincal Roles">Working Professional -
-											Technincal Roles</option>
-										<option value="Working Professional - Non Technincal">Working Professional - Non
-											Technincal</option>
-										<option value="College Student - Final Year">College Student - Final Year</option>
-										<option value="College Student - 1st to pre-final Year">College Student - 1st to
-											pre-final Year</option>
-										<option value="Other">Other</option>
-									</select>
-								</div>
-
-								<div class="form-field">
-									<input type="hidden" id="mobile" name="source" Value="Home Page"
-										placeholder="Mobile Number">
-								</div>
-								<div class="form-field">
-									<input type="hidden" id="mobile" name="country" value="india"
-										placeholder="Mobile Number">
-								</div>
-								<div class="form-field">
-									<input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
-								</div>
-								<div class="form-field">
-									<input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
-								</div>
-								<!--<div class="form-field">-->
-								<!--    <input type="text" id="mobile" name="profession" placeholder="Mobile Number">-->
-								<!--</div>-->
-								<div class="form-field">
-									<input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
-								</div>
-
-								<p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms
-										and Conditions</a> and our <a href="https://digicrome.com/privacy-policy">Privacy
-										Policy.</a> </p><br>
-								<button type="submit">Submit</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
+			<p style="font-size:14px; color:#333; margin-bottom:15px;">Need help? Call us at <strong>0120 313 3869</strong><br>or fill the form below.</p>
+	
+			<form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php" style="width:100%; margin:0;">
+				@csrf
+				<input type="text" name="name" placeholder="Name" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+				<input type="tel" name="mobile" placeholder="Mobile Number" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+				<input type="email" name="email" placeholder="E-mail ID" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+				<input type="text" name="address" placeholder="City" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+				<input type="text" name="title" placeholder="Qualification" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+	
+				<select name="profession" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+					<option value="" disabled selected hidden>Select Experience</option>
+					<option value="Working Professional - Technincal Roles">Working Professional - Technincal Roles</option>
+					<option value="Working Professional - Non Technincal">Working Professional - Non Technincal</option>
+					<option value="College Student - Final Year">College Student - Final Year</option>
+					<option value="College Student - 1st to pre-final Year">College Student - 1st to pre-final Year</option>
+					<option value="Other">Other</option>
+				</select>
+	
+				<!-- Hidden Fields -->
+				<input type="hidden" name="source" value="Home Page">
+				<input type="hidden" name="country" value="india">
+				<input type="hidden" name="comp_name" value="">
+				<input type="hidden" name="state" value="">
+				<input type="hidden" name="altr_mobile" value="">
+	
+				<p style="font-size:12px; line-height:18px; color:#666;">
+					By submitting the form, you agree to our 
+					<a href="#" style="color:#f29c12;">Terms</a> and 
+					<a href="https://digicrome.com/privacy-policy" style="color:#f29c12;">Privacy Policy</a>.
+				</p>
+	
+				<button type="submit" style="width:100%; padding:10px; background:#f29c12; color:white; border:none; border-radius:5px; font-weight:bold; margin-top:10px;">Submit</button>
+			</form>
 		</div>
 	</div>
-
+	
 	<script>
-		// Show modal on page load
 		window.onload = function () {
 			openModal();
 		};
-
-		// Function to open modal (also reusable on button click)
+	
 		function openModal() {
 			document.getElementById("formModal").style.display = "block";
 		}
-
-		// Function to close modal
+	
 		function closeModal() {
 			document.getElementById("formModal").style.display = "none";
 		}
-
-		// Optional: Prevent actual form submission (only if needed for testing)
-		document.getElementById("professionalForm").addEventListener("submit", function (e) {
-			e.preventDefault();
-			alert("Form submitted!");
-			closeModal();
-		});
-
-		// Optional: Close if clicking outside the modal content
+	
 		window.onclick = function (event) {
 			const modal = document.getElementById("formModal");
 			if (event.target === modal) {
@@ -1686,6 +1623,8 @@
 			}
 		};
 	</script>
+	
+	
 
 
 
