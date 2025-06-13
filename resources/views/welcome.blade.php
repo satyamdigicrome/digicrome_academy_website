@@ -798,7 +798,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="course-design-thumb">
-						<img src="{{ asset('assets/images/home-one/offer-video.webp') }}" alt="thumb">
+						<img src="{{ asset('assets/images/usss.jpg') }}" alt="thumb">
 						<div class="course-video-icon">
 							<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
 								href="https://youtu.be/HLiQiTTbX8g"><i class="fa-classic fa-solid fa-play fa-fw"></i></a>
@@ -820,7 +820,7 @@
 									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
 								</ul>
 								<div class="offer-rating-rate">
-									<span>(4.8/3 Ratings)</span>
+									<span>(4.8 Ratings)</span>
 								</div>
 								<br><br>
 							</div>
