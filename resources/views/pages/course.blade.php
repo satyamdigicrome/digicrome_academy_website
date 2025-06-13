@@ -60,7 +60,7 @@
                                     <a href="course.html">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
                                 </div> --}}
                             </div>
-                            <div class="hero-shape31">
+                            {{-- <div class="hero-shape31">
                                 <img src="assets/images/home-three/hero-shape31.webp" alt="hero-shape">
                             </div>
                             <div class="hero-shape32">
@@ -68,7 +68,7 @@
                             </div>
                             <div class="hero-shape33">
                                 <img src="assets/images/home-three/hero-shape33.webp" alt="hero-shape">
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="col-lg-4"></div>

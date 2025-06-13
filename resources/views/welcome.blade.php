@@ -1202,7 +1202,7 @@
 			<div class="col-lg-4">
 				<!-- section title -->
 				<div class="section-sub-title two">
-					<h6><img src="assets/images/home-two/subtitle-icon.webp" alt="icon">TESTIMONIALS</h6>
+					<h6><img src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon">TESTIMONIALS</h6>
 				</div>
 				<div class="section_title two">
 					<h1>What Students Say About</h1>

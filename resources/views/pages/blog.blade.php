@@ -45,12 +45,14 @@
 							Stay Informed, Stay Inspired
 						</h1>
 						<h1 data-animation="fadeInUp" data-delay="100ms">
-							With <span>Educate University Blogs</span>
+							With <span>Digicrome Blog</span>
 						</h1>
 						<p data-animation="fadeInUp" data-delay="100ms">
-							Explore insightful articles, expert opinions, and the latest trends in education. 
-							At Educate, we empower learners and educators through knowledge and innovation.
+							Welcome to the official blog of Digicrome, your trusted platform for online education and career advancement.
+							Here, you'll find thought-provoking articles, expert career advice, industry trends, and the latest updates from the world of education and technology.
+							Whether you're a student, professional, or lifelong learner — there's always something valuable waiting for you.
 						</p>
+						
 						
 							<!-- hero button -->						
 						<div class="hero-button" data-animation="fadeInUp" data-delay="100ms">

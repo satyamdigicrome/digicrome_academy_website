@@ -10,27 +10,27 @@
 </script>
 
 
-<div class="payment-img d-flex">
+<div class="payment-img d-flex" style="background-image: url({{ asset('assets/images/contact-header-img.png') }})">
     <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-12">
       <div class="breadcumb-content">
         <div class="breadcumb-title">
-        <h4>Payments</h4>
+        <h4 style="color: #fff">Payments</h4>
         </div>
         <ul>
-        <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-        <li>Payments</li>
+        <li><a href="#" style="color: #fff">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
+        <li style="color: #fff">Payments</li>
         </ul>
       </div>
       </div>
     </div>
-    <div class="breadcumb-shape">
+    {{-- <div class="breadcumb-shape">
       <img src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
     </div>
     <div class="breadcumb-shape2">
       <img src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
-    </div>
+    </div> --}}
     </div>
   </div>
   <div class="dropdown" id="customDropdown">
@@ -202,13 +202,11 @@
   {{-- Show Indian Payment Options --}}
   <section id="india-payment" style="padding: 40px; background-color: #f8f9fa;">
   <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
+    
     <div style="width: 90%; max-width: 700px; text-align: center;">
-      <a href="https://pmny.in/UrN1I4c33yXF">
-        <img src="{{ asset('assets/images/payu.webp') }}" alt="Pay with PayU" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      </a>
-      <p style="margin-top: 10px; font-size: 18px; color: #333;">Pay via PayU</p>
+      <img src="{{ asset('assets/images/upi.webp') }}" alt="Pay via QR Code" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <p style="margin-top: 10px; font-size: 18px; color: #333;">Scan to Pay via QR</p>
     </div>
-
     <div style="width: 90%; max-width: 700px; text-align: center;">
       <a href="https://rzp.io/l/MBT3RH7">
         <img src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
@@ -217,9 +215,11 @@
     </div>
 
     <div style="width: 90%; max-width: 700px; text-align: center;">
-      <img src="{{ asset('assets/images/upi.webp') }}" alt="Pay via QR Code" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <p style="margin-top: 10px; font-size: 18px; color: #333;">Scan to Pay via QR</p>
-    </div>
+      <a href="https://pmny.in/UrN1I4c33yXF">
+        <img src="{{ asset('assets/images/payu.webp') }}" alt="Pay with PayU" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      </a>
+      <p style="margin-top: 10px; font-size: 18px; color: #333;">Pay via PayU</p>
+    </div>  
   </div>
   </section>
   @else

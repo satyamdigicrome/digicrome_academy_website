@@ -73,27 +73,103 @@
 								Courses
 								<i style="color: #fff" class="bi bi-chevron-down"></i>
 							</a>
-							<ul class="sub_menu">
-								{{-- Custom Static Categories --}}
-								<li>
-									<a href="{{ route('course', ['ids' => '1,3,55', 'name' => 'Data Science and AI']) }}">
-										Data Science with Artificial Intelligence
-									</a>
+							<ul class="sub_menu" style="list-style: none; padding: 0; margin: 0;">
+								<li style="padding: 0;">
+									<div class="container-fluid px-3 py-3" style="min-width: 600px; max-width: 1000px;">
+										<div class="row g-4">
+											{{-- Left Column: Category List --}}
+											<div class="col-md-4 border-end">
+												<h6 class="fw-bold mb-3 text-primary">Popular Categories</h6>
+												<ul class="list-unstyled mb-0">
+													<li class="mb-2">
+														<a href="javascript:void(0);" class="text-dark d-flex justify-content-between align-items-center category-link" data-ids="1,3,55">
+															Data Science & AI
+															<i class="bi bi-chevron-right"></i>
+														</a>
+													</li>
+													<li class="mb-2">
+														<a href="javascript:void(0);" class="text-dark d-flex justify-content-between align-items-center category-link" data-ids="61">
+															Investment Banking
+															<i class="bi bi-chevron-right"></i>
+														</a>
+													</li>
+													
+												
+													{{-- Dynamic Categories (static link) --}}
+													@foreach($header_collections as $collection)
+														<li class="mb-2">
+															<a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
+																{{ $collection->name }}
+																<i class="bi bi-chevron-right"></i>
+															</a>
+														</li>
+													@endforeach
+												</ul>
+											</div>
+										
+											{{-- Right Column: Courses --}}
+											<div class="col-md-8">
+												<h6 class="fw-bold mb-3 text-primary">Top Courses</h6>
+												<div id="course-container" class="d-flex flex-column gap-2" style="max-height: 460px; overflow-y: auto;">
+													{{-- Default Courses (Data Science) --}}
+													@foreach([1, 3, 55] as $id)
+														@if(isset($header_courses[$id]))
+															@php $course = $header_courses[$id]; @endphp
+															<div class="card border-0 shadow-sm rounded-3 p-2">
+																<div class="d-flex align-items-center">
+																	<img src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+																	<div class="ms-3 flex-grow-1">
+																		<h6 class="fw-semibold" style="line-height: 24px;">{{ $course->name }}</h6>
+																		<p class="text-muted small">Duration: {{ $course->duration ?? 'N/A' }}</p>
+																		<a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="text-primary small d-inline-flex align-items-center">
+																			<i class="bi bi-eye me-1"></i> View
+																		</a>
+																	</div>
+																</div>
+															</div>
+														@endif
+													@endforeach
+												</div>
+											</div>
+										</div>
+										<script>
+											$(document).ready(function () {
+												let allheader_courses = @json($header_courses);
+										
+												$('.category-link').on('click', function () {
+													let ids = $(this).data('ids').toString().split(',');
+													let container = $('#course-container');
+													container.empty();
+										
+													ids.forEach(function (id) {
+														let course = allheader_courses[id];
+														if (course) {
+															container.append(`
+																<div class="card border-0 shadow-sm rounded-3 p-2 mb-2">
+																	<div class="d-flex align-items-center">
+																		<img src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+																		<div class="ms-3 flex-grow-1">
+																			<h6 class="fw-semibold" style="line-height: 24px;">${course.name}</h6>
+																			<p class="text-muted small">Duration: ${course.duration ?? 'N/A'}</p>
+																			<a href="/course/${course.slug}" class="text-primary small d-inline-flex align-items-center">
+																				<i class="bi bi-eye me-1"></i> View
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															`);
+														}
+													});
+												});
+											});
+										</script>
+										
+											
+										
+									</div>
 								</li>
-								<li>
-									<a href="{{ route('course', ['ids' => '61', 'name' => 'Investment Banking']) }}">
-										Investment Banking
-									</a>
-								</li>						
-								{{-- Dynamic Categories from Collection --}}
-								@foreach($header_collections as $collection)
-									<li>
-										<a href="{{ route('course.category', $collection->slug) }}">
-											{{ $collection->name }}
-										</a>
-									</li>
-								@endforeach
 							</ul>
+							
 						</li>
 						
 						<li><a href="/">Home</a>
@@ -102,7 +178,7 @@
 						{{-- <li><a href="#">pages<i class="bi bi-chevron-down"></i></a>
 							<ul class="sub_menu">
 								<li><a href="{{ route('about') }}">About Us</a></li>
-								<li><a href="{{ route('course') }}">Courses</a></li>
+								<li><a href="{{ route('course') }}">header_courses</a></li>
 								<li><a href="{{ route('course_details') }}">Courses Details</a></li>
 								<li><a href="instructor.html">Instructor</a></li>						
 								<li><a href="instructor-details.html">Instructor Details</a></li>
@@ -511,6 +587,39 @@ $(document).ready(function() {
     .bottom-fixed-bar i {
         margin-right: 6px;
     }
+	.sub_menu {
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    z-index: 999;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    min-width: 650px;
+    max-width: 1000px;
+}
+
+.sub_menu li a:hover {
+    background-color: #f8f9fa;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+}
+.course-card:hover {
+    background-color: #f9f9ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.course-card h6,
+.course-card p,
+.course-card a {
+    margin-bottom: 0;
+}
+
+
 </style>
 
 <div class="bottom-fixed-bar text-center">

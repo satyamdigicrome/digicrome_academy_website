@@ -113,7 +113,7 @@
           
       </div>
 </div>
-@else
+@else 
 <div class="breadcumb-area two d-flex"
      @if ($course->banner_image)
          style="background: url('{{ asset('storage/' . $course->banner_image) }}') no-repeat center center / cover;"
@@ -676,8 +676,26 @@
                 <div class="col-md-3">
                     <div class="stat-box p-4 rounded shadow-sm bg-white h-100">
                         <h5 class="mb-2 text-muted">Average Rating</h5>
-                        <h2 class="text-warning fw-bold display-6">4.8 <span>⭐</span></h2>
-                    </div>
+                        <h2 class="text-warning fw-bold display-6">
+                            4.8 
+                            <span class="shiny-star">★</span>
+                        </h2>
+                        
+                        <style>
+                            .shiny-star {
+                                color: gold;
+                                animation: shimmer 1.5s infinite;
+                                font-size: 1.2em;
+                                margin-left: 5px;
+                            }
+                        
+                            @keyframes shimmer {
+                                0% { text-shadow: 0 0 2px gold; }
+                                50% { text-shadow: 0 0 8px #ffdd57, 0 0 12px #ffaa00; }
+                                100% { text-shadow: 0 0 2px gold; }
+                            }
+                        </style>
+                                            </div>
                 </div>
                 <div class="col-md-3">
                     <div class="stat-box p-4 rounded shadow-sm bg-white h-100">
@@ -715,7 +733,7 @@
         </div>
     </section>
 </section>
-<section>
+{{-- <section>
     <div class="testimonial-area style-one">
 		<div class="container">
 			<div class="row section-title-space align-items-center">
@@ -800,7 +818,78 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
+<div class="testimonial-area style-two mt-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<!-- section title -->
+				<div class="section-sub-title two">
+					<h6><img src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon">TESTIMONIALS</h6>
+				</div>
+				<div class="section_title two">
+					<h1>What Students Say About</h1>
+					<h1>Digicrome Experience</h1>
+				</div>
+				<div class="section-title-desc two">
+					<p>Students love the hands-on learning, expert mentors, and real-world projects that make the Digicrome experience truly exceptional.</p>
+				</div>
+				<div class="testi-mentor-btn">
+					<a data-bs-toggle="modal" 
+                    data-bs-target="#applyNowPopup">GET STARTED<i
+						class="flaticon flaticon-right-arrow"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<div class="row">
+					<div class="testi-list2 owl-carousel">
+						@foreach ($testimonials as $testimonial)
+						<div class="col-lg-12">
+							<div class="single-testi-box">
+								<div class="testi-quote" style="font-size:18px; font-weight:600; color:#f29c12; margin:10px 0;">
+									{{ $testimonial->tagline }}
+								</div>
+								
+								<div class="testi-desc">
+									<p>“{{ $testimonial->review }}</p>
+								</div>
+								<div class="testi-ratting" style="display:flex; list-style:none; padding:0; margin:0;">
+									@for ($i = 1; $i <= 5; $i++)
+										@if ($i <= floor($testimonial->rating))
+											<li style="color:gold; margin-right:2px; text-shadow: 0 0 5px gold;">
+												<i class="fa-solid fa-star"></i>
+											</li>
+										@elseif ($i == ceil($testimonial->rating) && $testimonial->rating != floor($testimonial->rating))
+											<li style="color:gold; margin-right:2px; text-shadow: 0 0 5px gold;">
+												<i class="fa-solid fa-star-half-stroke fa-fw"></i>
+											</li>
+										@else
+											<li style="color:gold; margin-right:2px; text-shadow: 0 0 5px gold;">
+												<i class="fa-regular fa-star"></i>
+											</li>
+										@endif
+									@endfor
+								</div>
+								
+							</div>
+							<div class="testi-autor-box">
+								<div class="testi-autor">
+									<img src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
+								</div>
+								
+								<div class="testi-autor-content">
+									<h5 class="autor-title">{{ $testimonial->name }}</h5>
+									<p class="autor-desi">{{ $testimonial->profession }}</p>
+								</div>
+							</div>
+						</div>
+						@endforeach
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <section class="my-5">
     
 
