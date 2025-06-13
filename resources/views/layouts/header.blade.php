@@ -117,9 +117,12 @@
 															@php $course = $header_courses[$id]; @endphp
 															<div class="card border-0 shadow-sm rounded-3 p-2">
 																<div class="d-flex align-items-center">
-																	<img src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+																	<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
+																	<img src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;"></a>
 																	<div class="ms-3 flex-grow-1">
-																		<h6 class="fw-semibold" style="line-height: 24px;">{{ $course->name }}</h6>
+																	<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
+
+																		<h6 class="fw-semibold" style="line-height: 24px;">{{ $course->name }}</h6></a>
 																		<p class="text-muted small">Duration: {{ $course->duration ?? 'N/A' }}</p>
 																		<a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="text-primary small d-inline-flex align-items-center">
 																			<i class="bi bi-eye me-1"></i> View
@@ -147,11 +150,13 @@
 															container.append(`
 																<div class="card border-0 shadow-sm rounded-3 p-2 mb-2">
 																	<div class="d-flex align-items-center">
-																		<img src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+																	<a href="/courses/${course.slug}">
+																		<img src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;"></a>
 																		<div class="ms-3 flex-grow-1">
-																			<h6 class="fw-semibold" style="line-height: 24px;">${course.name}</h6>
+																	<a href="/courses/${course.slug}">
+																			<h6 class="fw-semibold" style="line-height: 24px;">${course.name}</h6></a>
 																			<p class="text-muted small">Duration: ${course.duration ?? 'N/A'}</p>
-																			<a href="/course/${course.slug}" class="text-primary small d-inline-flex align-items-center">
+																			<a href="/courses/${course.slug}" class="text-primary small d-inline-flex align-items-center">
 																				<i class="bi bi-eye me-1"></i> View
 																			</a>
 																		</div>

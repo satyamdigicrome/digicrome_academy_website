@@ -328,9 +328,9 @@
 			<div class="brand-star-shape">
 				<img src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
 			</div>
-			<div class="brand-line-shape">
+			{{-- <div class="brand-line-shape">
 				<img src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
-			</div>
+			</div> --}}
 		</div>
 	</div>
 	@else
