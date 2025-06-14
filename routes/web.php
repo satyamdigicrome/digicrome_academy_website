@@ -124,7 +124,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/videos/{id}', [VideoController::class, 'destroy'])->name('videos.destroy');
     Route::get('/meta_tag', [MetaController::class, 'index'])->name('meta');
     Route::post('/store', [MetaController::class, 'store'])->name('meta.store');
-    Route::post('/get_leads', [MetaController::class, 'leads'])->name('leed');
+    Route::get('/get_leads', [MetaController::class, 'leads'])->name('leed');
     Route::delete('/meta/delete/{id}', [MetaController::class, 'destroy'])->name('meta.delete');
 
 
