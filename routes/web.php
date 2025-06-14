@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LeadsController;
+use App\Http\Controllers\LandingControler;
 use App\Http\Controllers\CorporateServicesController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\CareerController;
@@ -137,6 +138,8 @@ Route::get('/upcoming-courses', [CourseController::class, 'index'])->name('cours
 Route::get('/corporate_services', [CorporateServicesController::class, 'index'])->name('corporate_services');
 Route::get('/payments', [PaymentsController::class, 'index'])->name('payments');
 Route::get('/career', [CareerController::class, 'index'])->name('career');
+Route::get('/thankyou', [HomeController::class, 'thankyou'])->name('thankyou');
+Route::get('/DS_and_AI', [LandingControler::class, 'landing'])->name('landing');
 Route::get('/refer_and_earn', [ReferController::class, 'index'])->name('refer_and_earn');
 Route::get('/who_we_are', [WhoweareController::class, 'index'])->name('who_we_are');
 Route::get('/success_stories', [SucessStoriesController::class, 'index'])->name('success_stories');

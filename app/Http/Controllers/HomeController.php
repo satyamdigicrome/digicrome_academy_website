@@ -89,4 +89,9 @@ class HomeController extends Controller
         return view('pages.disclaimer',compact('contents','meta'));
     }
 
+    public function thankyou()
+    {
+        return view('pages.thankyou');
+    }
+
 }
