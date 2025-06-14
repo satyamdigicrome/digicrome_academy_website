@@ -6,7 +6,18 @@
     <title>@yield('title', 'Default Title')</title>
     <meta name="description" content="@yield('meta_description', 'Default description')">
     <meta name="keywords" content="@yield('meta_keywords', 'Default keywords')">
-
+    <meta property="og:type" content="Online Training/Development" />
+    <meta property="og:site_name" content="Digicrome" />
+    <meta name="og:email" content="digicrome.academy@gmail.com" />
+    <meta name="og:phone_number" content="01203133869" />
+    <meta name="og:latitude" content="28.584688° N" />
+    <meta name="og:longitude" content="77.315930° E" />
+    <meta name="og:street-address" content="C-108 Second Floor, Sector 2, Noida, Uttar Pradesh 201301" />
+    <meta name="og:locality" content="Noida Sector 02" />
+    <meta name="og:region" content="Noida" />
+    <meta name="og:postal-code" content="201301" />
+    <meta name="og:country-name" content="India" />
+    <meta name="og:locale" content="en-IN" />
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <link rel="preconnect" href="https://fonts.bunny.net">
