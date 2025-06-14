@@ -174,7 +174,7 @@
 		  <!-- Content Side -->
 		  <div class="col-md-6">
 			<div class="p-3">
-			  <h3 class="mb-3" style="font-style: italic;">Certified - Online/Offiline Learning Platform </h3>
+			  <h3 class="mb-3" style="font-style: italic;">Certified - Online Learning Platform </h3>
 			  <p class="text-muted">
 				Start Learning from anywhere you are, with innovative, creative and effective solutions
 			  </p>
