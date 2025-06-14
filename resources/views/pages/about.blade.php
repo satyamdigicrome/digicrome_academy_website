@@ -298,7 +298,7 @@
 	<!--==================================================-->
 	<!-- Start educate course design offer Area -->
 	<!--==================================================-->
-	<div class="course-design-offer-area style-one inner">
+	{{-- <div class="course-design-offer-area style-one inner">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
@@ -347,7 +347,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!--==================================================-->
 	<!-- end educate course design offer Area -->
 	<!--==================================================-->
