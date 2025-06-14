@@ -284,54 +284,54 @@
         .usa {
             top: 50%;
             left: 21%;
-            background-image: url(https://digicrome.com/public/www/seoimg/5a.webp);
+            background-image: url({{ asset('assets/images/dc/5a.webp')}});
         }
 
         .south {
             top: 10%;
             left: 29%;
-            background-image: url(https://digicrome.com/public/www/seoimg/5b.webp);
+            background-image: url({{ asset('assets/images/dc/5b.webp')}});
         }
 
         .france {
             top: 45%;
             left: 48%;
-            background-image: url(https://digicrome.com/public/www/seoimg/5c.webp);
+            background-image: url({{ asset('assets/images/dc/5c.webp')}});
 
         }
 
         .sweden {
             top: 23%;
             left: 52%;
-            background-image: url(https://digicrome.com/public/www/seoimg/5d.webp);
+            background-image: url({{ asset('assets/images/dc/5d.webp')}});
 
         }
 
         .africa {
             top: 78%;
             left: 53%;
-            background-image: url(https://digicrome.com/public/www/seoimg/5e.webp);
+            background-image: url({{ asset('assets/images/dc/5e.webp')}});
 
         }
 
         .brazil {
             top: 71%;
             left: 32%;
-            background-image: url(https://digicrome.com/public/www/seoimg/5f.webp);
+            background-image: url({{ asset('assets/images/dc/5f.webp')}});
 
         }
 
         .chaina {
             top: 52%;
             left: 74%;
-            background-image: url(https://digicrome.com/public/www/seoimg/5g.webp);
+            background-image: url({{ asset('assets/images/dc/5g.webp')}});
 
         }
 
         .australia {
             top: 76%;
             left: 82%;
-            background-image: url(https://digicrome.com/public/www/seoimg/5h.webp);
+            background-image: url({{ asset('assets/images/dc/5h.webp')}});
 
         }
 
@@ -444,7 +444,7 @@
 
                 </div>
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%;">
-                    <img src="https://digicrome.com/public/www/seoimg/tools1.webp" alt="digicrome_tools"
+                    <img src="{{ asset('assets/images/dc/tools1.webp')}}" alt="digicrome_tools"
                         style=" border-radius: 3%; height:338px; width:345px;">
                 </div>
             </div>
@@ -501,7 +501,7 @@
                     Also Include Yourself &nbsp;</b></h5>
         </div>
         <div class="map">
-            <img src="https://digicrome.com/public/www/seoimg/map.webp" alt="map" />
+            <img src="{{ asset('assets/images/dc/map.webp')}}" alt="map" />
             <div class="pin south">
                 <span>From 2 LPA to 2 Lacs per<br>
                     month salary, Digicrome<br>
@@ -579,7 +579,7 @@
 
                 </div>
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%; padding-top:20px;">
-                    <img src="https://digicrome.com/public/www/seoimg/img121.webp" alt="digicrome_Image"
+                    <img src="{{ asset('assets/images/dc/img121.webp')}}" alt="digicrome_Image"
                         style="box-shadow: 5px 5px 10px rgba(21, 0, 0, 83.2); border-radius: 3%; height:318px; width:325px;">
                 </div>
             </div>
@@ -594,7 +594,7 @@
             </div>
             <div class="row">
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%; padding-bottom:20px;">
-                    <img src="https://digicrome.com/public/www/seoimg/report.webp" alt="digicrome_report"
+                    <img src="{{ asset('assets/images/dc/report.webp')}}" alt="digicrome_report"
                         style="border-radius: 3%; box-shadow: 5px 5px 10px rgba(21, 0, 0, 7.2); height: 338px; width: 345px;">
                 </div>
 
