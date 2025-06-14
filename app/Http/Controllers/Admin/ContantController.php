@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Content;
+use App\Models\Lead;
+
 
 class ContantController extends Controller
 {
@@ -40,4 +42,10 @@ class ContantController extends Controller
 
         return redirect()->route('contant.index')->with('success', 'logos deleted successfully.');
     }
+
+    public function leads()
+{
+    $leads = Lead::all(); // fetch all leads
+    return view('admin.leads.index', compact('leads'));
+}
 }
