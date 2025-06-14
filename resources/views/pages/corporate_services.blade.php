@@ -36,7 +36,7 @@
 
 				<!-- Left: Image -->
 				<div class="col-md-6 mb-4 mb-md-0 text-center">
-					<img src="https://digicrome.com/public/storage/1579/1710927982.webp" alt="Main Image"
+					<img src="{{ asset('assets/images/cor.webp') }}" alt="Main Image"
 						class="img-fluid rounded" style="max-width: 100%; aspect-ratio: 1/1; object-fit: cover;">
 				</div>
 
