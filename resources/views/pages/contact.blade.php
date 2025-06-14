@@ -323,7 +323,7 @@
 					content.innerHTML = `<div class="container mt-5">
 		<div class="row align-items-center contact-box">
 			<div class="col-md-5 text-center">
-				<img src="https://digicrome.com/public/www/images/coustome.svg" alt="Contact Image">
+				<img src="{{ asset('assets/images/coustome.svg') }}" alt="Contact Image">
 			</div>
 			<div class="col-md-7">
 				<h2>Customer Contact Number</h2>
