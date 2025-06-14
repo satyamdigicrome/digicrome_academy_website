@@ -123,7 +123,7 @@
 																	<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
 
 																		<h6 class="fw-semibold" style="line-height: 24px;">{{ $course->name }}</h6></a>
-																		<p class="text-muted small">Duration: {{ $course->duration ?? 'N/A' }}</p>
+																		<p class="text-muted small">Duration: {{ $course->course_duration ?? 'N/A' }}</p>
 																		<a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="text-primary small d-inline-flex align-items-center">
 																			<i class="bi bi-eye me-1"></i> View
 																		</a>
@@ -153,9 +153,9 @@
 																	<a href="/courses/${course.slug}">
 																		<img src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;"></a>
 																		<div class="ms-3 flex-grow-1">
-																	<a href="/courses/${course.slug}">
+								 									<a href="/courses/${course.slug}">
 																			<h6 class="fw-semibold" style="line-height: 24px;">${course.name}</h6></a>
-																			<p class="text-muted small">Duration: ${course.duration ?? 'N/A'}</p>
+																			<p class="text-muted small">Duration: ${course.course_duration ?? 'N/A'}</p>
 																			<a href="/courses/${course.slug}" class="text-primary small d-inline-flex align-items-center">
 																				<i class="bi bi-eye me-1"></i> View
 																			</a>

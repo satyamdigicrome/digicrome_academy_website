@@ -54,32 +54,97 @@
 <!-- end educate brand Area -->
 <!--==================================================-->
 
-
-
+{{-- 
+<section class="contact_area style-six">
+	<div class="container">
+		<div class="row contact-bg align-items-center">
+			
+			<div class="col-lg-6">
+				<!-- contact form box -->
+					
+					<div id="status"></div>
+				</div> 
+			</div>
+		</div>
+	</div>
+</section> --}}
 <!--==================================================-->
 <!-- Start educate Footer Area -->
 <!--==================================================-->
-<div class="footer-area" style="    margin-bottom: 45px;">
+<div class="footer-area" style="margin-bottom: 45px;">
 	<div class="container">
 		<div class="row subscribe align-items-center">
-			<div class="col-lg-4 col-md-12">
+			<div class="col-lg-6 col-md-12">
 				<div class="footer-logo">
 					<a href="#"><img src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
 				</div>
+				<br>
+				<div class="section_title six" >
+					<h1 style="color: #fff">Let’s Connect and</h1>
+					<h1 style="color: #fff">Grow Your Future Together!</h1>
+				  </div>
+				  <div class="section-title-desc">
+					<p style="color: #ddd">Have questions, ideas, or need guidance? Our team is here to support your journey — reach out and let’s build something impactful together.</p>
+				  </div>
+				  
 			</div>
-			<div class="col-lg-4 col-md-12">
-				<div class="footer-subcribe-title">
-					<h3>SUBSCRIBE <span>NEWSLETTER</span></h3>
+			<div class="col-lg-6 col-md-12">
+				<div class="contact-form-box style_six">
+					<form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php" style="width:100%; margin:0;">
+						@csrf
+						<div class="row">
+							<!-- Left Column -->
+							<div class="col-md-6">
+								<input type="text" name="name" placeholder="Name" required 
+									style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+								
+								<input type="email" name="email" placeholder="E-mail ID" required 
+									style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+								
+								<input type="text" name="address" placeholder="City" 
+									style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+							</div>
+					
+							<!-- Right Column -->
+							<div class="col-md-6">
+								<input type="tel" name="mobile" placeholder="Mobile Number" required 
+									style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+								
+								<input type="text" name="title" placeholder="Qualification" 
+									style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+								
+								<select name="profession" required 
+									style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+									<option value="" disabled selected hidden>Select Experience</option>
+									<option value="Working Professional - Technincal Roles">Working Professional - Technincal Roles</option>
+									<option value="Working Professional - Non Technincal">Working Professional - Non Technincal</option>
+									<option value="College Student - Final Year">College Student - Final Year</option>
+									<option value="College Student - 1st to pre-final Year">College Student - 1st to pre-final Year</option>
+									<option value="Other">Other</option>
+								</select>
+							</div>
+						</div>
+					
+						<!-- Hidden Fields -->
+						<input type="hidden" name="source" value="Home Page">
+						<input type="hidden" name="country" value="india">
+						<input type="hidden" name="comp_name" value="">
+						<input type="hidden" name="state" value="">
+						<input type="hidden" name="altr_mobile" value="">
+					
+						<!-- Terms & Submit -->
+						<p style="font-size:12px; line-height:18px; color:#fff;">
+							By submitting the form, you agree to our 
+							<a href="#" style="color:#f29c12;">Terms</a> and 
+							<a href="https://digicrome.com/privacy-policy" style="color:#f29c12;">Privacy Policy</a>.
+						</p>
+					
+						<button type="submit" style="width:100%; padding:10px; background:#f29c12; color:white; border:none; border-radius:5px; font-weight:bold; margin-top:10px;">
+							Submit
+						</button>
+					</form>
+					
 				</div>
-			</div>
-			<div class="col-lg-4 col-md-12">
-				<form action="#" method="POST">
-					<div class="subscribe-box">
-						<span><i class="fa-classic fa-regular fa-envelope fa-fw"></i></span>
-						<input type="text" name="Email" placeholder="Enter Your Email" required="">
-						<button type="submit"><span><i class="fa-classic fa-solid fa-location-arrow fa-fw"></i></span></button>
-					</div>
-				</form>
 			</div>
 		</div>
 		<div class="row add-footer-class">
@@ -139,12 +204,14 @@
 				</div>
 				<div class="footer-widget-blog first">
 					<div class="footer-widget-blog-thumb">
-						<img src="{{ asset('assets/images/playimg.png') }}" alt="recent-img" class="ap-logo">
+						<a href="https://play.google.com/store/apps/details?id=com.digichrome.app">
+						<img src="{{ asset('assets/images/playimg.png') }}" alt="recent-img" class="ap-logo"></a>
 					</div>
 				</div>
 				<div class="footer-widget-blog">
 					<div class="footer-widget-blog-thumb">
-						<img src="{{ asset('assets/images/apple.png') }}" alt="recent-img" class="ap-logo">
+						<a href="https://apps.apple.com/in/app/digicrome-academy/id6503241441">
+						<img src="{{ asset('assets/images/apple.png') }}" alt="recent-img" class="ap-logo"></a>
 					</div>
 				</div>
 			</div>
@@ -221,10 +288,23 @@
 				<div class="col-lg-6">
 					<div class="footer-bottom-social-icon">
 						<ul>
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-							<li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+							<li><a href="https://www.facebook.com/digcrome.academy/"><i class="fab fa-facebook-f"></i></a></li>
+							<li>
+								<a href="https://www.instagram.com/digicromeofficial/" target="_blank">
+								  <i class="fab fa-instagram"></i>
+								</a>
+							  </li>
+							  <li>
+								<a href="https://www.youtube.com/channel/UCZ5NWpMdbsHHlebwerAfJiw" target="_blank">
+								  <i class="fab fa-youtube"></i>
+								</a>
+							  </li>
+							  <li>
+								<a href="https://www.linkedin.com/company/digicrome-official/" target="_blank">
+								  <i class="fab fa-linkedin-in"></i>
+								</a>
+							  </li>
+							  
 						</ul>
 					</div>
 				</div>
