@@ -43,7 +43,7 @@ class AdminCourseController extends Controller
             'us_price' => 'nullable|numeric',
             'discount' => 'nullable|numeric',
             'meta_title' => 'nullable|string|max:255',
-            'meta_keywords' => 'nullable|string|max:255',
+            'meta_keywords' => 'nullable|string',
             'meta_description' => 'nullable|string|max:255',
             'about' => 'nullable|string|max:255',
             'has_faqs' => 'required|boolean',
