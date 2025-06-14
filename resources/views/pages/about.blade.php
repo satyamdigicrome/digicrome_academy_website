@@ -125,8 +125,8 @@
 							</ul>
 						</div>
 						<div class="about-iteam-phone">
-							<p><span><img src="{{ asset('assets/images/home-three/about-call.webp') }}" alt="call"></span>+
-								(680) 3290 570</p>
+							<p><span><img src="{{ asset('assets/images/home-three/about-call.webp') }}" alt="call"></span>
+								0120 313 3869</p>
 						</div>
 						{{-- <div class="about-btn">
 							<a href="about.html">more about<i class="flaticon flaticon-right-arrow"></i></a>
@@ -231,9 +231,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="feature-shape21">
+			{{-- <div class="feature-shape21">
 				<img src="{{ asset('assets/images/home-three/feature-shape21.webp') }}" alt="shape">
-			</div>
+			</div> --}}
 		</div>
 	</section>
 	<!--==================================================-->
@@ -619,7 +619,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="testimonial-area style-one">
+	{{-- <div class="testimonial-area style-one">
 		<div class="container">
 			<div class="row section-title-space align-items-center">
 				<div class="col-lg-6">
@@ -691,6 +691,76 @@
 </div>
 @endforeach
 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> --}}
+	<div class="testimonial-area style-two mt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<!-- section title -->
+					<div class="section-sub-title two">
+						<h6><img src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon">TESTIMONIALS</h6>
+					</div>
+					<div class="section_title two">
+						<h1>What Students Say About</h1>
+						<h1>Digicrome Experience</h1>
+					</div>
+					<div class="section-title-desc two">
+						<p>Students love the hands-on learning, expert mentors, and real-world projects that make the Digicrome experience truly exceptional.</p>
+					</div>
+					<div class="testi-mentor-btn">
+						<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
+							class="flaticon flaticon-right-arrow"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="row">
+						<div class="testi-list2 owl-carousel">
+							@foreach ($testimonials as $testimonial)
+							<div class="col-lg-12">
+								<div class="single-testi-box">
+									<div class="testi-quote" style="font-size:18px; font-weight:600; color:#f29c12; margin:10px 0;">
+										{{ $testimonial->tagline }}
+									</div>
+									
+									<div class="testi-desc">
+										<p>“{{ $testimonial->review }}</p>
+									</div>
+									<div class="testi-ratting" style="display:flex; list-style:none; padding:0; margin:0;">
+										@for ($i = 1; $i <= 5; $i++)
+											@if ($i <= floor($testimonial->rating))
+												<li style="color:gold; margin-right:2px; text-shadow: 0 0 5px gold;">
+													<i class="fa-solid fa-star"></i>
+												</li>
+											@elseif ($i == ceil($testimonial->rating) && $testimonial->rating != floor($testimonial->rating))
+												<li style="color:gold; margin-right:2px; text-shadow: 0 0 5px gold;">
+													<i class="fa-solid fa-star-half-stroke fa-fw"></i>
+												</li>
+											@else
+												<li style="color:gold; margin-right:2px; text-shadow: 0 0 5px gold;">
+													<i class="fa-regular fa-star"></i>
+												</li>
+											@endif
+										@endfor
+									</div>
+									
+								</div>
+								<div class="testi-autor-box">
+									<div class="testi-autor">
+										<img src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
+									</div>
+									
+									<div class="testi-autor-content">
+										<h5 class="autor-title">{{ $testimonial->name }}</h5>
+										<p class="autor-desi">{{ $testimonial->profession }}</p>
+									</div>
+								</div>
+							</div>
+							@endforeach
 						</div>
 					</div>
 				</div>

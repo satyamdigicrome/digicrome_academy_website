@@ -255,7 +255,7 @@
             }
         }
     </style>
-    <div class="breadcumb-area d-flex">
+    <div class="breadcumb-area d-flex"style="background-image: url({{ asset('assets/images/care.webp') }})">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">

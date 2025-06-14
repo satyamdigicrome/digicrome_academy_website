@@ -2,7 +2,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="robots" content="noindex, nofollow">
 
     <title>@yield('title', 'Default Title')</title>
     <meta name="description" content="@yield('meta_description', 'Default description')">
@@ -52,7 +51,31 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Digicrome",
+      "url": "https://www.digicrome.com",
+      "logo": "https://www.digicrome.com/assets/images/logo.webp",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "01203133869",
+        "contactType": "customer service",
+        "contactOption": "TollFree",
+        "areaServed": "IN",
+        "availableLanguage": ["en","Hindi"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/digcrome.academy/",
+        "https://www.instagram.com/digicromeofficial",
+        "https://x.com/hashtag/Digicrome",
+        "https://www.youtube.com/@digicromeofficial",
+        "https://in.linkedin.com/company/digicromeofficial",
+        "https://es.pinterest.com/digicromeofficial/"
+      ]
+    }
+    </script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
