@@ -156,6 +156,8 @@ Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('ter
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy-policy');
 Route::post('/store-lead', [LeadsController::class, 'store'])->name('store.lead');
 Route::post('/leads', [LeadsController::class, 'leadsstore'])->name('lead.store');
+Route::post('/submit-referral', [ReferController::class, 'submit'])->name('referral.submit');
+
 
 Route::get('/test-mail', function () {
     Mail::raw('Test email from Laravel', function ($message) {

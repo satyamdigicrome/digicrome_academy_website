@@ -66,7 +66,8 @@
     <div class="col-lg-6">
       <div class="p-4 shadow rounded bg-white">
         <h2 class="mb-4" style="color: #f29c12; font-weight: 700;">Referral Form</h2>
-        <form class="referral-form">
+        <form class="referral-form" method="POST" action="{{ route('referral.submit') }}">
+          @csrf
           <div class="mb-3">
             <label for="yourName" class="form-label">Your Name</label>
             <input type="text" class="form-control" id="yourName" name="yourName" required>
@@ -74,6 +75,10 @@
           <div class="mb-3">
             <label for="yourEmail" class="form-label">Your Email</label>
             <input type="email" class="form-control" id="yourEmail" name="yourEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="yourPhone" class="form-label">Your Mobile</label>
+            <input type="text" class="form-control" id="yourPhone" name="yourPhone" required>
           </div>
           <div class="mb-3">
             <label for="friendName" class="form-label">Friend's Name</label>
@@ -84,11 +89,17 @@
             <input type="email" class="form-control" id="friendEmail" name="friendEmail" required>
           </div>
           <div class="mb-3">
+            <label for="friendPhone" class="form-label">Friend's Mobile</label>
+            <input type="text" class="form-control" id="friendPhone" name="friendPhone" required>
+          </div>
+          
+          <div class="mb-3">
             <label for="message" class="form-label">Personal Message (Optional)</label>
             <textarea class="form-control" id="message" name="message" rows="4"></textarea>
           </div>
           <button type="submit" class="btn" style="background-color: #f29c12; color: white;">Submit Referral</button>
         </form>
+        
       </div>
     </div>
 
