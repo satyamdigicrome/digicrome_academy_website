@@ -5,6 +5,24 @@
 @section('meta_keywords', $course->meta_keywords ?? $course->name)
 
 @push('styles')
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        @foreach($course->faqs as $faq)
+        {
+          "@type": "Question",
+          "name": "{{ $faq->question }}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{!! nl2br(e($faq->answer)) !!}"
+          }
+        }@if(!$loop->last),@endif
+        @endforeach
+      ]
+    }
+    </script>
 <link href="{{ asset('assets/css/courses.css') }}" rel="stylesheet">
 @endpush
 

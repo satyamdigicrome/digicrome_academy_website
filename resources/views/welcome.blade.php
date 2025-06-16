@@ -10,7 +10,6 @@
 	<!--==================================================-->
 	<!-- Start educate Hero Area Area style-one -->
 	<!--==================================================-->
-
 	<section class="hero_area style-one d-flex align-items-center">
 		<div class="container">
 			<div class="row align-items-center flex-column-reverse flex-lg-row">
@@ -36,8 +35,7 @@
 						<!-- hero button -->
 						<div class="hero-button">
 							<div class="hero-btn">
-								<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
-										class="flaticon flaticon-right-arrow"></i></a>
+								<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
 							</div>
 							{{-- <div class="hero-course-btn">
 								<a href="{{ route('course') }}">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
@@ -201,10 +199,7 @@
 
 	<div class="container">
 		<x-logo-slider :companyLogos="$companyLogos" />
-
 	</div>
-
-
 	<!--==================================================-->
 	<!-- Start educate About Area style-one -->
 	<!--==================================================-->
