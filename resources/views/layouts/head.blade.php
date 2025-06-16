@@ -17,6 +17,7 @@
     <meta name="og:postal-code" content="201301" />
     <meta name="og:country-name" content="India" />
     <meta name="og:locale" content="en-IN" />
+    <meta property="og:image" content="https://www.digicrome.com/assets/images/cover-image.webp" />
     <!-- Fonts -->
     <link rel="canonical" href="https://www.digicrome.com"/>
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
