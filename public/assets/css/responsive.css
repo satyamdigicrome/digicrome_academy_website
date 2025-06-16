@@ -8882,7 +8882,7 @@ section.about-area.style-one .section-title-desc p {
 }
 
 .case-study-area.style-one {
-    padding: 110px 0 90px;
+    padding: 0px;
 }
 
 .style-one .case-study-single-box {
@@ -10021,7 +10021,7 @@ section.about-area.style-five .about-thumb img {
     left: 24%;
 }
 section.about-area.style-five {
-    padding: 170px 0 120px;
+    padding: 66px 0 16px;
 }
 section.about-area.style-five .section_title h1 {
     font-size: 25px;

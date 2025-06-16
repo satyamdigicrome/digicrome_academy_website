@@ -1392,7 +1392,7 @@ section.hero_area.style-one .hero_content {
 }
 @media (max-width: 767.98px) {
     section.hero_area.style-one .hero_content {
-        padding: 47px !important;
+        padding-top: 47px !important;
     }
 }
 
@@ -1587,7 +1587,7 @@ section.hero_area.style-one .hero-thumb-wrapper {
 }
 @media (max-width: 767.98px) {
     section.hero_area.style-one .hero-thumb-wrapper {
-        margin-top: 73vh !important;
+        margin-top: 30vh !important;
         padding-top: 0 !important;
     }
 }
@@ -2889,9 +2889,9 @@ section.feature-area.style-one {
 }
 @media (max-width: 767.98px) {
     section.feature-area.style-one {
-        padding: 110px 0 120px;
+        padding: 110px 0 10px;
         position: relative;
-        margin-top: 37vh;
+        /* margin-top: 37vh; */
     }
 }
 
@@ -3272,6 +3272,11 @@ section.about-area.style-one {
     background-position: center;
     padding: 120px 0 0px;
     position: relative;
+}
+@media (max-width: 767.98px) {
+    section.about-area.style-one {
+        padding: 0 !important;
+    }
 }
 
 section.about-area.style-one .section-sub-title h6::after {
