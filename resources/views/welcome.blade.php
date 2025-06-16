@@ -17,8 +17,8 @@
 					<!-- hero content -->
 					<div class="hero_content">
 						<h5><i class="bi bi-check2"></i>Enhance Your future skills, with just a click</h5>
-						<h1>Start building your</h1>
-						<h1>future with a better career transition</h1>
+						<h1>Start building your<br>
+						future with a better career transition</h1>
 						@if($userCountry === 'India')
 						<div style="text-align: left; margin: 10px 0; width: 60%;">
 							<div
@@ -229,8 +229,7 @@
 							<h6>ABOUT US</h6>
 						</div>
 						<div class="section_title">
-							<h1>Who Are We – Introduction to</h1>
-							<h1>Digicrome Online Platform</h1>
+							<h2 class="heading-like-h1">Who Are We – Introduction to Digicrome Online Platform</h2>
 						</div>
 						<div class="section-title-desc">
 							<p>We are a globally reputed online educational academy. We skill up students and professionals
@@ -295,12 +294,12 @@
 			<div class="row">
 				<div class="col-lg-5">
 					<div class="section_title">
-						<h1>In Associated With:</h1>
+						<h2 class="heading-like-h1">In Associated With:</h2>
 					</div>
 					<div class="section-sub-title">
 						<h6 style="text-transform: capitalize; position: static; line-height: 30px; padding: 0px;">
 							Government affiliated program , that shapes the learner’s future and approach towards
-							industry ready !</h6 style=" line-height: 30px;">
+							industry ready !</h6 style=" line-height: 30px;">
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -362,8 +361,8 @@
 						<h6>Our Achievement</h6>
 					</div>
 					<div class="section_title">
-						<h1>Honoring Digicrome's Excellence</h1>
-						<h1>at the Excellency Iconic Awards 2023</h1>
+						<h2 class="heading-like-h1">Honoring Digicrome's Excellence <br>at the Excellency Iconic Awards 2023</h2>
+
 					</div>
 					<div class="section-title-desc two">
 						<p>
@@ -420,7 +419,7 @@
 				<div class="col-lg-5">
 					<!-- Main heading -->
 					<div class="section_title mb-4">
-						<h1 class="display-5 fw-bold">Our Certification Partners</h1>
+						<h2 class="heading-like-h1">Our Certification Partners</h2>
 					</div>
 
 					<!-- Description -->
@@ -496,8 +495,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Our Courses – Comprehensive</h1>
-						<h1>Available all programs</h1>
+						<h2 class="heading-like-h1">Our Courses – Comprehensive</br>
+						Available all programs</h2>
 					</div>
 				</div>
 			</div>
@@ -589,7 +588,7 @@
 								</div> --}}
 								<br><br>
 								<div class="course-btn">
-									<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i
+									<a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
 											class="flaticon flaticon-right-arrow"></i></a>
 								</div>
 							</div>
@@ -644,7 +643,7 @@
 									</div> --}}
 									<br><br>
 									<div class="course-btn">
-										<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i
+										<a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
 												class="flaticon flaticon-right-arrow"></i></a>
 									</div>
 								</div>
@@ -673,8 +672,7 @@
 							<h6>why choose us?</h6>
 						</div>
 						<div class="section_title">
-							<h1>We Bring You Closer To</h1>
-							<h1>A Successful Career</h1>
+							<h2 class="heading-like-h1">We Bring You Closer To<br>A Successful Career</h2>
 						</div>
 						<div class="section-title-desc">
 							<p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we
@@ -745,7 +743,7 @@
 				<div class="col-lg-5">
 					<!-- Main heading -->
 					<div class="section_title mb-4">
-						<h1 class="display-5 fw-bold">Moments of Honour</h1>
+						<h2 class="heading-like-h1">Moments of Honour</h2>
 					</div>
 
 					<!-- Description -->
@@ -820,7 +818,7 @@
 								<br><br>
 							</div>
 							<div class="course-offer-btn">
-								<a href="javascript:void(0);" onclick="openModal()">ENROL NOW<i
+								<a href="javascript:void(0);" onclick="openModal()">EXPLORE NOW<i
 										class="flaticon flaticon-right-arrow"></i></a>
 							</div>
 							{{-- <div class="course-offer-discount">
@@ -1200,8 +1198,8 @@
 					<h6><img src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon">TESTIMONIALS</h6>
 				</div>
 				<div class="section_title two">
-					<h1>What Students Say About</h1>
-					<h1>Digicrome Experience</h1>
+					<h2 class="heading-like-h1">What Students Say About</br>
+					Digicrome Experience</h2>
 				</div>
 				<div class="section-title-desc two">
 					<p>Students love the hands-on learning, expert mentors, and real-world projects that make the Digicrome experience truly exceptional.</p>
@@ -1315,9 +1313,9 @@
 						</h6>
 					</div>
 					<div class="section_title">
-						<h1>All Real Experiences</h1>
-						<h1>From Our Dedicated</h1>
-						<h1>Learners</h1>
+						<h2 class="heading-like-h1">All Real Experiences
+						<br>From Our Dedicated</br>
+						Learners</h2>
 					</div>
 					<div class="testi-review-box">
 						<div class="review-image">
@@ -1404,8 +1402,8 @@
 							<h6>Explore Career Opportunities in the most future-oriented sector</h6>
 						</div>
 						<div class="section_title">
-							<h1>Build Skills. Grab Opportunities.</h1>
-							<h1> Start Now.</h1>
+							<h2>Build Skills. Grab Opportunities.</br>
+							 Start Now.</h2>
 						</div>
 						<div class="section-title-desc">
 							<p>Become a professional at what you learn. Start from scratch and make your way to a career
@@ -1476,8 +1474,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Read out our latest updates</h1>
-						<h1> from digicrome</h1>
+						<h2>Read out our latest updates</br>
+						 from digicrome</h2>
 					</div>
 				</div>
 			</div>
@@ -1562,55 +1560,39 @@
 				<span onclick="closeModal()" style="font-size:22px; cursor:pointer; color:#555;">&times;</span>
 			</div>
 			<p style="font-size:14px; color:#333; margin-bottom:15px;">Need help? Call us at <strong>0120 313 3869</strong><br>or fill the form below.</p>
-	
 			<form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php" style="width:100%; margin:0;">
 				@csrf
 				<input type="text" name="name" placeholder="Name" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
 				<input type="tel" name="mobile" placeholder="Mobile Number" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
 				<input type="email" name="email" placeholder="E-mail ID" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-				<input type="text" name="address" placeholder="City" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-				<input type="text" name="title" placeholder="Qualification" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-	
-				<select name="profession" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-					<option value="" disabled selected hidden>Select Experience</option>
-					<option value="Working Professional - Technincal Roles">Working Professional - Technincal Roles</option>
-					<option value="Working Professional - Non Technincal">Working Professional - Non Technincal</option>
-					<option value="College Student - Final Year">College Student - Final Year</option>
-					<option value="College Student - 1st to pre-final Year">College Student - 1st to pre-final Year</option>
-					<option value="Other">Other</option>
-				</select>
-	
+				<input type="hidden" name="address" value="NA">
+				<input type="hidden" name="title" value="NA">
+				<input type="hidden" name="profession" value="NA">
 				<!-- Hidden Fields -->
 				<input type="hidden" name="source" value="Home Page">
 				<input type="hidden" name="country" value="india">
 				<input type="hidden" name="comp_name" value="">
 				<input type="hidden" name="state" value="">
 				<input type="hidden" name="altr_mobile" value="">
-	
 				<p style="font-size:12px; line-height:18px; color:#666;">
 					By submitting the form, you agree to our 
 					<a href="#" style="color:#f29c12;">Terms</a> and 
 					<a href="https://digicrome.com/privacy-policy" style="color:#f29c12;">Privacy Policy</a>.
 				</p>
-	
 				<button type="submit" style="width:100%; padding:10px; background:#f29c12; color:white; border:none; border-radius:5px; font-weight:bold; margin-top:10px;">Submit</button>
 			</form>
 		</div>
-	</div>
-	
+	</div>	
 	<script>
 		window.onload = function () {
 			openModal();
 		};
-	
 		function openModal() {
 			document.getElementById("formModal").style.display = "block";
 		}
-	
 		function closeModal() {
 			document.getElementById("formModal").style.display = "none";
 		}
-	
 		window.onclick = function (event) {
 			const modal = document.getElementById("formModal");
 			if (event.target === modal) {
@@ -1618,9 +1600,4 @@
 			}
 		};
 	</script>
-	
-	
-
-
-
 @endsection

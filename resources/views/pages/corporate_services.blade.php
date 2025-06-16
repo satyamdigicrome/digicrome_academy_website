@@ -210,7 +210,7 @@
 								</div> --}}
 								<br><br>
 								<div class="course-btn">
-									<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+									<a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i class="flaticon flaticon-right-arrow"></i></a>
 								</div>
 							</div>
 						</div>
@@ -263,7 +263,7 @@
 									</div> --}}
 									<br><br>
 									<div class="course-btn">
-										<a href="{{ route('course_details', ['slug' => $course->slug]) }}">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
+										<a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i class="flaticon flaticon-right-arrow"></i></a>
 									</div>
 								</div>
 							</div>

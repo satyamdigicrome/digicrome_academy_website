@@ -622,7 +622,7 @@
             <div class="col-lg-5">
                 <!-- Main heading -->
                 <div class="section_title mb-4">
-                    <h1 class="display-5 fw-bold">Moments of Honour</h1>
+                    <h2 class="heading-like-h1">Moments of Honour</h2>
                 </div>
 
                 <!-- Description -->
@@ -846,8 +846,8 @@
 					<h6><img src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon">TESTIMONIALS</h6>
 				</div>
 				<div class="section_title two">
-					<h1>What Students Say About</h1>
-					<h1>Digicrome Experience</h1>
+					<h2 class="heading-like-h1">What Students Say About</br>
+					Digicrome Experience</h2>
 				</div>
 				<div class="section-title-desc two">
 					<p>Students love the hands-on learning, expert mentors, and real-world projects that make the Digicrome experience truly exceptional.</p>

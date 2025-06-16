@@ -849,3 +849,10 @@ display: block;
 }
 
 
+.heading-like-h1 {
+  font-size: 36px;     /* adjust if your h1 uses a different size */
+  font-weight: bold;
+  line-height: 1.2;
+  color: #000;         /* or your desired color */
+  margin-bottom: 20px;
+}

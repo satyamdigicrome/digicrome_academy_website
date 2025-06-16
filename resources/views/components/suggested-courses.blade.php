@@ -42,7 +42,7 @@
                 </div>
                 <div class="course-btn">
                   <a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="btn">
-                    ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
+                    EXPLORE NOW <i class="flaticon flaticon-right-arrow"></i>
                   </a>
                 </div>
               </div>

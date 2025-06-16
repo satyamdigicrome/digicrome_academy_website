@@ -8632,7 +8632,7 @@ section.course-details-area.style-inner .event-sidebar-wrapper {
 }
 
 .sticky {
-    position: absolute !important;
+    /* position: absolute !important; */
     padding: 0;
 }
 

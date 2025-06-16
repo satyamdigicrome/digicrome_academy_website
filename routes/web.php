@@ -135,7 +135,7 @@ Route::get('/search-courses', [CourseController::class, 'searchCourses'])->name(
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/upcoming-courses', [CourseController::class, 'index'])->name('course');
+Route::get('/courses', [CourseController::class, 'index'])->name('course');
 Route::get('/corporate_services', [CorporateServicesController::class, 'index'])->name('corporate_services');
 Route::get('/payments', [PaymentsController::class, 'index'])->name('payments');
 Route::get('/career', [CareerController::class, 'index'])->name('career');
@@ -157,6 +157,7 @@ Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy
 Route::post('/store-lead', [LeadsController::class, 'store'])->name('store.lead');
 Route::post('/leads', [LeadsController::class, 'leadsstore'])->name('lead.store');
 Route::post('/submit-referral', [ReferController::class, 'submit'])->name('referral.submit');
+
 
 
 Route::get('/test-mail', function () {

@@ -118,15 +118,11 @@
 															<div class="card border-0 shadow-sm rounded-3 p-2">
 																<div class="d-flex align-items-center">
 																	<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
-																	<img src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;"></a>
+																	<img src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
 																	<div class="ms-3 flex-grow-1">
-																	<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
-
-																		<h6 class="fw-semibold" style="line-height: 24px;">{{ $course->name }}</h6></a>
-																		<p class="text-muted small">Duration: {{ $course->course_duration ?? 'N/A' }}</p>
-																		<a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="text-primary small d-inline-flex align-items-center">
-																			<i class="bi bi-eye me-1"></i> View
-																		</a>
+																		<h6 class="fw-semibold" style="line-height: 24px;">{{ $course->name }}</h6>
+																		<p class="text-muted small">Duration: {{ $course->course_duration ?? 'N/A' }}</p></a>
+																		
 																	</div>
 																</div>
 															</div>
@@ -151,14 +147,11 @@
 																<div class="card border-0 shadow-sm rounded-3 p-2 mb-2">
 																	<div class="d-flex align-items-center">
 																	<a href="/courses/${course.slug}">
-																		<img src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;"></a>
+																		<img src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
 																		<div class="ms-3 flex-grow-1">
-								 									<a href="/courses/${course.slug}">
 																			<h6 class="fw-semibold" style="line-height: 24px;">${course.name}</h6></a>
-																			<p class="text-muted small">Duration: ${course.course_duration ?? 'N/A'}</p>
-																			<a href="/courses/${course.slug}" class="text-primary small d-inline-flex align-items-center">
-																				<i class="bi bi-eye me-1"></i> View
-																			</a>
+																			<p class="text-muted small">Duration: ${course.course_duration ?? 'N/A'}</p></a>
+																			
 																		</div>
 																	</div>
 																</div>
@@ -237,22 +230,24 @@
 			<div class="col-lg-2">
 				<div class="header-right-wrapper">
 					<div class="header-sidebar">
-						{{-- <div class="header-src-btn">
-							<div class="search-box-btn search-box-outer"><i class="fa-solid fa-magnifying-glass"></i></div>
-						</div>&nbsp;&nbsp; --}}
-						{{-- <button class="cart_btn headers-button" type="button">
-							<i class="fa-solid fa-cart-shopping"></i>
-							<small class="cart_counter">0</small>
-						</button> --}}
-						<div class="header-btn search-box-btn search-box-outer" >
-							<a style="border: 2px solid #fff; color: #fff; background-color: #1c1647;" href="#">Search<i class="fa-solid fa-magnifying-glass" style="color: #fff"></i></a>
+						<div class="header-btn search-box-btn search-box-outer">
+							<a href="#" 
+							   style="display: inline-block; 
+									  border: 2px solid #fff; 
+									  color: #fff; 
+									  background-color: #1c1647; 
+									  padding: 8px 20px; 
+									  font-size: 14px; 
+									  white-space: nowrap; 
+									  min-width: 120px; 
+									  text-align: center;">
+								Search <i class="fa-solid fa-magnifying-glass" style="color: #fff"></i>
+							</a>
 						</div>
-						{{-- <div class="header-sidbar-button navSidebar-button">
-							<a href="#"><i class="bi bi-justify-left"></i></a>
-						</div> --}}
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </div>

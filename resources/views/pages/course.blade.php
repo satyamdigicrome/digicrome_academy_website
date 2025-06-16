@@ -139,7 +139,7 @@
 						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">
 							<a href="{{ route('course_details', ['slug' => $course->slug]) }}"
 							   style="background-color: #2d3e5f; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
-								ENROL NOW <i class="flaticon flaticon-right-arrow"></i>
+                                EXPLORE NOW <i class="flaticon flaticon-right-arrow"></i>
 							</a>
 						</div>
 	

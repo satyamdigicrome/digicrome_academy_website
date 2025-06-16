@@ -16,15 +16,20 @@ use Illuminate\Support\Facades\Cache;
 class CourseController extends Controller
 {
     public function index(Request $request)
-    {
-        $ids = explode(',', $request->ids); // convert string to array
+{
     $name = $request->name;
-
-    $courses = Course::whereIn('id', $ids)->get();
     $meta = Metatag::where('page_name', 'Course')->first();
 
-    return view('pages.course', compact('courses','meta', 'name')); 
+    if ($request->filled('ids')) {
+        $ids = explode(',', $request->ids);
+        $courses = Course::whereIn('id', $ids)->get();
+    } else {
+        $courses = Course::all(); // Show all courses
     }
+
+    return view('pages.course', compact('courses', 'meta', 'name'));
+}
+
     
 
 
