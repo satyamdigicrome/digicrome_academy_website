@@ -26,37 +26,37 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
     <!-- bootstrap CSS -->
-    <link  rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css"  media="all" rel="preload">
+    <link  rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css"  media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- carousel CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- animate CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- animated-text CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- font-awesome CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- theme-default CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- meanmenu CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- transitions CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- venobox CSS -->
-    <link rel="stylesheet" href="venobox/venobox.css" type="text/css') }}" media="all" rel="preload">
+    <link rel="stylesheet" href="venobox/venobox.css" type="text/css') }}" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- flaticon -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- bootstrap icons -->
-    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- responsive CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- Coustom Animation CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- odometer CSS -->	
-    <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" type="text/css" media="all" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all" rel="preload">	
+    <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">	
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 

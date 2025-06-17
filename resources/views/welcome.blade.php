@@ -69,7 +69,7 @@
 				<div class="col-lg-6">
 					<div class="hero-thumb-wrapper">
 						<div class="hero-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="thumb">
+							<img width="600" height="400" rel="preload" as="image" loading="lazy"src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="thumb">
 						</div>
 						{{-- <div class="hero-shape1 rotateme">
 							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
