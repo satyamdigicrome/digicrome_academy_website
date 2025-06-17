@@ -27,7 +27,7 @@
 
       <!-- Right: Image Preview -->
       <div class="col-md-8 d-flex align-items-center justify-content-center">
-        <img id="certificate-preview" src="{{ asset('assets/images/certificate/dc.webp') }}"
+        <img loading="lazy"id="certificate-preview" src="{{ asset('assets/images/certificate/dc.webp') }}"
         class="img-fluid rounded shadow-lg border border-light" style="max-height: 450px;" alt="Certificate">
       </div>
 

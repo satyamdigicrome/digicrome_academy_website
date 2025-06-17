@@ -28,10 +28,10 @@
 				</div>
 			</div>
 			<div class="breadcumb-shape">
-                <img src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
             </div>
             <div class="breadcumb-shape2">
-                <img src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
             </div>
 		</div>
 	</div>
@@ -48,7 +48,7 @@
 					<div class="row blogs-pr">
 						<div class="single-blog-dtls-box">
 							<div class="blog-thumb">
-								<img src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb">
+								<img loading="lazy"src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb">
 								<div class="meta-blog">
 									<a href="#">{{ $blog->meta_title ?? 'Blog' }}</a>
 								</div>
@@ -57,7 +57,7 @@
 							<div class="blog-content">
 								<ul class="blog-author">
 									<li class="autor-name" style="display: flex; align-items: center; gap: 10px;">
-										<img src="{{ asset('storage/' . $blog->author_image) }}" alt="author" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+										<img loading="lazy"src="{{ asset('storage/' . $blog->author_image) }}" alt="author" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
 										<span>{{ $blog->author_name }}</span>
 									</li>
 									<li class="detail-calender" style="display: flex; align-items: center; gap: 5px;">
@@ -81,14 +81,14 @@
 								<!-- pagination item -->
 								<div class="pagination_item">
 									<div class="pagination_btn">
-										<a href="#"><img src="assets/images/inner-img/pagination_icon1.webp" alt="">Previous
+										<a href="#"><img loading="lazy"src="assets/images/inner-img/pagination_icon1.webp" alt="">Previous
 											Posts</a>
 									</div>
 								</div>
 								<!-- pagination item -->
 								<div class="pagination_item">
 									<div class="pagination_btn style_right">
-										<a href="#">Next Posts<img src="assets/images/inner-img/pagination_icon2.webp"
+										<a href="#">Next Posts<img loading="lazy"src="assets/images/inner-img/pagination_icon2.webp"
 												alt=""></a>
 									</div>
 								</div>

@@ -17,21 +17,21 @@
 					<div class="col-lg-12">
 						<div class="single-brand-box">
 							<div class="brand-thumb">
-							   <img src="{{ asset('assets/images/home-one/brand-img1.webp') }}" alt="brand">
+							   <img loading="lazy"src="{{ asset('assets/images/home-one/brand-img1.webp') }}" alt="brand">
 							</div>
 						</div>
 					</div>				    
 					<div class="col-lg-12">
 						<div class="single-brand-box">
 							<div class="brand-thumb">
-								<img src="{{ asset('assets/images/home-one/brand-img2.webp') }}" alt="brand">
+								<img loading="lazy"src="{{ asset('assets/images/home-one/brand-img2.webp') }}" alt="brand">
 							</div>
 						</div>
 					</div>				   
 					<div class="col-lg-12">
 						<div class="single-brand-box">
 							<div class="brand-thumb">
-								<img src="{{ asset('assets/images/home-one/brand-img3.webp') }}" alt="brand">
+								<img loading="lazy"src="{{ asset('assets/images/home-one/brand-img3.webp') }}" alt="brand">
 							</div>
 						</div>
 					</div>				    				    			    
@@ -39,13 +39,13 @@
 			</div>
 		</div>
 		<div class="brand-arrow-shape">
-			<img src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="arrow">
+			<img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="arrow">
 		</div>
 		<div class="brand-star-shape">
-			<img src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
+			<img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
 		</div>
 		<div class="brand-line-shape">
-			<img src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
+			<img loading="lazy"src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
 		</div>
 	</div>
 </div> --}}
@@ -76,12 +76,12 @@
 		<div class="row subscribe align-items-center">
 			<div class="col-lg-6 col-md-12">
 				<div class="footer-logo">
-					<a href="#"><img src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
+					<a href="#"><img loading="lazy"src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
 				</div>
 				<br>
 				<div class="section_title six" >
-					<h1 style="color: #fff">Let’s Connect and</h1>
-					<h1 style="color: #fff">Grow Your Future Together!</h1>
+					<h2 style="color: #fff font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;">Let’s Connect and</h2>
+					<h2 style="color: #fff font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;">Grow Your Future Together!</h2>
 				  </div>
 				  <div class="section-title-desc">
 					<p style="color: #ddd">Have questions, ideas, or need guidance? Our team is here to support your journey — reach out and let’s build something impactful together.</p>
@@ -158,7 +158,7 @@
 					</div>
 					<div class="footer-contact-info">
 						<div class="footer-contact-phone">
-							<p><img src="{{ asset('assets/images/home-one/footer-call.webp') }}" alt="call">01203133869</p>
+							<p><img loading="lazy"src="{{ asset('assets/images/home-one/footer-call.webp') }}" alt="call">01203133869</p>
 						</div>
 						<div class="footer-contact-address">
 							<span><i class="fa-classic fa-regular fa-envelope fa-fw"></i>info@digicrome.com</span>
@@ -173,11 +173,11 @@
 					</div>
 					<div class="footer-widget-menu">
 						<ul>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('about') }}">About Us</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="https://www.digicrome.com/our-courses/postgraduate-and-master-programs">Courses</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('corporate_services') }}">Corporate Services</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('blog') }}">Blog</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('payments') }}">Payments</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('about') }}">About Us</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="https://www.digicrome.com/our-courses/postgraduate-and-master-programs">Courses</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('corporate_services') }}">Corporate Services</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('blog') }}">Blog</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('payments') }}">Payments</a></li>
 						</ul>
 					</div>
 				</div>
@@ -189,11 +189,11 @@
 					</div>
 					<div class="footer-widget-menu">
 						<ul>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('who_we_are') }}">Who we are</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('success_stories') }}">Success stories</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('terms-and-conditions') }}">Terms And Conditions</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
-							<li><img src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('privacy-policy') }}">Privacy-Policy</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('who_we_are') }}">Who we are</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('success_stories') }}">Success stories</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('terms-and-conditions') }}">Terms And Conditions</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('privacy-policy') }}">Privacy-Policy</a></li>
 						</ul>
 					</div>
 				</div>
@@ -205,13 +205,13 @@
 				<div class="footer-widget-blog first">
 					<div class="footer-widget-blog-thumb">
 						<a href="https://play.google.com/store/apps/details?id=com.digichrome.app">
-						<img src="{{ asset('assets/images/playimg.png') }}" alt="recent-img" class="ap-logo"></a>
+						<img loading="lazy"src="{{ asset('assets/images/playimg.png') }}" alt="recent-img" class="ap-logo"></a>
 					</div>
 				</div>
 				<div class="footer-widget-blog">
 					<div class="footer-widget-blog-thumb">
 						<a href="https://apps.apple.com/in/app/digicrome-academy/id6503241441">
-						<img src="{{ asset('assets/images/apple.png') }}" alt="recent-img" class="ap-logo"></a>
+						<img loading="lazy"src="{{ asset('assets/images/apple.png') }}" alt="recent-img" class="ap-logo"></a>
 					</div>
 				</div>
 			</div>
@@ -272,7 +272,7 @@
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="d-flex justify-content-between">
-                <img src="images/footer_logo.webp" alt="">
+                <img loading="lazy"src="images/footer_logo.webp" alt="">
                 <p>© 2025 DigiCrome. All rights reserved.</p>
             </div>
         </div>
@@ -339,36 +339,36 @@
 
 
  	<!-- modernizr js -->
-	<script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+	<script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}" defer></script>
 	<!-- jquery js -->
-	<script src="{{ asset('assets/js/vendor/jquery-3.6.2.min.js') }}"></script>
-	<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+	<script src="{{ asset('assets/js/vendor/jquery-3.6.2.min.js') }}" defer></script>
+	<script src="{{ asset('assets/js/popper.min.js') }}" defer></script>
 	<!-- bootstrap js -->
-	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
 	<!-- carousel js -->
-	<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+	<script src="{{ asset('assets/js/owl.carousel.min.js') }}" defer></script>
 	<!-- counterup js -->
-	<script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.counterup.min.js') }}" defer></script>
 	<!-- waypoints js -->
-	<script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+	<script src="{{ asset('assets/js/waypoints.min.js') }}" defer></script>
 	<!-- wow js -->
-	<script src="{{ asset('assets/js/wow.js') }}"></script>
+	<script src="{{ asset('assets/js/wow.js') }}" defer></script>
 	<!-- imagesloaded js -->
-	<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}" defer></script>
 	<!-- venobox js -->
-	<script src="venobox/venobox.js"></script>
+	<script src="venobox/venobox.js" defer></script>
 	<!--  animated-text js -->
-	<script src="{{ asset('assets/js/animated-text.js') }}"></script>
+	<script src="{{ asset('assets/js/animated-text.js') }}" defer></script>
 	<!-- venobox min js -->
-	<script src="venobox/venobox.min.js"></script>
+	<script src="venobox/venobox.min.js" defer></script>
 	<!-- isotope js -->
-	<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}" defer></script>
 	<!-- jquery meanmenu js -->
-	<script src="{{ asset('assets/js/jquery.meanmenu.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.meanmenu.js') }}" defer></script>
 	<!-- jquery scrollup js -->
-	<script src="{{ asset('assets/js/jquery.scrollUp.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.scrollUp.js') }}" defer></script>
 	<!-- barfiller -->
-	<script src="{{ asset('assets/js/jquery.barfiller.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.barfiller.js') }}" defer></script>
 	<!-- theme js -->
-	<script src="{{ asset('assets/js/theme.js') }}"></script>
+	<script src="{{ asset('assets/js/theme.js') }}" defer></script>
 	

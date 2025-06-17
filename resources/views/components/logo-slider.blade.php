@@ -9,12 +9,12 @@
       <div class="logo-track">
         @foreach($companyLogos as $logo)
           <div class="logo-item">
-            <img src="{{ asset('storage/' . $logo->image) }}" loading="lazy" alt="brand">
+            <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" loading="lazy" alt="brand">
           </div>
         @endforeach
         @foreach($companyLogos as $logo)
           <div class="logo-item">
-            <img src="{{ asset('storage/' . $logo->image) }}" loading="lazy" alt="brand">
+            <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" loading="lazy" alt="brand">
           </div>
         @endforeach
       </div>
@@ -25,12 +25,12 @@
       <div class="logo-track">
         @foreach($companyLogos as $logo)
           <div class="logo-item">
-            <img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+            <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand">
           </div>
         @endforeach
         @foreach($companyLogos as $logo)
           <div class="logo-item">
-            <img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+            <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand">
           </div>
         @endforeach
       </div>

@@ -24,7 +24,7 @@
 							<div
 								style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
 								<small style="font-size: 14px; color: #555;">In collaboration with</small>
-								<img src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}" class="ds-logo lazyload"
+								<img loading="lazy"src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}" class="ds-logo lazyload"
 									alt="MS Logo" style="width: 100%; height: auto; margin-top: 5px;">
 							</div>
 						</div>
@@ -44,7 +44,7 @@
 					</div>
 					<div class="hero-rating-box">
 						<div class="hero-rating-icon">
-							{{-- <img src="{{ asset('assets/images/home-one/star-icon.webp') }}" alt="star"> --}}
+							{{-- <img loading="lazy"src="{{ asset('assets/images/home-one/star-icon.webp') }}" alt="star"> --}}
 							<span>10k+</span>
 						</div>
 						<div class="hero-rating-item-box">
@@ -69,23 +69,23 @@
 				<div class="col-lg-6">
 					<div class="hero-thumb-wrapper">
 						<div class="hero-thumb">
-							<img src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="thumb">
 						</div>
 						{{-- <div class="hero-shape1 rotateme">
-							<img src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
 						</div> --}}
 						<div class="hero-arrow-shape">
-							<img src="{{ asset('assets/images/home-one/hero-arrow.webp') }}" alt="arrow">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-arrow.webp') }}" alt="arrow">
 						</div>
 						<div class="hero-dot-shape">
-							<img src="{{ asset('assets/images/home-one/hero-dot.webp') }}" alt="dot">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-dot.webp') }}" alt="dot">
 						</div>
 						<div class="hero-shape3 bounce-animate-3">
-							<img src="{{ asset('assets/images/home-one/hero-shape3.webp') }}" alt="shape3">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}" alt="shape3">
 						</div>
 						<div class="hero-autor-box">
 							<div class="autor-thumb">
-								<img src="{{ asset('assets/images/home-one/hero-autor.webp') }}" alt="autor">
+								<img loading="lazy"src="{{ asset('assets/images/home-one/hero-autor.webp') }}" alt="autor">
 							</div>
 							<div class="hero-autor-content">
 								<h3 class="counter">130</h3>
@@ -123,7 +123,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">500+ Hiring Partners</h4>
@@ -139,7 +139,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">45+ Industry-Relevant Projects</h4>
@@ -155,7 +155,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
@@ -171,7 +171,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">Job Ready Program</h4>
@@ -186,10 +186,10 @@
 				</div>
 			</div>
 			{{-- <div class="feature-shape1">
-				<img src="{{ asset('assets/images/home-one/feature-shape1.webp') }}" alt="shape">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/feature-shape1.webp') }}" alt="shape">
 			</div>
 			<div class="feature-shape2 rotateme">
-				<img src="{{ asset('assets/images/home-one/feature-shape2.webp') }}" alt="shape2">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/feature-shape2.webp') }}" alt="shape2">
 			</div> --}}
 		</div>
 	</section>
@@ -209,16 +209,16 @@
 				<div class="col-xl-6 col-lg-12">
 					<div class="about-thumb-wrapper">
 						<div class="about-thumb">
-							<img src="{{ asset('assets/images/home-one/about-thumb1.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/about-thumb1.webp') }}" alt="thumb">
 						</div>
 						<div class="about-thumb-shape1 bounce-animate-3">
-							<img src="{{ asset('assets/images/home-one/about-shape1.webp') }}" alt="shape1">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape1.webp') }}" alt="shape1">
 						</div>
 						<div class="about-thumb-shape2 rotateme">
-							<img src="{{ asset('assets/images/home-one/about-shape2.webp') }}" alt="shape2">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape2.webp') }}" alt="shape2">
 						</div>
 						<div class="about-thumb-shape3">
-							<img src="{{ asset('assets/images/home-one/about-shape3.webp') }}" alt="shape3">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape3.webp') }}" alt="shape3">
 						</div>
 					</div>
 				</div>
@@ -239,13 +239,13 @@
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="about-item-list">
-									<span><img src="{{ asset('assets/images/home-one/about-icon.webp') }}"
+									<span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
 											alt="icon">Globally Recognized Certifications</span>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="about-item-list">
-									<span><img src="{{ asset('assets/images/home-one/about-icon.webp') }}"
+									<span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
 											alt="icon">Industry-Approved Curriculum</span>
 								</div>
 							</div>
@@ -281,10 +281,10 @@
 				</div>
 			</div>
 			{{-- <div class="about-shape4">
-				<img src="{{ asset('assets/images/home-one/about-shape4.webp') }}" alt="shape4">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape4.webp') }}" alt="shape4">
 			</div> --}}
 			<div class="about-shape5">
-				<img src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="shape5">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="shape5">
 			</div>
 		</div>
 	</section>
@@ -308,7 +308,7 @@
 							<div class="col-lg-12">
 								<div class="single-brand-box">
 									<div class="brand-thumb">
-										<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+										<img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand">
 									</div>
 								</div>
 							</div>
@@ -317,13 +317,13 @@
 				</div>
 			</div>
 			<div class="brand-arrow-shape">
-				<img src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="arrow">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="arrow">
 			</div>
 			<div class="brand-star-shape">
-				<img src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
 			</div>
 			{{-- <div class="brand-line-shape">
-				<img src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
 			</div> --}}
 		</div>
 	</div>
@@ -335,12 +335,12 @@
 			<div class="col-xl-6 col-lg-6">
 				<div class="about-thumb-wrapper">
 					<div class="about-thumb">
-						<img src="{{ asset('assets/images/digi.png') }}" alt="thumb">
+						<img loading="lazy"src="{{ asset('assets/images/digi.png') }}" alt="thumb">
 						{{-- <div class="about-line-shape">
-							<img src="assets/images/home-five/about-line5.webp" alt="line">
+							<img loading="lazy"src="assets/images/home-five/about-line5.webp" alt="line">
 						</div>
 						<div class="about-thumb-shape">
-							<img src="assets/images/home-five/about-shape52.webp" alt="all-student">
+							<img loading="lazy"src="assets/images/home-five/about-shape52.webp" alt="all-student">
 						</div> --}}
 						<div class="about-call-box">
 							<div class="call-icon">
@@ -389,10 +389,10 @@
 			</div>			
 		</div>
 		{{-- <div class="about-shape51">
-			<img src="assets/images/home-five/about-shape51.webp" alt="shape51">
+			<img loading="lazy"src="assets/images/home-five/about-shape51.webp" alt="shape51">
 		</div>
 		<div class="about-shape53">
-			<img src="assets/images/home-five/about-shape53.webp" alt="shape53">
+			<img loading="lazy"src="assets/images/home-five/about-shape53.webp" alt="shape53">
 		</div> --}}
 	</div>
 </section>
@@ -408,7 +408,7 @@
 							<div class="col-lg-12">
 								<div class="single-brand-box">
 									<div class="brand-thumb">
-										<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+										<img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand">
 									</div>
 								</div>
 							</div>
@@ -455,23 +455,23 @@
 				<div class="col-lg-12">
 					<div class="marquee">
 						<div class="marquee-block">
-							<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
+							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
 										alt="icon"></span>learning innovation</h3>
-							<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
+							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
 										alt="icon"></span>worldwide learners</h3>
-							<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
+							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
 										alt="icon"></span>unique knowledge</h3>
-							<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
+							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
 										alt="icon"></span>dream today</h3>
 						</div>
 						<div class="marquee-block">
-							<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
+							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
 										alt="icon"></span>learning innovation</h3>
-							<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
+							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
 										alt="icon"></span>worldwide learners</h3>
-							<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
+							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
 										alt="icon"></span>unique knowledge</h3>
-							<h3><span><img src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
+							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
 										alt="icon"></span>dream today</h3>
 						</div>
 					</div>
@@ -548,7 +548,7 @@
 						<div class="case-study-single-box">
 							{{-- Use same HTML course card template --}}
 							<div class="case-study-thumb">
-								<img src="{{ asset('storage/' . $course->image) }}" alt="thumb">
+								<img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="thumb">
 								{{-- <div class="case-meta-top">
 									<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
 								</div> --}}
@@ -571,7 +571,7 @@
 								</div>
 								{{-- <div class="case-autor-box">
 									<div class="case-autor-img">
-										<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
+										<img loading="lazy"src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
 									</div>
 									<div class="case-autor-content">
 										<h3>Instructor</h3>
@@ -603,7 +603,7 @@
 							<div class="case-study-single-box">
 								{{-- Same card HTML reused --}}
 								<div class="case-study-thumb">
-									<img src="{{ asset('storage/' . $course->image) }}" alt="thumb">
+									<img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="thumb">
 									{{-- <div class="case-meta-top">
 										<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
 									</div> --}}
@@ -626,7 +626,7 @@
 									</div>
 									{{-- <div class="case-autor-box">
 										<div class="case-autor-img">
-											<img src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
+											<img loading="lazy"src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
 										</div>
 										<div class="case-autor-content">
 											<h3>Instructor</h3>
@@ -682,21 +682,21 @@
 						</div>
 						<div class="choose-item-menu">
 							<ul>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">Weekend
+								<li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">Weekend
 									Live Sessions
 								</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">Select a
+								<li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">Select a
 									convenient batch time
 								</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}" alt="icon">Get
+								<li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon3.webp') }}" alt="icon">Get
 									Placement Guarantee Aid
 								</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">Get a
+								<li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">Get a
 									Salary Hike
 								</li>
 							</ul>
 						</div>
-						<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.webp') }}"
+						<p class="choose-suport-des"><img loading="lazy"src="{{ asset('assets/images/home-one/top-star.webp') }}"
 								alt="star">24/7 Mentor Support Available </p>
 						<div class="choose-btn">
 							<a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
@@ -706,10 +706,10 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="choose-thumb">
-						<img src="{{ asset('assets/images/home-one/choose-thumb1.webp') }}" alt="thumb">
+						<img loading="lazy"src="{{ asset('assets/images/home-one/choose-thumb1.webp') }}" alt="thumb">
 						<div class="choose-skill-box">
 							<div class="choose-skill-icon">
-								<img src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}" alt="rat">
+								<img loading="lazy"src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}" alt="rat">
 							</div>
 							<div class="choose-skill-content">
 								<h3 class="counter">26</h3>
@@ -718,19 +718,19 @@
 							</div>
 						</div>
 						<div class="choose-shape-dot">
-							<img src="{{ asset('assets/images/home-one/choose-dot.webp') }}" alt="dot-shape">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/choose-dot.webp') }}" alt="dot-shape">
 						</div>
 						<div class="choose-shape-star">
-							<img src="{{ asset('assets/images/home-one/choose-star.webp') }}" alt="star-shape">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/choose-star.webp') }}" alt="star-shape">
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="choose-shape1">
-				<img src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape">
 			</div>
 			<div class="choose-shape2">
-				<img src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape">
 			</div>
 		</div>
 	</div>
@@ -773,7 +773,7 @@
 							<div class="col-lg-12">
 								<div class="single-brand-box">
 									<div class="brand-thumb">
-										<img src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+										<img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand">
 									</div>
 								</div>
 							</div>
@@ -791,7 +791,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="course-design-thumb">
-						<img src="{{ asset('assets/images/usss.jpg') }}" alt="thumb">
+						<img loading="lazy"src="{{ asset('assets/images/usss.jpg') }}" alt="thumb">
 						<div class="course-video-icon">
 							<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
 								href="https://youtu.be/HLiQiTTbX8g"><i class="fa-classic fa-solid fa-play fa-fw"></i></a>
@@ -827,7 +827,7 @@
 							</div> --}}
 						</div>
 						<div class="offer-thumb">
-							<img src="{{ asset('assets/images/home-one/offer-thumb.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}" alt="thumb">
 						</div>
 					</div>
 				</div>
@@ -837,7 +837,7 @@
 	<!--==================================================-->
 	<!-- end educate course design offer Area -->
 	<!--==================================================-->
-	<section class="video-slider">
+	{{-- <section class="video-slider">
 		<div class="container">
 			<h2 class="text-center mb-2 mt-2" style="font-size: 2rem;">
 				<span style="color: #f29c12;">Featured </span> Testimonials
@@ -927,7 +927,7 @@
 				});
 			});
 		</script>
-	</section>
+	</section> --}}
 
 	<!-- Updated Style Only -->
 
@@ -954,7 +954,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6">
 					<div class="single-team-box box-1">
 						<div class="team-thumb">
-							<img src="{{ asset('assets/images/home-one/team-thumb1.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb1.webp') }}" alt="thumb">
 							<div class="team-social-icon">
 								<div class="team-social">
 									<ul>
@@ -990,7 +990,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6">
 					<div class="single-team-box box-2">
 						<div class="team-thumb">
-							<img src="{{ asset('assets/images/home-one/team-thumb2.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb2.webp') }}" alt="thumb">
 							<div class="team-social-icon">
 								<div class="team-social">
 									<ul>
@@ -1026,7 +1026,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6">
 					<div class="single-team-box box-3">
 						<div class="team-thumb">
-							<img src="{{ asset('assets/images/home-one/team-thumb3.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb3.webp') }}" alt="thumb">
 							<div class="team-social-icon">
 								<div class="team-social">
 									<ul>
@@ -1062,7 +1062,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6">
 					<div class="single-team-box box-4">
 						<div class="team-thumb">
-							<img src="{{ asset('assets/images/home-one/team-thumb4.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb4.webp') }}" alt="thumb">
 							<div class="team-social-icon">
 								<div class="team-social">
 									<ul>
@@ -1097,10 +1097,10 @@
 				</div>
 			</div>
 			<div class="team-shape1">
-				<img src="{{ asset('assets/images/home-one/team-shape1.webp') }}" alt="shape1">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/team-shape1.webp') }}" alt="shape1">
 			</div>
 			<div class="team-shape2">
-				<img src="{{ asset('assets/images/home-one/team-shape2.webp') }}" alt="shape2">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/team-shape2.webp') }}" alt="shape2">
 			</div>
 		</div>
 	</div> --}}
@@ -1129,13 +1129,13 @@
 				<div class="col-lg-6">
 					<div class="testi-thumb-wrapper">
 						<div class="testimonial-thumb">
-							<img src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="thumb">
 						</div>
 						<div class="testi-dot-shape">
-							<img src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="dot">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="dot">
 						</div>
 						<div class="testi-map-shape">
-							<img src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="map">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="map">
 						</div>
 					</div>
 				</div>
@@ -1147,7 +1147,7 @@
 									<div class="testi-box">
 										<div class="single-testi-box">
 											<div class="testi-quote">
-												<img src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
+												<img loading="lazy"src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
 											</div>
 											<div class="testi-title">
 												<h3>{{ $testimonial->tagline }}</h3>
@@ -1171,7 +1171,7 @@
 										</div>
 										<div class="testi-autor-box">
 											<div class="testi-autor">
-												<img src="{{ asset('storage/' . $testimonial->image) }}" alt="author"
+												<img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}" alt="author"
 													style="width: 60px; height: 60px; border-radius: 50%;">
 											</div>
 											<div class="testi-autor-content">
@@ -1195,7 +1195,7 @@
 			<div class="col-lg-4">
 				<!-- section title -->
 				<div class="section-sub-title two">
-					<h6><img src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon">TESTIMONIALS</h6>
+					<h6><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon">TESTIMONIALS</h6>
 				</div>
 				<div class="section_title two">
 					<h2 class="heading-like-h1">What Students Say About</br>
@@ -1243,7 +1243,7 @@
 							</div>
 							<div class="testi-autor-box">
 								<div class="testi-autor">
-									<img src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
+									<img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
 								</div>
 								
 								<div class="testi-autor-content">
@@ -1279,7 +1279,7 @@
 					<div class="call-to-wrapper">
 						<div class="call-to-box">
 							<div class="call-to-icon">
-								<img src="{{ asset('assets/images/home-one/call-icon.webp') }}" alt="icon">
+								<img loading="lazy"src="{{ asset('assets/images/home-one/call-icon.webp') }}" alt="icon">
 							</div>
 							<div class="call-to-content">
 								<h6>Call Anytime</h6>
@@ -1287,14 +1287,14 @@
 							</div>
 						</div>
 						<div class="call-to-arrow">
-							<img src="{{ asset('assets/images/home-one/call-arrow.webp') }}" alt="arrow">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/call-arrow.webp') }}" alt="arrow">
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-3 col-lg-4">
 					<div class="call-logo-box">
 						<div class="call-to-logo">
-							<img src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="logo">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="logo">
 						</div>
 						<div class="call-rating">
 							<p><span>890+</span> Trustpilot 4.9 Ratings</p>
@@ -1309,7 +1309,7 @@
 			<div class="row section-title-space">
 				<div class="col-xl-4 col-lg-12">
 					<div class="section-sub-title three">
-						<h6><img src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Stories
+						<h6><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Stories
 						</h6>
 					</div>
 					<div class="section_title">
@@ -1319,7 +1319,7 @@
 					</div>
 					<div class="testi-review-box">
 						<div class="review-image">
-							<img src="{{ asset('assets/images/home-three/course-instructor.webp') }}" alt="instructor">
+							<img loading="lazy"src="{{ asset('assets/images/home-three/course-instructor.webp') }}" alt="instructor">
 						</div>
 						<div class="testi-review-content">
 							<h3 class="counter">250</h3>
@@ -1327,7 +1327,7 @@
 							<p>Reviews</p>
 						</div>
 						<div class="testi-inner-shape">
-							<img src="{{ asset('assets/images/inner-img/testi-shape-in.webp') }}" alt="arrow">
+							<img loading="lazy"src="{{ asset('assets/images/inner-img/testi-shape-in.webp') }}" alt="arrow">
 						</div>
 					</div>
 				</div>
@@ -1340,7 +1340,7 @@
 									<div class="testi-box">
 										<div class="single-testi-box">
 											<div class="testi-quote">
-												<img src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
+												<img loading="lazy"src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
 											</div>
 											{{-- <div class="testi-title">
 												<h3>Success Story</h3>
@@ -1359,7 +1359,7 @@
 											</div> --}}
 											<div class="testi-autor-box">
 												<div class="testi-autor">
-													<img src="{{ asset('storage/' . $story->image) }}" alt="author"
+													<img loading="lazy"src="{{ asset('storage/' . $story->image) }}" alt="author"
 														class="rounded-circle img-fluid" style="width: 70px; height: 70px; ">
 												</div>
 												<div class="testi-autor-content">
@@ -1388,7 +1388,7 @@
 				Our <span style="color: #f29c12;">Data Science with AI </span> Certification Course Journey
 			</h2>
 			{{-- <p class="mb-4 fs-5 text-muted">Knowing us before growing with us” your Success way!</p> --}}
-			<img src="{{ asset('assets/images/home-one/phase.webp') }}" alt="Vision Image"
+			<img loading="lazy"src="{{ asset('assets/images/home-one/phase.webp') }}" alt="Vision Image"
 				class="img-fluid rounded shadow-lg" />
 		</div>
 	</section>
@@ -1412,17 +1412,17 @@
 						</div>
 						<div class="choose-item-menu">
 							<ul>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">500 +
+								<li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon1.webp') }}" alt="icon">500 +
 									Global Companies</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">12-15 LPA
+								<li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon2.webp') }}" alt="icon">12-15 LPA
 									Average CTC</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon3.webp') }}" alt="icon">25-27 LPA
+								<li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon3.webp') }}" alt="icon">25-27 LPA
 									Highest CTC</li>
-								<li><img src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">120 %
+								<li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon4.webp') }}" alt="icon">120 %
 									Average Hike</li>
 							</ul>
 						</div>
-						<p class="choose-suport-des"><img src="{{ asset('assets/images/home-one/top-star.webp') }}"
+						<p class="choose-suport-des"><img loading="lazy"src="{{ asset('assets/images/home-one/top-star.webp') }}"
 								alt="star">Don't Stay Stuck, Expand Your Potential Today
 						</p>
 						<div class="choose-btn">
@@ -1433,10 +1433,10 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="choose-thumb">
-						<img src="{{ asset('assets/images/home-one/roles.webp') }}" alt="	thumb">
+						<img loading="lazy"src="{{ asset('assets/images/home-one/roles.webp') }}" alt="	thumb">
 						{{-- <div class="choose-skill-box">
 							<div class="choose-skill-icon">
-								<img src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}" alt="rat">
+								<img loading="lazy"src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}" alt="rat">
 							</div>
 							<div class="choose-skill-content">
 								<h3 class="counter">26</h3>
@@ -1445,19 +1445,19 @@
 							</div>
 						</div> --}}
 						<div class="choose-shape-dot">
-							{{-- <img src="{{ asset('assets/images/home-one/choose-dot.webp') }}" alt="dot-shape"> --}}
+							{{-- <img loading="lazy"src="{{ asset('assets/images/home-one/choose-dot.webp') }}" alt="dot-shape"> --}}
 						</div>
 						<div class="choose-shape-star">
-							{{-- <img src="{{ asset('assets/images/home-one/choose-star.webp') }}" alt="star-shape"> --}}
+							{{-- <img loading="lazy"src="{{ asset('assets/images/home-one/choose-star.webp') }}" alt="star-shape"> --}}
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="choose-shape1">
-				{{-- <img src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape"> --}}
+				{{-- <img loading="lazy"src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape"> --}}
 			</div>
 			<div class="choose-shape2">
-				{{-- <img src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape"> --}}
+				{{-- <img loading="lazy"src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape"> --}}
 			</div>
 		</div>
 	</div>
@@ -1485,7 +1485,7 @@
 						<div class="col-xl-4 col-lg-12 col-md-4">
 							<div class="single-blog-box box-1">
 								<div class="single-blog-thumb">
-									<img src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb" class="img-fluid">
+									<img loading="lazy"src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb" class="img-fluid">
 									<div class="blog-meta-top">
 										<span>{{ \Carbon\Carbon::parse($blog->created_at)->format('d M') }}</span>
 									</div>
@@ -1494,7 +1494,7 @@
 									<div class="blog-author">
 										<h4 style="display: flex; align-items: center; gap: 10px;">
 											@if($blog->author_image)
-												<img src="{{ asset('storage/' . $blog->author_image) }}" alt="author"
+												<img loading="lazy"src="{{ asset('storage/' . $blog->author_image) }}" alt="author"
 													style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
 											@endif
 											{{ $blog->author_name }}
@@ -1511,7 +1511,7 @@
 									<div class="blog-btn">
 										<a href="{{ route('blog.details', $blog->slug) }}">
 											Continue Reading
-											<img src="{{ asset('assets/images/home-one/blog-icon1.webp') }}" alt="icon">
+											<img loading="lazy"src="{{ asset('assets/images/home-one/blog-icon1.webp') }}" alt="icon">
 										</a>
 									</div>
 								</div>
@@ -1534,7 +1534,7 @@
 			@foreach($gallery as $photo)
 			<div class="item">
 				<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-					<img src="{{ asset('storage/' . $photo->image) }}" class="gal-siz-1" alt="digicrome_images" loading="lazy">
+					<img loading="lazy"src="{{ asset('storage/' . $photo->image) }}" class="gal-siz-1" alt="digicrome_images" loading="lazy">
 					<div class="txt">
 						<span>Digicrome</span>
 						<h4>{{ $photo->name }}</h4>

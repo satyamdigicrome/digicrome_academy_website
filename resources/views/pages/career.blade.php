@@ -271,10 +271,10 @@
                 </div>
             </div>
             <div class="breadcumb-shape">
-                <img src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
             </div>
             <div class="breadcumb-shape2">
-                <img src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
             </div>
         </div>
     </div>
@@ -306,7 +306,7 @@
                         Beware of the fraud recruitment offers.</p>
                 </div>
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-top: 70px;">
-                    <img src="{{ asset('assets/images/dc/1d.webp')}}" alt="Image"
+                    <img loading="lazy"src="{{ asset('assets/images/dc/1d.webp')}}" alt="Image"
                         style="float: right; border-radius: 3%;">
                 </div>
             </div>
@@ -322,7 +322,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 30px;">
                     <div>
-                        <img src="{{ asset('assets/images/dc/1e.webp')}}" alt="digicrome_Image"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/1e.webp')}}" alt="digicrome_Image"
                             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 38%;">
                         <h4 style="padding-top:20px; ">Building Outstanding Careers</h4>
                         <p
@@ -334,7 +334,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 30px;">
                     <div>
-                        <img src="{{ asset('assets/images/dc/1f.webp')}}" alt="digicrome_Image"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/1f.webp')}}" alt="digicrome_Image"
                             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px; ">Empowering Women at Work</h4>
                         <p
@@ -345,7 +345,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 30px;">
                     <div>
-                        <img src="{{ asset('assets/images/dc/1g.webp')}}" alt="digicrome_Image"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/1g.webp')}}" alt="digicrome_Image"
                             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px; ">Enjoying Fun with Responsibility</h4>
                         <p
@@ -359,14 +359,14 @@
     </section>
     {{-- <section class="company-form contactpage-form" style=" padding-top:10px;">
         <div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
-            <!-- <h1 class="section__title"  style="text-align: center; padding-bottom:40px;"><b>Unveiling <span class="yellow-bg"> Digicrome<img src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png" alt=""></span> Distinct Culture</b></h1> -->
+            <!-- <h1 class="section__title"  style="text-align: center; padding-bottom:40px;"><b>Unveiling <span class="yellow-bg"> Digicrome<img loading="lazy"src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png" alt=""></span> Distinct Culture</b></h1> -->
 
         </div>
         <div class="">
             <div class="gall-inn">
                 <div class="col-sm-6 col-md-2">
                     <div class="gal-im animate animate__animated animate__slow" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2a.webp')}}" class="gal-siz-1" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2a.webp')}}" class="gal-siz-1" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -374,7 +374,7 @@
                         </div>
                     </div>
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2b.webp')}}" class="gal-siz-2" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2b.webp')}}" class="gal-siz-2" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -384,7 +384,7 @@
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2c.webp')}}" class="gal-siz-2" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2c.webp')}}" class="gal-siz-2" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -392,7 +392,7 @@
                         </div>
                     </div>
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2d.webp')}}" class="gal-siz-1" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2d.webp')}}" class="gal-siz-1" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -402,7 +402,7 @@
                 </div>
                 <div class="col-sm-6 col-md-2">
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2e.webp')}}" class="gal-siz-1" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2e.webp')}}" class="gal-siz-1" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -410,7 +410,7 @@
                         </div>
                     </div>
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2f.webp')}}" class="gal-siz-2" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2f.webp')}}" class="gal-siz-2" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -420,7 +420,7 @@
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2g.webp')}}" class="gal-siz-2" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2g.webp')}}" class="gal-siz-2" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -428,7 +428,7 @@
                         </div>
                     </div>
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2h.webp')}}" class="gal-siz-1" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2h.webp')}}" class="gal-siz-1" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -438,7 +438,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2i.webp')}}" class="gal-siz-2" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2i.webp')}}" class="gal-siz-2" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -446,7 +446,7 @@
                         </div>
                     </div>
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img src="{{ asset('assets/images/dc/2j.webp')}}" class="gal-siz-1" alt="digicrome_images"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/2j.webp')}}" class="gal-siz-1" alt="digicrome_images"
                             loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
@@ -469,7 +469,7 @@
 			@foreach($gallery as $photo)
 			<div class="item">
 				<div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-					<img src="{{ asset('storage/' . $photo->image) }}" class="gal-siz-1" alt="digicrome_images" loading="lazy">
+					<img loading="lazy"src="{{ asset('storage/' . $photo->image) }}" class="gal-siz-1" alt="digicrome_images" loading="lazy">
 					<div class="txt">
 						<span>Digicrome</span>
 						<h4>{{ $photo->name }}</h4>
@@ -487,7 +487,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 70px;">
                     <div>
-                        <img src="{{ asset('assets/images/dc/3c.webp')}}" alt="Image"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/3c.webp')}}" alt="Image"
                             style="width: 110px; height: 110px; border-radius: 50%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px;  ">Develop Future-Ready Skills</h4>
                         <p
@@ -499,7 +499,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 70px;">
                     <div>
-                        <img src="{{ asset('assets/images/dc/3a.webp')}}" alt="Image"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/3a.webp')}}" alt="Image"
                             style="width: 110px; height: 110px; border-radius: 50%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px;  ">Learn from the Best</h4>
                         <p
@@ -511,7 +511,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 70px;">
                     <div>
-                        <img src="{{ asset('assets/images/dc/3b.webp')}}" alt="Image"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/3b.webp')}}" alt="Image"
                             style="width: 110px; height: 110px; border-radius: 50%; background-color:orange; margin-left: 35%;">
                         <h4 style="padding-top:20px;  ">Gain a Global Perspective</h4>
                         <p
@@ -543,7 +543,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 text-center" style="padding-top: 40px;">
                     <div>
-                        <img src="{{ asset('assets/images/dc/3d.webp')}}" alt="digicrome_support"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/3d.webp')}}" alt="digicrome_support"
                             style="width: 100%px; height:100%;">
                     </div>
                 </div>
@@ -628,7 +628,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 text-center" style="padding-top: 40px;">
                     <div>
-                        <img src="{{ asset('assets/images/dc/3e.webp')}}" alt="digicrome_support"
+                        <img loading="lazy"src="{{ asset('assets/images/dc/3e.webp')}}" alt="digicrome_support"
                             style="width: 100%; height:100%; border-radius: 7px">
                     </div>
                 </div>

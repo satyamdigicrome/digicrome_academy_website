@@ -12,7 +12,7 @@
           <div class="col-xl-4 col-lg-6 col-md-6">
             <div class="course-details-box">
               <div class="course-details-thumb">
-                <img src="{{ asset('storage/'.$course->image) }}" alt="thumb">
+                <img loading="lazy"src="{{ asset('storage/'.$course->image) }}" alt="thumb">
                 <div class="course-meta-top">
                   <span>{{ $course->tag_line }}</span>
                 </div>

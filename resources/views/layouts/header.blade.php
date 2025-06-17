@@ -60,8 +60,8 @@
 		<div class="row header-wrap align-items-center">
 			<div class="col-lg-2">
 				<div class="header-logo">
-					<a class="active_logo" href="/"><img src="{{ asset('assets/images/logo.webp') }}" alt="logo"></a>
-					<a class="logo_two" href="/"><img src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo"></a>
+					<a class="active_logo" href="/"><img loading="lazy"src="{{ asset('assets/images/logo.webp') }}" alt="logo"></a>
+					<a class="logo_two" href="/"><img loading="lazy"src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-8">
@@ -118,7 +118,7 @@
 															<div class="card border-0 shadow-sm rounded-3 p-2">
 																<div class="d-flex align-items-center">
 																	<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
-																	<img src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+																	<img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
 																	<div class="ms-3 flex-grow-1">
 																		<h6 class="fw-semibold" style="line-height: 24px;">{{ $course->name }}</h6>
 																		<p class="text-muted small">Duration: {{ $course->course_duration ?? 'N/A' }}</p></a>
@@ -147,7 +147,7 @@
 																<div class="card border-0 shadow-sm rounded-3 p-2 mb-2">
 																	<div class="d-flex align-items-center">
 																	<a href="/courses/${course.slug}">
-																		<img src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+																		<img loading="lazy"src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
 																		<div class="ms-3 flex-grow-1">
 																			<h6 class="fw-semibold" style="line-height: 24px;">${course.name}</h6></a>
 																			<p class="text-muted small">Duration: ${course.course_duration ?? 'N/A'}</p></a>
@@ -219,19 +219,19 @@
 
 					</ul>
 				</li>
-				{{-- <li>
+				<li>
 					<div class="header-src-btn">
 					<div class="search-box-btn search-box-outer"><i class="fa-solid fa-magnifying-glass"></i></div>
 				</div>&nbsp;&nbsp;
-			</li> --}}
+			</li>
 					</ul>				
 				</div>
 			</div>
 			<div class="col-lg-2">
 				<div class="header-right-wrapper">
 					<div class="header-sidebar">
-						<div class="header-btn search-box-btn search-box-outer">
-							<a href="#" 
+						<div class="header-btn">
+							<a href="#" href="javascript:void(0);" onclick="openModal()" 
 							   style="display: inline-block; 
 									  border: 2px solid #fff; 
 									  color: #fff; 
@@ -241,7 +241,7 @@
 									  white-space: nowrap; 
 									  min-width: 120px; 
 									  text-align: center;">
-								Search <i class="fa-solid fa-magnifying-glass" style="color: #fff"></i>
+								ENROLL NOW 
 							</a>
 						</div>
 					</div>
@@ -262,7 +262,7 @@
 		<nav class="header-menu">
 			<div class="mobile-logo">
 				<a class="logo_img" href="/" title="educate">
-				    <img src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo">
+				    <img loading="lazy"src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo">
 				</a>
 			  </div>
 			  <ul class="nav_scroll">
@@ -388,7 +388,7 @@ $(document).ready(function() {
                         data.forEach(course => {
                             results.append(`
                                 <a href="/upcoming-courses/${course.slug}" class="d-flex align-items-center mb-2 text-dark text-decoration-none">
-                                    <img src="/storage/${course.image}" class="me-2" width="50" height="50" style="object-fit: cover; border-radius: 6px;">
+                                    <img loading="lazy"src="/storage/${course.image}" class="me-2" width="50" height="50" style="object-fit: cover; border-radius: 6px;">
                                     <div>
                                         <div><strong>${course.name}</strong></div>
                                         <small class="text-muted">${course.tag_line}</small>
@@ -434,7 +434,7 @@ $(document).ready(function() {
 		<div class="cart_items_list">
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="{{ asset('assets/images/inner-img/rpost-thumb1.webp') }}" alt="image_not_found">
+					<img loading="lazy"src="{{ asset('assets/images/inner-img/rpost-thumb1.webp') }}" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">	
@@ -447,7 +447,7 @@ $(document).ready(function() {
 
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
+					<img loading="lazy"src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">
@@ -460,7 +460,7 @@ $(document).ready(function() {
 
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="{{ asset('assets/images/inner-img/rpost-thumb3.webp') }}" alt="image_not_found">
+					<img loading="lazy"src="{{ asset('assets/images/inner-img/rpost-thumb3.webp') }}" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">
@@ -473,7 +473,7 @@ $(document).ready(function() {
 
 			<div class="cart_item">
 				<div class="item_image">
-					<img src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
+					<img loading="lazy"src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
 				</div>
 				<div class="item_content">
 					<h4 class="item_title">
@@ -514,7 +514,7 @@ $(document).ready(function() {
 				<div class="sidebar-info-contents">
 					<div class="content-inner">
 						<div class="nav-logo">
-							<a href="/"><img src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
+							<a href="/"><img loading="lazy"src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
 						</div>
 						<div class="content-box">
 							<h2>About Us</h2>

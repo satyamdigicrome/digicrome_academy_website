@@ -35,23 +35,6 @@ use App\Http\Controllers\Admin\ContantController;
 use App\Http\Controllers\Admin\MetaController;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Route::get('/', function () {
 //     return view('welcome');
 // });

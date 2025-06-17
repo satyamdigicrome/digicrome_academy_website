@@ -25,10 +25,10 @@
                 </div>
             </div>
             <div class="breadcumb-shape">
-                <img src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
             </div>
             <div class="breadcumb-shape2">
-                <img src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
             </div>
         </div>
     </div> --}}
@@ -61,13 +61,13 @@
                                 </div> --}}
                             </div>
                             {{-- <div class="hero-shape31">
-                                <img src="assets/images/home-three/hero-shape31.webp" alt="hero-shape">
+                                <img loading="lazy"src="assets/images/home-three/hero-shape31.webp" alt="hero-shape">
                             </div>
                             <div class="hero-shape32">
-                                <img src="assets/images/home-three/hero-shape32.webp" alt="hero-shape">
+                                <img loading="lazy"src="assets/images/home-three/hero-shape32.webp" alt="hero-shape">
                             </div>
                             <div class="hero-shape33">
-                                <img src="assets/images/home-three/hero-shape33.webp" alt="hero-shape">
+                                <img loading="lazy"src="assets/images/home-three/hero-shape33.webp" alt="hero-shape">
                             </div> --}}
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="course-details-box">
                             <div class="course-details-thumb">
-                                <img src="{{ asset('storage/' .$course->image) }}" alt="thumb">
+                                <img loading="lazy"src="{{ asset('storage/' .$course->image) }}" alt="thumb">
                                 <div class="course-meta-top">
                                     <span>{{ $course->tag_line }}</span>
                                 </div>

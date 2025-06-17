@@ -8,7 +8,7 @@
         <div class="col-lg-2">
           <div class="single-brand-box">
             <div class="brand-thumb">
-              <img src="{{ $logo }}" alt="brand">
+              <img loading="lazy"src="{{ $logo }}" alt="brand">
             </div>
           </div>
         </div>

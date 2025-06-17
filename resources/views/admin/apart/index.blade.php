@@ -91,7 +91,7 @@
                 @forelse ($aparts as $apart)
                     <tr>
                         <td>
-                            <img src="{{ asset('storage/' . $apart->image) }}" alt="Image" style="height: 40px; width: 40px; object-fit: cover; border-radius: 4px;">
+                            <img loading="lazy"src="{{ asset('storage/' . $apart->image) }}" alt="Image" style="height: 40px; width: 40px; object-fit: cover; border-radius: 4px;">
                         </td>
                         <td>{{ $apart->heading }}</td>
                         <td>{{ $apart->tagline }}</td>

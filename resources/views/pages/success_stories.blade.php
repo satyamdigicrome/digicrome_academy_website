@@ -20,10 +20,10 @@
       </div>
     </div>
     <div class="breadcumb-shape">
-      <img src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
     </div>
     <div class="breadcumb-shape2">
-      <img src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
     </div>
     </div>
   </div>
@@ -55,7 +55,7 @@
       @foreach ($studentStories as $story)
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
-          <img src="{{ asset('storage/' . $story->image) }}"
+          <img loading="lazy"src="{{ asset('storage/' . $story->image) }}"
             alt="Student Photo"
             class="rounded-circle mx-auto mb-3"
             style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #f29c12;">

@@ -437,7 +437,7 @@
             <div class="popup-container">
                 <div class="popup-form">
                     <div class="form-container">
-                        <img src="{{ asset('assets/images/www.webp') }}" alt="Image Description">
+                        <img loading="lazy"src="{{ asset('assets/images/www.webp') }}" alt="Image Description">
                         <form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
                             action="https://demo.digicrome.com/post_lead.php">
                             @csrf

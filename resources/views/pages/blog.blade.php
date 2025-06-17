@@ -25,10 +25,10 @@
 				</div>
 			</div>
 			<div class="breadcumb-shape">
-				<img src="assets/images/inner-img/breadcumb-dot.webp" alt="dot">
+				<img loading="lazy"src="assets/images/inner-img/breadcumb-dot.webp" alt="dot">
 			</div>
 			<div class="breadcumb-shape2">
-				<img src="assets/images/inner-img/breadcumb-ball.webp" alt="ball">
+				<img loading="lazy"src="assets/images/inner-img/breadcumb-ball.webp" alt="ball">
 			</div>
 		</div>
 	</div> --}}
@@ -64,13 +64,13 @@
 							</div> --}}
 						</div>
 						{{-- <div class="hero-shape31">
-							<img src="assets/images/home-three/hero-shape31.webp" alt="hero-shape">
+							<img loading="lazy"src="assets/images/home-three/hero-shape31.webp" alt="hero-shape">
 						</div>
 						<div class="hero-shape32">
-							<img src="assets/images/home-three/hero-shape32.webp" alt="hero-shape">
+							<img loading="lazy"src="assets/images/home-three/hero-shape32.webp" alt="hero-shape">
 						</div>
 						<div class="hero-shape33">
-							<img src="assets/images/home-three/hero-shape33.webp" alt="hero-shape">
+							<img loading="lazy"src="assets/images/home-three/hero-shape33.webp" alt="hero-shape">
 						</div> --}}
 					</div>
 				</div>
@@ -99,7 +99,7 @@
 							<div class="col-xl-4 col-lg-12 col-md-4">
 								<div class="single-blog-box box-1">
 									<div class="single-blog-thumb">
-										<img src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb" class="img-fluid">
+										<img loading="lazy"src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb" class="img-fluid">
 										<div class="blog-meta-top">
 											<span>{{ \Carbon\Carbon::parse($blog->created_at)->format('d M') }}</span>
 										</div>
@@ -108,7 +108,7 @@
 										<div class="blog-author">
 											<h4 style="display: flex; align-items: center; gap: 10px;">
 												@if($blog->author_image)
-													<img src="{{ asset('storage/' . $blog->author_image) }}" alt="author" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+													<img loading="lazy"src="{{ asset('storage/' . $blog->author_image) }}" alt="author" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
 												@endif
 												{{ $blog->author_name }}
 											</h4>
@@ -124,7 +124,7 @@
 										<div class="blog-btn">
 											<a href="{{ route('blog.details', $blog->slug) }}">
 												Continue Reading
-												<img src="{{ asset('assets/images/home-one/blog-icon1.webp') }}" alt="icon">
+												<img loading="lazy"src="{{ asset('assets/images/home-one/blog-icon1.webp') }}" alt="icon">
 											</a>
 										</div>
 									</div>
@@ -165,7 +165,7 @@
 							<!-- widget recent post -->
 							<div class="widget-recent-post d-flex">
 								<div class="rpost-thumb">
-									<a href="#"><img src="assets/images/inner-img/rpost-thumb1.webp" alt="post thumb"></a>
+									<a href="#"><img loading="lazy"src="assets/images/inner-img/rpost-thumb1.webp" alt="post thumb"></a>
 								</div>
 								<div class="rpost-content">
 									<div class="rpost-title">
@@ -178,7 +178,7 @@
 							<!-- widget recent post -->
 							<div class="widget-recent-post d-flex">
 								<div class="rpost-thumb">
-									<a href="#"><img src="assets/images/inner-img/rpost-thumb2.webp" alt="post thumb"></a>
+									<a href="#"><img loading="lazy"src="assets/images/inner-img/rpost-thumb2.webp" alt="post thumb"></a>
 								</div>
 								<div class="rpost-content">
 									<div class="rpost-title">
@@ -191,7 +191,7 @@
 							<!-- widget recent post -->
 							<div class="widget-recent-post d-flex">
 								<div class="rpost-thumb">
-									<a href="#"><img src="assets/images/inner-img/rpost-thumb3.webp" alt="post thumb"></a>
+									<a href="#"><img loading="lazy"src="assets/images/inner-img/rpost-thumb3.webp" alt="post thumb"></a>
 								</div>
 								<div class="rpost-content">
 									<div class="rpost-title">

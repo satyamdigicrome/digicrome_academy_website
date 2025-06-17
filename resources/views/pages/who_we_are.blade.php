@@ -414,10 +414,10 @@
                 </div>
             </div>
             <div class="breadcumb-shape">
-                <img src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
             </div>
             <div class="breadcumb-shape2">
-                <img src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
             </div>
         </div>
     </div>
@@ -444,7 +444,7 @@
 
                 </div>
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%;">
-                    <img src="{{ asset('assets/images/dc/tools1.webp')}}" alt="digicrome_tools"
+                    <img loading="lazy"src="{{ asset('assets/images/dc/tools1.webp')}}" alt="digicrome_tools"
                         style=" border-radius: 3%; height:338px; width:345px;">
                 </div>
             </div>
@@ -501,7 +501,7 @@
                     Also Include Yourself &nbsp;</b></h5>
         </div>
         <div class="map">
-            <img src="{{ asset('assets/images/dc/map.webp')}}" alt="map" />
+            <img loading="lazy"src="{{ asset('assets/images/dc/map.webp')}}" alt="map" />
             <div class="pin south">
                 <span>From 2 LPA to 2 Lacs per<br>
                     month salary, Digicrome<br>
@@ -579,7 +579,7 @@
 
                 </div>
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%; padding-top:20px;">
-                    <img src="{{ asset('assets/images/dc/img121.webp')}}" alt="digicrome_Image"
+                    <img loading="lazy"src="{{ asset('assets/images/dc/img121.webp')}}" alt="digicrome_Image"
                         style="box-shadow: 5px 5px 10px rgba(21, 0, 0, 83.2); border-radius: 3%; height:318px; width:325px;">
                 </div>
             </div>
@@ -594,7 +594,7 @@
             </div>
             <div class="row">
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%; padding-bottom:20px;">
-                    <img src="{{ asset('assets/images/dc/report.webp')}}" alt="digicrome_report"
+                    <img loading="lazy"src="{{ asset('assets/images/dc/report.webp')}}" alt="digicrome_report"
                         style="border-radius: 3%; box-shadow: 5px 5px 10px rgba(21, 0, 0, 7.2); height: 338px; width: 345px;">
                 </div>
 
