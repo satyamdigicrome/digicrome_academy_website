@@ -88,7 +88,7 @@
 														</a>
 													</li>
 													<li class="mb-2">
-														<a href="javascript:void(0);" class="text-dark d-flex justify-content-between align-items-center category-link" data-ids="61">
+														<a href="https://www.digicrome.com/courses/investment-banking-certification-course" class="text-dark d-flex justify-content-between align-items-center category-link" data-ids="61">
 															Investment Banking
 															<i class="bi bi-chevron-right"></i>
 														</a>
