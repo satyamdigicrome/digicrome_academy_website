@@ -362,7 +362,7 @@ a.logo_two {
 }
 
 .sticky .header-menu ul li a:hover{
-    color:var(--title-color);
+    color:#f29c12;
 }
 
 .sticky .header-menu ul li a:hover i {

@@ -80,8 +80,8 @@
 				</div>
 				<br>
 				<div class="section_title six" >
-					<h2 style="color: #fff font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;">Let’s Connect and</h2>
-					<h2 style="color: #fff font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;">Grow Your Future Together!</h2>
+					<h2 style="color: #fff; font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;">Let’s Connect and</h2>
+					<h2 style="color: #fff; font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;">Grow Your Future Together!</h2>
 				  </div>
 				  <div class="section-title-desc">
 					<p style="color: #ddd">Have questions, ideas, or need guidance? Our team is here to support your journey — reach out and let’s build something impactful together.</p>
@@ -324,11 +324,11 @@
 <!--==================================================-->
 <!-- Start educate Scroll Up-->
 <!--==================================================-->
-<div class="prgoress_indicator active-progress">
+{{-- <div class="prgoress_indicator active-progress">
 	<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
 		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 212.78;"></path>
 	</svg>
- </div>
+ </div> --}}
 <!--==================================================-->
 <!-- End educate Scroll Up-->
 <!--==================================================-->

@@ -297,8 +297,8 @@
                         <br> If this resonates with your aspirations, we warmly welcome you to
                         become<br> a part of our team. Together, we can strive for even greater success</span>
                     <br><br><br>
-                    <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
-                        class="bi bi-whatsapp"></i>Book Now</a>
+                    {{-- <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
+                        class="bi bi-whatsapp"></i>Book Now</a> --}}
                     <br><br><br>
                     <p style="color: white;"> <strong>Disclaimer:</strong>Digicrome in no way encourages any recruitment fee
                         from the candidates.
@@ -316,9 +316,11 @@
     <section class="company-form contactpage-form" style="padding-top: 50px;">
         <div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
             <h1 class="section__title" style="text-align: center; padding-bottom:40px;"><b>Unveiling <span
-                        class="yellow-bg"> Digicrome<img
+                        class="yellow-bg"> Digicrome
+                        {{-- <img
                             src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png"
-                            alt="digicrome_png"></span> Distinct Culture</b></h1>
+                            alt="digicrome_png"> --}}
+                        </span> Distinct Culture</b></h1>
             <div class="row">
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 30px;">
                     <div>
@@ -536,8 +538,8 @@
                         <h2 id="talk">Talk to our team directly</h2>
                         <p style="font-weight: 400;font-size: 18px;color: #0072bc;margin: 0 0 30px;">Reach out to us and
                             your career guide will get in touch with you shortly</p>
-                            <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
-                                class="bi bi-whatsapp"></i>Book Now</a>
+                            {{-- <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
+                                class="bi bi-whatsapp"></i>Book Now</a> --}}
 
                     </div>
                 </div>
@@ -606,7 +608,7 @@
             }
         </style>
     </section>
-    <section class="company-form2 contactpage-form1">
+    {{-- <section class="company-form2 contactpage-form1">
         <h1 style="text-align: center; font-size:1.7rem; font-family: Open Sans,sans-serif; padding-bottom:20px;">
             <b>24X7<span style="color: #f29c12;"> Learner’s</span> Support</b></h1>
 
@@ -713,6 +715,6 @@
                 padding: 12px;
             }
         </style>
-    </section>
+    </section> --}}
 
 @endsection
