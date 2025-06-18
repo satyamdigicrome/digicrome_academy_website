@@ -1108,7 +1108,7 @@
                 </select>
               </div>
               <input type="hidden" name="page_name" value="{{ $course->name }}">
-              <input type="hidden" name="source" value="Apply Now">
+              <input type="hidden" name="source" value="Website(Course)>
               <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
             </div>
             <p class="mt-3">By submitting the form, you agree to our <a href="#">Terms and Conditions</a> and our <a href="/privacy-policy">Privacy Policy</a>.</p>
