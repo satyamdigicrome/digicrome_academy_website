@@ -717,7 +717,7 @@ $(document).ready(function() {
         text-decoration: none;
         color: #333;
         padding: 10px;
-        background-color: #25d366;
+        /* background-color: #25d366; */
         border-radius: 100%;
         transition: 0.3s;
     }
