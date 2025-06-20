@@ -25,7 +25,7 @@
 								style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
 								<small style="font-size: 14px; color: #555;">In collaboration with</small>
 								<img loading="lazy"src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}" class="ds-logo lazyload"
-									alt="MS Logo" style="width: 100%; height: auto; margin-top: 5px;">
+									alt="Microsoft Logo"  title="Microsoft logo" style="width: 100%; height: auto; margin-top: 5px;">
 							</div>
 						</div>
 						@else
@@ -69,23 +69,23 @@
 				<div class="col-lg-6">
 					<div class="hero-thumb-wrapper">
 						<div class="hero-thumb">
-							<img width="600" height="400" rel="preload" as="image" loading="lazy"src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="thumb">
+							<img width="600" height="400" rel="preload" as="image" loading="lazy"src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="Digicrome thumb"  title="Digicrome thumb">
 						</div>
 						{{-- <div class="hero-shape1 rotateme">
 							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
 						</div> --}}
 						<div class="hero-arrow-shape">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-arrow.webp') }}" alt="arrow">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-arrow.webp') }}" alt="digicrome arrow"  title="Digicrome arrow">
 						</div>
 						<div class="hero-dot-shape">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-dot.webp') }}" alt="dot">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-dot.webp') }}" alt="digicrome dot" title="digicrome dot">
 						</div>
 						<div class="hero-shape3 bounce-animate-3">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}" alt="shape3">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}" alt="digicrome shape" title="digicrome shape">
 						</div>
 						<div class="hero-autor-box">
 							<div class="autor-thumb">
-								<img loading="lazy"src="{{ asset('assets/images/home-one/hero-autor.webp') }}" alt="autor">
+								<img loading="lazy"src="{{ asset('assets/images/home-one/hero-autor.webp') }}" alt="digicrome autor" title="digicrome author">
 							</div>
 							<div class="hero-autor-content">
 								<h3 class="counter">130</h3>
@@ -123,7 +123,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="digicrome feature-icon" title="digicrome feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">500+ Hiring Partners</h4>
@@ -139,7 +139,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="digicrome feature-icon" title="digicrome feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">45+ Industry-Relevant Projects</h4>
@@ -155,7 +155,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}"  alt="digicrome feature-icon" title="digicrome feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
@@ -171,7 +171,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}"  alt="digicrome feature-icon" title="digicrome feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">Job Ready Program</h4>
@@ -209,16 +209,16 @@
 				<div class="col-xl-6 col-lg-12">
 					<div class="about-thumb-wrapper">
 						<div class="about-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/about-thumb1.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/about-thumb1.webp') }}" alt="digicrome thumb" title="digicrome thumb">
 						</div>
 						<div class="about-thumb-shape1 bounce-animate-3">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape1.webp') }}" alt="shape1">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape1.webp') }}" alt="digicrome shape" title="digicrome shape">
 						</div>
 						<div class="about-thumb-shape2 rotateme">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape2.webp') }}" alt="shape2">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape2.webp') }}" alt="diicrome shape" title="digicrome shapr">
 						</div>
 						<div class="about-thumb-shape3">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape3.webp') }}" alt="shape3">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape3.webp') }}" alt="digicrome shape" title="diicrome shape">
 						</div>
 					</div>
 				</div>
@@ -240,13 +240,13 @@
 							<div class="col-lg-6">
 								<div class="about-item-list">
 									<span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
-											alt="icon">Globally Recognized Certifications</span>
+											alt="digicrome icon" title="digicrome icon">Globally Recognized Certifications</span>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="about-item-list">
 									<span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
-											alt="icon">Industry-Approved Curriculum</span>
+											alt="digicrome icon" title="digicrome icon">Industry-Approved Curriculum</span>
 								</div>
 							</div>
 						</div>
@@ -284,7 +284,7 @@
 				<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape4.webp') }}" alt="shape4">
 			</div> --}}
 			<div class="about-shape5">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="shape5">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="digicrome shape" title="digicrome shape">
 			</div>
 		</div>
 	</section>
@@ -308,7 +308,7 @@
 							<div class="col-lg-12">
 								<div class="single-brand-box">
 									<div class="brand-thumb">
-										<img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+										<img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="digicrome brand" title="digicrome brand">
 									</div>
 								</div>
 							</div>
@@ -317,10 +317,10 @@
 				</div>
 			</div>
 			<div class="brand-arrow-shape">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="arrow">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="digicrome arrow" title="digicrome arrow">
 			</div>
 			<div class="brand-star-shape">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star" title="digicrome star">
 			</div>
 			{{-- <div class="brand-line-shape">
 				<img loading="lazy"src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
@@ -335,7 +335,7 @@
 			<div class="col-xl-6 col-lg-6">
 				<div class="about-thumb-wrapper">
 					<div class="about-thumb">
-						<img loading="lazy"src="{{ asset('assets/images/digi.png') }}" alt="thumb">
+						<img loading="lazy"src="{{ asset('assets/images/digi.png') }}" alt="digicrome thumb" title="digicrome thumb">
 						{{-- <div class="about-line-shape">
 							<img loading="lazy"src="assets/images/home-five/about-line5.webp" alt="line">
 						</div>

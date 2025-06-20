@@ -115,7 +115,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Add routes for edit, update, and delete as needed
 });
 Route::get('/search-courses', [CourseController::class, 'searchCourses'])->name('search.courses');
-Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/about-us', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/courses', [CourseController::class, 'index'])->name('course');

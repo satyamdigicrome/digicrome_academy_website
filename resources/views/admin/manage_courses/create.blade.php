@@ -33,7 +33,7 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="sku">SKU</label>
+                    <label for="sku">Ratting</label>
                     <input type="text" class="form-control" id="sku" name="sku" required>
                 </div>
             </div>

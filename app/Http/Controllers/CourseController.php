@@ -22,13 +22,16 @@ class CourseController extends Controller
 
     if ($request->filled('ids')) {
         $ids = explode(',', $request->ids);
-        $courses = Course::whereIn('id', $ids)->get();
+        $courses = Course::whereIn('id', $ids)
+                         ->where('status', 1)
+                         ->get();
     } else {
-        $courses = Course::all(); // Show all courses
+        $courses = Course::where('status', 1)->get(); // Only active courses
     }
 
     return view('pages.course', compact('courses', 'meta', 'name'));
 }
+
 
     
 
@@ -46,7 +49,7 @@ class CourseController extends Controller
         'keyFeatures:id,course_id,heading,paragraph,image',
         'modules:id,course_id,question,answer',
     ])
-    ->select('id', 'name', 'slug', 'description', 'browser', 'meta_title', 'meta_description', 'meta_keywords', 'image','banner_image', 'tag_line','about','course_free','us_price','dubai_price','price') // load only needed course fields
+    ->select('id', 'name', 'slug', 'sku', 'description', 'browser', 'meta_title', 'meta_description', 'meta_keywords', 'image','banner_image', 'tag_line','about','course_free','us_price','dubai_price','price') // load only needed course fields
     ->where('slug', $slug)
     ->firstOrFail();
 
