@@ -23,10 +23,10 @@
 				</div>
 			</div>
 			<div class="breadcumb-shape">
-				<img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+				<img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
 			</div>
 			<div class="breadcumb-shape2">
-				<img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+				<img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
 			</div>
 		</div>
 	</div>
@@ -36,7 +36,7 @@
 
 				<!-- Left: Image -->
 				<div class="col-md-6 mb-4 mb-md-0 text-center">
-					<img loading="lazy"src="{{ asset('assets/images/cor.webp') }}" alt="Main Image"
+					<img loading="lazy"src="{{ asset('assets/images/cor.webp') }}" alt="Main Image" title="Main Image"
 						class="img-fluid rounded" style="max-width: 100%; aspect-ratio: 1/1; object-fit: cover;">
 				</div>
 
@@ -51,7 +51,7 @@
 					<div class="row g-3">
 						@foreach($companyLogos->take(16) as $logo)
 							<div class="col-3 text-center">
-								<img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="Logo" class="img-fluid">
+								<img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="Logo" title="Logo" class="img-fluid">
 							</div>
 						@endforeach
 					</div>
@@ -97,7 +97,7 @@
 							<div class="col-lg-12">
 								<div class="single-brand-box">
 									<div class="brand-thumb">
-										<img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand">
+										<img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand" title="brand">
 									</div>
 								</div>
 							</div>
@@ -171,7 +171,7 @@
 					<div class="case-study-single-box"> 
 							{{-- Use same HTML course card template --}}
 							<div class="case-study-thumb">
-								<img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="thumb">
+								<img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="thumb" title="thumb">
 								{{-- <div class="case-meta-top">
 									<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
 								</div> --}}
@@ -224,7 +224,7 @@
 							<div class="case-study-single-box">
 								{{-- Same card HTML reused --}}
 								<div class="case-study-thumb">
-									<img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="thumb">
+									<img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="thumb" title="thumb">
 									{{-- <div class="case-meta-top">
 										<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
 									</div> --}}
@@ -327,7 +327,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-1">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon" title="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">500+ Hiring Partners</h4>
@@ -342,7 +342,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-2">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon" title="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">45+ Industry-Relevant Projects</h4>
@@ -357,7 +357,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon" title="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
@@ -372,7 +372,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon" title="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">Job Ready Program</h4>
@@ -386,10 +386,10 @@
 				</div>
 			</div>
 			<div class="feature-shape1">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/feature-shape1.webp') }}" alt="shape">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/feature-shape1.webp') }}" alt="shape" title="shape">
 			</div>
 			<div class="feature-shape2 rotateme">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/feature-shape2.webp') }}" alt="shape2">
+				<img loading="lazy"src="{{ asset('assets/images/home-one/feature-shape2.webp') }}" alt="shape2" title="shape2">
 			</div>
 		</div>
 	</section>
@@ -399,7 +399,7 @@
 				<div class="col-lg-6">
 					<!-- section title -->
 					<div class="section-sub-title three">
-						<h6><img loading="lazy"src="assets/images/inner-img/sub-title2.webp" alt="icon">GET IN TOUCH</h6>
+						<h6><img loading="lazy"src="assets/images/inner-img/sub-title2.webp" alt="icon" title="icon">GET IN TOUCH</h6>
 					</div>
 					<div class="section_title">
 						<h1>Trusted By the Genious</h1>
@@ -517,7 +517,7 @@
 				</div>
 			</div>
 			<div class="contact_shape2 dance2">
-				<img loading="lazy"src="assets/images/inner-img/contact-shape.webp" alt="shape">
+				<img loading="lazy"src="assets/images/inner-img/contact-shape.webp" alt="shape" title="shape">
 			</div>
 		</div>
 	</section>

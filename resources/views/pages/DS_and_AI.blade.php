@@ -1460,7 +1460,7 @@ line-height: 1.3;
 <!--</script>-->
 
             <div class="logo1">
-                <img loading="lazy"style="width: 20vh;" src="https://us.digicrome.com/public/web/img/logo.svg" alt="Logo" width="10%">
+                <img loading="lazy"style="width: 20vh;" src="https://us.digicrome.com/public/web/img/logo.svg" alt="Logo" title="Logo" width="10%">
             </div>
             <button id="headerbutton" class="enroll-button" onclick="openModal()">Download Brochure</button>
                 <div id="myModal" class="modal">
@@ -2080,14 +2080,14 @@ const countdown2 = setInterval(() => {
                 <div class="custom-box">
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxa.svg" alt="Image 1">
+                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxa.svg" alt="Image 1" title="Image 1">
                         </div>
                         <h4>60+ Case Studies & Assignments</h4>
                         <p>Work on 60+ Case studies and Assignments with 24/7 Assignment support.</p>
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxc.svg" alt="Image 2">
+                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxc.svg" alt="Image 2" title="Image 2">
                         </div>
                         <h4>
                             25+ Industry Graded Projects</h4>
@@ -2095,7 +2095,7 @@ const countdown2 = setInterval(() => {
                     </div>
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxb.svg" alt="Image 3">
+                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxb.svg" alt="Image 3" title="Image 3">
                         </div>
                         <h4>
                             Tied-up with 150+ Companies</h4>
@@ -2103,7 +2103,7 @@ const countdown2 = setInterval(() => {
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxe.svg" alt="Image 4">
+                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxe.svg" alt="Image 4" title="Image 4">
                         </div>
                         <h4>Job Readiness Program:</h4>
                         <p> Includes a dedicated placement cell for participants who have successfully completed the course</p>
@@ -2123,7 +2123,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/svg1.svg"
-                                                alt="">
+                                                alt="img1" title="img1">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2143,7 +2143,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/svg2.svg"
-                                                alt="">
+                                                alt="img2" title="img2">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2163,7 +2163,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/svg3.svg"
-                                                alt="">
+                                                alt="img3" title="img3">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2185,7 +2185,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/svg4.svg"
-                                                alt="">
+                                                alt="img4" title="img4">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2204,7 +2204,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/svg5.svg"
-                                                alt="">
+                                                alt="img5" title="img5">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2223,7 +2223,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/svg6.svg"
-                                                alt="">
+                                                alt="img6" title="img6">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2245,7 +2245,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/svg7.svg"
-                                                alt="">
+                                                alt="img7" title="img7">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2264,7 +2264,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/svg8.svg"
-                                                alt="">
+                                                alt="img8" title="img8">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2284,7 +2284,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/svg9.svg"
-                                                alt="">
+                                                alt="img9" title="img9">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2305,7 +2305,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;"
-                                                src="https://us.digicrome.com/public/www/images/svg10.svg" alt="">
+                                                src="https://us.digicrome.com/public/www/images/svg10.svg" alt="img10" title="img10">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2324,7 +2324,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;"
-                                                src="https://us.digicrome.com/public/www/images/svg11.svg" alt="">
+                                                src="https://us.digicrome.com/public/www/images/svg11.svg" alt="img11" title="img11">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2344,7 +2344,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;"
-                                                src="https://us.digicrome.com/public/www/images/svg12.svg" alt="">
+                                                src="https://us.digicrome.com/public/www/images/svg12.svg" alt="img12" title="img12">
         
                                         </div>
                                         <div class="col-lg-8">
@@ -2381,7 +2381,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/mod1.svg"
-                                                alt="">
+                                                alt="img13" title="img13">
         
                                         </div>
                                         <div class="col-lg-9">
@@ -2406,7 +2406,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/mod2.svg"
-                                                alt="">
+                                                alt="img14" title="img14">
         
                                         </div>
                                         <div class="col-lg-9">
@@ -2431,7 +2431,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/mod3.svg"
-                                                alt="">
+                                                alt="img16" title="img16">
         
                                         </div>
                                         <div class="col-lg-9">
@@ -2457,7 +2457,7 @@ const countdown2 = setInterval(() => {
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img loading="lazy"style="max-width: 100%; height: auto;" src="https://us.digicrome.com/public/www/images/mod4.svg"
-                                                alt="">
+                                                alt="img17" title="img17">
         
                                         </div>
                                         <div class="col-lg-9">
@@ -2675,38 +2675,38 @@ const countdown2 = setInterval(() => {
                         <div class="row" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool1.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool1.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool2.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool2.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool3.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool3.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool4.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool4.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool5.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool5.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-1" id="lg1"></div>
                         </div>
                         <div class="row" style="margin-top: 20px" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool6.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool6.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool7.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool7.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool8.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool8.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool9.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool9.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool10.svg" alt="">
+                                <img loading="lazy"id="toolimg" src="https://us.digicrome.com/public/www/images/tool10.svg" alt="toolimg" title="toolimg">
                             </div>
                             <div class="col-lg-1" id="lg1"></div>
         
@@ -2764,7 +2764,7 @@ const countdown2 = setInterval(() => {
                         </ul><br>
                     </div>
                     <div class="col-lg-6">
-                        <img loading="lazy"style="padding: 20px 20px;" src="https://us.digicrome.com/public/www/images/cirt1111.png" alt="">
+                        <img loading="lazy"style="padding: 20px 20px;" src="https://us.digicrome.com/public/www/images/cirt1111.png" alt="cirt1" title="cirt1">
                     </div>
                 </div>
             </div>
@@ -3099,7 +3099,7 @@ const countdown2 = setInterval(() => {
                 <div class="container">
                     <div class="row gx-5">
                         <div class="col-lg-2 col-md-6">
-                            <img loading="lazy"src="https://us.digicrome.com/public/web/img/logo2.png" alt="" class="img-fluid mt-4">
+                            <img loading="lazy"src="https://us.digicrome.com/public/web/img/logo2.png" alt="logo" title="logo" class="img-fluid mt-4">
                         </div>
                         <div class="col-lg-10 col-md-12 pt-5 mb-5">
                             <div class="section-title section-title-sm position-relative pb-3 mb-4">

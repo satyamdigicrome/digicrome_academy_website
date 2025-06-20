@@ -146,7 +146,7 @@
 					content.innerHTML = `
 					<div class="row">
 		<div class="col-md-6 d-flex justify-content-center align-items-center">
-			<img loading="lazy"src="https://digicrome.com/public/www/images/c1.png" alt="Customer Service" class="img-fluid">
+			<img loading="lazy"src="https://digicrome.com/public/www/images/c1.png" alt="Customer Service" title="Customer Service" class="img-fluid">
 		</div>
 		<div class="col-md-6">
 		<br>
@@ -210,7 +210,7 @@
 					content.innerHTML = `
 					<div class="row">
 		<div class="col-md-6 d-flex justify-content-center align-items-center">
-			<img loading="lazy"src="https://digicrome.com/public/www/images/c2.png" alt="Customer Service" class="img-fluid">
+			<img loading="lazy"src="https://digicrome.com/public/www/images/c2.png" alt="Customer Service" title="Customer Service" class="img-fluid">
 		</div>
 		<div class="col-md-6">
 		<div class="app-download-box text-center p-4" style="border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: #fff;">
@@ -219,14 +219,14 @@
 
 			<div class="d-flex justify-content-center gap-3">
 			<a href="https://play.google.com/store/apps/details?id=com.digichrome.app">
-				<img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="width: 150px;"></a>
+				<img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" title="Google Play" style="width: 150px;"></a>
 				<a href="https://apps.apple.com/in/app/digicrome-academy/id6503241441">
-				<img loading="lazy"src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" style="width: 150px;"></a>
+				<img loading="lazy"src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" title="App Store" style="width: 150px;"></a>
 			</div>
 
 			<div class="mt-3">
 				<h5>Scan QR Code to Download</h5>
-				<img loading="lazy"src="https://digicrome.com/public/www/seoimg/code.png" alt="QR Code" style="width: 150px; border-radius: 10px;">
+				<img loading="lazy"src="https://digicrome.com/public/www/seoimg/code.png" alt="QR Code" title="QR Code" style="width: 150px; border-radius: 10px;">
 			</div>
 		</div>
 	</div>
@@ -239,7 +239,7 @@
 		<div class="row align-items-center">
 		  <!-- Left side: Image -->
 		  <div class="col-md-6 d-flex justify-content-center align-items-center">
-			<img loading="lazy"src="https://digicrome.com/public/www/images/location.svg" alt="Customer Service" class="img-fluid">
+			<img loading="lazy"src="https://digicrome.com/public/www/images/location.svg" alt="Customer Service" title="Customer Service" class="img-fluid">
 		</div>
 
 
@@ -254,7 +254,7 @@
 				<div class="card">
 				  <div class="card-body">
 					<div class="d-flex align-items-center">
-					  <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png" alt="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+					  <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png" alt="US Flag" title="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
 					  <h5 class="card-title">Office in the US</h5>
 					</div>
 					<br>
@@ -268,7 +268,7 @@
 				<div class="card">
 				  <div class="card-body">
 					<div class="d-flex align-items-center">
-					  <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/2560px-Flag_of_India.svg.png" alt="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+					  <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/2560px-Flag_of_India.svg.png" alt="India Flag" title="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
 					  <h5 class="card-title">Office in India</h5>
 					</div>
 					<br>
@@ -289,7 +289,7 @@
 		<div class="row align-items-center">
 		  <!-- Left side: Image -->
 		  <div class="col-md-6">
-			<img loading="lazy"src="https://digicrome.com/public/www/images/whatsap.png" alt="Customer Service" class="img-fluid">
+			<img loading="lazy"src="https://digicrome.com/public/www/images/whatsap.png" alt="Customer Service" title="Customer Service" class="img-fluid">
 		</div>
 
 		  <!-- Right side: WhatsApp Contact -->
@@ -308,7 +308,7 @@
 					content.innerHTML = `<div class="container mt-5">
 		<div class="row align-items-center chat-box">
 			<div class="col-md-5 text-center">
-				<img loading="lazy"src="https://digicrome.com/public/www/images/chat.png" alt="Chat Image">
+				<img loading="lazy"src="https://digicrome.com/public/www/images/chat.png" alt="Chat Image" title="Chat Image">
 			</div>
 			<div class="col-md-7 chat-text">
 				<h2>Have more queries?</h2>
@@ -323,7 +323,7 @@
 					content.innerHTML = `<div class="container mt-5">
 		<div class="row align-items-center contact-box">
 			<div class="col-md-5 text-center">
-				<img loading="lazy"src="{{ asset('assets/images/coustome.svg') }}" alt="Contact Image">
+				<img loading="lazy"src="{{ asset('assets/images/coustome.svg') }}" alt="Contact Image" title="Contact Image">
 			</div>
 			<div class="col-md-7">
 				<h2>Customer Contact Number</h2>
@@ -375,7 +375,7 @@
 					<div class="col-lg-6">
 						<!-- section title -->
 						<div class="section-sub-title three">
-							<h6><img loading="lazy"src="assets/images/inner-img/sub-title2.webp" alt="icon">GET IN TOUCH</h6>
+							<h6><img loading="lazy"src="assets/images/inner-img/sub-title2.webp" alt="icon" title="icon">GET IN TOUCH</h6>
 						</div>
 						<div class="section_title">
 							<h1>Trusted By the Genious</h1>
@@ -493,7 +493,7 @@
 					</div>
 				</div>
 				<div class="contact_shape2 dance2">
-					<img loading="lazy"src="assets/images/inner-img/contact-shape.webp" alt="shape">
+					<img loading="lazy"src="assets/images/inner-img/contact-shape.webp" alt="shape" title="shape">
 				</div>
 			</div>
 		</section>

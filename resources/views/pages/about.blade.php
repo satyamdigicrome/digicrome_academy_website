@@ -37,10 +37,10 @@
 				</div>
 			</div>
 			<div class="breadcumb-shape">
-				<img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+				<img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
 			</div>
 			<div class="breadcumb-shape2">
-				<img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+				<img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
 			</div>
 		</div>
 	</div>
@@ -57,7 +57,7 @@
 					<div class="about-thumb-wrapper">
 						<div class="about-learn-box">
 							<div class="about-learn-icon">
-								<img loading="lazy"src="{{ asset('assets/images/home-three/learn-icon.webp') }}" alt="icon">
+								<img loading="lazy"src="{{ asset('assets/images/home-three/learn-icon.webp') }}" alt="icon" title="icon">
 							</div>
 							<div class="learn-title">
 								<h5>Learn Online
@@ -65,7 +65,7 @@
 							</div>
 						</div>
 						<div class="about-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-three/about-thumb31.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-three/about-thumb31.webp') }}" alt="thumb" title="thumb">
 						</div>
 						<div class="about-experience-box">
 							<div class="about-experience-count">
@@ -78,7 +78,7 @@
 							</div>
 						</div>
 						<div class="about-shape32">
-							<img loading="lazy"src="{{ asset('assets/images/home-three/about-shape32.webp') }}" alt="shape">
+							<img loading="lazy"src="{{ asset('assets/images/home-three/about-shape32.webp') }}" alt="shape" title="shape">
 						</div>
 					</div>
 				</div>
@@ -116,16 +116,16 @@
 						</div>
 						<div class="about-iteam-list">
 							<ul>
-								<li><img loading="lazy"src="{{ asset('assets/images/home-three/about-icon31.webp') }}" alt="icon">Course
+								<li><img loading="lazy"src="{{ asset('assets/images/home-three/about-icon31.webp') }}" alt="icon31" title="icon31">Course
 									Catalog & Program Information</li>
-								<li><img loading="lazy"src="{{ asset('assets/images/home-three/about-icon31.webp') }}" alt="icon">Online
+								<li><img loading="lazy"src="{{ asset('assets/images/home-three/about-icon31.webp') }}" alt="icon31" title="icon31">Online
 									Application & Admission Process</li>
 								<li><img loading="lazy"src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
-										alt="icon">Financial Aid and Scholarships</li>
+										alt="icon31" title="icon31">Financial Aid and Scholarships</li>
 							</ul>
 						</div>
 						<div class="about-iteam-phone">
-							<p><span><img loading="lazy"src="{{ asset('assets/images/home-three/about-call.webp') }}" alt="call"></span>
+							<p><span><img loading="lazy"src="{{ asset('assets/images/home-three/about-call.webp') }}" alt="call" title="call"></span>
 								0120 313 3869</p>
 						</div>
 						{{-- <div class="about-btn">
@@ -134,7 +134,7 @@
 
 {{-- <div class="about-education-box">
   <div class="education-icon">
-    <img loading="lazy"src="{{ asset('assets/images/home-one/msme.webp') }}" alt="call">
+    <img loading="lazy"src="{{ asset('assets/images/home-one/msme.webp') }}" alt="education-icon" title="education-icon">
   </div>
   <div class="education-content">
     <p>Trusted Online<br>
@@ -146,7 +146,7 @@
 </div> --}}
 
 <div class="about-shape31">
-  <img loading="lazy"src="{{ asset('assets/images/home-three/about-shape31.webp') }}" alt="shape">
+  <img loading="lazy"src="{{ asset('assets/images/home-three/about-shape31.webp') }}" alt="shape" title="shape">
 </div>
 
 	</section>
@@ -169,7 +169,7 @@
 		<div class="row align-items-center">
 		  <!-- Image Side -->
 		  <div class="col-md-6 mb-4 mb-md-0">
-			<img loading="lazy"src="{{ asset('assets/images/home-one/msme.webp') }}" alt="Education Image" class="img-fluid rounded shadow">
+			<img loading="lazy"src="{{ asset('assets/images/home-one/msme.webp') }}" alt="Education Image" title="Education Image" class="img-fluid rounded shadow">
 		  </div>
 		  <!-- Content Side -->
 		  <div class="col-md-6">
@@ -194,7 +194,7 @@
 				<div class="col-xl-4 col-lg-6 col-md-6">
 					<div class="single-feature-box box-1">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-three/feature-icon21.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-three/feature-icon21.webp') }}" alt="feature-icon" title="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">Flexible Learning</h4>
@@ -207,7 +207,7 @@
 				<div class="col-xl-4 col-lg-6 col-md-6">
 					<div class="single-feature-box box-2">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-three/feature-icon22.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-three/feature-icon22.webp') }}" alt="feature-icon" title="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">Regular Assessments</h4>
@@ -220,7 +220,7 @@
 				<div class="col-xl-4 col-lg-6 col-md-6">
 					<div class="single-feature-box box-3">
 						<div class="feature-icon">
-							<img loading="lazy"src="{{ asset('assets/images/home-three/feature-icon23.webp') }}" alt="feature-icon">
+							<img loading="lazy"src="{{ asset('assets/images/home-three/feature-icon23.webp') }}" alt="feature-icon" title="feature-icon">
 						</div>
 						<div class="feature-content">
 							<h4 class="feature-title">Cost-Effective</h4>
@@ -232,7 +232,7 @@
 				</div>
 			</div>
 			{{-- <div class="feature-shape21">
-				<img loading="lazy"src="{{ asset('assets/images/home-three/feature-shape21.webp') }}" alt="shape">
+				<img loading="lazy"src="{{ asset('assets/images/home-three/feature-shape21.webp') }}" alt="shape" title="shape">
 			</div> --}}
 		</div>
 	</section>
@@ -288,7 +288,7 @@
 
 				<!-- Rocket End -->
 				<div class="text-center flex-fill mx-2" style="min-width: 120px;">
-					<img loading="lazy"src="https://cdn-icons-png.flaticon.com/512/3210/3210034.png" alt="Rocket" width="40" class="mb-2">
+					<img loading="lazy"src="https://cdn-icons-png.flaticon.com/512/3210/3210034.png" alt="Rocket" title="Rocket" width="40" class="mb-2">
 					<h6 class="fw-bold" style="color: #f29c12;">2024 & Beyond</h6>
 					<p class="small text-muted">To the stars!</p>
 				</div>
@@ -370,7 +370,7 @@
 				</div>
 			</div>
 			<div class="call-to-shape31">
-				<img loading="lazy"src="{{ asset('assets/images/home-three/call-to-arrow2.webp') }}" alt="shape">
+				<img loading="lazy"src="{{ asset('assets/images/home-three/call-to-arrow2.webp') }}" alt="shape" title="shape">
 			</div>
 		</div>
 	</div>
@@ -397,7 +397,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6">
 					<div class="single-team-box box-1">
 						<div class="team-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb1.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb1.webp') }}" alt="thumb" title="thumb">
 							<div class="team-social-icon">
 								<div class="team-social">
 									<ul>
@@ -433,7 +433,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6">
 					<div class="single-team-box box-2">
 						<div class="team-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb2.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb2.webp') }}" alt="thumb" title="thumb">
 							<div class="team-social-icon">
 								<div class="team-social">
 									<ul>
@@ -469,7 +469,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6">
 					<div class="single-team-box box-3">
 						<div class="team-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb3.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb3.webp') }}" alt="thumb" title="thumb">
 							<div class="team-social-icon">
 								<div class="team-social">
 									<ul>
@@ -505,7 +505,7 @@
 				<div class="col-xl-3 col-lg-6 col-md-6">
 					<div class="single-team-box box-4">
 						<div class="team-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb4.webp') }}" alt="thumb">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb4.webp') }}" alt="thumb" title="thumb">
 							<div class="team-social-icon">
 								<div class="team-social">
 									<ul>
@@ -552,7 +552,7 @@
 			<div class="row section-title-space">
 				<div class="col-xl-4 col-lg-12">
 					<div class="section-sub-title three">
-						<h6><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">Success Stories</h6>
+						<h6><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon" title="icon">Success Stories</h6>
 					</div>
 					<div class="section_title">
 						<h1>All Real Experiences</h1>
@@ -561,7 +561,7 @@
 					</div>
 					<div class="testi-review-box">
 						<div class="review-image">
-							<img loading="lazy"src="{{ asset('assets/images/home-three/course-instructor.webp') }}" alt="instructor">
+							<img loading="lazy"src="{{ asset('assets/images/home-three/course-instructor.webp') }}" alt="instructor" title="instructor">
 						</div>
 						<div class="testi-review-content">
 							<h3 class="counter">130</h3>
@@ -569,7 +569,7 @@
 							<p>Reviews</p>
 						</div>
 						<div class="testi-inner-shape">
-							<img loading="lazy"src="{{ asset('assets/images/inner-img/testi-shape-in.webp') }}" alt="arrow">
+							<img loading="lazy"src="{{ asset('assets/images/inner-img/testi-shape-in.webp') }}" alt="arrow" title="arrow">
 						</div>
 					</div>
 				</div>
@@ -582,7 +582,7 @@
 								<div class="testi-box">
 										<div class="single-testi-box">
 											<div class="testi-quote">
-												<img loading="lazy"src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote">
+												<img loading="lazy"src="{{ asset('assets/images/home-three/testi-quote.webp') }}" alt="quote" title="quote">
 											</div>
 											<div class="testi-title">
 												<h3>Success Story</h3>
@@ -601,7 +601,7 @@
 											</div>
 											<div class="testi-autor-box">
 												<div class="testi-autor">
-													<img loading="lazy"src="{{ asset('storage/' . $story->image) }}" alt="author" class="rounded-circle img-fluid" style="width: 70px; height: 70px; object-fit: cover;">
+													<img loading="lazy"src="{{ asset('storage/' . $story->image) }}" alt="author" title="author" class="rounded-circle img-fluid" style="width: 70px; height: 70px; object-fit: cover;">
 												</div>
 												<div class="testi-autor-content">
 													<h5 class="autor-title">{{ $story->studentname }}</h5>
@@ -703,7 +703,7 @@
 				<div class="col-lg-4">
 					<!-- section title -->
 					<div class="section-sub-title two">
-						<h6><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon">TESTIMONIALS</h6>
+						<h6><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon" title="icon">TESTIMONIALS</h6>
 					</div>
 					<div class="section_title two">
 						<h1>What Students Say About</h1>
@@ -751,7 +751,7 @@
 								</div>
 								<div class="testi-autor-box">
 									<div class="testi-autor">
-										<img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
+										<img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}" alt="author" title="author" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
 									</div>
 									
 									<div class="testi-autor-content">
@@ -787,7 +787,7 @@
 					<div class="call-to-wrapper">
 						<div class="call-to-box">
 							<div class="call-to-icon">
-								<img loading="lazy"src="{{ asset('assets/images/home-one/call-icon.webp') }}" alt="icon">
+								<img loading="lazy"src="{{ asset('assets/images/home-one/call-icon.webp') }}" alt="call-to-icon" title="call-to-icon" >
 							</div>
 							<div class="call-to-content">
 								<h6>Call Anytime</h6>
@@ -795,14 +795,14 @@
 							</div>
 						</div>
 						<div class="call-to-arrow">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/call-arrow.webp') }}" alt="arrow">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/call-arrow.webp') }}" alt="call-to-arrow" title="call-to-arrow">
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-3 col-lg-4">
 					<div class="call-logo-box">
 						<div class="call-to-logo">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="logo">
+							<img loading="lazy"src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="call-to-logo" title="call-to-logo">
 						</div>
 						<div class="call-rating">
 							<p><span>890+</span> Trustpilot 4.9 Ratings</p>
@@ -833,7 +833,7 @@
 						<div class="col-xl-4 col-lg-12 col-md-4">
 							<div class="single-blog-box box-1">
 								<div class="single-blog-thumb">
-									<img loading="lazy"src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb" class="img-fluid">
+									<img loading="lazy"src="{{ asset('storage/' . $blog->blog_image) }}" alt="single-blog-thumb" title="single-blog-thumb" class="img-fluid">
 									<div class="blog-meta-top">
 										<span>{{ \Carbon\Carbon::parse($blog->created_at)->format('d M') }}</span>
 									</div>
@@ -858,7 +858,7 @@
 									<div class="blog-btn">
 										<a href="{{ route('blog.details', $blog->slug) }}">
 											Continue Reading
-											<img loading="lazy"src="{{ asset('assets/images/home-one/blog-icon1.webp') }}" alt="icon">
+											<img loading="lazy"src="{{ asset('assets/images/home-one/blog-icon1.webp') }}" alt="icon" title="icon">
 										</a>
 									</div>
 								</div>

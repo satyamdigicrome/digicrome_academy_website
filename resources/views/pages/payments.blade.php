@@ -84,7 +84,7 @@
           col.forEach(country => {
             const link = document.createElement('a');
             link.innerHTML = `
-              <img loading="lazy"src="${country.flag}" alt="${country.name} flag">
+              <img loading="lazy"src="${country.flag}" alt="${country.name} title="{country.name}" flag">
               ${country.name}
             `;
             link.onclick = () => {
@@ -109,7 +109,7 @@
       });
   
     function setCountry(name, flag) {
-      selectedCountryBtn.innerHTML = `<img loading="lazy"src="${flag}" alt="${name} flag"> ${name}`;
+      selectedCountryBtn.innerHTML = `<img loading="lazy"src="${flag}" alt="${name} title="{name}" flag"> ${name}`;
       selectedCountryInput.value = name;
   
       // Toggle content based on selected country
@@ -204,19 +204,19 @@
   <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
     
     <div style="width: 90%; max-width: 700px; text-align: center;">
-      <img loading="lazy"src="{{ asset('assets/images/upi.webp') }}" alt="Pay via QR Code" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <img loading="lazy"src="{{ asset('assets/images/upi.webp') }}" alt="Pay via QR Code" title="Pay via QR Code" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
       <p style="margin-top: 10px; font-size: 18px; color: #333;">Scan to Pay via QR</p>
     </div>
     <div style="width: 90%; max-width: 700px; text-align: center;">
       <a href="https://rzp.io/l/MBT3RH7">
-        <img loading="lazy"src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <img loading="lazy"src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay" title="Pay with Razorpay" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
       </a>
       <p style="margin-top: 10px; font-size: 18px; color: #333;">Pay via Razorpay</p>
     </div>
 
     <div style="width: 90%; max-width: 700px; text-align: center;">
       <a href="https://pmny.in/UrN1I4c33yXF">
-        <img loading="lazy"src="{{ asset('assets/images/payu.webp') }}" alt="Pay with PayU" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <img loading="lazy"src="{{ asset('assets/images/payu.webp') }}" alt="Pay with PayU" title="Pay with PayU" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
       </a>
       <p style="margin-top: 10px; font-size: 18px; color: #333;">Pay via PayU</p>
     </div>  
@@ -228,7 +228,7 @@
   <div class="container" style="border: 2px solid; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
     <div class="row">
         <div class="col-lg-6">
-            <img loading="lazy"src="https://digicrome.com/public/www/seoimg/paypal.webp" alt="digicrome_payment">
+            <img loading="lazy"src="https://digicrome.com/public/www/seoimg/paypal.webp" alt="digicrome_payment" title="digicrome_payment">
             </div>
         <div class="col-lg-6">
             

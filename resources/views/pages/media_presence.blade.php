@@ -20,10 +20,10 @@
       </div>
     </div>
     <div class="breadcumb-shape">
-      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
     </div>
     <div class="breadcumb-shape2">
-      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
     </div>
     </div>
   </div>
@@ -32,12 +32,12 @@
     <h2 class="mb-4">Featured In</h2>
     <div class="d-flex flex-wrap justify-content-center align-items-center">
       <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/6/64/Times_Network_Logo.png" class="media-logo"
-      alt="Times">
+      alt="Times" title="Times">
       <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/3/35/India_Today_Group_Logo.png" class="media-logo"
-      alt="India Today">
+      alt="India Today" title="India Today">
       <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Zee_News_logo.svg" class="media-logo"
-      alt="Zee News">
-      <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/6/69/NDTV_logo.svg" class="media-logo" alt="NDTV">
+      alt="Zee News" title="Zee News">
+      <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/6/69/NDTV_logo.svg" class="media-logo" alt="NDTV" title="NDTV">
     </div>
     </div>
   </section>

@@ -20,10 +20,10 @@
       </div>
     </div>
     <div class="breadcumb-shape">
-      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
     </div>
     <div class="breadcumb-shape2">
-      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
     </div>
     </div>
   </div>
@@ -56,7 +56,7 @@
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
           <img loading="lazy"src="{{ asset('storage/' . $story->image) }}"
-            alt="Student Photo"
+            alt="Student Photo" title="Student Photo"
             class="rounded-circle mx-auto mb-3"
             style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #f29c12;">
           

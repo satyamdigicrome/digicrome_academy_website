@@ -28,10 +28,10 @@
 				</div>
 			</div>
 			<div class="breadcumb-shape">
-                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
             </div>
             <div class="breadcumb-shape2">
-                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
+                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
             </div>
 		</div>
 	</div>
@@ -48,7 +48,7 @@
 					<div class="row blogs-pr">
 						<div class="single-blog-dtls-box">
 							<div class="blog-thumb">
-								<img loading="lazy"src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb">
+								<img loading="lazy"src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb" title="thumb">
 								<div class="meta-blog">
 									<a href="#">{{ $blog->meta_title ?? 'Blog' }}</a>
 								</div>
@@ -57,7 +57,7 @@
 							<div class="blog-content">
 								<ul class="blog-author">
 									<li class="autor-name" style="display: flex; align-items: center; gap: 10px;">
-										<img loading="lazy"src="{{ asset('storage/' . $blog->author_image) }}" alt="author" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+										<img loading="lazy"src="{{ asset('storage/' . $blog->author_image) }}" alt="author" title="author" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
 										<span>{{ $blog->author_name }}</span>
 									</li>
 									<li class="detail-calender" style="display: flex; align-items: center; gap: 5px;">
@@ -81,7 +81,7 @@
 								<!-- pagination item -->
 								<div class="pagination_item">
 									<div class="pagination_btn">
-										<a href="#"><img loading="lazy"src="assets/images/inner-img/pagination_icon1.webp" alt="">Previous
+										<a href="#"><img loading="lazy"src="assets/images/inner-img/pagination_icon1.webp" alt="pagination" title="pagination">Previous
 											Posts</a>
 									</div>
 								</div>
@@ -89,7 +89,7 @@
 								<div class="pagination_item">
 									<div class="pagination_btn style_right">
 										<a href="#">Next Posts<img loading="lazy"src="assets/images/inner-img/pagination_icon2.webp"
-												alt=""></a>
+												alt="pagination2" title="pagination2"></a>
 									</div>
 								</div>
 							</div> --}}
