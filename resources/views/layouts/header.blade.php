@@ -617,15 +617,129 @@ $(document).ready(function() {
 
 </style>
 
-<div class="bottom-fixed-bar text-center">
+<!-- Desktop View -->
+<div class="bottom-fixed-bar desktop-only text-center">
     <span class="me-2">Need help? Reach us instantly:</span>
     <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
         <i class="fab fa-whatsapp"></i> Say Hi on WhatsApp
     </a>
     <a href="tel:01203133869" class="btn btn-callback">
-		<i class="fas fa-phone-alt"></i> Request a Callback
-	</a>	
+        <i class="fas fa-phone-alt"></i> Request a Callback
+    </a>
 </div>
 
+<!-- Mobile View (Contact Box with Toggle Icons) -->
+<div class="mobile-only">
+    <div class="contact-box" onclick="toggleIcons()">
+        <div class="contact-icons">
+            <i class="fab fa-whatsapp"></i>
+            <i class="fas fa-phone-alt" style="    padding-top: 11px;"></i>
+        </div>
+    </div>
+
+    <!-- Popup with WhatsApp and Callback links -->
+    <div class="icons-popup">
+        <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> 
+        </a>
+        <a href="tel:01203133869" class="btn btn-callback">
+            <i class="fas fa-phone-alt" style="    background: #1a1447;
+			color: #fff;"></i> 
+        </a>
+    </div>
+</div>
+<style>
+	/* General Styles for Bottom Fixed Bar on Desktop */
+.bottom-fixed-bar {
+    position: fixed;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Mobile-specific Styles */
+.mobile-only {
+    display: none;
+}
+
+/* For Desktop: Always show the desktop layout */
+.desktop-only {
+    display: block;
+}
+
+/* Mobile View: Hide desktop layout and show mobile layout */
+@media (max-width: 767px) {
+    .desktop-only {
+        display: none;  /* Hide the desktop bar */
+    }
+    
+    .mobile-only {
+        display: block;  /* Show the mobile layout */
+        position: fixed;
+        left: 10px;
+        bottom: 21px;
+        z-index: 1000;
+    }
+
+    /* Mobile: Contact Box Style */
+    .contact-box {
+        background-color: #25D366; /* WhatsApp color */
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+		color: #fff;
+        transition: 0.3s ease;
+    }
+
+    .contact-icons {
+        display: flex;
+        justify-content: space-around;
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Popup for WhatsApp and Callback links */
+    .icons-popup {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: fixed;
+        left: 10px;
+        bottom: 70px;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .icons-popup a {
+        text-decoration: none;
+        color: #333;
+        padding: 10px;
+        background-color: #25d366;
+        border-radius: 100%;
+        transition: 0.3s;
+    }
+
+    .icons-popup a:hover {
+        background-color: #25D366;
+        color: white;
+    }
+}
+
+	</style>
+<script>
+	// Function to toggle WhatsApp and Call icons in mobile view
+function toggleIcons() {
+    const iconsPopup = document.querySelector('.icons-popup');
+    if (iconsPopup.style.display === 'none' || iconsPopup.style.display === '') {
+        iconsPopup.style.display = 'flex';  // Show the icons
+    } else {
+        iconsPopup.style.display = 'none';  // Hide the icons
+    }
+}
+
+	</script>
 
 <!--End Sidebar Cart Item -->
