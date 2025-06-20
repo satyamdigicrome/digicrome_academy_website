@@ -642,9 +642,8 @@ $(document).ready(function() {
         <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
             <i class="fab fa-whatsapp"></i> 
         </a>
-        <a href="tel:01203133869" class="btn btn-callback">
-            <i class="fas fa-phone-alt" style="    background: #1a1447;
-			color: #fff;"></i> 
+        <a href="tel:01203133869" class="btn btn-callback" style="background: #1a1447; color: #fff;">
+            <i class="fas fa-phone-alt" ></i> 
         </a>
     </div>
 </div>
