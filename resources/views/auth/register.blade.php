@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="#">
+    {{-- <form method="POST" action="#">
         @csrf
 
         <!-- Name -->
@@ -48,5 +48,5 @@
                 {{ __('Register') }}
             </x-primary-button>
         </div>
-    </form>
+    </form> --}}
 </x-guest-layout>
