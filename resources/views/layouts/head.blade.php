@@ -20,7 +20,6 @@
     <meta property="og:image" content="https://www.digicrome.com/assets/images/cover-image.webp" />
     <!-- Fonts -->
     <link rel="canonical" href="https://www.digicrome.com"/>
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <link rel="preconnect" as="font" type="font/woff2" href="https://fonts.bunny.net" crossorigin="anonymous">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <!-- Favicon -->

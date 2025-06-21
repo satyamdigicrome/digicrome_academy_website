@@ -5,12 +5,34 @@
 @section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
-
+<style>
+	.contact-img {
+    padding: 346px 0 135px;}
+	</style>
 		<!--==================================================-->
 		<!-- Start educate Breadcumb Area -->
 		<!--==================================================-->
-		<div class="contact-img d-flex" style="background-image: url({{ asset('assets/images/Contactg.png') }})">
-			<div class="container">
+		<style>
+			.contact-img {
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				width: 100%;
+				height: 300px; /* Default height for desktop */
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			@media (max-width: 768px) {
+				.contact-img {
+					height: 180px; /* Smaller height for mobile */
+				}
+			}
+			</style>
+			
+			<div class="contact-img d-flex" style="background-image: url('{{ asset('assets/images/contact.webp') }}')">
+						<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-12">
 						{{-- <div class="breadcumb-content">
