@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <div class="course-heading-banner col-flex">
-                        <h1 style="color: #fff;">{{ $course->name }}<br> <small>in collaboration with</small> </h1>
+                        <h1 style="color: #fff;">{{ $course->name }}<br> </h1> <small style=" font-size: 20px; color: #fff;">in collaboration with</small>
                         <img loading="lazy"src='{{ asset('assets/images/ds-withai-course/mslogo.png') }}' class='ds-logo lazyload'>
                         <div class="black-box">
                             <span class="yellow-text">Aligned with competency standards set by Microsoft & IBM.</span>
