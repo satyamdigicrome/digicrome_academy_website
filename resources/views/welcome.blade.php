@@ -837,7 +837,7 @@
 	<!--==================================================-->
 	<!-- end educate course design offer Area -->
 	<!--==================================================-->
-	{{-- <section class="video-slider">
+	<section class="video-slider">
 		<div class="container">
 			<h2 class="text-center mb-2 mt-2" style="font-size: 2rem;">
 				<span style="color: #f29c12;">Featured </span> Testimonials
@@ -927,7 +927,7 @@
 				});
 			});
 		</script>
-	</section> --}}
+	</section>
 
 	<!-- Updated Style Only -->
 
