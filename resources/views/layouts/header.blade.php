@@ -29,11 +29,14 @@
 		<div class="row header-top">
 			<div class="col-xxl-6 col-xl-8 col-lg-8">
 				<div class="header-top-welcome">
-					<p>Welcome to <a href="/">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p>
+@include('components.breadcrumb')
+
+					{{-- <p>Welcome to <a href="/">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p> --}}
 				</div>
 			</div>
 			<div class="col-xxl-6 col-xl-4 col-lg-4">
 				<div class="header-top-right">
+					<p>Welcome to <a style="color:#f29c12" href="/">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p>
 					{{-- <div class="educate-header-from">
 						<a class="login-btn" href="sign-in.html"><i class="bi bi-arrow-right-circle"></i>Login</a>
 						<a class="sign-up-btn" href="sign-up.html"><i class="bi bi-person-plus"></i>Register</a>
@@ -43,6 +46,7 @@
 		</div>
 	</div>
 </div>
+
 
 <!--==================================================-->
  
@@ -740,7 +744,6 @@ function toggleIcons() {
 }
 
 	</script>
-	@include('components.breadcrumb')
 
 
 <!--End Sidebar Cart Item -->

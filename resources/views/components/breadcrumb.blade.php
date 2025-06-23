@@ -6,7 +6,7 @@
 @if ($segmentCount > 0)
 <nav aria-label="breadcrumb" class="breadcrumb-container">
     <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li style="color: #ddd" class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
 
         @foreach ($segments as $index => $segment)
             @php
@@ -16,10 +16,10 @@
 
             @if ($index + 1 < $segmentCount)
                 <li class="breadcrumb-item">
-                    <a href="/{{ $path }}">{{ $name }}</a> {{-- ✅ RELATIVE URL --}}
+                    <a style="color: #fff" href="{{ '/' . $path }}">{{ $name }}</a>
                 </li>
             @else
-                <li class="breadcrumb-item active" aria-current="page">{{ $name }}</li>
+                <li style="color: #ddd" class="breadcrumb-item active" aria-current="page">{{ $name }}</li>
             @endif
         @endforeach
     </ol>
