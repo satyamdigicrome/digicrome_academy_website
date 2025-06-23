@@ -49,7 +49,7 @@ class CourseController extends Controller
         'keyFeatures:id,course_id,heading,paragraph,image',
         'modules:id,course_id,question,answer',
     ])
-    ->select('id', 'name', 'slug', 'sku', 'description', 'browser', 'meta_title', 'meta_description', 'meta_keywords', 'image','banner_image', 'tag_line','about','course_free','us_price','dubai_price','price') // load only needed course fields
+    ->select('id', 'name', 'slug', 'sku', 'course_online_payment', 'description', 'browser', 'meta_title', 'meta_description', 'meta_keywords', 'image','banner_image', 'tag_line','about','course_free','us_price','dubai_price','price') // load only needed course fields
     ->where('slug', $slug)
     ->firstOrFail();
 
