@@ -24,34 +24,39 @@
     }
     </script>
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/", 
-          "@type": "Product", 
-          "name": "{{ $course->name }}",
-          "image": "{{ asset('storage/' . $course->image) }}",
-          "description": "{{ $course->about }}",
-          "offers": {
-            "@type": "AggregateOffer",
-            "url": "https://www.digicrome.com",
-            "priceCurrency": "INR",
-            "lowPrice": "{{ $course->price }}"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "{{ $course->sku }}",
-            "ratingCount": "10302",
-          },
-          "review": {
-            "@type": "Review",
-            "reviewBody": "I had a great experience with Digicrome!",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "{{ $course->sku }}"
-            },
-            "author": {"@type": "Person", "name": "Suhani Kahaniyan"}
-          }
-        }
-        </script>
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ $course->name }}",
+  "image": "{{ asset('storage/' . $course->image) }}",
+  "description": "{{ $course->about }}",
+  "offers": {
+    "@type": "AggregateOffer",
+    "url": "https://www.digicrome.com",
+    "priceCurrency": "INR",
+    "lowPrice": "{{ $course->price }}"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ $course->sku }},
+    "ratingCount": 10302
+  },
+  "review": {
+    "@type": "Review",
+    "reviewBody": "I had a great experience with Digicrome!",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": {{ $course->sku }},
+      "bestRating": 5,
+      "worstRating": 1
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Suhani Kahaniyan"
+    }
+  }
+}
+</script>
 <link href="{{ asset('assets/css/courses.css') }}" rel="stylesheet">
 @endpush
 

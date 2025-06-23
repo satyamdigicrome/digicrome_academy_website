@@ -5,6 +5,8 @@
 @section('meta_keywords',  'Digicrome')
 
 @section('content')
+@include('components.lead-form-popup')
+
 
 
 <div class="error-area d-flex align-items-center">

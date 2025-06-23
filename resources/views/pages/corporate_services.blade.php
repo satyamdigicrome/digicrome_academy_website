@@ -5,6 +5,8 @@
 @section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
+@include('components.lead-form-popup')
+
 
 
 	<div class="corporate-img d-flex">

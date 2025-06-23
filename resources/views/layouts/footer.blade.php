@@ -217,24 +217,15 @@
 			</div>
 		</div>
 	</div>
-    {{-- <div class="container">
+    <div class="container">
         <!-- Postgraduate & Master Programs -->
         <div class="row">
             <div class="col-12">
-                <h5>Postgraduate & Master Programs</h5>
-                <p>
-                    Post Graduate Program In Data Science with Artificial Intelligence | Advance Certification Program Business Analytics & Project Management |
-                    Advanced Certification Program In Artificial Intelligence & Machine Learning | Post Graduate Program In Cyber Security |
-                    Post Graduate Program In Full Stack Development | Post Graduate Program In UI and UX Design |
-                    Masters in Data Science and Analytics | Masters in Cloud Computing | Masters in Mobile App Development |
-                    Masters in Cyber Security | Master's Program in Big Data Engineering & Cloud Computing |
-                    Real Estate Business Management Program | Advanced Certification Online Data Analytics and Machine Learning Course |
-                    Post Graduate Program in Data Science with Generative AI
-                </p>
+               
             </div>
         </div>    
         <!-- Professional Programs -->
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-12">
                 <h5>Professional Programs</h5>
                 <p>
@@ -275,8 +266,8 @@
                 <img loading="lazy"src="images/footer_logo.webp" alt="">
                 <p>© 2025 DigiCrome. All rights reserved.</p>
             </div>
-        </div>
-    </div> --}}
+        </div> --}}
+    </div>
 	<div class="footer-bottom-area">
 		<div class="container">
 			<div class="row footer-bottom">

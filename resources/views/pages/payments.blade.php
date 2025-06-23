@@ -4,7 +4,10 @@
 @section('meta_description', $meta->description  ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
+
 @section('content')
+@include('components.lead-form-popup')
+
 <script>
   const detectedCountry = @json($userCountry); // Laravel-passed country
 </script>

@@ -6,6 +6,8 @@
 @section('meta_keywords', $blog->meta_keywords ?? 'Digicrome')
 
 @section('content')
+@include('components.lead-form-popup')
+
 
 	<!--==================================================-->
 	<!-- Start educate Breadcumb Area -->

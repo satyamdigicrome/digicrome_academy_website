@@ -5,6 +5,8 @@
 @section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
+@include('components.lead-form-popup')
+
 <style>
 	.contact-img {
     padding: 346px 0 135px;}

@@ -4,6 +4,8 @@
 @section('meta_keywords', $meta->keywords  ?? 'Digicrome')
 
 @section('content')
+@include('components.lead-form-popup')
+
   <div class="breadcumb-area d-flex">
     <div class="container">
     <div class="row align-items-center">

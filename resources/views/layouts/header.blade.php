@@ -705,8 +705,8 @@ $(document).ready(function() {
         flex-direction: column;
         gap: 10px;
         position: fixed;
-        left: 10px;
-        bottom: 70px;
+        left: 0px;
+        bottom: 78px;
         border-radius: 10px;
         padding: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -715,7 +715,7 @@ $(document).ready(function() {
     .icons-popup a {
         text-decoration: none;
         color: #333;
-        padding: 10px;
+        padding: 21px;
         /* background-color: #25d366; */
         border-radius: 100%;
         transition: 0.3s;
@@ -740,5 +740,7 @@ function toggleIcons() {
 }
 
 	</script>
+	@include('components.breadcrumb')
+
 
 <!--End Sidebar Cart Item -->
