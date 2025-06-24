@@ -220,8 +220,19 @@
     <div class="container">
         <!-- Postgraduate & Master Programs -->
         <div class="row">
-            <div class="col-12">
-               
+            <div class="col-12 mb-4">
+                <h5 style="color: #ccc"><u>Data Science And AI</u></h5>
+                <p>
+					@foreach([62, 63, 64,65,66,67,68,69,70,71] as $id)
+					@if(isset($footer_courses[$id]))
+						@php $course = $footer_courses[$id]; @endphp
+								<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
+									{{ $course->name }} | </a>
+									
+					@endif
+				@endforeach
+                </p>
+				<hr>
             </div>
         </div>    
         <!-- Professional Programs -->

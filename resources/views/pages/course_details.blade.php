@@ -32,7 +32,7 @@
   "description": "{{ $course->about }}",
   "offers": {
     "@type": "AggregateOffer",
-    "url": "https://www.digicrome.com",
+    "url": "{{ url()->current() }}",
     "priceCurrency": "INR",
     "lowPrice": "{{ $course->price }}"
   },
