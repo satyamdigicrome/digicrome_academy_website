@@ -148,7 +148,6 @@ Route::get('/test-mail', function () {
         $message->to('digicromeleads@gmail.com')
                 ->subject('Test Mail');
     });
-
     return 'Mail Sent';
 });
 
