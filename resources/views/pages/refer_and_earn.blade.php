@@ -14,10 +14,10 @@
         <div class="breadcumb-title">
         <h4>Refer And Earn</h4>
         </div>
-        <ul>
+        {{-- <ul>
         <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
         <li>Refer And Earn</li>
-        </ul>
+        </ul> --}}
       </div>
       </div>
     </div>

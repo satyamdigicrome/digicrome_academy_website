@@ -6,7 +6,7 @@
     <title>{{ config('app.name', 'Digicrome') }}</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" /> --}}
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <!-- Favicon -->
@@ -28,7 +28,7 @@
     <!-- transitions CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all">
     <!-- venobox CSS -->
-    <link rel="stylesheet" href="venobox/venobox.css" type="text/css') }}" media="all">
+    {{-- <link rel="stylesheet" href="venobox/venobox.css" type="text/css') }}" media="all"> --}}
     <!-- flaticon -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all">
     <!-- bootstrap icons -->

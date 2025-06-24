@@ -406,10 +406,10 @@
                         <div class="breadcumb-title">
                             <h4>Who We Are</h4>
                         </div>
-                        <ul>
+                        {{-- <ul>
                             <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
                             <li>who we are</li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>

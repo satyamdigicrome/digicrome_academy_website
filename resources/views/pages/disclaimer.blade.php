@@ -15,10 +15,10 @@
                     <div class="breadcumb-title">
                         <h4>Disclaimer</h4>
                     </div>
-                    <ul>
+                    {{-- <ul>
                         <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
                         <li>Disclaimer</li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </div>

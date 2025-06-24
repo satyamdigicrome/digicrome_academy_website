@@ -41,7 +41,7 @@
     <!-- transitions CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- venobox CSS -->
-    <link rel="stylesheet" href="venobox/venobox.css" type="text/css') }}" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    {{-- <link rel="stylesheet" href="venobox/venobox.css" type="text/css') }}" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload"> --}}
     <!-- flaticon -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <!-- bootstrap icons -->

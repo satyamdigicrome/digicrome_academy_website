@@ -358,11 +358,11 @@
 	<!-- imagesloaded js -->
 	<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}" defer></script>
 	<!-- venobox js -->
-	<script src="venobox/venobox.js" defer></script>
+	{{-- <script src="venobox/venobox.js" defer></script> --}}
 	<!--  animated-text js -->
 	<script src="{{ asset('assets/js/animated-text.js') }}" defer></script>
 	<!-- venobox min js -->
-	<script src="venobox/venobox.min.js" defer></script>
+	{{-- <script src="venobox/venobox.min.js" defer></script> --}}
 	<!-- isotope js -->
 	<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}" defer></script>
 	<!-- jquery meanmenu js -->

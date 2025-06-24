@@ -425,7 +425,7 @@ $(document).ready(function() {
 <!--==================================================-->
 <!-- Start Cart Side Bar -->
 <!--==================================================-->
-<div class="sidebar-menu-wrapper">
+{{-- <div class="sidebar-menu-wrapper">
 	<div class="cart_sidebar">
 		<button type="button" class="close_btn"><i class="fas fa-times"></i></button>
 		<h2 class="heading_title text-uppercase">Cart Items - <span>4</span></h2>
@@ -493,7 +493,7 @@ $(document).ready(function() {
 		</ul>
 	</div>
 	<div class="cart_sidebar_overlay"></div>
-</div>
+</div> --}}
 <!--==================================================-->
 <!-- End Cart Side Bar -->
 <!--==================================================-->
@@ -520,7 +520,7 @@ $(document).ready(function() {
 							<p class="text">The argument in favor of using filler text goes something like this: If
 								you use real content in the Consulting Process, anytime you reach a review point
 								you’ll end up reviewing and negotiating the content itself and not the design.</p>
-							<a href="index-7.html" class="theme-btn btn-style-two"><span>Consultation</span> <i class="fas fa-heart"></i></a>
+							<a href="#" class="theme-btn btn-style-two"><span>Consultation</span> <i class="fas fa-heart"></i></a>
 						</div>
 						<div class="contact-info">
 							<h2>Contact Info</h2>
