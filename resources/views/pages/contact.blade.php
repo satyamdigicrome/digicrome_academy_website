@@ -367,7 +367,7 @@
 						<div class="info-box">
 							<h5>For Account Department</h5>
 							<p><i class="fas fa-phone"></i> 01203133290</p>
-							<p><i class="fas fa-envelope"></i> account@digicrome.com</p>
+							<p><i class="fas fa-envelope"></i> accounts@digicrome.com</p>
 						</div>
 					</div>
 					<div class="col-md-4">
