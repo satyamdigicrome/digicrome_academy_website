@@ -33,6 +33,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\ContantController;
 use App\Http\Controllers\Admin\MetaController;
+use App\Http\Controllers\Admin\JobController;
+
 
 
 // Route::get('/', function () {
@@ -109,6 +111,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/store', [MetaController::class, 'store'])->name('meta.store');
     Route::get('/get_leads', [ContantController::class, 'leads'])->name('leed');
     Route::delete('/meta/delete/{id}', [MetaController::class, 'destroy'])->name('meta.delete');
+    Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
+    Route::post('/vacancies', [JobController::class, 'store'])->name('vacancies.store');
+Route::get('/vacancies/{id}/edit', [JobController::class, 'edit'])->name('vacancies.edit');
+Route::post('/vacancies/{id}', [JobController::class, 'update'])->name('vacancies.update');
+Route::delete('/vacancies/{id}', [JobController::class, 'destroy'])->name('vacancies.destroy');
+Route::get('/vacancies/create', [JobController::class, 'create'])->name('vacancies.create');
+Route::get('/show_job', [JobController::class, 'show_job'])->name('show_job');
+Route::delete('/application/{id}', [JobController::class, 'delete_application'])->name('application.delete');
+
+
+
+
 
 
 
@@ -140,6 +154,7 @@ Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy
 Route::post('/store-lead', [LeadsController::class, 'store'])->name('store.lead');
 Route::post('/leads', [LeadsController::class, 'leadsstore'])->name('lead.store');
 Route::post('/submit-referral', [ReferController::class, 'submit'])->name('referral.submit');
+Route::post('/vacancy/apply', [CareerController::class, 'apply'])->name('vacancy.apply');
 
 
 

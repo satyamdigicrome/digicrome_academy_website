@@ -282,6 +282,14 @@
     }
 }
 
+.card.hover-shadow:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+}
+.transition {
+  transition: all 0.3s ease;
+}
+
 
     </style>
    <div class="custom-hero-banner">
@@ -374,6 +382,100 @@ If you're driven by purpose, inspired by change, and looking for more than just 
             </div>
         </div>
     </section>
+    <section class="py-5 bg-white">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h1 class="fw-bold">{{ $meta->title ?? 'Join Our Team' }}</h1>
+            <p class="lead text-muted">{{ $meta->description ?? 'Explore our open roles and apply now!' }}</p>
+            <p class="text-secondary"><small>Your region: {{ $userCountry }}</small></p>
+          </div>
+      
+          <div class="row g-4">
+            @foreach($vacancies as $vacancy)
+  <div class="col-lg-6">
+    <div class="card h-100 shadow-sm border-0 hover-shadow transition">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="card-title mb-0">{{ $vacancy->title }}</h5>
+          <span class="badge bg-primary">{{ $vacancy->type }}</span>
+        </div>
+        <p class="text-muted mb-1"><i class="bi bi-briefcase-fill me-2"></i>{{ $vacancy->company_name }}</p>
+        <p class="text-muted"><i class="bi bi-geo-alt-fill me-2"></i>{{ $vacancy->location }}</p>
+        <p class="text-success fw-semibold">💰 {{ $vacancy->salary }}</p>
+        <!-- Button trigger modal -->
+        <button class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#applyModal{{ $vacancy->id }}">
+          Apply Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for this specific vacancy -->
+  <div class="modal fade" id="applyModal{{ $vacancy->id }}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <form action="{{ route('vacancy.apply') }}" method="POST" enctype="multipart/form-data">
+          @csrf
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Apply for: {{ $vacancy->title }}</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            @error('resume')
+    <div class="text-danger">{{ $message }}</div>
+@enderror
+
+            <input type="hidden" name="vacancy_id" value="{{ $vacancy->id }}">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label>Phone</label>
+                <input type="tel" name="phone" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label>Message</label>
+                <textarea name="cover_letter" class="form-control" rows="2" required></textarea>
+              </div>
+              <div class="col-12">
+                <label>Resume</label>
+                <input type="file" name="resume" class="form-control" required accept=".pdf,.doc,.docx" />
+                <small class="text-muted">Max file size: 5MB</small>
+            </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Submit Application</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+@endforeach
+
+          </div>
+        </div>
+      </section>
+      @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
 
 
+  
+
+  
 @endsection
