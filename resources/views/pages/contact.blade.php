@@ -62,7 +62,7 @@
 	  <div id="main">
 
 					 <h2 class="text-center mb-2" style="font-size: 2rem; margin-top: 15px;">
-		   Contact Digicrome <span style="color: #f29c12;">Support</span>  at 0120 313 3869
+		   Contact Digicrome <span style="color: #f29c12;">Support</span>  at 83686 81727
 		</h2>
 		<p class="text-center text-muted mb-4" style="font-size: 15px;">
 		   Need assistance? Whether it's admission queries, account-related concerns, or student support, our dedicated team is here to help you. Reach out to us via call or email, and we'll ensure a smooth experience for you.

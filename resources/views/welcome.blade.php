@@ -1559,7 +1559,7 @@
 				<h3 style="color:#f29c12; font-size:18px; margin:0;">Get a Quick Call</h3>
 				<span onclick="closeModal()" style="font-size:22px; cursor:pointer; color:#555;">&times;</span>
 			</div>
-			<p style="font-size:14px; color:#333; margin-bottom:15px;">Need help? Call us at <strong>0120 313 3869</strong><br>or fill the form below.</p>
+			<p style="font-size:14px; color:#333; margin-bottom:15px;">Need help? Call us at <strong>83686 81727</strong><br>or fill the form below.</p>
 			<form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php" style="width:100%; margin:0;">
 				@csrf
 				<input type="text" name="name" placeholder="Name" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
