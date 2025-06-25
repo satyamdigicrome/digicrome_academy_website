@@ -113,7 +113,7 @@ public function searchCourses(Request $request)
     $collection = Collection::where('slug', $slug)->firstOrFail(); // This will throw a 404 if the collection is not found
     
     // Get the courses associated with the collection
-    $courses = $collection->courses; 
+    $courses = $collection->courses()->where('status', 1)->get();
 
     // Return the view with the courses and collection data
     return view('pages.course', compact('courses', 'collection'));

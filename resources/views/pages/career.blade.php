@@ -253,30 +253,54 @@
                 /* Adjust the line height for better spacing on mobile */
             }
         }
+        .custom-hero-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.custom-hero-banner .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+#sticky-header {
+    margin-bottom: 0px;
+}
+@media (max-width: 768px) {
+    .custom-hero-banner .hero-img {
+        margin-top: 63px;
+    }
+}
+
+
     </style>
-    <div class="breadcumb-area d-flex"style="background-image: url({{ asset('assets/images/care.webp') }})">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="breadcumb-content">
-                        <div class="breadcumb-title">
-                            <h4>Career</h4>
-                        </div>
-                        {{-- <ul>
-                            <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-                            <li>Career</li>
-                        </ul> --}}
+   <div class="custom-hero-banner">
+    <img src="{{ asset('assets/images/care.webp') }}" alt="Career Banner" class="hero-img" loading="lazy">
+
+    <div class="container banner-text">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="breadcumb-content text-center">
+                    <div class="breadcumb-title">
+                        <h4>Career</h4>
                     </div>
                 </div>
             </div>
-            <div class="breadcumb-shape">
-                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
-            </div>
-            <div class="breadcumb-shape2">
-                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
-            </div>
         </div>
     </div>
+</div>
+
+
     <section class="company-form contactpage-form" style="background-color: orange; padding:20px">
         <div class="container-fluid" style="color: white; padding-left:50px; padding-right:50px;">
             <div class="row">
@@ -482,8 +506,9 @@
 	</section>
     <section class="company-form contactpage-form" style="padding-top: 10px;">
         <div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
-            <h1 class="section__title" style="text-align: center;"><b>Why <span class="yellow-bg"> learn<img
-                            src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png" alt="yellow-bg" title="yellow-bg"></span>
+            <h1 class="section__title" style="text-align: center;"><b>Why <span class="yellow-bg"> learn
+                {{-- <img src="https://digicrome.com/public/www/assets/img/shape/yellow-bg-2.png" alt="yellow-bg" title="yellow-bg"> --}}
+                        </span>
                     through</b><b style="color:orange;"> Digicrome?</b></h1>
             <div class="row">
                 <div class="col-lg-4 col-md-12 text-center" style="padding-top: 70px;">

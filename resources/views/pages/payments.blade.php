@@ -21,10 +21,10 @@
         <div class="breadcumb-title">
         <h4 style="color: #fff">Payments</h4>
         </div>
-        <ul>
+        {{-- <ul>
         <li><a href="#" style="color: #fff">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
         <li style="color: #fff">Payments</li>
-        </ul>
+        </ul> --}}
       </div>
       </div>
     </div>

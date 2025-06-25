@@ -293,26 +293,29 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
     padding: 20px;
     box-sizing: border-box;
 }
 
+
 /* Modal Content Box */
 .modal-content {
-    position:fixed;
-    top:50%;
-    right:0;
-    transform:translateY(-50%);
-    width:350px; background:transparent;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    width: 350px;
+    background: transparent;
     backdrop-filter: blur(10px);
-    padding:20px;
-    border-radius:10px 0 0 10px; 
-    box-shadow:-4px 0 12px rgba(0,0,0,0.2); 
-    transition:right 0.3s ease; 
-    max-height:90vh; 
-    overflow-y:auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
 }
+
 
 /* Modal Header */
 .modal-header {
@@ -450,6 +453,9 @@ form button:hover {
 
     .modal-content {
         width: 100%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
     }
 }
 
@@ -465,16 +471,17 @@ form button:hover {
         transform: scale(1);
     }
 }
-.formModal{
-    display:none; 
-    position:fixed;
-    top:0; 
-    left:0;
-    width:100%;
-    height:100%;
-    background-color:none;
-    z-index:9999;
+.formModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    z-index: 9999;
 }
+
 .heading-like-h1 {
     font-size: 36px;     /* adjust if your h1 uses a different size */
     font-weight: bold;

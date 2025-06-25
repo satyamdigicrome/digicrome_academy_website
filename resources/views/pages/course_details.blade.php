@@ -5,6 +5,8 @@
 @section('meta_keywords', $course->meta_keywords ?? $course->name)
 
 @push('styles')
+@include('components.lead-form-popup')
+
 <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -385,9 +387,10 @@
                         <div class="event-sidebar-thumb">
                             <img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="event-sidebar-thumb" title="event-sidebar-thumb">
                             <div class="course-video-icon">
-                                <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
-                                    href="{{ asset('storage/' . $course->image) }}"><i
-                                        class="fa-classic fa-solid fa-play fa-fw"></i></a>
+                                <a 
+                                    href="{{ asset('storage/' . $course->image) }}">
+                                    {{-- <i class="fa-classic fa-solid fa-play fa-fw"></i> --}}
+                                    </a>
                             </div>
                         </div>
                         <div class="event-info">
@@ -431,7 +434,7 @@
                         </div>
                         <div class="event-info-btn">
                             <a data-bs-toggle="modal" 
-                            data-bs-target="#applyNowPopup">BOOK NOW<i class="flaticon flaticon-right-arrow"></i></a>
+                            data-bs-target="#applyNowPopup">APPLY NOW<i class="flaticon flaticon-right-arrow"></i></a>
                         </div>
                         <div class="course-share-title">
                             <h5>Share Now</h5>

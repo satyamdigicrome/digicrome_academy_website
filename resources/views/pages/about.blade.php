@@ -69,7 +69,7 @@
 						</div>
 						<div class="about-experience-box">
 							<div class="about-experience-count">
-								<h3 class="counter">16</h3>
+								<h3 class="counter">10</h3>
 								<span>+</span>
 							</div>
 							<div class="about-experience-desc">
@@ -176,7 +176,7 @@
 			<div class="p-3">
 			  <h3 class="mb-3" style="font-style: italic;">Certified - Online Learning Platform </h3>
 			  <p class="text-muted">
-				Start Learning from anywhere you are, with innovative, creative and effective solutions
+				Our company is certified by MSME and MCA, and we are proud to be registered with these organizations.
 			  </p>
 			  {{-- <span class="fw-bold text-primary">John Doe</span> --}}
 			</div>

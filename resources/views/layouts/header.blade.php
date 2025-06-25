@@ -627,7 +627,7 @@ $(document).ready(function() {
     <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
         <i class="fab fa-whatsapp"></i> Say Hi on WhatsApp
     </a>
-    <a href="tel:01203133869" class="btn btn-callback">
+    <a href="javascript:void(0);" onclick="openModal()"  class="btn btn-callback">
         <i class="fas fa-phone-alt"></i> Request a Callback
     </a>
 </div>

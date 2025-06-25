@@ -61,14 +61,14 @@
           }
 
          </style>
-<div class="container py-5">
+<div class="container py-5" id="referral-form">
   <div class="row align-items-start g-5">
     
     <!-- Referral Form -->
     <div class="col-lg-6">
       <div class="p-4 shadow rounded bg-white">
         <h2 class="mb-4" style="color: #f29c12; font-weight: 700;">Referral Form</h2>
-        <form class="referral-form" method="POST" action="{{ route('referral.submit') }}">
+        <form  class="referral-form" method="POST" action="{{ route('referral.submit') }}">
           @csrf
           <div class="mb-3">
             <label for="yourName" class="form-label">Your Name</label>

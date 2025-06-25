@@ -437,7 +437,7 @@
                         ability to excel in the IT Sector job market.
                     </span><br><br>
                     <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
-                            class="bi bi-whatsapp"></i>Book Now</a>
+                            class="bi bi-whatsapp"></i>Enroll Now</a>
                     {{-- <a href="https://digicrome.com/#ajax-form" class="btn1 btn-warning"><i
                             class="bi bi-telephone-fill"></i>Apply For Counselling</a> --}}
 

@@ -712,7 +712,7 @@
 								<img loading="lazy"src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}" alt="choose-skill-icon" title="choose-skill-icon">
 							</div>
 							<div class="choose-skill-content">
-								<h3 class="counter">26</h3>
+								<h3 class="counter">10</h3>
 								<span>+</span>
 								<p>Years of Experiences</p>
 							</div>

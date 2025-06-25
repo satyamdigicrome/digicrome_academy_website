@@ -174,7 +174,7 @@
 					<div class="footer-widget-menu">
 						<ul>
 							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('about') }}">About Us</a></li>
-							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="https://www.digicrome.com/our-courses/postgraduate-and-master-programs">Courses</a></li>
+							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="https://www.digicrome.com/our-courses/postgraduate-and-master-programs">All Courses</a></li>
 							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('corporate_services') }}">Corporate Services</a></li>
 							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('blog') }}">Blog</a></li>
 							<li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a href="{{ route('payments') }}">Payments</a></li>
@@ -227,7 +227,7 @@
 					@if(isset($footer_courses[$id]))
 						@php $course = $footer_courses[$id]; @endphp
 								<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
-									{{ $course->name }} | </a>
+									{{ $course->name }}</a> | 
 									
 					@endif
 				@endforeach
