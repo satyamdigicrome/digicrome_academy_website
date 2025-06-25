@@ -39,7 +39,7 @@
 
                 <div class="mb-3">
                     <label for="paragraph" class="form-label">Paragraph</label>
-                    <textarea class="form-control" name="paragraph" id="paragraph" rows="4" placeholder="Enter paragraph" required></textarea>
+                    <textarea class="form-control" name="paragraph" class="form-control" id="content"    required></textarea>
                 </div>
 
                 <div class="mb-3">
@@ -53,19 +53,7 @@
 
                 <button type="submit" class="btn btn-primary">Add Apart</button>
             </form>
-            <script>
-                ClassicEditor
-                    .create(document.querySelector('#paragraph'))
-                    .then(editor => {
-                        // Sync manually (optional but useful)
-                        editor.model.document.on('change:data', () => {
-                            document.querySelector('#paragraph').value = editor.getData();
-                        });
-                    })
-                    .catch(error => {
-                        console.error('CKEditor error:', error);
-                    });
-            </script>
+            
             
         </div>
     </div>

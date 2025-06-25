@@ -191,7 +191,7 @@
         <!-- Full-width description field -->
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" id="description" name="description" required></textarea>
+            <textarea class="form-control" id="content" name="description" required></textarea>
         </div>
         
         
@@ -202,18 +202,6 @@
         <a href="{{ route('admin.manage_courses') }}" class="btn btn-secondary">Cancel</a>
     </form>
     <!-- Initialize CKEditor -->
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#description'))
-            .then(editor => {
-                // Sync content to the textarea on change
-                editor.model.document.on('change:data', () => {
-                    document.querySelector('#description').value = editor.getData();
-                });
-            })
-            .catch(error => {
-                console.error('CKEditor error:', error);
-            });
-    </script>
+
 </div>
 @endsection

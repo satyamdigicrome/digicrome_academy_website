@@ -70,14 +70,19 @@ class BlogController extends Controller
         ]);
 
         if ($request->hasFile('author_image')) {
-            Storage::disk('public')->delete($blog->author_image);
+            if ($blog->author_image && Storage::disk('public')->exists($blog->author_image)) {
+                Storage::disk('public')->delete($blog->author_image);
+            }
             $blog->author_image = $request->file('author_image')->store('author_images', 'public');
         }
-
+        
         if ($request->hasFile('blog_image')) {
-            Storage::disk('public')->delete($blog->blog_image);
+            if ($blog->blog_image && Storage::disk('public')->exists($blog->blog_image)) {
+                Storage::disk('public')->delete($blog->blog_image);
+            }
             $blog->blog_image = $request->file('blog_image')->store('blog_images', 'public');
         }
+        
 
         $blog->update([
             'author_name' => $request->author_name,

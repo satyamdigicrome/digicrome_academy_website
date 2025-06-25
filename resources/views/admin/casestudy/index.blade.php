@@ -15,7 +15,7 @@
 
         <div class="mb-3">
             <label for="paragraph" class="form-label">Paragraph</label>
-            <textarea class="form-control" id="paragraph" name="paragraph" rows="3" required></textarea>
+            <textarea class="form-control" id="content" name="paragraph" rows="3" required></textarea>
         </div>
         
         
@@ -33,19 +33,7 @@
 
         <button type="submit" class="btn btn-primary">Add Case Study</button>
     </form>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#paragraph'))
-            .then(editor => {
-                // Sync CKEditor content back to the textarea before form submission
-                editor.model.document.on('change:data', () => {
-                    document.querySelector('#paragraph').value = editor.getData();
-                });
-            })
-            .catch(error => {
-                console.error('CKEditor error:', error);
-            });
-    </script>
+
     
 </div>
 <div class="container mt-4">

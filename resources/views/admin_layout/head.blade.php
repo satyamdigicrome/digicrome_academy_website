@@ -44,7 +44,18 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all">	
 <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-
+<script src="https://cdn.tiny.cloud/1/4sp3qvbeo22peah4ugfvh9opjzturoe0nczxhb9d6xchh1se/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+        
+        <script>
+            tinymce.init({
+              selector: '#content', // match your textarea's ID
+              height: 300,
+              plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+              toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+              menubar: false,
+              branding: false // hides "Powered by TinyMCE"
+            });
+          </script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

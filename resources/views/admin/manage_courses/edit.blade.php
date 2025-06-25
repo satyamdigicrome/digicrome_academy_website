@@ -231,7 +231,7 @@
         <div class="row">
             <div class="form-group col-12">
                 <label for="description">Course Description</label>
-                <textarea class="form-control" id="description" name="description" required>{{ $course->description }}</textarea>
+                <textarea class="form-control" id="content" name="description" required>{{ $course->description }}</textarea>
             </div>
         </div>
         
@@ -245,19 +245,7 @@
         <button type="submit" class="btn btn-primary">Update Course</button>
     </form>
      <!-- Initialize CKEditor -->
-     <script>
-        ClassicEditor
-            .create(document.querySelector('#description'))
-            .then(editor => {
-                // Sync content to the textarea on change
-                editor.model.document.on('change:data', () => {
-                    document.querySelector('#description').value = editor.getData();
-                });
-            })
-            .catch(error => {
-                console.error('CKEditor error:', error);
-            });
-    </script>
+
 
 
 @endsection

@@ -15,7 +15,7 @@
 
 <div class="mb-3">
     <label>Blog Content</label>
-    <textarea class="form-control" id="blog" name="blog" required>{{ old('blog', $blog->blog ?? '') }}</textarea>
+    <textarea class="form-control" id="content" name="blog" required>{{ old('blog', $blog->blog ?? '') }}</textarea>
 </div>
 
 <div class="mb-3">
@@ -57,16 +57,3 @@
     </select>
 </div>
 
-<script>
-    ClassicEditor
-        .create(document.querySelector('#blog'))
-        .then(editor => {
-            // Sync content to the textarea on change
-            editor.model.document.on('change:data', () => {
-                document.querySelector('#blog').value = editor.getData();
-            });
-        })
-        .catch(error => {
-            console.error('CKEditor error:', error);
-        });
-</script>

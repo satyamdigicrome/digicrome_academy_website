@@ -27,19 +27,7 @@
 
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#content'))
-            .then(editor => {
-                // Sync content to the textarea on change
-                editor.model.document.on('change:data', () => {
-                    document.querySelector('#content').value = editor.getData();
-                });
-            })
-            .catch(error => {
-                console.error('CKEditor error:', error);
-            });
-    </script>
+    
 
     <!-- Table -->
     <div class="mt-5">

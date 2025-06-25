@@ -202,12 +202,12 @@
 				<div class="footer-widget-title">
 					<h4>Our Application</h4>
 				</div>
-				<div class="footer-widget-blog first">
+				{{-- <div class="footer-widget-blog first">
 					<div class="footer-widget-blog-thumb">
 						<a href="https://play.google.com/store/apps/details?id=com.digichrome.app">
 						<img loading="lazy"src="{{ asset('assets/images/playimg.png') }}" alt="recent-img" class="ap-logo"></a>
 					</div>
-				</div>
+				</div> --}}
 				<div class="footer-widget-blog">
 					<div class="footer-widget-blog-thumb">
 						<a href="https://apps.apple.com/in/app/digicrome-academy/id6503241441">
