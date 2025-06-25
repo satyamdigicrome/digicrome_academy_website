@@ -19,7 +19,7 @@ public function show_job()
 {
     // All applications with vacancy info, latest first
     $applications = CareerApplication::with('vacancy')->orderBy('created_at', 'desc')->get();
-    return view('admin.job.index', compact('applications'));
+    return view('admin.job.show_job', compact('applications'));
 }
 
 public function delete_application($id)

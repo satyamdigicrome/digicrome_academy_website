@@ -54,9 +54,9 @@ public function apply(Request $request)
         try {
             Mail::to('career.digicrome@gmail.com')->send(new CareerApplicationMail($application));
         } catch (\Exception $e) {
-            \Log::error('Mail error: ' . $e->getMessage());
+            Log::error('Mail not sent: ' . $e->getMessage());
         }
-        
+
         return back()->with('success', 'Application submitted successfully.');
 
     } catch (\Exception $e) {

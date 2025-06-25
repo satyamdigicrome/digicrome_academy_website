@@ -6,4 +6,6 @@
 <p><strong>Cover Letter:</strong></p>
 <p>{{ $application->cover_letter }}</p>
 
-{{-- Resume link hata diya kyunki ab attachment me bhej rahe hain --}}
+<p><strong>Resume Link:</strong> 
+    <a href="{{ asset('storage/' . $application->resume_path) }}">Download Resume</a>
+</p>

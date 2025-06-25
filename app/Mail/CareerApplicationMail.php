@@ -9,28 +9,19 @@ use App\Models\CareerApplication;
 
 class CareerApplicationMail extends Mailable
 {
-    public $application;
-    public $resumeFile;
+    use Queueable, SerializesModels;
 
-    public function __construct($application, $resumeFile = null)
+    public $application;
+
+    public function __construct(CareerApplication $application)
     {
         $this->application = $application;
-        $this->resumeFile = $resumeFile;
     }
 
     public function build()
     {
-        $email = $this->subject('New Career Application')->view('emails.career_application');
-
-        if ($this->resumeFile) {
-            $email->attach($this->resumeFile->getRealPath(), [
-                'as' => $this->resumeFile->getClientOriginalName(),
-                'mime' => $this->resumeFile->getMimeType(),
-            ]);
-        }
-
-        return $email;
+        return $this->subject('New Career Application: ' . $this->application->name)
+                    ->view('emails.career-application');
     }
 }
-
 

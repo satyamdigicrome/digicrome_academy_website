@@ -16,6 +16,8 @@
             float: left;
             width: 100%;
         }
+        .modal-body {
+    display: block;}
 
         .wedd-gall-pg {
             margin: 100px 0 80px 0;
@@ -392,71 +394,113 @@ If you're driven by purpose, inspired by change, and looking for more than just 
       
           <div class="row g-4">
             @foreach($vacancies as $vacancy)
-  <div class="col-lg-6">
-    <div class="card h-100 shadow-sm border-0 hover-shadow transition">
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <h5 class="card-title mb-0">{{ $vacancy->title }}</h5>
-          <span class="badge bg-primary">{{ $vacancy->type }}</span>
-        </div>
-        <p class="text-muted mb-1"><i class="bi bi-briefcase-fill me-2"></i>{{ $vacancy->company_name }}</p>
-        <p class="text-muted"><i class="bi bi-geo-alt-fill me-2"></i>{{ $vacancy->location }}</p>
-        <p class="text-success fw-semibold">💰 {{ $vacancy->salary }}</p>
-        <!-- Button trigger modal -->
-        <button class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#applyModal{{ $vacancy->id }}">
-          Apply Now
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal for this specific vacancy -->
-  <div class="modal fade" id="applyModal{{ $vacancy->id }}" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content border-0 shadow-lg">
-        <form action="{{ route('vacancy.apply') }}" method="POST" enctype="multipart/form-data">
-          @csrf
-          <div class="modal-header bg-primary text-white">
-            <h5 class="modal-title">Apply for: {{ $vacancy->title }}</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            @error('resume')
-    <div class="text-danger">{{ $message }}</div>
-@enderror
-
-            <input type="hidden" name="vacancy_id" value="{{ $vacancy->id }}">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label>Name</label>
-                <input type="text" name="name" class="form-control" required>
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-sm border-0 rounded-3">
+                  <div class="card-body d-flex flex-column">
+                    <!-- Header: Job Title and Type Badge -->
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <h5 class="card-title mb-0 text-primary fw-bold">{{ $vacancy->title }}</h5>
+                      <span class="badge bg-info text-dark text-uppercase px-3 py-1 fw-semibold">{{ $vacancy->type }}</span>
+                    </div>
+              
+                    <!-- Company, Location, Experience and Salary -->
+                    <p class="text-muted mb-1"><i class="bi bi-building me-2"></i>{{ $vacancy->company_name }}</p>
+                    <p class="text-muted mb-1"><i class="bi bi-geo-alt-fill me-2"></i>{{ $vacancy->location }}</p>
+                    <p class="text-muted mb-1"><i class="bi bi-briefcase-fill me-2"></i>{{ $vacancy->experience_level }}</p>
+                    <p class="text-success fw-semibold fs-5 mb-3">💰 {{ $vacancy->salary }}</p>
+              
+                    <!-- Industry Badge -->
+                    <div class="mb-3">
+                      <span class="badge bg-secondary text-white">{{ $vacancy->industry }}</span>
+                    </div>
+              
+                    <!-- Button to open modal -->
+                    <button
+                      class="btn btn-primary mt-auto"
+                      data-bs-toggle="modal"
+                      data-bs-target="#applyModal{{ $vacancy->id }}">
+                      View & Apply
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-6">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control" required>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="applyModal{{ $vacancy->id }}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content border-0 shadow-lg" style="max-height: 90vh;">
+                    <form action="{{ route('vacancy.apply') }}" method="POST" enctype="multipart/form-data" class="p-3">
+                      @csrf
+                      <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title">Apply for: {{ $vacancy->title }}</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                      </div>
+              
+                      <div class="modal-body" style="max-height: 75vh; overflow-y: hidden;">
+                        <div class="row g-4">
+                          <!-- Left side: Job info (70% width) -->
+                          <div class="col-lg-8" style="max-height: 70vh; overflow-y: auto; border-right: 1px solid #ddd; padding-right: 30px;">
+                            <h4 class="fw-bold mb-3">{{ $vacancy->title }}</h4>
+                            <p class="mb-1"><strong>Company:</strong> {{ $vacancy->company_name }}</p>
+                            <p class="mb-1"><strong>Location:</strong> {{ $vacancy->location }}</p>
+                            <p class="mb-1"><strong>Type:</strong> {{ $vacancy->type }}</p>
+                            <p class="mb-1"><strong>Experience Level:</strong> {{ $vacancy->experience_level }}</p>
+                            <p class="mb-4 text-success fw-semibold fs-5">💰 {{ $vacancy->salary }}</p>
+              
+                            <h5 class="fw-semibold mb-2">Job Description</h5>
+                            <div class="mb-4" style="white-space: pre-wrap;">{!! $vacancy->description !!}</div>
+              
+                            <h5 class="fw-semibold mb-2">Requirements</h5>
+                            <div style="white-space: pre-wrap;">{!! $vacancy->requirements !!}</div>
+                          </div>
+              
+                          <!-- Right side: Application form (30% width) -->
+                          <div class="col-lg-4" style="max-height: 70vh; overflow-y: auto; padding-left: 30px;">
+                            @error('resume')
+                              <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+              
+                            <input type="hidden" name="vacancy_id" value="{{ $vacancy->id }}">
+              
+                            <div class="mb-3">
+                              <label for="name{{ $vacancy->id }}" class="form-label fw-semibold">Name</label>
+                              <input type="text" name="name" id="name{{ $vacancy->id }}" class="form-control form-control-sm" placeholder="Your full name" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="email{{ $vacancy->id }}" class="form-label fw-semibold">Email</label>
+                              <input type="email" name="email" id="email{{ $vacancy->id }}" class="form-control form-control-sm" placeholder="you@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="phone{{ $vacancy->id }}" class="form-label fw-semibold">Phone</label>
+                              <input type="tel" name="phone" id="phone{{ $vacancy->id }}" class="form-control form-control-sm" placeholder="+1234567890" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="cover_letter{{ $vacancy->id }}" class="form-label fw-semibold">Message</label>
+                              <textarea name="cover_letter" id="cover_letter{{ $vacancy->id }}" class="form-control form-control-sm" rows="3" placeholder="Write a brief cover letter" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                              <label for="resume{{ $vacancy->id }}" class="form-label fw-semibold">Resume</label>
+                              <input
+                                type="file"
+                                name="resume"
+                                id="resume{{ $vacancy->id }}"
+                                class="form-control form-control-sm"
+                                required
+                                accept=".pdf,.doc,.docx"
+                              />
+                              <small class="text-muted">Max file size: 5MB</small>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100 mt-2 fw-semibold">Submit Application</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-6">
-                <label>Phone</label>
-                <input type="tel" name="phone" class="form-control" required>
-              </div>
-              <div class="col-md-6">
-                <label>Message</label>
-                <textarea name="cover_letter" class="form-control" rows="2" required></textarea>
-              </div>
-              <div class="col-12">
-                <label>Resume</label>
-                <input type="file" name="resume" class="form-control" required accept=".pdf,.doc,.docx" />
-                <small class="text-muted">Max file size: 5MB</small>
-            </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-success">Submit Application</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+              
+              
+              
 @endforeach
 
           </div>

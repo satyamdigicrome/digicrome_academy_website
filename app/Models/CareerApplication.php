@@ -14,4 +14,12 @@ class CareerApplication extends Model
         'cover_letter',
         'resume_path',
     ];
+
+    // App\Models\CareerApplication.php
+
+public function vacancy()
+{
+    return $this->belongsTo(Vacancy::class);
+}
+
 }
