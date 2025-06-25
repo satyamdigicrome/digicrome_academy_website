@@ -105,8 +105,8 @@ class AdminCourseController extends Controller
         // Validate the incoming request data
         $request->validate([
             'name' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:courses,slug,' . $id . ',id',
-            'sku' => 'required|string|max:255|unique:courses,sku,' . $id . ',id',
+            'slug' => 'required|string|max:255',
+            'sku' => 'required|string|max:255',
             'tag_line' => 'nullable|string|max:255',
             'corporate' => 'required|boolean',
             'description' => 'required|string',
