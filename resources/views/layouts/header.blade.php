@@ -230,7 +230,7 @@
 				<div class="header-right-wrapper">
 					<div class="header-sidebar">
 						<div class="header-btn">
-							<a href="#" href="javascript:void(0);" onclick="openModal()" 
+							<a href="javascript:void(0);" onclick="openModal()" 
 							   style="display: inline-block; 
 									  border: 2px solid #fff; 
 									  color: #fff; 

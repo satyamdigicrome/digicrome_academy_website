@@ -69,7 +69,6 @@
 		</p> 
 		 </div>
 		<style>
-			/* Default Styles */
 
 	.top_bar {
 		background-color: #f29c12;
