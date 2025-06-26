@@ -294,36 +294,88 @@
 
 
     </style>
-<div class="custom-hero-banner" style="position: relative;">
-    <img src="{{ asset('assets/images/care.webp') }}" alt="Career Banner" class="hero-img" loading="lazy" style="width: 100%; height: auto; object-fit: cover;">
-
-    <div class="container banner-text" style="position: absolute; text-align: left; top: 50%; left: 5%; transform: translateY(-50%); color: white; max-width: 600px;">
-        <div class="breadcumb-content text-left">
-            <div class="breadcumb-title">
-                <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 15px;">
-                    Career at <span style="color: #f29c12;">Digicrome</span>
-                </h1>
-                <p style="font-size: 1.2rem; margin-bottom: 25px; line-height: 1.6;">
-                    Be part of something exciting. Join a team where your ideas matter and your growth is a priority.
-                    At Digicrome, we don't just build careers — we build futures.
-                </p>
-
-                <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 1rem; line-height: 1.8;">
-                    <li>✔✔ Join a visionary team reshaping education.</li>
-                    <li>✔✔ Grow your career in edtech.</li>
-                    <li>✔✔ Remote-friendly & modern workspaces.</li>
-                    <li>✔✔ Performance-driven growth.</li>
-                    <li>✔✔ Flexible, creative work culture.</li>
-                  </ul>
-                  
-
-                <a href="#career" style="display: inline-block; padding: 12px 25px; background-color: #f29c12; color: white; text-decoration: none; font-weight: bold; border-radius: 4px;">
-                    Explore Open Positions
-                </a>
-            </div>
+<style>
+    .custom-hero-banner {
+      position: relative;
+    }
+  
+    .hero-img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      color: white;
+      max-width: 600px;
+      text-align: left;
+    }
+  
+    @media (max-width: 768px) {
+      .banner-text {
+        position: static;
+        transform: none;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        color: #fff;
+        max-width: 100%;
+        text-align: center;
+      }
+  
+      .banner-text h1 {
+        font-size: 2rem !important;
+      }
+  
+      .banner-text p {
+        font-size: 1rem !important;
+      }
+  
+      .banner-text ul {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+  
+      .banner-text a {
+        display: inline-block;
+        margin-top: 15px;
+      }
+    }
+  </style>
+  
+  <div class="custom-hero-banner">
+    <img src="{{ asset('assets/images/care.webp') }}" alt="Career Banner" class="hero-img" loading="lazy">
+  
+    <div class="container banner-text">
+      <div class="breadcumb-content">
+        <div class="breadcumb-title">
+          <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 15px;">
+            Career at <span style="color: #f29c12;">Digicrome</span>
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 25px; line-height: 1.6;">
+            Be part of something exciting. Join a team where your ideas matter and your growth is a priority.
+            At Digicrome, we don't just build careers — we build futures.
+          </p>
+  
+          <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 1rem; line-height: 1.8;">
+            <li>✔✔ Join a visionary team reshaping education.</li>
+            <li>✔✔ Grow your career in edtech.</li>
+            <li>✔✔ Remote-friendly & modern workspaces.</li>
+            <li>✔✔ Performance-driven growth.</li>
+            <li>✔✔ Flexible, creative work culture.</li>
+          </ul>
+  
+          <a href="#career" style="padding: 12px 25px; background-color: #f29c12; color: white; text-decoration: none; font-weight: bold; border-radius: 4px;">
+            Explore Open Positions
+          </a>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  
 
 
 
