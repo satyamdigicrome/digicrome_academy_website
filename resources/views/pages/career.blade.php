@@ -294,21 +294,37 @@
 
 
     </style>
-   <div class="custom-hero-banner">
-    <img src="{{ asset('assets/images/care.webp') }}" alt="Career Banner" class="hero-img" loading="lazy">
+<div class="custom-hero-banner" style="position: relative;">
+    <img src="{{ asset('assets/images/care.webp') }}" alt="Career Banner" class="hero-img" loading="lazy" style="width: 100%; height: auto; object-fit: cover;">
 
-    <div class="container banner-text">
-        <div class="row align-items-center">
-            <div class="col-lg-12">
-                <div class="breadcumb-content text-center">
-                    <div class="breadcumb-title">
-                        <h4>Career</h4>
-                    </div>
-                </div>
+    <div class="container banner-text" style="position: absolute; text-align: left; top: 50%; left: 5%; transform: translateY(-50%); color: white; max-width: 600px;">
+        <div class="breadcumb-content text-left">
+            <div class="breadcumb-title">
+                <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 15px;">
+                    Career at <span style="color: #f29c12;">Digicrome</span>
+                </h1>
+                <p style="font-size: 1.2rem; margin-bottom: 25px; line-height: 1.6;">
+                    Be part of something exciting. Join a team where your ideas matter and your growth is a priority.
+                    At Digicrome, we don't just build careers — we build futures.
+                </p>
+
+                <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 1rem; line-height: 1.8;">
+                    <li>✔✔ Join a visionary team reshaping education.</li>
+                    <li>✔✔ Grow your career in edtech.</li>
+                    <li>✔✔ Remote-friendly & modern workspaces.</li>
+                    <li>✔✔ Performance-driven growth.</li>
+                    <li>✔✔ Flexible, creative work culture.</li>
+                  </ul>
+                  
+
+                <a href="#career" style="display: inline-block; padding: 12px 25px; background-color: #f29c12; color: white; text-decoration: none; font-weight: bold; border-radius: 4px;">
+                    Explore Open Positions
+                </a>
             </div>
         </div>
     </div>
 </div>
+
 
 
     <section class="company-form contactpage-form" style="background-color: orange; padding:20px">
@@ -384,13 +400,14 @@ If you're driven by purpose, inspired by change, and looking for more than just 
             </div>
         </div>
     </section>
-    <section class="py-5 bg-white">
+    <section class="py-5 bg-white" id="career">
         <div class="container">
-          <div class="text-center mb-5">
-            <h1 class="fw-bold">{{ $meta->title ?? 'Join Our Team' }}</h1>
-            <p class="lead text-muted">{{ $meta->description ?? 'Explore our open roles and apply now!' }}</p>
-            <p class="text-secondary"><small>Your region: {{ $userCountry }}</small></p>
-          </div>
+            <div class="text-center mb-5">
+                <h2 style="font-size: 30px" class="fw-bold">Join Our Dynamic Team</h2>
+                <p class="lead text-muted">Discover exciting career opportunities and become a part of something great.</p>
+                <p class="text-secondary"><small>Your region: {{ $userCountry }}</small></p>
+              </div>
+              
       
           <div class="row g-4">
             @foreach($vacancies as $vacancy)
