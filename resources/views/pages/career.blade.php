@@ -448,10 +448,10 @@ If you're driven by purpose, inspired by change, and looking for more than just 
                             <p class="mb-4 text-success fw-semibold fs-5">💰 {{ $vacancy->salary }}</p>
               
                             <h5 class="fw-semibold mb-2">Job Description</h5>
-                            <div class="mb-4" style="white-space: pre-wrap;">{!! $vacancy->description !!}</div>
+                            <div class="mb-4" style="list-style: disc;">{!! $vacancy->description !!}</div>
               
                             <h5 class="fw-semibold mb-2">Requirements</h5>
-                            <div style="white-space: pre-wrap;">{!! $vacancy->requirements !!}</div>
+                            <div style="list-style: disc;">{!! $vacancy->requirements !!}</div>
                           </div>
               
                           <!-- Right side: Application form (30% width) -->

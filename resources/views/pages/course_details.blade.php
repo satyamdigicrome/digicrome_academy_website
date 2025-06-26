@@ -374,7 +374,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xxl-8 col-xl-8 col-lg-7 col-md-12">
-                <div class="course-details-content">
+                <div class="course-details-content" style="list-style: disc;">
                     <div class="course-details-heading">
                         <h2 class="course-details-title">Course Overview</h2>
                     </div>
@@ -780,7 +780,7 @@
                 <div class="col-md-3">
                     <div class="case-box p-4 rounded shadow-sm h-100">
                         <h5 class="mb-3 fw-bold">{{ $case->heading }}</h5>
-                        <p class="text-muted">{!! $case->paragraph !!}</p>
+                        <p class="text-muted" style="list-style: disc;">{!! $case->paragraph !!}</p>
                     </div>
                 </div>
                 @endforeach
@@ -1055,7 +1055,7 @@
                             <div id="collapse{{ $index }}"
                                 class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
                                 aria-labelledby="heading{{ $index }}" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
+                                <div class="accordion-body" style="list-style: disc;">
                                     {!! nl2br(e($faq->answer)) !!}
                                 </div>
                             </div>
