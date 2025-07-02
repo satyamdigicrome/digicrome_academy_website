@@ -31,7 +31,7 @@
   </div>                                                                                                                                                                                                                  
   <section class="py-5">
     <div class="container text-center">
-    <h2 class="mb-5">How It Works</h2>
+    <h1 class="mb-5">How It Works</h1>
     {{-- <div class="row g-4">
       <div class="col-md-4">
       <div class="step-icon mb-3">🔗</div>

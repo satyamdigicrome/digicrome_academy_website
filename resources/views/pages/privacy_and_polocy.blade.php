@@ -13,8 +13,8 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="breadcumb-content">
-                    <div class="breadcumb-title">
-                        <h4>Privacy Policy</h4>
+                      <div class="breadcumb-title">
+                        <h1 class="display-5 fw-bold">Privacy Policy</h1>
                     </div>
                     {{-- <ul>
                         <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>

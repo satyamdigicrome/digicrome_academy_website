@@ -124,7 +124,7 @@
             </div>
           </div>
           <div class="col-md-6 text-end">
-            <img loading="lazy"src="{{ asset('assets/images/3.png') }}" class="img-fluid" alt="CIBOP" title="CIBOP" />
+            <img loading="lazy"src="{{ asset('assets/images/3.webp') }}" class="img-fluid" alt="CIBOP" title="CIBOP" />
           </div>
         </div>
         <d  iv class="feature-strip position-relative mt-5">
@@ -148,7 +148,7 @@
                 </div>
                 <div class="features-box text-center flex-fill min-w-0">
                     <div class="date-border">
-                        <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}" class="lazyload"
+                        <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.') }}" class="lazyload"
                             alt="best online data science programs" title="best online data science programs">
                         <p>11 Months</p>
                         <span>Live Online Classes</span>
@@ -436,15 +436,15 @@
                             <a data-bs-toggle="modal" 
                             data-bs-target="#applyNowPopup">APPLY NOW<i class="flaticon flaticon-right-arrow"></i></a>
                         </div>
-                        <div class="course-share-title">
+                   {{--     <div class="course-share-title">
                             <h5>Share Now</h5>
-                        </div>
+                        </div> --}}
                         @php
     $currentUrl = urlencode(url()->current());
     $rawUrl = url()->current();
     $courseTitle = urlencode($course->name ?? 'Check this course');
 @endphp
-
+{{--
 <div class="course-share-icon">
     <ul class="share-icon">
 
@@ -478,7 +478,7 @@
 
     </ul>
 </div>
-
+--}}
 <!-- JavaScript for Copy Link -->
 <script>
     function copyCourseLink() {

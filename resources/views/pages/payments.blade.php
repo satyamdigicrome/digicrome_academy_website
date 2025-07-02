@@ -197,7 +197,7 @@
 
 <section style="padding: 40px; background-color: #f8f9fa;">
   <div style="text-align: center; margin-bottom: 30px;">
-    <h2 style="font-size: 32px; color: #333;">Choose Your Payment Method</h2>
+    <h1 style="font-size: 32px; color: #333;">Choose Your Payment Method</h1>
     <p style="font-size: 18px; color: #555;">Select a convenient option below to make your payment</p>
   </div>
 
