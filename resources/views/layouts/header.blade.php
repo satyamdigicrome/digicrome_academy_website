@@ -760,6 +760,4 @@
 		}
 	}
 </script>
-
-
 <!--End Sidebar Cart Item -->
