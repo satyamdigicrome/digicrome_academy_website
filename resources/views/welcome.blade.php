@@ -108,7 +108,7 @@
 		<div class="container">
 			<div class="row align-items-center section-title-space">
 				<div class="col-lg-6">
-					<div class="section-sub-title pt-6">
+					<div class="section-sub-title pt-6" style="    margin-top: 50px;">
 						<h6>core features</h6>
 					</div>
 				</div>
