@@ -17,7 +17,19 @@
 	</div>
 </div> --}}
 <!--========= End Prealoader ============== -->
+<style>
+	.footer-logo11 {
+    width: 80%;          /* Default width for desktop */
+    display: block;      /* Ensure it’s visible by default */
+}
 
+@media (max-width: 768px) {
+    .footer-logo11 {
+        display: none;   /* Hide on mobile devices */
+    }
+}
+
+	</style>
 
 
 
@@ -261,7 +273,7 @@
 		<nav class="header-menu">
 			<div class="mobile-logo">
 				<a class="logo_img" href="/" title="educate">
-				    <img loading="lazy"src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo">
+				    <img class="footer-logo11" loading="lazy"src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo">
 				</a>
 			  </div>
 			  <ul class="nav_scroll">
