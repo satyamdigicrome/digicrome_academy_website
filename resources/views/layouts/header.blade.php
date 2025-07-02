@@ -20,7 +20,7 @@
 
 <style>
 	.footer-logo11 {
-    width: 62%;          /* Default width for desktop */
+    width: 58%;          /* Default width for desktop */
 }
 
 @media (max-width: 768px) {
@@ -276,7 +276,7 @@
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
 	<div class="mobile-menu">
 		<nav class="header-menu">
-			<div class="mobile-logo">
+			<div class="mobile-logo" style="z-index: -9;">
 					<img class="footer-logo11" loading="lazy" src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo">
 			</div>
 			<ul class="nav_scroll">
