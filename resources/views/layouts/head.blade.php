@@ -8,7 +8,7 @@
     <meta property="og:type" content="Online Training/Development" />
     <meta property="og:site_name" content="Digicrome" />
     <meta name="og:email" content="digicrome.academy@gmail.com" />
-    <meta name="og:phone_number" content="01203133869" />
+    <meta name="og:phone_number" content="01205222560" />
     <meta name="og:latitude" content="28.584688° N" />
     <meta name="og:longitude" content="77.315930° E" />
     <meta name="og:street-address" content="C-108 Second Floor, Sector 2, Noida, Uttar Pradesh 201301" />
@@ -71,7 +71,7 @@
       "logo": "https://www.digicrome.com/assets/images/logo.webp",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "01203133869",
+        "telephone": "01205222560",
         "contactType": "customer service",
         "contactOption": "TollFree",
         "areaServed": "IN",

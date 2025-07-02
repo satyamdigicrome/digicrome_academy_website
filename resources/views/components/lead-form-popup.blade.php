@@ -431,7 +431,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            Need help? Call us now at 01203133869 or request a quick call!
+            Need help? Call us now at 01205222560 or request a quick call!
         </div>
         <div class="modal-body">
             <div class="popup-container">
