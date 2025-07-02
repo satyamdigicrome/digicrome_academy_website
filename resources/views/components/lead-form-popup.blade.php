@@ -431,7 +431,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            Need help? Call us now at 83686 81727 or request a quick call!
+            Need help? Call us now at 01203133869 or request a quick call!
         </div>
         <div class="modal-body">
             <div class="popup-container">
@@ -498,9 +498,7 @@
                                 <input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
                             </div>
 
-                            <p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms
-                                    and Conditions</a> and our <a href="https://digicrome.com/privacy-policy">Privacy
-                                    Policy.</a> </p><br>
+                         <br>
                             <button type="submit">Submit</button>
                         </form>
                     </div>

@@ -1,4 +1,3 @@
-
 <!-- ========= Prealoader ==============-->
 {{-- <div class="loading-screen" id="loading-screen">
 	<span class="bar top-bar"></span>
@@ -29,14 +28,18 @@
 		<div class="row header-top">
 			<div class="col-xxl-6 col-xl-8 col-lg-8">
 				<div class="header-top-welcome" style="font-size: 12px;">
-@include('components.breadcrumb')
+					@include('components.breadcrumb')
 
 					{{-- <p>Welcome to <a href="/">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p> --}}
 				</div>
 			</div>
 			<div class="col-xxl-6 col-xl-4 col-lg-4">
 				<div class="header-top-right">
-					<p style="font-size: 12px;">Welcome to <a style="color:#f29c12" href="/">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p>
+					<div class="text-white text-right">
+						Welcome to Digicrome – 01203133869
+					</div>
+
+
 					{{-- <div class="educate-header-from">
 						<a class="login-btn" href="sign-in.html"><i class="bi bi-arrow-right-circle"></i>Login</a>
 						<a class="sign-up-btn" href="sign-up.html"><i class="bi bi-person-plus"></i>Register</a>
@@ -49,27 +52,27 @@
 
 
 <!--==================================================-->
- 
+
 <!--==================================================-->
 <!-- End educate Header top area -->
 <!--==================================================-->
 <!--==================================================-->
 <!-- Start educate Header Area-->
 <!--==================================================-->
-<div class="educate-header-area" id="sticky-header" >
+<div class="educate-header-area" id="sticky-header">
 	<div class="container-fluid">
 		<div class="row header-wrap align-items-center">
 			<div class="col-lg-2">
 				<div class="header-logo">
-					<a class="active_logo" href="/"><img loading="lazy"src="{{ asset('assets/images/logo.webp') }}" alt="logo"></a>
-					<a class="logo_two" href="/"><img loading="lazy"src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo"></a>
+					<a class="active_logo" href="/"><img loading="lazy" src="{{ asset('assets/images/logo.webp') }}" alt="logo"></a>
+					<a class="logo_two" href="/"><img loading="lazy" src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-8">
 				<div class="header-menu">
 					<ul class="nav_scroll">
 						<li>
-							<a href="#"  style=" background-color: #1c1647; border: 2px solid #fff; border-radius: 8px; padding: 3px 7px; color: #fff; display: flex; align-items: center; gap: 5px;">
+							<a href="#" style=" background-color: #1c1647; border: 2px solid #fff; border-radius: 8px; padding: 3px 7px; color: #fff; display: flex; align-items: center; gap: 5px;">
 								<i style="color: #fff" class="bi bi-journal-bookmark-fill"></i> <!-- Icon before text -->
 								Courses
 								<i style="color: #fff" class="bi bi-chevron-down"></i>
@@ -96,53 +99,54 @@
 													</li>
 													{{-- Dynamic Categories (static link) --}}
 													@foreach($header_collections as $collection)
-														<li class="mb-2">
-															<a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
-																{{ $collection->name }}
-																<i class="bi bi-chevron-right"></i>
-															</a>
-														</li>
+													<li class="mb-2">
+														<a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
+															{{ $collection->name }}
+															<i class="bi bi-chevron-right"></i>
+														</a>
+													</li>
 													@endforeach
 												</ul>
 											</div>
-										
+
 											{{-- Right Column: Courses --}}
 											<div class="col-md-8">
 												<h6 class="fw-bold mb-3 text-primary">Top Courses</h6>
 												<div id="course-container" class="d-flex flex-column gap-2" style="max-height: 460px; overflow-y: auto;">
 													{{-- Default Courses (Data Science) --}}
 													@foreach([1, 3, 55] as $id)
-														@if(isset($header_courses[$id]))
-															@php $course = $header_courses[$id]; @endphp
-															<div class="card border-0 shadow-sm rounded-3 p-2">
-																<div class="d-flex align-items-center">
-																	<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
-																	<img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
-																	<div class="ms-3 flex-grow-1">
-																		<h6 class="fw-semibold" style="line-height: 24px;">{{ $course->name }}</h6>
-																		<p class="text-muted small">Duration: {{ $course->course_duration ?? 'N/A' }}</p></a>
-																		
-																	</div>
-																</div>
-															</div>
-														@endif
-													@endforeach
+													@if(isset($header_courses[$id]))
+													@php $course = $header_courses[$id]; @endphp
+													<div class="card border-0 shadow-sm rounded-3 p-2">
+														<div class="d-flex align-items-center">
+															<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
+																<img loading="lazy" src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+																<div class="ms-3 flex-grow-1">
+																	<h6 class="fw-semibold" style="line-height: 24px;">{{ $course->name }}</h6>
+																	<p class="text-muted small">Duration: {{ $course->course_duration ?? 'N/A' }}</p>
+															</a>
+
+														</div>
+													</div>
 												</div>
+												@endif
+												@endforeach
 											</div>
 										</div>
-										<script>
-											$(document).ready(function () {
-												let allheader_courses = @json($header_courses);
-										
-												$('.category-link').on('click', function () {
-													let ids = $(this).data('ids').toString().split(',');
-													let container = $('#course-container');
-													container.empty();
-										
-													ids.forEach(function (id) {
-														let course = allheader_courses[id];
-														if (course) {
-															container.append(`
+									</div>
+									<script>
+										$(document).ready(function() {
+											let allheader_courses = @json($header_courses);
+
+											$('.category-link').on('click', function() {
+												let ids = $(this).data('ids').toString().split(',');
+												let container = $('#course-container');
+												container.empty();
+
+												ids.forEach(function(id) {
+													let course = allheader_courses[id];
+													if (course) {
+														container.append(`
 																<div class="card border-0 shadow-sm rounded-3 p-2 mb-2">
 																	<div class="d-flex align-items-center">
 																	<a href="/courses/${course.slug}">
@@ -155,43 +159,43 @@
 																	</div>
 																</div>
 															`);
-														}
-													});
+													}
 												});
 											});
-										</script>
-										
-											
-										
-									</div>
-								</li>
-							</ul>
-							
-						</li>
-						
-						<li><a href="/">Home</a>
-						</li>
-						<li><a href="{{ route('about') }}">About</a></li>
-						{{-- <li><a href="#">pages<i class="bi bi-chevron-down"></i></a>
+										});
+									</script>
+
+
+
+				</div>
+				</li>
+				</ul>
+
+				</li>
+
+				<li><a href="/">Home</a>
+				</li>
+				<li><a href="{{ route('about') }}">About</a></li>
+				{{-- <li><a href="#">pages<i class="bi bi-chevron-down"></i></a>
 							<ul class="sub_menu">
 								<li><a href="{{ route('about') }}">About Us</a></li>
-								<li><a href="{{ route('course') }}">header_courses</a></li>
-								<li><a href="{{ route('course_details') }}">Courses Details</a></li>
-								<li><a href="instructor.html">Instructor</a></li>						
-								<li><a href="instructor-details.html">Instructor Details</a></li>
-								<li><a href="event.html">Event</a></li>	
-								<li><a href="event-details.html">Event Details</a></li>	
-								<li><a href="pricing.html">Pricing</a></li>	
-								<li><a href="faq.html">Faq</a></li>	
-								<li><a href="choose.html">Why Choose</a></li>
-								<li><a href="testimonial.html">testimonial</a></li>	
-								<li><a href="404.html">Error Page</a></li>							
-								<li><a href="{{ route('contact') }}">Contact</a></li>
-							</ul>
-						</li> --}}
-						
-						
-						{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>
+				<li><a href="{{ route('course') }}">header_courses</a></li>
+				<li><a href="{{ route('course_details') }}">Courses Details</a></li>
+				<li><a href="instructor.html">Instructor</a></li>
+				<li><a href="instructor-details.html">Instructor Details</a></li>
+				<li><a href="event.html">Event</a></li>
+				<li><a href="event-details.html">Event Details</a></li>
+				<li><a href="pricing.html">Pricing</a></li>
+				<li><a href="faq.html">Faq</a></li>
+				<li><a href="choose.html">Why Choose</a></li>
+				<li><a href="testimonial.html">testimonial</a></li>
+				<li><a href="404.html">Error Page</a></li>
+				<li><a href="{{ route('contact') }}">Contact</a></li>
+				</ul>
+				</li> --}}
+
+
+				{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>
 							<ul class="sub_menu">
 								<li><a href="shop.html">shop</a></li>
 								<li><a href="shop-details.html">Shop Details</a></li>
@@ -199,39 +203,41 @@
 								<li><a href="checkout.html">Checkout</a></li>
 							</ul>
 						</li> --}}
-						<li><a href="{{ route('corporate_services') }}">Corporate Services </a>
-						<li><a href="{{ route('blog') }}">Blog </a>
-						<li><a href="{{ route('payments') }}">Payments </a>
-							{{-- <ul class="sub_menu">
-								<li><a href="{{ route('blog') }}">Blog</a></li>
-								<li><a href="blog-details.html">Blog Details</a></li>
-							</ul> --}}
-						</li>
-						<li><a href="{{ route('contact') }}">Contact</a></li>
-						<li><a href="#">More<i class="bi bi-chevron-down"></i></a>
+						<li><a href="{{ route('success_stories') }}">Success stories</a></li>
+				<li><a href="{{ route('blog') }}">Blog </a>
+				<li><a href="{{ route('payments') }}">Payments </a>
+					{{-- <ul class="sub_menu">
+								<li><a href="{{ route('blog') }}">Blog</a>
+				</li>
+				<li><a href="blog-details.html">Blog Details</a></li>
+				</ul> --}}
+				</li>
+				<li><a href="{{ route('contact') }}">Contact</a></li>
+				<li><a href="#">More<i class="bi bi-chevron-down"></i></a>
 					<ul class="sub_menu">
 						<li><a href="{{ route('who_we_are') }}">Who we are</a></li>
-						<li><a href="{{ route('success_stories') }}">Success stories</a></li>
-						<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
+				<li><a href="{{ route('corporate_services') }}">Corporate Services </a>
+							<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
 						<li><a href="{{ route('career') }}">Career</a></li>
-						{{-- <li><a href="{{ route('media_presence') }}">Media Presence</a></li> --}}
+						{{-- <li><a href="{{ route('media_presence') }}">Media Presence</a>
+				</li> --}}
 
-					</ul>
+				</ul>
 				</li>
 				<li>
 					<div class="header-src-btn">
-					<div class="search-box-btn search-box-outer"><i class="fa-solid fa-magnifying-glass"></i></div>
-				</div>&nbsp;&nbsp;
-			</li>
-					</ul>				
-				</div>
+						<div class="search-box-btn search-box-outer"><i class="fa-solid fa-magnifying-glass"></i></div>
+					</div>&nbsp;&nbsp;
+				</li>
+				</ul>
 			</div>
-			<div class="col-lg-2">
-				<div class="header-right-wrapper">
-					<div class="header-sidebar">
-						<div class="header-btn">
-							<a href="javascript:void(0);" onclick="openModal()" 
-							   style="display: inline-block; 
+		</div>
+		<div class="col-lg-2">
+			<div class="header-right-wrapper">
+				<div class="header-sidebar">
+					<div class="header-btn">
+						<a href="javascript:void(0);" onclick="openModal()"
+							style="display: inline-block; 
 									  border: 2px solid #fff; 
 									  color: #fff; 
 									  background-color: #1c1647; 
@@ -240,15 +246,15 @@
 									  white-space: nowrap; 
 									  min-width: 120px; 
 									  text-align: center;">
-								ENROLL NOW 
-							</a>
-						</div>
+							ENROLL NOW
+						</a>
 					</div>
 				</div>
 			</div>
-			
 		</div>
+
 	</div>
+</div>
 </div>
 <!--==================================================-->
 <!-- End educate Header Area -->
@@ -261,10 +267,10 @@
 		<nav class="header-menu">
 			<div class="mobile-logo">
 				<a class="logo_img" href="/" title="educate">
-				    <img loading="lazy"src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo">
+					<img style="width: 90%;" loading="lazy" src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo">
 				</a>
-			  </div>
-			  <ul class="nav_scroll">
+			</div>
+			<ul class="nav_scroll">
 				<li><a href="/">Home</a>
 					{{-- <ul class="sub_menu">
 						<li><a href="/">Home Version 01</a></li>
@@ -279,46 +285,46 @@
 				{{-- <li><a href="#">pages<i class="bi bi-chevron-down"></i></a>
 					<ul class="sub_menu">
 						<li><a href="{{ route('about') }}">About Us</a></li>
-						<li><a href="{{ route('course') }}">Courses</a></li>
-						<li><a href="{{ route('course_details') }}">Courses Details</a></li>
-						<li><a href="instructor.html">Instructor</a></li>						
-						<li><a href="instructor-details.html">Instructor Details</a></li>
-						<li><a href="event.html">Event</a></li>	
-						<li><a href="event-details.html">Event Details</a></li>	
-						<li><a href="pricing.html">Pricing</a></li>	
-						<li><a href="faq.html">Faq</a></li>	
-						<li><a href="choose.html">Why Choose</a></li>
-						<li><a href="testimonial.html">testimonial</a></li>	
-						<li><a href="404.html">Error Page</a></li>							
-						<li><a href="{{ route('contact') }}">Contact</a></li>
-					</ul>
-				</li> --}}
-				<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
-					<ul class="sub_menu">
+				<li><a href="{{ route('course') }}">Courses</a></li>
+				<li><a href="{{ route('course_details') }}">Courses Details</a></li>
+				<li><a href="instructor.html">Instructor</a></li>
+				<li><a href="instructor-details.html">Instructor Details</a></li>
+				<li><a href="event.html">Event</a></li>
+				<li><a href="event-details.html">Event Details</a></li>
+				<li><a href="pricing.html">Pricing</a></li>
+				<li><a href="faq.html">Faq</a></li>
+				<li><a href="choose.html">Why Choose</a></li>
+				<li><a href="testimonial.html">testimonial</a></li>
+				<li><a href="404.html">Error Page</a></li>
+				<li><a href="{{ route('contact') }}">Contact</a></li>
+			</ul>
+			</li> --}}
+			<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
+				<ul class="sub_menu">
 
-						{{-- Custom Static Categories --}}
-						<li>
-							<a href="{{ route('course', ['ids' => '1,3,55', 'name' => 'Data Science and AI']) }}">
-								Data Science with Artificial Intelligence
-							</a>
-						</li>
-						<li>
-							<a href="{{ route('course', ['ids' => '61', 'name' => 'Investment Banking']) }}">
-								Investment Banking
-							</a>
-						</li>	
-				
-						{{-- Dynamic Categories from Collection --}}
-						@foreach($header_collections as $collection)
-							<li>
-								<a href="{{ route('course.category', $collection->slug) }}">
-									{{ $collection->name }}
-								</a>
-							</li>
-						@endforeach
-					</ul>
-				</li>
-				{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>
+					{{-- Custom Static Categories --}}
+					<li>
+						<a href="{{ route('course', ['ids' => '1,3,55', 'name' => 'Data Science and AI']) }}">
+							Data Science with Artificial Intelligence
+						</a>
+					</li>
+					<li>
+						<a href="{{ route('course', ['ids' => '61', 'name' => 'Investment Banking']) }}">
+							Investment Banking
+						</a>
+					</li>
+
+					{{-- Dynamic Categories from Collection --}}
+					@foreach($header_collections as $collection)
+					<li>
+						<a href="{{ route('course.category', $collection->slug) }}">
+							{{ $collection->name }}
+						</a>
+					</li>
+					@endforeach
+				</ul>
+			</li>
+			{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>
 					<ul class="sub_menu">
 						<li><a href="shop.html">shop</a></li>
 						<li><a href="shop-details.html">Shop Details</a></li>
@@ -326,25 +332,26 @@
 						<li><a href="checkout.html">Checkout</a></li>
 					</ul>
 				</li> --}}
-				<li><a href="{{ route('corporate_services') }}">Corporate Services </a>
-				<li><a href="{{ route('blog') }}">Blog</a>
-				<li><a href="{{ route('payments') }}">Payments </a>
-					{{-- <ul class="sub_menu">
-						<li><a href="{{ route('blog') }}">Blog</a></li>
-						<li><a href="blog-details.html">Blog Details</a></li>
-					</ul> --}}
-				</li>
-				<li><a href="{{ route('contact') }}">Contact</a></li>
-				<li><a href="#">More<i class="bi bi-chevron-down"></i></a>
-					<ul class="sub_menu">
-						<li><a href="{{ route('who_we_are') }}">Who we are</a></li>
-						<li><a href="{{ route('success_stories') }}">Success stories</a></li>
-						<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
-						<li><a href="{{ route('career') }}">Career</a></li>
-					</ul>
-				</li>
-				
-			</ul>	
+			<li><a href="{{ route('corporate_services') }}">Corporate Services </a>
+			<li><a href="{{ route('blog') }}">Blog</a>
+			<li><a href="{{ route('payments') }}">Payments </a>
+				{{-- <ul class="sub_menu">
+						<li><a href="{{ route('blog') }}">Blog</a>
+			</li>
+			<li><a href="blog-details.html">Blog Details</a></li>
+			</ul> --}}
+			</li>
+			<li><a href="{{ route('contact') }}">Contact</a></li>
+			<li><a href="#">More<i class="bi bi-chevron-down"></i></a>
+				<ul class="sub_menu">
+					<li><a href="{{ route('who_we_are') }}">Who we are</a></li>
+					<li><a href="{{ route('success_stories') }}">Success stories</a></li>
+					<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
+					<li><a href="{{ route('career') }}">Career</a></li>
+				</ul>
+			</li>
+
+			</ul>
 		</nav>
 	</div>
 </div>
@@ -356,36 +363,38 @@
 <!-- Start Search Popup -->
 <!--==================================================-->
 <div class="search-popup">
-    <button class="close-search style-two"><i class="fas fa-times"></i></button>
-    <button class="close-search"><i class="fas fa-arrow-up"></i></button>
-    <form method="GET" action="#">
-        <div class="form-group position-relative">
-            <input id="search1" type="search" name="search-field" placeholder="Search courses..." autocomplete="off">
-            <button type="submit"><i class="fas fa-search"></i></button>
+	<button class="close-search style-two"><i class="fas fa-times"></i></button>
+	<button class="close-search"><i class="fas fa-arrow-up"></i></button>
+	<form method="GET" action="#">
+		<div class="form-group position-relative">
+			<input id="search1" type="search" name="search-field" placeholder="Search courses..." autocomplete="off">
+			<button type="submit"><i class="fas fa-search"></i></button>
 
-            <!-- Result dropdown -->
-        </div>
+			<!-- Result dropdown -->
+		</div>
 		<div id="search-results" class="bg-white border rounded shadow p-2 position-absolute w-100" style="z-index: 999; display: none;"></div>
- 
-    </form>
+
+	</form>
 </div>
 
 <script>
-$(document).ready(function() {
-    $('#search1').on('input', function() {
-        let query = $(this).val();
-        if (query.length > 1) {
-            $.ajax({
-                url: "{{ route('search.courses') }}",
-                type: "GET",
-                data: { query: query },
-                success: function(data) {
-                    let results = $('#search-results');
-                    results.empty().show();
+	$(document).ready(function() {
+		$('#search1').on('input', function() {
+			let query = $(this).val();
+			if (query.length > 1) {
+				$.ajax({
+					url: "{{ route('search.courses') }}",
+					type: "GET",
+					data: {
+						query: query
+					},
+					success: function(data) {
+						let results = $('#search-results');
+						results.empty().show();
 
-                    if (data.length > 0) {
-                        data.forEach(course => {
-                            results.append(`
+						if (data.length > 0) {
+							data.forEach(course => {
+								results.append(`
                                 <a href="/upcoming-courses/${course.slug}" class="d-flex align-items-center mb-2 text-dark text-decoration-none">
                                     <img loading="lazy"src="/storage/${course.image}" class="me-2" width="50" height="50" style="object-fit: cover; border-radius: 6px;">
                                     <div>
@@ -394,24 +403,24 @@ $(document).ready(function() {
                                     </div>
                                 </a>
                             `);
-                        });
-                    } else {
-                        results.append('<p class="text-muted">No courses found.</p>');
-                    }
-                }
-            });
-        } else {
-            $('#search-results').hide().empty();
-        }
-    });
+							});
+						} else {
+							results.append('<p class="text-muted">No courses found.</p>');
+						}
+					}
+				});
+			} else {
+				$('#search-results').hide().empty();
+			}
+		});
 
-    // Hide when clicked outside
-    $(document).click(function(e) {
-        if (!$(e.target).closest('.form-group').length) {
-            $('#search-results').hide().empty();
-        }
-    });
-});
+		// Hide when clicked outside
+		$(document).click(function(e) {
+			if (!$(e.target).closest('.form-group').length) {
+				$('#search-results').hide().empty();
+			}
+		});
+	});
 </script>
 
 <!--==================================================-->
@@ -434,65 +443,65 @@ $(document).ready(function() {
 			<div class="cart_item">
 				<div class="item_image">
 					<img loading="lazy"src="{{ asset('assets/images/inner-img/rpost-thumb1.webp') }}" alt="image_not_found">
-				</div>
-				<div class="item_content">
-					<h4 class="item_title">	
-					How Gamification is Changing the Way...
-					</h4>
-					<span class="item_price">$21.00</span>
-					<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
-				</div>
-			</div>
+</div>
+<div class="item_content">
+	<h4 class="item_title">
+		How Gamification is Changing the Way...
+	</h4>
+	<span class="item_price">$21.00</span>
+	<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
+</div>
+</div>
 
-			<div class="cart_item">
-				<div class="item_image">
-					<img loading="lazy"src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
-				</div>
-				<div class="item_content">
-					<h4 class="item_title">
-						Learning is the Key soft skills and Professional
-					</h4>
-					<span class="item_price">$23.00</span>
-					<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
-				</div>
-			</div>
-
-			<div class="cart_item">
-				<div class="item_image">
-					<img loading="lazy"src="{{ asset('assets/images/inner-img/rpost-thumb3.webp') }}" alt="image_not_found">
-				</div>
-				<div class="item_content">
-					<h4 class="item_title">
-						The Importance of Critical Thinking in Education
-					</h4>
-					<span class="item_price">$25.00</span>
-					<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
-				</div>
-			</div>
-
-			<div class="cart_item">
-				<div class="item_image">
-					<img loading="lazy"src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
-				</div>
-				<div class="item_content">
-					<h4 class="item_title">
-						Learning is the Key soft skills and Professional
-					</h4>
-					<span class="item_price">$19.00</span>
-					<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
-				</div>
-			</div>
-		</div>
-		<div class="total_price text-uppercase">
-			<span>Sub Total:</span>
-			<span>$88.00</span>
-		</div>
-		<ul class="btns_group ul_li">
-			<li><a href="cart.html" class="btn btn_primary text-uppercase">View Cart</a></li>
-			<li><a href="checkout.html" class="btn btn_border border_black text-uppercase">Checkout</a></li>
-		</ul>
+<div class="cart_item">
+	<div class="item_image">
+		<img loading="lazy" src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
 	</div>
-	<div class="cart_sidebar_overlay"></div>
+	<div class="item_content">
+		<h4 class="item_title">
+			Learning is the Key soft skills and Professional
+		</h4>
+		<span class="item_price">$23.00</span>
+		<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
+	</div>
+</div>
+
+<div class="cart_item">
+	<div class="item_image">
+		<img loading="lazy" src="{{ asset('assets/images/inner-img/rpost-thumb3.webp') }}" alt="image_not_found">
+	</div>
+	<div class="item_content">
+		<h4 class="item_title">
+			The Importance of Critical Thinking in Education
+		</h4>
+		<span class="item_price">$25.00</span>
+		<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
+	</div>
+</div>
+
+<div class="cart_item">
+	<div class="item_image">
+		<img loading="lazy" src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
+	</div>
+	<div class="item_content">
+		<h4 class="item_title">
+			Learning is the Key soft skills and Professional
+		</h4>
+		<span class="item_price">$19.00</span>
+		<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
+	</div>
+</div>
+</div>
+<div class="total_price text-uppercase">
+	<span>Sub Total:</span>
+	<span>$88.00</span>
+</div>
+<ul class="btns_group ul_li">
+	<li><a href="cart.html" class="btn btn_primary text-uppercase">View Cart</a></li>
+	<li><a href="checkout.html" class="btn btn_border border_black text-uppercase">Checkout</a></li>
+</ul>
+</div>
+<div class="cart_sidebar_overlay"></div>
 </div> --}}
 <!--==================================================-->
 <!-- End Cart Side Bar -->
@@ -513,7 +522,7 @@ $(document).ready(function() {
 				<div class="sidebar-info-contents">
 					<div class="content-inner">
 						<div class="nav-logo">
-							<a href="/"><img loading="lazy"src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
+							<a href="/"><img loading="lazy" src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
 						</div>
 						<div class="content-box">
 							<h2>About Us</h2>
@@ -547,203 +556,210 @@ $(document).ready(function() {
 	</div>
 </div>
 <style>
-    .bottom-fixed-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f8f9fa;
-        padding: 10px 0;
-        z-index: 9999;
-        box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
-        font-size: 14px;
-    }
-    .bottom-fixed-bar .btn {
-        margin: 0 8px;
-        font-size: 13px;
-        padding: 6px 12px;
-        display: inline-flex;
-        align-items: center;
-        font-weight: 500;
-        border-radius: 20px;
-    }
-    .btn-whatsapp {
-        background-color: #25D366;
-        color: white;
-    }
-    .btn-whatsapp:hover {
-        background-color: #1ebe5d;
-        color: white;
-    }
-    .btn-callback {
-        background-color: #343a40;
-        color: white;
-    }
-    .btn-callback:hover {
-        background-color: #23272b;
-        color: white;
-    }
-    .bottom-fixed-bar i {
-        margin-right: 6px;
-    }
+	.bottom-fixed-bar {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: #f8f9fa;
+		padding: 10px 0;
+		z-index: 9999;
+		box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+		font-size: 14px;
+	}
+
+	.bottom-fixed-bar .btn {
+		margin: 0 8px;
+		font-size: 13px;
+		padding: 6px 12px;
+		display: inline-flex;
+		align-items: center;
+		font-weight: 500;
+		border-radius: 20px;
+	}
+
+	.btn-whatsapp {
+		background-color: #25D366;
+		color: white;
+	}
+
+	.btn-whatsapp:hover {
+		background-color: #1ebe5d;
+		color: white;
+	}
+
+	.btn-callback {
+		background-color: #343a40;
+		color: white;
+	}
+
+	.btn-callback:hover {
+		background-color: #23272b;
+		color: white;
+	}
+
+	.bottom-fixed-bar i {
+		margin-right: 6px;
+	}
+
 	.sub_menu {
-    position: absolute;
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    z-index: 999;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    min-width: 650px;
-    max-width: 1000px;
-}
+		position: absolute;
+		background: #fff;
+		border-radius: 10px;
+		border: 1px solid #ddd;
+		z-index: 999;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+		min-width: 650px;
+		max-width: 1000px;
+	}
 
-.sub_menu li a:hover {
-    background-color: #f8f9fa;
-    text-decoration: none;
-}
+	.sub_menu li a:hover {
+		background-color: #f8f9fa;
+		text-decoration: none;
+	}
 
-.card:hover {
-    transform: translateY(-2px);
-    transition: all 0.2s ease-in-out;
-}
-.course-card:hover {
-    background-color: #f9f9ff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-}
+	.card:hover {
+		transform: translateY(-2px);
+		transition: all 0.2s ease-in-out;
+	}
 
-.course-card h6,
-.course-card p,
-.course-card a {
-    margin-bottom: 0;
-}
+	.course-card:hover {
+		background-color: #f9f9ff;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+	}
 
-
+	.course-card h6,
+	.course-card p,
+	.course-card a {
+		margin-bottom: 0;
+	}
 </style>
 
 <!-- Desktop View -->
 <div class="bottom-fixed-bar desktop-only text-center">
-    <span class="me-2">Need help? Reach us instantly:</span>
-    <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
-        <i class="fab fa-whatsapp"></i> Say Hi on WhatsApp
-    </a>
-    <a href="javascript:void(0);" onclick="openModal()"  class="btn btn-callback">
-        <i class="fas fa-phone-alt"></i> Request a Callback
-    </a>
+	<span class="me-2">Need help? Reach us instantly:</span>
+	<a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
+		<i class="fab fa-whatsapp"></i> Say Hi on WhatsApp
+	</a>
+	<a href="javascript:void(0);" onclick="openModal()" class="btn btn-callback">
+		<i class="fas fa-phone-alt"></i> Request a Callback
+	</a>
 </div>
 
 <!-- Mobile View (Contact Box with Toggle Icons) -->
 <div class="mobile-only">
-    <div class="contact-box" onclick="toggleIcons()">
-        <div class="contact-icons">
-            <i class="fab fa-whatsapp"></i>
-            <i class="fas fa-phone-alt" style="    padding-top: 11px;"></i>
-        </div>
-    </div>
+	<div class="contact-box" onclick="toggleIcons()">
+		<div class="contact-icons">
+			<i class="fab fa-whatsapp"></i>
+			<i class="fas fa-phone-alt" style="    padding-top: 11px;"></i>
+		</div>
+	</div>
 
-    <!-- Popup with WhatsApp and Callback links -->
-    <div class="icons-popup">
-        <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> 
-        </a>
-        <a href="tel:01203133869" class="btn btn-callback" style="background: #1a1447; color: #fff;">
-            <i class="fas fa-phone-alt" ></i> 
-        </a>
-    </div>
+	<!-- Popup with WhatsApp and Callback links -->
+	<div class="icons-popup">
+		<a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
+			<i class="fab fa-whatsapp"></i>
+		</a>
+		<a href="tel:01203133869" class="btn btn-callback" style="background: #1a1447; color: #fff;">
+			<i class="fas fa-phone-alt"></i>
+		</a>
+	</div>
 </div>
 <style>
 	/* General Styles for Bottom Fixed Bar on Desktop */
-.bottom-fixed-bar {
-    position: fixed;
-    right: 20px;
-    z-index: 1000;
-}
+	.bottom-fixed-bar {
+		position: fixed;
+		right: 20px;
+		z-index: 1000;
+	}
 
-/* Mobile-specific Styles */
-.mobile-only {
-    display: none;
-}
+	/* Mobile-specific Styles */
+	.mobile-only {
+		display: none;
+	}
 
-/* For Desktop: Always show the desktop layout */
-.desktop-only {
-    display: block;
-}
+	/* For Desktop: Always show the desktop layout */
+	.desktop-only {
+		display: block;
+	}
 
-/* Mobile View: Hide desktop layout and show mobile layout */
-@media (max-width: 767px) {
-    .desktop-only {
-        display: none;  /* Hide the desktop bar */
-    }
-    
-    .mobile-only {
-        display: block;  /* Show the mobile layout */
-        position: fixed;
-        left: 10px;
-        bottom: 21px;
-        z-index: 1000;
-    }
+	/* Mobile View: Hide desktop layout and show mobile layout */
+	@media (max-width: 767px) {
+		.desktop-only {
+			display: none;
+			/* Hide the desktop bar */
+		}
 
-    /* Mobile: Contact Box Style */
-    .contact-box {
-        background-color: #25D366; /* WhatsApp color */
-        border-radius: 50%;
-        padding: 10px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-		color: #fff;
-        transition: 0.3s ease;
-    }
+		.mobile-only {
+			display: block;
+			/* Show the mobile layout */
+			position: fixed;
+			left: 10px;
+			bottom: 21px;
+			z-index: 1000;
+		}
 
-    .contact-icons {
-        display: flex;
-        justify-content: space-around;
-        width: 35px;
-        height: 35px;
-    }
+		/* Mobile: Contact Box Style */
+		.contact-box {
+			background-color: #25D366;
+			/* WhatsApp color */
+			border-radius: 50%;
+			padding: 10px;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+			transition: 0.3s ease;
+		}
 
-    /* Popup for WhatsApp and Callback links */
-    .icons-popup {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        position: fixed;
-        left: 0px;
-        bottom: 78px;
-        border-radius: 10px;
-        padding: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+		.contact-icons {
+			display: flex;
+			justify-content: space-around;
+			width: 35px;
+			height: 35px;
+		}
 
-    .icons-popup a {
-        text-decoration: none;
-        color: #333;
-        padding: 21px;
-        /* background-color: #25d366; */
-        border-radius: 100%;
-        transition: 0.3s;
-    }
+		/* Popup for WhatsApp and Callback links */
+		.icons-popup {
+			display: none;
+			flex-direction: column;
+			gap: 10px;
+			position: fixed;
+			left: 0px;
+			bottom: 78px;
+			border-radius: 10px;
+			padding: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
 
-    .icons-popup a:hover {
-        background-color: #25D366;
-        color: white;
-    }
-}
+		.icons-popup a {
+			text-decoration: none;
+			color: #333;
+			padding: 21px;
+			/* background-color: #25d366; */
+			border-radius: 100%;
+			transition: 0.3s;
+		}
 
-	</style>
+		.icons-popup a:hover {
+			background-color: #25D366;
+			color: white;
+		}
+	}
+</style>
 <script>
 	// Function to toggle WhatsApp and Call icons in mobile view
-function toggleIcons() {
-    const iconsPopup = document.querySelector('.icons-popup');
-    if (iconsPopup.style.display === 'none' || iconsPopup.style.display === '') {
-        iconsPopup.style.display = 'flex';  // Show the icons
-    } else {
-        iconsPopup.style.display = 'none';  // Hide the icons
-    }
-}
-
-	</script>
+	function toggleIcons() {
+		const iconsPopup = document.querySelector('.icons-popup');
+		if (iconsPopup.style.display === 'none' || iconsPopup.style.display === '') {
+			iconsPopup.style.display = 'flex'; // Show the icons
+		} else {
+			iconsPopup.style.display = 'none'; // Hide the icons
+		}
+	}
+</script>
 
 
 <!--End Sidebar Cart Item -->

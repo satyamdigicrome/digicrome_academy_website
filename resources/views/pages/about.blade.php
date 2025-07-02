@@ -126,7 +126,7 @@
 						</div>
 						<div class="about-iteam-phone">
 							<p><span><img loading="lazy"src="{{ asset('assets/images/home-three/about-call.webp') }}" alt="call" title="call"></span>
-								83686 81727</p>
+								01203133869</p>
 						</div>
 						{{-- <div class="about-btn">
 							<a href="about.html">more about<i class="flaticon flaticon-right-arrow"></i></a>

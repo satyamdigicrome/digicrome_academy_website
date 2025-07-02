@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('title', $blog->meta_title ?? $blog->heading)
 @section('meta_description', $blog->meta_description ?? 'Digicrome')
 @section('meta_keywords', $blog->meta_keywords ?? 'Digicrome')
@@ -12,9 +11,9 @@
 	<!--==================================================-->
 	<!-- Start educate Breadcumb Area -->
 	<!--==================================================-->
-	<div class="breadcumb-area two d-flex">
+	<div class="test two d-flex">
 		<div class="container">
-			<div class="row align-items-center">
+			<!-- <div class="row align-items-center">
 				<div class="col-lg-12">
 					<div class="breadcumb-content text-center">
 						<div class="breadcumb-title">
@@ -28,7 +27,7 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="breadcumb-shape">
                 <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
             </div>
@@ -43,7 +42,8 @@
 	<!--==================================================-->
 	<!-- start educate blog details Area -->
 	<!--==================================================-->
-	<div class="blog-details-area">
+		<div class="blog-details-area pb-0 mb-0">
+
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -54,7 +54,6 @@
 								<div class="meta-blog">
 									<a href="#">{{ $blog->meta_title ?? 'Blog' }}</a>
 								</div>
-								
 							</div>
 							<div class="blog-content">
 								<ul class="blog-author">
@@ -71,11 +70,9 @@
 									{{-- <li class="details-comment"> <i class="fa-solid fa-comments"></i>(1) Comments</li> --}}
 								</ul>
 
-								<h2 class="blog-title">
+								<h1 class="blog-title">
 									{{ $blog->heading }}
-								</h2>
-								
-
+								</h1>
 										<p class="blog-desc2">
 											{!! $blog->blog !!}
 										</p>
