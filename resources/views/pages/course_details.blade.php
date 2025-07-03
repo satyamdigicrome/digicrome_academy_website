@@ -784,7 +784,7 @@
                         <h5 class="mb-3 fw-bold">{{ $case->heading }}</h5>
                         <p class="text-muted" style="list-style: disc;">{!! $case->paragraph !!}</p>
                     </div>
-                </div>
+                </div> 
                 @endforeach
             </div>
         </div>

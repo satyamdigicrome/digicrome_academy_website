@@ -20,7 +20,7 @@
 
 <style>
 	.footer-logo11 {
-    width: 58%;          /* Default width for desktop */
+    width: 59%;          /* Default width for desktop */
 }
 
 @media (max-width: 768px) {
@@ -76,7 +76,7 @@
 			<div class="col-lg-2">
 				<div class="header-logo">
 					<a class="active_logo" href="/"><img loading="lazy" src="{{ asset('assets/images/logo.webp') }}" alt="logo"></a>
-					<a class="logo_two" href="/"><img loading="lazy" src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo"></a>
+					<a class="logo_two" href="/"><img class="footer-logo11" loading="lazy" src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-8">
