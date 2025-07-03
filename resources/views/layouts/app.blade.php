@@ -3,6 +3,7 @@
     <head>
 @include('layouts.head')
 @stack('styles')
+@stack('scripts')
     </head>
 
 <body>

@@ -398,6 +398,7 @@
 						query: query
 					},
 					success: function(data) {
+						// console.log("AJAX response:", data);
 						let results = $('#search-results');
 						results.empty().show();
 
@@ -646,129 +647,98 @@
 </style>
 
 <!-- Desktop View -->
+<!-- ✅ Desktop View -->
 <div class="bottom-fixed-bar desktop-only text-center">
-	<span class="me-2">Need help? Reach us instantly:</span>
-	<a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
-		<i class="fab fa-whatsapp"></i> Say Hi on WhatsApp
-	</a>
-	<a href="javascript:void(0);" onclick="openModal()" class="btn btn-callback">
-		<i class="fas fa-phone-alt"></i> Request a Callback
-	</a>
+    <span class="me-2">Need help? Reach us instantly:</span>
+    <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> Say Hi on WhatsApp
+    </a>
+    <a href="javascript:void(0);" onclick="openModal()" class="btn btn-callback">
+        <i class="fas fa-phone-alt"></i> Call to Response
+    </a>
 </div>
 
-<!-- Mobile View (Contact Box with Toggle Icons) -->
-<div class="mobile-only">
-	<div class="contact-box" onclick="toggleIcons()">
-		<div class="contact-icons">
-			<i class="fab fa-whatsapp"></i>
-			<i class="fas fa-phone-alt" style="    padding-top: 11px;"></i>
-		</div>
-	</div>
-
-	<!-- Popup with WhatsApp and Callback links -->
-	<div class="icons-popup">
-		<a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
-			<i class="fab fa-whatsapp"></i>
-		</a>
-		<a href="tel: 01205222560" class="btn btn-callback" style="background: #1a1447; color: #fff;">
-			<i class="fas fa-phone-alt"></i>
-		</a>
-	</div>
+<!-- ✅ Mobile View -->
+<div class="mobile-contact-icons mobile-only">
+    <a href="https://wa.me/916299611702" target="_blank" class="contact-icon whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:01205222560" class="contact-icon call">
+        <i class="fas fa-phone-alt"></i>
+    </a>
 </div>
+
+<!-- ✅ Styles -->
 <style>
-	/* General Styles for Bottom Fixed Bar on Desktop */
-	.bottom-fixed-bar {
-		position: fixed;
-		right: 20px;
-		z-index: 1000;
-	}
+    /* Desktop Bar */
+    .bottom-fixed-bar {
+        position: fixed;
+        right: 20px;
+        bottom: 0px;
+        z-index: 1000;
+        background: white;
+        padding: 10px 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
 
-	/* Mobile-specific Styles */
-	.mobile-only {
-		display: none;
-	}
+    .bottom-fixed-bar a {
+        margin: 0 5px;
+    }
 
-	/* For Desktop: Always show the desktop layout */
-	.desktop-only {
-		display: block;
-	}
+    /* Mobile by default hidden */
+    .mobile-only {
+        display: none;
+    }
 
-	/* Mobile View: Hide desktop layout and show mobile layout */
-	@media (max-width: 767px) {
-		.desktop-only {
-			display: none;
-			/* Hide the desktop bar */
-		}
+    /* Desktop shown by default */
+    .desktop-only {
+        display: block;
+    }
 
-		.mobile-only {
-			display: block;
-			/* Show the mobile layout */
-			position: fixed;
-			left: 10px;
-			bottom: 21px;
-			z-index: 1000;
-		}
+    /* Mobile-specific styles */
+    @media (max-width: 767px) {
+        .desktop-only {
+            display: none;
+        }
 
-		/* Mobile: Contact Box Style */
-		.contact-box {
-			background-color: #25D366;
-			/* WhatsApp color */
-			border-radius: 50%;
-			padding: 10px;
-			cursor: pointer;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			color: #fff;
-			transition: 0.3s ease;
-		}
+        .mobile-only {
+            display: block;
+        }
 
-		.contact-icons {
-			display: flex;
-			justify-content: space-around;
-			width: 35px;
-			height: 35px;
-		}
+        .mobile-contact-icons {
+            position: fixed;
+            left: 15px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
 
-		/* Popup for WhatsApp and Callback links */
-		.icons-popup {
-			display: none;
-			flex-direction: column;
-			gap: 10px;
-			position: fixed;
-			left: 0px;
-			bottom: 78px;
-			border-radius: 10px;
-			padding: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		}
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
 
-		.icons-popup a {
-			text-decoration: none;
-			color: #333;
-			padding: 21px;
-			/* background-color: #25d366; */
-			border-radius: 100%;
-			transition: 0.3s;
-		}
+        .contact-icon.whatsapp {
+            background-color: #25D366;
+        }
 
-		.icons-popup a:hover {
-			background-color: #25D366;
-			color: white;
-		}
-	}
+        .contact-icon.call {
+            background-color: #1a1447;
+        }
+    }
 </style>
-<script>
-	// Function to toggle WhatsApp and Call icons in mobile view
-	function toggleIcons() {
-		const iconsPopup = document.querySelector('.icons-popup');
-		if (iconsPopup.style.display === 'none' || iconsPopup.style.display === '') {
-			iconsPopup.style.display = 'flex'; // Show the icons
-		} else {
-			iconsPopup.style.display = 'none'; // Hide the icons
-		}
-	}
-</script>
+
 
 
 <!--End Sidebar Cart Item -->

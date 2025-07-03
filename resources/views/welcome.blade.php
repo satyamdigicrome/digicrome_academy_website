@@ -932,181 +932,7 @@
 	<!-- Updated Style Only -->
 
 
-	<!--==================================================-->
-	<!-- Start educate team Area -->
-	<!--==================================================-->
-	{{-- <div class="team-area style-one">
-		<div class="container">
-			<div class="row section-title-space">
-				<div class="col-lg-6">
-					<div class="section-sub-title">
-						<h6>INSTRUCTOR</h6>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="section_title">
-						<h1>Meet the Mentors </h1>
-						<h1>Behind Your Growth</h1>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<div class="single-team-box box-1">
-						<div class="team-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb1.webp') }}" alt="team-thumb" title="team-thumb">
-							<div class="team-social-icon">
-								<div class="team-social">
-									<ul>
-										<li class="team-icon-1"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li class="team-icon-2"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-										<li class="team-icon-3"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="team-content">
-							<div class="team-title">
-								<h3><a href="instructor-details.html">John D. Alexon</a></h3>
-							</div>
-							<div class="team-sub-title">
-								<h5>UI/UX Designer</h5>
-							</div>
-							<div class="team-ratting">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-							</div>
-							<div class="team-rating-rate">
-								<span>(4.5)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<div class="single-team-box box-2">
-						<div class="team-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb2.webp') }}" alt="team-thumb" title="team-thumb">
-							<div class="team-social-icon">
-								<div class="team-social">
-									<ul>
-										<li class="team-icon-1"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li class="team-icon-2"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-										<li class="team-icon-3"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="team-content">
-							<div class="team-title">
-								<h3><a href="instructor-details.html">Anjelina Watson</a></h3>
-							</div>
-							<div class="team-sub-title">
-								<h5>Finance Specialist</h5>
-							</div>
-							<div class="team-ratting">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-							</div>
-							<div class="team-rating-rate">
-								<span>(4.5)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<div class="single-team-box box-3">
-						<div class="team-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb3.webp') }}" alt="team-thumb" title="team-thumb">
-							<div class="team-social-icon">
-								<div class="team-social">
-									<ul>
-										<li class="team-icon-1"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li class="team-icon-2"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-										<li class="team-icon-3"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="team-content">
-							<div class="team-title">
-								<h3><a href="instructor-details.html">Jakulin Farnandez</a></h3>
-							</div>
-							<div class="team-sub-title">
-								<h5>Data Analist</h5>
-							</div>
-							<div class="team-ratting">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-							</div>
-							<div class="team-rating-rate">
-								<span>(4.5)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<div class="single-team-box box-4">
-						<div class="team-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/team-thumb4.webp') }}" alt="team-thumb" title="team-thumb">
-							<div class="team-social-icon">
-								<div class="team-social">
-									<ul>
-										<li class="team-icon-1"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li class="team-icon-2"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-										<li class="team-icon-3"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="team-content">
-							<div class="team-title">
-								<h3><a href="instructor-details.html">David X. Watson</a></h3>
-							</div>
-							<div class="team-sub-title">
-								<h5>WP Developer</h5>
-							</div>
-							<div class="team-ratting">
-								<ul>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-solid fa-star"></i></li>
-									<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-								</ul>
-							</div>
-							<div class="team-rating-rate">
-								<span>(4.5)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="team-shape1">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/team-shape1.webp') }}" alt="shape1" title="shape1">
-			</div>
-			<div class="team-shape2">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/team-shape2.webp') }}" alt="shape2" title="shape2">
-			</div>
-		</div>
-	</div> --}}
-	<!--==================================================-->
-	<!-- end educate team Area -->
-	<!--==================================================-->
+
 	<!--==================================================-->
 	<!-- Start educate testimonial Area -->
 	<!--==================================================-->
@@ -1262,7 +1088,14 @@
 	<!--==================================================-->
 	<!-- end educate testimonial Area -->
 	<!--==================================================-->
+	<!--==================================================-->
+	<!-- Start educate team Area -->
+	<!--==================================================-->
+	{{-- <x-mentor-popup /> --}}
 
+	<!--==================================================-->
+	<!-- end educate team Area -->
+	<!--==================================================-->
 	<!--==================================================-->
 	<!-- Start educate call to action Area -->
 	<!--==================================================-->

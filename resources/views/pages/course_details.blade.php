@@ -433,7 +433,8 @@
                             </ul>
                         </div>
                         <div class="event-info-btn">
-                            <a data-bs-toggle="modal" 
+                            <a data-bs-toggle="modal"  style="    background: green;
+                            color: #fff;"
                             data-bs-target="#applyNowPopup">APPLY NOW<i class="flaticon flaticon-right-arrow"></i></a>
                         </div>
                    {{--     <div class="course-share-title">
@@ -767,6 +768,7 @@
             </div>
         </div>
     </section>
+    {{-- <x-mentor-popup /> --}}
     <section class="my-5">
         <div class="container">
             <h2 class="text-center mb-2" style="font-size: 2rem;">
@@ -1079,19 +1081,20 @@
 <!-- Bootstrap Modal -->
 <div class="modal fade" id="leadPopup" tabindex="-1" aria-labelledby="leadPopupLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content p-3">
+      <div class="modal-content custom-lead-modal-content">
         <form id="leadForm">
           @csrf
           <input type="hidden" name="course_id" value="{{ $course->id }}">
-          <h4 class="text-warning mb-3">Register now!! And get a quick call</h4>
   
-          <input type="text" name="name" placeholder="Name" class="form-control mb-2" required>
-          <input type="tel" name="mobile" placeholder="Mobile Number" class="form-control mb-2" required>
-          <input type="email" name="email" placeholder="E-mail ID" class="form-control mb-2" required>
-          <input type="text" name="address" placeholder="City" class="form-control mb-2">
-          <input type="text" name="title" placeholder="Qualification" class="form-control mb-2">
-          
-          <select name="profession" class="form-select mb-3">
+          <h4 class="custom-lead-modal-title">Register now!! And get a quick call</h4>
+  
+          <input type="text" name="name" placeholder="Name" class="form-control custom-lead-input" required>
+          <input type="tel" name="mobile" placeholder="Mobile Number" class="form-control custom-lead-input" required>
+          <input type="email" name="email" placeholder="E-mail ID" class="form-control custom-lead-input" required>
+          <input type="text" name="address" placeholder="City" class="form-control custom-lead-input">
+          <input type="text" name="title" placeholder="Qualification" class="form-control custom-lead-input">
+  
+          <select name="profession" class="form-select custom-lead-input">
             <option value="" disabled selected>Select Experience</option>
             <option value="Working Professional - Technincal Roles">Working Professional - Technical Roles</option>
             <option value="Working Professional - Non Technincal">Working Professional - Non Technical</option>
@@ -1100,42 +1103,97 @@
             <option value="Other">Other</option>
           </select>
   
-          <p>By submitting the form, you agree to our <a href="#">Terms and Conditions</a> and <a href="https://digicrome.com/privacy-policy">Privacy Policy</a>.</p>
-  
-          <button type="submit" class="btn btn-primary w-100">Download Brochure</button>
+          <button type="submit" class="btn custom-lead-submit-btn w-100 mt-2">Download Brochure</button>
         </form>
       </div>
     </div>
   </div>
+  <style>
+    .custom-lead-modal-content {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 14px;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+  
+    .custom-lead-modal-title {
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .custom-lead-input {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+  
+    .custom-lead-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  
+    .custom-lead-input:focus {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      color: #fff;
+      box-shadow: none;
+    }
+  
+    .form-select.custom-lead-input option {
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+  
+    .custom-lead-submit-btn {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+      font-weight: 600;
+      border: none;
+      transition: 0.3s ease;
+    }
+  
+    .custom-lead-submit-btn:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  </style>
   <!-- Apply Now Modal -->
+<!-- Modal Start -->
 <div class="modal fade" id="applyNowPopup" tabindex="-1" aria-labelledby="applyNowPopupLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content" style="padding: 20px; border-radius: 10px;">
-        <div class="modal-header">
-          <h5 class="modal-title text-primary" id="applyNowPopupLabel">Register Now! And Get a Quick Call</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content custom-reg-modal-content">
+        <div class="modal-header custom-reg-modal-header" style="background: #fff;">
+          <h5 class="modal-title custom-reg-modal-title" id="applyNowPopupLabel" style="color:#000;">Register Now! And Get a Quick Call</h5>
+          <button type="button" class="custom-close-icon" data-bs-dismiss="modal" aria-label="Close">&times;</button>
         </div>
+  
         <form method="POST" action="{{ route('lead.store') }}">
           @csrf
-          <div class="modal-body">
+          <div class="modal-body" id="form1">
             <div class="row g-3">
               <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Name" required>
+                <input type="text" name="name" class="form-control custom-reg-input" placeholder="Name" required>
               </div>
               <div class="col-md-6">
-                <input type="tel" name="phone" class="form-control" placeholder="Mobile Number" required>
+                <input type="tel" name="phone" class="form-control custom-reg-input" placeholder="Mobile Number" required>
               </div>
               <div class="col-md-6">
-                <input type="email" name="email" class="form-control" placeholder="E-mail ID" required>
+                <input type="email" name="email" class="form-control custom-reg-input" placeholder="E-mail ID" required>
               </div>
               <div class="col-md-6">
-                <input type="text" name="address" class="form-control" placeholder="City">
+                <input type="text" name="address" class="form-control custom-reg-input" placeholder="City">
               </div>
               <div class="col-md-6">
-                <input type="text" name="qualification" class="form-control" placeholder="Qualification">
+                <input type="text" name="qualification" class="form-control custom-reg-input" placeholder="Qualification">
               </div>
               <div class="col-md-6">
-                <select name="experience" class="form-select">
+                <select name="experience" class="form-select custom-reg-input">
                   <option value="" disabled selected>Select Experience</option>
                   <option value="Working Professional - Technical Roles">Working Professional - Technical Roles</option>
                   <option value="Working Professional - Non-Technical">Working Professional - Non-Technical</option>
@@ -1144,19 +1202,115 @@
                   <option value="Other">Other</option>
                 </select>
               </div>
+  
               <input type="hidden" name="page_name" value="{{ $course->name }}">
-              <input type="hidden" name="source" value="Website(Course)>
+              <input type="hidden" name="source" value="Website(Course)">
               <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
             </div>
-            <p class="mt-3">By submitting the form, you agree to our <a href="#">Terms and Conditions</a> and our <a href="/privacy-policy">Privacy Policy</a>.</p>
+  
+            {{-- <p class="mt-3 custom-reg-note">
+              By submitting the form, you agree to our
+              <a href="#" class="custom-reg-link">Terms and Conditions</a> and
+              <a href="/privacy-policy" class="custom-reg-link">Privacy Policy</a>.
+            </p> --}}
           </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary w-100">Submit</button>
+  
+          <div class="modal-footer border-0">
+            <button type="submit" class="btn custom-reg-submit-btn w-100">Submit</button>
           </div>
         </form>
       </div>
     </div>
   </div>
+  
+  <!-- Styles -->
+  <style>
+    .custom-reg-modal-content {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .custom-close-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: transparent;
+  border: none;
+  color: #fff; /* White close icon */
+  z-index: 1051;
+  cursor: pointer;
+}
+.custom-close-icon:hover {
+  color: #ddd;
+}
+
+  
+    .custom-reg-modal-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  
+    .custom-reg-modal-title {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+  
+    .custom-reg-close {
+      filter: invert(1);
+    }
+  
+    .custom-reg-input {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+  
+    .custom-reg-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  
+    .custom-reg-input:focus {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      color: #fff;
+      box-shadow: none;
+    }
+  
+    .form-select.custom-reg-input option {
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+  
+    .custom-reg-note {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+  
+    .custom-reg-link {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  
+    .custom-reg-submit-btn {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+      font-weight: 600;
+      border: none;
+    }
+  
+    .custom-reg-submit-btn:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    #form1{
+        background: none !important;
+    }
+  </style>
+  
   
   <script>
     document.getElementById('leadForm').addEventListener('submit', function(e) {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lead;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class LeadsController extends Controller
@@ -29,6 +30,7 @@ class LeadsController extends Controller
     $lead->experience = $request->profession;
     $lead->save();
 
+    
     // Get brochure path
     $course = \App\Models\Course::find($request->course_id);
     $brochurePath = $course->browser ? asset('storage/' . $course->browser) : null;
@@ -58,12 +60,26 @@ public function leadsstore(Request $request)
             'page_name' => 'nullable|string|max:255',
         ]);
 
+        $apiResponse = Http::asForm()->post('https://demo.digicrome.com/post_lead.php', [
+            'name'        => $request->name,
+            'mobile'      => $request->phone,
+            'email'       => $request->email,
+            'title'       => $request->qualification,
+            'address'     => $request->address,
+            'profession'  => $request->experience,
+            'source'      => 'Website(Course)',
+            'country'     => 'India',
+            'comp_name'   => '',
+            'state'       => '',
+            'altr_mobile' => 'NA',
+        ]);
+
         Lead::create($validated);
         Mail::send('emails.lead-notification', ['data' => $validated], function ($message) use ($validated) {
             $message->to('digicromeleads@gmail.com')
                     ->subject('New Lead Submission - ' . ($validated['page_name'] ?? 'Course Page'));
         });
 
-        return back()->with('success', 'Thank you! We will contact you shortly.');
+        return redirect()->route('thankyou');
     }
 }
