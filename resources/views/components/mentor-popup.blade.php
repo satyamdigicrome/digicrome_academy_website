@@ -44,7 +44,7 @@
             <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
                 <div class="single-team-box">
                     <div class="team-thumb">
-                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team4.webp') }}" alt="thumb">
+                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team5.webp') }}" alt="thumb">
                     </div>
                     <div class="team-content">
                         <div class="team-icon">
@@ -153,7 +153,7 @@
                                 <div class="instructor-course-info">
                                     <ul>
                                         <li><a href="#"><i class="fa-regular fa-clock"></i> <span id="mentorExp">Experience: </span></a></li><br>
-                                        <li><a href="#"><i class="fa-regular fa-id-badge"></i> <span id="mentorPosition">Position</span></a></li>
+                                        {{-- <li><a href="#"><i class="fa-regular fa-id-badge"></i> <span id="mentorPosition">Position</span></a></li> --}}
                                     </ul>
                                 </div>
                                 
@@ -195,9 +195,9 @@ const mentors = [
     },
     {
         name: "Dayanand Lal Das",
-        experience: "5+ years",
+        experience: "14+ years",
         position: "Data Science & AI Trainer",
-        image: "{{ asset('assets/images/team/team4.webp') }}",
+        image: "{{ asset('assets/images/team/team5.webp') }}",
         description: "Dayanand Lal Das is an experienced and focused trainer in Data Science and AI. He has 14 years of experience in this field and makes complex topics easy to understand and teaching style is clear, practical, and full of live examples. His goal is to inspire students to explore, learn, and succeed in the growing world of AI and data science."
     },
     {
