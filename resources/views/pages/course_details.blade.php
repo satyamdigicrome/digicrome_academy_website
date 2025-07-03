@@ -768,7 +768,7 @@
             </div>
         </div>
     </section>
-    {{-- <x-mentor-popup /> --}}
+    <x-mentor-popup />
     <section class="my-5">
         <div class="container">
             <h2 class="text-center mb-2" style="font-size: 2rem;">

@@ -44,7 +44,7 @@
             <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
                 <div class="single-team-box">
                     <div class="team-thumb">
-                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team1.webp') }}" alt="thumb">
+                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team4.webp') }}" alt="thumb">
                     </div>
                     <div class="team-content">
                         <div class="team-icon">
@@ -88,7 +88,7 @@
             <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
                 <div class="single-team-box">
                     <div class="team-thumb">
-                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team1.webp') }}" alt="thumb">
+                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team3.webp') }}" alt="thumb">
                     </div>
                     <div class="team-content">
                         <div class="team-icon">
@@ -195,9 +195,9 @@ const mentors = [
     },
     {
         name: "Dayanand Lal Das",
-        experience: "14+ years",
+        experience: "5+ years",
         position: "Data Science & AI Trainer",
-        image: "{{ asset('assets/images/team/team1.webp') }}",
+        image: "{{ asset('assets/images/team/team4.webp') }}",
         description: "Dayanand Lal Das is an experienced and focused trainer in Data Science and AI. He has 14 years of experience in this field and makes complex topics easy to understand and teaching style is clear, practical, and full of live examples. His goal is to inspire students to explore, learn, and succeed in the growing world of AI and data science."
     },
     {
@@ -211,7 +211,7 @@ const mentors = [
         name: "Divya Solanki",
         experience: "6+ years",
         position: "Data Science Trainer",
-        image: "{{ asset('assets/images/team/team1.webp') }}",
+        image: "{{ asset('assets/images/team/team3.webp') }}",
         description: "Divya Solanki has 6 years of teaching experience and 1 year of experience as Data Science Trainer. She enjoys helping students learn in a simple and clear way. Her mix of classroom and technical experience makes her teaching effective and engaging. Divya focuses on building strong foundations and guiding students to grow with confidence in both academics and the tech field."
     }
 ];

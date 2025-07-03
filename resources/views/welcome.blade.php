@@ -1095,7 +1095,7 @@
 
 
 
-	{{-- <x-mentor-popup /> --}}
+	<x-mentor-popup />
 
 
 
