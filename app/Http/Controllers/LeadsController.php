@@ -29,7 +29,20 @@ class LeadsController extends Controller
     $lead->qualification = $request->title;
     $lead->experience = $request->profession;
     $lead->save();
-
+    
+    $apiResponse = Http::asForm()->post('https://demo.digicrome.com/post_lead.php', [
+        'name'        => $request->name,
+        'mobile'      => $request->phone,
+        'email'       => $request->email,
+        'title'       => $request->qualification,
+        'address'     => $request->address,
+        'profession'  => $request->experience,
+        'source'      => 'Website(Course)',
+        'country'     => 'India',
+        'comp_name'   => '',
+        'state'       => '',
+        'altr_mobile' => 'NA',
+    ]);
     
     // Get brochure path
     $course = \App\Models\Course::find($request->course_id);
