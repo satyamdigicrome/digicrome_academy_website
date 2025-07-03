@@ -1091,7 +1091,15 @@
 	<!--==================================================-->
 	<!-- Start educate team Area -->
 	<!--==================================================-->
-	{{-- <x-mentor-popup /> --}}
+
+
+
+
+	<x-mentor-popup />
+
+
+
+
 
 	<!--==================================================-->
 	<!-- end educate team Area -->
@@ -1390,7 +1398,7 @@
 		<div class="modal-content">
 			<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
 				<h3 style="color:#f29c12; font-size:18px; margin:0;">Get a Quick Call</h3>
-				<span onclick="closeModal()" style="font-size:22px; cursor:pointer; color:#555;">&times;</span>
+				<span onclick="closeModal()" style="font-size:22px; cursor:pointer; color:#fff;">&times;</span>
 			</div>
 			<p style="font-size:14px; color:#fff; margin-bottom:15px;">Need help? Call us at <strong>01205222560</strong><br>or fill the form below.</p>
 			<form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php" style="width:100%; margin:0;">
