@@ -544,7 +544,7 @@
 							<h2>Contact Info</h2>
 							<ul class="list-style-one">
 								<li><span class="icon flaticon-email"></span>C-108, Second Floor, Block C, Sector 02, Noida, Uttar Pradesh 201301</li>
-								<li><span> <i class="bi bi-telephone-inbound"></i> </span>01203133869</li>
+								<li><span> <i class="bi bi-telephone-inbound"></i> </span> 01205222560</li>
 								<li><span><i class="bi bi-geo-alt"></i></span>info@digicrome.com</li>
 								<li><span><i class="bi bi-clock"></i></span>Week Days: 10.30 to 19.00 Sunday: Closed
 								</li>
@@ -670,7 +670,7 @@
 		<a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
 			<i class="fab fa-whatsapp"></i>
 		</a>
-		<a href="tel:01203133869" class="btn btn-callback" style="background: #1a1447; color: #fff;">
+		<a href="tel: 01205222560" class="btn btn-callback" style="background: #1a1447; color: #fff;">
 			<i class="fas fa-phone-alt"></i>
 		</a>
 	</div>
