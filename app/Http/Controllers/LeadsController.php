@@ -37,12 +37,12 @@ class LeadsController extends Controller
     
     $apiResponse = Http::asForm()->post('https://demo.digicrome.com/post_lead.php', [
         'name'        => $request->name,
-        'mobile'      => $request->phone,
+        'mobile'      => $request->mobile,
         'email'       => $request->email,
-        'title'       => $request->qualification,
+        'title'       => $request->title,
         'address'     => $request->address,
-        'profession'  => $request->experience,
-        'source'      => 'Website(Course)',
+        'profession'  => $request->profession,
+        'source'      => 'Website(broucher)',
         'country'     => 'India',
         'comp_name'   => '',
         'state'       => '',
