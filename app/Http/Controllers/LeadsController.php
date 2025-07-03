@@ -29,6 +29,11 @@ class LeadsController extends Controller
     $lead->qualification = $request->title;
     $lead->experience = $request->profession;
     $lead->save();
+
+    
+    // Get brochure path
+    $course = \App\Models\Course::find($request->course_id);
+    $brochurePath = $course->browser ? asset('storage/' . $course->browser) : null;
     
     $apiResponse = Http::asForm()->post('https://demo.digicrome.com/post_lead.php', [
         'name'        => $request->name,
@@ -43,12 +48,6 @@ class LeadsController extends Controller
         'state'       => '',
         'altr_mobile' => 'NA',
     ]);
-    
-    // Get brochure path
-    $course = \App\Models\Course::find($request->course_id);
-    $brochurePath = $course->browser ? asset('storage/' . $course->browser) : null;
-    
-
     return response()->json([
         'success' => true,
         'message' => 'Lead saved successfully.',
