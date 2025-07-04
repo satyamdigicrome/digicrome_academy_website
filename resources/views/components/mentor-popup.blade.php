@@ -77,7 +77,7 @@
                         <div class="instructor-details-info">
                             <div class="instructor-info">
                                 <h3 id="mentorName" class="instructor-name">Mentor Name</h3>
-                                <div class="instructor-rating">
+                                {{-- <div class="instructor-rating">
                                     <ul>
                                         <li><i class="fas fa-star"></i></li>
                                         <li><i class="fas fa-star"></i></li>
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="instructior-ratting-count">
                                     <span class="rating-count">(4.5)</span>
-                                </div>
+                                </div> --}}
                                 <div class="instructior-designation">
                                     <h5 id="mentorPosition">Position</h5>
                                 </div>
