@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /?search-field=
 
 Sitemap: https://www.digicrome.com/sitemap.xml
