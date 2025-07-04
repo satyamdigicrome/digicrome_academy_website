@@ -5,21 +5,22 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Models\Mentor;
 
 class MentorPopup extends Component
 {
     /**
      * Create a new component instance.
      */
+    public $mentors;
+
     public function __construct()
     {
-        //
+        // Automatically load mentors from DB
+        $this->mentors = Mentor::all();
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
-    public function render(): View|Closure|string
+    public function render()
     {
         return view('components.mentor-popup');
     }

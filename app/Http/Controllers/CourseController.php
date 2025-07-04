@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Placement;
 use App\Models\Logo;
 use App\Models\Testimonial;
+use App\Models\Mentor;
 use App\Models\Metatag;
 
 
@@ -78,6 +79,13 @@ class CourseController extends Controller
     });
     $testimonials = Testimonial::latest()->get();
 
+    $mentors = Mentor::where('course_id', $course->id)->get();
+
+    // If no mentors found, get all
+    if ($mentors->isEmpty()) {
+        $mentors = Mentor::all();
+    }
+
     return view('pages.course_details', compact(
         'course',
         'courses',
@@ -86,7 +94,8 @@ class CourseController extends Controller
         'plainLogos',
         'certificate',
         'testimonials',
-        'awords'
+        'awords',
+        'mentors'
     ));
 }
 

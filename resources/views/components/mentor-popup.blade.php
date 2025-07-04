@@ -14,98 +14,40 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 
     <div class="container-fluid">
-        <div class="row image_load">
-            <!-- Instructor 1 -->
-            <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
-                <div class="single-team-box">
-                    <div class="team-thumb">
-                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team1.webp') }}" alt="thumb">
-                    </div>
-                    <div class="team-content">
-                        <div class="team-icon">
-                            <div  style="border: 14px solid #fff; border-radius: 56px;" class="team-plus" data-index="0">
-                                <i class="fa-solid fa-plus"></i>
+        <div class="row image_load owl-carousel mentor-carousel">
+            @foreach($mentors as $index => $mentor)
+                <div class="col-xl-12 grid-item">
+                    <div class="single-team-box">
+                        <div class="team-thumb">
+                            <img style="border-radius: 25px;" src="{{ asset('storage/' . $mentor->photo) }}" alt="thumb">
+                        </div>
+                        <div class="team-content">
+                            <div class="team-icon">
+                                <div class="team-plus" style="border: 14px solid #fff; border-radius: 56px;" 
+                                    data-index="{{ $index }}"
+                                    data-name="{{ $mentor->name }}"
+                                    data-position="{{ $mentor->position }}"
+                                    data-experience="{{ $mentor->experience }}+ Years"
+                                    data-description="{{ $mentor->description }}"
+                                    data-image="{{ asset('storage/' . $mentor->photo) }}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="team-title">
-                            <h3><a href="#">Arun Paswan</a></h3>
-                        </div>
-                        <div class="team-sub-title">
-                            <h5>Data Scientist Trainer</h5>
+                            <div class="team-title">
+                                <h3><a href="#">{{ $mentor->name }}</a></h3>
+                            </div>
+                            <div class="team-sub-title">
+                                <h5>{{ $mentor->position }}</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Instructor 2 -->
-            <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
-                <div class="single-team-box">
-                    <div class="team-thumb">
-                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team5.webp') }}" alt="thumb">
-                    </div>
-                    <div class="team-content">
-                        <div class="team-icon">
-                            <div  style="border: 14px solid #fff; border-radius: 56px;" class="team-plus" data-index="1">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="team-title">
-                            <h3><a href="#">Dayanand Lal Das</a></h3>
-                        </div>
-                        <div class="team-sub-title">
-                            <h5>Data Science & AI Trainer</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instructor 3 -->
-            <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
-                <div class="single-team-box">
-                    <div class="team-thumb">
-                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team2.webp') }}" alt="thumb">
-                    </div>
-                    <div class="team-content">
-                        <div class="team-icon">
-                            <div  style="border: 14px solid #fff; border-radius: 56px;" class="team-plus" data-index="2">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="team-title">
-                            <h3><a href="#">Chhavi Manchanda</a></h3>
-                        </div>
-                        <div class="team-sub-title">
-                            <h5>Professional Soft Skills Trainer</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instructor 4 -->
-            <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
-                <div class="single-team-box">
-                    <div class="team-thumb">
-                        <img style="border-radius: 25px;" src="{{ asset('assets/images/team/team3.webp') }}" alt="thumb">
-                    </div>
-                    <div class="team-content">
-                        <div class="team-icon">
-                            <div  style="border: 14px solid #fff; border-radius: 56px;" class="team-plus" data-index="3">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="team-title">
-                            <h3><a href="#">Divya Solanki</a></h3>
-                        </div>
-                        <div class="team-sub-title">
-                            <h5>Data Science Trainer</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
+        
     </div>
 </div>
 
@@ -185,49 +127,20 @@
 <!-- ========================= SCRIPT ========================= -->
 @push('scripts')
 <script>
-const mentors = [
-    {
-        name: "Arun Paswan",
-        experience: "8+ years",
-        position: "Data Scientist Trainer",
-        image: "{{ asset('assets/images/team/team1.webp') }}",
-        description: "Arun Paswan is a Data Science professional with more than 8 years of experience. As a Trainer, he enjoys making data concepts clear and easy for students to understand and with his supportive nature and industry knowledge, Arun helps learners build confidence as well as the practical skills and believes in guiding students step-by-step toward a successful future in data science and AI."
-    },
-    {
-        name: "Dayanand Lal Das",
-        experience: "14+ years",
-        position: "Data Science & AI Trainer",
-        image: "{{ asset('assets/images/team/team5.webp') }}",
-        description: "Dayanand Lal Das is an experienced and focused trainer in Data Science and AI. He has 14 years of experience in this field and makes complex topics easy to understand and teaching style is clear, practical, and full of live examples. His goal is to inspire students to explore, learn, and succeed in the growing world of AI and data science."
-    },
-    {
-        name: "Chhavi Manchanda",
-        experience: "3+ years",
-        position: "Professional Soft Skills Trainer",
-        image: "{{ asset('assets/images/team/team2.webp') }}",
-        description: "Chhavi Manchanda brings energy and clarity to soft skills training with her 3+ years of experience. She supports everyone in building strong communication, teamwork, and presentation skills. Her practical approach makes learning easy and enjoyable. Chhavi focuses on helping students communicate better and feel more confident in both academic and professional places. She believes soft skills can truly shape a learner 's future."
-    },
-    {
-        name: "Divya Solanki",
-        experience: "6+ years",
-        position: "Data Science Trainer",
-        image: "{{ asset('assets/images/team/team3.webp') }}",
-        description: "Divya Solanki has 6 years of teaching experience and 1 year of experience as Data Science Trainer. She enjoys helping students learn in a simple and clear way. Her mix of classroom and technical experience makes her teaching effective and engaging. Divya focuses on building strong foundations and guiding students to grow with confidence in both academics and the tech field."
-    }
-];
-
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".team-plus").forEach(el => {
         el.addEventListener("click", function () {
-            const index = this.getAttribute("data-index");
-            const mentor = mentors[index];
+            const name = this.getAttribute("data-name");
+            const position = this.getAttribute("data-position");
+            const experience = this.getAttribute("data-experience");
+            const description = this.getAttribute("data-description");
+            const image = this.getAttribute("data-image");
 
-            document.getElementById("mentorName").innerText = mentor.name;
-            document.getElementById("mentorPosition").innerText = mentor.position;
-            document.getElementById("mentorDesc").innerText = mentor.description;
-            document.getElementById("mentorImg").src = mentor.image;
-            document.getElementById("mentorExp").innerText = "Experience: " + mentor.experience;
-
+            document.getElementById("mentorName").innerText = name;
+            document.getElementById("mentorPosition").innerText = position;
+            document.getElementById("mentorDesc").innerText = description;
+            document.getElementById("mentorImg").src = image;
+            document.getElementById("mentorExp").innerText = "Experience: " + experience;
 
             document.getElementById("mentorPopup").style.display = "block";
         });
@@ -243,5 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 </script>
 @endpush

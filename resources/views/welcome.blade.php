@@ -869,8 +869,6 @@
 									['id' => '1090447722', 'title' => 'Anis Khan'],
 									['id' => '1090447680', 'title' => 'Abhishek Ranjan'],
 									['id' => '1090447597', 'title' => 'Abhishek Prajapati'],
-									['id' => '1090447523', 'title' => 'Davis Johson'],
-									['id' => '1090447477', 'title' => 'Alejandro Cruz'],
 								];
 							@endphp
 
@@ -1095,7 +1093,7 @@
 
 
 
-	<x-mentor-popup />
+	<x-mentor-popup :mentors="$mentors"  />
 
 
 

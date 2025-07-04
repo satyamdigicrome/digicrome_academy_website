@@ -11,6 +11,7 @@ use App\Models\Logo;
 use App\Models\Blog;
 use App\Models\Content;
 use App\Models\Metatag;
+use App\Models\Mentor;
 use Illuminate\Support\Facades\Cache;
 use Stevebauman\Location\Facades\Location;
 
@@ -63,8 +64,9 @@ class HomeController extends Controller
     $blogs = Blog::where('status', 'published')
     ->orderByDesc('created_at')
     ->get();
+    $mentors = Mentor::all();
 
-    return view('welcome', compact('collections', 'upcomingCourses', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta'));
+    return view('welcome', compact('collections', 'upcomingCourses', 'mentors', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta'));
 }
 
     public function privacy()

@@ -34,6 +34,8 @@ use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\ContantController;
 use App\Http\Controllers\Admin\MetaController;
 use App\Http\Controllers\Admin\JobController;
+use App\Http\Controllers\Admin\MentorController;
+
 
 
 
@@ -119,7 +121,9 @@ Route::delete('/vacancies/{id}', [JobController::class, 'destroy'])->name('vacan
 Route::get('/vacancies/create', [JobController::class, 'create'])->name('vacancies.create');
 Route::get('/show_job', [JobController::class, 'show_job'])->name('show_job');
 Route::delete('/application/{id}', [JobController::class, 'delete_application'])->name('application.delete');
-
+Route::get('/mentor', [MentorController::class, 'index'])->name('mentor');
+Route::post('/mentor_store', [MentorController::class, 'store'])->name('mentor.store');
+Route::delete('/admin/mentor{id}', [MentorController::class, 'destroy'])->name('mentor.destroy');
 
 
 
