@@ -35,6 +35,8 @@ use App\Http\Controllers\Admin\ContantController;
 use App\Http\Controllers\Admin\MetaController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Admin\MentorController;
+use Illuminate\Support\Facades\Redirect;
+
 
 
 
@@ -169,6 +171,10 @@ Route::get('/test-mail', function () {
     });
     return 'Mail Sent';
 });
+// Old to new course URLs
+Route::redirect('/upcoming-courses/post-graduate-program-in-data-science-and-artificial-intelligence', '/courses/pgp-in-data-science-and-ai', 301);
+Route::redirect('/upcoming-courses/Advance-Certification-program-in-artificial-intelligence-machine-learning', '/courses/advance-certification-in-ai-machine-learning', 301);
+Route::redirect('/upcoming-courses/post-graduate-program-in-data-science-and-machine-learning', '/courses/online-data-analytics-and-machine-learning-program', 301);
 
 
 
