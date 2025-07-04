@@ -148,8 +148,8 @@ Route::get('/refer-and-earn', [ReferController::class, 'index'])->name('refer_an
 Route::get('/who-we-are', [WhoweareController::class, 'index'])->name('who_we_are');
 Route::get('/success-stories', [SucessStoriesController::class, 'index'])->name('success_stories');
 Route::get('/media_presence', [MediaPresenceController ::class, 'index'])->name('media_presence');
-Route::get('/upcoming-courses/{slug}', [CourseController::class, 'course_details'])->name('course_details');
-Route::redirect('/upcoming-courses/{slug}', '/courses/{slug}', 301);
+// Route::get('/upcoming-courses/{slug}', [CourseController::class, 'course_details'])->name('course_details');
+// Route::redirect('/upcoming-courses/{slug}', '/courses/{slug}', 301);
 Route::get('/courses/{slug}', [CourseController::class, 'course_details'])->name('www.products.show');
 
 Route::get('/blog/{slug}', [BlogController::class, 'blog_details'])->name('blog.details');
