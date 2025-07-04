@@ -148,7 +148,7 @@
                 </div>
                 <div class="features-box text-center flex-fill min-w-0">
                     <div class="date-border">
-                        <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.') }}" class="lazyload"
+                        <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}" class="lazyload"
                             alt="best online data science programs" title="best online data science programs">
                         <p>11 Months</p>
                         <span>Live Online Classes</span>

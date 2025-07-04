@@ -177,7 +177,7 @@
 			content.innerHTML = `
 					<div class="row">
 		<div class="col-md-6 d-flex justify-content-center align-items-center">
-			<img loading="lazy"src="https://digicrome.com/public/www/images/c1.png" alt="Customer Service" title="Customer Service" class="img-fluid">
+			<img loading="lazy"src="{{ asset('assets/images/cot1.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
 		</div>
 		<div class="col-md-6">
 		<br>
@@ -241,7 +241,7 @@
 			content.innerHTML = `
 					<div class="row">
 		<div class="col-md-6 d-flex justify-content-center align-items-center">
-			<img loading="lazy"src="https://digicrome.com/public/www/images/c2.png" alt="Customer Service" title="Customer Service" class="img-fluid">
+			<img loading="lazy"src="{{ asset('assets/images/cot2.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
 		</div>
 		<div class="col-md-6">
 		<div class="app-download-box text-center p-4" style="border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: #fff;">
@@ -257,7 +257,7 @@
 
 			<div class="mt-3">
 				<h5>Scan QR Code to Download</h5>
-				<img loading="lazy"src="https://digicrome.com/public/www/seoimg/code.png" alt="QR Code" title="QR Code" style="width: 150px; border-radius: 10px;">
+				<img loading="lazy"src="https://us.digicrome.com/public/www/seoimg/code.png" alt="QR Code" title="QR Code" style="width: 150px; border-radius: 10px;">
 			</div>
 		</div>
 	</div>
@@ -270,7 +270,7 @@
 		<div class="row align-items-center">
 		  <!-- Left side: Image -->
 		  <div class="col-md-6 d-flex justify-content-center align-items-center">
-			<img loading="lazy"src="https://digicrome.com/public/www/images/location.svg" alt="Customer Service" title="Customer Service" class="img-fluid">
+			<img loading="lazy"src="{{ asset('assets/images/location.svg') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
 		</div>
 
 
@@ -320,7 +320,7 @@
 		<div class="row align-items-center">
 		  <!-- Left side: Image -->
 		  <div class="col-md-6">
-			<img loading="lazy"src="https://digicrome.com/public/www/images/whatsap.png" alt="Customer Service" title="Customer Service" class="img-fluid">
+			<img loading="lazy"src="{{ asset('assets/images/whatsap.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
 		</div>
 
 		  <!-- Right side: WhatsApp Contact -->
@@ -328,7 +328,7 @@
 			<div class="border p-4 rounded">
 			  <h2>Contact us on WhatsApp</h2>
 			  <p>Click below to chat with us on WhatsApp.</p>
-			  <a href="https://api.whatsapp.com/send/?phone=918595746168&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-success">
+			  <a href="https://wa.me/916299611702" target="_blank" class="btn btn-success">
 				<i class="fab fa-whatsapp"></i> Chat on WhatsApp
 			  </a>
 			</div>
@@ -339,7 +339,7 @@
 			content.innerHTML = `<div class="container mt-5">
 		<div class="row align-items-center chat-box">
 			<div class="col-md-5 text-center">
-				<img loading="lazy"src="https://digicrome.com/public/www/images/chat.png" alt="Chat Image" title="Chat Image">
+				<img loading="lazy"src="{{ asset('assets/images/chat.png') }}" alt="Chat Image" title="Chat Image">
 			</div>
 			<div class="col-md-7 chat-text">
 				<h2>Have more queries?</h2>
@@ -516,9 +516,9 @@
 							<input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
 						</div>
 
-						<p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms
+						{{-- <p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms
 								and Conditions</a> and our <a href="https://digicrome.com/privacy-policy">Privacy
-								Policy.</a> </p><br>
+								Policy.</a> </p><br> --}}
 						<button type="submit">Submit</button>
 					</form>
 					<div id="status"></div>

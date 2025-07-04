@@ -281,73 +281,58 @@
 
     }
 
-    .usa {
-        top: 50%;
-        left: 21%;
-        background-image: url({{ asset('assets/images/dc/5a.webp');
-    }
-    });
-    }
+
 
     .south {
         top: 10%;
         left: 29%;
-        background-image: url({{ asset('assets/images/dc/5b.webp');
+        background-image: url("{{ asset('assets/images/dc/5b.webp') }}");
     }
-    });
+    .usa {
+        top: 50%;
+        left: 21%;
+        background-image: url({{ asset('assets/images/dc/5a.webp')}});
     }
 
     .france {
         top: 45%;
         left: 48%;
-        background-image: url({{ asset('assets/images/dc/5c.webp');
-    }
-    });
+        background-image: url({{ asset('assets/images/dc/5c.webp')}});
 
     }
 
     .sweden {
         top: 23%;
         left: 52%;
-        background-image: url({{ asset('assets/images/dc/5d.webp');
-    }
-    });
+        background-image: url({{ asset('assets/images/dc/5d.webp')}});
 
     }
 
     .africa {
         top: 78%;
         left: 53%;
-        background-image: url({{ asset('assets/images/dc/5e.webp');
-    }
-    });
+        background-image: url({{ asset('assets/images/dc/5e.webp')}});
 
     }
 
     .brazil {
         top: 71%;
         left: 32%;
-        background-image: url({{ asset('assets/images/dc/5f.webp');
-    }
-    });
+        background-image: url({{ asset('assets/images/dc/5f.webp')}});
 
     }
 
     .chaina {
         top: 52%;
         left: 74%;
-        background-image: url({{ asset('assets/images/dc/5g.webp');
-    }
-    });
+        background-image: url({{ asset('assets/images/dc/5g.webp')}});
 
     }
 
     .australia {
         top: 76%;
         left: 82%;
-        background-image: url({{ asset('assets/images/dc/5h.webp');
-    }
-    });
+        background-image: url({{ asset('assets/images/dc/5h.webp')}});
 
     }
 

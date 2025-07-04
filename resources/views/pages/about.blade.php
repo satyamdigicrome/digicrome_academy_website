@@ -75,7 +75,7 @@
 						</div>
 						<div class="about-experience-desc">
 							<p>Years of<br>
-								Experiences</p>
+								Experience</p>
 						</div>
 					</div>
 					<div class="about-shape32">
