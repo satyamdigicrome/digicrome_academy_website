@@ -1305,7 +1305,7 @@
 	<!--==================================================-->
 	<div class="blog-area style-one">
 		<div class="container">
-			<div class="row section-title-space">
+			<div class="row align-items-center section-title-space">
 				<div class="col-lg-6">
 					<div class="section-sub-title">
 						<h6>LATEST BLOGS</h6>
@@ -1313,11 +1313,13 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h2>Read out our latest updates</br>
-						 from digicrome</h2>
+						<h2  class="heading-like-h1">Read out our latest updates</br>
+							from digicrome</h2>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="container">
 			<div class="row">
 				<div class="row">
 					@foreach($blogs->take(3) as $blog)
