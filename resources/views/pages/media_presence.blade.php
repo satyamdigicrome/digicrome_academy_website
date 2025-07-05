@@ -29,7 +29,110 @@
     </div>
     </div>
   </div>
-  <section class="py-5 text-center bg-light">
+
+  <style>
+    .award-card {
+        transition: transform 0.3s ease;
+    }
+    .award-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .award-image {
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    @media (max-width: 768px) {
+        .award-image {
+            height: 200px;
+        }
+    }
+</style><div class="container">
+    <div class="text-center py-5">
+      <h2 class="fw-bold">Our Media Presence</h2>
+      <p class="text-muted">These awards highlight our commitment to excellence and innovation in education.</p>
+    </div>
+
+  <!-- Award 1 -->
+  <div class="row align-items-center award-section">
+    <div class="col-md-6">
+      <img src="assets/images/awards/award1.jpg" alt="Award 1" class="award-image">
+    </div>
+    <div class="col-md-6 award-content">
+      <h3>Best EdTech Innovation 2024</h3>
+      <p>Recognized at the Global EdTech Summit for developing scalable and impactful learning solutions for the digital generation.</p>
+    </div>
+  </div>
+
+  <!-- Award 2 -->
+  <div class="row align-items-center award-section flex-md-row-reverse">
+    <div class="col-md-6">
+      <img src="assets/images/awards/award2.jpg" alt="Award 2" class="award-image">
+    </div>
+    <div class="col-md-6 award-content">
+      <h3>Top Data Science Educator</h3>
+      <p>Honored for our expertise and hands-on approach in delivering high-quality Data Science and AI education.</p>
+    </div>
+  </div>
+
+  <!-- Award 3 -->
+  <div class="row align-items-center award-section">
+    <div class="col-md-6">
+      <img src="assets/images/awards/award3.jpg" alt="Award 3" class="award-image">
+    </div>
+    <div class="col-md-6 award-content">
+      <h3>National Excellence Award</h3>
+      <p>Awarded for innovation and impact in online learning across India by the National Digital Forum.</p>
+    </div>
+  </div>
+
+  <!-- Award 4 -->
+  <div class="row align-items-center award-section flex-md-row-reverse">
+    <div class="col-md-6">
+      <img src="assets/images/awards/award4.jpg" alt="Award 4" class="award-image">
+    </div>
+    <div class="col-md-6 award-content">
+      <h3>Innovation in AI Training</h3>
+      <p>Recognized by AI Weekly for delivering real-world projects and transforming learners into AI professionals.</p>
+    </div>
+  </div>
+
+  <!-- Award 5 -->
+  <div class="row align-items-center award-section">
+    <div class="col-md-6">
+      <img src="assets/images/awards/award5.jpg" alt="Award 5" class="award-image">
+    </div>
+    <div class="col-md-6 award-content">
+      <h3>Emerging Startup of the Year</h3>
+      <p>Awarded for fast growth and measurable learner success by Startup India 2023.</p>
+    </div>
+  </div>
+
+  <!-- Award 6 -->
+  <div class="row align-items-center award-section flex-md-row-reverse">
+    <div class="col-md-6">
+      <img src="assets/images/awards/award6.jpg" alt="Award 6" class="award-image">
+    </div>
+    <div class="col-md-6 award-content">
+      <h3>Education Leadership Icon</h3>
+      <p>Presented for visionary leadership in driving digital education across India through accessible online platforms.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  {{-- <section class="py-5 text-center bg-light">
     <div class="container">
     <h2 class="mb-4">Featured In</h2>
     <div class="d-flex flex-wrap justify-content-center align-items-center">
@@ -173,6 +276,6 @@
     .btn-theme:hover {
     background-color: #d88a0f;
     }
-  </style>
+  </style> --}}
 
 @endsection
