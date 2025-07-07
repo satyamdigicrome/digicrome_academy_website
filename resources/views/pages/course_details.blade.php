@@ -673,11 +673,11 @@
                 <ul class="list-unstyled">
                     <li class="d-flex align-items-start mb-2">
                         <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                        <span><b> Successpreneur Award 2023 </b> being the best analytics EdTech business</span>
+                        <span><b> Successpreneur Award 2025 </b> being the best analytics EdTech business</span>
                     </li>
                     <li class="d-flex align-items-start">
                         <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                        <span><b>Most Promising Digital Learning Platform 2023</b> for being one of the most promising
+                        <span><b>Most Promising Digital Learning Platform 2025</b> for being one of the most promising
                             digital
                             learning platforms</span>
                     </li>
