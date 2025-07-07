@@ -226,7 +226,7 @@
 					@foreach([62, 63, 64,65,66,67,68,69,70,71] as $id)
 					@if(isset($footer_courses[$id]))
 						@php $course = $footer_courses[$id]; @endphp
-								<a href="{{ route('course_details', ['slug' => $course->slug]) }}">
+								<a href="{{ route('course_details', ['slug' => $course->slug]) }}" style="color: #fff">
 									{{ $course->name }}</a> | 
 									
 					@endif
