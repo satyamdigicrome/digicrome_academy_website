@@ -177,6 +177,7 @@ Route::get('/test-mail', function () {
 Route::redirect('/upcoming-courses/post-graduate-program-in-data-science-and-artificial-intelligence', '/courses/pgp-in-data-science-and-ai', 301);
 Route::redirect('/upcoming-courses/Advance-Certification-program-in-artificial-intelligence-machine-learning', '/courses/advance-certification-in-ai-machine-learning', 301);
 Route::redirect('/upcoming-courses/post-graduate-program-in-data-science-and-machine-learning', '/courses/online-data-analytics-and-machine-learning-program', 301);
+Route::redirect('/courses/post-graduate-program-in-data-science-and-artificial-intelligence', '/courses/pgp-in-data-science-and-ai', 301);
 
 
 
