@@ -74,7 +74,7 @@
         </p>
       
         <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 1rem; line-height: 1.8; text-transform: capitalize;">
-          <li>✔✔ Student journeys and the results they achieved.</li>
+          <li>✔✔ Student journeys and their results</li>
           <li>✔✔ From classroom to career success.</li>
           <li>✔✔ Stories across tech, AI, marketing & more.</li>
           <li>✔✔ Powered by practical training & mentorship.</li>
@@ -82,7 +82,7 @@
         </ul>
       
         <a href="#stories" style="padding: 12px 25px; background-color: #f29c12; color: white; text-decoration: none; font-weight: bold; border-radius: 4px;">
-          Read Student Stories
+          View Success Stories
         </a>
       </div>
       
