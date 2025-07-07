@@ -73,8 +73,8 @@
           Discover how our students transformed their careers with Digicrome's expert-led programs, real-world projects, and lifelong mentorship.
         </p>
       
-        <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 1rem; line-height: 1.8;">
-          <li>✔✔ Student journeys, results.</li>
+        <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 1rem; line-height: 1.8; text-transform: capitalize;">
+          <li>✔✔ Student journeys and the results they achieved.</li>
           <li>✔✔ From classroom to career success.</li>
           <li>✔✔ Stories across tech, AI, marketing & more.</li>
           <li>✔✔ Powered by practical training & mentorship.</li>
