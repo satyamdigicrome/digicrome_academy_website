@@ -151,6 +151,7 @@ Route::get('/media_presence', [MediaPresenceController ::class, 'index'])->name(
 // Route::get('/upcoming-courses/{slug}', [CourseController::class, 'course_details'])->name('course_details');
 // Route::redirect('/upcoming-courses/{slug}', '/courses/{slug}', 301);
 // Route::get('/courses/{slug}', [CourseController::class, 'course_details'])->name('www.products.show');
+Route::redirect('/courses/post-graduate-program-in-data-science-and-artificial-intelligence', '/courses/pgp-in-data-science-and-ai', 301);
 Route::get('/courses/{slug}', [CourseController::class, 'course_details'])->name('course_details');
 
 
@@ -178,7 +179,6 @@ Route::get('/test-mail', function () {
 Route::redirect('/upcoming-courses/post-graduate-program-in-data-science-and-artificial-intelligence', '/courses/pgp-in-data-science-and-ai', 301);
 Route::redirect('/upcoming-courses/advance-certification-program-in-artificial-intelligence-machine-learning', '/courses/advance-certification-in-ai-machine-learning', 301);
 Route::redirect('/upcoming-courses/post-graduate-program-in-data-science-and-machine-learning', '/courses/online-data-analytics-and-machine-learning-program', 301);
-Route::redirect('/courses/post-graduate-program-in-data-science-and-artificial-intelligence', '/courses/pgp-in-data-science-and-ai', 301);
 
 
 
