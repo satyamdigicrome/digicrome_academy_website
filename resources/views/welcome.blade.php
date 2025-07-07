@@ -361,7 +361,7 @@
 						<h6>Our Achievement</h6>
 					</div>
 					<div class="section_title">
-						<h2 class="heading-like-h1">Honoring Digicrome's Excellence <br>at the Excellency Iconic Awards 2023</h2>
+						<h2 class="heading-like-h1">Honoring Digicrome's Excellence <br>at the Excellency Iconic Awards 2025</h2>
 
 					</div>
 					<div class="section-title-desc two">
@@ -436,7 +436,7 @@
 						</li>
 						<li class="d-flex align-items-start">
 							<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-							<span><b>Career-Boosting Credentials: </b> fEarn certifications that enhance your professional
+							<span><b>Career-Boosting Credentials: </b> Earn certifications that enhance your professional
 								profile and open doors to global opportunities.
 
 							</span>
@@ -603,7 +603,7 @@
 							<div class="case-study-single-box">
 								{{-- Same card HTML reused --}}
 								<div class="case-study-thumb">
-									<img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="case-study-thumb" title="case-study-thumb">
+									<img loading="lazy" src="{{ asset('storage/' . $course->image) }}" alt="case-study-thumb" title="case-study-thumb">
 									{{-- <div class="case-meta-top">
 										<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
 									</div> --}}

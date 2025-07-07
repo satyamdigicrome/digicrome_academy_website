@@ -454,28 +454,9 @@
                                 <!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
                                 <input type="email" id="gmail" name="email" placeholder="E-mail ID:">
                             </div>
-                            <div class="form-field">
-                                <!--<label style="color:#fff;" for="city">City:</label> -->
-                                <input type="text" id="city" name="address" placeholder="City">
-                            </div>
-                            <div class="form-field">
-                                <!--<label style="color:#fff;" for="Qualification">Qualification:</label> -->
-                                <input type="text" id="qualification" name="title" placeholder="Qualification">
-                            </div>
-                            <div class="form-field">
-                                <!--<label style="color:#fff;" for="qualification">Experience:</label> -->
-                                <select class="selecttype" id="qualification" name="profession">
-                                    <option value="" disabled selected>Select Experience</option>
-                                    <option value="Working Professional - Technincal Roles">Working Professional -
-                                        Technincal Roles</option>
-                                    <option value="Working Professional - Non Technincal">Working Professional - Non
-                                        Technincal</option>
-                                    <option value="College Student - Final Year">College Student - Final Year</option>
-                                    <option value="College Student - 1st to pre-final Year">College Student - 1st to
-                                        pre-final Year</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
+                            <input type="hidden" name="address" value="NA">
+				<input type="hidden" name="title" value="NA">
+				<input type="hidden" name="profession" value="NA">
 
                             <div class="form-field">
                                 <input type="hidden" id="mobile" name="source" Value="Home Page"

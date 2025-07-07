@@ -61,7 +61,7 @@
 </style>
 
 <div class="custom-hero-banner">
-  <img src="http://127.0.0.1:8000/assets/images/care.webp" alt="Career Banner" class="hero-img" loading="lazy">
+  <img src="{{ asset('assets/images/ss.webp') }}" alt="Career Banner" class="hero-img" loading="lazy">
 
   <div class="container banner-text">
     <div class="breadcumb-content">
@@ -74,7 +74,7 @@
         </p>
       
         <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 1rem; line-height: 1.8;">
-          <li>✔✔ Real student journeys, real results.</li>
+          <li>✔✔ Student journeys, results.</li>
           <li>✔✔ From classroom to career success.</li>
           <li>✔✔ Stories across tech, AI, marketing & more.</li>
           <li>✔✔ Powered by practical training & mentorship.</li>
@@ -265,7 +265,6 @@
     color: #f29c12 !important;
   }
 </style>
-
 <style>
   .hero {
     background: linear-gradient(to right, #6a11cb, #2575fc);
@@ -273,21 +272,17 @@
     padding: 80px 20px;
     text-align: center;
   }
-
   .student-card {
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
   }
-
   .student-card:hover {
     transform: translateY(-10px);
   }
-
   .company-logo {
     max-height: 40px;
   }
-
   .digicrome-tag {
     background-color: #2575fc;
     color: white;

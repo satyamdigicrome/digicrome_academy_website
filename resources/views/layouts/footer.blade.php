@@ -154,7 +154,7 @@
 						<h4>Get in Touch</h4>
 					</div>
 					<div class="footer-desc">
-						<p>Master yourself as per the ever-increasing demand of professional in Data science and AI firms. Start your journey towards 80% salay hike, TODAY!</p>
+						<p>Master yourself as per the ever-increasing demand of professional in Data science and AI firms. Start your journey towards 80% salary hike, TODAY!</p>
 					</div>
 					<div class="footer-contact-info">
 						<div class="footer-contact-phone">
