@@ -372,12 +372,11 @@
 <!-- Start Search Popup -->
 <!--==================================================-->
 <div class="search-popup">
-	<button class="close-search style-two"><i class="fas fa-times"></i></button>
-	<button class="close-search"><i class="fas fa-arrow-up"></i></button>
+	{{-- <button class="close-search style-two"><i class="fas fa-times"></i></button> --}}
+	{{-- <button class="close-search"><i class="fas fa-arrow-up"></i></button> --}}
 	<form method="GET" action="#">
 		<div class="form-group position-relative">
 			<input id="search1" type="search" name="search-field" placeholder="Search courses..." autocomplete="off">
-			<button type="submit"><i class="fas fa-search"></i></button>
 
 			<!-- Result dropdown -->
 		</div>
@@ -405,7 +404,7 @@
 						if (data.length > 0) {
 							data.forEach(course => {
 								results.append(`
-                                <a href="/upcoming-courses/${course.slug}" class="d-flex align-items-center mb-2 text-dark text-decoration-none">
+                                <a href="/courses/${course.slug}" class="d-flex align-items-center mb-2 text-dark text-decoration-none">
                                     <img loading="lazy"src="/storage/${course.image}" class="me-2" width="50" height="50" style="object-fit: cover; border-radius: 6px;">
                                     <div>
                                         <div><strong>${course.name}</strong></div>

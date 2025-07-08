@@ -108,7 +108,7 @@
             <div class="mt-4 d-flex gap-3">
                 @if($course->browser)
 
-                <button class="btn btn-outline-primary" style="background-color: #1c1647;" data-bs-toggle="modal" data-bs-target="#leadPopup">
+                <button class="btn btn-outline-primary" style="background-color: green;" data-bs-toggle="modal" data-bs-target="#leadPopup">
                     <i class="fa fa-download me-2"></i>Download Brochure
                 </button>
                 @endif
@@ -209,13 +209,13 @@
                 <div class="mt-4 d-flex gap-3">
                     @if($course->browser)
 
-                  <a href="your-brochure-link.pdf" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#leadPopup" style="background-color: #1c1647;">
+                  <a href="your-brochure-link.pdf" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#leadPopup" style="background-color: green;">
                     <i class="fa fa-download me-2"></i>Download Brochure
                   </a>
                   @endif
 
                   <a data-bs-toggle="modal" 
-                  data-bs-target="#applyNowPopup" class="btn btn-primary" style="background-color: #1c1647;">
+                  data-bs-target="#applyNowPopup" class="btn btn-primary" style="background-color: green;">
                     <i class="fa fa-paper-plane me-2"></i>Apply Now
                   </a>
                 </div>
@@ -1083,28 +1083,28 @@
 <div class="modal fade" id="leadPopup" tabindex="-1" aria-labelledby="leadPopupLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content custom-lead-modal-content">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+
         <form id="leadForm">
           @csrf
           <input type="hidden" name="course_id" value="{{ $course->id }}">
   
-          <h4 class="custom-lead-modal-title">Register now!! And get a quick call</h4>
+          <h4 class="custom-lead-modal-title">Quick Response </h4>
   
           <input type="text" name="name" placeholder="Name" class="form-control custom-lead-input" required>
           <input type="tel" name="mobile" placeholder="Mobile Number" class="form-control custom-lead-input" required>
           <input type="email" name="email" placeholder="E-mail ID" class="form-control custom-lead-input" required>
-          <input type="text" name="address" placeholder="City" class="form-control custom-lead-input">
-          <input type="text" name="title" placeholder="Qualification" class="form-control custom-lead-input">
+        <!-- Hidden City field -->
+<input type="hidden" name="address" value="NA">
+
+<!-- Hidden Qualification field -->
+<input type="hidden" name="title" value="NA">
+
+<!-- Hidden Experience field -->
+<input type="hidden" name="profession" value="NA">
+
   
-          <select name="profession" class="form-select custom-lead-input">
-            <option value="" disabled selected>Select Experience</option>
-            <option value="Working Professional - Technincal Roles">Working Professional - Technical Roles</option>
-            <option value="Working Professional - Non Technincal">Working Professional - Non Technical</option>
-            <option value="College Student - Final Year">College Student - Final Year</option>
-            <option value="College Student - 1st to pre-final Year">College Student - 1st to pre-final Year</option>
-            <option value="Other">Other</option>
-          </select>
-  
-          <button type="submit" class="btn custom-lead-submit-btn w-100 mt-2">Download Brochure</button>
+          <button type="submit" style="background: green;" class="btn custom-lead-submit-btn w-100 mt-2">Download Brochure</button>
         </form>
       </div>
     </div>
@@ -1170,7 +1170,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content custom-reg-modal-content">
         <div class="modal-header custom-reg-modal-header" style="background: #fff;">
-          <h5 class="modal-title custom-reg-modal-title" id="applyNowPopupLabel" style="color:#000;">Register Now! And Get a Quick Call</h5>
+          <h5 class="modal-title custom-reg-modal-title" id="applyNowPopupLabel" style="color:#000;">Quick Response </h5>
           <button type="button" class="custom-close-icon" data-bs-dismiss="modal" aria-label="Close">&times;</button>
         </div>
   
@@ -1178,36 +1178,27 @@
           @csrf
           <div class="modal-body" id="form1">
             <div class="row g-3">
-              <div class="col-md-6">
-                <input type="text" name="name" class="form-control custom-reg-input" placeholder="Name" required>
+                <div class="col-12">
+                  <input type="text" name="name" class="form-control custom-reg-input" placeholder="Name" required>
+                </div>
+                <div class="col-12">
+                  <input type="tel" name="phone" class="form-control custom-reg-input" placeholder="Mobile Number" required>
+                </div>
+                <div class="col-12">
+                  <input type="email" name="email" class="form-control custom-reg-input" placeholder="E-mail ID" required>
+                </div>
+              
+                <!-- Hidden fields with value "NA" -->
+                <input type="hidden" name="address" value="NA">
+                <input type="hidden" name="qualification" value="NA">
+                <input type="hidden" name="experience" value="NA">
+              
+                <!-- Other hidden fields -->
+                <input type="hidden" name="page_name" value="{{ $course->name }}">
+                <input type="hidden" name="source" value="Website(Course)">
+                <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
               </div>
-              <div class="col-md-6">
-                <input type="tel" name="phone" class="form-control custom-reg-input" placeholder="Mobile Number" required>
-              </div>
-              <div class="col-md-6">
-                <input type="email" name="email" class="form-control custom-reg-input" placeholder="E-mail ID" required>
-              </div>
-              <div class="col-md-6">
-                <input type="text" name="address" class="form-control custom-reg-input" placeholder="City">
-              </div>
-              <div class="col-md-6">
-                <input type="text" name="qualification" class="form-control custom-reg-input" placeholder="Qualification">
-              </div>
-              <div class="col-md-6">
-                <select name="experience" class="form-select custom-reg-input">
-                  <option value="" disabled selected>Select Experience</option>
-                  <option value="Working Professional - Technical Roles">Working Professional - Technical Roles</option>
-                  <option value="Working Professional - Non-Technical">Working Professional - Non-Technical</option>
-                  <option value="College Student - Final Year">College Student - Final Year</option>
-                  <option value="College Student - 1st to Pre-Final Year">College Student - 1st to Pre-Final Year</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-  
-              <input type="hidden" name="page_name" value="{{ $course->name }}">
-              <input type="hidden" name="source" value="Website(Course)">
-              <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
-            </div>
+              
   
             {{-- <p class="mt-3 custom-reg-note">
               By submitting the form, you agree to our
@@ -1235,19 +1226,15 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .custom-close-icon {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  background: transparent;
-  border: none;
-  color: #fff; /* White close icon */
-  z-index: 1051;
-  cursor: pointer;
-}
-.custom-close-icon:hover {
-  color: #ddd;
-}
+        position: absolute;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #000;
+    cursor: pointer;
+    line-height: 1;
+    right: 17px;
+  }
 
   
     .custom-reg-modal-header {

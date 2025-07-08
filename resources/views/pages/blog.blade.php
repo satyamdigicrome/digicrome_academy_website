@@ -47,8 +47,46 @@
 						Stay Informed, Stay Inspired
 					</h1>
 					<div class="fs-1 fw-bold" data-animation="fadeInUp" data-delay="100ms">
-						<span class="text-white">With</span> <span class="text-warning">Digicrome Blog</span>
-					</div>
+						<span class="text-white">With</span> 
+						<span class="text-warning">Digicrome Blog</span>
+						<span class="stars">
+						  <i class="fa fa-star"></i>
+						  <i class="fa fa-star"></i>
+						  <i class="fa fa-star"></i>
+						  <i class="fa fa-star"></i>
+						  <i class="fa fa-star"></i>
+						</span>
+						
+						<style>
+						  .stars {
+							color: gold;
+							font-size: 14px; /* chhota size */
+							display: inline-block;
+							position: relative;
+						  }
+						  .stars i {
+							animation: shine 2s infinite;
+							margin-left: 2px;
+						  }
+						  /* Thoda delay deke shining effect ko sequential banate hain */
+						  .stars i:nth-child(1) { animation-delay: 0s; }
+						  .stars i:nth-child(2) { animation-delay: 0.2s; }
+						  .stars i:nth-child(3) { animation-delay: 0.4s; }
+						  .stars i:nth-child(4) { animation-delay: 0.6s; }
+						  .stars i:nth-child(5) { animation-delay: 0.8s; }
+						
+						  @keyframes shine {
+							0%, 100% {
+							  text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+							  opacity: 1;
+							}
+							50% {
+							  text-shadow: 0 0 10px #FFFACD, 0 0 20px #FFFACD, 0 0 30px #FFFACD;
+							  opacity: 0.7;
+							}
+						  }
+						</style>
+											</div>
 
 					<p data-animation="fadeInUp" data-delay="100ms">
 						Welcome to the official blog of Digicrome, your trusted platform for online education and career advancement.

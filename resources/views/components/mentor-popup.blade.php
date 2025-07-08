@@ -20,30 +20,93 @@
         <div class="row image_load owl-carousel mentor-carousel">
             @foreach($mentors as $index => $mentor)
                 <div class="col-xl-12 grid-item">
-                    <div class="single-team-box">
-                        <div class="team-thumb">
-                            <img style="border-radius: 25px;" src="{{ asset('storage/' . $mentor->photo) }}" alt="thumb">
+                    <div class="mentor-card shadow" style=" margin: 11px; background: #fff; border-radius: 12px; padding: 20px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-between; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        
+                        <!-- Image -->
+                        <div class="mentor-img mb-3">
+                            <img src="{{ asset('storage/' . $mentor->photo) }}" 
+                                 alt="Mentor Image" 
+                                 style="width: 90px; height: 90px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         </div>
-                        <div class="team-content">
-                            <div class="team-icon">
-                                <div class="team-plus" style="border: 14px solid #fff; border-radius: 56px;" 
-                                    data-index="{{ $index }}"
-                                    data-name="{{ $mentor->name }}"
-                                    data-position="{{ $mentor->position }}"
-                                    data-experience="{{ $mentor->experience }}+ Years"
-                                    data-description="{{ $mentor->description }}"
-                                    data-image="{{ asset('storage/' . $mentor->photo) }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                            </div>
-                            <div class="team-title">
-                                <h3><a href="#">{{ $mentor->name }}</a></h3>
-                            </div>
-                            <div class="team-sub-title">
-                                <h5>{{ $mentor->position }}</h5>
-                            </div>
+                
+                        <!-- Info -->
+                        <div class="mentor-info-box text-center">
+                            <h5 class="mentor-name">{{ $mentor->name }}</h5>
+                            <hr class="mentor-divider">
+                            <p class="mentor-position">{{ $mentor->position }}</p>
+                            <p class="mentor-experience">{{ $mentor->experience }}+ Years Experience</p>
                         </div>
+                        
+                        <!-- Info Icon (styled) -->
+                        <div class="mentor-view-icon text-center mt-3">
+                            <a href="javascript:void(0);"
+                               class="mentor-trigger"
+                               title="View Full Profile"
+                               data-index="{{ $index }}"
+                               data-name="{{ $mentor->name }}"
+                               data-position="{{ $mentor->position }}"
+                               data-experience="{{ $mentor->experience }}+ Years"
+                               data-description="{{ $mentor->description }}"
+                               data-image="{{ asset('storage/' . $mentor->photo) }}">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </a>
+                        </div>
+                        
                     </div>
+                    <style>
+                        .mentor-card {
+                            min-height: 320px;
+                            max-height: 320px;
+                            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                            border: 1px solid #eaeaea;
+                        }
+                        .mentor-card:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+                        }
+                        .mentor-info-box {
+    line-height: 1.5;
+}
+
+.mentor-name {
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.mentor-divider {
+    width: 40px;
+    margin: 6px auto;
+    border-top: 2px solid #007bff;
+}
+
+.mentor-position {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.mentor-experience {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.mentor-view-icon a {
+    font-size: 20px;
+    color: #007bff;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.mentor-view-icon a:hover {
+    color: #0056b3;
+    transform: scale(1.1);
+}
+
+                        </style>
+                        
                 </div>
             @endforeach
         </div>

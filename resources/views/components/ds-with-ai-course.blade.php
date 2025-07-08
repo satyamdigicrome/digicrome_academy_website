@@ -87,9 +87,8 @@
                             <span>Hiring <br> Partners</span>
                         </div>
                         <div class="fill-btn">
-                            <a data-bs-toggle="modal" data-bs-target="#leadPopup" download=""
-                               >Download
-                                Brochure</a>
+                            <a data-bs-toggle="modal" style="color: green" data-bs-target="#leadPopup" download=""
+                               >Download Brochure</a>
                         </div>
                         <!--<button type="button" class="fill-btn" href="#form1" data-toggle="modal" data-target="#buy-form" onclick="buNow('102')">Apply-->
                         <!--   Now</button>-->
@@ -103,7 +102,7 @@
             <div class="banner-detail">
                 <div class="date-border width">
                     <h2 style="color:#fff;">Courses Features</h2>
-                    <div class="fill-btn" style="color: #fff;  background: #1c1647;
+                    <div class="fill-btn" style="color: #fff;  background: green;
                     border: 2px solid;">
                         <a data-bs-toggle="modal" data-bs-target="#leadPopup"
                              download=""
@@ -125,7 +124,7 @@
                     <span>Live Internship</span>
                 </div>
                 <div class="date-border">
-                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.') }}" class="lazyload"
+                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}" class="lazyload"
                         alt="best online data science programs">
                     <p>11 Months</p>
                     <span>Live Online Classes</span>
