@@ -598,7 +598,9 @@
 @endif
 
             <!-- Certificates Section -->
+            @if ($course->course_free == 1)
             <x-course-curriculum :course="$course" />
+            @endif
         </div>
     </div>
 </section>        
