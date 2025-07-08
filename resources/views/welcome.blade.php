@@ -335,23 +335,57 @@
 			<div class="col-xl-6 col-lg-6">
 				<div class="about-thumb-wrapper">
 					<div class="about-thumb">
-						<img loading="lazy"src="{{ asset('assets/images/digi.png') }}" alt="digicrome thumb" title="digicrome thumb">
-						{{-- <div class="about-line-shape">
-							<img loading="lazy"src="assets/images/home-five/about-line5.webp" alt="line">
+						<!-- Image container -->
+						<div class="image-container">
+						  <img id="image-1" class="image" loading="lazy" src="{{ asset('assets/images/digi.png') }}" alt="First image" title="First image">
+						  <img id="image-2" class="image" loading="lazy" src="{{ asset('assets/images/certificate.webp') }}" alt="Second image" title="Second image">
 						</div>
-						<div class="about-thumb-shape">
-							<img loading="lazy"src="assets/images/home-five/about-shape52.webp" alt="all-student">
-						</div> --}}
+					  
 						<div class="about-call-box">
-							<div class="call-icon">
-								<span><i class="fa-solid fa-phone"></i></span>
-							</div>
-							<div class="call-content">
-								<h5>Call Us:</h5>
-								<h3>01205222560</h3>
-							</div>
+						  <div class="call-icon">
+							<span><i class="fa-solid fa-phone"></i></span>
+						  </div>
+						  <div class="call-content">
+							<h5>Call Us:</h5>
+							<h3>01205222560</h3>
+						  </div>
 						</div>
-					</div>
+					  </div>
+					  <script>
+						// Function to toggle between two images
+						let currentImage = 1; // To track which image is currently visible
+					  
+						function toggleImages() {
+						  const image1 = document.getElementById("image-1");
+						  const image2 = document.getElementById("image-2");
+					  
+						  if (currentImage === 1) {
+							// Hide the first image and show the second
+							image1.style.display = "none";
+							image2.style.display = "block";
+							currentImage = 2;
+						  } else {
+							// Hide the second image and show the first
+							image2.style.display = "none";
+							image1.style.display = "block";
+							currentImage = 1;
+						  }
+						}
+					  
+						// Run the toggle function every 5 seconds
+						setInterval(toggleImages, 5000); // 5000 milliseconds = 5 seconds
+					  
+						// Initialize the images
+						window.onload = function() {
+						  const image1 = document.getElementById("image-1");
+						  const image2 = document.getElementById("image-2");
+					  
+						  // Initially, display the first image and hide the second one
+						  image1.style.display = "block";
+						  image2.style.display = "none";
+						};
+					  </script>
+					  
 				</div>
 			</div>	
 			<div class="col-xl-6 col-lg-6">

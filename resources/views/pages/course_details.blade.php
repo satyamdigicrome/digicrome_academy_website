@@ -598,7 +598,7 @@
 @endif
 
             <!-- Certificates Section -->
-            {{-- <x-course-curriculum :course="$course" /> --}}
+            <x-course-curriculum :course="$course" />
         </div>
     </div>
 </section>        
