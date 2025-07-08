@@ -1165,9 +1165,9 @@
 							<span>+</span>
 							<p>Reviews</p>
 						</div>
-						<div class="testi-inner-shape">
+						{{-- <div class="testi-inner-shape">
 							<img loading="lazy"src="{{ asset('assets/images/inner-img/testi-shape-in.webp') }}" alt="testi-inner-shape" title="testi-inner-shape">
-						</div>
+						</div> --}}
 					</div>
 				</div>
 				<div class="col-xl-8 col-lg-12">
