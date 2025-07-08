@@ -372,7 +372,7 @@
 <!-- Start Search Popup -->
 <!--==================================================-->
 <div class="search-popup">
-	{{-- <button class="close-search style-two"><i class="fas fa-times"></i></button> --}}
+	<button class="close-search style-two"><i style="color: #fff" class="fas fa-times"></i></button>
 	{{-- <button class="close-search"><i class="fas fa-arrow-up"></i></button> --}}
 	<form method="GET" action="#">
 		<div class="form-group position-relative">

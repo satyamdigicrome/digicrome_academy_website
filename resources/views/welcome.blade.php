@@ -1174,7 +1174,7 @@
 					<div class="row">
 						<div class="testi-list-inner owl-carousel">
 							@foreach ($studentStories as $story)
-
+	
 								<div class="col-lg-12">
 									<div class="testi-box">
 										<div class="single-testi-box">
