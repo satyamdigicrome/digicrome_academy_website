@@ -54,7 +54,7 @@
             const courseSelector = document.getElementById('course-selector');
     
             typeSelect.addEventListener('change', function () {
-                if (typeSelect.value === 'tools') {
+                if (typeSelect.value === 'tools' || typeSelect.value === 'certificate') {
                     courseSelector.style.display = 'block';
                 } else {
                     courseSelector.style.display = 'none';
@@ -63,6 +63,7 @@
             });
         });
     </script>
+    
     
 </div>
 <div class="container mt-4">
