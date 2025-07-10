@@ -460,7 +460,7 @@ setInterval(() => {
                         </div>
                         <div class="section-title-desc two">
                             <p>
-                                Digicrome was honored with the prestigious <strong>Excellency Iconic Award 2023</strong> for
+                                Digicrome was honored with the prestigious <strong>Excellency Iconic Award 2025</strong> for
                                 its outstanding contribution to innovative and accessible education.
                                 This recognition celebrates our commitment to delivering high-quality training and
                                 empowering learners across the globe.
