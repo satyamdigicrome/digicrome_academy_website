@@ -598,9 +598,8 @@
 @endif
 
             <!-- Certificates Section -->
-            @if ($course->course_free == 1)
-            <x-course-curriculum :course="$course" />
-            @endif
+            <x-certificate-logos :logos="$certificateLogos" />
+
         </div>
     </div>
 </section>        

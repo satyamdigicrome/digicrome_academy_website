@@ -85,7 +85,9 @@ class CourseController extends Controller
     if ($mentors->isEmpty()) {
         $mentors = Mentor::all();
     }
-
+    $certificateLogos = Logo::where('type', 'certificate')
+    ->where('course_id', $course->id)
+    ->get(['id', 'name', 'image']);
     return view('pages.course_details', compact(
         'course',
         'courses',
@@ -95,7 +97,8 @@ class CourseController extends Controller
         'certificate',
         'testimonials',
         'awords',
-        'mentors'
+        'mentors',
+        'certificateLogos'
     ));
 }
 
