@@ -1130,7 +1130,7 @@ setInterval(() => {
                 $('.gif-carousel').owlCarousel({
                     loop: true,
                     margin: 20,
-                    nav: true,
+                    nav: false,
                     autoplay: true,              // ✅ Enables autoplay
     autoplayTimeout: 3000, 
                     dots: false,

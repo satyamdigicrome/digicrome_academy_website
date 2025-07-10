@@ -20,13 +20,13 @@ class VideoController extends Controller
         $request->validate([
             'video_link' => 'required|string',
             'name' => 'required|string|max:255',
-            'image' => 'nullable|mimes:jpeg,jpg,png,webp,gif|max:4096' // ✅ Now accepts gif too
+            'image' => 'nullable|mimes:jpeg,jpg,png,webp,gif|max:4096'
         ]);
     
         $imagePath = null;
-    
+        
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('videos', 'public'); // ✅ Same folder, GIF or image
+            $imagePath = $request->file('image')->store('videos', 'public');
         }
 
         $userId = auth()->id();
