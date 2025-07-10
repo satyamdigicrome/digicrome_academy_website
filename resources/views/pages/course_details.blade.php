@@ -598,8 +598,10 @@
 @endif
 
             <!-- Certificates Section -->
+            @if($certificateLogos->isNotEmpty())
             <x-certificate-logos :logos="$certificateLogos" />
-
+        @endif
+        
         </div>
     </div>
 </section>        
