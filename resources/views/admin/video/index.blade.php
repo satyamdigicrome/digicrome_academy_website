@@ -13,14 +13,6 @@
     <form action="{{ route('videos.store') }}" method="POST" enctype="multipart/form-data" class="mb-4">
         @csrf
         <div class="mb-3">
-            <label>User</label>
-            <select name="user_id" class="form-control" required>
-                @foreach(\App\Models\User::all() as $user)
-                    <option value="{{ $user->id }}">{{ $user->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="mb-3">
             <label>Video Link (Vimeo)</label>
             <input type="text" name="video_link" class="form-control" required>
         </div>

@@ -12,6 +12,7 @@ use App\Models\Blog;
 use App\Models\Content;
 use App\Models\Metatag;
 use App\Models\Mentor;
+use App\Models\Video;
 use Illuminate\Support\Facades\Cache;
 use Stevebauman\Location\Facades\Location;
 
@@ -65,8 +66,9 @@ class HomeController extends Controller
     ->orderByDesc('created_at')
     ->get();
     $mentors = Mentor::all();
+    $videos = Video::latest()->get();
 
-    return view('welcome', compact('collections', 'upcomingCourses', 'mentors', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta'));
+    return view('welcome', compact('collections', 'upcomingCourses', 'videos', 'mentors', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta'));
 }
 
     public function privacy()

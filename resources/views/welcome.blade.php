@@ -959,97 +959,212 @@ setInterval(() => {
     <!--==================================================-->
     <!-- end educate course design offer Area -->
     <!--==================================================-->
-    <section class="video-slider">
+    @if(count($videos) > 0)
+    <section class="video-slider py-5">
         <div class="container">
-            <h2 class="text-center mb-2 mt-2" style="font-size: 2rem;">
+            <h2 class="text-center mb-3" style="font-size: 2rem;">
                 <span style="color: #f29c12;">Featured </span> Testimonials
             </h2>
             <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                Presenting you our recent feedbacks- Have a look
+                Presenting our recent feedbacks — Have a look!
             </p>
-
-            <div id="vimeoCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <!-- Owl Carousel for Reels -->
-                        <div class="owl-carousel reels-carousel">
-                            @php
-                                $videos = [
-                                    ['id' => '1090448297', 'title' => 'Sunel Nayan'],
-                                    ['id' => '1090448240', 'title' => 'Saloni Singh'],
-                                    ['id' => '1090448212', 'title' => 'Rohit Chaudhary'],
-                                    ['id' => '1090448177', 'title' => 'Radhi'],
-                                    ['id' => '1090448145', 'title' => 'Michael Diaz'],
-                                    ['id' => '1090448103', 'title' => 'Khusboo Gupta'],
-                                    ['id' => '1090448071', 'title' => 'Kayla Ewell'],
-                                    ['id' => '1090448028', 'title' => 'Kartik Mehta'],
-                                    ['id' => '1090447977', 'title' => 'Karan'],
-                                    ['id' => '1090447927', 'title' => 'Justin Brooks'],
-                                    ['id' => '1090447883', 'title' => 'Jeffery George'],
-                                    ['id' => '1090447830', 'title' => 'Eilish Algee'],
-                                    ['id' => '1090447781', 'title' => 'Anshika'],
-                                    ['id' => '1090447722', 'title' => 'Anis Khan'],
-                                    ['id' => '1090447680', 'title' => 'Abhishek Ranjan'],
-                                    ['id' => '1090447597', 'title' => 'Abhishek Prajapati'],
-                                ];
-                            @endphp
-
-                            @foreach ($videos as $video)
-                                <div class="video-card" data-bs-toggle="modal" data-bs-target="#vimeoModal"
-                                    data-vimeo="https://player.vimeo.com/video/{{ $video['id'] }}">
-                                    <iframe src="https://player.vimeo.com/video/{{ $video['id'] }}?background=1"
-                                        frameborder="0" allowfullscreen></iframe>
-                                    <div class="video-title">{{ $video['title'] }}</div>
-                                </div>
-                            @endforeach
-                        </div>
-
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#vimeoCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#vimeoCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
+    
+            <div class="owl-carousel gif-carousel">
+    
+    @foreach ($videos as $video)
+    <div class="text-center">
+        <div class="gif-wrapper"
+             data-bs-toggle="modal"
+             data-bs-target="#youtubeModal"
+             data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
+            <div class="gif-container">
+                <img src="{{ asset('storage/' . $video->image) }}"
+                     alt="{{ $video->name }}"
+                     class="gif-img rounded shadow-sm">
             </div>
         </div>
-
-        <!-- Vimeo Modal -->
-        <div class="modal fade" id="vimeoModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content bg-dark text-white">
-                    <div class="modal-body modal-video">
-                        <iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
+        <div class="video-title mt-2 fw-semibold">{{ $video->name }}</div>
+    </div>
+@endforeach
             </div>
         </div>
+    
+        <!-- YouTube Modal -->
+        <!-- YouTube Modal -->
+<!-- YouTube Modal -->
+<div class="modal fade" id="youtubeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-youtube-dialog">
+        <div class="youtube-modal-box">
 
+            <!-- ✅ Close Button -->
+            <button type="button"
+                    class="btn-close btn-close-white custom-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+
+            <div class="youtube-video-wrapper">
+                <iframe id="youtubePlayer" src="" frameborder="0"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal CSS -->
+<style>
+    /* Maintain 9:16 aspect ratio (YouTube Shorts look) */
+    .responsive-video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 177.77%; /* 9:16 aspect ratio (16/9 = 56.25%; so 9/16 = 177.77%) */
+        background-color: #000;
+    }
+
+    .responsive-video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    .youtube-modal-box {
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    position: relative;
+}
+
+/* Video wrapper for 9:16 shorts */
+.youtube-video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 177.77%;
+    background-color: #000;
+}
+
+.youtube-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Modal dialog center fix */
+.custom-youtube-dialog {
+    max-width: 100%;
+    width: auto;
+    margin: auto;
+}
+
+/* ✅ Close Button Styling */
+.custom-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    filter: invert(1); /* make it white */
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.custom-close-btn:hover {
+    opacity: 1;
+}
+
+@media (max-width: 576px) {
+    .youtube-modal-box {
+        max-width: 90%;
+    }
+}
+
+
+    .custom-modal-dialog {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    @media (max-width: 576px) {
+        .custom-modal-dialog {
+            margin: 0 10px;
+        }
+    }
+
+            .gif-container {
+                width: 240px;
+                height: 426px; /* 9:16 aspect ratio */
+                margin: auto;
+                overflow: hidden;
+                border-radius: 12px;
+                background-color: #000;
+            }
+    
+            .gif-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+                cursor: pointer;
+            }
+    
+            .gif-img:hover {
+                transform: scale(1.03);
+            }
+    
+            .video-title {
+                font-size: 1rem;
+                color: #333;
+            }
+        </style>
+    
         <!-- JS Script -->
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const videoCards = document.querySelectorAll('.video-card');
-                const vimeoPlayer = document.getElementById('vimeoPlayer');
-                const modal = document.getElementById('vimeoModal');
-
-                videoCards.forEach(card => {
-                    card.addEventListener('click', function() {
-                        const videoUrl = this.getAttribute('data-vimeo') + '?autoplay=1';
-                        vimeoPlayer.src = videoUrl;
+            document.addEventListener("DOMContentLoaded", function () {
+                $('.gif-carousel').owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: true,
+                    autoplay: true,              // ✅ Enables autoplay
+    autoplayTimeout: 3000, 
+                    dots: false,
+                    responsive: {
+            0: { items: 1 },
+            576: { items: 2 },
+            768: { items: 3 },
+            992: { items: 4 },
+            1200: { items: 5 }
+        }
+                });
+    
+                const cards = document.querySelectorAll('.gif-wrapper');
+                const player = document.getElementById('youtubePlayer');
+                const modal = document.getElementById('youtubeModal');
+    
+                cards.forEach(card => {
+                    card.addEventListener('click', function () {
+                        const videoUrl = this.getAttribute('data-youtube') + '?autoplay=1&modestbranding=1&rel=0';
+                        player.src = videoUrl;
                     });
                 });
+    
+                modal.addEventListener('hidden.bs.modal', function () {
+    player.src = '';
+});
 
-                modal.addEventListener('hidden.bs.modal', function() {
-                    vimeoPlayer.src = '';
-                });
             });
         </script>
     </section>
+    @endif
+    
+    
+    
 
     <!-- Updated Style Only -->
 

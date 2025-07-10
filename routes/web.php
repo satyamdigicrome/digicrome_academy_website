@@ -109,7 +109,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/admin/extra/{id}', [ContantController::class, 'destroy'])->name('admin.extra.destroy');
     Route::get('/contant', [ContantController::class, 'index'])->name('contant.index');
     Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
-    Route::post('/videos/store', [VideoController::class, 'store'])->name('videos.store');
+    Route::post('/videos/store', [VideoController::class, 'store'])->name('videos.store'); 
     Route::delete('/videos/{id}', [VideoController::class, 'destroy'])->name('videos.destroy');
     Route::get('/meta_tag', [MetaController::class, 'index'])->name('meta');
     Route::post('/store', [MetaController::class, 'store'])->name('meta.store');

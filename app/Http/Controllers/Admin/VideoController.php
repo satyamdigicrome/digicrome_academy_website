@@ -18,26 +18,29 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'user_id' => 'required|exists:users,id',
             'video_link' => 'required|string',
             'name' => 'required|string|max:255',
-            'image' => 'nullable|image|max:2048'
+            'image' => 'nullable|mimes:jpeg,jpg,png,gif|max:4096' // ✅ Now accepts gif too
         ]);
-
+    
         $imagePath = null;
+    
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('videos', 'public');
+            $imagePath = $request->file('image')->store('videos', 'public'); // ✅ Same folder, GIF or image
         }
 
+        $userId = auth()->id();
+    
         Video::create([
-            'user_id' => $request->user_id,
+            'user_id' => $userId,
             'video_link' => $request->video_link,
             'name' => $request->name,
-            'image' => $imagePath,
+            'image' => $imagePath, // ✅ GIF or Image stored here
         ]);
-
+    
         return redirect()->route('videos.index')->with('success', 'Video uploaded successfully.');
     }
+    
 
     public function destroy($id)
     {
