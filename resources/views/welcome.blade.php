@@ -21,8 +21,7 @@
                             future with a better career transition</h1>
                         @if ($userCountry === 'India')
                             <div style="text-align: left; margin: 10px 0; width: 60%;">
-                                <div
-                                    style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
+                                <div style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
                                     <small style="font-size: 14px; color: #555;">In collaboration with</small>
                                     <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}"
                                         class="ds-logo lazyload" alt="Microsoft Logo" title="Microsoft logo"
@@ -360,11 +359,14 @@
 						<div class="about-thumb zoom-sequence">
 							<!-- Image container with fixed height -->
 							<div class="image-container">
-								<img class="image" loading="lazy"
-									src="{{ asset('assets/images/digi.webp') }}" alt="First image" title="First image">
-								<img class="image" loading="lazy"
-									src="{{ asset('assets/images/cirt.webp') }}" alt="Second image" title="Second image">
-							</div>
+                                <img class="image" loading="lazy"
+                                     src="{{ asset('assets/images/digi.webp') }}" alt="First image" title="First image">
+                                <img class="image" loading="lazy"
+                                     src="{{ asset('assets/images/cirt.webp') }}" alt="Second image" title="Second image">
+                                <img class="image" loading="lazy"
+                                     src="{{ asset('assets/images/award1.webp') }}" alt="Third image" title="Third image">
+                            </div>
+                            
 					
 							{{-- <div class="about-call-box">
 								<div class="call-icon">
@@ -1057,25 +1059,28 @@ setInterval(() => {
     border: none;
 }
 
-/* Modal dialog center fix */
 .custom-youtube-dialog {
     max-width: 100%;
     width: auto;
     margin: auto;
 }
 
-/* ✅ Close Button Styling */
 .custom-close-btn {
     position: absolute;
+    color: black !important; 
+    background-color: transparent !important;
+    border: none !important; 
     top: 10px;
     right: 10px;
     z-index: 10;
-    filter: invert(1); /* make it white */
+    filter: invert(1);
     opacity: 0.8;
     transition: 0.2s;
 }
 
-.custom-close-btn:hover {
+.custom-close-btn:hover
+.custom-close-btn:focus  {
+    color: black !important;
     opacity: 1;
 }
 
@@ -1099,7 +1104,7 @@ setInterval(() => {
 
             .gif-container {
                 width: 240px;
-                height: 426px; /* 9:16 aspect ratio */
+                height: 426px;
                 margin: auto;
                 overflow: hidden;
                 border-radius: 12px;
@@ -1131,7 +1136,7 @@ setInterval(() => {
                     loop: true,
                     margin: 20,
                     nav: false,
-                    autoplay: true,              // ✅ Enables autoplay
+                    autoplay: true,
     autoplayTimeout: 3000, 
                     dots: false,
                     responsive: {
@@ -1245,12 +1250,11 @@ setInterval(() => {
 									</div>
 								</div>
 							@endforeach
-
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> 
 	</div> --}}
     <div class="testimonial-area style-two mt-4">
         <div class="container">
@@ -1682,8 +1686,7 @@ setInterval(() => {
                 <input type="hidden" name="state" value="">
                 <input type="hidden" name="altr_mobile" value="">
 
-                <button type="submit"
-                    style="width:100%; padding:10px; background:#f29c12; color:white; border:none; border-radius:5px; font-weight:bold; margin-top:10px;">Submit</button>
+                <button type="submit" style="width:100%; padding:10px; background:#f29c12; color:white; border:none; border-radius:5px; font-weight:bold; margin-top:10px;">Submit</button>
             </form>
         </div>
     </div>

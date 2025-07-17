@@ -6,31 +6,86 @@
 @include('components.lead-form-popup')
 
 
-  <div class="breadcumb-area d-flex">
-    <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-12">
-      <div class="breadcumb-content">
-        <div class="breadcumb-title">
-        <h4>Media Presence</h4>
-        </div>
-        {{-- <ul>
-        <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-        <li>Media Presence</li>
-        </ul> --}}
+
+<div class="custom-hero-banner">
+  <img src="{{ asset('assets/images/Media.webp') }}" alt="Media Banner" class="hero-img" loading="lazy">
+
+  <div class="container banner-text">
+    <div class="breadcumb-content">
+      <div class="breadcumb-title">
+        <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 15px;">
+          Media Presence of <span style="color: #fff;">Digicrome</span>
+        </h1>
+        <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 1rem; line-height: 1.8;">
+          <li>✔✔ Featured in top education and tech media outlets.</li>
+          <li>✔✔ Recognized for innovation and impact in edtech.</li>
+          <li>✔✔ Thought leadership articles from our experts.</li>
+          <li>✔✔ Interviews, press releases, and media kits.</li>
+          <li>✔✔ Growing presence in national and international news.</li>
+        </ul>
+
+        {{-- <a href="#media-coverage" style="padding: 12px 25px; background-color: #f29c12; color: white; text-decoration: none; font-weight: bold; border-radius: 4px;">
+          View Media Highlights
+        </a> --}}
       </div>
-      </div>
-    </div>
-    <div class="breadcumb-shape">
-      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
-    </div>
-    <div class="breadcumb-shape2">
-      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
-    </div>
     </div>
   </div>
+</div>
 
-  <style>
+<style>
+  #sticky-header {
+    margin-bottom: 0px;
+}
+  .custom-hero-banner {
+    position: relative;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 600px;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .banner-text {
+      position: static;
+      transform: none;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      color: #fff;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .banner-text h1 {
+      font-size: 2rem !important;
+    }
+
+    .banner-text p {
+      font-size: 1rem !important;
+    }
+
+    .banner-text ul {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .banner-text a {
+      display: inline-block;
+      margin-top: 15px;
+    }
+  }
+
     .award-card {
         transition: transform 0.3s ease;
     }
@@ -52,83 +107,103 @@
             height: 200px;
         }
     }
-</style><div class="container">
-    <div class="text-center py-5">
-      <h2 class="fw-bold">Our Media Presence</h2>
-      <p class="text-muted">These awards highlight our commitment to excellence and innovation in education.</p>
+</style>
+
+
+
+
+
+
+
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="owl-carousel mentor-carousel">
+      
+      <!-- Card 1 -->
+      @foreach($articles as $article)
+<div class="card h-100 shadow-sm rounded-4 p-2 mb-4">
+    <img src="{{ asset($article->image) }}" class="card-img-top rounded-4" alt="Article Image">
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{ $article->heading }}</h5>
+        <p class="card-text text-muted small mb-2">Date: {{ \Carbon\Carbon::parse($article->date)->format('F d, Y') }}</p>
+        <div class="mt-auto text-center">
+            <a href="{{ $article->link }}" class="read-article-link">Read Article</a>
+        </div>
     </div>
+</div>
+@endforeach
+
+
+      <!-- Add more cards similarly -->
+
+    </div>
+  </div>
+</section>
+<style>
+  .read-article-link {
+    display: inline-block;
+    font-weight: 500;
+    text-decoration: underline;
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  
+  .read-article-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+  }
+  </style>
+  
+
+
+
+
+
+<div class="container">
+    <div class="text-center py-5">
+      <h2 class="fw-bold" style="font-size: 2.5rem;">Our Media Presence</h2>
+      <p class="text-muted" style="font-size: 1.2rem;">
+        These awards highlight our commitment to excellence and innovation in education.
+      </p>
+         </div>
 
   <!-- Award 1 -->
-  <div class="row align-items-center award-section">
-    <div class="col-md-6">
-      <img src="assets/images/awards/award1.jpg" alt="Award 1" class="award-image">
-    </div>
-    <div class="col-md-6 award-content">
-      <h3>Best EdTech Innovation 2024</h3>
-      <p>Recognized at the Global EdTech Summit for developing scalable and impactful learning solutions for the digital generation.</p>
-    </div>
+  @foreach($data as $index => $entry)
+  <div class="row align-items-center award-section {{ $index % 2 == 1 ? 'flex-md-row-reverse' : '' }}">
+      <div class="col-md-6">
+          <img src="{{ asset('storage/' . $entry->image) }}" alt="{{ $entry->heading }}" class="award-image img-fluid">
+      </div>
+      <div class="col-md-6 award-content">
+          <h3>{{ $entry->heading }}</h3>
+          <p>{!! $entry->description !!}</p>
+      </div>
   </div>
-
-  <!-- Award 2 -->
-  <div class="row align-items-center award-section flex-md-row-reverse">
-    <div class="col-md-6">
-      <img src="assets/images/awards/award2.jpg" alt="Award 2" class="award-image">
-    </div>
-    <div class="col-md-6 award-content">
-      <h3>Top Data Science Educator</h3>
-      <p>Honored for our expertise and hands-on approach in delivering high-quality Data Science and AI education.</p>
-    </div>
-  </div>
-
-  <!-- Award 3 -->
-  <div class="row align-items-center award-section">
-    <div class="col-md-6">
-      <img src="assets/images/awards/award3.jpg" alt="Award 3" class="award-image">
-    </div>
-    <div class="col-md-6 award-content">
-      <h3>National Excellence Award</h3>
-      <p>Awarded for innovation and impact in online learning across India by the National Digital Forum.</p>
-    </div>
-  </div>
-
-  <!-- Award 4 -->
-  <div class="row align-items-center award-section flex-md-row-reverse">
-    <div class="col-md-6">
-      <img src="assets/images/awards/award4.jpg" alt="Award 4" class="award-image">
-    </div>
-    <div class="col-md-6 award-content">
-      <h3>Innovation in AI Training</h3>
-      <p>Recognized by AI Weekly for delivering real-world projects and transforming learners into AI professionals.</p>
-    </div>
-  </div>
-
-  <!-- Award 5 -->
-  <div class="row align-items-center award-section">
-    <div class="col-md-6">
-      <img src="assets/images/awards/award5.jpg" alt="Award 5" class="award-image">
-    </div>
-    <div class="col-md-6 award-content">
-      <h3>Emerging Startup of the Year</h3>
-      <p>Awarded for fast growth and measurable learner success by Startup India 2023.</p>
-    </div>
-  </div>
-
-  <!-- Award 6 -->
-  <div class="row align-items-center award-section flex-md-row-reverse">
-    <div class="col-md-6">
-      <img src="assets/images/awards/award6.jpg" alt="Award 6" class="award-image">
-    </div>
-    <div class="col-md-6 award-content">
-      <h3>Education Leadership Icon</h3>
-      <p>Presented for visionary leadership in driving digital education across India through accessible online platforms.</p>
-    </div>
-  </div>
+@endforeach
 </div>
+<style>
+  .award-section {
+    margin: 40px 0;
+}
 
+.award-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
+.award-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
+.award-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
 
-
+  </style>
 
 
 

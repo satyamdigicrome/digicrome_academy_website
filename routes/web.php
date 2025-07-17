@@ -14,7 +14,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ReferController;
 use App\Http\Controllers\WhoweareController;
 use App\Http\Controllers\SucessStoriesController;
-use App\Http\Controllers\MediaPresenceController ;
+use App\Http\Controllers\MediaPresenceController;
 use App\Http\Controllers\Admin\AdminCourseController;
 use App\Http\Controllers\Admin\KeyPointController;
 use App\Http\Controllers\Admin\ApartController;
@@ -35,6 +35,8 @@ use App\Http\Controllers\Admin\ContantController;
 use App\Http\Controllers\Admin\MetaController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Admin\MentorController;
+use App\Http\Controllers\Admin\MediaPresenceController  as AdminMediaPresenceController;
+
 use Illuminate\Support\Facades\Redirect;
 
 
@@ -126,6 +128,14 @@ Route::delete('/application/{id}', [JobController::class, 'delete_application'])
 Route::get('/mentor', [MentorController::class, 'index'])->name('mentor');
 Route::post('/mentor_store', [MentorController::class, 'store'])->name('mentor.store');
 Route::delete('/admin/mentor{id}', [MentorController::class, 'destroy'])->name('mentor.destroy');
+Route::get('/admin/media-presence', [AdminMediaPresenceController::class, 'index'])->name('media.index');
+Route::post('/admin/media-presence', [AdminMediaPresenceController::class, 'store'])->name('media.store');
+Route::post('/admin/media-presence/update/{id}', [AdminMediaPresenceController::class, 'update'])->name('media.update');
+Route::get('/admin/media-presence/delete/{id}', [AdminMediaPresenceController::class, 'destroy'])->name('media.delete');
+
+Route::get('/admin/media/article', [AdminMediaPresenceController::class, 'show'])->name('articalshow');
+Route::post('/admin/media/article/store', [AdminMediaPresenceController::class, 'articalstore'])->name('articalstore');
+Route::delete('/admin/media/article/delete/{id}', [AdminMediaPresenceController::class, 'articaldelete'])->name('articaldelete');
 
 
 

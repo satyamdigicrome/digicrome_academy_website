@@ -230,8 +230,8 @@
 				<li><a href="{{ route('corporate_services') }}">Corporate Services </a>
 							<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
 						<li><a href="{{ route('career') }}">Career</a></li>
-						{{-- <li><a href="{{ route('media_presence') }}">Media Presence</a>
-				</li> --}}
+						<li><a href="{{ route('media_presence') }}">Media Presence</a>
+				</li>
 
 				</ul>
 				</li>
@@ -357,6 +357,9 @@
 					<li><a href="{{ route('success_stories') }}">Success stories</a></li>
 					<li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
 					<li><a href="{{ route('career') }}">Career</a></li>
+					<li><a href="{{ route('media_presence') }}">Media Presence</a>
+					</li>
+	
 				</ul>
 			</li>
 

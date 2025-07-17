@@ -142,15 +142,15 @@
                     <div class="date-border">
                         <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-2.png') }}" class="lazyload"
                             alt="data science programs" title="data science programs">
-                        <p>12 Months</p>
-                        <span>Live Internship</span>
+                        <p> Internship Possibility</p>
+                        <span> Based on Performance</span>
                     </div>
                 </div>
                 <div class="features-box text-center flex-fill min-w-0">
                     <div class="date-border">
-                        <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.webp') }}" class="lazyload"
+                        <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}" class="lazyload"
                             alt="best online data science programs" title="best online data science programs">
-                        <p>11 Months</p>
+                        <p>06 Months</p>
                         <span>Live Online Classes</span>
                     </div>
                 </div>
