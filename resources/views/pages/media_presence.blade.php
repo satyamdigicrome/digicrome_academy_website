@@ -123,12 +123,12 @@
       <!-- Card 1 -->
       @foreach($articles as $article)
 <div class="card h-100 shadow-sm rounded-4 p-2 mb-4">
-    <img src="{{ asset($article->image) }}" class="card-img-top rounded-4" alt="Article Image">
+    <img src="{{ asset('storage/' . $article->image) }}" class="card-img-top rounded-4" alt="Article Image">
     <div class="card-body d-flex flex-column">
-        <h5 class="card-title">{{ $article->heading }}</h5>
+        <h5 style="line-height: 29px;" class="card-title">{{ $article->heading }}</h5>
         <p class="card-text text-muted small mb-2">Date: {{ \Carbon\Carbon::parse($article->date)->format('F d, Y') }}</p>
         <div class="mt-auto text-center">
-            <a href="{{ $article->link }}" class="read-article-link">Read Article</a>
+            <a href="{{ $article->link }}" class="read-article-link" target="_blank" rel="nofollow">Read Article</a>
         </div>
     </div>
 </div>

@@ -362,9 +362,9 @@
                                 <img class="image" loading="lazy"
                                      src="{{ asset('assets/images/digi.webp') }}" alt="First image" title="First image">
                                 <img class="image" loading="lazy"
-                                     src="{{ asset('assets/images/cirt.webp') }}" alt="Second image" title="Second image">
+                                     src="{{ asset('assets/images/sec.webp') }}" alt="Second image" title="Second image">
                                 <img class="image" loading="lazy"
-                                     src="{{ asset('assets/images/award1.webp') }}" alt="Third image" title="Third image">
+                                     src="{{ asset('assets/images/sec2.webp') }}" alt="Third image" title="Third image">
                             </div>
                             
 					
