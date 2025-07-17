@@ -913,13 +913,26 @@ setInterval(() => {
             <div class="row">
                 <div class="col-lg-6">
                     <div class="course-design-thumb">
-                        <img loading="lazy"src="{{ asset('assets/images/usss.jpg') }}" alt="course-design-thumb"
-                            title="course-design-thumb">
-                        <div class="course-video-icon">
-                            <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
-                                href="https://youtu.be/HLiQiTTbX8g"><i class="fa-classic fa-solid fa-play fa-fw"></i></a>
-                        </div>
-                    </div>
+    {{-- <img loading="lazy" src="{{ asset('assets/images/usss.jpg') }}" alt="course-design-thumb" title="course-design-thumb"> --}}
+    <div class="course-video-icon">
+        <!-- Video Icon & Button (For YouTube) -->
+        <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/HLiQiTTbX8g">
+            <i class="fa-classic fa-solid fa-play fa-fw"></i>
+        </a>
+        
+        <!-- Local Video (For MP4) -->
+        <a href="{{ asset('assets/Final.mp4') }}" class="video-vemo-icon">
+            <i class="fa-classic fa-solid fa-play fa-fw"></i>
+        </a>
+    </div>
+</div>
+
+<!-- If you want to show the actual video on clicking, use video tag -->
+<video controls style="width:100%; max-width:600px;">
+    <source src="{{ asset('assets/Final.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
                 </div>
                 <div class="col-lg-6">
                     <div class="single-course-offer-box">
