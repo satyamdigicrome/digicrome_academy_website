@@ -121,7 +121,8 @@
                 <i class="fa fa-paper-plane me-2"></i>Apply Now
              </a>
              
-            </div>
+            </div><br>
+            <p><b>Note:-</b> This is an educational program only. No investment or financial product is being offered.</p>
           </div>
           <div class="col-md-6 text-end">
             <img loading="lazy"src="{{ asset('assets/images/3.webp') }}" class="img-fluid" alt="CIBOP" title="CIBOP" />
