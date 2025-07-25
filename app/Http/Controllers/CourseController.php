@@ -87,7 +87,7 @@ class CourseController extends Controller
     }
     $certificateLogos = Logo::where('type', 'certificate')
     ->where('course_id', $course->id)
-    ->get(['id', 'name', 'image']);
+    ->get(['id', 'name', 'image']); 
     return view('pages.course_details', compact(
         'course',
         'courses',

@@ -36,6 +36,7 @@ use App\Http\Controllers\Admin\MetaController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Admin\MentorController;
 use App\Http\Controllers\Admin\MediaPresenceController  as AdminMediaPresenceController;
+use App\Http\Controllers\LandingPageController;
 
 use Illuminate\Support\Facades\Redirect;
 
@@ -174,6 +175,7 @@ Route::post('/store-lead', [LeadsController::class, 'store'])->name('store.lead'
 Route::post('/leads', [LeadsController::class, 'leadsstore'])->name('lead.store');
 Route::post('/submit-referral', [ReferController::class, 'submit'])->name('referral.submit');
 Route::post('/vacancy/apply', [CareerController::class, 'apply'])->name('vacancy.apply');
+Route::get('/investment-banking-course', [LandingPageController::class, 'index'])->name('landing');
 
 
 
