@@ -47,7 +47,7 @@
          class="img-fluid w-100 h-80 position-absolute top-0 start-0 object-cover" 
          style="z-index: 1;"/>
 
-    <div class="container position-relative mt-3 " style="z-index: 1;">
+    <div class="container position-relative mt-4 " style="z-index: 1;">
         <div class="row align-items-center">
             <!-- Left Column -->
             <div class="col-md-6">
@@ -62,9 +62,12 @@
                     <i class="fa-solid fa-shield-halved text-primary me-2"></i>
                     Build Career Skills with Internship Program from J.P. Morgan, Citi Bank and Bank of America
                 </p>
-<div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4">
-                    <img loading="lazy" src="{{ asset('assets/images/jp.webp') }}" width="190" height="120" alt="card1" title="card1" />
-                    <img loading="lazy" src="{{ asset('assets/images/Citibank.webp') }}" width="190" height="120" alt="card1" title="card1"  />
+                {{-- <p><b>Get a Chance to gain Internship Experience from</b></p> --}}
+
+
+<div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4 mt-2">
+                    <img loading="lazy" src="{{ asset('assets/images/jp.jpg') }}" width="190" height="120" alt="card1" title="card1" />
+                    <img loading="lazy" src="{{ asset('assets/images/Citibank.jpg') }}" width="190" height="120" alt="card1" title="card1"  />
                 </div>
                 <p class="text-dark fs-6 mb-2">
                     <i class="fa-solid fa-briefcase text-success me-2"></i>
