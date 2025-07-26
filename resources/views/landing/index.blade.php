@@ -58,17 +58,18 @@
 
                 <h1 class="fw-bold text-capitalize text-dark" style="font-size: 43px;">Post Graduation Program in Investment Banking</h1>
 
-                <p class="fs-5 fw-semibold text-secondary mt-2 mb-3">
-                    <i class="fa-solid fa-shield-halved text-primary me-2"></i>
-                    Build Career Skills with Internship Program from J.P. Morgan, Citi Bank and Bank of America
-                </p>
+               
                 {{-- <p><b>Get a Chance to gain Internship Experience from</b></p> --}}
 
-
+<p>Program inspired by experts from companies like J.P. Morgan, Citi Bank</p>
 <div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4 mt-2">
                     <img loading="lazy" src="{{ asset('assets/images/jp.jpg') }}" width="190" height="120" alt="card1" title="card1" />
                     <img loading="lazy" src="{{ asset('assets/images/Citibank.jpg') }}" width="190" height="120" alt="card1" title="card1"  />
                 </div>
+                 <p class="fs-5 fw-semibold text-secondary mt-2 mb-3">
+                    <i class="fa-solid fa-shield-halved text-primary me-2"></i>
+                    Build Career Skills with Internship Program from J.P. Morgan, Citi Bank and Bank of America
+                </p>
                 <p class="text-dark fs-6 mb-2">
                     <i class="fa-solid fa-briefcase text-success me-2"></i>
                     4.8/5 (1000+ ratings)
