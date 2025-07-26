@@ -14,7 +14,7 @@
 @media only screen and (max-width: 768px) {
     .breadcumb-area {
         margin: 0px;
-        padding: 87px 0 100px; /* Keep this if you want same padding on mobile, otherwise adjust */
+        padding: 0px 0 100px; /* Keep this if you want same padding on mobile, otherwise adjust */
     }
 }
 
