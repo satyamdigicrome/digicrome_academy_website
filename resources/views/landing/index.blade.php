@@ -130,8 +130,8 @@
                     <div class="features-box text-center flex-fill min-w-0">
                         <div class="date-border">
                             <img loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}" class="lazyload mb-2" alt="data science programs near me" title="data science programs near me">
-                            <p style="color: #f8b700">{{ $course->course_online_payment }}</p>
-                            <span>Next Batch starts on</span>
+                            <p style="color: #f8b700">Next Batch starts from</p>
+                            <span>{{ $course->course_online_payment }}</span>
                         </div>
                     </div>
 
@@ -558,7 +558,7 @@
                         <div style="font-size: 40px; color: #ffc107;" class="mb-3">
                             <i class="fas fa-user-graduate"></i>
                         </div>
-                        <h5 class="fw-bold mb-3">Freshers & Students</h5>
+                        <h5 class="fw-bold mb-3">Students</h5>
                         <p style="font-size: 15px;">
                             Who want practical skills and job ready training to start their career quickly. </p>
                     </div>
