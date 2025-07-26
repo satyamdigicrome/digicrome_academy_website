@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.landing')
 
 @section('title', $meta->title ?? 'Digicrome')
 @section('meta_description', $meta->description ?? 'Digicrome')
@@ -9,8 +9,8 @@
 
     <style>
         .breadcumb-area {
-            padding: 0px;
-        }
+    padding: 183px 0 100px;
+}
 
         .date-border {
             display: flex;
@@ -45,7 +45,7 @@
          src="{{ asset('assets/images/landing.webp') }}" 
          alt="background" 
          class="img-fluid w-100 h-80 position-absolute top-0 start-0 object-cover" 
-         style="z-index: 1;"/>
+         style="z-index: 1;padding-top: 12%;"/>
 
     <div class="container position-relative mt-4 " style="z-index: 1;">
         <div class="row align-items-center">
