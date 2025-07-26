@@ -573,7 +573,7 @@
 
                 <!-- Image Section -->
                 <div class="col-md-6 text-center mb-4 mb-md-0">
-                    <img src="{{ asset('assets/images/carer.webp') }}" alt="Career Support"
+                    <img src="{{ asset('assets/images/l2.webp') }}" alt="Career Support"
                         title="Career Support & Guidance" class="img-fluid"
                         style="width: 300px;  box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 </div>
@@ -701,7 +701,7 @@
 
                 <!-- Right Side Image -->
                 <div class="col-md-6 text-center">
-                    <img src="https://www.meritshot.com/wp-content/uploads/2023/11/banner2.png" alt="Tech Career Boost"
+                    <img src="{{ asset('assets/images/last.webp') }}" alt="Tech Career Boost"
                         title="Accelerate Tech Career" class="img-fluid" style="max-width: 100%; height: auto;">
                 </div>
 
