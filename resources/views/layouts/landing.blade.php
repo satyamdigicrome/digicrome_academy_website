@@ -18,7 +18,7 @@
         @yield('content')
 
 
-    @include('layouts.footer')
+    @include('layouts.landing_footer')
 
 </body>
 </html>

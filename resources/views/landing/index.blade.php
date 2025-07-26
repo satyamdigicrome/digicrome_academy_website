@@ -80,9 +80,9 @@
                 </p>
 
                 <p class="text-dark fs-6 mb-0">
-                    <i class="fa-solid fa-trophy text-danger me-2"></i>
-                    Step into a profitable finance career by learning abilities that help businesses develop and make a positive impact on lives.
-                </p>
+                    {{-- <i class="fa-solid fa-trophy text-danger me-2"></i> --}}
+                  <b>  Step into a profitable finance career by learning abilities that help businesses develop and make a positive impact on lives.
+                  </b></p>
 
                 <br>
                 {{-- <p><b>Note:-</b> This is an educational program only. No investment or financial product is being offered.</p> --}}
@@ -438,7 +438,7 @@
     @if ($plainLogos->count())
         <section>
             <div class="container my-5">
-                <h2 class="section-heading text-center mb-4">Languages and Tools Covered</h2>
+                <h2 class="mb-5 text-center display-5 fw-bold">Languages and Tools Covered</h2>
                 <div class="row justify-content-center mt-4">
                     <div class="container py-4" style="max-width: 1000px;">
                         <div class="row">
@@ -470,7 +470,7 @@
                 <div class="container py-5 text-start">
                     <div class="row align-items-center">
 
-                        <h2 class="mb-5 display-5 fw-bold">Program Learning Outcomes</h2>
+                        <h2 class="  text-center mb-5 display-5 fw-bold">Program Learning Outcomes</h2>
 
                         <!-- Image -->
                         <div class="col-md-6 text-center mb-4 mb-md-0">
@@ -570,6 +570,7 @@
     <section style="padding: 60px 0; background-color: #fdfdfd;">
         <div class="container">
             <div class="row align-items-center">
+                    <h2 class="  text-center mb-4 display-6 fw-bold">Career Support and Guidance</h2>
 
                 <!-- Image Section -->
                 <div class="col-md-6 text-center mb-4 mb-md-0">
@@ -580,7 +581,6 @@
 
                 <!-- Text Section -->
                 <div class="col-md-6">
-                    <h2 class="mb-4 display-6 fw-bold">Career Support and Guidance</h2>
                     <ul style="list-style-type: none; padding-left: 0;">
                         <li class="mb-3">
                             <i class="fas fa-user-check text-primary me-2"></i>

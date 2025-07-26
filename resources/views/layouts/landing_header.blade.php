@@ -19,7 +19,7 @@
         <!-- Phone Number (centered on desktop, hidden on small screens) -->
         <div style="flex: 1; text-align: center; display: none;" class="phone-number-desktop">
             <span style="font-weight: 600; color: #1c1647; font-size: 16px;">
-                📞 +91-9999-999-999
+                📞 +91-629-961-1702
             </span>
         </div>
 
