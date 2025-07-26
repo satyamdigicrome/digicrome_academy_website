@@ -101,7 +101,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/success-stories', [SucessController::class, 'store'])->name('success.store');
     Route::delete('/success-stories/{id}', [SucessController::class, 'destroy'])->name('success.destroy');
     Route::post('testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
-    Route::delete('/testimonials/{id}', [SucessController::class, 'destroy'])->name('testimonials.destroy');
+    Route::delete('/testimonial/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
     Route::get('blogs', [AdminBlogController::class, 'index'])->name('blogs.index');
     Route::get('blogs/create', [AdminBlogController::class, 'create'])->name('blogs.create');
     Route::post('blogs', [AdminBlogController::class, 'store'])->name('blogs.store');
@@ -158,7 +158,7 @@ Route::get('/DS_and_AI', [LandingControler::class, 'landing'])->name('landing');
 Route::get('/refer-and-earn', [ReferController::class, 'index'])->name('refer_and_earn');
 Route::get('/who-we-are', [WhoweareController::class, 'index'])->name('who_we_are');
 Route::get('/success-stories', [SucessStoriesController::class, 'index'])->name('success_stories');
-Route::get('/media_presence', [MediaPresenceController ::class, 'index'])->name('media_presence');
+Route::get('/media-presence', [MediaPresenceController ::class, 'index'])->name('media_presence');
 // Route::get('/upcoming-courses/{slug}', [CourseController::class, 'course_details'])->name('course_details');
 // Route::redirect('/upcoming-courses/{slug}', '/courses/{slug}', 301);
 // Route::get('/courses/{slug}', [CourseController::class, 'course_details'])->name('www.products.show');

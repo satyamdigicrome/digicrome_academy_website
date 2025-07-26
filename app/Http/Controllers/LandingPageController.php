@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Logo;
 use Illuminate\Support\Facades\Cache;
+use App\Models\Testimonial;
 
 
 class LandingPageController extends Controller
@@ -28,13 +29,20 @@ class LandingPageController extends Controller
     ->select('id', 'name', 'slug', 'sku', 'course_online_payment', 'description', 'browser', 'meta_title', 'meta_description', 'meta_keywords', 'image','banner_image', 'tag_line','about','course_free','us_price','dubai_price','price')
     ->where('course_free', 2)
     ->first(); 
+    $testimonials = Testimonial::latest()->get();
      $companyLogos = Cache::remember('company_logos', 60, function () {
         return Logo::where('type', 'companies')->get(['id', 'image']);
     });
+    $plainLogos = Logo::where('type', 'tools')
+    ->where('course_id', $course->id)
+    ->get(['id', 'image']);
+    $certificateLogos = Logo::where('type', 'certificate')
+    ->where('course_id', $course->id)
+    ->get(['id', 'name', 'image']); 
 
     // You can also load other data if needed, like testimonials, logos, etc.
 
-    return view('landing.index', compact('course','companyLogos'));
+    return view('landing.index', compact('course','companyLogos','testimonials','plainLogos','certificateLogos'));
 }
 
 

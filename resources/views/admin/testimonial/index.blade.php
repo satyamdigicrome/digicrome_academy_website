@@ -101,7 +101,7 @@
       <td data-label="Rating">{{ $testimonial->rating }}/5</td>
       <td data-label="User ID">{{ $testimonial->user_id }}</td>
       <td class="actions" data-label="Actions">
-        <form action="{{ route('testimonials.destroy', $testimonial->id) }}" method="POST" onsubmit="return confirm('Delete this testimonial?');">
+        <form action="{{ route('testimonial.destroy', $testimonial->id) }}" method="POST">
           @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-danger btn-sm delete-btn">Delete</button>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 
 
 class TestimonialController extends Controller
@@ -46,15 +48,15 @@ class TestimonialController extends Controller
 
     }
     public function destroy($id)
-    {
-        $story = Testimonial::findOrFail($id);
+{
+    // Find the testimonial by ID or fail
+    $story = Testimonial::findOrFail($id);
 
-        if ($story->image) {
-            Storage::disk('public')->delete($story->image);
-        }
+    // Delete the testimonial record (no need to check for image existence)
+    $story->delete();
 
-        $story->delete();
+    // Redirect back with success message
+    return redirect()->back()->with('success', 'Story deleted successfully!');
+}
 
-        return redirect()->back()->with('success', 'Story deleted successfully!');
-    }
 }
