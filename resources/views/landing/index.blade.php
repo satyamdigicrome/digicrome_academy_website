@@ -61,7 +61,7 @@
                
                 {{-- <p><b>Get a Chance to gain Internship Experience from</b></p> --}}
 
-<p>Program inspired by experts from companies like J.P. Morgan, Citi Bank</p>
+<p class="mt-2">Program inspired by experts from companies like J.P. Morgan, Citi Bank</p>
 <div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4 mt-2">
                     <img loading="lazy" src="{{ asset('assets/images/jp.jpg') }}" width="190" height="120" alt="card1" title="card1" />
                     <img loading="lazy" src="{{ asset('assets/images/Citibank.jpg') }}" width="190" height="120" alt="card1" title="card1"  />
