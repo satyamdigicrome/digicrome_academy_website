@@ -47,11 +47,12 @@
 <div class="breadcumb-area two d-flex align-items-center position-relative" id="breadcrumb"
      style="min-height: 600px; width: 100%;">
     <!-- Image Element -->
-    <img loading="lazy" 
-         src="{{ asset('assets/images/landing.webp') }}" 
-         alt="background" 
-         class="img-fluid w-100 h-80 position-absolute top-0 start-0 object-cover" 
-         style="z-index: 1;padding-top: 12%;"/>
+   <img loading="lazy" 
+     src="{{ asset('assets/images/landing.webp') }}" 
+     alt="background" 
+     class="img-fluid w-100 h-80 position-absolute top-0 start-0 object-cover d-none d-md-block" 
+     style="z-index: 1; padding-top: 12%;" />
+
 
     <div class="container position-relative mt-4 " style="z-index: 1;">
         <div class="row align-items-center">
@@ -96,9 +97,10 @@
             </div>
             
             <!-- Right Column (empty for now) -->
-            <div class="col-md-6 text-end">
-                {{-- <img loading="lazy" src="{{ asset('assets/images/3.webp') }}" class="img-fluid" alt="CIBOP" title="CIBOP" /> --}}
-            </div>
+            <div class="col-md-6 text-end d-block d-md-none">
+    <img class="d-block" loading="lazy" src="{{ asset('assets/images/girl.webp') }}" class="img-fluid" alt="CIBOP" title="CIBOP" />
+</div>
+
         </div>
         
         <!-- Feature Strip Section -->
@@ -480,12 +482,14 @@
                         <h2 class="  text-center mb-5 display-5 fw-bold">Program Learning Outcomes</h2>
 
                         <!-- Image -->
-                        <div class="col-md-6 text-center mb-4 mb-md-0">
-                            <img loading="lazy"
-                                src="{{ asset('assets/images/Outcomes.webp') }}"
-                                alt="Program Outcome Image" title="Program Outcome Image" class="img-fluid"
-                                style="max-width: 300px; height: auto;">
-                        </div>
+                        <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+    <img loading="lazy"
+        src="{{ asset('assets/images/Outcomes.webp') }}"
+        alt="Program Outcome Image" title="Program Outcome Image"
+        class="img-fluid"
+        style="max-width: 300px; height: auto;">
+</div>
+
 
                         <!-- List with Icons -->
                         <div class="col-md-6">
@@ -580,11 +584,12 @@
                     <h2 class="  text-center mb-4 display-6 fw-bold">Career Support and Guidance</h2>
 
                 <!-- Image Section -->
-                <div class="col-md-6 text-center mb-4 mb-md-0">
-                    <img src="{{ asset('assets/images/l2.webp') }}" alt="Career Support"
-                        title="Career Support & Guidance" class="img-fluid"
-                        style="width: 300px;  box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                </div>
+                <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+    <img src="{{ asset('assets/images/l2.webp') }}" alt="Career Support"
+        title="Career Support & Guidance" class="img-fluid"
+        style="width: 300px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+</div>
+
 
                 <!-- Text Section -->
                 <div class="col-md-6">
