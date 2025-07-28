@@ -4,13 +4,13 @@
         <div class="row align-items-center section-title-space">
             <div class="col-lg-6">
                 <div class="section-sub-title">
-                    <h6>INSTRUCTOR</h6>
+                    {{-- <h6>INSTRUCTOR</h6> --}}
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="section_title">
                     <h2 class="heading-like-h1">Introducing the Educators and<br>
-                        Professional Instructor</h2>
+                        Professional Instructors</h2>
                 </div>
             </div>
         </div>

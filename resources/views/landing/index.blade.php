@@ -14,7 +14,7 @@
 @media only screen and (max-width: 768px) {
     .breadcumb-area {
         margin: 0px;
-        padding: 0px 0 100px; /* Keep this if you want same padding on mobile, otherwise adjust */
+        padding: 0px 0 100px;
     }
 }
 
@@ -591,7 +591,7 @@
                     <ul style="list-style-type: none; padding-left: 0;">
                         <li class="mb-3">
                             <i class="fas fa-user-check text-primary me-2"></i>
-                            Get personalized career counseling to help you choose the right path in investment banking.
+                            Get personalized career counselling to help you choose the right path in investment banking.
                         </li>
                         <li class="mb-3">
                             <i class="fas fa-lightbulb text-success me-2"></i>
