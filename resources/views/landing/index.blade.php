@@ -1160,19 +1160,26 @@
   
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Check if you're on the specific page (optional: check URL or use a class)
-            // Example: if this script is only loaded on the IB Landing page, no condition needed
+document.addEventListener("DOMContentLoaded", function () {
+    const isLanding = window.location.pathname === '/investment-banking-course';
+    if (!isLanding) return;
 
-            // Get the source input field by name
-            const sourceField = document.querySelector('input[name="source"]');
+    let tries = 0;
+    const maxTries = 20;
 
-            // If it exists, set its value
-            if (sourceField) {
-                sourceField.value = "ib landing";
-            }
-        });
-    </script>
+    const interval = setInterval(() => {
+        const source = document.querySelector('input[name="source"]');
+        if (source) {
+            source.value = "landing IB";
+            clearInterval(interval);
+            console.log("Set source=landing");
+        }
+        tries++;
+        if (tries >= maxTries) clearInterval(interval);
+    }, 300);
+});
+</script>
+
     <script>
     document.getElementById('leadForm').addEventListener('submit', function(e) {
         e.preventDefault();
