@@ -1052,7 +1052,7 @@
               
                 <!-- Other hidden fields -->
                 <input type="hidden" name="page_name" value="{{ $course->name }}">
-                <input type="hidden" name="source" value="Landing(Course)">
+                <input type="hidden" name="source" value="Landing(IB)">
                 <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
               </div>
               
