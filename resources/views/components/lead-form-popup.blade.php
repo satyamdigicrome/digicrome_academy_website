@@ -90,7 +90,7 @@
       padding: 14px 16px;
       border-radius: 8px;
       border: 1.8px solid #ddd;
-      background: #fafafa;
+      /* background: #fafafa; */
       color: #222;
       font-size: 15px;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;

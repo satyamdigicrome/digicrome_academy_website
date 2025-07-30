@@ -5,7 +5,6 @@
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 
 @section('content')
-    @include('components.lead-form-popup')
 
     <style>
         .breadcumb-area {
@@ -946,7 +945,7 @@
           @csrf
           <input type="hidden" name="course_id" value="{{ $course->id }}">
   
-          <h4 class="custom-lead-modal-title">Quick Response </h4>
+          <h4 class="custom-lead-modal-title">Quick Response</h4>
   
           <input type="text" name="name" placeholder="Name" class="form-control custom-lead-input" required>
           <input type="tel" name="mobile" placeholder="Mobile Number" class="form-control custom-lead-input" required>
