@@ -1327,7 +1327,7 @@
                 // Trigger brochure download
                 window.open(data.download_url, '_blank');
             } else {
-                alert("Submission failed!");
+                alert("Submission failed!"); 
             }
         })
         .catch(err => {

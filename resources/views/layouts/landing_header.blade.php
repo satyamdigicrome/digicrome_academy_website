@@ -25,9 +25,8 @@
 
         <!-- Enroll Now Button -->
         <div style="flex: 1; text-align: right;">
-            <a href="javascript:void(0);" onclick="openModal()" style="
-                background: linear-gradient(145deg, #1d1749, #1a143f);
-                box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+            <a  style="
+                background: linear-gradient(145deg, #ff6200, #ff6200);
                 color: #ffffff;
                 padding: 10px 22px;
                 font-size: 14px;
@@ -36,8 +35,8 @@
                 text-decoration: none;
                 display: inline-block;
                 transition: all 0.3s ease;
-                ">
-                ENROLL NOW
+                " data-bs-toggle="modal" data-bs-target="#leadPopup">
+                DOWNLOAD NOW
             </a>
         </div>
     </div>
