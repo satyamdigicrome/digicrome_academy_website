@@ -953,7 +953,7 @@
           <input type="email" name="email" placeholder="E-mail ID" class="form-control custom-lead-input" required>
         <!-- Hidden City field -->
 <input type="hidden" name="address" value="NA">
-
+<input type="hidden" name="source" value="Landing(broucher)">
 <!-- Hidden Qualification field -->
 <input type="hidden" name="title" value="NA">
 
@@ -1053,7 +1053,7 @@
               
                 <!-- Other hidden fields -->
                 <input type="hidden" name="page_name" value="{{ $course->name }}">
-                <input type="hidden" name="source" value="Website(Course)">
+                <input type="hidden" name="source" value="Landing(Course)">
                 <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
               </div>
               
