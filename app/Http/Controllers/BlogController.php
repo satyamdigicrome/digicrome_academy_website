@@ -17,7 +17,7 @@ class BlogController extends Controller
 
     $meta = Metatag::where('page_name', 'Blog')->first();
 
-    return ('pages.blog', compact('blogs','meta'));
+    return view ('pages.blog', compact('blogs','meta'));
 }
 public function blog_details($slug)
 {
@@ -25,6 +25,6 @@ public function blog_details($slug)
 
     $blog->increment('views');
 
-    return d('pages.blog_details', compact('blog'));
+    return view ('pages.blog_details', compact('blog'));
 }
 }
