@@ -1101,7 +1101,7 @@
         <!-- Hidden City field -->
 <input type="hidden" name="address" value="NA">
 <input type="hidden" name="source" value="Website(broucher)">
-
+<input type="hidden" name="ib" value="">
 <!-- Hidden Qualification field -->
 <input type="hidden" name="title" value="NA">
 <!-- Hidden Experience field -->
@@ -1196,6 +1196,7 @@
                 <input type="hidden" name="address" value="NA">
                 <input type="hidden" name="qualification" value="NA">
                 <input type="hidden" name="experience" value="NA">
+                <input type="hidden" name="ib" value="">
               
                 <!-- Other hidden fields -->
                 <input type="hidden" name="page_name" value="{{ $course->name }}">
