@@ -84,9 +84,9 @@
             
             <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
                 <i class="fa-solid fa-shield-halved text-primary me-2"></i>
-               isko replace kardo. 100% Job Assurance <br>
-                Investment Banking Course for Graduates<br>
-                 and Working Professionals.
+               100% Job AssuranceInvestment Banking Course<br>
+                  for Graduates and Working Professionals.<br>
+                 
               </p>
               
               <p class="text-dark fs-6 mb-2">
