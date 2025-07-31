@@ -14,10 +14,7 @@
         <div class="breadcumb-title">
         <h4>Refer And Earn</h4>
         </div>
-        {{-- <ul>
-        <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-        <li>Refer And Earn</li>
-        </ul> --}}
+
       </div>
       </div>
     </div>
@@ -32,23 +29,7 @@
   <section class="py-5">
     <div class="container text-center">
     <h1 class="mb-5">How It Works</h1>
-    {{-- <div class="row g-4">
-      <div class="col-md-4">
-      <div class="step-icon mb-3">🔗</div>
-      <h5>1.Share</h5>
-      <p>Use your referral code or link to invite friends.</p>
-      </div>
-      <div class="col-md-4">
-      <div class="step-icon mb-3">📝</div>
-      <h5>2.They Register</h5>
-      <p>Your friend joins and enrolls in any course.</p>
-      </div>
-      <div class="col-md-4">
-      <div class="step-icon mb-3">💰</div>
-      <h5>3.You Earn</h5>
-      <p>You get rewards once they enroll successfully!</p>
-      </div>
-    </div> --}}
+    
     </div>
   </section>
          <style>
@@ -64,7 +45,7 @@
 <div class="container py-5" id="referral-form">
   <div class="row align-items-start g-5">
     
-    <!-- Referral Form -->
+    
     <div class="col-lg-6">
       <div class="p-4 shadow rounded bg-white">
         <h2 class="mb-4" style="color: #f29c12; font-weight: 700;">Referral Form</h2>
@@ -105,7 +86,6 @@
       </div>
     </div>
 
-    <!-- Affiliate Program Info -->
     <div class="col-lg-6">
       <div class="p-4 shadow rounded bg-white">
         <h2 class="mb-3" style="color: #f29c12; font-weight: 700;">Affiliate Program</h2>

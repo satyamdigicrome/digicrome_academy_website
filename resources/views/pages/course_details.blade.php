@@ -312,7 +312,23 @@
                 </div>
                 <!-- Right: Company Image -->
                 <div class="col-md-6 text-center">
-                    <img loading="lazy"src="{{ asset('assets/images/About-Page.webp') }}" alt="Company Image" title="Company Image" class="img-fluid">
+                    <img 
+        loading="lazy"
+        src="{{ asset('assets/images/gp.webp') }}" 
+        alt="Company Image"
+        title="Company Image"
+        class="img-fluid"
+        style="
+            max-width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+            transition: all 0.3s ease-in-out;
+        "
+        onmouseover="this.style.transform='scale(1.02) perspective(1000px) rotateX(0deg) rotateY(0deg)'"
+        onmouseout="this.style.transform='perspective(1000px) rotateX(5deg) rotateY(-5deg)'"
+    >
+                    {{-- <img loading="lazy"src="{{ asset('assets/images/About-Page.webp') }}" alt="Company Image" title="Company Image" class="img-fluid"> --}}
                 </div>
             </div>
         </div>
