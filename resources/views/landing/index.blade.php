@@ -523,7 +523,7 @@
         </div>
     </section>
      <div class="text-center">
-    <button class="btn btn-primary" style="font-size: 16px; padding: 10px 20px; background-color: #ff6200;" data-bs-toggle="modal" data-bs-target="#leadPopup">
+    <button class="btn btn-primary" style="font-size: 16px; padding: 10px 20px; " data-bs-toggle="modal" data-bs-target="#leadPopup">
         Free Guide
     </button>
 </div>

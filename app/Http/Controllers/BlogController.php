@@ -17,7 +17,7 @@ class BlogController extends Controller
 
     $meta = Metatag::where('page_name', 'Blog')->first();
 
-    return d('pages.blog', compact('blogs','meta'));
+    return ('pages.blog', compact('blogs','meta'));
 }
 public function blog_details($slug)
 {
