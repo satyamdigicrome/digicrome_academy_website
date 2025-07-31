@@ -953,6 +953,8 @@
         <!-- Hidden City field -->
 <input type="hidden" name="address" value="NA">
 <input type="hidden" name="source" value="Landing(broucher)">
+<input type="hidden" name="ib" value="ib">
+
 <!-- Hidden Qualification field -->
 <input type="hidden" name="title" value="NA">
 
@@ -1053,6 +1055,7 @@
                 <!-- Other hidden fields -->
                 <input type="hidden" name="page_name" value="{{ $course->name }}">
                 <input type="hidden" name="source" value="Landing(IB)">
+                <input type="hidden" name="ib" value="ib">
                 <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
               </div>
               
