@@ -84,7 +84,7 @@
             
             <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
                 <i class="fa-solid fa-shield-halved text-primary me-2"></i>
-               100% Job AssuranceInvestment Banking Course<br>
+               100% Job Assurance Investment Banking Course<br>
                   for Graduates and Working Professionals.<br>
                  
               </p>
