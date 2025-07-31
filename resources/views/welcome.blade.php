@@ -7,14 +7,10 @@
     <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
 @endpush
 @section('content')
-    <!--==================================================-->
-    <!-- Start educate Hero Area Area style-one -->
-    <!--==================================================-->
     <section class="hero_area style-one d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-lg-6">
-                    <!-- hero content -->
                     <div class="hero_content">
                         <h5><i class="bi bi-check2"></i>Enhance Your future skills, with just a click</h5>
                         <h1>Start building your<br>
@@ -32,20 +28,15 @@
                         @endif
                         <p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and
                             position yourself as the top choice for employers in your industry.</p>
-                        <!-- hero button -->
                         <div class="hero-button">
                             <div class="hero-btn">
                                 <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>
-                            {{-- <div class="hero-course-btn">
-								<a href="{{ route('course') }}">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
-							</div> --}}
                         </div>
                     </div>
                     <div class="hero-rating-box">
                         <div class="hero-rating-icon">
-                            {{-- <img loading="lazy"src="{{ asset('assets/images/home-one/star-icon.webp') }}" alt="star"> --}}
                             <span>10k+</span>
                         </div>
                         <div class="hero-rating-item-box">
@@ -74,9 +65,6 @@
                                 loading="lazy"src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}"
                                 alt="Digicrome thumb" title="Digicrome thumb">
                         </div>
-                        {{-- <div class="hero-shape1 rotateme">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape1.webp') }}" alt="shape1">
-						</div> --}}
                         <div class="hero-arrow-shape">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
                                 alt="digicrome arrow" title="Digicrome arrow">
@@ -105,12 +93,7 @@
             </div>
         </div>
     </section>
-    <!--==================================================-->
-    <!-- End educate Hero  Area -->
-    <!--==================================================-->
-    <!--==================================================-->
-    <!-- Start educate feature Area-->
-    <!--==================================================-->
+
     <section class="feature-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">
@@ -197,24 +180,13 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="feature-shape1">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/feature-shape1.webp') }}" alt="shape">
-			</div>
-			<div class="feature-shape2 rotateme">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/feature-shape2.webp') }}" alt="shape2">
-			</div> --}}
+       
         </div>
     </section>
-    <!--==================================================-->
-    <!-- End educate feature Area-->
-    <!--==================================================-->
 
     <div class="container">
         <x-logo-slider :companyLogos="$companyLogos" />
     </div>
-    <!--==================================================-->
-    <!-- Start educate About Area style-one -->
-    <!--==================================================-->
     <section class="about-area style-one">
         <div class="container">
             <div class="row">
@@ -240,7 +212,6 @@
                 </div>
                 <div class="col-xl-6 col-lg-12">
                     <div class="about_content">
-                        <!-- section title -->
                         <div class="section-sub-title">
                             <h6>ABOUT US</h6>
                         </div>
@@ -298,9 +269,6 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="about-shape4">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/about-shape4.webp') }}" alt="shape4">
-			</div> --}}
             <div class="about-shape5">
                 <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="digicrome shape"
                     title="digicrome shape">
@@ -344,9 +312,7 @@
                     <img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
                         title="digicrome star">
                 </div>
-                {{-- <div class="brand-line-shape">
-				<img loading="lazy"src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
-			</div> --}}
+               
             </div>
         </div>
     @else
@@ -357,7 +323,6 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="about-thumb-wrapper">
 						<div class="about-thumb zoom-sequence">
-							<!-- Image container with fixed height -->
 							<div class="image-container">
                                 <img class="image" loading="lazy"
                                      src="{{ asset('assets/images/digi.webp') }}" alt="First image" title="First image">
@@ -368,15 +333,6 @@
                             </div>
                             
 					
-							{{-- <div class="about-call-box">
-								<div class="call-icon">
-									<span><i class="fa-solid fa-phone"></i></span>
-								</div>
-								<div class="call-content">
-									<h5>Call Us:</h5>
-									<h3>01205222560</h3>
-								</div>
-							</div> --}}
 						</div>
 					</div>
 					
@@ -387,7 +343,7 @@
 					
 						.image-container {
     width: 100%;
-    max-width: 500px; /* increased from 400px */
+    max-width: 500px; 
     aspect-ratio: 2/3;
 }
 
@@ -396,14 +352,13 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 	
-						/* Slower zoom + fade effect */
 .zoom-sequence .image {
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
     transform: scale(0.8);
-    transition: opacity 1.5s ease, transform 1.5s ease;  /* was 0.8s, now 1.5s */
+    transition: opacity 1.5s ease, transform 1.5s ease;  
 }
 
 					
@@ -439,11 +394,10 @@
 					
 							showImage(current);
 					
-							// Slower switching between images
 setInterval(() => {
     current = (current + 1) % images.length;
     showImage(current);
-}, 5000); // was 3000ms, now 5000ms (5 seconds)
+}, 5000); 
 
 						});
 					</script>
@@ -451,7 +405,6 @@ setInterval(() => {
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="about_content">
-                        <!-- section title -->
                         <div class="section-sub-title">
                             <h6>Our Achievement</h6>
                         </div>
@@ -474,14 +427,7 @@ setInterval(() => {
                                 we continue to set new benchmarks in the education sector.
                             </p>
                         </div>
-                        {{-- 					
-					<div class="about-item-list">
-						<ul>
-							<li><i class="bi bi-check-lg"></i>Expert Teacher</li>
-							<li><i class="bi bi-check-lg"></i>Educational Psychology</li>
-							<li><i class="bi bi-check-lg"></i>Lifelong Learning</li>
-						</ul>
-					</div> --}}
+                       
                         <div class="about-btn">
                             <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
                                     class="flaticon flaticon-right-arrow"></i></a>
@@ -489,17 +435,10 @@ setInterval(() => {
                     </div>
                 </div>
             </div>
-            {{-- <div class="about-shape51">
-			<img loading="lazy"src="assets/images/home-five/about-shape51.webp" alt="shape51">
-		</div>
-		<div class="about-shape53">
-			<img loading="lazy"src="assets/images/home-five/about-shape53.webp" alt="shape53">
-		</div> --}}
+      
         </div>
     </section>
-    <!--==================================================-->
-    <!-- End educate About Area -->
-    <!--==================================================-->
+ 
     <div class="brand-area style-one mt-4">
         <div class="container">
             <div class="row">
@@ -519,17 +458,12 @@ setInterval(() => {
                 </div>
 
                 <div class="col-lg-5">
-                    <!-- Main heading -->
                     <div class="section_title mb-4">
                         <h2 class="heading-like-h1">Our Certification Partners</h2>
                     </div>
-
-                    <!-- Description -->
                     <p class="mb-4">
                         Empowering learners through globally recognized certifications with industry-leading organizations.
                     </p>
-
-                    <!-- List of awards with cup icons aligned -->
                     <ul class="list-unstyled">
                         <li class="d-flex align-items-start mb-2">
                             <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
@@ -548,45 +482,7 @@ setInterval(() => {
             </div>
         </div>
     </div>
-    <!--==================================================-->
-    <!-- Start educate Marquee Area-->
-    <!--==================================================-->
-    {{-- <div class="marquee-section">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="marquee">
-						<div class="marquee-block">
-							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
-										alt="icon"></span>learning innovation</h3>
-							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
-										alt="icon"></span>worldwide learners</h3>
-							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
-										alt="icon"></span>unique knowledge</h3>
-							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
-										alt="icon"></span>dream today</h3>
-						</div>
-						<div class="marquee-block">
-							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
-										alt="icon"></span>learning innovation</h3>
-							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
-										alt="icon"></span>worldwide learners</h3>
-							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
-										alt="icon"></span>unique knowledge</h3>
-							<h3><span><img loading="lazy"src="{{ asset('assets/images/home-one/marquee-icon.webp') }}"
-										alt="icon"></span>dream today</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> --}}
-    <!--==================================================-->
-    <!-- End educate Marquee Area-->
-    <!--==================================================-->
-    <!--==================================================-->
-    <!-- Start educate case study Area style-one -->
-    <!--==================================================-->
+   
     <div class="case-study-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">
@@ -637,8 +533,6 @@ setInterval(() => {
                         });
                     });
                 });
-
-                // Show Upcoming by default
                 iso.arrange({
                     filter: '.Upcoming'
                 });
@@ -648,17 +542,12 @@ setInterval(() => {
 
         <div class="container">
             <div class="row image_load">
-                {{-- Upcoming Courses --}}
                 @foreach ($upcomingCourses as $course)
                     <div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
                         <div class="case-study-single-box">
-                            {{-- Use same HTML course card template --}}
                             <div class="case-study-thumb">
                                 <img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="case-study-thumb"
                                     title="case-study-thumb">
-                                {{-- <div class="case-meta-top">
-									<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
-								</div> --}}
                             </div>
                             <div class="case-study-content">
                                 <h5>Courses</h5>
@@ -666,34 +555,12 @@ setInterval(() => {
                                         href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
                                 </h4>
                                 <div class="case-rating">
-                                    {{-- <ul>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star"></i></li>
-										<li><i class="fa-solid fa-star-half-stroke"></i></li>
-									</ul> --}}
+                                 
                                     <div class="case-rating-num">
                                         <span>Duration: {{ $course->course_duration }}</span>
                                     </div>
                                 </div>
-                                {{-- <div class="case-autor-box">
-									<div class="case-autor-img">
-										<img loading="lazy"src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
-									</div>
-									<div class="case-autor-content">
-										<h3>Instructor</h3>
-										<p>Instructor</p>
-									</div>
-								</div> --}}
-                                {{-- <div class="case-course-content">
-									<div class="course-lesson">
-										<span><i class="fa-regular fa-file-lines"></i> 12 Lessons</span>
-									</div>
-									<div class="course-student">
-										<span><i class="fa-regular fa-user"></i> 1200 Students</span>
-									</div>
-								</div> --}}
+                               
                                 <br><br>
                                 <div class="course-btn">
                                     <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
@@ -704,18 +571,14 @@ setInterval(() => {
                     </div>
                 @endforeach
 
-                {{-- Courses by Collection --}}
                 @foreach ($collections as $collection)
                     @foreach ($collection->courses as $course)
                         <div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }}">
                             <div class="case-study-single-box">
-                                {{-- Same card HTML reused --}}
                                 <div class="case-study-thumb">
                                     <img loading="lazy" src="{{ asset('storage/' . $course->image) }}"
                                         alt="case-study-thumb" title="case-study-thumb">
-                                    {{-- <div class="case-meta-top">
-										<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
-									</div> --}}
+                                
                                 </div>
                                 <div class="case-study-content">
                                     <h5>{{ $collection->name }}</h5>
@@ -723,34 +586,12 @@ setInterval(() => {
                                             href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
                                     </h4>
                                     <div class="case-rating">
-                                        {{-- <ul>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star-half-stroke"></i></li>
-										</ul> --}}
+                                    
                                         <div class="case-rating-num">
                                             <span>Duration: {{ $course->course_duration }}</span>
                                         </div>
                                     </div>
-                                    {{-- <div class="case-autor-box">
-										<div class="case-autor-img">
-											<img loading="lazy"src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
-										</div>
-										<div class="case-autor-content">
-											<h3>Instructor</h3>
-											<p>Instructor</p>
-										</div>
-									</div>
-									<div class="case-course-content">
-										<div class="course-lesson">
-											<span><i class="fa-regular fa-file-lines"></i> 12 Lessons</span>
-										</div>
-										<div class="course-student">
-											<span><i class="fa-regular fa-user"></i> 1200 Students</span>
-										</div>
-									</div> --}}
+                                  
                                     <br><br>
                                     <div class="course-btn">
                                         <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
@@ -766,18 +607,12 @@ setInterval(() => {
         </div>
 
     </div>
-    <!--==================================================-->
-    <!--End educate case study Area -->
-    <!--==================================================-->
-    <!--==================================================-->
-    <!-- Start educate why choose Area -->
-    <!--==================================================-->
+   
     <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="choose-content">
-                        <!-- section title -->
                         <div class="section-sub-title">
                             <h6>why choose us?</h6>
                         </div>
@@ -855,25 +690,18 @@ setInterval(() => {
             </div>
         </div>
     </div>
-    <!--==================================================-->
-    <!-- Start educate why choose Area -->
-    <!--==================================================-->
+  
     <div class="brand-area style-one mt-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
-                    <!-- Main heading -->
                     <div class="section_title mb-4">
                         <h2 class="heading-like-h1">Moments of Honour</h2>
                     </div>
-
-                    <!-- Description -->
                     <p class="mb-4">
                         In our EdTech journey of <b> more than a decade,</b> we have received numerous awards.<br>
                         Some of the recent notable awards we have received in analytics are:
                     </p>
-
-                    <!-- List of awards with cup icons aligned -->
                     <ul class="list-unstyled">
                         <li class="d-flex align-items-start mb-2">
                             <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
@@ -905,29 +733,21 @@ setInterval(() => {
             </div>
         </div>
     </div>
-    <!--==================================================-->
-    <!-- Start educate course design offer Area -->
-    <!--==================================================-->
     <div class="course-design-offer-area style-one">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="course-design-thumb">
-    {{-- <img loading="lazy" src="{{ asset('assets/images/usss.jpg') }}" alt="course-design-thumb" title="course-design-thumb"> --}}
     <div class="course-video-icon">
-        <!-- Video Icon & Button (For YouTube) -->
         <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/HLiQiTTbX8g">
             <i class="fa-classic fa-solid fa-play fa-fw"></i>
         </a>
         
-        <!-- Local Video (For MP4) -->
         <a href="{{ asset('assets/Final.mp4') }}" class="video-vemo-icon">
             <i class="fa-classic fa-solid fa-play fa-fw"></i>
         </a>
     </div>
 </div>
-
-<!-- If you want to show the actual video on clicking, use video tag -->
 <video controls style="width:100%; max-width:600px;">
     <source src="{{ asset('assets/Final.mp4') }}" type="video/mp4">
     Your browser does not support the video tag.
@@ -957,10 +777,7 @@ setInterval(() => {
                                 <a href="javascript:void(0);" onclick="openModal()">EXPLORE NOW<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>
-                            {{-- <div class="course-offer-discount">
-								<h5>10%</h5>
-								<span>off</span>
-							</div> --}}
+                            
                         </div>
                         <div class="offer-thumb">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
@@ -971,9 +788,6 @@ setInterval(() => {
             </div>
         </div>
     </div>
-    <!--==================================================-->
-    <!-- end educate course design offer Area -->
-    <!--==================================================-->
     @if(count($videos) > 0)
     <section class="video-slider py-5">
         <div class="container">
@@ -1003,15 +817,9 @@ setInterval(() => {
 @endforeach
             </div>
         </div>
-    
-        <!-- YouTube Modal -->
-        <!-- YouTube Modal -->
-<!-- YouTube Modal -->
 <div class="modal fade" id="youtubeModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered custom-youtube-dialog">
         <div class="youtube-modal-box">
-
-            <!-- ✅ Close Button -->
             <button type="button"
                     class="btn-close btn-close-white custom-close-btn"
                     data-bs-dismiss="modal"
@@ -1027,13 +835,11 @@ setInterval(() => {
 </div>
 
 
-<!-- Modal CSS -->
 <style>
-    /* Maintain 9:16 aspect ratio (YouTube Shorts look) */
     .responsive-video-wrapper {
         position: relative;
         width: 100%;
-        padding-top: 177.77%; /* 9:16 aspect ratio (16/9 = 56.25%; so 9/16 = 177.77%) */
+        padding-top: 177.77%; 
         background-color: #000;
     }
 
@@ -1055,7 +861,6 @@ setInterval(() => {
     position: relative;
 }
 
-/* Video wrapper for 9:16 shorts */
 .youtube-video-wrapper {
     position: relative;
     width: 100%;
@@ -1142,7 +947,6 @@ setInterval(() => {
             }
         </style>
     
-        <!-- JS Script -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 $('.gif-carousel').owlCarousel({
@@ -1184,96 +988,11 @@ setInterval(() => {
     
     
 
-    <!-- Updated Style Only -->
 
-
-
-    <!--==================================================-->
-    <!-- Start educate testimonial Area -->
-    <!--==================================================-->
-    {{-- <div class="testimonial-area style-one">
-		<div class="container">
-			<div class="row section-title-space align-items-center">
-				<div class="col-lg-6">
-					<div class="section-sub-title">
-						<h6>TESTIMONIALS</h6>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="section_title">
-						<h1>What Students Say About </h1>
-						<h1>Digicrome Experience</h1>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="testi-thumb-wrapper">
-						<div class="testimonial-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="testimonial-thumb" title="testimonial-thumb">
-						</div>
-						<div class="testi-dot-shape">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="testi-dot-shape" title="testi-dot-shape">
-						</div>
-						<div class="testi-map-shape">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="testi-map-shape" title="testi-map-shape">
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="row">
-						<div class="testi-list owl-carousel">
-							@foreach ($testimonials as $testimonial)
-								<div class="col-lg-12">
-									<div class="testi-box">
-										<div class="single-testi-box">
-											<div class="testi-quote">
-												<img loading="lazy"src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="testi-quote" title="testi-quote">
-											</div>
-											<div class="testi-title">
-												<h3>{{ $testimonial->tagline }}</h3>
-											</div>
-											<div class="testi-desc">
-												<p>{{ $testimonial->review }}</p>
-											</div>
-											<div class="testi-ratting">
-												<ul>
-													@for ($i = 1; $i <= 5; $i++)
-														@if ($i <= floor($testimonial->rating))
-															<li><i class="fa-solid fa-star"></i></li>
-														@elseif ($i == ceil($testimonial->rating) && $testimonial->rating != floor($testimonial->rating))
-															<li><i class="fa-solid fa-star-half-stroke fa-fw"></i></li>
-														@else
-															<li><i class="fa-regular fa-star"></i></li>
-														@endif
-													@endfor
-												</ul>
-											</div>
-										</div>
-										<div class="testi-autor-box">
-											<div class="testi-autor">
-												<img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}" alt="testi-autor" title="testi-autor" 
-													style="width: 60px; height: 60px; border-radius: 50%;">
-											</div>
-											<div class="testi-autor-content">
-												<h5 class="autor-title">{{ $testimonial->name }}</h5>
-												<p class="autor-desi">{{ $testimonial->profession }}</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							@endforeach
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> 
-	</div> --}}
     <div class="testimonial-area style-two mt-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <!-- section title -->
                     <div class="section-sub-title two">
                         <h6><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
                                 alt="subtitle-icon" title="subtitle-icon">TESTIMONIALS</h6>
@@ -1345,66 +1064,9 @@ setInterval(() => {
             </div>
         </div>
     </div>
-    <!--==================================================-->
-    <!-- end educate testimonial Area -->
-    <!--==================================================-->
-    <!--==================================================-->
-    <!-- Start educate team Area -->
-    <!--==================================================-->
-
-
-
-
     <x-mentor-popup :mentors="$mentors" />
 
 
-
-
-
-    <!--==================================================-->
-    <!-- end educate team Area -->
-    <!--==================================================-->
-    <!--==================================================-->
-    <!-- Start educate call to action Area -->
-    <!--==================================================-->
-    {{-- <div class="call-to-action style-one">
-		<div class="container">
-			<div class="row align-items-center call-to-bg">
-				<div class="col-xl-5 col-lg-4">
-					<div class="call-to-title">
-						<h3>Start learning from Anywhere!</h3>
-						<h3>Anytime, get a free trial.</h3>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-4">
-					<div class="call-to-wrapper">
-						<div class="call-to-box">
-							<div class="call-to-icon">
-								<img loading="lazy"src="{{ asset('assets/images/home-one/call-icon.webp') }}" alt="call-to-icon" title="call-to-icon">
-							</div>
-							<div class="call-to-content">
-								<h6>Call Anytime</h6>
-								<h4>01205222560</h4>
-							</div>
-						</div>
-						<div class="call-to-arrow">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/call-arrow.webp') }}" alt="call-to-arrow" title="call-to-arrow">
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4">
-					<div class="call-logo-box">
-						<div class="call-to-logo">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="call-to-logo" title="call-to-logo">
-						</div>
-						<div class="call-rating">
-							<p><span>890+</span> Trustpilot 4.9 Ratings</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> --}}
     <div class="testimonial-area style-inner">
         <div class="container">
             <div class="row section-title-space">
@@ -1430,9 +1092,7 @@ setInterval(() => {
                             <span>+</span>
                             <p>Reviews</p>
                         </div>
-                        {{-- <div class="testi-inner-shape">
-							<img loading="lazy"src="{{ asset('assets/images/inner-img/testi-shape-in.webp') }}" alt="testi-inner-shape" title="testi-inner-shape">
-						</div> --}}
+                       
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-12">
@@ -1446,21 +1106,11 @@ setInterval(() => {
                                                 <img loading="lazy"src="{{ asset('assets/images/home-three/testi-quote.webp') }}"
                                                     alt="testi-quote" title="testi-quote">
                                             </div>
-                                            {{-- <div class="testi-title">
-												<h3>Success Story</h3>
-											</div> --}}
+                                           
                                             <div class="testi-desc">
                                                 <p>{{ $story->stoire }}</p>
                                             </div>
-                                            {{-- <div class="testi-ratting">
-												<ul>
-													<li><i class="fa-solid fa-star"></i></li>
-													<li><i class="fa-solid fa-star"></i></li>
-													<li><i class="fa-solid fa-star"></i></li>
-													<li><i class="fa-solid fa-star"></i></li>
-													<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-												</ul>
-											</div> --}}
+                                          
                                             <div class="testi-autor-box">
                                                 <div class="testi-autor">
                                                     <img loading="lazy"src="{{ asset('storage/' . $story->image) }}"
@@ -1486,15 +1136,12 @@ setInterval(() => {
             </div>
         </div>
     </div>
-    <!--==================================================-->
-    <!-- end educate call to action Area -->
-    <!--==================================================-->
+
     <section class="py-5">
         <div class="container text-center">
             <h2 class="text-center mb-4" style="font-size: 2rem;">
                 Our <span style="color: #f29c12;">Data Science with AI </span> Certification Course Journey
             </h2>
-            {{-- <p class="mb-4 fs-5 text-muted">Knowing us before growing with us” your Success way!</p> --}}
             <img loading="lazy"src="{{ asset('assets/images/home-one/phase.webp') }}" alt="Vision Image"
                 title="Vision Image" class="img-fluid rounded shadow-lg" />
         </div>
@@ -1504,7 +1151,6 @@ setInterval(() => {
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="choose-content">
-                        <!-- section title -->
                         <div class="section-sub-title">
                             <h6>Explore Career Opportunities in the most future-oriented sector</h6>
                         </div>
@@ -1547,36 +1193,21 @@ setInterval(() => {
                     <div class="choose-thumb">
                         <img loading="lazy"src="{{ asset('assets/images/home-one/roles.webp') }}" alt="roles"
                             title="roles">
-                        {{-- <div class="choose-skill-box">
-							<div class="choose-skill-icon">
-								<img loading="lazy"src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}" alt="rat">
-							</div>
-							<div class="choose-skill-content">
-								<h3 class="counter">26</h3>
-								<span>+</span>
-								<p>Years of Experiences</p>
-							</div>
-						</div> --}}
+                        
                         <div class="choose-shape-dot">
-                            {{-- <img loading="lazy"src="{{ asset('assets/images/home-one/choose-dot.webp') }}" alt="dot-shape"> --}}
                         </div>
                         <div class="choose-shape-star">
-                            {{-- <img loading="lazy"src="{{ asset('assets/images/home-one/choose-star.webp') }}" alt="star-shape"> --}}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="choose-shape1">
-                {{-- <img loading="lazy"src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape"> --}}
             </div>
             <div class="choose-shape2">
-                {{-- <img loading="lazy"src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape"> --}}
             </div>
         </div>
     </div>
-    <!--==================================================-->
-    <!-- start educate blog Area -->
-    <!--==================================================-->
+  
     <div class="blog-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">
@@ -1640,7 +1271,6 @@ setInterval(() => {
             </div>
         </div>
     </div>
-    {{-- @if ($userCountry === 'India') --}}
     <section class="company-form contactpage-form" style="padding-top:10px;">
         <div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
             <h2 class="text-center mb-2" style="font-size: 2rem;">
@@ -1664,14 +1294,6 @@ setInterval(() => {
         </div>
     </section>
 
-    {{-- @else --}}
-    {{-- @endif --}}
-
-    <!--==================================================-->
-    <!-- end educate blog Area -->
-    <!--==================================================-->
-
-    <!-- Modal -->
     <div id="formModal" class="modal" id="mm">
         <div class="modal-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">

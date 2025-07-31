@@ -14,10 +14,7 @@
                     <div class="breadcumb-title">
                         <h1 class="display-5 fw-bold">Terms & Conditions</h1>
                     </div>
-                    {{-- <ul>
-                        <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-                        <li>Terms & Conditions</li>
-                    </ul> --}}
+   
                 </div>
             </div>
         </div>

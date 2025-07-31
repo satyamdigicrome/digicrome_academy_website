@@ -44,7 +44,6 @@ class MediaPresenceController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            // Delete old image
             if ($entry->image) {
                 Storage::disk('public')->delete($entry->image);
             }

@@ -13,7 +13,6 @@ class KeyFeatureController extends Controller
 {
     public function index()
     {
-        // Retrieve all apart records with related courses and users
         $keyfeature = KeyFeature::with(['course', 'user'])->get();
         $courses = Course::all();
         return view('admin.keyfeature.index', compact('keyfeature', 'courses'));
@@ -30,13 +29,10 @@ class KeyFeatureController extends Controller
             'course_id.*' => 'exists:courses,id',
         ]);
 
-        // Store the image and get the path
         $imagePath = $request->file('image')->store('keyfeature', 'public');
 
-        // Get the authenticated user ID
         $userId = auth()->id();
 
-        // Create a new apart record
         foreach ($request->course_id as $courseId) {
         KeyFeature::create([
             'image' => $imagePath,
@@ -52,10 +48,8 @@ class KeyFeatureController extends Controller
 
     public function destroy(KeyFeature $keyfeature)
     {
-        // Delete the image from storage
         Storage::disk('public')->delete($keyfeature->image);
         
-        // Delete the apart record
         $keyfeature->delete();
         return redirect()->route('keyfeature.index')->with('success', 'keyfeature deleted successfully.');
     }

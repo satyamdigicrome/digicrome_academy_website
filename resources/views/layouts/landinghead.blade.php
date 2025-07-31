@@ -18,41 +18,23 @@
     <meta name="og:country-name" content="India" />
     <meta name="og:locale" content="en-IN" />
     <meta property="og:image" content="https://www.digicrome.com/assets/images/cover-image.webp" />
-    <!-- Fonts -->
     <link rel="canonical" href="{{ url()->current() }}" />
     <link rel="preconnect" as="font" type="font/woff2" href="https://fonts.bunny.net" crossorigin="anonymous">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
-    <!-- bootstrap CSS -->
     <link  rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css"  media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- carousel CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- animate CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- animated-text CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- font-awesome CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- theme-default CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- meanmenu CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- transitions CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- venobox CSS -->
-    {{-- <link rel="stylesheet" href="venobox/venobox.css" type="text/css') }}" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload"> --}}
-    <!-- flaticon -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- bootstrap icons -->
     <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- responsive CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- Coustom Animation CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <!-- odometer CSS -->	
     <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
 
     <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">	
@@ -87,16 +69,12 @@
       ]
     }
     </script>
-    <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-NLXJ6MV');</script>
-  <!-- End Google Tag Manager -->
 
-<!--Start of Tawk.to Script-->
-<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -108,7 +86,5 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
-    <!--End of Tawk.to Script-->
-    <!-- Scripts -->
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])

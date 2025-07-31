@@ -121,13 +121,10 @@ public function searchCourses(Request $request)
 
     public function showByCategory($slug)
 {
-    // Fetch the collection by slug
-    $collection = Collection::where('slug', $slug)->firstOrFail(); // This will throw a 404 if the collection is not found
-    
-    // Get the courses associated with the collection
+    $collection = Collection::where('slug', $slug)->firstOrFail(); 
+
     $courses = $collection->courses()->where('status', 1)->get();
 
-    // Return the view with the courses and collection data
     return view('pages.course', compact('courses', 'collection'));
 }
 

@@ -17,7 +17,6 @@ class JobController extends Controller
 }
 public function show_job()
 {
-    // All applications with vacancy info, latest first
     $applications = CareerApplication::with('vacancy')->orderBy('created_at', 'desc')->get();
     return view('admin.job.show_job', compact('applications'));
 }
@@ -26,12 +25,10 @@ public function delete_application($id)
 {
     $application = CareerApplication::findOrFail($id);
 
-    // Delete resume file from storage if exists
     if ($application->resume_path && Storage::disk('public')->exists($application->resume_path)) {
         Storage::disk('public')->delete($application->resume_path);
     }
 
-    // Delete application from DB
     $application->delete();
 
     return redirect()->route('show_job')->with('success', 'Application deleted successfully.');

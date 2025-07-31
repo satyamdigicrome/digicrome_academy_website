@@ -21,16 +21,12 @@ class ExtraController extends Controller
     $request->validate([
         'heading' => 'required|string|max:255',
         'part' => 'required|string|max:255',
-        'course_id' => 'required|array', // Validate as an array
-        'course_id.*' => 'exists:courses,id', // Validate each course ID
+        'course_id' => 'required|array', 
+        'course_id.*' => 'exists:courses,id', 
     ]);
 
-    // Store the image and get the path
-
-    // Get the authenticated user ID
     $userId = auth()->id();
 
-    // Loop through each selected course and create a key point
     foreach ($request->course_id as $courseId) {
         Extra::create([
             'heading' => $request->heading,
@@ -54,18 +50,16 @@ public function filter(Request $request)
 {
     $query = Extra::query(); 
 
-    // Filter by course_id if provided
     if ($request->filled('course_id')) {
         $query->where('course_id', $request->course_id);
     }
 
-    // Filter by part if provided
     if ($request->filled('part')) {
         $query->where('part', $request->part);
     }
 
-    $extras = $query->with('course')->get(); // Eager load the course relationship
-    $courses = Course::all(); // Get all courses
+    $extras = $query->with('course')->get(); 
+    $courses = Course::all();
 
     return view('admin.extra.index', compact('extras', 'courses'));
 }

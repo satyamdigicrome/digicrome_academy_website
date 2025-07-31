@@ -1,39 +1,16 @@
-<!-- ========= Prealoader ==============-->
-{{-- <div class="loading-screen" id="loading-screen">
-	<span class="bar top-bar"></span>
-	<span class="bar down-bar"></span>
-	<div class="animation-preloader">
-		<div class="spinner"></div>
-		<div class="txt-loading">
-			<span data-text-preloader="E" class="letters-loading">E</span>
-			<span data-text-preloader="d" class="letters-loading">d</span>
-			<span data-text-preloader="u" class="letters-loading">u</span>
-			<span data-text-preloader="c" class="letters-loading">c</span>
-			<span data-text-preloader="a" class="letters-loading">a</span>
-			<span data-text-preloader="t" class="letters-loading">t</span>
-			<span data-text-preloader="e" class="letters-loading">e</span>
-		</div>
-	</div>
-</div> --}}
-<!--========= End Prealoader ============== -->
-
-
 <style>
 	.footer-logo11 {
-    width: 59%;          /* Default width for desktop */
+    width: 59%;          
 }
 
 @media (max-width: 768px) {
     .footer-logo11 {
-		width: 35%;          /* Default width for desktop */
+		width: 35%;          
     }
 }
 
 	</style>
 
-<!--==================================================-->
-<!-- Start educate Header top area -->
-<!--==================================================-->
 <div class="header-top-area">
 	<div class="container-fluid">
 		<div class="row header-top">
@@ -41,7 +18,6 @@
 				<div class="header-top-welcome" style="font-size: 12px;">
 					@include('components.breadcrumb')
 
-					{{-- <p>Welcome to <a href="/">Digicrome Pvt. Ltd.</a>Think Big Think Digital</p> --}}
 				</div>
 			</div>
 			<div class="col-xxl-6 col-xl-4 col-lg-4">
@@ -50,26 +26,12 @@
 						Welcome to Digicrome - 01205222560
 					</div>
 
-
-					{{-- <div class="educate-header-from">
-						<a class="login-btn" href="sign-in.html"><i class="bi bi-arrow-right-circle"></i>Login</a>
-						<a class="sign-up-btn" href="sign-up.html"><i class="bi bi-person-plus"></i>Register</a>
-					</div> --}}
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-
-<!--==================================================-->
-
-<!--==================================================-->
-<!-- End educate Header top area -->
-<!--==================================================-->
-<!--==================================================-->
-<!-- Start educate Header Area-->
-<!--==================================================-->
 <div class="educate-header-area" id="sticky-header">
 	<div class="container-fluid">
 		<div class="row header-wrap align-items-center">
@@ -92,7 +54,6 @@
 								<li style="padding: 0;">
 									<div class="container-fluid px-3 py-3" style="min-width: 600px; max-width: 1000px;">
 										<div class="row g-4">
-											{{-- Left Column: Category List --}}
 											<div class="col-md-4 border-end">
 												<h6 class="fw-bold mb-3 text-primary">Popular Categories</h6>
 												<ul class="list-unstyled mb-0">
@@ -108,7 +69,6 @@
 															<i class="bi bi-chevron-right"></i>
 														</a>
 													</li>
-													{{-- Dynamic Categories (static link) --}}
 													@foreach($header_collections as $collection)
 													<li class="mb-2">
 														<a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
@@ -120,11 +80,9 @@
 												</ul>
 											</div>
 
-											{{-- Right Column: Courses --}}
 											<div class="col-md-8">
 												<h6 class="fw-bold mb-3 text-primary">Top Courses</h6>
 												<div id="course-container" class="d-flex flex-column gap-2" style="max-height: 460px; overflow-y: auto;">
-													{{-- Default Courses (Data Science) --}}
 													@foreach([1, 3, 55] as $id)
 													@if(isset($header_courses[$id]))
 													@php $course = $header_courses[$id]; @endphp
@@ -187,41 +145,11 @@
 				<li><a href="/">Home</a>
 				</li>
 				<li><a href="{{ route('about') }}">About</a></li>
-				{{-- <li><a href="#">pages<i class="bi bi-chevron-down"></i></a>
-							<ul class="sub_menu">
-								<li><a href="{{ route('about') }}">About Us</a></li>
-				<li><a href="{{ route('course') }}">header_courses</a></li>
-				<li><a href="{{ route('course_details') }}">Courses Details</a></li>
-				<li><a href="instructor.html">Instructor</a></li>
-				<li><a href="instructor-details.html">Instructor Details</a></li>
-				<li><a href="event.html">Event</a></li>
-				<li><a href="event-details.html">Event Details</a></li>
-				<li><a href="pricing.html">Pricing</a></li>
-				<li><a href="faq.html">Faq</a></li>
-				<li><a href="choose.html">Why Choose</a></li>
-				<li><a href="testimonial.html">testimonial</a></li>
-				<li><a href="404.html">Error Page</a></li>
-				<li><a href="{{ route('contact') }}">Contact</a></li>
-				</ul>
-				</li> --}}
-
-
-				{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>
-							<ul class="sub_menu">
-								<li><a href="shop.html">shop</a></li>
-								<li><a href="shop-details.html">Shop Details</a></li>
-								<li><a href="cart.html">Shoping Cart</a></li>
-								<li><a href="checkout.html">Checkout</a></li>
-							</ul>
-						</li> --}}
+				
 						<li><a href="{{ route('success_stories') }}">Success stories</a></li>
 				<li><a href="{{ route('blog') }}">Blog </a>
 				<li><a href="{{ route('payments') }}">Payments </a>
-					{{-- <ul class="sub_menu">
-								<li><a href="{{ route('blog') }}">Blog</a>
-				</li>
-				<li><a href="blog-details.html">Blog Details</a></li>
-				</ul> --}}
+					
 				</li>
 				<li><a href="{{ route('contact') }}">Contact</a></li>
 				<li><a href="#">More<i class="bi bi-chevron-down"></i></a>
@@ -267,11 +195,7 @@
 	</div>
 </div>
 </div>
-<!--==================================================-->
-<!-- End educate Header Area -->
-<!--==================================================-->
 
-<!--========= Start Mobile Memu========== -->
 
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
 	<div class="mobile-menu">
@@ -281,37 +205,13 @@
 			</div>
 			<ul class="nav_scroll">
 				<li><a href="/">Home</a>
-					{{-- <ul class="sub_menu">
-						<li><a href="/">Home Version 01</a></li>
-						<li><a href="index-2.html">Home Version 02</a></li>
-						<li><a href="index-3.html">Home Version 03</a></li>
-						<li><a href="index-4.html">Home Version 04</a></li>
-						<li><a href="index-5.html">Home Version 05</a></li>
-						<li><a href="index-6.html">Home Version 06</a></li>
-					</ul> --}}
+					
 				</li>
 				<li><a href="{{ route('about') }}">about</a></li>
-				{{-- <li><a href="#">pages<i class="bi bi-chevron-down"></i></a>
-					<ul class="sub_menu">
-						<li><a href="{{ route('about') }}">About Us</a></li>
-				<li><a href="{{ route('course') }}">Courses</a></li>
-				<li><a href="{{ route('course_details') }}">Courses Details</a></li>
-				<li><a href="instructor.html">Instructor</a></li>
-				<li><a href="instructor-details.html">Instructor Details</a></li>
-				<li><a href="event.html">Event</a></li>
-				<li><a href="event-details.html">Event Details</a></li>
-				<li><a href="pricing.html">Pricing</a></li>
-				<li><a href="faq.html">Faq</a></li>
-				<li><a href="choose.html">Why Choose</a></li>
-				<li><a href="testimonial.html">testimonial</a></li>
-				<li><a href="404.html">Error Page</a></li>
-				<li><a href="{{ route('contact') }}">Contact</a></li>
-			</ul>
-			</li> --}}
+				
 			<li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
 				<ul class="sub_menu">
 
-					{{-- Custom Static Categories --}}
 					<li>
 						<a href="{{ route('course', ['ids' => '1,3,55', 'name' => 'Data Science and AI']) }}">
 							Data Science with Artificial Intelligence
@@ -323,7 +223,6 @@
 						</a>
 					</li>
 
-					{{-- Dynamic Categories from Collection --}}
 					@foreach($header_collections as $collection)
 					<li>
 						<a href="{{ route('course.category', $collection->slug) }}">
@@ -333,22 +232,11 @@
 					@endforeach
 				</ul>
 			</li>
-			{{-- <li><a href="#">Shop<i class="bi bi-chevron-down"></i></a>
-					<ul class="sub_menu">
-						<li><a href="shop.html">shop</a></li>
-						<li><a href="shop-details.html">Shop Details</a></li>
-						<li><a href="cart.html">Shoping Cart</a></li>
-						<li><a href="checkout.html">Checkout</a></li>
-					</ul>
-				</li> --}}
+			
 			<li><a href="{{ route('corporate_services') }}">Corporate Services </a>
 			<li><a href="{{ route('blog') }}">Blog</a>
 			<li><a href="{{ route('payments') }}">Payments </a>
-				{{-- <ul class="sub_menu">
-						<li><a href="{{ route('blog') }}">Blog</a>
-			</li>
-			<li><a href="blog-details.html">Blog Details</a></li>
-			</ul> --}}
+			
 			</li>
 			<li><a href="{{ route('contact') }}">Contact</a></li>
 			<li><a href="#">More<i class="bi bi-chevron-down"></i></a>
@@ -367,21 +255,12 @@
 		</nav>
 	</div>
 </div>
-<!--========= End Mobile Memu========== -->
-
-
-
-<!--==================================================-->
-<!-- Start Search Popup -->
-<!--==================================================-->
 <div class="search-popup">
 	<button class="close-search style-two"><i style="color: #fff" class="fas fa-times"></i></button>
-	{{-- <button class="close-search"><i class="fas fa-arrow-up"></i></button> --}}
 	<form method="GET" action="#">
 		<div class="form-group position-relative">
 			<input id="search1" type="search" name="search-field" placeholder="Search courses..." autocomplete="off">
 
-			<!-- Result dropdown -->
 		</div>
 		<div id="search-results" class="bg-white border rounded shadow p-2 position-absolute w-100" style="z-index: 999; display: none;"></div>
 
@@ -400,7 +279,6 @@
 						query: query
 					},
 					success: function(data) {
-						// console.log("AJAX response:", data);
 						let results = $('#search-results');
 						results.empty().show();
 
@@ -435,91 +313,6 @@
 	});
 </script>
 
-<!--==================================================-->
-<!-- End Search Popup -->
-<!--==================================================-->
-
-
-
-
-
-<!--==================================================-->
-<!-- Start Cart Side Bar -->
-<!--==================================================-->
-{{-- <div class="sidebar-menu-wrapper">
-	<div class="cart_sidebar">
-		<button type="button" class="close_btn"><i class="fas fa-times"></i></button>
-		<h2 class="heading_title text-uppercase">Cart Items - <span>4</span></h2>
-
-		<div class="cart_items_list">
-			<div class="cart_item">
-				<div class="item_image">
-					<img loading="lazy"src="{{ asset('assets/images/inner-img/rpost-thumb1.webp') }}" alt="image_not_found">
-</div>
-<div class="item_content">
-	<h4 class="item_title">
-		How Gamification is Changing the Way...
-	</h4>
-	<span class="item_price">$21.00</span>
-	<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
-</div>
-</div>
-
-<div class="cart_item">
-	<div class="item_image">
-		<img loading="lazy" src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
-	</div>
-	<div class="item_content">
-		<h4 class="item_title">
-			Learning is the Key soft skills and Professional
-		</h4>
-		<span class="item_price">$23.00</span>
-		<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
-	</div>
-</div>
-
-<div class="cart_item">
-	<div class="item_image">
-		<img loading="lazy" src="{{ asset('assets/images/inner-img/rpost-thumb3.webp') }}" alt="image_not_found">
-	</div>
-	<div class="item_content">
-		<h4 class="item_title">
-			The Importance of Critical Thinking in Education
-		</h4>
-		<span class="item_price">$25.00</span>
-		<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
-	</div>
-</div>
-
-<div class="cart_item">
-	<div class="item_image">
-		<img loading="lazy" src="{{ asset('assets/images/inner-img/rpost-thumb2.webp') }}" alt="image_not_found">
-	</div>
-	<div class="item_content">
-		<h4 class="item_title">
-			Learning is the Key soft skills and Professional
-		</h4>
-		<span class="item_price">$19.00</span>
-		<button type="button" class="remove_btn"><i class="fas fa-times"></i></button>
-	</div>
-</div>
-</div>
-<div class="total_price text-uppercase">
-	<span>Sub Total:</span>
-	<span>$88.00</span>
-</div>
-<ul class="btns_group ul_li">
-	<li><a href="cart.html" class="btn btn_primary text-uppercase">View Cart</a></li>
-	<li><a href="checkout.html" class="btn btn_border border_black text-uppercase">Checkout</a></li>
-</ul>
-</div>
-<div class="cart_sidebar_overlay"></div>
-</div> --}}
-<!--==================================================-->
-<!-- End Cart Side Bar -->
-<!--==================================================-->
-
-<!-- Sidebar Cart Item -->
 <div class="xs-sidebar-group info-group">
 	<div class="xs-overlay xs-bg-black"></div>
 	<div class="xs-sidebar-widget">
@@ -530,7 +323,6 @@
 				</a>
 			</div>
 			<div class="sidebar-textwidget">
-				<!-- Sidebar Info Content -->
 				<div class="sidebar-info-contents">
 					<div class="content-inner">
 						<div class="nav-logo">
@@ -553,7 +345,6 @@
 								</li>
 							</ul>
 						</div>
-						<!-- Social Box -->
 						<ul class="social-box">
 							<li class="facebook"><a href="#" class="fab fa-facebook-f"></a></li>
 							<li class="twitter"><a href="#" class="fab fa-instagram"></a></li>
@@ -648,8 +439,6 @@
 	}
 </style>
 
-<!-- Desktop View -->
-<!-- ✅ Desktop View -->
 <div class="bottom-fixed-bar desktop-only text-center">
     <span class="me-2">Need help? Reach us instantly:</span>
     <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
@@ -660,7 +449,6 @@
     </a>
 </div>
 
-<!-- ✅ Mobile View -->
 <div class="mobile-contact-icons mobile-only">
     <a href="https://wa.me/916299611702" target="_blank" class="contact-icon whatsapp">
         <i class="fab fa-whatsapp"></i>
@@ -670,9 +458,7 @@
     </a>
 </div>
 
-<!-- ✅ Styles -->
 <style>
-    /* Desktop Bar */
     .bottom-fixed-bar {
         position: fixed;
         right: 20px;
@@ -688,17 +474,14 @@
         margin: 0 5px;
     }
 
-    /* Mobile by default hidden */
     .mobile-only {
         display: none;
     }
 
-    /* Desktop shown by default */
     .desktop-only {
         display: block;
     }
 
-    /* Mobile-specific styles */
     @media (max-width: 767px) {
         .desktop-only {
             display: none;
@@ -740,7 +523,3 @@
         }
     }
 </style>
-
-
-
-<!--End Sidebar Cart Item -->

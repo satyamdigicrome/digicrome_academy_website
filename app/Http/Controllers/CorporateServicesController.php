@@ -15,14 +15,14 @@ class CorporateServicesController extends Controller
     public function index()
     {
         $collections = Collection::with(['courses' => function ($query) {
-            $query->where('status', 1)->limit(4); // Limit to 4 courses per collection
+            $query->where('status', 1)->limit(4); 
         }])->where('status', 1)->orderBy('position')->get();
         $awords = Cache::remember('awords', 60, function () {
             return Logo::where('type', 'awords')->get(['id', 'image']);
         });
         $upcomingCourses = Course::whereIn('id', [1, 2, 3, 4])
                                  ->where('status', 1)
-                                 ->limit(4) // Just to be safe, limit to 4
+                                 ->limit(4) 
                                  ->get();
         $companyLogos = Cache::remember('company_logos', 60, function () {
             return Logo::where('type', 'companies')->get(['id', 'image']);

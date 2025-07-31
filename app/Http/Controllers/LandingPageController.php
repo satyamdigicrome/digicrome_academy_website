@@ -14,7 +14,6 @@ class LandingPageController extends Controller
 {
     public function index()
 {
-    // Fetch the course where course_free == 2
     $course = Course::with([
         'keypoints:id,course_id,name',
         'aparts:id,course_id,image,heading,tagline,paragraph',
@@ -40,7 +39,6 @@ class LandingPageController extends Controller
     ->where('course_id', $course->id)
     ->get(['id', 'name', 'image']); 
 
-    // You can also load other data if needed, like testimonials, logos, etc.
 
     return view('landing.index', compact('course','companyLogos','testimonials','plainLogos','certificateLogos'));
 }

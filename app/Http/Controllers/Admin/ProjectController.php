@@ -12,7 +12,6 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        // Retrieve all apart records with related courses and users
         $project = Project::with(['course', 'user'])->get();
         $courses = Course::all();
         return view('admin.project.index', compact('project', 'courses'));
@@ -28,10 +27,8 @@ class ProjectController extends Controller
             'course_id.*' => 'exists:courses,id',
         ]);
 
-        // Get the authenticated user ID
         $userId = auth()->id();
 
-        // Create a new project record
         foreach ($request->course_id as $courseId) {
         Project::create([
             'heading' => $request->heading,
@@ -46,7 +43,6 @@ class ProjectController extends Controller
 
     public function destroy(Project $project)
     {
-        // Delete the apart record
         $project->delete();
         return redirect()->route('project.index')->with('success', 'Project deleted successfully.');
     }

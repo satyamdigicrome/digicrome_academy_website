@@ -37,7 +37,6 @@
         margin-inline: auto;
     }
 
-    /* line */
     .ul1::before {
         content: "";
         grid-column: 1;
@@ -45,15 +44,9 @@
         background: rgb(225, 225, 225);
         border-radius: calc(var(--line-w) / 2);
     }
-
-    /* columns*/
-
-    /* row gaps */
     .ul1 li:not(:last-child) {
         margin-bottom: var(--row-gap);
     }
-
-    /* card */
     .ul1 li {
         grid-column: 2;
         --inlineP: 1.5rem;
@@ -62,8 +55,6 @@
         display: grid;
         grid-template-rows: min-content min-content min-content;
     }
-
-    /* date */
     .ul1 li .date {
         --dateH: 3rem;
         height: var(--dateH);
@@ -82,8 +73,6 @@
 
         border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
     }
-
-    /* date flap */
     .ul1 li .date::before {
         content: "";
         width: var(--inlineP);
@@ -96,8 +85,6 @@
         clip-path: polygon(0 0, 100% 0, 0 100%);
         right: 0;
     }
-
-    /* circle */
     .ul1 li .date::after {
         content: "";
         position: absolute;
@@ -111,8 +98,6 @@
         transform: translate(50%, -50%);
         right: calc(100% + var(--col-gap) + var(--line-w) / 2);
     }
-
-    /* title descr */
     .ul1 li .title,
     .ul1 li .descr {
         background: var(--bgColor);
@@ -131,8 +116,6 @@
         padding-block-end: 1.5rem;
         font-weight: 300;
     }
-
-    /* shadows */
     .ul1 li .title::before,
     .ul1 li .descr::before {
         content: "";
@@ -201,8 +184,6 @@
     .credits a {
         color: var(--color);
     }
-
-    /* mapcss */
     .company-form {
         margin: 0;
         font-family: sans-serif;
@@ -280,9 +261,6 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
     }
-
-
-
     .south {
         top: 10%;
         left: 29%;
@@ -368,7 +346,6 @@
         }
     }
 
-    /* mapcss end */
     .btn1 {
         gap: 10px;
         text-align: center;
@@ -407,10 +384,7 @@
                     <div class="breadcumb-title">
                         <h4>Who We Are</h4>
                     </div>
-                    {{-- <ul>
-                            <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-                            <li>who we are</li>
-                        </ul> --}}
+                    
                 </div>
             </div>
         </div>
@@ -439,10 +413,7 @@
                 </span><br><br>
                 <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
                         class="bi bi-whatsapp"></i>Enroll Now</a>
-                {{-- <a href="https://digicrome.com/#ajax-form" class="btn1 btn-warning"><i
-                            class="bi bi-telephone-fill"></i>Apply For Counselling</a> --}}
-
-
+               
             </div>
             <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%;">
                 <img loading="lazy" src="{{ asset('assets/images/dc/tools1.webp')}}" alt="digicrome_tools" title="digicrome_tools"
@@ -577,8 +548,6 @@
                     impressive 60%.
                     Digicrome alumni stand out as some of the country's most well-placed professionals, with
                     salaries reaching as high as ₹33 LPA.<br><br>
-                    <!--<button class="btn btn-warning" style="background-color: #red; color:#fff;"> Explore open position</button>-->
-
                 </span>
 
             </div>
@@ -612,7 +581,6 @@
                     Digicrome works to find the best job and company fit for each student, giving them a great start
                     to their career, Through personalized guidance and industry connections, Digicrome helps students
                     secure the ideal job, setting the stage for a successful career journey.<br><br>
-                    <!--<button class="btn btn-warning" style="background-color: #f29c12; color:white;"> Explore open position</button>-->
 
                 </span>
 
@@ -661,7 +629,6 @@
         border-top: 1px groove #fff;
         border-bottom: 1px groove #fff;
         padding: 35px 0px;
-        /* margin-top: 35px;
              */
     }
 

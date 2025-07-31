@@ -1,76 +1,4 @@
-<!--==================================================-->
-<!-- start educate brand Area -->
-<!--==================================================-->
-{{-- <div class="brand-area style-one">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-5">
-				<div class="section-sub-title">
-					<h6>In Association With:</h6>
-				</div>
-				<div class="section_title">
-					<h1>In Association With:</h1>
-				</div>
-			</div>
-			<div class="col-lg-7">
-				<div class="brand-list owl-carousel">
-					<div class="col-lg-12">
-						<div class="single-brand-box">
-							<div class="brand-thumb">
-							   <img loading="lazy"src="{{ asset('assets/images/home-one/brand-img1.webp') }}" alt="brand">
-							</div>
-						</div>
-					</div>				    
-					<div class="col-lg-12">
-						<div class="single-brand-box">
-							<div class="brand-thumb">
-								<img loading="lazy"src="{{ asset('assets/images/home-one/brand-img2.webp') }}" alt="brand">
-							</div>
-						</div>
-					</div>				   
-					<div class="col-lg-12">
-						<div class="single-brand-box">
-							<div class="brand-thumb">
-								<img loading="lazy"src="{{ asset('assets/images/home-one/brand-img3.webp') }}" alt="brand">
-							</div>
-						</div>
-					</div>				    				    			    
-				</div>
-			</div>
-		</div>
-		<div class="brand-arrow-shape">
-			<img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="arrow">
-		</div>
-		<div class="brand-star-shape">
-			<img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="star">
-		</div>
-		<div class="brand-line-shape">
-			<img loading="lazy"src="{{ asset('assets/images/home-one/brand-line.webp') }}" alt="line">
-		</div>
-	</div>
-</div> --}}
 
-<!--==================================================-->
-<!-- end educate brand Area -->
-<!--==================================================-->
-
-{{-- 
-<section class="contact_area style-six">
-	<div class="container">
-		<div class="row contact-bg align-items-center">
-			
-			<div class="col-lg-6">
-				<!-- contact form box -->
-					
-					<div id="status"></div>
-				</div> 
-			</div>
-		</div>
-	</div>
-</section> --}}
-<!--==================================================-->
-<!-- Start educate Footer Area -->
-<!--==================================================-->
 <div class="footer-area" style="margin-bottom: 45px;">
 	<div class="container">
 		<div class="row subscribe align-items-center">
@@ -93,7 +21,6 @@
 					<form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php" style="width:100%; margin:0;">
 						@csrf
 						<div class="row">
-							<!-- Left Column -->
 							<div class="col-md-6">
 								<input type="text" name="name" placeholder="Name" required 
 									style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
@@ -105,7 +32,6 @@
 									style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
 							</div>
 					
-							<!-- Right Column -->
 							<div class="col-md-6">
 								<input type="tel" name="mobile" placeholder="Mobile Number" required 
 									style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
@@ -125,7 +51,6 @@
 							</div>
 						</div>
 					
-						<!-- Hidden Fields -->
 						<input type="hidden" name="ib" value="">
 						<input type="hidden" name="source" value="Website">
 						<input type="hidden" name="country" value="india">
@@ -133,7 +58,6 @@
 						<input type="hidden" name="state" value="">
 						<input type="hidden" name="altr_mobile" value="">
 					
-						<!-- Terms & Submit -->
 						<p style="font-size:12px; line-height:18px; color:#fff;">
 							By submitting the form, you agree to our 
 							<a href="#" style="color:#f29c12;">Terms</a> and 
@@ -203,12 +127,7 @@
 				<div class="footer-widget-title">
 					<h4>Our Application</h4>
 				</div>
-				{{-- <div class="footer-widget-blog first">
-					<div class="footer-widget-blog-thumb">
-						<a href="https://play.google.com/store/apps/details?id=com.digichrome.app">
-						<img loading="lazy"src="{{ asset('assets/images/playimg.png') }}" alt="recent-img" class="ap-logo"></a>
-					</div>
-				</div> --}}
+				
 				<div class="footer-widget-blog">
 					<div class="footer-widget-blog-thumb">
 						<a href="https://apps.apple.com/in/app/digicrome-academy/id6503241441">
@@ -219,7 +138,6 @@
 		</div>
 	</div>
     <div class="container">
-        <!-- Postgraduate & Master Programs -->
         <div class="row">
             <div class="col-12 mb-4">
                 <h5 style="color: #ccc"><u>Data Science And AI</u></h5>
@@ -236,49 +154,7 @@
 				<hr>
             </div>
         </div>    
-        <!-- Professional Programs -->
-        {{-- <div class="row">
-            <div class="col-12">
-                <h5>Professional Programs</h5>
-                <p>
-                    AI&ML (Artificial Intelligence and Machine Learning Professional) | Certified Information Systems Security Professional (CISSP) |
-                    AWS Certified Solutions Architect - Professional | Cybersecurity Job Oriented Certificate Program |
-                    Scrum Product Owner Professional by SCRUMVersity | Machine Learning | Advanced Scrum Product Owner Professional (ASPOP) |
-                    Scrum Fundamental Professional By SCRUMVersity | UI/UX Design Professional | Full Stack Development Professional |
-                    Power BI | Tableau | Python | MY SQL | Professional Certification Course in Data Science with Machine Learning
-                </p>
-            </div>
-        </div>
-        <!-- Language Programs -->
-        <div class="row">
-            <div class="col-12">
-                <h5>Language Programs</h5>
-                <p>
-                    French Language Training(B1&B2) | German Language Training (C1& C2) | Korean Language Training (C1& C2) |
-                    French Language Training(C1&C2) | English Language Training(A1&A2) | English Language Training(B1&B2) |
-                    Spanish language Training C2 (Master- Level) | Japanese Language N3 (TRI0 & Shinkansen)
-                </p>
-            </div>
-        </div>
-        <!-- Certificate Programs -->
-        <div class="row">
-            <div class="col-12">
-                <h5>Certificate Programs</h5>
-                <p>
-                    PMPA® Certification Training | Certified Information Systems Security Professional (CISSP) | CISA Certification Training |
-                    CISM Certification Training | AWS Certified Solutions Architect - Associate | AWS Certified Developer - Associate |
-                    AWS Certified SysOps Administrator - Associate | CBAP Certification Training |
-                    Program Management Professional Certification Training | Advanced Certification Program in Generative AI & Deep Learning
-                </p>
-            </div>
-        </div>
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="d-flex justify-content-between">
-                <img loading="lazy"src="images/footer_logo.webp" alt="">
-                <p>© 2025 DigiCrome. All rights reserved.</p>
-            </div>
-        </div> --}}
+        
     </div>
 	<div class="footer-bottom-area">
 		<div class="container">
@@ -315,63 +191,20 @@
 		</div>
 	</div>
 </div>
-<!--==================================================-->
-<!-- End educate Footer Area-->
-<!--==================================================-->
 
-
-
-
-
-
-<!--==================================================-->
-<!-- Start educate Scroll Up-->
-<!--==================================================-->
-{{-- <div class="prgoress_indicator active-progress">
-	<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 212.78;"></path>
-	</svg>
- </div> --}}
-<!--==================================================-->
-<!-- End educate Scroll Up-->
-<!--==================================================-->
-
-
-
-
-
-
- 	<!-- modernizr js -->
 	<script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}" defer></script>
-	<!-- jquery js -->
 	<script src="{{ asset('assets/js/vendor/jquery-3.6.2.min.js') }}" defer></script>
 	<script src="{{ asset('assets/js/popper.min.js') }}" defer></script>
-	<!-- bootstrap js -->
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
-	<!-- carousel js -->
 	<script src="{{ asset('assets/js/owl.carousel.min.js') }}" defer></script>
-	<!-- counterup js -->
 	<script src="{{ asset('assets/js/jquery.counterup.min.js') }}" defer></script>
-	<!-- waypoints js -->
 	<script src="{{ asset('assets/js/waypoints.min.js') }}" defer></script>
-	<!-- wow js -->
 	<script src="{{ asset('assets/js/wow.js') }}" defer></script>
-	<!-- imagesloaded js -->
 	<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}" defer></script>
-	<!-- venobox js -->
-	{{-- <script src="venobox/venobox.js" defer></script> --}}
-	<!--  animated-text js -->
 	<script src="{{ asset('assets/js/animated-text.js') }}" defer></script>
-	<!-- venobox min js -->
-	{{-- <script src="venobox/venobox.min.js" defer></script> --}}
-	<!-- isotope js -->
 	<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}" defer></script>
-	<!-- jquery meanmenu js -->
 	<script src="{{ asset('assets/js/jquery.meanmenu.js') }}" defer></script>
-	<!-- jquery scrollup js -->
 	<script src="{{ asset('assets/js/jquery.scrollUp.js') }}" defer></script>
-	<!-- barfiller -->
 	<script src="{{ asset('assets/js/jquery.barfiller.js') }}" defer></script>
-	<!-- theme js -->
 	<script src="{{ asset('assets/js/theme.js') }}" defer></script>
 	

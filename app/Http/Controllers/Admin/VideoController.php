@@ -35,7 +35,7 @@ class VideoController extends Controller
             'user_id' => $userId,
             'video_link' => $request->video_link,
             'name' => $request->name,
-            'image' => $imagePath, // ✅ GIF or Image stored here
+            'image' => $imagePath,
         ]);
     
         return redirect()->route('videos.index')->with('success', 'Video uploaded successfully.');

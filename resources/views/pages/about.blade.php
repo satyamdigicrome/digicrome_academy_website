@@ -7,10 +7,6 @@
 @section('content')
 @include('components.lead-form-popup')
 
-
-<!--==================================================-->
-<!-- Start educate Breadcumb Area -->
-<!--==================================================-->
 <style>
 	.section-title-desc p {
 		font-size: 13px;
@@ -30,10 +26,6 @@
 					<div class="breadcumb-title">
 						<h4>About Us</h4>
 					</div>
-					{{-- <ul>
-							<li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-							<li>About Us</li>
-						</ul> --}}
 				</div>
 			</div>
 		</div>
@@ -45,12 +37,6 @@
 		</div>
 	</div>
 </div>
-<!--==================================================-->
-<!-- End educate Breadcumb Area -->
-<!--==================================================-->
-<!--==================================================-->
-<!-- Start educate About Area style-three -->
-<!--==================================================-->
 <section class="about-area style-three inner">
 	<div class="container">
 		<div class="row">
@@ -85,10 +71,7 @@
 			</div>
 			<div class="col-xl-6 col-lg-12">
 				<div class="about_content">
-					<!-- section title -->
-					{{-- <div class="section-sub-title three">
-							<h6><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">ABOUT US</h6>
-				</div> --}}
+			
 				<div class="section-title-desc">
 					<p>Digicrome is a leading ed-tech platform that helps students and professionals build
 						successful careers with high-quality training. Our goal is to provide industry-focused
@@ -129,22 +112,7 @@
 					<p><span><img loading="lazy" src="{{ asset('assets/images/home-three/about-call.webp') }}" alt="call" title="call"></span>
 						 01205222560</p>
 				</div>
-				{{-- <div class="about-btn">
-							<a href="about.html">more about<i class="flaticon flaticon-right-arrow"></i></a>
-						</div> --}}
-
-				{{-- <div class="about-education-box">
-  <div class="education-icon">
-    <img loading="lazy"src="{{ asset('assets/images/home-one/msme.webp') }}" alt="education-icon" title="education-icon">
-			</div>
-			<div class="education-content">
-				<p>Trusted Online<br>
-					And offline Best<br>
-					Educations
-				</p>
-				<span>John Doe</span>
-			</div>
-		</div> --}}
+			
 
 		<div class="about-shape31">
 			<img loading="lazy" src="{{ asset('assets/images/home-three/about-shape31.webp') }}" alt="shape" title="shape">
@@ -162,33 +130,24 @@
 		margin-left: 20%;
 	}
 </style>
-<!--==================================================-->
-<!-- End educate About Area -->
-<!--==================================================-->
 @if($userCountry === 'India')
 <div class="container my-5">
 	<div class="row align-items-center">
-		<!-- Image Side -->
 		<div class="col-md-6 mb-4 mb-md-0">
 			<img loading="lazy" src="{{ asset('assets/images/home-one/msme.webp') }}" alt="Education Image" title="Education Image" class="img-fluid rounded shadow">
 		</div>
-		<!-- Content Side -->
 		<div class="col-md-6">
 			<div class="p-3">
 				<h3 class="mb-3" style="font-style: italic;">Certified - Online Learning Platform </h3>
 				<p class="text-muted">
 					Our company is certified by MSME and MCA, and we are proud to be registered with these organizations.
 				</p>
-				{{-- <span class="fw-bold text-primary">John Doe</span> --}}
 			</div>
 		</div>
 	</div>
 </div>
 @else
 @endif
-<!--==================================================-->
-<!-- Start educate feature Area style-two -->
-<!--==================================================-->
 <section class="feature-area style-two">
 	<div class="container">
 		<div class="row">
@@ -232,129 +191,9 @@
 				</div>
 			</div>
 		</div>
-		{{-- <div class="feature-shape21">
-				<img loading="lazy"src="{{ asset('assets/images/home-three/feature-shape21.webp') }}" alt="shape" title="shape">
-	</div> --}}
 	</div>
 </section>
-<!--==================================================-->
-<!-- End educate feature Area-->
-<!--==================================================-->
-{{-- <section class="py-5" style="background-color: #fef8f1;">
-		<div class="container text-center">
-			<!-- Headings -->
-			<h2 class="fw-bold mb-2" style="color: #f29c12;">Our Journey</h2>
-			<h5 class="text-muted mb-3">From 2019 to Infinity</h5>
-			<p class="mb-5">We've been growing steadily year by year. Here's a glance at our progress through the years —
-				and where we're headed.</p>
 
-			<!-- Horizontal Timeline -->
-			<div class="position-relative d-flex justify-content-between align-items-start flex-wrap border-top pt-4"
-				style="border-color: #f29c12;">
-				<!-- Timeline Item -->
-				<div class="text-center flex-fill mx-2" style="min-width: 120px;">
-					<div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;">
-					</div>
-					<h6 class="fw-bold" style="color: #f29c12;">2019</h6>
-					<p class="small text-muted">Small team, big dreams.</p>
-				</div>
-
-				<div class="text-center flex-fill mx-2" style="min-width: 120px;">
-					<div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;">
-					</div>
-					<h6 class="fw-bold" style="color: #f29c12;">2020</h6>
-					<p class="small text-muted">First major project.</p>
-				</div>
-
-				<div class="text-center flex-fill mx-2" style="min-width: 120px;">
-					<div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;">
-					</div>
-					<h6 class="fw-bold" style="color: #f29c12;">2021</h6>
-					<p class="small text-muted">Team expansion.</p>
-				</div>
-
-				<div class="text-center flex-fill mx-2" style="min-width: 120px;">
-					<div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;">
-					</div>
-					<h6 class="fw-bold" style="color: #f29c12;">2022</h6>
-					<p class="small text-muted">Nationwide reach.</p>
-				</div>
-
-				<div class="text-center flex-fill mx-2" style="min-width: 120px;">
-					<div class="rounded-circle mx-auto mb-2" style="width: 30px; height: 30px; background-color: #f29c12;">
-					</div>
-					<h6 class="fw-bold" style="color: #f29c12;">2023</h6>
-					<p class="small text-muted">International growth.</p>
-				</div>
-
-				<!-- Rocket End -->
-				<div class="text-center flex-fill mx-2" style="min-width: 120px;">
-					<img loading="lazy"src="https://cdn-icons-png.flaticon.com/512/3210/3210034.png" alt="Rocket" title="Rocket" width="40" class="mb-2">
-					<h6 class="fw-bold" style="color: #f29c12;">2024 & Beyond</h6>
-					<p class="small text-muted">To the stars!</p>
-				</div>
-			</div>
-		</div>
-	</section> --}}
-<!--==================================================-->
-<!-- Start educate course design offer Area -->
-<!--==================================================-->
-{{-- <div class="course-design-offer-area style-one inner">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="course-design-thumb">
-						<img loading="lazy"src="{{ asset('assets/images/home-one/offer-video.webp') }}" alt="thumb">
-<div class="course-video-icon">
-	<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
-		href="https://www.youtube.com/watch?v=Wx48y_fOfiY"><i
-			class="fa-classic fa-solid fa-play fa-fw"></i></a>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-	<div class="single-course-offer-box">
-		<div class="course-offer-content">
-			<h6>Designing</h6>
-			<h4>Creative Graphic Design</h4>
-			<h4>With Adobe Suite</h4>
-			<div class="offer-rating">
-				<ul>
-					<li><i class="fa-solid fa-star"></i></li>
-					<li><i class="fa-solid fa-star"></i></li>
-					<li><i class="fa-solid fa-star"></i></li>
-					<li><i class="fa-solid fa-star"></i></li>
-					<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-				</ul>
-				<div class="offer-rating-rate">
-					<span>(4.5/3 Ratings)</span>
-				</div>
-				<div class="course-offer-price">
-					<span>$35 <del>$60</del></span>
-				</div>
-			</div>
-			<div class="course-offer-btn">
-				<a href="javascript:void(0);" onclick="openModal()">ENROL NOW<i class="flaticon flaticon-right-arrow"></i></a>
-			</div>
-			<div class="course-offer-discount">
-				<h5>10%</h5>
-				<span>off</span>
-			</div>
-		</div>
-		<div class="offer-thumb">
-			<img loading="lazy" src="{{ asset('assets/images/home-one/offer-thumb.webp') }}" alt="thumb">
-		</div>
-	</div>
-</div>
-</div>
-</div>
-</div> --}}
-<!--==================================================-->
-<!-- end educate course design offer Area -->
-<!--==================================================-->
-<!--==================================================-->
-<!-- Start educate call to action Area style-two -->
-<!--==================================================-->
 <div class="call-to-action style-two">
 	<div class="container">
 		<div class="row align-items-center">
@@ -375,179 +214,7 @@
 		</div>
 	</div>
 </div>
-<!--==================================================-->
-<!-- end educate call to action Area style-two -->
-<!--==================================================-->
-<!--==================================================-->
-<!-- Start educate team Area -->
-<!--==================================================-->
-{{-- <div class="team-area style-one inner">
-		<div class="container">
-			<div class="row section-title-space">
-				<div class="col-lg-12 text-center">
-					<div class="section-sub-title three">
-						<h6><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon">INSTRUCTOR</h6>
-</div>
-<div class="section_title">
-	<h1>Introducing the Educators and</h1>
-	<h1>Professional Instructor</h1>
-</div>
-</div>
-</div>
-<div class="row">
-	<div class="col-xl-3 col-lg-6 col-md-6">
-		<div class="single-team-box box-1">
-			<div class="team-thumb">
-				<img loading="lazy" src="{{ asset('assets/images/home-one/team-thumb1.webp') }}" alt="thumb" title="thumb">
-				<div class="team-social-icon">
-					<div class="team-social">
-						<ul>
-							<li class="team-icon-1"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li class="team-icon-2"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-							<li class="team-icon-3"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="team-content">
-				<div class="team-title">
-					<h3><a href="instructor-details.html">John D. Alexon</a></h3>
-				</div>
-				<div class="team-sub-title">
-					<h5>UI/UX Designer</h5>
-				</div>
-				<div class="team-ratting">
-					<ul>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-					</ul>
-				</div>
-				<div class="team-rating-rate">
-					<span>(4.5)</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-xl-3 col-lg-6 col-md-6">
-		<div class="single-team-box box-2">
-			<div class="team-thumb">
-				<img loading="lazy" src="{{ asset('assets/images/home-one/team-thumb2.webp') }}" alt="thumb" title="thumb">
-				<div class="team-social-icon">
-					<div class="team-social">
-						<ul>
-							<li class="team-icon-1"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li class="team-icon-2"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-							<li class="team-icon-3"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="team-content">
-				<div class="team-title">
-					<h3><a href="instructor-details.html">Anjelina Watson</a></h3>
-				</div>
-				<div class="team-sub-title">
-					<h5>Finance Specialist</h5>
-				</div>
-				<div class="team-ratting">
-					<ul>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-					</ul>
-				</div>
-				<div class="team-rating-rate">
-					<span>(4.5)</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-xl-3 col-lg-6 col-md-6">
-		<div class="single-team-box box-3">
-			<div class="team-thumb">
-				<img loading="lazy" src="{{ asset('assets/images/home-one/team-thumb3.webp') }}" alt="thumb" title="thumb">
-				<div class="team-social-icon">
-					<div class="team-social">
-						<ul>
-							<li class="team-icon-1"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li class="team-icon-2"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-							<li class="team-icon-3"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="team-content">
-				<div class="team-title">
-					<h3><a href="instructor-details.html">Jakulin Farnandez</a></h3>
-				</div>
-				<div class="team-sub-title">
-					<h5>Data Analist</h5>
-				</div>
-				<div class="team-ratting">
-					<ul>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-					</ul>
-				</div>
-				<div class="team-rating-rate">
-					<span>(4.5)</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-xl-3 col-lg-6 col-md-6">
-		<div class="single-team-box box-4">
-			<div class="team-thumb">
-				<img loading="lazy" src="{{ asset('assets/images/home-one/team-thumb4.webp') }}" alt="thumb" title="thumb">
-				<div class="team-social-icon">
-					<div class="team-social">
-						<ul>
-							<li class="team-icon-1"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li class="team-icon-2"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-							<li class="team-icon-3"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="team-content">
-				<div class="team-title">
-					<h3><a href="instructor-details.html">David X. Watson</a></h3>
-				</div>
-				<div class="team-sub-title">
-					<h5>WP Developer</h5>
-				</div>
-				<div class="team-ratting">
-					<ul>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-solid fa-star"></i></li>
-						<li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-					</ul>
-				</div>
-				<div class="team-rating-rate">
-					<span>(4.5)</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-</div> --}}
-<!--==================================================-->
-<!-- end educate team Area -->
-<!--==================================================-->
-<!--==================================================-->
-<!-- Start educate testimonial Area -->
-<!--==================================================-->
+
 <div class="testimonial-area style-inner">
 	<div class="container">
 		<div class="row section-title-space">
@@ -621,89 +288,11 @@
 		</div>
 	</div>
 </div>
-{{-- <div class="testimonial-area style-one">
-		<div class="container">
-			<div class="row section-title-space align-items-center">
-				<div class="col-lg-6">
-					<div class="section-sub-title">
-						<h6 style="font-weight: bold; word-spacing: 8px;">Student's Perspectives</h6>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="section_title">
-						<h1>What Students Say About </h1>
-						<h1>Digicrome Experience</h1>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="testi-thumb-wrapper">
-						<div class="testimonial-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="thumb">
-</div>
-<div class="testi-dot-shape">
-	<img loading="lazy" src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="dot">
-</div>
-<div class="testi-map-shape">
-	<img loading="lazy" src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="map">
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-	<div class="row">
-		<div class="testi-list owl-carousel">
-			@foreach ($testimonials as $testimonial)
-			<div class="col-lg-12">
-				<div class="testi-box">
-					<div class="single-testi-box">
-						<div class="testi-quote">
-							<img loading="lazy" src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="quote">
-						</div>
-						<div class="testi-title">
-							<h3>{{ $testimonial->tagline }}</h3>
-						</div>
-						<div class="testi-desc">
-							<p>{{ $testimonial->review }}</p>
-						</div>
-						<div class="testi-ratting">
-							<ul>
-								@for ($i = 1; $i <= 5; $i++)
-									@if ($i <=floor($testimonial->rating))
-									<li><i class="fa-solid fa-star"></i></li>
-									@elseif ($i == ceil($testimonial->rating) && $testimonial->rating != floor($testimonial->rating))
-									<li><i class="fa-solid fa-star-half-stroke fa-fw"></i></li>
-									@else
-									<li><i class="fa-regular fa-star"></i></li>
-									@endif
-									@endfor
-							</ul>
-						</div>
-					</div>
-					<div class="testi-autor-box">
-						<div class="testi-autor">
-							<img loading="lazy" src="{{ asset('storage/' . $testimonial->image) }}" alt="author" style="width: 60px; height: 60px; border-radius: 50%;">
-						</div>
-						<div class="testi-autor-content">
-							<h5 class="autor-title">{{ $testimonial->name }}</h5>
-							<p class="autor-desi">{{ $testimonial->profession }}</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			@endforeach
 
-		</div>
-	</div>
-</div>
-</div>
-</div>
-</div> --}}
 <div class="testimonial-area style-two mt-4">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4">
-				<!-- section title -->
 				<div class="section-sub-title two">
 					<h6><img loading="lazy" src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon" title="icon">TESTIMONIALS</h6>
 				</div>
@@ -770,13 +359,6 @@
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!-- end educate testimonial Area -->
-	<!--==================================================-->
-	
-	<!--==================================================-->
-	<!-- Start educate call to action Area -->
-	<!--==================================================-->
 	<div class="call-to-action style-one">
 		<div class="container">
 			<div class="row align-items-center call-to-bg">
@@ -874,7 +456,4 @@
 		</div>
 	</div>
 </div>
-<!--==================================================-->
-<!-- end educate testimonial Area -->
-<!--==================================================-->
 @endsection

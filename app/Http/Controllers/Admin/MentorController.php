@@ -12,7 +12,7 @@ class MentorController extends Controller
     public function index()
     {
         $courses = Course::all();
-        $mentors = Mentor::with('course', 'user')->get(); // Load relationships
+        $mentors = Mentor::with('course', 'user')->get();
 
         return view('admin.mentor.index', compact('courses', 'mentors'));
     }

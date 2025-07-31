@@ -89,7 +89,6 @@
     </div>
   </div>
 </div>
-<!-- Stats Section -->
 <section class="py-5 bg-light text-center">
   <div class="container">
     <div class="row g-4">
@@ -112,10 +111,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<!-- section title -->
-				{{-- <div class="section-sub-title">
-					<h6>testimonial</h6>
-				</div> --}}<br>
+			<br>
 				<div class="section_title two">
 					<h1>What Our Students Think</h1>
 				</div>
@@ -134,8 +130,6 @@
                        border-radius: 12px; 
                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
                        transition: all 0.3s ease;">
-                
-                <!-- Image Section -->
                 <div class="testi-autor-thumb" style="flex-shrink: 0;">
                     <img 
                         src="{{ asset('storage/' . $story->image) }}" 
@@ -146,11 +140,7 @@
                                border-radius: 12px; 
                                border: 2px solid #f0f0f0;">
                 </div>
-                
-                <!-- Text and Info Section -->
                 <div class="testi-autor-details" style="flex: 1;">
-                    
-                    <!-- Testimonial Text -->
                     <div class="testi-desc" style="margin-bottom: 15px;">
                         <p style="margin: 0; 
                                   font-size: 15px; 
@@ -159,15 +149,11 @@
                             "{{ $story->stoire }}"
                         </p>
                     </div>
-    
-                    <!-- Author Info & Rating -->
                     <div class="testi-autor-reviews" 
                          style="display: flex; 
                                 justify-content: space-between; 
                                 align-items: center; 
                                 flex-wrap: wrap;">
-                        
-                        <!-- Name & Position -->
                         <div class="testi-autor-box">
                             <div class="testi-autor-content">
                                 <h5 class="autor-title" 

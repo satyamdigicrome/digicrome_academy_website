@@ -19,19 +19,16 @@ class KeyPointController extends Controller
     public function store(Request $request)
 {
     $request->validate([
-        'image' => 'required|image|max:2048', // Validate image file
+        'image' => 'required|image|max:2048',
         'name' => 'required|string|max:255',
-        'course_id' => 'required|array', // Validate as an array
-        'course_id.*' => 'exists:courses,id', // Validate each course ID
+        'course_id' => 'required|array',
+        'course_id.*' => 'exists:courses,id', 
     ]);
 
-    // Store the image and get the path
     $imagePath = $request->file('image')->store('keypoints', 'public');
 
-    // Get the authenticated user ID
     $userId = auth()->id();
 
-    // Loop through each selected course and create a key point
     foreach ($request->course_id as $courseId) {
         KeyPoint::create([
             'image' => $imagePath,

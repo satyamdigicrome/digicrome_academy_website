@@ -17,15 +17,14 @@ class BlogController extends Controller
 
     $meta = Metatag::where('page_name', 'Blog')->first();
 
-    return view('pages.blog', compact('blogs','meta'));
+    return d('pages.blog', compact('blogs','meta'));
 }
 public function blog_details($slug)
 {
     $blog = Blog::where('slug', $slug)->firstOrFail();
 
-    // Optional: increment view count
     $blog->increment('views');
 
-    return view('pages.blog_details', compact('blog'));
+    return d('pages.blog_details', compact('blog'));
 }
 }

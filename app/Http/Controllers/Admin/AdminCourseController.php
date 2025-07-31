@@ -13,19 +13,18 @@ class AdminCourseController extends Controller
 {
     public function index()
     {
-        $courses = Course::all(); // Fetch all courses from the database
+        $courses = Course::all(); 
         return view('admin.manage_courses.index', compact('courses'));
     }
 
     public function create()
     {
-        $collections = Collection::all(); // Fetch all collections to populate the dropdown
+        $collections = Collection::all(); 
         return view('admin.manage_courses.create', compact('collections'));
     }
 
     public function store(Request $request)
     {
-        // Validate the request data
         $request->validate([
             'collection_id' => 'required|exists:collections,id',
             'name' => 'required|string|max:255',
@@ -53,12 +52,10 @@ class AdminCourseController extends Controller
 
         ]);
 
-        // Handle the image upload
         $imagePath = $request->file('banner_image')->store('courses', 'public');
 
         $imagePath = $request->file('course_image')->store('courses', 'public');
 
-        // Create a new course instance
         $course = new Course();
         $course->collection_id = $request->collection_id;
         $course->name = $request->name;
@@ -81,28 +78,25 @@ class AdminCourseController extends Controller
         $course->about = $request->about;
         $course->has_faqs = $request->has_faqs;
         $course->status = $request->status;
-        $course->user_id = Auth::id(); // Assuming the user is authenticated
-        $course->image = $imagePath; // Save the image path in the database
-        $course->banner_image = $imagePath; // Save the image path in the database
+        $course->user_id = Auth::id(); 
+        $course->image = $imagePath; 
+        $course->banner_image = $imagePath; 
 
 
-        // Save the course to the database
         $course->save();
 
-        // Redirect back with a success message
         return redirect()->route('admin.manage_courses')->with('success', 'Course added successfully!');
     }
 
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        $collections = Collection::all(); // Fetch the course by ID
-        return view('admin.manage_courses.edit', compact('course','collections')); // Pass the course to the edit view
+        $collections = Collection::all();
+        return view('admin.manage_courses.edit', compact('course','collections')); 
     }
 
     public function update(Request $request, $id)
     {
-        // Validate the incoming request data
         $request->validate([
             'name' => 'required|string|max:255',
             'slug' => 'required|string|max:255',
@@ -132,11 +126,9 @@ class AdminCourseController extends Controller
 
         ]);
 
-        // Find the course by ID
         $course = Course::findOrFail($id);
         $course->slug = $request->input('slug');
 
-        // Update the course with the validated data
         $course->update($request->except('image', 'banner_image'));
 
         if ($request->hasFile('image')) {
@@ -144,22 +136,18 @@ class AdminCourseController extends Controller
             $course->image = $path;
         }
         
-        // Handle banner_image upload
         if ($request->hasFile('banner_image')) {
             $bannerPath = $request->file('banner_image')->store('banner', 'public');
             $course->banner_image = $bannerPath;
         }
-        // Handle browser PDF upload
         if ($request->hasFile('browser')) {
             $browserPath = $request->file('browser')->store('browser_pdfs', 'public');
             $course->browser = $browserPath;
         }
 
         
-        // Save updated paths if either image was updated
         $course->save();
 
-        // Redirect back to the courses index with a success message
         return redirect()->route('admin.manage_courses')->with('success', 'Course updated successfully.');
     }
 

@@ -13,7 +13,6 @@ class ApartController extends Controller
 {
     public function index()
     {
-        // Retrieve all apart records with related courses and users
         $aparts = Apart::with(['course', 'user'])->get();
         $courses = Course::all();
         return view('admin.apart.index', compact('aparts', 'courses'));
@@ -31,13 +30,10 @@ class ApartController extends Controller
             'course_id.*' => 'exists:courses,id',
         ]);
 
-        // Store the image and get the path
         $imagePath = $request->file('image')->store('aparts', 'public');
 
-        // Get the authenticated user ID
         $userId = auth()->id();
 
-        // Create a new apart record
         foreach ($request->course_id as $courseId) {
         Apart::create([
             'image' => $imagePath,
@@ -54,12 +50,10 @@ class ApartController extends Controller
 
     public function destroy(Apart $apart)
 {
-    // Check if image path is not null and file exists before deleting
     if ($apart->image && Storage::disk('public')->exists($apart->image)) {
         Storage::disk('public')->delete($apart->image);
     }
     
-    // Delete the apart record
     $apart->delete();
 
     return redirect()->route('aparts.index')->with('success', 'Apart deleted successfully.');

@@ -37,10 +37,8 @@ public function apply(Request $request)
     ]);
 
     try {
-        // Store file
         $resumePath = $request->file('resume')->store('resumes', 'public');
 
-        // Store in DB
         $application = CareerApplication::create([
             'vacancy_id' => $request->vacancy_id,
             'name' => $request->name,
@@ -50,7 +48,6 @@ public function apply(Request $request)
             'resume_path' => $resumePath,
         ]);
 
-        // Send email (fail-safe)
         try {
             Mail::to('career.digicrome@gmail.com')->send(new CareerApplicationMail($application));
         } catch (\Exception $e) {

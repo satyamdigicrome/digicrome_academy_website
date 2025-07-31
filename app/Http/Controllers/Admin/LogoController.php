@@ -17,7 +17,6 @@ class LogoController extends Controller
         return view('admin.logo.index', compact('logos','courses'));
     }
 
-    // Store a newly created logo in storage
     public function store(Request $request)
     {
         $request->validate([
@@ -29,7 +28,6 @@ class LogoController extends Controller
         ]);
         
 
-        // Handle the image upload
         $imagePath = $request->file('image')->store('logo', 'public');
 
         $userId = auth()->id();

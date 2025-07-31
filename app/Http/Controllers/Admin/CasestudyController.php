@@ -12,7 +12,6 @@ class CasestudyController extends Controller
 {
     public function index()
     {
-        // Fetch all case studies
         $caseStudies = CaseStudy::all();
         $courses = Course::all();
         return view('admin.casestudy.index', compact('caseStudies','courses'));
@@ -22,12 +21,11 @@ class CasestudyController extends Controller
         $request->validate([
             'heading' => 'required|string|max:255',
             'paragraph' => 'required|string',
-            'course_id' => 'required|array', // Validate as an array
+            'course_id' => 'required|array', 
             'course_id.*' => 'exists:courses,id',
         ]);
 
         $userId = auth()->id();
-        // Create a new case study
         foreach ($request->course_id as $courseId) {
         $caseStudy = CaseStudy::create([
             'heading' => $request->heading,
@@ -37,7 +35,6 @@ class CasestudyController extends Controller
         ]);
     }
 
-        // Attach selected courses to the case study
 
         return redirect()->route('casestudy.index')->with('success', 'Case study added successfully!');
     }

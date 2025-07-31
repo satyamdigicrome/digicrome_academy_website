@@ -23,8 +23,6 @@ class ContantController extends Controller
             'content_type' => 'required|string|max:255',
         ]);
 
-        // Handle the image upload
-
         $userId = auth()->id();
 
         Content::create([
@@ -45,7 +43,7 @@ class ContantController extends Controller
 
     public function leads()
 {
-    $leads = Lead::all(); // fetch all leads
+    $leads = Lead::all(); 
     return view('admin.leads.index', compact('leads'));
 }
 }

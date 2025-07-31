@@ -24,17 +24,15 @@ class HomeController extends Controller
     $userCountry = $position->countryName ?? 'Unknown';
 
     $collections = Collection::with(['courses' => function ($query) {
-        $query->where('status', 1)->limit(4); // Limit to 4 courses per collection
+        $query->where('status', 1)->limit(4); 
     }])->where('status', 1)->orderBy('position')->get();
 
     if ($userCountry === 'India') {
-        // Show all upcoming courses in India
         $upcomingCourses = Course::where('status', 1)
                                  ->orderByRaw('ISNULL(position), position ASC')
                                  ->limit(4)
                                  ->get();
     } else {
-        // Show only specific course IDs for other countries
         $upcomingCourses = Course::where('status', 1)
                                  ->whereIn('id', [60, 58, 55, 61])
                                  ->get();

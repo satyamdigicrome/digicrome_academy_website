@@ -33,7 +33,7 @@ class TestimonialController extends Controller
             $imagePath = $request->file('image')->store('testimonial_images', 'public');
         }
 
-        $userId = auth()->id(); // get current logged in user id, nullable if guest, change as needed
+        $userId = auth()->id();
 
         Testimonial::create([
             'tagline' => $request->tagline,
@@ -49,13 +49,9 @@ class TestimonialController extends Controller
     }
     public function destroy($id)
 {
-    // Find the testimonial by ID or fail
     $story = Testimonial::findOrFail($id);
 
-    // Delete the testimonial record (no need to check for image existence)
     $story->delete();
-
-    // Redirect back with success message
     return redirect()->back()->with('success', 'Story deleted successfully!');
 }
 
