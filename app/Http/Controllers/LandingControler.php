@@ -10,4 +10,9 @@ class LandingControler extends Controller
     {
         return redirect()->away('https://landing.digicrome.com/DS_and_AI');
     }
+
+    public function data_science()
+    {
+         return view('landing.data_science');
+    }
 }

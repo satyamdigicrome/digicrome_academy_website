@@ -176,6 +176,8 @@ Route::post('/leads', [LeadsController::class, 'leadsstore'])->name('lead.store'
 Route::post('/submit-referral', [ReferController::class, 'submit'])->name('referral.submit');
 Route::post('/vacancy/apply', [CareerController::class, 'apply'])->name('vacancy.apply');
 Route::get('/investment-banking-course', [LandingPageController::class, 'index'])->name('landing');
+Route::get('/landing', [LandingControler::class, 'data_science'])->name('data_science');
+
 
 
 

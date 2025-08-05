@@ -55,7 +55,6 @@
         menubar: false,
         branding: false,
 
-        // ✅ THIS FIXES YOUR CREATE ISSUE
         setup: function (editor) {
             editor.on('change', function () {
                 tinymce.triggerSave();
