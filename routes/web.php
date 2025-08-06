@@ -154,6 +154,7 @@ Route::get('/corporate-services', [CorporateServicesController::class, 'index'])
 Route::get('/online-payment', [PaymentsController::class, 'index'])->name('payments');
 Route::get('/career', [CareerController::class, 'index'])->name('career');
 Route::get('/thankyou', [HomeController::class, 'thankyou'])->name('thankyou');
+Route::get('/thank-you', [HomeController::class, 'thanks'])->name('thankyou');
 Route::get('/DS_and_AI', [LandingControler::class, 'landing'])->name('landing');
 Route::get('/refer-and-earn', [ReferController::class, 'index'])->name('refer_and_earn');
 Route::get('/who-we-are', [WhoweareController::class, 'index'])->name('who_we_are');
@@ -173,10 +174,11 @@ Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('ter
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy-policy');
 Route::post('/store-lead', [LeadsController::class, 'store'])->name('store.lead');
 Route::post('/leads', [LeadsController::class, 'leadsstore'])->name('lead.store');
+Route::post('/landingstore', [LeadsController::class, 'landingstore'])->name('landing.store');
 Route::post('/submit-referral', [ReferController::class, 'submit'])->name('referral.submit');
 Route::post('/vacancy/apply', [CareerController::class, 'apply'])->name('vacancy.apply');
 Route::get('/investment-banking-course', [LandingPageController::class, 'index'])->name('landing');
-Route::get('/landing', [LandingControler::class, 'data_science'])->name('data_science');
+Route::get('/data-science', [LandingControler::class, 'data_science'])->name('data_science');
 
 
 

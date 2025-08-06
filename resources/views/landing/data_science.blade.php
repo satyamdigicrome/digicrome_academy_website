@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P78HW74K');
+    </script>
+    <!-- Meta Title -->
+<title>Online Data Science & AI Course</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
+
+<!-- Meta Description -->
+<meta name="description" content="Digicrome offers expert-led online Data Science & AI certification programs from India’s premier ed‑tech academy. 12‑month internship, job placement support, live classes, real‑world projects. Upskill today.">
+
+<!-- Meta Keywords -->
+<meta name="keywords" content="Digicrome, Data Science with AI, Data Science training India, AI & ML course, Online Data Science certification, Job-ready data science programs, 12-month internship, Career upskilling, Edtech academy Noida, Live Data Science classes">
+
+    <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link  rel="stylesheet" href="{{ asset('assets/css/landing.css') }}" type="text/css"  media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link  rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css"  media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link  rel="stylesheet" href="{{ asset('assets/css/landing2.css') }}" type="text/css"  media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link  rel="stylesheet" href="{{ asset('assets/css/landing3.css') }}" type="text/css"  media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link  rel="stylesheet" href="{{ asset('assets/css/landing4.css') }}" type="text/css"  media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap" />
+    <link rel="stylesheet" href="{{ asset('assets/css/landing.css') }}" type="text/css" media="all" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" media="all"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/landing2.css') }}" type="text/css" media="all" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/landing3.css') }}" type="text/css" media="all" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/landing4.css') }}" type="text/css" media="all" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap" />
 </head>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
@@ -22,18 +60,25 @@
         color: #43505b;
         font-family: arial;
     }
+
     /* Base Styles for Desktop */
     .logo1 img {
-        width: 12%; /* Logo width for desktop */
+        width: 12%;
+        /* Logo width for desktop */
     }
 
     /* Media Query for Mobile */
     @media (max-width: 768px) {
         .logo1 img {
-            width: 20vh; /* Logo width for mobile */
+            width: 20vh;
+            /* Logo width for mobile */
+        }
+
+        .countdown {
+            justify-content: center;
         }
     }
-        
+
 
     body {
         font-family: Arial, sans-serif;
@@ -1072,10 +1117,18 @@
     }
 
     .close-btn {
-        cursor: pointer;
+        color: #000; /* Black color */
+        font-size: 28px; /* Bigger size for visibility */
+        font-weight: bold;
         position: absolute;
         top: 10px;
-        right: 10px;
+        right: 15px;
+        cursor: pointer;
+        z-index: 9999; /* Ensure it’s on top */
+    }
+
+    .close-btn:hover {
+        color: #ff0000; /* Red on hover */
     }
 
 
@@ -1249,21 +1302,165 @@
 </style>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P78HW74K" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <main>
+        <style>
+            .fixed-call-button {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                background-color: #f29c12;
+                padding: 15px;
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+                z-index: 1000;
+                display: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            }
+
+            .fixed-call-button svg {
+                color: white;
+                width: 30px;
+                height: 30px;
+            }
+
+            .rrr .form-container {
+                position: fixed;
+                bottom: 80px;
+                left: 20px;
+                background-color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                display: none;
+                z-index: 999;
+                width: 260px;
+                max-width: 100%;
+                border: 1px solid #ddd;
+            }
+
+            .form-container h2 {
+                font-size: 18px;
+                color: #333;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .form-container input {
+                margin-bottom: 12px;
+                padding: 10px;
+                width: 100%;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 14px;
+                outline: none;
+                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .form-container input:focus {
+                border-color: #f29c12;
+                box-shadow: 0 0 5px rgba(242, 156, 18, 0.5);
+            }
+
+            .form-container .close-form-btn {
+                background-color: #f29c12;
+                color: white;
+                padding: 8px 12px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                font-size: 14px;
+                transition: background-color 0.3s;
+            }
+
+            .form-container .close-form-btn:hover {
+                background-color: #e68900;
+            }
+
+            /* Animations for smoother interaction */
+            @keyframes formSlideIn {
+                0% {
+                    transform: translateY(20px);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .form-container.show-form {
+                display: block;
+                animation: formSlideIn 0.5s ease-out;
+            }
+        </style>
+        <button class="fixed-call-button" id="callButton">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                </path>
+            </svg>
+        </button>
+        <div class="rrr">
+            <div class="form-container" id="callForm">
+                <h4>Request a Callback</h4>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Phone" required>
+                <br>
+                <button class="close-form-btn" id="closeFormBtn">Close</button>
+            </div>
+        </div>
+
+
+        <script>
+            // Show the button after 3 seconds
+            setTimeout(() => {
+                document.getElementById('callButton').style.display = 'block';
+            }, 3000); // 3000ms = 3 seconds
+
+            // Show form if it was not closed previously
+            if (localStorage.getItem('formClosed') !== 'true') {
+                document.getElementById('callForm').style.display = 'block';
+                document.getElementById('callButton').style.display = 'none';
+            }
+
+            // Show form when button is clicked
+            document.getElementById('callButton').addEventListener('click', () => {
+                document.getElementById('callForm').style.display = 'block';
+                document.getElementById('callButton').style.display = 'none'; // Hide button after clicking
+                localStorage.removeItem('formClosed'); // Reset if user clicks the button
+            });
+
+            // Close form when close button is clicked
+            document.getElementById('closeFormBtn').addEventListener('click', () => {
+                document.getElementById('callForm').style.display = 'none';
+                document.getElementById('callButton').style.display = 'block'; // Show button again
+                localStorage.setItem('formClosed', 'true'); // Mark form as closed
+            });
+        </script>
         <section>
             <div style="background-color: #124aa1;">
                 <header class="header">
                     <div class="logo1">
-                        <img src="https://landing.digicrome.com/public/web/img/logo.svg"
-                            alt="Logo" width="10%">
+                        <img src="https://landing.digicrome.com/public/web/img/logo.svg" alt="Logo" width="10%">
                     </div>
-                    <button style="font-size: 10px;" id="headerbutton" class="enroll-button" onclick="openModal()">Download Brochure</button>
+                    <button style="font-size: 10px;" id="headerbutton" class="enroll-button"
+                        onclick="openModal()">Download Brochure</button>
                     <div id="myModal" class="modal">
                         <div class="modal-content">
-                            <span class="close-btn" onclick="closeModal()">&times;</span>
+                            <span class="close-btn" style="font-size: 22px;" onclick="closeModal()">&times;</span>
                             <h2>Download Brochure</h2>
-                            <form method="post" action="https://landing.digicrome.com/api/downloadbrochure">
-                                <input type="hidden" name="_token" value="rw1IePlAcOc1qGaBjZLwHSoR2hyn67owyCNWa6Mc">
+                            <form method="post" action="{{ route('landing.store') }}">
+                                @csrf
                                 <div class="row gy-3">
                                     <div class="col-12">
                                         <div class="ajax-message"></div>
@@ -1292,8 +1489,11 @@
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" class="form-control" name="city" placeholder="City*">
+                                        <input type="text" class="form-control" name="city"
+                                            placeholder="City*">
                                     </div>
+                                    <input type="hidden" id="mobile" name="source" Value="Google"
+                                        placeholder="Mobile Number">
                                     <div class="col-12">
                                         <button class="btn btn-danger w-100" id="download1" type="submit"
                                             style="background-color:#f29c12;">Download Brochure</button>
@@ -1304,7 +1504,7 @@
                     </div>
                     <div id="enrollModal" class="modal">
                         <div class="modal-content">
-                            <span class="close-btn" onclick="closeEnrollModal()">&times;</span>
+                            <span class="close-btn" style="font-size: 22px;" onclick="closeEnrollModal()">&times;</span>
                             <div class="form-container">
                                 <div class="form-heading">
                                     <div class="row">
@@ -1331,7 +1531,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form action="https://landing.digicrome.com/api/send-landing-mail" method="post">
+                                <form action="https://demo.digicrome.com/post_lead.php" method="post">
                                     <input type="hidden" name="_token"
                                         value="rw1IePlAcOc1qGaBjZLwHSoR2hyn67owyCNWa6Mc">
                                     <div class="form-group">
@@ -1339,7 +1539,7 @@
                                             placeholder="Full Name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="tel" id="phone" name="phone" required
+                                        <input type="tel" id="phone" name="mobile" required
                                             placeholder="Mobile No.">
                                     </div>
                                     <div class="form-group">
@@ -1347,11 +1547,11 @@
                                             placeholder="Your Email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="qualification" name="qualification" required
+                                        <input type="text" id="qualification" name="title" required
                                             placeholder="Qualification">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="city" name="city" required
+                                        <input type="text" id="city" name="address" required
                                             placeholder="City">
                                     </div>
                                     <div class="form-group">
@@ -1369,7 +1569,7 @@
                                             <option value="Other">Other</option>
                                         </select>
                                     </div>
-                                    <input type="hidden" id="mobile" name="source" Value="Landing"
+                                    <input type="hidden" id="mobile" name="source" Value="Google"
                                         placeholder="Mobile Number">
 
                                     <input type="hidden" id="mobile" name="country" value="india"
@@ -1386,9 +1586,9 @@
 
                                     <div class="form-group">
                                         <button type="submit">Submit</button>
-                                        <p>By continuing, you confirm that you have read and agreed to Digicrome's<span
+                                        {{-- <p>By continuing, you confirm that you have read and agreed to Digicrome's<span
                                                 style="color: #f29c12;font-size: 13px;"> Terms</span> and <span
-                                                style="color: #f29c12;font-size: 13px;">Privacy policy.</span></p>
+                                                style="color: #f29c12;font-size: 13px;">Privacy policy.</span></p> --}}
                                     </div>
                                 </form>
                             </div>
@@ -1397,15 +1597,19 @@
                     <script>
                         var modal = document.getElementById("myModal");
                         var enrollModal = document.getElementById("enrollModal");
+
                         function openModal() {
                             modal.style.display = "flex";
                         }
+
                         function openEnrollModal() {
                             enrollModal.style.display = "flex";
                         }
+
                         function closeModal() {
                             modal.style.display = "none";
                         }
+
                         function closeEnrollModal() {
                             enrollModal.style.display = "none";
                         }
@@ -1603,7 +1807,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <form action="https://landing.digicrome.com/api/send-landing-mail" method="post">
+                            <form action="https://demo.digicrome.com/post_lead.php" method="post">
                                 <input type="hidden" name="_token"
                                     value="rw1IePlAcOc1qGaBjZLwHSoR2hyn67owyCNWa6Mc">
                                 <div class="form-group">
@@ -1611,7 +1815,7 @@
                                         placeholder="Full Name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" id="phone" name="phone" required
+                                    <input type="tel" id="phone" name="mobile" required
                                         placeholder="Mobile No.">
                                 </div>
                                 <div class="form-group">
@@ -1619,11 +1823,11 @@
                                         placeholder="Your Email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="qualification" name="qualification" required
+                                    <input type="text" id="qualification" name="title" required
                                         placeholder="Qualification">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="city" name="city" required placeholder="City">
+                                    <input type="text" id="city" name="address" required placeholder="City">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control" id="qualification" name="profession"
@@ -1640,7 +1844,7 @@
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>
-                                <input type="hidden" id="mobile" name="source" Value="Landing"
+                                <input type="hidden" id="mobile" name="source" Value="Google"
                                     placeholder="Mobile Number">
                                 <input type="hidden" id="mobile" name="country" value="india"
                                     placeholder="Mobile Number">
@@ -1650,9 +1854,9 @@
                                 <input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
                                 <div class="form-group">
                                     <button type="submit">Submit</button>
-                                    <p>By continuing, you confirm that you have read and agreed to Digicrome's<span
+                                    {{-- <p>By continuing, you confirm that you have read and agreed to Digicrome's<span
                                             style="color: #f29c12;font-size: 13px;"> Terms</span> and <span
-                                            style="color: #f29c12;font-size: 13px;">Privacy policy.</span></p>
+                                            style="color: #f29c12;font-size: 13px;">Privacy policy.</span></p> --}}
                                 </div>
                             </form>
                         </div>
@@ -1660,9 +1864,9 @@
                 </div>
             </div>
         </section>
-        <section style="background-color: #f4f4f4; padding-bottom:20px;">
+        <section style="background-color: #f4f4f4; padding-bottom:20px; margin-top: 24px;">
             <div class="container" style="max-width: 1250px;">
-                <div class="row gx-0" style="border-radius: 18px; box-shadow: 0 0 20px 0 rgba(0,0,0,0.3); ">
+                <div class="row gx-0" style="border-radius: 18px; box-shadow:0 0 20px 0 rgb(0 0 0 / 51%);  ">
                     <div style="padding: 0px;" class="col-lg-2 wow zoomIn" data-wow-delay="0.1s">
                         <div class="bg-primary1  d-flex align-items-center justify-content-center mb-2 mb-sm-0"
                             style="height: 82px;">
@@ -1795,7 +1999,8 @@
             <div class="ThirdSection_c1">
                 <div class="ThirdSection_c2">
                     <h1 style="font-size: 29px; color:#fff;">Take Your Skills <br> to the Next Level with Digicrome:
-                        <br>A Comprehensive Journey of Learning</h1>
+                        <br>A Comprehensive Journey of Learning
+                    </h1>
                 </div>
                 <div class="ThirdSection_c3">
                     <div class="ThirdSection_c4">
@@ -2555,16 +2760,19 @@
                                     <h5>Connect with our team directly</h5>
                                     <p class="Eightsection-g4">Contact us, and a dedicated learning consultant will
                                         reach out to you shortly</p>
-                                    <div class="Eightsection-g5"><a href=""><button
-                                                class="Eightsection-g6"><svg stroke="currentColor"
-                                                    fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
-                                                    height="1em" width="1em"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                                    <path
-                                                        d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
-                                                    </path>
-                                                </svg> +91 70111 01972</button>&nbsp;</a>
+                                    <div class="Eightsection-g5"><a href=""><a href="tel:+916299611702">
+                                                <button class="Eightsection-g6">
+                                                    <svg stroke="currentColor" fill="currentColor"
+                                                        stroke-width="0" viewBox="0 0 24 24" height="1em"
+                                                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                                        <path
+                                                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                                        </path>
+                                                    </svg> +91 6299 611 702
+                                                </button>
+                                            </a>
+
                                     </div>
                                 </div>
                             </div>
@@ -2596,8 +2804,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="https://landing.digicrome.com/api/send-landing-mail"
-                                        method="post">
+                                    <form action="https://demo.digicrome.com/post_lead.php" method="post">
                                         <input type="hidden" name="_token"
                                             value="rw1IePlAcOc1qGaBjZLwHSoR2hyn67owyCNWa6Mc">
                                         <div class="form-group">
@@ -2605,7 +2812,7 @@
                                                 placeholder="Full Name">
                                         </div>
                                         <div class="form-group">
-                                            <input type="tel" id="phone" name="phone" required
+                                            <input type="tel" id="phone" name="mobile" required
                                                 placeholder="Mobile No.">
                                         </div>
                                         <div class="form-group">
@@ -2613,11 +2820,11 @@
                                                 placeholder="Your Email">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="qualification" name="qualification" required
+                                            <input type="text" id="qualification" name="title" required
                                                 placeholder="Qualification">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="city" name="city" required
+                                            <input type="text" id="city" name="address" required
                                                 placeholder="City">
                                         </div>
                                         <div class="form-group">
@@ -2635,7 +2842,7 @@
                                                 <option value="Other">Other</option>
                                             </select>
                                         </div>
-                                        <input type="hidden" id="mobile" name="source" Value="Landing"
+                                        <input type="hidden" id="mobile" name="source" Value="Google"
                                             placeholder="Mobile Number">
 
                                         <input type="hidden" id="mobile" name="country" value="india"
@@ -2652,10 +2859,10 @@
 
                                         <div class="form-group">
                                             <button type="submit">Submit</button>
-                                            <p>By continuing, you confirm that you have read and agreed to
+                                            {{-- <p>By continuing, you confirm that you have read and agreed to
                                                 Digicrome's<span style="color: #f29c12;font-size: 13px;"> Terms</span>
                                                 and <span style="color: #f29c12;font-size: 13px;">Privacy
-                                                    policy.</span></p>
+                                                    policy.</span></p> --}}
                                         </div>
                                     </form>
                                 </div>
@@ -2674,14 +2881,17 @@
                             program.</h2>
                         <span>Transform your career with practical learning and personalised mentorship.</span><br>
                         <div style=" margin-top: 6%;">
-                            <button id="cbtn2" type="button" class="btn btn-warning"
-                                onclick="openEnrollModal()">Enroll Now</button>
+                            <button id="cbtn2" type="button"
+                                style="    border: 2px solid #000;
+    background: #000;
+    color: #fff;"
+                                class="btn btn-warning" onclick="openEnrollModal()">Enroll Now</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section style="margin-bottom: 2%">
+        {{-- <section style="margin-bottom: 2%">
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item custom-accordion-item">
                     <h2 class="accordion-header" id="headingzero" style=" 30px; padding-top:30px;">
@@ -2900,7 +3110,7 @@
                 </div>
             </div>
             </div>
-        </section>
+        </section> --}}
         <section style="background-color: #091e3e !important; ">
             <div class="container-fluid">
                 <div class="container">
@@ -2954,6 +3164,7 @@
         </div>
         <br>
     </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>

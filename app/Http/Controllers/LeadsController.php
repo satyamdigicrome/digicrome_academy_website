@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Lead;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Course;
+
 
 class LeadsController extends Controller
 {
@@ -96,4 +98,57 @@ public function leadsstore(Request $request)
 
         return redirect()->route('thankyou');
     }
+
+
+    public function landingstore(Request $request)
+{
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email',
+        'phone' => 'required|string|max:20',
+        'address' => 'nullable|string|max:255',
+        'experience' => 'nullable|string|max:255',
+        'qualification' => 'nullable|string|max:255',
+        'message' => 'nullable|string',
+        'key1' => 'nullable|string|max:255',
+        'key2' => 'nullable|string|max:255',
+        'key3' => 'nullable|string|max:255',
+        'key4' => 'nullable|string|max:255',
+        'key5' => 'nullable|string|max:255',
+        'page_name' => 'nullable|string|max:255',
+    ]);
+
+    // Optional: Get brochure URL from course
+    $course = Course::where('course_free', 1)->first();
+    $brochureUrl = $course && $course->browser ? asset('storage/' . $course->browser) : null;
+
+    // Send to API
+    Http::asForm()->post('https://demo.digicrome.com/post_lead.php', [
+        'name'        => $request->name,
+        'mobile'      => $request->phone,
+        'email'       => $request->email,
+        'title'       => $request->qualification,
+        'address'     => $request->address,
+        'profession'  => $request->experience,
+        'source'      => $request->source,
+        'ib'          => $request->ib,
+        'country'     => 'India',
+        'comp_name'   => '',
+        'state'       => '',
+        'altr_mobile' => 'NA',
+    ]);
+
+    // Store lead
+    Lead::create($validated);
+
+    // Send mail
+    Mail::send('emails.lead-notification', ['data' => $validated], function ($message) use ($validated) {
+        $message->to('digicromeleads@gmail.com')
+                ->subject('New Lead Submission - ' . ($validated['page_name'] ?? 'Course Page'));
+    });
+
+    // Redirect to thank you with brochure URL in session
+    return redirect()->route('thankyou')->with('brochure', $brochureUrl);
+}
+
 }

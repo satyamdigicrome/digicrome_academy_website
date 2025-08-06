@@ -26,10 +26,6 @@
     justify-content: flex-end;
 }
 
-.navbar-light .navbar-brand {
-    /* width: 20%!important */
-}
-
 .navbar-light .navbar-brand img {
     max-width: 160px;
     height: auto;
@@ -853,7 +849,7 @@
         top: 0;
         line-height: 50px;
         font-family: "FontAwesome";
-        speak: none;
+        /* speak: none; */
         -webkit-font-smoothing: antialiased;
         content: "\f0da";
         color: var(--theme-color);
@@ -1667,13 +1663,6 @@
 .close {
     top: 1.5% !important;
 }
-.section-padding {
-    /*padding:60px 0;*/
-}
-
-.brand-carousel {
-}
-
 .owl-dots {
     text-align: center;
     margin-top: 4%;

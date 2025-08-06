@@ -5095,7 +5095,7 @@ p.checkout-coupon input[type="submit"]:hover {
   border: medium none;
   color: #fff;
   display: inline-block;
-  float: left;
+  /* float: left; */
   font-size: 12px;
   font-weight: 700;
   height: 40px;
@@ -5442,7 +5442,7 @@ p.checkout-coupon input[type="text"]:focus {
 }
 
 .payment-method .btn-link {
-  -moz-user-select: none;
+  /* -moz-user-select: none; */
   background: no-repeat;
   border: medium none;
   border-radius: 0;
