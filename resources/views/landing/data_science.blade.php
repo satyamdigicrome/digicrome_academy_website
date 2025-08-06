@@ -1439,10 +1439,16 @@
             </svg>
         </button>
         <div class="rrr">
-            <div class="form-container" id="callForm">
-                <h4>Request a Callback</h4>
-                <form id="callbackForm" method="post" action="https://demo.digicrome.com/post_lead.php">
-                    @csrf
+    <div class="form-container" id="callForm">
+<button id="closeFormBtn" style="position: absolute; top: 10px; right: 10px; font-size: 24px; color: #000; background: transparent; border: none; cursor: pointer; padding: 0;">&#10005;</button>
+
+        <h4>Request a Callback</h4>
+
+        <!-- Close button (black cross at top right) -->
+
+        <!-- Callback form -->
+        <form id="callbackForm" method="post" action="https://demo.digicrome.com/post_lead.php">
+            @csrf
             <!-- Visible Fields -->
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
@@ -1459,39 +1465,35 @@
             <input type="hidden" name="altr_mobile" value="">
 
             <br>
-            <button class="close-form-btn" id="closeFormBtn" type="button">Close</button>
-            <button type="submit" class="submit-btn">Submit</button>
+            <!-- Replace Close with Submit -->
+            <button type="submit" class="close-form-btn">Submit</button>
         </form>
-            </div>
-        </div>
+    </div>
+</div>
+
 
 
         <script>
-            // Show the button after 3 seconds
-            setTimeout(() => {
-                document.getElementById('callButton').style.display = 'block';
-            }, 3000); // 3000ms = 3 seconds
+    // Show the button after 3 seconds (initially hidden)
+    setTimeout(() => {
+        document.getElementById('callButton').style.display = 'block';
+    }, 3000); // 3000ms = 3 seconds
 
-            // Show form if it was not closed previously
-            if (localStorage.getItem('formClosed') !== 'true') {
-                document.getElementById('callForm').style.display = 'block';
-                document.getElementById('callButton').style.display = 'none';
-            }
+    // Show form when button is clicked
+    document.getElementById('callButton').addEventListener('click', () => {
+        document.getElementById('callForm').style.display = 'block'; // Show the form
+        document.getElementById('callButton').style.display = 'none'; // Hide the button after clicking
+        localStorage.removeItem('formClosed'); // Reset if user clicks the button
+    });
 
-            // Show form when button is clicked
-            document.getElementById('callButton').addEventListener('click', () => {
-                document.getElementById('callForm').style.display = 'block';
-                document.getElementById('callButton').style.display = 'none'; // Hide button after clicking
-                localStorage.removeItem('formClosed'); // Reset if user clicks the button
-            });
+    // Close form when close button is clicked
+    document.getElementById('closeFormBtn').addEventListener('click', () => {
+        document.getElementById('callForm').style.display = 'none'; // Hide the form
+        document.getElementById('callButton').style.display = 'block'; // Show the button again
+        localStorage.setItem('formClosed', 'true'); // Mark form as closed in localStorage
+    });
+</script>
 
-            // Close form when close button is clicked
-            document.getElementById('closeFormBtn').addEventListener('click', () => {
-                document.getElementById('callForm').style.display = 'none';
-                document.getElementById('callButton').style.display = 'block'; // Show button again
-                localStorage.setItem('formClosed', 'true'); // Mark form as closed
-            });
-        </script>
         <section>
             <div style="background-color: #124aa1;">
                 <header class="header">
