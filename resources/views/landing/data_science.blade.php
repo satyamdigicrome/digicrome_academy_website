@@ -1676,13 +1676,19 @@
         <section class="company-form contactpage-form"
             style=" background-size: cover; background-position: center; width: 100%; height: 100%;">
             <div id="mob1"
-                style="background-image: url('{{ asset('assets/landing/strip.svg')}}'; 
-                    background-size: cover; /* or specify a specific size like '100px 50px' */
+     style="background-image: url('{{ asset('assets/landing/strip.svg') }}'); 
+                    background-size: cover; 
                     background-repeat: no-repeat;
                     padding: 4px;
                     width: 459px;">
                 <strong style="padding: 10px; color:#fff;">Get 40% off on the Data Science & AI course</strong>
             </div>
+            
+    <strong style="color: #fff; font-size: 16px; text-align: center; display: block;">
+        Get 40% off on the Data Science & AI course
+    </strong>
+</div>
+
             <div class="container-fluid" style="color: black; ">
                 <div class="row">
                     <div class="col-lg-6 col-md-12" style="padding-left: 5%; padding-top:2%">
