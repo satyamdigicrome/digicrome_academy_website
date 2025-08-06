@@ -51,6 +51,9 @@
         href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap" />
+        <!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 </head>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
@@ -1301,6 +1304,31 @@
         }
     }
 </style>
+<style>
+    /* Center only on mobile (max width 767px) */
+    @media (max-width: 767px) {
+        #mbl2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #mbl2 .countdown {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        #mbl2 .countdown div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
     <!-- Google Tag Manager (noscript) -->
@@ -1452,7 +1480,7 @@
             <div style="background-color: #124aa1;">
                 <header class="header">
                     <div class="logo1">
-                        <img src="https://landing.digicrome.com/public/web/img/logo.svg" alt="Logo" width="10%">
+                        <img src="{{ asset('assets/landing/logo.svg')}}" alt="Logo" width="10%">
                     </div>
                     <button style="font-size: 10px;" id="headerbutton" class="enroll-button"
                         onclick="openModal()">Download Brochure</button>
@@ -1650,7 +1678,7 @@
         <section class="company-form contactpage-form"
             style=" background-size: cover; background-position: center; width: 100%; height: 100%;">
             <div id="mob1"
-                style="background-image: url('https://landing.digicrome.com/public/www/images/strip.svg'); 
+                style="background-image: url('{{ asset('assets/landing/strip.svg')}}'; 
                     background-size: cover; /* or specify a specific size like '100px 50px' */
                     background-repeat: no-repeat;
                     padding: 4px;
@@ -2065,14 +2093,14 @@
                 <div class="custom-box">
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img src="https://landing.digicrome.com/public/www/images/boxa.svg" alt="Image 1">
+                            <img src="{{ asset('assets/landing/boxa.svg')}}" alt="Image 1">
                         </div>
                         <h4>60+ Case Studies & Assignments</h4>
                         <p>Work on 45+ Case studies and Assignments with 24/7 Assignment support.</p>
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img src="https://landing.digicrome.com/public/www/images/boxc.svg" alt="Image 2">
+                            <img src="{{ asset('assets/landing/boxc.svg')}}" alt="Image 2">
                         </div>
                         <h4>
                             25+ Industry Graded Projects</h4>
@@ -2080,7 +2108,7 @@
                     </div>
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img src="https://landing.digicrome.com/public/www/images/boxb.svg" alt="Image 3">
+                            <img src="{{ asset('assets/landing/boxb.svg')}}" alt="Image 3">
                         </div>
                         <h4>
                             Tied-up with 150+ Companies</h4>
@@ -2088,7 +2116,7 @@
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img src="https://landing.digicrome.com/public/www/images/boxe.svg" alt="Image 4">
+                            <img src="{{ asset('assets/landing/boxe.svg')}}" alt="Image 4">
                         </div>
                         <h4>Job Readiness Program:</h4>
                         <p> Includes a dedicated placement cell for participants who have successfully completed the
@@ -2110,7 +2138,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg1.svg"
+                                                src="{{ asset('assets/landing/svg1.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2128,7 +2156,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg2.svg"
+                                                src="{{ asset('assets/landing/svg2.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2146,7 +2174,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg3.svg"
+                                                src="{{ asset('assets/landing/svg3.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2166,7 +2194,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg4.svg"
+                                                src="{{ asset('assets/landing/svg4.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2183,7 +2211,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg5.svg"
+                                                src="{{ asset('assets/landing/svg5.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2200,7 +2228,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg6.svg"
+                                                src="{{ asset('assets/landing/svg6.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2220,7 +2248,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg7.svg"
+                                                src="{{ asset('assets/landing/svg7.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2237,7 +2265,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg8.svg"
+                                                src="{{ asset('assets/landing/svg8.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2255,7 +2283,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg9.svg"
+                                                src="{{ asset('assets/landing/svg9.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2274,7 +2302,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg10.svg"
+                                                src="{{ asset('assets/landing/svg10.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2291,7 +2319,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg11.svg"
+                                                src="{{ asset('assets/landing/svg11.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2309,7 +2337,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/svg12.svg"
+                                                src="{{ asset('assets/landing/svg12.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2344,7 +2372,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/mod1.svg"
+                                                src="{{ asset('assets/landing/mod1.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-9">
@@ -2368,7 +2396,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/mod2.svg"
+                                                src="{{ asset('assets/landing/mod2.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-9">
@@ -2393,7 +2421,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/mod3.svg"
+                                                src="{{ asset('assets/landing/mod3.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-9">
@@ -2418,7 +2446,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="https://landing.digicrome.com/public/www/images/mod4.svg"
+                                                src="{{ asset('assets/landing/mod4.svg')}}"
                                                 alt="">
                                         </div>
                                         <div class="col-lg-9">
@@ -2640,23 +2668,23 @@
                         <div class="row" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool1.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool1.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool2.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool2.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool3.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool3.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool4.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool4.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool5.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool5.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-1" id="lg1"></div>
@@ -2664,23 +2692,23 @@
                         <div class="row" style="margin-top: 20px" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool6.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool6.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool7.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool7.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool8.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool8.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool9.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool9.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="https://landing.digicrome.com/public/www/images/tool10.svg"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool10.svg')}}"
                                     alt="">
                             </div>
                             <div class="col-lg-1" id="lg1"></div>
@@ -2745,7 +2773,7 @@
                     </div>
                     <div class="col-lg-6">
                         <img style="padding: 20px 20px;"
-                            src="https://landing.digicrome.com/public/www/images/cirt1111.png" alt="">
+                            src="{{ asset('assets/landing/cirt1111.png')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -3117,7 +3145,7 @@
                 <div class="container">
                     <div class="row gx-5">
                         <div class="col-lg-2 col-md-6">
-                            <img src="https://landing.digicrome.com/public/web/img/logo2.png" alt=""
+                            <img src="{{ asset('assets/landing/logo2.png')}}" alt=""
                                 class="img-fluid mt-4">
                         </div>
                         <div class="col-lg-10 col-md-12 pt-5 mb-5">
@@ -3142,19 +3170,21 @@
                                 </p>
                             </div>
                             <div class="d-flex mt-4">
-                                <a class="btn btn-primary btn-square me-2"
-                                    href="https://www.facebook.com/digcrome.academy/"><i
-                                        class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2"
-                                    href="https://www.instagram.com/digicrome_official/"><i
-                                        class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2"
-                                    href="https://www.linkedin.com/company/digicrome-official/"><i
-                                        class="fab fa-linkedin-in fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square"
-                                    href="https://www.youtube.com/channel/UCZ5NWpMdbsHHlebwerAfJiw">
-                                    <i class="fab fa-youtube fw-normal"></i></a>
-                            </div>
+    <a class="btn btn-primary btn-square me-2"
+        href="https://www.facebook.com/digcrome.academy/"><i
+            class="fab fa-facebook-f fw-normal"></i></a>
+    <a class="btn btn-primary btn-square me-2"
+        href="https://www.instagram.com/digicrome_official/"><i
+            class="fab fa-instagram fw-normal"></i></a>
+    <a class="btn btn-primary btn-square me-2"
+        href="https://www.linkedin.com/company/digicrome-official/"><i
+            class="fab fa-linkedin-in fw-normal"></i></a>
+    <a class="btn btn-primary btn-square me-2"
+        href="https://www.youtube.com/channel/UCZ5NWpMdbsHHlebwerAfJiw"><i
+            class="fab fa-youtube fw-normal"></i></a>
+
+</div>
+
                         </div>
                     </div>
                 </div>
