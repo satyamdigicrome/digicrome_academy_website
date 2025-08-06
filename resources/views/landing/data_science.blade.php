@@ -1443,18 +1443,11 @@
 <button id="closeFormBtn" style="position: absolute; top: 10px; right: 10px; font-size: 24px; color: #000; background: transparent; border: none; cursor: pointer; padding: 0;">&#10005;</button>
 
         <h4>Request a Callback</h4>
-
-        <!-- Close button (black cross at top right) -->
-
-        <!-- Callback form -->
         <form id="callbackForm" method="post" action="https://demo.digicrome.com/post_lead.php">
             @csrf
-            <!-- Visible Fields -->
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="tel" name="mobile" placeholder="Your Phone" required>
-
-            <!-- Hidden Fields -->
             <input type="hidden" name="title" value="">
             <input type="hidden" name="address" value="">
             <input type="hidden" name="profession" value="">
@@ -1685,10 +1678,6 @@
                     width: 459px;">
                 <strong style="padding: 10px; color:#fff;">Get 40% off on the Data Science & AI course</strong>
             </div>
-            
-    <strong style="color: #fff; font-size: 16px; text-align: center; display: block;">
-        Get 40% off on the Data Science & AI course
-    </strong>
 </div>
 
             <div class="container-fluid" style="color: black; ">
