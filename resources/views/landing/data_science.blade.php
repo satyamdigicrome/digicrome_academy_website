@@ -18,6 +18,7 @@
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-P78HW74K');
     </script>
+    <meta name="robots" content="noindex, nofollow">
     <!-- Meta Title -->
 <title>Online Data Science & AI Course</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
