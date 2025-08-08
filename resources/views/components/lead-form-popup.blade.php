@@ -107,7 +107,7 @@
     input[type="email"]:focus {
       border-color: #222;
       box-shadow: 0 0 8px #ddd;
-      background: #fff;
+      /* background: #fff; */
     }
   
     /* Submit Button */

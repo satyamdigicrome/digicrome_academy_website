@@ -1146,7 +1146,7 @@
       font-weight: 600;
       margin-bottom: 20px;
       text-align: center;
-    }
+    } 
   
     .custom-lead-input {
       background: rgba(255, 255, 255, 0.07);
@@ -1275,7 +1275,7 @@
     .custom-reg-input {
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #ffffff;
+      color: #000;
     }
   
     .custom-reg-input::placeholder {
@@ -1285,7 +1285,7 @@
     .custom-reg-input:focus {
       background: rgba(255, 255, 255, 0.1);
       border-color: #ffffff;
-      color: #fff;
+      color: #000;
       box-shadow: none;
     }
   

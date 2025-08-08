@@ -156,6 +156,27 @@
         </div>    
         
     </div>
+	<div class="container">
+    <div class="row">
+        <div class="col-12 mb-4">
+            <h5 style="color: #ccc"><u>Artificial Intelligence Training Course</u></h5>
+            <p>
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-noida" style="color: #fff">Artificial Intelligence Training Course in Noida</a> |
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-delhi" style="color: #fff">Artificial Intelligence Training Course in Delhi</a> |
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-pune" style="color: #fff">Artificial Intelligence Training Course in Pune</a> |
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-hyderabad" style="color: #fff">Artificial Intelligence Training Course in Hyderabad</a> |
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-bangalore" style="color: #fff">Artificial Intelligence Training Course in Bangalore</a> |
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-gurgaon" style="color: #fff">Artificial Intelligence Training Course in Gurgaon</a> |
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-mumbai" style="color: #fff">Artificial Intelligence Training Course in Mumbai</a> |
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-kolkata" style="color: #fff">Artificial Intelligence Training Course in Kolkata</a> |
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-jaipur" style="color: #fff">Artificial Intelligence Training Course in Jaipur</a> |
+                <a href="https://www.digicrome.com/courses/ai-training-course-in-chennai" style="color: #fff">Artificial Intelligence Training Course in Chennai</a>
+            </p>
+            <hr>
+        </div>
+    </div>    
+</div>
+
 	<div class="footer-bottom-area">
 		<div class="container">
 			<div class="row footer-bottom">

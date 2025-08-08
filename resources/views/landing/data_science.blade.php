@@ -19,19 +19,13 @@
         })(window, document, 'script', 'dataLayer', 'GTM-P78HW74K');
     </script>
     <meta name="robots" content="noindex, nofollow">
-    <!-- Meta Title -->
-<title>Online Data Science & AI Course</title>
+    <title>Online Data Science & AI Course</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
-
-<!-- Meta Description -->
-<meta name="description" content="Digicrome offers expert-led online Data Science & AI certification programs from India’s premier ed‑tech academy. 12‑month internship, job placement support, live classes, real‑world projects. Upskill today.">
-
-<!-- Meta Keywords -->
-<meta name="keywords" content="Digicrome, Data Science with AI, Data Science training India, AI & ML course, Online Data Science certification, Job-ready data science programs, 12-month internship, Career upskilling, Edtech academy Noida, Live Data Science classes">
-
-    <!-- End Google Tag Manager -->
+    <meta name="description"
+        content="Digicrome offers expert-led online Data Science & AI certification programs from India's premier ed-tech academy. 12-month internship, job placement support, live classes, real-world projects. Upskill today.">
+    <meta name="keywords"
+        content="Digicrome, Data Science with AI, Data Science training India, AI & ML course, Online Data Science certification, Job-ready data science programs, 12-month internship, Career upskilling, Edtech academy Noida, Live Data Science classes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="{{ asset('assets/css/landing.css') }}" type="text/css" media="all" as="style"
         onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" media="all"
@@ -51,9 +45,7 @@
         href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap" />
-        <!-- Font Awesome CDN -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
@@ -65,24 +57,19 @@
         font-family: arial;
     }
 
-    /* Base Styles for Desktop */
     .logo1 img {
         width: 12%;
-        /* Logo width for desktop */
     }
 
-    /* Media Query for Mobile */
     @media (max-width: 768px) {
         .logo1 img {
             width: 20vh;
-            /* Logo width for mobile */
         }
 
         .countdown {
             justify-content: center;
         }
     }
-
 
     body {
         font-family: Arial, sans-serif;
@@ -145,7 +132,6 @@
 
     }
 
-    /* Adjust these styles for responsiveness */
     @media (max-width: 768px) {
         .header {
             flex-direction: column;
@@ -156,7 +142,6 @@
         }
     }
 
-    /* <header> */
     *,
     *::before,
     *::after {
@@ -183,7 +168,6 @@
         margin-inline: auto;
     }
 
-    /* line */
     .ul1::before {
         content: "";
         grid-column: 1;
@@ -192,12 +176,10 @@
         border-radius: calc(var(--line-w) / 2);
     }
 
-
     .ul1 li:not(:last-child) {
         margin-bottom: var(--row-gap);
     }
 
-    /* card */
     .ul1 li {
         grid-column: 2;
         --inlineP: 1.5rem;
@@ -207,27 +189,21 @@
         grid-template-rows: min-content min-content min-content;
     }
 
-    /* date */
     .ul1 li .date {
         --dateH: 3rem;
         height: var(--dateH);
         margin-inline: calc(var(--inlineP) * -1);
-
         text-align: center;
         background-color: var(--accent-color);
-
         color: white;
         font-size: 1.25rem;
         font-weight: 700;
-
         display: grid;
         place-content: center;
         position: relative;
-
         border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
     }
 
-    /* date flap */
     .ul1 li .date::before {
         content: "";
         width: var(--inlineP);
@@ -236,12 +212,10 @@
         background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
         position: absolute;
         top: 100%;
-
         clip-path: polygon(0 0, 100% 0, 0 100%);
         right: 0;
     }
 
-    /* circle */
     .ul1 li .date::after {
         content: "";
         position: absolute;
@@ -251,12 +225,10 @@
         border: 0.3rem solid var(--accent-color);
         border-radius: 50%;
         top: 50%;
-
         transform: translate(50%, -50%);
         right: calc(100% + var(--col-gap) + var(--line-w) / 2);
     }
 
-    /* title descr */
     .ul1 li .title,
     .ul1 li .descr {
         background: var(--bgColor);
@@ -276,7 +248,6 @@
         font-weight: 300;
     }
 
-    /* shadows */
     .ul1 li .title::before,
     .ul1 li .descr::before {
         content: "";
@@ -316,7 +287,6 @@
             grid-column: 3;
         }
 
-        /* start second card */
         .ul1 li:nth-child(2) {
             grid-row: 2/4;
         }
@@ -335,7 +305,6 @@
             border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
         }
     }
-
 
     .credits {
         margin-top: 1rem;
@@ -376,8 +345,6 @@
         color: #fff;
     }
 
-
-    /* <section> */
     .ThirdSection_c1 {
         margin: 0 100px;
         display: grid;
@@ -433,10 +400,6 @@
         margin: 20px auto auto;
     }
 
-    /* <sectionend */
-
-
-    /* saction4 */
     .fourthsection-d1 {
         background-color: #f0f8fa;
         padding-top: 2%;
@@ -461,7 +424,6 @@
         border-radius: 10px;
         margin: 0 10px;
         box-shadow: 12px 0 10px 2px rgba(4, 135, 217, 0.1);
-
     }
 
     .custom-box-orange {
@@ -473,7 +435,6 @@
     }
 
     .custom-icon {
-        /* padding: 5px 20px; */
         margin-top: -20px;
         z-index: 1;
     }
@@ -489,8 +450,6 @@
         margin-inline-start: 0;
         margin-inline-end: 0;
     }
-
-    /* section4end */
 
     .Fivethsection-e1 {
         display: grid;
@@ -597,21 +556,15 @@
         margin: -5px 0 0;
     }
 
-
-
-    /* <section7> */
     .Eightsection-g1 {
         margin-top: 50px;
     }
 
     .Eightsection-g2 {
         padding: 0 100px;
-        /*background-image: url(https://landing.digicrome.com/public/www/images/bbb1.png);*/
         background-color: #212f3a;
-        /*display: flex;*/
         align-items: center;
         box-shadow: -1px 0 10px 2px rgba(4, 135, 217, .1);
-        /*justify-content: space-evenly;*/
     }
 
     .Eightsection-g2 .Eightsection-g3 {
@@ -657,8 +610,6 @@
         padding: 7px;
     }
 
-    /* end section7> */
-
     @media (max-width: 768px) {
         .Eightsection-g6 {
             text-align: center;
@@ -690,12 +641,8 @@
         .enroll-button {
             margin: 10px auto;
         }
-
-
-
     }
 
-    /* Section 2 mobile styles */
     @media (max-width: 480px) {
         .ThirdSection_c1 {
             margin: 0 20px;
@@ -763,8 +710,6 @@
             display: grid;
             grid-template-columns: 50% 50%;
         }
-
-
     }
 
     @media (max-width: 481px) {
@@ -796,20 +741,13 @@
             grid-gap: 20px;
             gap: 20px;
         }
-
-
     }
-
 
     @media (max-width: 768px) {
         .header {
             padding: 10px 20px;
             justify-content: center;
         }
-
-        /*#headerbutton{*/
-        /*    display: none;*/
-        /*}*/
 
         .enroll-button {
             margin-top: 10px;
@@ -818,7 +756,6 @@
     }
 
     .eightcon {
-        /*margin-right: 30%;*/
         padding: 11%;
     }
 
@@ -856,10 +793,7 @@
         .company-form span.text {
             text-align: center;
         }
-
-
     }
-
 
     .form-container {
         width: 393px;
@@ -904,7 +838,6 @@
         outline: none;
     }
 
-
     .form-group input.optional {
         font-style: italic;
         color: #888;
@@ -939,7 +872,6 @@
         border-bottom: .6rem solid #f29c12;
         transition: .5s ease;
         height: 90%;
-
     }
 
     #col {
@@ -1015,7 +947,6 @@
         text-align: center;
         font-weight: 500;
         text-transform: uppercase;
-
     }
 
     @media (max-width: 768px) {
@@ -1028,19 +959,15 @@
 
         #cbtn1 {
             font-size: 16px;
-
         }
 
         #cbtn2 {
             font-size: 16px;
             margin-top: 4%;
-
         }
     }
 
-    /* Add this CSS in your style section or file */
     @media (max-width: 768px) {
-
         #numberrow {
             display: flex;
             flex-wrap: wrap;
@@ -1072,15 +999,12 @@
             padding: 0 15px;
             box-sizing: border-box;
             margin-bottom: 15px;
-
         }
 
         .img-fluid {
             max-width: 53%;
         }
     }
-
-
 
     #toolimg {
         border-radius: 5px;
@@ -1097,7 +1021,6 @@
         border-top: 0.2rem solid #2e3d5f;
         border-bottom: 0.2rem solid #2e3d5f;
         transition: .5s ease;
-
     }
 
     .modal {
@@ -1121,20 +1044,23 @@
     }
 
     .close-btn {
-        color: #000; /* Black color */
-        font-size: 28px; /* Bigger size for visibility */
+        color: #000;
+        /* Black color */
+        font-size: 28px;
+        /* Bigger size for visibility */
         font-weight: bold;
         position: absolute;
         top: 10px;
         right: 15px;
         cursor: pointer;
-        z-index: 9999; /* Ensure it’s on top */
+        z-index: 9999;
+        /* Ensure it’s on top */
     }
 
     .close-btn:hover {
-        color: #ff0000; /* Red on hover */
+        color: #ff0000;
+        /* Red on hover */
     }
-
 
     .countdown {
         display: flex;
@@ -1142,15 +1068,12 @@
         gap: 20px;
     }
 
-
-
     .countdown>div {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /*margin-top: 50px;*/
         box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
         width: 55px;
         height: 52px;
@@ -1168,12 +1091,10 @@
         font-size: 12px;
     }
 
-
     #mob4 {
         font-size: 3rem;
         line-height: 1.3;
         text-align: left;
-        /*padding-bottom:4%;*/
     }
 
     #mob7 {
@@ -1185,21 +1106,16 @@
     }
 
     @media screen and (max-width:600px) {
-
         .countdown {
-            /*flex-direction: column;*/
             align-items: center;
             margin-bottom: 7%;
             gap: 10px;
-            /*margin-top: 30px;*/
         }
 
         .countdown>div {
             background-color: #fff;
-            /*width: 250px;*/
             height: 60px;
             margin: 0;
-            /*flex-direction: row;*/
             justify-content: space-between;
             padding: 20px;
         }
@@ -1216,7 +1132,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: white;
-        /*padding: 20px;*/
         border: 1px solid #ccc;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         z-index: 9999;
@@ -1230,7 +1145,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: white;
-            /*padding: 20px;*/
             border: 1px solid #ccc;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 9999;
@@ -1269,11 +1183,9 @@
         #mob7 {
             display: table-cell;
             text-align: center;
-
         }
 
         #mob8 {
-
             border: 0;
             vertical-align: baseline;
             font-family: "Poppins", sans-serif;
@@ -1284,7 +1196,6 @@
         }
 
         #mob9 {
-
             border: 0;
             vertical-align: baseline;
             font-family: "Poppins", sans-serif;
@@ -1303,9 +1214,7 @@
             display: table-cell;
         }
     }
-</style>
-<style>
-    /* Center only on mobile (max width 767px) */
+
     @media (max-width: 767px) {
         #mbl2 {
             display: flex;
@@ -1327,8 +1236,98 @@
             align-items: center;
         }
     }
+
+    .fixed-call-button {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #f29c12;
+        padding: 15px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+        display: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .fixed-call-button svg {
+        color: white;
+        width: 30px;
+        height: 30px;
+    }
+
+    .rrr .form-container {
+        position: fixed;
+        bottom: 80px;
+        left: 20px;
+        background-color: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        display: none;
+        z-index: 999;
+        width: 260px;
+        max-width: 100%;
+        border: 1px solid #ddd;
+    }
+
+    .form-container h2 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .form-container input {
+        margin-bottom: 12px;
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-container input:focus {
+        border-color: #f29c12;
+        box-shadow: 0 0 5px rgba(242, 156, 18, 0.5);
+    }
+
+    .form-container .close-form-btn {
+        background-color: #f29c12;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+    .form-container .close-form-btn:hover {
+        background-color: #e68900;
+    }
+
+    @keyframes formSlideIn {
+        0% {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .form-container.show-form {
+        display: block;
+        animation: formSlideIn 0.5s ease-out;
+    }
 </style>
- 
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
     <!-- Google Tag Manager (noscript) -->
@@ -1336,99 +1335,6 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <main>
-        <style>
-            .fixed-call-button {
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                background-color: #f29c12;
-                padding: 15px;
-                border-radius: 50%;
-                border: none;
-                cursor: pointer;
-                z-index: 1000;
-                display: none;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            }
-
-            .fixed-call-button svg {
-                color: white;
-                width: 30px;
-                height: 30px;
-            }
-
-            .rrr .form-container {
-                position: fixed;
-                bottom: 80px;
-                left: 20px;
-                background-color: white;
-                padding: 15px 20px;
-                border-radius: 10px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-                display: none;
-                z-index: 999;
-                width: 260px;
-                max-width: 100%;
-                border: 1px solid #ddd;
-            }
-
-            .form-container h2 {
-                font-size: 18px;
-                color: #333;
-                margin-bottom: 10px;
-                text-align: center;
-            }
-
-            .form-container input {
-                margin-bottom: 12px;
-                padding: 10px;
-                width: 100%;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                font-size: 14px;
-                outline: none;
-                transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .form-container input:focus {
-                border-color: #f29c12;
-                box-shadow: 0 0 5px rgba(242, 156, 18, 0.5);
-            }
-
-            .form-container .close-form-btn {
-                background-color: #f29c12;
-                color: white;
-                padding: 8px 12px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                width: 100%;
-                font-size: 14px;
-                transition: background-color 0.3s;
-            }
-
-            .form-container .close-form-btn:hover {
-                background-color: #e68900;
-            }
-
-            /* Animations for smoother interaction */
-            @keyframes formSlideIn {
-                0% {
-                    transform: translateY(20px);
-                    opacity: 0;
-                }
-
-                100% {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
-            }
-
-            .form-container.show-form {
-                display: block;
-                animation: formSlideIn 0.5s ease-out;
-            }
-        </style>
         <button class="fixed-call-button" id="callButton">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
                 width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -1439,59 +1345,48 @@
             </svg>
         </button>
         <div class="rrr">
-    <div class="form-container" id="callForm">
-<button id="closeFormBtn" style="position: absolute; top: 10px; right: 10px; font-size: 24px; color: #000; background: transparent; border: none; cursor: pointer; padding: 0;">&#10005;</button>
-
-        <h4>Request a Callback</h4>
-        <form id="callbackForm" method="post" action="https://demo.digicrome.com/post_lead.php">
-            @csrf
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="mobile" placeholder="Your Phone" required>
-            <input type="hidden" name="title" value="">
-            <input type="hidden" name="address" value="">
-            <input type="hidden" name="profession" value="">
-            <input type="hidden" name="source" value="">
-            <input type="hidden" name="country" value="">
-            <input type="hidden" name="comp_name" value="">
-            <input type="hidden" name="state" value="">
-            <input type="hidden" name="altr_mobile" value="">
-
-            <br>
-            <!-- Replace Close with Submit -->
-            <button type="submit" class="close-form-btn">Submit</button>
-        </form>
-    </div>
-</div>
-
-
-
+            <div class="form-container" id="callForm">
+                <button id="closeFormBtn"
+                    style="position: absolute; top: 10px; right: 10px; font-size: 24px; color: #000; background: transparent; border: none; cursor: pointer; padding: 0;">&#10005;</button>
+                <h4>Request a Callback</h4>
+                <form id="callbackForm" method="post" action="https://demo.digicrome.com/post_lead.php">
+                    @csrf
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="mobile" placeholder="Your Phone" required>
+                    <input type="hidden" name="title" value="">
+                    <input type="hidden" name="address" value="">
+                    <input type="hidden" name="profession" value="">
+                    <input type="hidden" name="source" value="">
+                    <input type="hidden" name="country" value="">
+                    <input type="hidden" name="comp_name" value="">
+                    <input type="hidden" name="state" value="">
+                    <input type="hidden" name="altr_mobile" value="">
+                    <br>
+                    <button type="submit" class="close-form-btn">Submit</button>
+                </form>
+            </div>
+        </div>
         <script>
-    // Show the button after 3 seconds (initially hidden)
-    setTimeout(() => {
-        document.getElementById('callButton').style.display = 'block';
-    }, 3000); // 3000ms = 3 seconds
-
-    // Show form when button is clicked
-    document.getElementById('callButton').addEventListener('click', () => {
-        document.getElementById('callForm').style.display = 'block'; // Show the form
-        document.getElementById('callButton').style.display = 'none'; // Hide the button after clicking
-        localStorage.removeItem('formClosed'); // Reset if user clicks the button
-    });
-
-    // Close form when close button is clicked
-    document.getElementById('closeFormBtn').addEventListener('click', () => {
-        document.getElementById('callForm').style.display = 'none'; // Hide the form
-        document.getElementById('callButton').style.display = 'block'; // Show the button again
-        localStorage.setItem('formClosed', 'true'); // Mark form as closed in localStorage
-    });
-</script>
-
+            setTimeout(() => {
+                document.getElementById('callButton').style.display = 'block';
+            }, 3000);
+            document.getElementById('callButton').addEventListener('click', () => {
+                document.getElementById('callForm').style.display = 'block';
+                document.getElementById('callButton').style.display = 'none';
+                localStorage.removeItem('formClosed');
+            });
+            document.getElementById('closeFormBtn').addEventListener('click', () => {
+                document.getElementById('callForm').style.display = 'none';
+                document.getElementById('callButton').style.display = 'block';
+                localStorage.setItem('formClosed', 'true');
+            });
+        </script>
         <section>
             <div style="background-color: #124aa1;">
                 <header class="header">
                     <div class="logo1">
-                        <img src="{{ asset('assets/landing/logo.svg')}}" alt="Logo" width="10%">
+                        <img src="{{ asset('assets/landing/logo.svg') }}" alt="Logo" width="10%">
                     </div>
                     <button style="font-size: 10px;" id="headerbutton" class="enroll-button"
                         onclick="openModal()">Download Brochure</button>
@@ -1544,9 +1439,9 @@
                     </div>
                     <div id="enrollModal" class="modal">
                         <div class="modal-content">
-                            <span class="close-btn" style="font-size: 22px;" onclick="closeEnrollModal()">&times;</span>
+                            <span class="close-btn" style="font-size: 22px;"
+                                onclick="closeEnrollModal()">&times;</span>
                             <div class="form-container">
-                            
                                 <form action="https://demo.digicrome.com/post_lead.php" method="post">
                                     @csrf
                                     <input type="hidden" name="_token"
@@ -1588,24 +1483,16 @@
                                     </div>
                                     <input type="hidden" id="mobile" name="source" Value="Google"
                                         placeholder="Mobile Number">
-
                                     <input type="hidden" id="mobile" name="country" value="india"
                                         placeholder="Mobile Number">
-
                                     <input type="hidden" id="mobile" name="comp_name"
                                         placeholder="Mobile Number">
-
                                     <input type="hidden" id="mobile" name="state" value=""
                                         placeholder="Mobile Number">
-
                                     <input type="hidden" id="mobile" name="altr_mobile"
                                         placeholder="Mobile Number">
-
                                     <div class="form-group">
                                         <button type="submit">Submit</button>
-                                        {{-- <p>By continuing, you confirm that you have read and agreed to Digicrome's<span
-                                                style="color: #f29c12;font-size: 13px;"> Terms</span> and <span
-                                                style="color: #f29c12;font-size: 13px;">Privacy policy.</span></p> --}}
                                     </div>
                                 </form>
                             </div>
@@ -1638,11 +1525,9 @@
                                 closeEnrollModal();
                             }
                         }
-                           window.onload = function() {
-        // Open either of the modals on page load (uncomment the one you need)
-        openModal(); // This will open the myModal
-        // openEnrollModal(); // This will open the enrollModal
-    }
+                        window.onload = function() {
+                            openModal();
+                        }
                     </script>
                     <script>
                         const newDate = new Date('08-10-2025 09:00:00').getTime();
@@ -1671,15 +1556,14 @@
         <section class="company-form contactpage-form"
             style=" background-size: cover; background-position: center; width: 100%; height: 100%;">
             <div id="mob1"
-     style="background-image: url('{{ asset('assets/landing/strip.svg') }}'); 
+                style="background-image: url('{{ asset('assets/landing/strip.svg') }}'); 
                     background-size: cover; 
                     background-repeat: no-repeat;
                     padding: 4px;
                     width: 459px;">
                 <strong style="padding: 10px; color:#fff;">Get 40% off on the Data Science & AI course</strong>
             </div>
-</div>
-
+            </div>
             <div class="container-fluid" style="color: black; ">
                 <div class="row">
                     <div class="col-lg-6 col-md-12" style="padding-left: 5%; padding-top:2%">
@@ -1813,7 +1697,6 @@
                                             style="text-align: left; color:#fff; font-weight: 700;    line-height: 1; padding-top: 10px;">
                                             Request Callback</h4>
                                         <p style="text-align: left; color:#fff;">Fill out the form below!</p>
-
                                     </div>
                                     <div class="col-lg-4" style="margin-top: 7px;     margin-bottom: 3%; ">
                                         <div class="bbx"
@@ -1879,9 +1762,6 @@
                                 <input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
                                 <div class="form-group">
                                     <button type="submit">Submit</button>
-                                    {{-- <p>By continuing, you confirm that you have read and agreed to Digicrome's<span
-                                            style="color: #f29c12;font-size: 13px;"> Terms</span> and <span
-                                            style="color: #f29c12;font-size: 13px;">Privacy policy.</span></p> --}}
                                 </div>
                             </form>
                         </div>
@@ -2089,14 +1969,14 @@
                 <div class="custom-box">
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img src="{{ asset('assets/landing/boxa.svg')}}" alt="Image 1">
+                            <img src="{{ asset('assets/landing/boxa.svg') }}" alt="Image 1">
                         </div>
                         <h4>60+ Case Studies & Assignments</h4>
                         <p>Work on 45+ Case studies and Assignments with 24/7 Assignment support.</p>
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img src="{{ asset('assets/landing/boxc.svg')}}" alt="Image 2">
+                            <img src="{{ asset('assets/landing/boxc.svg') }}" alt="Image 2">
                         </div>
                         <h4>
                             25+ Industry Graded Projects</h4>
@@ -2104,7 +1984,7 @@
                     </div>
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img src="{{ asset('assets/landing/boxb.svg')}}" alt="Image 3">
+                            <img src="{{ asset('assets/landing/boxb.svg') }}" alt="Image 3">
                         </div>
                         <h4>
                             Tied-up with 150+ Companies</h4>
@@ -2112,7 +1992,7 @@
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img src="{{ asset('assets/landing/boxe.svg')}}" alt="Image 4">
+                            <img src="{{ asset('assets/landing/boxe.svg') }}" alt="Image 4">
                         </div>
                         <h4>Job Readiness Program:</h4>
                         <p> Includes a dedicated placement cell for participants who have successfully completed the
@@ -2134,8 +2014,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg1.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg1.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2152,8 +2031,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg2.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg2.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2170,8 +2048,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg3.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg3.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2189,9 +2066,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg4.svg')}}"
-                                                alt="">
+                                            <img style="max-width: 100%; height: auto;" src="{{ asset('assets/landing/svg4.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>Get Access to Industry Based Course Curriculum
@@ -2207,8 +2082,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg5.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg5.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2224,8 +2098,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg6.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg6.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2244,8 +2117,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg7.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg7.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2261,8 +2133,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg8.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg8.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2279,8 +2150,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg9.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg9.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2298,8 +2168,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg10.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg10.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2315,8 +2184,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg11.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg11.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2333,8 +2201,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/svg12.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/svg12.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
@@ -2368,8 +2235,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/mod1.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/mod1.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-9">
                                             <strong>
@@ -2392,8 +2258,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/mod2.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/mod2.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-9">
                                             <strong>
@@ -2417,8 +2282,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/mod3.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/mod3.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-9">
                                             <strong>
@@ -2442,8 +2306,7 @@
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
                                             <img style="max-width: 100%; height: auto;"
-                                                src="{{ asset('assets/landing/mod4.svg')}}"
-                                                alt="">
+                                                src="{{ asset('assets/landing/mod4.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-9">
                                             <strong>
@@ -2463,7 +2326,6 @@
                 <div class="Fivethsection-e9">
                     <section style="margin-bottom: 2%;">
                         <div class="accordion" id="accordionExample">
-                            <!--<h2>Data Science with AI Training Curriculum</h2>-->
                             <p>It doesn't matter if you're a BA, B.Com, or B.Sc. Student. Our Data Science trainer will
                                 guide you through everything, from the fundamentals of programming to advanced AI Models
                                 through our Data Science & AI Certification Program</p>
@@ -2656,55 +2518,46 @@
                     <div class="Fivethsection-e">
                         <h2 style="margin-top: 30px; text-align:center;">Tools and Technologies</h2>
                     </div>
-                    <p style="margin-top: 10px;margin-bottom: 2%; text-align:center;" class="Fivethsection-e4">Acquire
+                    <p style="margin-top: 10px;margin-bottom: 2%; text-align:center;" class="Fivethsection-e4">
+                        Acquire
                         practical expertise with essential tools and technologies, paving the way for real-world success
                         in our program.</p>
                     <div class="container" id="con1">
-
                         <div class="row" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool1.svg')}}"
-                                    alt="">
+                                <img id="toolimg" src="{{ asset('assets/landing/tool1.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool2.svg')}}"
-                                    alt="">
+                                <img id="toolimg" src="{{ asset('assets/landing/tool2.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool3.svg')}}"
-                                    alt="">
+                                <img id="toolimg" src="{{ asset('assets/landing/tool3.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool4.svg')}}"
-                                    alt="">
+                                <img id="toolimg" src="{{ asset('assets/landing/tool4.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool5.svg')}}"
-                                    alt="">
+                                <img id="toolimg" src="{{ asset('assets/landing/tool5.svg') }}" alt="">
                             </div>
                             <div class="col-lg-1" id="lg1"></div>
                         </div>
                         <div class="row" style="margin-top: 20px" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool6.svg')}}"
-                                    alt="">
+                                <img id="toolimg" src="{{ asset('assets/landing/tool6.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool7.svg')}}"
-                                    alt="">
+                                <img id="toolimg" src="{{ asset('assets/landing/tool7.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool8.svg')}}"
-                                    alt="">
+                                <img id="toolimg" src="{{ asset('assets/landing/tool8.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool9.svg')}}"
-                                    alt="">
+                                <img id="toolimg" src="{{ asset('assets/landing/tool9.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool10.svg')}}"
+                                <img id="toolimg" src="{{ asset('assets/landing/tool10.svg') }}"
                                     alt="">
                             </div>
                             <div class="col-lg-1" id="lg1"></div>
@@ -2768,8 +2621,8 @@
                         </ul><br>
                     </div>
                     <div class="col-lg-6">
-                        <img style="padding: 20px 20px;"
-                            src="{{ asset('assets/landing/cirt1111.png')}}" alt="">
+                        <img style="padding: 20px 20px;" src="{{ asset('assets/landing/cirt1111.png') }}"
+                            alt="">
                     </div>
                 </div>
             </div>
@@ -2797,7 +2650,6 @@
                                                     </svg> +91 6299 611 702
                                                 </button>
                                             </a>
-
                                     </div>
                                 </div>
                             </div>
@@ -2822,8 +2674,7 @@
                                                         <path fill-rule="evenodd"
                                                             d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
                                                             style="
-                                                    color: #f29c12;
-                                                " />
+                                                    color: #f29c12;" />
                                                     </svg>
                                                 </div>
                                             </div>
@@ -2885,10 +2736,6 @@
 
                                         <div class="form-group">
                                             <button type="submit">Submit</button>
-                                            {{-- <p>By continuing, you confirm that you have read and agreed to
-                                                Digicrome's<span style="color: #f29c12;font-size: 13px;"> Terms</span>
-                                                and <span style="color: #f29c12;font-size: 13px;">Privacy
-                                                    policy.</span></p> --}}
                                         </div>
                                     </form>
                                 </div>
@@ -2908,241 +2755,19 @@
                         <span>Transform your career with practical learning and personalised mentorship.</span><br>
                         <div style=" margin-top: 6%;">
                             <button id="cbtn2" type="button"
-                                style="    border: 2px solid #000;
-    background: #000;
-    color: #fff;"
+                                style="border: 2px solid #000; background: #000; color: #fff;"
                                 class="btn btn-warning" onclick="openEnrollModal()">Enroll Now</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        {{-- <section style="margin-bottom: 2%">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item custom-accordion-item">
-                    <h2 class="accordion-header" id="headingzero" style=" 30px; padding-top:30px;">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapsezero" aria-expanded="true" aria-controls="collapsezero"
-                            style="color: #000;font-size: 30px;">FAQs for Data Science & AI Professional
-                            Course </button>
-                    </h2>
-                    <div id="collapsezero" class="accordion-collapse collapse show" aria-labelledby="headingzero"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="accordion-item custom-accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true"
-                                        aria-controls="collapseOne" style="background-color: #2e3d5f; color:white;">
-                                        What is a Data Science & AI Professional Course?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        This course is designed to provide comprehensive training in Data Science and
-                                        Artificial Intelligence. It covers various topics, including machine learning,
-                                        data analysis, and AI
-                                        algorithms.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" style="padding-top: 6px;">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                        aria-expanded="false" aria-controls="collapseTwo"
-                                        style="background-color: #faa111; color:white;">
-                                        Will I get assignments after I complete the classroom sessions?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse"
-                                    aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Once you have completed the classroom sessions, you will be provided with
-                                        assignments through the
-                                        online Learning Management System. These assignments must be completed to earn
-                                        your data scientist
-                                        certificate, and you can work on them at your own convenience.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" style="padding-top: 6px;">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                        aria-expanded="false" aria-controls="collapseThree"
-                                        style="background-color: #2e3d5f; color:white;">
-                                        What topics are covered in the course curriculum?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        The curriculum typically encompasses key topics, including data preprocessing,
-                                        statistical analysis, machine learning, deep learning, natural language
-                                        processing, and computer vision.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" style="padding-top: 6px;">
-                                <h2 class="accordion-header" id="headingfour">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapsefour"
-                                        aria-expanded="false" aria-controls="collapsefour"
-                                        style="background-color: #faa111; color:white;">
-                                        Do I need to have a specific computer setup for this course?
-                                    </button>
-                                </h2>
-                                <div id="collapsefour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingfour" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        A standard computer with internet access is usually sufficient. However, having
-                                        a computer with a
-                                        good amount of RAM and a capable GPU can be beneficial for AI-related tasks.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" style="padding-top: 6px;">
-                                <h2 class="accordion-header" id="headingfive">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapsefive"
-                                        aria-expanded="false" aria-controls="collapsefive"
-                                        style="background-color: #2e3d5f; color:white;">
-                                        What can someone without prior experience in data science anticipate upon
-                                        completing this program?
-                                    </button>
-                                </h2>
-                                <div id="collapsefive" class="accordion-collapse collapse"
-                                    aria-labelledby="headingfive" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Given the increasing demand and a shortage of Data Science Professionals in the
-                                        market,
-                                        showcasing a solid understanding of data science concepts and algorithms
-                                        enhances your
-                                        prospects for a successful career in this field. DigiCrome provides internships
-                                        and live
-                                        projects starting from the first month of the course, offering valuable
-                                        opportunities to
-                                        refine your skills.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" style="padding-top: 6px;">
-                                <h2 class="accordion-header" id="headingsix">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapsesix"
-                                        aria-expanded="false" aria-controls="collapsesix"
-                                        style="background-color: #faa111; color:white;">
-                                        What skills will I gain from this course?
-                                    </button>
-                                </h2>
-                                <div id="collapsesix" class="accordion-collapse collapse"
-                                    aria-labelledby="headingsix" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Upon completion of the course, you will gain skills in data analysis, machine
-                                        learning, model building, and AI development.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" style="padding-top: 6px;">
-                                <h2 class="accordion-header" id="headingseven">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapseseven"
-                                        aria-expanded="false" aria-controls="collapseseven"
-                                        style="background-color: #2e3d5f; color:white;">
-                                        What should somebody with no experience in data science expect after completing
-                                        this programme?
-                                    </button>
-                                </h2>
-                                <div id="collapseseven" class="accordion-collapse collapse"
-                                    aria-labelledby="headingseven" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        With growing demand, there is a scarcity of Data Science Professionals in the
-                                        market. If you can
-                                        demonstrate strong knowledge of Data Science concepts and algorithms, then there
-                                        is a high chance
-                                        for you to be able to make a career in this profession. DigiCrome offers you
-                                        internships and live
-                                        projects right from the first month of the course to further hone your skills.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" style="padding-top: 6px;">
-                                <h2 class="accordion-header" id="headingeight">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapseeight"
-                                        aria-expanded="false" aria-controls="collapseeight"
-                                        style="background-color: #faa111; color:white;">
-                                        What is the total course duration, including projects?
-                                    </button>
-                                </h2>
-                                <div id="collapseeight" class="accordion-collapse collapse"
-                                    aria-labelledby="headingeight" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        In this blended program, you will participate in 312 hours of classroom sessions
-                                        over 11 months.
-                                        Additionally, you'll have access to the online Learning Management System for
-                                        recorded videos and assignments.
-                                        The total duration of online assignments to be completed is 312+ hours,
-                                        inclusive of one month dedicated to Google
-                                        TensorFlow preparation and one month for interview preparation. Alongside, you
-                                        will engage in hands-on learning through
-                                        45+ live projects. </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" style="padding-top: 6px;">
-                                <h2 class="accordion-header" id="headingnine">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapsenine"
-                                        aria-expanded="false" aria-controls="collapsenine"
-                                        style="background-color: #2e3d5f; color:white;">
-                                        What job assistance do you provide to students?
-                                    </button>
-                                </h2>
-                                <div id="collapsenine" class="accordion-collapse collapse"
-                                    aria-labelledby="headingnine" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        There are plenty of jobs available for data professionals. Once you complete the
-                                        training,
-                                        assignments and live projects, we will send your resume to the organisations
-                                        with whom we have
-                                        formal agreements on job placements.
-                                        We also conduct webinars to help you with your resume and job interviews. We
-                                        cover all aspects of
-                                        post-training activities that are required to get a successful placement.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" style="padding-top: 6px;">
-                                <h2 class="accordion-header" id="headingten">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapseten"
-                                        aria-expanded="false" aria-controls="collapseten"
-                                        style="background-color: #faa111; color:white;">
-                                        What if I miss a classroom session?
-                                    </button>
-                                </h2>
-                                <div id="collapseten" class="accordion-collapse collapse"
-                                    aria-labelledby="headingten" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        If you miss a class, we will arrange for a recording of the session. You can
-                                        then access it through
-                                        the online Learning ManagementSystem. </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section> --}}
         <section style="background-color: #091e3e !important; ">
             <div class="container-fluid">
                 <div class="container">
                     <div class="row gx-5">
                         <div class="col-lg-2 col-md-6">
-                            <img src="{{ asset('assets/landing/logo2.png')}}" alt=""
+                            <img src="{{ asset('assets/landing/logo2.png') }}" alt=""
                                 class="img-fluid mt-4">
                         </div>
                         <div class="col-lg-10 col-md-12 pt-5 mb-5">
@@ -3167,21 +2792,20 @@
                                 </p>
                             </div>
                             <div class="d-flex mt-4">
-    <a class="btn btn-primary btn-square me-2"
-        href="https://www.facebook.com/digcrome.academy/"><i
-            class="fab fa-facebook-f fw-normal"></i></a>
-    <a class="btn btn-primary btn-square me-2"
-        href="https://www.instagram.com/digicrome_official/"><i
-            class="fab fa-instagram fw-normal"></i></a>
-    <a class="btn btn-primary btn-square me-2"
-        href="https://www.linkedin.com/company/digicrome-official/"><i
-            class="fab fa-linkedin-in fw-normal"></i></a>
-    <a class="btn btn-primary btn-square me-2"
-        href="https://www.youtube.com/channel/UCZ5NWpMdbsHHlebwerAfJiw"><i
-            class="fab fa-youtube fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2"
+                                    href="https://www.facebook.com/digcrome.academy/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2"
+                                    href="https://www.instagram.com/digicrome_official/"><i
+                                        class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2"
+                                    href="https://www.linkedin.com/company/digicrome-official/"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2"
+                                    href="https://www.youtube.com/channel/UCZ5NWpMdbsHHlebwerAfJiw"><i
+                                        class="fab fa-youtube fw-normal"></i></a>
 
-</div>
-
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -3192,7 +2816,6 @@
         </div>
         <br>
     </main>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
