@@ -1415,8 +1415,8 @@
                                     <div class="col-12">
                                         <select name="qualification" class="form-control shadow-none">
                                             <option value="" selected="selected">Qualification*</option>
-                                            <option>Below 12th</option>
-                                            <option>12th Pursuing</option>
+                                            {{-- <option>Below 12th</option>
+                                            <option>12th Pursuing</option> --}}
                                             <option>Graduation Pursuing</option>
                                             <option>Graduate</option>
                                             <option>Post-Graduation Pursuing</option>
