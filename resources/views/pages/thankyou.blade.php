@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('title',  'Digicrome')
-
+@php
+    // Set flags to hide header and footer
+    $hideHeader = true;
+    $hideFooter = true;
+@endphp
 
 @section('content')
 @include('components.lead-form-popup')
@@ -20,9 +24,9 @@
       Our team will get in touch with you shortly. In the meantime, feel free to explore more about Digicrome.
     </p>
   
-    <div class="d-flex flex-wrap justify-content-center gap-3">
+    {{-- <div class="d-flex flex-wrap justify-content-center gap-3">
       <a href="https://www.digicrome.com" class="btn btn-primary px-4">Go to Homepage</a>
-    </div>
+    </div> --}}
   
   </div>
   
