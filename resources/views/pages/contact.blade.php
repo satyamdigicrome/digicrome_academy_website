@@ -36,7 +36,7 @@
 	}
 </style>
 
-<div class="contact-img d-flex" style="background-image: url('{{ asset('assets/images/contact.webp') }}')">
+<div class="contact-img d-flex" style="background-image: url('{{ asset('assets/images/cus.webp') }}')">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-lg-12">
