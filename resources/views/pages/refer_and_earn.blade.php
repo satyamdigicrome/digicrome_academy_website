@@ -6,21 +6,21 @@
 @section('content')
 @include('components.lead-form-popup')
 
-  <div class="breadcumb-area d-flex">
+  <div class="breadcumb-area d-flex"  style="background-image: url('{{ asset('assets/images/rfn.webp') }}')">
     <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-12">
       <div class="breadcumb-content">
         <div class="breadcumb-title">
-        <h4>Refer And Earn</h4>
+        <h4 style=" margin-bottom: 210px; color: #fff;">Refer And Earn</h4>
         </div>
 
       </div>
       </div>
     </div>
-    <div class="breadcumb-shape">
+    {{-- <div class="breadcumb-shape">
       <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
-    </div>
+    </div> --}}
     <div class="breadcumb-shape2">
       <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
     </div>

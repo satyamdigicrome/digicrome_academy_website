@@ -36,19 +36,19 @@
 	}
 </style>
 
-<div class="contact-img d-flex" style="background-image: url('{{ asset('assets/images/cus.webp') }}')">
+<div class="contact-img d-flex" style="background-image: url('{{ asset('assets/images/cotn.webp') }}')">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-lg-12">
-				{{-- <div class="breadcumb-content">
+				<div class="breadcumb-content">
 							<div class="breadcumb-title">
-								<h4>Contact</h4>
+								<h4 style="color: #fff; margin-bottom: 210px ;">Contact US</h4>
 							</div>
-							<ul>
+							{{-- <ul>
 								<li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
 								<li>Contact</li>
-							</ul>
-						</div> --}}
+							</ul> --}}
+						</div>
 			</div>
 		</div>
 		{{-- <div class="breadcumb-shape">
