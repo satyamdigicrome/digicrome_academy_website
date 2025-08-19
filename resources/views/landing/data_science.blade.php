@@ -1530,27 +1530,33 @@
                         }
                     </script>
                     <script>
-                        const newDate = new Date('08-10-2025 09:00:00').getTime();
-                        const countdown = setInterval(() => {
-                            const date = new Date().getTime();
-                            const diff = newDate - date;
-                            const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
-                            const days = totalDays % 30;
-                            const months = Math.floor(totalDays / 30);
-                            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                            document.querySelector(".seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds;
-                            document.querySelector(".minutes").innerHTML = minutes < 10 ? '0' + minutes : minutes;
-                            document.querySelector(".hours").innerHTML = hours < 10 ? '0' + hours : hours;
-                            document.querySelector(".days").innerHTML = days < 10 ? '0' + days : days;
-                            document.querySelector(".months").innerHTML = months < 10 ? '0' + months : months;
-                            if (diff <= 0) {
-                                clearInterval(countdown);
-                                document.querySelector(".countdown").innerHTML = 'Time UP';
-                            }
-                        }, 1000);
-                    </script>
+    let newDate = new Date().getTime() + 10 * 60 * 1000; // 10 minutes from now
+
+    const countdown = setInterval(() => {
+        const date = new Date().getTime();
+        let diff = newDate - date;
+
+        // Restart countdown when time is up
+        if (diff <= 0) {
+            newDate = new Date().getTime() + 10 * 60 * 1000; // Reset to next 10 minutes
+            diff = newDate - date;
+        }
+
+        const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const days = totalDays % 30;
+        const months = Math.floor(totalDays / 30);
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.querySelector(".seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds;
+        document.querySelector(".minutes").innerHTML = minutes < 10 ? '0' + minutes : minutes;
+        document.querySelector(".hours").innerHTML = hours < 10 ? '0' + hours : hours;
+        document.querySelector(".days").innerHTML = days < 10 ? '0' + days : days;
+        document.querySelector(".months").innerHTML = months < 10 ? '0' + months : months;
+    }, 1000);
+</script>
+
                 </header>
         </section>
         <section class="company-form contactpage-form"
@@ -1657,29 +1663,43 @@
                             </div>
                         </div>
                         <script>
-                            const newDate2 = new Date('08-10-2025 09:00:00').getTime();
-                            const countdown2 = setInterval(() => {
-                                const date2 = new Date().getTime();
-                                const diff2 = newDate2 - date2;
-                                const hours2 = Math.floor((diff2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                const minutes2 = Math.floor((diff2 % (1000 * 60 * 60)) / (1000 * 60));
-                                const seconds2 = Math.floor((diff2 % (1000 * 60)) / 1000);
-                                document.querySelector(".hours2").innerHTML = hours2 < 10 ? '0' + hours2 : hours2;
-                                document.querySelector(".minutes2").innerHTML = minutes2 < 10 ? '0' + minutes2 : minutes2;
-                                document.querySelector(".seconds2").innerHTML = seconds2 < 10 ? '0' + seconds2 : seconds2;
-                                if (diff2 <= 0) {
-                                    clearInterval(countdown2);
-                                    document.querySelector("#mbl2 .countdown").innerHTML = 'Time UP';
-                                }
-                            }, 1000);
-                        </script>
+    // Function to start the countdown
+    function startCountdown2() {
+        // Set countdown duration: 10 minutes in milliseconds
+        const duration = 10 * 60 * 1000;
+        // Set target time (current time + 10 minutes)
+        let newDate2 = new Date().getTime() + duration;
+
+        const countdown2 = setInterval(() => {
+            const now = new Date().getTime();
+            const diff2 = newDate2 - now;
+
+            const minutes2 = Math.floor((diff2 % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds2 = Math.floor((diff2 % (1000 * 60)) / 1000);
+
+            // Update HTML
+            document.querySelector(".minutes2").innerHTML = minutes2 < 10 ? '0' + minutes2 : minutes2;
+            document.querySelector(".seconds2").innerHTML = seconds2 < 10 ? '0' + seconds2 : seconds2;
+
+            // When time is up, restart
+            if (diff2 <= 0) {
+                clearInterval(countdown2);
+                startCountdown2(); // Restart countdown
+            }
+        }, 1000);
+    }
+
+    // Start countdown when script loads
+    startCountdown2();
+</script>
+
                         <div class="row" id="numberrow" style="margin-top: 25px">
                             <div class="col-lg-4" id="numbercol">
-                                <h2 style=" font-size: 1.5rem;   font-weight: 600;">150+</h2>
+                                <h2 style=" font-size: 1.5rem;   font-weight: 600;">350+</h2>
                                 <h6>Hiring Partners</h6>
                             </div>
                             <div class="col-lg-4" id="numbercol">
-                                <h2 style=" font-size: 1.5rem;   font-weight: 600;">8 LPA</h2>
+                                <h2 style=" font-size: 1.5rem;   font-weight: 600;">13.5 LPA</h2>
                                 <h6>Avg Salary</h6>
                             </div>
                             <div class="col-lg-4" id="numbercol">
