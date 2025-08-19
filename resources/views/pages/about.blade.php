@@ -29,9 +29,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="breadcumb-shape">
+		{{-- <div class="breadcumb-shape">
 			<img loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
-		</div>
+		</div> --}}
 		<div class="breadcumb-shape2">
 			<img loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
 		</div>
