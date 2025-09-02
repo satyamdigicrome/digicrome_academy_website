@@ -11,8 +11,8 @@
     <meta name="og:phone_number" content="01205222560" />
     <meta name="og:latitude" content="28.584688° N" />
     <meta name="og:longitude" content="77.315930° E" />
-    <meta name="og:street-address" content="C-108 Second Floor, Sector 2, Noida, Uttar Pradesh 201301" />
-    <meta name="og:locality" content="Noida Sector 02" />
+        <meta name="og:street-address" content="B-49 First Floor, Sector 59, Noida, Uttar Pradesh 201301" />
+    <meta name="og:locality" content="Noida Sector 59" />
     <meta name="og:region" content="Noida" />
     <meta name="og:postal-code" content="201301" />
     <meta name="og:country-name" content="India" />

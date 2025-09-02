@@ -303,7 +303,7 @@
 					  <h5 class="card-title">Office in India</h5>
 					</div>
 					<br>
-					<p class="card-text">C-108, Second Floor, Block C, Sector 02, Noida, Uttar Pradesh 201301</p>
+					<p class="card-text">B-49, First Floor, Block B, Sector 59, Noida, Uttar Pradesh 201301</p>
 				  </div>
 				</div>
 			  </div>
@@ -443,7 +443,7 @@
 						</div>
 						<div class="call_info">
 							<p>Our Location</p>
-							<span>Address: C-108, Second Floor, Block C, Sector 02<br>Noida, Uttar Pradesh 201301</span>
+							<span>Address: B-49, First Floor, Block B, Sector 59<br>Noida, Uttar Pradesh 201301</span>
 						</div>
 					</div>
 				</div>

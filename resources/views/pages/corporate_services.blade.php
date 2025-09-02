@@ -441,7 +441,7 @@
 						</div>
 						<div class="call_info">
 							<p>Our Locations</p>
-							<span>C-108, Second Floor, Block C, Sector 02, <br>Noida, Uttar Pradesh 201301</span>
+							<span>B-49, First Floor, Block B, Sector 59, <br>Noida, Uttar Pradesh 201301</span>
 						</div>
 					</div>
 				</div>

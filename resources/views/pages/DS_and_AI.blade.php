@@ -23,8 +23,8 @@
 <meta name="og:phone_number" content="012-03113765" />
 <meta name="og:latitude" content="28.587111" />
 <meta name="og:longitude" content="77.334557" />
-<meta name="og:street-address" content="C-20 SUITE NO 2, Sector 2, Noida, Uttar Pradesh 201301" />
-<meta name="og:locality" content="Noida Sector 02" />
+    <meta name="og:street-address" content="B-49 First Floor, Sector 59, Noida, Uttar Pradesh 201301" />
+    <meta name="og:locality" content="Noida Sector 59" />
 <meta name="og:region" content="Noida" />
 <meta name="og:postal-code" content="201301" />
 <meta name="og:country-name" content="India" />
@@ -156,7 +156,7 @@
 "name": "Digicrome Academy (Data Science & AI Courses Online Training & Certification | Digicrome)",
 "address": {
 "@type": "PostalAddress",
-"streetAddress": "C-20 SUITE NO 2, Sector 2, Noida, Uttar Pradesh 201301",
+"streetAddress": "B-49 SUITE NO 1, Sector 59, Noida, Uttar Pradesh 201301",
 "addressLocality": "Noida",
 "addressRegion": "Uttar Pradesh",
 "postalCode": "201301"
@@ -3117,7 +3117,7 @@ const countdown2 = setInterval(() => {
                             <!--</div>-->
                             <div class="d-flex mb-2">
                                 <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0"><b>(India Branch)</b> =DigiCrome Academy, C-108, Second Floor, Block C, Sector 02, Noida, Uttar Pradesh 201301
+                                <p class="mb-0"><b>(India Branch)</b> =DigiCrome Academy, B-49, First Floor, Block B, Sector 59, Noida, Uttar Pradesh 201301
                                 </p>
                             </div>
                             <div class="d-flex mb-2">

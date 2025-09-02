@@ -2802,8 +2802,8 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0"><b>(India Branch)</b> =DigiCrome Academy, C-108, Second Floor, Block
-                                    C, Sector 02, Noida, Uttar Pradesh 201301
+                                <p class="mb-0"><b>(India Branch)</b> =DigiCrome Academy, B-49, First Floor, Block
+                                    B, Sector 59, Noida, Uttar Pradesh 201301
                                 </p>
                             </div>
                             <div class="d-flex mb-2">
