@@ -110,7 +110,7 @@
 				</div>
 				<div class="about-iteam-phone">
 					<p><span><img loading="lazy" src="{{ asset('assets/images/home-three/about-call.webp') }}" alt="call" title="call"></span>
-						 01205222560</p>
+						 01204538104</p>
 				</div>
 			
 
@@ -376,7 +376,7 @@
 							</div>
 							<div class="call-to-content">
 								<h6>Call Anytime</h6>
-								<h4> 01205222560</h4>
+								<h4> 01204538104</h4>
 							</div>
 						</div>
 						<div class="call-to-arrow">

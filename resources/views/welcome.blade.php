@@ -1301,7 +1301,7 @@ setInterval(() => {
                 <span onclick="closeModal()" style="font-size:22px; cursor:pointer; color:#fff;">&times;</span>
             </div>
             <p style="font-size:14px; color:#fff; margin-bottom:15px;">Need help? Call us at
-                <strong>+916299611702</strong><br>or fill the form below.</p>
+                <strong>01204538104</strong><br>or fill the form below.</p>
             <form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php"
                 style="width:100%; margin:0;">
                 @csrf

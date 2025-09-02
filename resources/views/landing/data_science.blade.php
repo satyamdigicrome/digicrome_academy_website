@@ -2658,7 +2658,7 @@
                                     <h5>Connect with our team directly</h5>
                                     <p class="Eightsection-g4">Contact us, and a dedicated learning consultant will
                                         reach out to you shortly</p>
-                                    <div class="Eightsection-g5"><a href=""><a href="tel:+916299611702">
+                                    <div class="Eightsection-g5"><a href=""><a href="tel:01204538104">
                                                 <button class="Eightsection-g6">
                                                     <svg stroke="currentColor" fill="currentColor"
                                                         stroke-width="0" viewBox="0 0 24 24" height="1em"

@@ -23,7 +23,7 @@
 			<div class="col-xxl-6 col-xl-4 col-lg-4">
 				<div class="header-top-right">
 					<div class="text-white text-right">
-						Welcome to Digicrome - 01205222560
+						Welcome to Digicrome - 01204538104
 					</div>
 
 				</div>
@@ -339,7 +339,7 @@
 							<h2>Contact Info</h2>
 							<ul class="list-style-one">
 								<li><span class="icon flaticon-email"></span>B-49, First Floor, Block B, Sector 59, Noida, Uttar Pradesh 201301</li>
-								<li><span> <i class="bi bi-telephone-inbound"></i> </span> 01205222560</li>
+								<li><span> <i class="bi bi-telephone-inbound"></i> </span> 01204538104</li>
 								<li><span><i class="bi bi-geo-alt"></i></span>info@digicrome.com</li>
 								<li><span><i class="bi bi-clock"></i></span>Week Days: 10.30 to 19.00 Sunday: Closed
 								</li>
@@ -453,7 +453,7 @@
     <a href="https://wa.me/916299611702" target="_blank" class="contact-icon whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <a href="tel:01205222560" class="contact-icon call">
+    <a href="tel:01204538104" class="contact-icon call">
         <i class="fas fa-phone-alt"></i>
     </a>
 </div>
