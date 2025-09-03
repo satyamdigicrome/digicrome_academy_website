@@ -391,13 +391,37 @@
     <div class="container">
         <div class="row">
             <div class="col-xxl-8 col-xl-8 col-lg-7 col-md-12">
-                <div class="course-details-content" style="list-style: disc;">
+                <div class="course-details-content">
                     <div class="course-details-heading">
                         <h2 class="course-details-title">Course Overview</h2>
                     </div>
                     {!! $course->description !!}
                 </div>
             </div>
+
+            <style>
+                .course-details-content ul,
+                .course-details-content ol {
+                    list-style-type: initial !important;
+                    list-style-position: outside !important;
+                    margin-left: 1.5rem !important;
+                    padding-left: 1.5rem !important;
+                }
+
+                .course-details-content ul {
+                    list-style-type: disc !important;
+                }
+
+                .course-details-content ol {
+                    list-style-type: decimal !important;
+                }
+
+                .course-details-content li {
+                    display: list-item !important;
+                    list-style-type: inherit !important;
+                    margin-bottom: 6px !important;
+                }
+            </style>
             <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-12">
                 <div class="event-sidebar-wrapper" style="margin-top: 0px;">
                     <div class="event-sidebar">

@@ -73,24 +73,25 @@
 								<h1 class="blog-title">
 									{{ $blog->heading }}
 								</h1>
-										<iframe id="blogFrame" srcdoc='{!! $blog->blog !!}' style="width:100%; height:100%; border:none; overflow:hidden;" sandbox="allow-same-origin allow-scripts"></iframe>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const iframe = document.getElementById("blogFrame");
+										<div class="blog-desc2">
+								{!! $blog->blog !!}
+							</div>
 
-        iframe.onload = function () {
-            try {
-                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                const height = iframeDoc.body.scrollHeight;
-                iframe.style.height = height + 'px';
-                // Optional: also hide scrollbars inside iframe content
-                iframeDoc.body.style.overflow = 'hidden';
-            } catch (e) {
-                console.warn("Iframe content could not be accessed for resizing.", e);
-            }
-        };
-    });
-</script>
+							<style>
+								.blog-desc2 ul,
+								.blog-desc2 ol{
+									list-style: revert !important;
+									margin-left: 1.5rem !important;
+									padding-left: 1.5rem !important;
+								}
+
+								.blog-desc2 li{
+									display: list-item !important;
+									list-style: inherit !important;
+									margin-bottom: 6px;
+								}
+							</style>
+						
 
 							{{-- <div class="pagination_container">
 								<!-- pagination item -->
