@@ -65,7 +65,7 @@
 <div id="main">
 
 	<h2 class="text-center mb-2" style="font-size: 2rem; margin-top: 15px;">
-		Contact Digicrome <span style="color: #f29c12;">Support</span> at  01204538104 / +91 6299 611 702
+		Contact Digicrome <span style="color: #f29c12;">Support</span> at  01204538124 / +91 6299 611 702
 	</h2>
 	<p class="text-center text-muted mb-4" style="font-size: 15px;">
 		Need assistance? Whether it's admission queries, account-related concerns, or student support, our dedicated team is here to help you. Reach out to us via call or email, and we'll ensure a smooth experience for you.
@@ -366,14 +366,14 @@
 					<div class="col-md-4">
 						<div class="info-box">
 							<h5>For Admission Queries</h5>
-							<p><i class="fas fa-phone"></i> 01204538104</p>
+							<p><i class="fas fa-phone"></i> 01204538124</p>
 							<p><i class="fas fa-envelope"></i> info@digicrome.com</p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="info-box">
 							<h5>For Account Department</h5>
-							<p><i class="fas fa-phone"></i> 01204538104</p>
+							<p><i class="fas fa-phone"></i> 01204538124</p>
 							<p><i class="fas fa-envelope"></i> accounts@digicrome.com</p>
 						</div>
 					</div>
@@ -381,7 +381,7 @@
 		<div class="info-box">
 			<h5>For Students Support</h5>
 			<p><i class="fas fa-phone"></i> 7011101972 <br><small>Available: 10 AM to 9 PM</small></p>
-			<p><i class="fas fa-phone"></i> 01204538104 <br><small>Available: 11 AM to 6 PM</small></p>
+			<p><i class="fas fa-phone"></i> 01204538124 <br><small>Available: 11 AM to 6 PM</small></p>
 			<p><i class="fas fa-envelope"></i> support@digicrome.com</p>
 		</div>
 	</div>
@@ -425,7 +425,7 @@
 						</div>
 						<div class="call_info">
 							<p>Call us Anytime</p>
-							<h3> 01204538104</h3>
+							<h3> 01204538124</h3>
 						</div>
 					</div>
 					<div class="call-do-action-info">

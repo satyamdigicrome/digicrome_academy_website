@@ -83,7 +83,7 @@
 					</div>
 					<div class="footer-contact-info">
 						<div class="footer-contact-phone">
-							<p><img loading="lazy"src="{{ asset('assets/images/home-one/footer-call.webp') }}" alt="call">01204538104</p>
+							<p><img loading="lazy"src="{{ asset('assets/images/home-one/footer-call.webp') }}" alt="call">01204538124</p>
 						</div>
 						<div class="footer-contact-address">
 							<span><i class="fa-classic fa-regular fa-envelope fa-fw"></i>info@digicrome.com</span>
