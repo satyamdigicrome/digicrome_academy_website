@@ -49,7 +49,7 @@ class LeadsController extends Controller
         'country'     => 'India',
         'comp_name'   => '',
         'state'       => '',
-        'altr_mobile' => 'NA',
+        'altr_mobile' => null,
     ]);
     return response()->json([
         'success' => true,
@@ -87,7 +87,7 @@ public function leadsstore(Request $request)
             'country'     => 'India',
             'comp_name'   => '',
             'state'       => '',
-            'altr_mobile' => 'NA',
+            'altr_mobile' => null,
         ]);
 
         Lead::create($validated);

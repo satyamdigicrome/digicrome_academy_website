@@ -1135,9 +1135,9 @@
   
           <h4 class="custom-lead-modal-title">Quick Response </h4>
   
-          <input type="text" name="name" placeholder="Name" class="form-control custom-lead-input" required>
-          <input type="tel" name="mobile" placeholder="Mobile Number" class="form-control custom-lead-input" required>
-          <input type="email" name="email" placeholder="E-mail ID" class="form-control custom-lead-input" required>
+          <input type="text" name="name" style="color: #fff" placeholder="Name" class="form-control custom-lead-input" required>
+          <input type="tel" name="mobile" style="color: #fff" placeholder="Mobile Number" class="form-control custom-lead-input" required>
+          <input type="email" name="email" style="color: #fff" placeholder="E-mail ID" class="form-control custom-lead-input" required>
         <!-- Hidden City field -->
 <input type="hidden" name="address" value="NA">
 <input type="hidden" name="source" value="Website(broucher)">
