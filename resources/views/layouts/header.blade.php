@@ -195,9 +195,73 @@
 	</div>
 </div>
 </div>
+<style>
+/* Hide mobile menu initially until page is fully loaded */
+.mobile-menu-area {
+    visibility: hidden;
+    opacity: 0;
+}
 
+/* Once page is fully loaded, show the mobile menu */
+body.loaded .mobile-menu-area {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s ease-in;
+}
+
+@media (max-width: 767px) {
+    .desktop-only {
+        display: none !important; /* Hide desktop header */
+    }
+
+    .mobile-only {
+        display: block !important; /* Force show mobile header */
+    }
+}
+
+/* Ensure the desktop version is visible only on larger screens */
+@media (min-width: 768px) {
+    .desktop-only {
+        display: block !important; /* Force show desktop header */
+    }
+
+    .mobile-only {
+        display: none !important; /* Hide mobile header */
+    }
+}
+</style>
+<script>
+	// Add the 'loaded' class once the page is fully loaded
+window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+});
+</script>
 
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
+	<div class="container-fluid">
+  <div class="row header-top">
+    <!-- Left side: Contact Number (Visible only on mobile) -->
+    {{-- <div class="col-12 d-md-none">
+      <div class="header-top-welcome" style="font-size: 12px; text-align: center;">
+        <div class="text-white">
+          01204538124
+        </div>
+      </div>
+    </div> --}}
+    
+    <!-- Right side: "Enroll Now" Button (Visible only on mobile) -->
+    <div class="col-12 d-md-none">
+      <div class="header-top-right">
+        <div class="text-white" style="text-align: center;">
+          <a href="#" class="btn enroll-btn" style="background-color: #ff8c00; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+            Enroll Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 	<div class="mobile-menu">
 		<nav class="header-menu">
 			<div class="mobile-logo" style="z-index: -9;">
