@@ -253,7 +253,7 @@ window.addEventListener('load', function() {
     <div class="col-12 d-md-none">
       <div class="header-top-right">
         <div class="text-white" style="text-align: center;">
-          <a href="#" class="btn enroll-btn" style="background-color: #ff8c00; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+          <a  href="javascript:void(0);" onclick="openModal()" class="btn enroll-btn" style="background-color: #ff8c00; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
             Enroll Now
           </a>
         </div>
