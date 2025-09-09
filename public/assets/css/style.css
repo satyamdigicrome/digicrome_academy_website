@@ -1587,7 +1587,7 @@ section.hero_area.style-one .hero-thumb-wrapper {
 }
 @media (max-width: 767.98px) {
     section.hero_area.style-one .hero-thumb-wrapper {
-        margin-top: 50vh !important;
+        margin-top: 30vh !important;
         padding-top: 0 !important;
     }
 }

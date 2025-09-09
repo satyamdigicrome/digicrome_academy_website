@@ -238,8 +238,8 @@ window.addEventListener('load', function() {
 </script>
 
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
-	<div class="container-fluid">
-  <div class="row header-top">
+	{{-- <div class="container-fluid">
+  <div class="row header-top"> --}}
     <!-- Left side: Contact Number (Visible only on mobile) -->
     {{-- <div class="col-12 d-md-none">
       <div class="header-top-welcome" style="font-size: 12px; text-align: center;">
@@ -250,7 +250,7 @@ window.addEventListener('load', function() {
     </div> --}}
     
     <!-- Right side: "Enroll Now" Button (Visible only on mobile) -->
-    <div class="col-12 d-md-none">
+    {{-- <div class="col-12 d-md-none">
       <div class="header-top-right">
         <div class="text-white" style="text-align: center;">
           <a  href="javascript:void(0);" onclick="openModal()" class="btn enroll-btn" style="background-color: #ff8c00; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
@@ -260,7 +260,7 @@ window.addEventListener('load', function() {
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 
 	<div class="mobile-menu">
 		<nav class="header-menu">
