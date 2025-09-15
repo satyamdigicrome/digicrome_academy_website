@@ -8,7 +8,7 @@
     <meta property="og:type" content="Online Training/Development" />
     <meta property="og:site_name" content="Digicrome" />
     <meta name="og:email" content="digicrome.academy@gmail.com" />
-    <meta name="og:phone_number" content="01204538124" />
+    <meta name="og:phone_number" content="01204538125" />
     <meta name="og:latitude" content="28.584688° N" />
     <meta name="og:longitude" content="77.315930° E" />
         <meta name="og:street-address" content="B-49 First Floor, Sector 59, Noida, Uttar Pradesh 201301" />
@@ -53,7 +53,7 @@
       "logo": "https://www.digicrome.com/assets/images/logo.webp",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "01204538124",
+        "telephone": "01204538125",
         "contactType": "customer service",
         "contactOption": "TollFree",
         "areaServed": "IN",
