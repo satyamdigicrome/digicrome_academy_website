@@ -251,7 +251,7 @@ window.addEventListener('load', function() {
         <a href="javascript:void(0);" onclick="openModal()" 
            class="btn btn-sm fw-bold text-white" 
            style="background-color: #ff8c00; font-size: 12px; padding: 4px 10px; border-radius: 4px;">
-          Get Started
+          Enroll Now
         </a>
       </div>
 
