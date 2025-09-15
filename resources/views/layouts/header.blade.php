@@ -238,29 +238,25 @@ window.addEventListener('load', function() {
 </script>
 
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
-	{{-- <div class="container-fluid">
-  <div class="row header-top"> --}}
-    <!-- Left side: Contact Number (Visible only on mobile) -->
-    {{-- <div class="col-12 d-md-none">
-      <div class="header-top-welcome" style="font-size: 12px; text-align: center;">
-        <div class="text-white">
-          01204538124
-        </div>
+  <div class="container-fluid">
+    <div class="row align-items-center py-1">
+
+      <!-- Left side: Contact Number -->
+      <div class="col-6 text-start">
+        <span class="text-white fw-bold small">01204538124</span>
       </div>
-    </div> --}}
-    
-    <!-- Right side: "Enroll Now" Button (Visible only on mobile) -->
-    {{-- <div class="col-12 d-md-none">
-      <div class="header-top-right">
-        <div class="text-white" style="text-align: center;">
-          <a  href="javascript:void(0);" onclick="openModal()" class="btn enroll-btn" style="background-color: #ff8c00; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
-            Enroll Now
-          </a>
-        </div>
+
+      <!-- Right side: "Get Started" Button -->
+      <div class="col-6 text-end">
+        <a href="javascript:void(0);" onclick="openModal()" 
+           class="btn btn-sm fw-bold text-white" 
+           style="background-color: #ff8c00; font-size: 12px; padding: 4px 10px; border-radius: 4px;">
+          Get Started
+        </a>
       </div>
+
     </div>
   </div>
-</div> --}}
 
 	<div class="mobile-menu">
 		<nav class="header-menu">
