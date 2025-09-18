@@ -145,10 +145,8 @@
             </div>
         </div>
     </section>
-<div class="outer-box" 
-     style="border:2px solid black; margin:21px 154px 16px 183px; border-radius:15px; padding:20px; background:#fff; font-family:Arial, sans-serif;">
-  <!-- your content -->
-</div>
+    <div class="outer-box" style="border:2px solid black; margin:21px 154px 16px 183px; border-radius:15px; padding:20px;  background:#fff; font-family:Arial, sans-serif;">
+
 
 <style>
 @media (max-width: 768px) {
