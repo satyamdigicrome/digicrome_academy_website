@@ -145,85 +145,220 @@
             </div>
         </div>
     </section>
-    <div class="outer-box" style="border:2px solid black; margin:21px 154px 16px 183px; border-radius:15px; padding:20px;  background:#fff; font-family:Arial, sans-serif;">
-
-
-<style>
-@media (max-width: 768px) {
-  .outer-box {
-    margin: 15px !important; /* smaller equal margin on all sides */
-  }
-}
-</style>
-
+    <div class="outer-box">
   <!-- Heading -->
-  <h3 style="margin-bottom:25px; font-weight:700; color:#000; text-align:center; font-size: 33px;">
-    PGP IN DATA SCIENCE AND AI  
-    {{-- <span style="color:#0d47a1;">No-Cost EMI</span> --}}
+  <h3 class="main-heading">
+    PGP IN DATA SCIENCE AND AI
   </h3>
 
   <!-- 3 Section Row -->
-  <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:space-between;">
+  <div class="info-row">
 
     <!-- First Box -->
-    <div style="flex:1; min-width:250px; border-right:5px solid #0d47a1; padding:20px; display:flex; align-items:center;">
-      <p style="color:#0d47a1; font-weight:700; font-size:32px; line-height:1.4; margin:0;">
-      No Cost EMI Available
-      </p>
+    <div class="info-box">
+      <p>No Cost EMI Available</p>
     </div>
 
-    <!-- Second Box -->
     <!-- Blue Box -->
-<div style="flex:1; min-width:280px; border-right:5px solid #0d47a1; padding:15px; display:flex; align-items:center; justify-content:center;">
-  <div style="background:#0d47a1; color:#fff; padding:35px; border-radius:10px; width:100%; min-height:110px; display:flex; flex-direction:column; ">
-    <small style="font-size:18px; margin-bottom:5px;"> Starting at </small>
-    <span style="font-size:30px; font-weight:700;">INR 9166 Per Month</span>
-  </div>
+    <div class="blue-box">
+      <small>Starting at</small>
+      <span>INR 9166 Per Month</span>
+    </div>
+
+    <!-- Red Box -->
+    <div class="red-box">
+      <div class="red-left">
+        <small>Register Now<br> and Get upto</small>
+        <button data-bs-toggle="modal" data-bs-target="#applyNowPopup">
+          Claim Now
+        </button>
+      </div>
+      <div class="red-middle">
+  <span class="discount-text">
+    40%<sup class="off-label">OFF</sup>
+  </span>
+  <small>Limited Seats<br> Available*</small>
 </div>
 
-<!-- Red Box -->
-<div style="flex:1; min-width:280px; padding:15px; display:flex; align-items:center; justify-content:center;">
-  <div class="red-offer-box" 
-       style="background:#e64a19 url({{ asset('assets/images/fee-bg.webp') }}) no-repeat center/cover; 
-              color:#fff; padding:20px; border-radius:10px; width:100%; min-height:120px; 
-              display:flex; align-items:center; gap:6px;">
-
-    <!-- Box 1 (Left Side) -->
-    <div style="flex:0 0 auto; text-align:left;">
-      <small style="font-size:20px; display:block; margin-bottom:6px;">Register Now<br> and Get upto</small>
-      <button style="padding:6px 14px; background:#000; color:#fff; border:none; border-radius:4px; 
-                     font-size:13px; font-weight:600; cursor:pointer;" href="javascript:void(0);" 
-              data-bs-toggle="modal" data-bs-target="#applyNowPopup">
-        Claim Now
-      </button>
-    </div>
-
-    <!-- Box 2 (Middle Big 40%) -->
-    <div style="flex:0 0 auto; text-align:center;">
-      <span style="font-size:42px; font-weight:900; line-height:1;">40%</span>
-      <small style="font-size:12px; display:block;">Limited Seats<br> Available*</small>
-    </div>
-
-    <!-- Box 3 (Right Side) -->
-    <div style="flex:0 0 auto;">
-      <div style="font-size:16px; font-weight:600; margin-bottom:40px;">OFF</div>
+     
     </div>
 
   </div>
 </div>
 
-<!-- Responsive Font Sizes -->
+
 <style>
+    @keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03); /* Zoom in slightly */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.outer-box {
+  animation: zoomPulse 3s ease-in-out infinite;
+}
+
+    .discount-text {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+
+.off-label {
+  font-size: 12px;
+  font-weight: 700;
+  vertical-align: top;
+  margin-left: 2px;
+  color: #fff;
+}
+
+/* Outer Container */
+.outer-box {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Heading */
+.main-heading {
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  font-size: 33px;
+}
+
+/* Row */
+.info-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch; /* equal height */
+}
+
+/* Common box style */
+.info-box,
+.blue-box,
+.red-box {
+  flex: 1;
+  min-width: 280px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* First Box */
+.info-box {
+  border-right: 5px solid #0d47a1;
+}
+.info-box p {
+  color: #0d47a1;
+  font-weight: 700;
+  font-size: 28px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Blue Box */
+.blue-box {
+  background: #0d47a1;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.blue-box small {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.blue-box span {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* Red Box */
+.red-box {
+  background: url("{{ asset('assets/images/fee-bg.webp') }}") no-repeat center/cover;
+  color: #fff;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 12px;
+}
+
+.red-left small {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 6px;
+}
+.red-left button {
+  padding: 6px 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.red-middle span {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+  display: block;
+}
+.red-middle small {
+  font-size: 12px;
+  display: block;
+}
+.red-right div {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .main-heading {
+    font-size: 28px;
+  }
+  .info-box p {
+    font-size: 24px;
+  }
+  .blue-box small { font-size: 16px; }
+  .blue-box span { font-size: 24px; }
+  .red-middle span { font-size: 32px; }
+}
+
 @media (max-width: 768px) {
-  .red-offer-box small { font-size: 14px !important; }
-  .red-offer-box span { font-size: 28px !important; }
-  .red-offer-box button { font-size: 12px !important; padding: 5px 12px !important; }
-  .red-offer-box div { font-size: 14px !important; }
+  .outer-box {
+    margin: 15px !important;
+  }
+  .info-row {
+    flex-direction: column;
+  }
+  .info-box, .blue-box, .red-box {
+    min-height: auto; /* natural height for small screens */
+  }
+  .red-left small { font-size: 14px; }
+  .red-left button { font-size: 12px; padding: 5px 10px; }
 }
 </style>
-
-
-  </div>
-</div>
 
 </div>
