@@ -161,14 +161,14 @@
 
     <!-- Blue Box -->
     <div class="blue-box">
-      <small>Starting at</small>
-      <span>INR 9166 Per Month</span>
+      <small>Grab this exclusive offer -</small>
+      <span>Call 01204538104 now!</span>
     </div>
 
     <!-- Red Box -->
     <div class="red-box">
       <div class="red-left">
-        <small>Register Now<br> and Get upto</small>
+        <small>Register Now<br> and Get Up to</small>
         <button data-bs-toggle="modal" data-bs-target="#applyNowPopup">
           Claim Now
         </button>
