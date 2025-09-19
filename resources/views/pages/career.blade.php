@@ -367,7 +367,7 @@
         <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 1rem; line-height: 1.8;">
           <li>✔✔ Join a visionary team reshaping education.</li>
           <li>✔✔ Grow your career in edtech.</li>
-          <li>✔✔ Remote-friendly & modern workspaces.</li>
+          <li>✔✔ Remote-friendly With modern workspaces.</li>
           <li>✔✔ Performance-driven growth.</li>
           <li>✔✔ Flexible, creative work culture.</li>
         </ul>
@@ -394,8 +394,8 @@
                     <hr> --}}<br><br><br>
 
         <span style="text-align: justify; font-size: 28px; color: white; font-family:arial; mt-6">
-          At Digicrome, we don’t just build careers — we shape futures. We’re a team of passionate educators, tech enthusiasts, creators, and innovators, all working together to transform the way professionals upskill and grow.<br><br>
-          If you're driven by purpose, inspired by change, and looking for more than just a job — welcome Digicrome.
+          We’re a team of passionate educators, tech enthusiasts, creators, and innovators, all working together to transform the way professionals upskill and grow.<br><br>
+          If you're driven by purpose, inspired by change, and looking for more than just a job — Welcome to Digicrome.
 
         </span>
       </div>
@@ -418,7 +418,7 @@
         <div>
           <img loading="lazy" src="{{ asset('assets/images/dc/1e.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 38%;">
-          <h4 style="padding-top:20px; ">Do Work That Matters</h4>
+          <h4 style="padding-top:20px; ">Make an Impact</h4>
           <p
             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
             Your role directly contributes to empowering thousands of learners and professionals across the country.
@@ -439,7 +439,7 @@
         <div>
           <img loading="lazy" src="{{ asset('assets/images/dc/1g.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 35%;">
-          <h4 style="padding-top:20px; ">Together, We Grow</h4>
+          <h4 style="padding-top:20px; ">Grow Together</h4>
           <p
             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
             Work with a team that values empathy, creativity, and collaboration. We celebrate wins together and support each other in every challenge.</p>

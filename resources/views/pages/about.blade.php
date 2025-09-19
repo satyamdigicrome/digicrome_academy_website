@@ -140,7 +140,7 @@
 			<div class="p-3">
 				<h3 class="mb-3" style="font-style: italic;">Certified - Online Learning Platform </h3>
 				<p class="text-muted">
-					Our company is certified by MSME and MCA, and we are proud to be registered with these organizations.
+					We are proud to be MSME and MCA certified, ensuring credibility and trust.
 				</p>
 			</div>
 		</div>
@@ -158,9 +158,7 @@
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Flexible Learning</h4>
-						<p class="feature-desc">Flexible learning is the formal education method that focuses on
-							increasing flexibility in the time, location, teaching, and other aspects of the
-							learning.Flexible learning is a principle of practice in formal education.</p>
+						<p class="feature-desc">Flexible learning increases flexibility in time, location, teaching methods, and other aspects of education. Flexible learning is a principle of practice in formal education.</p>
 					</div>
 				</div>
 			</div>
@@ -184,9 +182,7 @@
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Cost-Effective</h4>
-						<p class="feature-desc">Cost-effectiveness analysis is an evaluation tool Methods of
-							cost-effectiveness analysis can assist the planner in evaluating educational programs. This
-							concept should be broadened to include.</p>
+						<p class="feature-desc">Cost-effectiveness analysis is a valuable tool for evaluating educational programs, helping planners optimize learning outcomes while reducing costs.</p>
 					</div>
 				</div>
 			</div>
@@ -407,8 +403,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="section_title">
-						<h1>Read out our latest updates</h1>
-						<h1> from digicrome</h1>
+						<h1>Read our latest updates</h1>
+						<h1> from Digicrome</h1>
 					</div>
 
 				</div>

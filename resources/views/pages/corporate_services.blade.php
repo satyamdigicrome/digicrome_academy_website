@@ -81,13 +81,11 @@
 				<ul class="list-unstyled">
 					<li class="d-flex align-items-start mb-2">
 						<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-						<span><b> Successpreneur Award 2025 </b> being the best analytics EdTech business</span>
+						<span><b> Successpreneur Award 2025 </b> for best analytics EdTech business</span>
 					</li>
 					<li class="d-flex align-items-start">
 						<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-						<span><b>Most Promising Digital Learning Platform 2025</b> for being one of the most promising
-							digital
-							learning platforms</span>
+						<span><b>Most Promising Digital Learning Platform 2025.</span>
 					</li>
 				</ul>
 			</div>
@@ -324,7 +322,7 @@
 			<div class="col-lg-6">
 				<div class="section_title text-right">
 					<div class="fs-1 fw-bold mb-1">Climb your career ladder</div>
-					<div class="fs-1 fw-bold">with world-class Professional.</div>
+					<div class="fs-1 fw-bold">with world-class Professionals.</div>
 				</div>
 
 			</div>
@@ -337,7 +335,7 @@
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">500+ Hiring Partners</h4>
-						<p class="feature-desc">We guarantee placement assistance, so we have tied up with 500+ global partners to assist students in securing job opportunities.</p>
+						<p class="feature-desc">We provide placement assistance through partnerships with 500+ global hiring partners to assist students in securing job opportunities.</p>
 					</div>
 					<div class="educate-hover-box hover-bx"></div>
 					<div class="educate-hover-box hover-bx2"></div>
@@ -352,7 +350,7 @@
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">45+ Industry-Relevant Projects</h4>
-						<p class="feature-desc">Work on our industry-based live projects to harness top-level industry experience and make way to a winning career.</p>
+						<p class="feature-desc">Work on our industry-based live projects to harness top-level industry experience and to gain real-world experience and build a successful career.</p>
 					</div>
 					<div class="educate-hover-box hover-bx"></div>
 					<div class="educate-hover-box hover-bx2"></div>
@@ -367,7 +365,7 @@
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
-						<p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong foundation. Get 24/7 assistance available for assignments.</p>
+						<p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong foundation, with 24/7 support available.</p>
 					</div>
 					<div class="educate-hover-box hover-bx"></div>
 					<div class="educate-hover-box hover-bx2"></div>
@@ -382,7 +380,7 @@
 					</div>
 					<div class="feature-content">
 						<h4 class="feature-title">Job Ready Program</h4>
-						<p class="feature-desc">Exclusive placement cell dedicated to students completing the course, we help secure job opportunities. So far, 5,000+ students have been employed.</p>
+						<p class="feature-desc">Exclusive placement cell dedicated to students completing the course, we help secure job opportunities. So far, we have successfully placed 5,000+ students.</p>
 					</div>
 					<div class="educate-hover-box hover-bx"></div>
 					<div class="educate-hover-box hover-bx2"></div>

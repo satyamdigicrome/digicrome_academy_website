@@ -415,8 +415,7 @@
 					</div>
 				</div>
 				<div class="section-title-desc">
-					<p>Media leadership skills before cross-media innovation main technology
-						develop standardized platforms without consalt.</p>
+					<p>We combine media leadership, cross-media innovation, and advanced technology to develop standardized platforms with expert consultation.</p>
 				</div>
 				<div class="contact_main_info">
 					<div class="call-do-action-info">

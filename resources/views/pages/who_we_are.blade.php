@@ -400,7 +400,7 @@
     <div class="container-fluid" style="color: black; ">
         <div class="row">
             <div class="col-lg-6 col-md-12" style="padding-left: 10%;">
-                <h5 style="color: #43505b; font-weight: 700; "><b>Digicrome Academy is the</b></h5>
+                <h5 style="color: #43505b; font-weight: 700; "><b>Digicrome Academy is a</b></h5>
                 <span style="font-size: 43px; font-family: Inter, sans-serif; color: #f29c12;"><b>
                         <b> Global IT Upskilling<br> Edtech Platform</b>
                     </b></span>
@@ -408,8 +408,7 @@
 
                 <span style="text-align: justify; font-size: 18px; color: #43505b; font-family:arial;">
                     By providing top-tier mentorship and tech-driven programs
-                    in the native language of learners worldwide, we empower individuals with the
-                    ability to excel in the IT Sector job market.
+                    in the native language of learners worldwide, we empower individuals to excel in the IT job market.
                 </span><br><br>
                 <a href="javascript:void(0);" onclick="openModal()" class="btn2 btn-warning"><i
                         class="bi bi-whatsapp"></i>Enroll Now</a>
@@ -579,7 +578,7 @@
 
                 <span style="text-align: justify; font-size: 18px; color: black; font-family:arial;">
                     Digicrome works to find the best job and company fit for each student, giving them a great start
-                    to their career, Through personalized guidance and industry connections, Digicrome helps students
+                    to their career. Through personalized guidance and industry connections, Digicrome helps students
                     secure the ideal job, setting the stage for a successful career journey.<br><br>
 
                 </span>

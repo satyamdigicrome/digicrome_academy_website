@@ -12,7 +12,7 @@
             <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-lg-6">
                     <div class="hero_content">
-                        <h5><i class="bi bi-check2"></i>Enhance Your future skills, with just a click</h5>
+                        <h5><i class="bi bi-check2"></i>Enhance Your future skills with just a click</h5>
                         <h1>Start building your<br>
                             future with a better career transition</h1>
                         @if ($userCountry === 'India')
@@ -621,7 +621,7 @@ setInterval(() => {
                         </div>
                         <div class="section-title-desc">
                             <p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we
-                                support you from basic to advanced. As one of the best data science institutes in India, and
+                                support you from basic to advanced. As one of the best Data Science institutes in India, and
                                 the top Data science institute in Metropolitan cities, we make career shifts smooth. Quickly
                                 apply and work for your success.</p>
                         </div>
@@ -700,7 +700,7 @@ setInterval(() => {
                     </div>
                     <p class="mb-4">
                         In our EdTech journey of <b> more than a decade,</b> we have received numerous awards.<br>
-                        Some of the recent notable awards we have received in analytics are:
+                        Some of the recent notable awards we have received are:
                     </p>
                     <ul class="list-unstyled">
                         <li class="d-flex align-items-start mb-2">

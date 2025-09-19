@@ -90,22 +90,22 @@
       <div class="p-4 shadow rounded bg-white">
         <h2 class="mb-3" style="color: #f29c12; font-weight: 700;">Affiliate Program</h2>
         <p class="text-muted mb-3">
-          Digicrome offers a powerful program for your career growth and transition. You can also earn with our affiliate program!
+          Digicrome offers a powerful program to support your career growth and financial opportunities. You can also earn through our affiliate plan!
         </p>
         <p class="mb-3">
           We provide a stipend of <strong>₹5000</strong> for every successful referral. Just follow the steps below:
         </p>
         <ol class="mb-3 ps-3">
-          <li>Access the referral form</li>
+          <li>Fill out the referral form</li>
           <li>Register your name and email ID</li>
-          <li>Add your friend’s name and email</li>
+          <li>Add your friend’s details</li>
           <li>Optionally customize a message</li>
-          <li>Your referral is recorded</li>
-          <li>Once the referral leads to an admission</li>
+          <li>Submit your referral</li>
+          <li>When your friend enrolls successfully</li>
           <li>You earn <strong>₹5000</strong> instantly</li>
-          <li>No limits – Refer & Earn unlimited times!</li>
+          <li>No limits – Refer & Earn as many times as you want!</li>
         </ol>
-        <p class="fw-bold text-dark">So what are you waiting for? Start earning by referring today!</p>
+        <p class="fw-bold text-dark">So what are you waiting for? Start earning with referrals today!</p>
       </div>
     </div>
 

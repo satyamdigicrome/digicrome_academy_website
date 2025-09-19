@@ -896,7 +896,7 @@
             </div>
         </div>
         <div class="testi-autor-box">
-            <div class="testi-autor">
+            <div class="testi-autor">   
                 <img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}" alt="testi-author" title="testi-author" style="width: 60px; height: 60px; border-radius: 50%;">
             </div>
             <div class="testi-autor-content">
