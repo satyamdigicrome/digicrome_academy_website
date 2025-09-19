@@ -820,7 +820,7 @@
                 Our <span style="color: #f29c12;">Case </span> Studies
             </h2>
             <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                Insights Of All The Learner Recent Learners
+                Insights from Our Recent Learners
             </p>
             <div class="row g-4 text-center">
                 @foreach($course->caseStudies as $case)
@@ -1041,7 +1041,7 @@
         Our <span style="color: #f29c12;">Course </span> Comes with Offerings
     </h2>
     <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-        By Joining Our Program, Underlying Are The Key Featuers You Will Get
+        By Joining Our Program, Underlying Are The Key Features You Will Get
     </p>
 </div>
 @foreach ($course->keyFeatures as $index => $feature)

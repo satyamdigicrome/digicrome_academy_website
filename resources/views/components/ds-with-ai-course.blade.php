@@ -162,7 +162,7 @@
     <!-- Blue Box -->
     <div class="blue-box">
       <small>Grab this exclusive offer -</small>
-      <span>Call 01204538104 now!</span>
+      <span>Call 01204538104 now!</span>
     </div>
 
     <!-- Red Box -->
