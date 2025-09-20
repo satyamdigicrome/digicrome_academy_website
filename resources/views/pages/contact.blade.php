@@ -432,7 +432,7 @@
 							<i class="fas fa-envelope-open"></i>
 						</div>
 						<div class="call_info">
-							<p>Mail us Anytime</p>
+							<p>Email us Anytime</p>
 							<h3>info@digicrome.com</h3>
 						</div>
 					</div>
