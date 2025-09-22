@@ -1264,12 +1264,21 @@
   <style>
     .custom-reg-modal-content {
       background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      /* backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px); */
+       -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
       border-radius: 16px;
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
+    @supports (-webkit-touch-callout: none) {
+  .custom-reg-modal-content {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
     .custom-close-icon {
         position: absolute;
     background: none;
