@@ -166,7 +166,7 @@
     </div>
 
     <!-- Red Box -->
-    <div class="red-box">
+    <div class="red-box"  data-bs-toggle="modal" data-bs-target="#applyNowPopup">
       <div class="red-left">
         <small>Register Now<br> and Get Up to</small>
         <button data-bs-toggle="modal" data-bs-target="#applyNowPopup">

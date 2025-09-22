@@ -7,8 +7,6 @@
 @section('content')
 @include('components.lead-form-popup')
 
-
-
 <div class="corporate-img d-flex">
 	<div class="container">
 		<div class="row align-items-center">

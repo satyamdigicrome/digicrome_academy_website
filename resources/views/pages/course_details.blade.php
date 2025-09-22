@@ -1218,7 +1218,7 @@
           <button type="button" class="custom-close-icon" data-bs-dismiss="modal" aria-label="Close">&times;</button>
         </div>
   
-        <form method="POST" action="{{ route('lead.store') }}">
+        <form method="POST" id="leadForm" action="{{ route('lead.store') }}">
           @csrf
           <div class="modal-body" id="form1">
             <div class="row g-3">
