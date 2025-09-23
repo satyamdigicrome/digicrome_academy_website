@@ -1266,17 +1266,17 @@
       background: rgba(255, 255, 255, 0.05);
       /* backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px); */
-       -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
       border-radius: 16px;
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
     @supports (-webkit-touch-callout: none) {
-  .custom-reg-modal-content {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+   .custom-reg-modal-content {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
   }
 }
     .custom-close-icon {
@@ -1308,7 +1308,7 @@
     .custom-reg-input {
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #000;
+      color: #fff !important;
     }
   
     .custom-reg-input::placeholder {
@@ -1318,7 +1318,7 @@
     .custom-reg-input:focus {
       background: rgba(255, 255, 255, 0.1);
       border-color: #ffffff;
-      color: #000;
+      color: #fff;
       box-shadow: none;
     }
   

@@ -504,9 +504,10 @@ window.addEventListener('load', function() {
     <a href="https://wa.me/916299611702" target="_blank" class="btn btn-whatsapp">
         <i class="fab fa-whatsapp"></i> Say Hi on WhatsApp
     </a>
-    <a href="javascript:void(0);" onclick="openModal()" class="btn btn-callback">
-        <i class="fas fa-phone-alt"></i> Call to Response
-    </a>
+    <a href="tel:+01204538104" class="btn btn-callback">
+  <i class="fas fa-phone-alt"></i> Call to Response
+</a>
+
 </div>
 
 <div class="mobile-contact-icons mobile-only">
