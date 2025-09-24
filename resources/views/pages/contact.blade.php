@@ -458,7 +458,7 @@
 					<form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
 						action="https://demo.digicrome.com/post_lead.php">
 						@csrf
-						<h2 style="    color: #f29c12;"> Register now!! And get a quick call</h2>
+						<h2 style="color: #f29c12;"> Register now!! And get a quick call</h2>
 						<div class="form-field">
 							<!--<label style="color:#fff;" for="name">Name:</label> -->
 							<input type="text" id="name" name="name" placeholder="Name">
