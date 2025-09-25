@@ -87,7 +87,7 @@
                             <span>Hiring <br> Partners</span>
                         </div>
                         <div class="fill-btn">
-                            <a data-bs-toggle="modal" style="color: green" data-bs-target="#leadPopup" download=""
+                            <a  style="color: green" id="downloadBrochureBtn" onclick="openModal('leadPopup')" download=""
                                >Download Brochure</a>
                         </div>
                         <!--<button type="button" class="fill-btn" href="#form1" data-toggle="modal" data-target="#buy-form" onclick="buNow('102')">Apply-->
@@ -104,7 +104,7 @@
                     <h2 style="color:#fff;">Courses Features</h2>
                     <div class="fill-btn" style="color: #fff;  background: green;
                     border: 2px solid;">
-                        <a data-bs-toggle="modal" data-bs-target="#leadPopup"
+                        <a id="downloadBrochureBtn" onclick="openModal('leadPopup')"
                              download=""
                             style="color:#fff">Download
                             Brochure</a>
@@ -166,7 +166,7 @@
     </div>
 
     <!-- Red Box -->
-    <div class="red-box" onclick="openModal()">
+    <div class="red-box" id="quickResponseBtn" onclick="openModal('applyNowPopup')">
       <div class="red-left">
         <small>Register Now<br> and Get Up to</small>
         <button>

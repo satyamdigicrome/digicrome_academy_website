@@ -108,7 +108,7 @@
             <div class="mt-4 d-flex gap-3">
                 @if($course->browser)
 
-                <button class="btn btn-outline-primary" style="background-color: green;" data-bs-toggle="modal" data-bs-target="#leadPopup">
+                <button class="btn btn-outline-primary" style="background-color: green;"  id="downloadBrochureBtn" onclick="openModal('leadPopup')">
                     <i class="fa fa-download me-2"></i>Download Brochure
                 </button>
                 @endif
@@ -116,7 +116,7 @@
                 <a
                 class="btn btn-primary" 
                 style="background-color: #1c1647;" 
-                onclick="openModal()">
+                id="quickResponseBtn" onclick="openModal('applyNowPopup')">
                 <i class="fa fa-paper-plane me-2"></i>Apply Now
              </a>
              
@@ -209,12 +209,12 @@
                 <div class="mt-4 d-flex gap-3">
                     @if($course->browser)
 
-                  <a href="your-brochure-link.pdf" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#leadPopup" style="background-color: green;">
+                  <a  class="btn btn-outline-primary"  id="downloadBrochureBtn" onclick="openModal('leadPopup')" style="background-color: green;">
                     <i class="fa fa-download me-2"></i>Download Brochure
                   </a>
                   @endif
 
-                  <a onclick="openModal()" class="btn btn-primary" style="background-color: green;">
+                  <a id="quickResponseBtn" onclick="openModal('applyNowPopup')" class="btn btn-primary" style="background-color: green;">
                     <i class="fa fa-paper-plane me-2"></i>Apply Now
                   </a>
                 </div>
@@ -472,7 +472,7 @@
                             </ul>
                         </div>
                         <div class="event-info-btn">
-                            <a onclick="openModal()" style="    background: green;
+                            <a id="quickResponseBtn" onclick="openModal('applyNowPopup')" style="    background: green;
                             color: #fff;" >APPLY NOW<i class="flaticon flaticon-right-arrow"></i></a>
                         </div>
                    {{--     <div class="course-share-title">
@@ -934,7 +934,7 @@
 					<p>Students love the hands-on learning, expert mentors, and real-world projects that make the Digicrome experience truly exceptional.</p>
 				</div>
 				<div class="testi-mentor-btn">
-					<a onclick="openModal()">GET STARTED<i
+					<a id="quickResponseBtn" onclick="openModal('applyNowPopup')">GET STARTED<i
 						class="flaticon flaticon-right-arrow"></i></a>
 				</div>
 			</div>
@@ -1120,99 +1120,137 @@
 <!--End educate-details-course-area -->
 <!--==================================================-->
 <!-- Bootstrap Modal -->
-<div class="modal fade" id="leadPopup" tabindex="-1" aria-labelledby="leadPopupLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content custom-lead-modal-content">
-        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+<!-- Modal for Download Brochure (Lead Form) -->
+<!-- Modal for Download Brochure (Lead Form) -->
+<div id="leadPopup" class="modal-container">
+  <div class="modal-dialog">
+    <div class="modal-content custom-lead-modal-content">
+      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" onclick="closeModal('leadPopup')" style="filter: invert(1);"></button>
 
-        <form id="leadForm">
-          @csrf
-          <input type="hidden" name="course_id" value="{{ $course->id }}">
-  
-          <h4 class="custom-lead-modal-title">Quick Response </h4>
-  
-          <input type="text" name="name" style="color: #fff" placeholder="Name" class="form-control custom-lead-input" required>
-          <input type="tel" name="mobile" style="color: #fff" placeholder="Mobile Number" class="form-control custom-lead-input" required>
-          <input type="email" name="email" style="color: #fff" placeholder="E-mail ID" class="form-control custom-lead-input" required>
-        <!-- Hidden City field -->
-<input type="hidden" name="address" value="NA">
-<input type="hidden" name="source" value="Website(broucher)">
-<input type="hidden" name="ib" value="">
-<!-- Hidden Qualification field -->
-<input type="hidden" name="title" value="NA">
-<!-- Hidden Experience field -->
-<input type="hidden" name="profession" value="NA">
+      <form id="leadForm" action="{{ route('lead.store') }}" method="POST">
+        @csrf
+        <input type="hidden" name="course_id" value="{{ $course->id }}">
 
-  
-          <button type="submit" style="background: green;" class="btn custom-lead-submit-btn w-100 mt-2">Download Brochure</button>
-        </form>
-      </div>
+        <h4 class="custom-lead-modal-title">Download Brochure</h4>
+
+        <input type="text" name="name" style="color: #fff" placeholder="Name" class="form-control custom-lead-input" required>
+        <input type="tel" name="mobile" style="color: #fff" placeholder="Mobile Number" class="form-control custom-lead-input" required>
+        <input type="email" name="email" style="color: #fff" placeholder="E-mail ID" class="form-control custom-lead-input" required>
+
+        <!-- Hidden Fields -->
+        <input type="hidden" name="address" value="NA">
+        <input type="hidden" name="source" value="Website(broucher)">
+        <input type="hidden" name="ib" value="">
+        <input type="hidden" name="title" value="NA">
+        <input type="hidden" name="profession" value="NA">
+
+        <button type="submit" style="background: green;" class="btn custom-lead-submit-btn w-100 mt-2">Download Brochure</button>
+      </form>
     </div>
   </div>
-  <style>
-    .custom-lead-modal-content {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 14px;
-      padding: 25px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #fff;
-    }
-  
-    .custom-lead-modal-title {
-      color: #ffffff;
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      text-align: center;
-    } 
-  
-    .custom-lead-input {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #ffffff;
-      margin-bottom: 12px;
-    }
-  
-    .custom-lead-input::placeholder {
-      color: rgba(255, 255, 255, 0.6);
-    }
-  
-    .custom-lead-input:focus {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: #ffffff;
-      color: #fff;
-      box-shadow: none;
-    }
-  
-    .form-select.custom-lead-input option {
-      background-color: #1a1a1a;
-      color: #fff;
-    }
-  
-    .custom-lead-submit-btn {
-      background-color: rgba(255, 255, 255, 0.9);
-      color: #000;
-      font-weight: 600;
-      border: none;
-      transition: 0.3s ease;
-    }
-  
-    .custom-lead-submit-btn:hover {
-      background-color: #fff;
-      color: #000;
-    }
-  </style>
+</div>
+
+
+<!-- Styles -->
+<style>
+  .modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .modal-dialog {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .custom-lead-modal-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+
+  .custom-lead-modal-title {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .custom-lead-input {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+
+  .custom-lead-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .custom-lead-input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    color: #fff;
+    box-shadow: none;
+  }
+
+  .form-select.custom-lead-input option {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
+  .custom-lead-submit-btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s ease;
+  }
+
+  .custom-lead-submit-btn:hover {
+    background-color: #fff;
+    color: #000;
+  }
+</style>
+
+<!-- JS to Control Modals -->
+<script>
+  // Function to open modal based on its ID
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'flex';  // Open the modal by its ID
+  }
+
+  // Function to close modal based on its ID
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';  // Close the modal by its ID
+  }
+</script>
+
+
+
+
   <!-- Apply Now Modal -->
 <!-- Modal Start -->
 <!-- Simple Modal with JS Control -->
 <div id="applyNowPopup" class="modal-container">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content custom-reg-modal-content" style="padding: 10px;">
-      <div class="modal-header custom-reg-modal-header" style="background: #fff; border-radius: 7px;">
+      <div class="modal-header custom-reg-modal-header" style="background: #fff; border-radius: 7px; padding: 10px;">
         <h5 class="modal-title custom-reg-modal-title" style="color:#000;">Quick Response</h5>
-        <button type="button" class="custom-close-icon" onclick="closeModal()">×</button>
+        <button type="button" class="custom-close-icon" onclick="closeModal('applyNowPopup')">×</button>
       </div>
 
       <form method="POST" id="leadForm" action="{{ route('lead.store') }}">
@@ -1240,7 +1278,7 @@
             <input type="hidden" name="source" value="Website(Course)">
             <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
           </div>
-        </div>
+        </div><br>
 
         <div class="modal-footer border-0">
           <button type="submit" class="btn custom-reg-submit-btn w-100">Submit</button>
@@ -1348,48 +1386,46 @@
 </style>
 
 <!-- JS to Control Modal -->
-<script>
-  function openModal() {
-    document.getElementById('applyNowPopup').style.display = 'flex';
-  }
-
-  function closeModal() {
-    document.getElementById('applyNowPopup').style.display = 'none';
-  }
-</script>
 
   
-  <script>
-    document.getElementById('leadForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        let form = e.target;
-        let formData = new FormData(form);
+ <script>
+  document.getElementById('leadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
     
-        fetch("{{ route('store.lead') }}", {
-            method: "POST",
-            headers: {
-                'X-CSRF-TOKEN': form.querySelector('[name=_token]').value
-            },
-            body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success && data.download_url) {
-                // Close modal
-                var modal = bootstrap.Modal.getInstance(document.getElementById('leadPopup'));
+    let form = e.target;
+    let formData = new FormData(form);
+
+    // Perform the fetch request
+    fetch("{{ route('store.lead') }}", {
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': form.querySelector('[name="_token"]').value, // Ensure CSRF token is being sent
+        },
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success && data.download_url) {
+            // Close the modal if it's open
+            var modalElement = document.getElementById('leadPopup');
+            var modal = bootstrap.Modal.getInstance(modalElement);
+            if (modal) {
                 modal.hide();
-    
-                // Trigger brochure download
-                window.open(data.download_url, '_blank');
-            } else {
-                alert("Submission failed!"); 
             }
-        })
-        .catch(err => {
-            console.error("Error:", err);
-        });
+
+            // Trigger the brochure download
+            window.open(data.download_url, '_blank'); // Open the URL in a new tab
+        } else {
+            alert("Submission failed! Please try again.");
+        }
+    })
+    .catch(err => {
+        console.error("Error:", err);
+        alert("An error occurred. Please try again later.");
     });
-    </script>
+  });
+</script>
+
       
 <!--==================================================-->
 <!-- Start educate Footer Area -->

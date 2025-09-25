@@ -175,18 +175,20 @@
 			<div class="header-right-wrapper">
 				<div class="header-sidebar">
 					<div class="header-btn">
-						<a href="javascript:void(0);" onclick="openModal()"
-							style="display: inline-block; 
-									  border: 2px solid #fff; 
-									  color: #fff; 
-									  background-color: #1c1647; 
-									  padding: 8px 20px; 
-									  font-size: 14px; 
-									  white-space: nowrap; 
-									  min-width: 120px; 
-									  text-align: center;">
-							ENROLL NOW
-						</a>
+						<a href="javascript:void(0);" 
+   onclick="{{ Route::is('course_details') ? 'openModal(\'applyNowPopup\')' : 'openModal()' }}" 
+   style="display: inline-block; 
+          border: 2px solid #fff; 
+          color: #fff; 
+          background-color: #1c1647; 
+          padding: 8px 20px; 
+          font-size: 14px; 
+          white-space: nowrap; 
+          min-width: 120px; 
+          text-align: center;">
+    ENROLL NOW
+</a>
+
 					</div>
 				</div>
 			</div>
@@ -248,11 +250,13 @@ window.addEventListener('load', function() {
 
       <!-- Right side: "Get Started" Button -->
       <div class="col-6 text-end">
-        <a href="javascript:void(0);" onclick="openModal()" 
-           class="btn btn-sm fw-bold text-white" 
-           style="background-color: #ff8c00; font-size: 12px; padding: 4px 10px; border-radius: 4px;">
-          Enroll Now
-        </a>
+        <a href="javascript:void(0);" 
+   onclick="{{ Route::is('course_details') ? 'openModal(\'applyNowPopup\')' : 'openModal()' }}" 
+   class="btn btn-sm fw-bold text-white" 
+   style="background-color: #ff8c00; font-size: 12px; padding: 4px 10px; border-radius: 4px;">
+   Enroll Now
+</a>
+
       </div>
 
     </div>
