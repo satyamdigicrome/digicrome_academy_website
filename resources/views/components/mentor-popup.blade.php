@@ -38,19 +38,20 @@
                         </div>
                         
                         <!-- Info Icon (styled) -->
-                        <div class="mentor-view-icon text-center mt-3">
-                            <a href="javascript:void(0);"
-                               class="mentor-trigger"
-                               title="View Full Profile"
-                               data-index="{{ $index }}"
-                               data-name="{{ $mentor->name }}"
-                               data-position="{{ $mentor->position }}"
-                               data-experience="{{ $mentor->experience }}+ Years"
-                               data-description="{{ $mentor->description }}"
-                               data-image="{{ asset('storage/' . $mentor->photo) }}">
-                                <i class="fa-solid fa-circle-info"></i>
-                            </a>
-                        </div>
+                        <!-- Example of the mentor trigger link inside the mentor card -->
+<div class="mentor-view-icon text-center mt-3">
+    <a href="javascript:void(0);"
+       class="mentor-trigger"
+       title="View Full Profile"
+       data-name="{{ $mentor->name }}"
+       data-position="{{ $mentor->position }}"
+       data-experience="{{ $mentor->experience }}+ Years"
+       data-description="{{ $mentor->description }}"
+       data-image="{{ asset('storage/' . $mentor->photo) }}">
+        <i class="fa-solid fa-circle-info"></i>
+    </a>
+</div>
+
                         
                     </div>
                     <style>
@@ -190,35 +191,43 @@
 <!-- ========================= SCRIPT ========================= -->
 @push('scripts')
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".team-plus").forEach(el => {
+    // Add event listener to all elements with class 'mentor-trigger'
+    document.querySelectorAll(".mentor-trigger").forEach(el => {
         el.addEventListener("click", function () {
+            // Get the data attributes for the clicked mentor
             const name = this.getAttribute("data-name");
             const position = this.getAttribute("data-position");
             const experience = this.getAttribute("data-experience");
             const description = this.getAttribute("data-description");
             const image = this.getAttribute("data-image");
 
+            // Populate the modal with the mentor's data
             document.getElementById("mentorName").innerText = name;
             document.getElementById("mentorPosition").innerText = position;
             document.getElementById("mentorDesc").innerText = description;
             document.getElementById("mentorImg").src = image;
             document.getElementById("mentorExp").innerText = "Experience: " + experience;
 
+            // Show the mentor popup
             document.getElementById("mentorPopup").style.display = "block";
         });
     });
 
+    // Close modal when clicking on the close button
     document.querySelector(".mentor-popup-close").addEventListener("click", function () {
         document.getElementById("mentorPopup").style.display = "none";
     });
 
+    // Close modal when clicking outside of the modal
     window.addEventListener("click", function (e) {
         if (e.target.id === "mentorPopup") {
             document.getElementById("mentorPopup").style.display = "none";
         }
     });
 });
+
 
 </script>
 @endpush

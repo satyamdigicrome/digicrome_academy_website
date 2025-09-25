@@ -142,15 +142,28 @@
             <div class="col-12 mb-4">
                 <h5 style="color: #ccc"><u>Data Science And AI</u></h5>
                 <p>
-					@foreach([62, 63, 64,65,66,67,68,69,70,71] as $id)
-					@if(isset($footer_courses[$id]))
-						@php $course = $footer_courses[$id]; @endphp
-								<a href="{{ route('course_details', ['slug' => $course->slug]) }}" style="color: #fff">
-									{{ $course->name }}</a> | 
-									
-					@endif
-				@endforeach
-                </p>
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-noida" style="color: #fff">
+        Data Science Training Course in Noida</a> |
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-gurgaon" style="color: #fff">
+        Data Science Training Course in Gurgaon</a> |
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-mumbai" style="color: #fff">
+        Data Science Training Course in Mumbai</a> |
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-kolkata" style="color: #fff">
+        Data Science Training Course in Kolkata</a> |
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-pune" style="color: #fff">
+        Data Science Training Course in Pune</a> |
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-jaipur" style="color: #fff">
+        Data Science Training Course in Jaipur</a> |
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-delhi" style="color: #fff">
+        Data Science Training Course in Delhi</a> |
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-chennai" style="color: #fff">
+        Data Science Training Course in Chennai</a> |
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-hyderabad" style="color: #fff">
+        Data Science Training Course in Hyderabad</a> |
+    <a href="https://www.digicrome.com/courses/data-science-training-course-in-bangalore" style="color: #fff">
+        Data Science Training Course in Bangalore</a>
+</p>
+
 				<hr>
             </div>
         </div>    
