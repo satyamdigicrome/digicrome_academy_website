@@ -113,11 +113,10 @@
                 </button>
                 @endif
                 
-                <a href="javascript:void(0);" 
+                <a
                 class="btn btn-primary" 
                 style="background-color: #1c1647;" 
-                data-bs-toggle="modal" 
-                data-bs-target="#applyNowPopup">
+                onclick="openModal()">
                 <i class="fa fa-paper-plane me-2"></i>Apply Now
              </a>
              
@@ -215,8 +214,7 @@
                   </a>
                   @endif
 
-                  <a data-bs-toggle="modal" 
-                  data-bs-target="#applyNowPopup" class="btn btn-primary" style="background-color: green;">
+                  <a onclick="openModal()" class="btn btn-primary" style="background-color: green;">
                     <i class="fa fa-paper-plane me-2"></i>Apply Now
                   </a>
                 </div>
@@ -474,9 +472,8 @@
                             </ul>
                         </div>
                         <div class="event-info-btn">
-                            <a data-bs-toggle="modal"  style="    background: green;
-                            color: #fff;"
-                            data-bs-target="#applyNowPopup">APPLY NOW<i class="flaticon flaticon-right-arrow"></i></a>
+                            <a onclick="openModal()" style="    background: green;
+                            color: #fff;" >APPLY NOW<i class="flaticon flaticon-right-arrow"></i></a>
                         </div>
                    {{--     <div class="course-share-title">
                             <h5>Share Now</h5>
@@ -937,8 +934,7 @@
 					<p>Students love the hands-on learning, expert mentors, and real-world projects that make the Digicrome experience truly exceptional.</p>
 				</div>
 				<div class="testi-mentor-btn">
-					<a data-bs-toggle="modal" 
-                    data-bs-target="#applyNowPopup">GET STARTED<i
+					<a onclick="openModal()">GET STARTED<i
 						class="flaticon flaticon-right-arrow"></i></a>
 				</div>
 			</div>
@@ -1210,149 +1206,158 @@
   </style>
   <!-- Apply Now Modal -->
 <!-- Modal Start -->
-<div class="modal fade" id="applyNowPopup" tabindex="-1" aria-labelledby="applyNowPopupLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content custom-reg-modal-content">
-        <div class="modal-header custom-reg-modal-header" style="background: #fff;">
-          <h5 class="modal-title custom-reg-modal-title" id="applyNowPopupLabel" style="color:#000;">Quick Response </h5>
-          <button type="button" class="custom-close-icon" data-bs-dismiss="modal" aria-label="Close">&times;</button>
-        </div>
-  
-        <form method="POST" id="leadForm" action="{{ route('lead.store') }}">
-          @csrf
-          <div class="modal-body" id="form1">
-            <div class="row g-3">
-                <div class="col-12">
-                  <input type="text" name="name" class="form-control custom-reg-input" placeholder="Name" required>
-                </div>
-                <div class="col-12">
-                  <input type="tel" name="phone" class="form-control custom-reg-input" placeholder="Mobile Number" required>
-                </div>
-                <div class="col-12">
-                  <input type="email" name="email" class="form-control custom-reg-input" placeholder="E-mail ID" required>
-                </div>
-              
-                <!-- Hidden fields with value "NA" -->
-                <input type="hidden" name="address" value="NA">
-                <input type="hidden" name="qualification" value="NA">
-                <input type="hidden" name="experience" value="NA">
-                <input type="hidden" name="ib" value="">
-              
-                <!-- Other hidden fields -->
-                <input type="hidden" name="page_name" value="{{ $course->name }}">
-                <input type="hidden" name="source" value="Website(Course)">
-                <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
-              </div>
-              
-  
-            {{-- <p class="mt-3 custom-reg-note">
-              By submitting the form, you agree to our
-              <a href="#" class="custom-reg-link">Terms and Conditions</a> and
-              <a href="/privacy-policy" class="custom-reg-link">Privacy Policy</a>.
-            </p> --}}
-          </div>
-  
-          <div class="modal-footer border-0">
-            <button type="submit" class="btn custom-reg-submit-btn w-100">Submit</button>
-          </div>
-        </form>
+<!-- Simple Modal with JS Control -->
+<div id="applyNowPopup" class="modal-container">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content custom-reg-modal-content" style="padding: 10px;">
+      <div class="modal-header custom-reg-modal-header" style="background: #fff; border-radius: 7px;">
+        <h5 class="modal-title custom-reg-modal-title" style="color:#000;">Quick Response</h5>
+        <button type="button" class="custom-close-icon" onclick="closeModal()">×</button>
       </div>
+
+      <form method="POST" id="leadForm" action="{{ route('lead.store') }}">
+        @csrf
+        <div class="modal-body" id="form1">
+          <div class="row g-3">
+            <div class="col-12">
+              <input type="text" name="name" class="form-control custom-reg-input" placeholder="Name" required>
+            </div>
+            <div class="col-12">
+              <input type="tel" name="phone" class="form-control custom-reg-input" placeholder="Mobile Number" required>
+            </div>
+            <div class="col-12">
+              <input type="email" name="email" class="form-control custom-reg-input" placeholder="E-mail ID" required>
+            </div>
+
+            <!-- Hidden fields with value "NA" -->
+            <input type="hidden" name="address" value="NA">
+            <input type="hidden" name="qualification" value="NA">
+            <input type="hidden" name="experience" value="NA">
+            <input type="hidden" name="ib" value="">
+
+            <!-- Other hidden fields -->
+            <input type="hidden" name="page_name" value="{{ $course->name }}">
+            <input type="hidden" name="source" value="Website(Course)">
+            <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
+          </div>
+        </div>
+
+        <div class="modal-footer border-0">
+          <button type="submit" class="btn custom-reg-submit-btn w-100">Submit</button>
+        </div>
+      </form>
     </div>
   </div>
-  
-  <!-- Styles -->
-  <style>
-    .custom-reg-modal-content {
-      background: rgba(255, 255, 255, 0.05);
-      /* backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px); */
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    @supports (-webkit-touch-callout: none) {
-   .custom-reg-modal-content {
-      background: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
+</div>
+<!-- Styles -->
+<style>
+  .modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
   }
-}
-    .custom-close-icon {
-        position: absolute;
+
+  .modal-dialog {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .custom-reg-modal-content {
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .custom-close-icon {
+    position: absolute;
     background: none;
     border: none;
     font-size: 2rem;
     color: #000;
     cursor: pointer;
-    line-height: 1;
     right: 17px;
   }
 
-  
-    .custom-reg-modal-header {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-  
-    .custom-reg-modal-title {
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 1.25rem;
-    }
-  
-    .custom-reg-close {
-      filter: invert(1);
-    }
-  
-    .custom-reg-input {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #fff !important;
-    }
-  
-    .custom-reg-input::placeholder {
-      color: rgba(255, 255, 255, 0.6);
-    }
-  
-    .custom-reg-input:focus {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: #ffffff;
-      color: #fff;
-      box-shadow: none;
-    }
-  
-    .form-select.custom-reg-input option {
-      background-color: #1a1a1a;
-      color: #fff;
-    }
-  
-    .custom-reg-note {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.9rem;
-    }
-  
-    .custom-reg-link {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-  
-    .custom-reg-submit-btn {
-      background-color: rgba(255, 255, 255, 0.9);
-      color: #000;
-      font-weight: 600;
-      border: none;
-    }
-  
-    .custom-reg-submit-btn:hover {
-      background-color: #fff;
-      color: #000;
-    }
-    #form1{
-        background: none !important;
-    }
-  </style>
-  
+  .custom-reg-modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .custom-reg-modal-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  .custom-reg-input {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+  }
+
+  .custom-reg-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .custom-reg-input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    color: #fff;
+    box-shadow: none;
+  }
+
+  .form-select.custom-reg-input option {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
+  .custom-reg-note {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+
+  .custom-reg-link {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .custom-reg-submit-btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-weight: 600;
+    border: none;
+  }
+
+  .custom-reg-submit-btn:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  #form1 {
+    background: none !important;
+  }
+</style>
+
+<!-- JS to Control Modal -->
+<script>
+  function openModal() {
+    document.getElementById('applyNowPopup').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('applyNowPopup').style.display = 'none';
+  }
+</script>
+
   
   <script>
     document.getElementById('leadForm').addEventListener('submit', function(e) {

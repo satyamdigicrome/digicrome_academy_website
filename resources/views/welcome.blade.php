@@ -157,7 +157,7 @@
                         </div>
                         <div class="educate-hover-box hover-bx"></div>
                         <div class="educate-hover-box hover-bx2"></div>
-                        <div class="educate-hover-box hover-bx3"></div>
+                        <div class="educate-hover-box hover-bx3 "></div>
                         <div class="educate-hover-box hover-bx4"></div>
                     </div>
                 </div>
