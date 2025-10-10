@@ -460,7 +460,7 @@
 						</div>
 						<div class="form-field">
 							<!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
-							<input type="tel" id="mobile" name="mobile" placeholder="Mobile Number">
+							<input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  id="mobile" name="mobile" placeholder="Mobile Number">
 						</div>
 						<div class="form-field">
 							<!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->

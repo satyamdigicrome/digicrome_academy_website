@@ -61,7 +61,7 @@
           </div>
           <div class="mb-3">
             <label for="yourPhone" class="form-label">Your Mobile</label>
-            <input type="text" class="form-control" id="yourPhone" name="yourPhone" required>
+            <input type="text" pattern="\d{10}" title="Please enter a 10-digit mobile number"  class="form-control" id="yourPhone" name="yourPhone" required>
           </div>
           <div class="mb-3">
             <label for="friendName" class="form-label">Friend's Name</label>

@@ -1474,7 +1474,6 @@ line-height: 1.3;
             <div class="row gy-3">
                 <div class="col-12">
                     <div class="ajax-message"></div>
-                </div>
                 <div class="col-12">
                     <input type="text" class="form-control shadow-none" required placeholder="Your Name*" name="name">
                 </div>
@@ -1482,7 +1481,7 @@ line-height: 1.3;
                     <input type="email" class="form-control shadow-none" required placeholder="Your Email*" name="email">
                 </div>
                 <div class="col-12">
-                    <input type="tel" class="form-control shadow-none" required placeholder="Your Phone*" name="phone">
+                    <input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  class="form-control shadow-none" required placeholder="Your Phone*" name="phone">
                 </div>
                 <div class="col-12">
                     <select name="qualification" class="form-control shadow-none">
@@ -1544,7 +1543,7 @@ line-height: 1.3;
                                     <input type="text" id="name" name="name" required placeholder="Full Name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" id="phone" name="phone" required placeholder="Mobile No.">
+                                    <input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  id="phone" name="phone" required placeholder="Mobile No.">
                                 </div>
                                 <div class="form-group">
                                     <input type="email" id="email" name="email" required placeholder="Your Email">
@@ -1832,7 +1831,7 @@ const countdown2 = setInterval(() => {
                                     <input type="text" id="name" name="name" required placeholder="Full Name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" id="phone" name="phone" required placeholder="Mobile No.">
+                                    <input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  id="phone" name="phone" required placeholder="Mobile No.">
                                 </div>
                                 <div class="form-group">
                                     <input type="email" id="email" name="email" required placeholder="Your Email">
@@ -2842,7 +2841,7 @@ const countdown2 = setInterval(() => {
                                     <input type="text" id="name" name="name" required placeholder="Full Name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" id="phone" name="phone" required placeholder="Mobile No.">
+                                    <input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  id="phone" name="phone" required placeholder="Mobile No.">
                                 </div>
                                 <div class="form-group">
                                     <input type="email" id="email" name="email" required placeholder="Your Email">

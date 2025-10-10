@@ -1134,7 +1134,7 @@
         <h4 class="custom-lead-modal-title">Download Brochure</h4>
 
         <input type="text" name="name" style="color: #fff" placeholder="Name" class="form-control custom-lead-input" required>
-        <input type="tel" name="mobile" style="color: #fff" placeholder="Mobile Number" class="form-control custom-lead-input" required>
+        <input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  name="mobile" style="color: #fff" placeholder="Mobile Number" class="form-control custom-lead-input" required>
         <input type="email" name="email" style="color: #fff" placeholder="E-mail ID" class="form-control custom-lead-input" required>
 
         <!-- Hidden Fields -->
@@ -1261,7 +1261,7 @@
               <input type="text" name="name" class="form-control custom-reg-input" placeholder="Name" required>
             </div>
             <div class="col-12">
-              <input type="tel" name="phone" class="form-control custom-reg-input" placeholder="Mobile Number" required>
+              <input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  name="phone" class="form-control custom-reg-input" placeholder="Mobile Number" required>
             </div>
             <div class="col-12">
               <input type="email" name="email" class="form-control custom-reg-input" placeholder="E-mail ID" required>

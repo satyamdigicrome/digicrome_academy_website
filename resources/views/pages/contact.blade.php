@@ -193,7 +193,7 @@
 		</div>
 
 		<div class="mb-3">
-			<input class="form-control" style="border-radius: 20px;   padding: 12px;" placeholder="Enter your mobile number"  name="mobile"  type="number">
+			<input class="form-control" pattern="\d{10}" title="Please enter a 10-digit mobile number"  style="border-radius: 20px;   padding: 12px;" placeholder="Enter your mobile number"  name="mobile"  type="number">
 		</div>
 
 		<div class="row">
@@ -465,7 +465,7 @@
 						</div>
 						<div class="form-field">
 							<!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
-							<input type="tel" id="mobile" name="mobile" placeholder="Mobile Number">
+							<input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  id="mobile" name="mobile" placeholder="Mobile Number">
 						</div>
 						<div class="form-field">
 							<!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
