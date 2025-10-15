@@ -190,7 +190,7 @@
 	</div>
 </section>
 
-<div class="call-to-action style-two">
+{{-- <div class="call-to-action style-two">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-lg-6">
@@ -209,7 +209,7 @@
 			<img loading="lazy" src="{{ asset('assets/images/home-three/call-to-arrow2.webp') }}" alt="shape" title="shape">
 		</div>
 	</div>
-</div>
+</div> --}}
 
 <div class="testimonial-area style-inner">
 	<div class="container">
@@ -380,7 +380,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-4">
+				{{-- <div class="col-xl-3 col-lg-4">
 					<div class="call-logo-box">
 						<div class="call-to-logo">
 							<img loading="lazy"src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="call-to-logo" title="call-to-logo">
@@ -389,7 +389,7 @@
 							<p><span>890+</span> Trustpilot 4.9 Ratings</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 	</div>
