@@ -355,7 +355,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="call-to-action style-one">
+	{{-- <div class="call-to-action style-one">
 		<div class="container">
 			<div class="row align-items-center call-to-bg">
 				<div class="col-xl-5 col-lg-4">
@@ -380,7 +380,7 @@
 						</div>
 					</div>
 				</div>
-				{{-- <div class="col-xl-3 col-lg-4">
+				<div class="col-xl-3 col-lg-4">
 					<div class="call-logo-box">
 						<div class="call-to-logo">
 							<img loading="lazy"src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="call-to-logo" title="call-to-logo">
@@ -389,10 +389,10 @@
 							<p><span>890+</span> Trustpilot 4.9 Ratings</p>
 						</div>
 					</div>
-				</div> --}}
+				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<div class="blog-area style-one">
 		<div class="container">
 			<div class="row section-title-space">
