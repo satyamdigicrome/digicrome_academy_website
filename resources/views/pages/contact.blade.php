@@ -161,7 +161,7 @@
 
 		</div>
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row"> 
 				<div class="col-md-12 content-section" id="content">
 
 					<h2>Click an option to see details here</h2>
@@ -373,7 +373,7 @@
 					<div class="col-md-4">
 						<div class="info-box">
 							<h5>For Account Department</h5>
-							<p><i class="fas fa-phone"></i> 01204538125</p>
+							<p><i class="fas fa-phone"></i> 01204538104</p>
 							<p><i class="fas fa-envelope"></i> accounts@digicrome.com</p>
 						</div>
 					</div>
