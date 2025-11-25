@@ -64,11 +64,18 @@
 														</a>
 													</li>
 													<li class="mb-2">
+														<a href="http://digicromeuniversity.com" class="text-dark d-flex justify-content-between align-items-center category-link" data-ids="61">
+															UG/PG Courses
+															<i class="bi bi-chevron-right"></i>
+														</a>
+													</li>
+													<li class="mb-2">
 														<a href="https://www.digicrome.com/courses/investment-banking-certification-course" class="text-dark d-flex justify-content-between align-items-center category-link" data-ids="61">
 															Investment Banking
 															<i class="bi bi-chevron-right"></i>
 														</a>
 													</li>
+
 													@foreach($header_collections as $collection)
 													<li class="mb-2">
 														<a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
