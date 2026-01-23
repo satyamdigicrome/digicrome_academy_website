@@ -41,7 +41,7 @@
 				<!-- hero content -->
 				<div class="hero_content">
 					<h5 data-animation="fadeInUp" data-delay="100ms">
-						<i class="bi bi-check2"></i> 100% Satisfaction Guarantee
+						<i class="bi bi-check2"></i> 100% Satisfaction
 					</h5>
 					<h1 data-animation="fadeInUp" data-delay="100ms">
 						Stay Informed, Stay Inspired

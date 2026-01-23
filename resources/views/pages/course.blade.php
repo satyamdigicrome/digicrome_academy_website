@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', $meta->title  ?? 'Digicrome')
-@section('meta_description', $meta->description  ?? 'Digicrome')
-@section('meta_keywords', $meta->keywords  ?? 'Digicrome')
+@section('title', $meta->title ?? 'Digicrome')
+@section('meta_description', $meta->description ?? 'Digicrome')
+@section('meta_keywords', $meta->keywords ?? 'Digicrome')
 
 @section('content')
-@include('components.lead-form-popup')
+    @include('components.lead-form-popup')
 
     <!--==================================================-->
     <!-- Start educate Breadcumb Area -->
@@ -40,7 +40,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8">
                         <!-- hero content -->
-                        <div class="hero_content" >
+                        <div class="hero_content">
                             <h5 data-animation="fadeInUp" style="color:black;" data-delay="100ms">
                                 <i class="bi bi-check2"></i> Assured Placement Support
                             </h5>
@@ -53,7 +53,7 @@
                             <p data-animation="fadeInUp" data-delay="100ms" style="color:black;">
                                 {{ $name ?? (isset($collection) ? 'Explore Top Courses in ' . $collection->name : 'Discover Industry-Focused Courses') }}
                             </p>
-                                <!-- hero button -->						
+                            <!-- hero button -->
                             <div class="hero-button" data-animation="fadeInUp" data-delay="100ms">
                                 {{-- <div class="hero-btn">
                                     <a href="contact.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
@@ -77,14 +77,13 @@
                 </div>
             </div>
         </section>
-        
-    </div>
-	<style>
-		#sticky-header{
-    margin-bottom: 0px !important;
-}
 
-	</style>    
+    </div>
+    <style>
+        #sticky-header {
+            margin-bottom: 0px !important;
+        }
+    </style>
     <!--==================================================-->
     <!-- End educate Breadcumb Area -->
     <!--==================================================-->
@@ -96,25 +95,28 @@
             <div class="row align-items-center section-title-space">
                 <div class="col-lg-12">
                     <div class="section_title text-center">
-                        <h1>{{ $name ?? (isset($collection) ? 'Courses in ' . $collection->name : 'Courses') }}</h1>
+                        <h2>{{ $name ?? (isset($collection) ? 'Courses in ' . $collection->name : 'Courses') }}</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                @foreach($courses as $course) 
+                @foreach ($courses as $course)
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="course-details-box">
                             <div class="course-details-thumb">
-                                <img loading="lazy"src="{{ asset('storage/' .$course->image) }}" alt="thumb" title="thumb">
+                                <img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="thumb"
+                                    title="thumb">
                                 <div class="course-meta-top">
                                     <span>{{ $course->tag_line }}</span>
                                 </div>
                             </div>
                             <div class="course-details-content">
-                                <h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
+                                <h4><a
+                                        href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
+                                </h4>
                                 <div class="course-rating">
                                     {{-- <ul>
-                                        @for($i = 0; $i < 5; $i++)
+                                        @for ($i = 0; $i < 5; $i++)
                                             <li><i class="fa-solid fa-star{{ $i < $course->rating ? '' : '-half' }}"></i></li>
                                         @endfor
                                     </ul> --}}
@@ -135,26 +137,26 @@
                                     </div>
                                 </div> --}}
                                 <br>
-                               <br>
-					<div style="bottom: 17px; position: absolute;">
-						{{-- ENROL NOW Button --}}
-						<div class="course-enroll-fixed-btn" style="margin: 10px 0;">
-							<a href="{{ route('course_details', ['slug' => $course->slug]) }}"
-							   style="background-color: #2d3e5f; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
-                                EXPLORE NOW <i class="flaticon flaticon-right-arrow"></i>
-							</a>
-						</div>
-	
-						{{-- Horizontal line --}}
-						<hr style="border-top: 1px solid #ccc; margin: 10px 0;">
-	
-						{{-- Duration --}}
-						@if($course->course_duration)
-							<p style="font-size: 14px; color: #2d3e5f; margin-bottom: 0;">
-								<i class="fa fa-clock-o"></i> Duration: {{ $course->course_duration }}
-							</p>
-						@endif
-					</div>
+                                <br>
+                                <div style="bottom: 17px; position: absolute;">
+                                    {{-- ENROL NOW Button --}}
+                                    <div class="course-enroll-fixed-btn" style="margin: 10px 0;">
+                                        <a href="{{ route('course_details', ['slug' => $course->slug]) }}"
+                                            style="background-color: #2d3e5f; color: #fff; padding: 8px 16px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: bold;">
+                                            EXPLORE NOW <i class="flaticon flaticon-right-arrow"></i>
+                                        </a>
+                                    </div>
+
+                                    {{-- Horizontal line --}}
+                                    <hr style="border-top: 1px solid #ccc; margin: 10px 0;">
+
+                                    {{-- Duration --}}
+                                    @if ($course->course_duration)
+                                        <p style="font-size: 14px; color: #2d3e5f; margin-bottom: 0;">
+                                            <i class="fa fa-clock-o"></i> Duration: {{ $course->course_duration }}
+                                        </p>
+                                    @endif
+                                </div>
                                 {{-- <div class="course-btn">
                                     <a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="btn">ENROL NOW<i
                                             class="flaticon flaticon-right-arrow"></i></a>

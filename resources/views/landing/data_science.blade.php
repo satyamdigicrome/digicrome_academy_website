@@ -1832,7 +1832,7 @@
                             <div style="height: 67%; width: 99%;text-align: center; border-left: 2px solid #ff8c00;">
                                 <h5 class="mb-0">Placement
                                 </h5>
-                                <p class="mb-0"> Guaranteed Aid
+                                <p class="mb-0"> Aid
                                 </p>
                             </div>
                         </div>

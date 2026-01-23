@@ -118,7 +118,7 @@
                         </div>
                         <div class="feature-content">
                             <h4 class="feature-title">500+ Hiring Partners</h4>
-                            <p class="feature-desc">We guarantee placement assistance, so we have tied up with 500+ global
+                            <p class="feature-desc">We placement assistance, so we have tied up with 500+ global
                                 partners to assist students in securing job opportunities.</p>
                         </div>
                         <div class="educate-hover-box hover-bx"></div>
@@ -637,7 +637,7 @@ setInterval(() => {
                                 </li>
                                 <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
                                         alt="choose-item-menu" title="choose-item-menu">Get
-                                    Placement Guarantee Aid
+                                    Placement Aid
                                 </li>
                                 <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon4.webp') }}"
                                         alt="choose-item-menu" title="choose-item-menu">Get a
