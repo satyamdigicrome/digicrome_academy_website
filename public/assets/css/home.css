@@ -1,14 +1,14 @@
 #sticky-header {
-    margin-bottom: 0px !important;
+    margin-bottom: 0px !important
 }
+
 .reels-carousel .video-card {
     position: relative;
     padding-top: 177.78%;
-    /* 9:16 aspect ratio */
     overflow: hidden;
     border-radius: 15px;
     background: #000;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .reels-carousel .video-card iframe {
@@ -18,64 +18,62 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-    object-fit: cover;
+    object-fit: cover
 }
 
 .reels-carousel .video-title {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgba(242, 156, 18, 0.85);
-    color: white;
+    background: rgba(242, 156, 18, .85);
+    color: #fff;
     text-align: center;
     padding: 10px;
-    font-weight: bold;
+    font-weight: 700;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease
 }
 
 .reels-carousel .video-card:hover .video-title {
-    opacity: 1;
+    opacity: 1
 }
-
 
 .modal-video iframe {
     width: 100%;
-    height: 500px;
+    height: 500px
 }
+
 .wedd-gall {
     margin-bottom: 90px;
     float: left;
-    width: 100%;
+    width: 100%
 }
 
 .wedd-gall-pg {
-    margin: 100px 0 80px 0;
+    margin: 100px 0 80px 0
 }
 
 .wedd-gall-pg-v1 {
     width: 100%;
     float: left;
-    margin: 100px 0 90px 0;
+    margin: 100px 0 90px 0
 }
 
 .wedd-gall-pg-v1 .img-wrapper img {
-    height: 350px;
+    height: 350px
 }
 
 .gal-im {
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .gall-inn {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    flex-wrap: wrap
 }
-
-.gal-im:hover {}
 
 .gal-im:before {
     content: '';
@@ -88,26 +86,26 @@
     background: linear-gradient(45deg, #633214cc, transparent);
     transition: all 0.5s ease;
     opacity: 0;
-    z-index: 1;
+    z-index: 1
 }
 
 .gal-im img {
     width: 100%;
     transition: all 0.5s ease;
-    object-fit: cover;
+    object-fit: cover
 }
 
 .gal-im img.gal-siz-1 {
-    height: 300px;
+    height: 300px
 }
 
 .gal-im img.gal-siz-2 {
-    height: 45vh;
+    height: 45vh
 }
 
 .gal-im:hover img {
     filter: grayscale(0);
-    transform: scale(1.2);
+    transform: scale(1.2)
 }
 
 .gal-im .txt {
@@ -117,8 +115,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    /* transition: all 0.5s ease; */
-    z-index: 1;
+    z-index: 1
 }
 
 .gal-im .txt:before {
@@ -130,7 +127,7 @@
     width: 0%;
     height: 1px;
     background: #ffffff6b;
-    transition: all 0.5s ease;
+    transition: all 0.5s ease
 }
 
 .gal-im .txt span {
@@ -141,7 +138,7 @@
     transition: all 0.5s ease;
     position: relative;
     left: -30px;
-    opacity: 0;
+    opacity: 0
 }
 
 .gal-im .txt h4 {
@@ -150,87 +147,71 @@
     transition: all 0.5s ease;
     position: relative;
     left: -30px;
-    opacity: 0;
+    opacity: 0
 }
 
 .gal-im:hover span,
 .gal-im:hover h4 {
-    color: #fff;
+    color: #fff
 }
 
 .gal-im:hover .txt:before {
     width: 100%;
-    transition-delay: 0.4s;
+    transition-delay: 0.4s
 }
 
 .gal-im:hover:before {
-    opacity: 1;
+    opacity: 1
 }
 
 .gal-im:hover .txt span {
-    left: 0px;
+    left: 0;
     opacity: 1;
-    transition-delay: 0.2s;
+    transition-delay: 0.2s
 }
 
 .gal-im:hover .txt h4 {
-    left: 0px;
+    left: 0;
     opacity: 1;
-    transition-delay: 0.3s;
+    transition-delay: 0.3s
 }
 
-.gal-im:hover {}
-
-/* gallry end */
 .career {
-    color: black;
-
+    color: #000
 }
 
 .content {
     background-color: orange;
-    height: 500px;
+    height: 500px
 }
 
 .button-container {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, .2);
     text-align: center;
     padding: 10px;
     padding-top: 150px;
-    font-family: var(--pix-heading-font), sans-serif !important;
+    font-family: var(--pix-heading-font), sans-serif !important
 }
 
-/* Styles for the button */
 .custom-button {
     display: inline-block;
     background-color: #007BFF;
-    /* Set the button background color */
-    color: #FFFFFF;
-    /* Set the button text color */
+    color: #FFF;
     border: none;
     padding: 10px 20px;
-    /* Adjust the padding as needed */
     border-radius: 5px;
-    /* Add rounded corners if desired */
     font-size: 16px;
-    /* Set the font size */
-    font-weight: bold;
-    /* Set font weight to bold for a professional look */
+    font-weight: 700;
     font-family: Arial, sans-serif;
-    /* Use a professional font (change as needed) */
     text-align: center;
-    line-height: 1.4;
-    /* Adjust the line height as needed to control line spacing */
+    line-height: 1.4
 }
 
 .big-text {
-    color: white;
+    color: #fff;
     font-size: 54px;
-    /* Adjust the font size as needed */
-    font-weight: bold;
-    /* Add bold font weight for a professional look */
-    margin-bottom: 10px;
-    /* Add space between lines */
+    font-weight: 700;
+    margin-bottom: 10px
 }
 
 .ul {
@@ -238,52 +219,46 @@
     list-style-type: disc;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 40px
 }
 
 .section__title span.yellow-bg-big img {
     bottom: 15px;
     width: 120%;
     -webkit-animation: section-animation-2 3s infinite;
-    animation: section-animation-2 3s infinite;
+    animation: section-animation-2 3s infinite
 }
 
 .section__title span.yellow-bg-sm img {
     bottom: 10px;
     width: 120%;
     -webkit-animation: section-animation-2 3s infinite;
-    animation: section-animation-2 3s infinite;
+    animation: section-animation-2 3s infinite
 }
 
 #teem img {
     filter: grayscale(100%);
-    /* Set the image to black and white by default */
-    transition: filter 0.3s;
-    /* Add a smooth transition effect */
+    transition: filter 0.3s
 }
 
 #teem img:hover {
-    filter: grayscale(0%);
-    /* Remove the grayscale filter on hover */
+    filter: grayscale(0%)
 }
 
 .big-text {
-    color: white;
-    line-height: 1.5;
+    color: #fff;
+    line-height: 1.5
 }
 
-@media (max-width: 767px) {
-
-    /* Media query for screens with a maximum width of 767px (typical mobile screens) */
+@media (max-width:767px) {
     .big-text {
         font-size: 26px;
-        /* Adjust the font size for mobile screens */
-        line-height: 1.5;
-        /* Adjust the line height for better spacing on mobile */
+        line-height: 1.5
     }
 }
+
 .modal {
     display: none;
     position: fixed;
@@ -293,108 +268,99 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    background-color: rgba(0, 0, 0, .5);
     padding: 20px;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
-
-/* Modal Content Box */
 .modal-content {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    transform: translate(-50%, -50%);
     width: 350px;
     background: transparent;
     backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     transition: all 0.3s ease;
     max-height: 90vh;
-    overflow-y: auto;
+    overflow-y: auto
 }
 
-
-/* Modal Header */
 .modal-header {
     padding: 15px 20px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     background-color: #f29c12;
     color: #fff;
-    position: relative;
+    position: relative
 }
 
-/* Close Button */
 .close-btn {
     color: #fff;
     position: absolute;
     right: 20px;
     top: 12px;
     font-size: 26px;
-    cursor: pointer;
+    cursor: pointer
 }
 
-/* Modal Body */
 .modal-body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 20px;
     gap: 20px;
-    background: #f9f9f9;
+    background: #f9f9f9
 }
 
-/* Form Container */
 .popup-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: center
 }
 
 .popup-form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
+    width: 100%
 }
 
 .form-container {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    background-color: white;
+    background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .15)
 }
 
-/* Image Section */
 .form-container img {
     width: 100%;
     max-width: 400px;
-    object-fit: cover;
+    object-fit: cover
 }
 
-/* Form Section */
 form.form {
     flex: 1;
     padding: 20px;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 form h2 {
-    margin-bottom: 20px;
+    margin-bottom: 20px
 }
 
 .form-field {
     margin-bottom: 15px;
-    width: 100%;
+    width: 100%
 }
 
 .form-field input,
@@ -404,73 +370,72 @@ form h2 {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 form p {
     font-size: 14px;
-    color: #333;
+    color: #333
 }
 
 form a {
     color: #f29c12;
-    text-decoration: none;
+    text-decoration: none
 }
 
 form button {
     background-color: #f29c12;
-    color: white;
+    color: #fff;
     border: none;
     padding: 12px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 6px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease
 }
 
 form button:hover {
-    background-color: #d8880e;
+    background-color: #d8880e
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px) {
     .modal-body {
-        flex-direction: column;
+        flex-direction: column
     }
 
     .form-container {
-        flex-direction: column;
+        flex-direction: column
     }
 
     .form-container img {
         max-width: 100%;
-        height: auto;
+        height: auto
     }
 
     form.form {
-        padding: 15px;
+        padding: 15px
     }
 
     .modal-content {
         width: 100%;
         top: 40%;
         left: 50%;
-        transform: translate(-50%, -40%);
+        transform: translate(-50%, -40%)
     }
 }
 
-/* Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(.9)
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1)
     }
 }
+
 .formModal {
     display: none;
     position: fixed;
@@ -478,14 +443,14 @@ form button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-    z-index: 9999;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 9999
 }
 
 .heading-like-h1 {
-    font-size: 36px;     /* adjust if your h1 uses a different size */
-    font-weight: bold;
+    font-size: 36px;
+    font-weight: 700;
     line-height: 1.2;
-    color: #000;         /* or your desired color */
-    margin-bottom: 20px;
+    color: #000;
+    margin-bottom: 20px
 }
