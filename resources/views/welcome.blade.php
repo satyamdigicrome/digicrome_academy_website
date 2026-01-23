@@ -5,6 +5,52 @@
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
     <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
+    <style>
+        /* BACKDROP */
+        .christmas-offer-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9998;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* IMAGE CONTAINER */
+        .christmas-offer-content {
+            width: 90%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            background: url('{{ asset('assets/images/website_special_offer.webp') }}') center center / contain no-repeat;
+            cursor: pointer;
+        }
+
+        /* CLOSE BUTTON */
+        .christmas-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            z-index: 9999;
+            line-height: 1;
+        }
+
+        .christmas-close-btn:hover {
+            color: #ffcc66;
+        }
+
+        /* MOBILE */
+        @media (max-width: 576px) {
+            .christmas-offer-content {
+                width: 95%;
+                aspect-ratio: 4 / 5;
+            }
+        }
+    </style>
 @endpush
 @section('content')
     <section class="hero_area style-one d-flex align-items-center">
@@ -17,7 +63,8 @@
                             future with a better career transition</h1>
                         @if ($userCountry === 'India')
                             <div style="text-align: left; margin: 10px 0; width: 60%;">
-                                <div style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
+                                <div
+                                    style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
                                     <small style="font-size: 14px; color: #555;">In collaboration with</small>
                                     <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}"
                                         class="ds-logo lazyload" alt="Microsoft Logo" title="Microsoft logo"
@@ -180,7 +227,7 @@
                     </div>
                 </div>
             </div>
-       
+
         </div>
     </section>
 
@@ -312,7 +359,7 @@
                     <img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
                         title="digicrome star">
                 </div>
-               
+
             </div>
         </div>
     @else
@@ -322,86 +369,86 @@
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6">
                     <div class="about-thumb-wrapper">
-						<div class="about-thumb zoom-sequence">
-							<div class="image-container">
-                                <img class="image" loading="lazy"
-                                     src="{{ asset('assets/images/digi.webp') }}" alt="First image" title="First image">
-                                <img class="image" loading="lazy"
-                                     src="{{ asset('assets/images/p1.webp') }}" alt="Second image" title="Second image">
-                                <img class="image" loading="lazy"
-                                     src="{{ asset('assets/images/p2.webp') }}" alt="Third image" title="Third image">
+                        <div class="about-thumb zoom-sequence">
+                            <div class="image-container">
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/digi.webp') }}"
+                                    alt="First image" title="First image">
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p1.webp') }}"
+                                    alt="Second image" title="Second image">
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p2.webp') }}"
+                                    alt="Third image" title="Third image">
                             </div>
-                            
-					
-						</div>
-					</div>
-					
-					<style>
-						.zoom-sequence {
-							position: relative;
-						}
-					
-						.image-container {
-    width: 100%;
-    max-width: 500px; 
-    aspect-ratio: 2/3;
-}
 
-.about-call-box {
-    z-index: 5;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-	
-.zoom-sequence .image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 1.5s ease, transform 1.5s ease;  
-}
 
-					
-						.zoom-sequence .image.show {
-							opacity: 1;
-							transform: scale(1);
-							z-index: 2;
-						}
-					
-						.zoom-sequence .image.hide {
-							opacity: 0;
-							transform: scale(0.8);
-							z-index: 1;
-						}
-					</style>
-					
-					<script>
-						window.addEventListener('DOMContentLoaded', () => {
-							const images = document.querySelectorAll('.zoom-sequence .image');
-							let current = 0;
-					
-							function showImage(index) {
-								images.forEach((img, i) => {
-									if (i === index) {
-										img.classList.add('show');
-										img.classList.remove('hide');
-									} else {
-										img.classList.remove('show');
-										img.classList.add('hide');
-									}
-								});
-							}
-					
-							showImage(current);
-					
-setInterval(() => {
-    current = (current + 1) % images.length;
-    showImage(current);
-}, 5000); 
+                        </div>
+                    </div>
 
-						});
-					</script>
-					
+                    <style>
+                        .zoom-sequence {
+                            position: relative;
+                        }
+
+                        .image-container {
+                            width: 100%;
+                            max-width: 500px;
+                            aspect-ratio: 2/3;
+                        }
+
+                        .about-call-box {
+                            z-index: 5;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                        }
+
+                        .zoom-sequence .image {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            opacity: 0;
+                            transform: scale(0.8);
+                            transition: opacity 1.5s ease, transform 1.5s ease;
+                        }
+
+
+                        .zoom-sequence .image.show {
+                            opacity: 1;
+                            transform: scale(1);
+                            z-index: 2;
+                        }
+
+                        .zoom-sequence .image.hide {
+                            opacity: 0;
+                            transform: scale(0.8);
+                            z-index: 1;
+                        }
+                    </style>
+
+                    <script>
+                        window.addEventListener('DOMContentLoaded', () => {
+                            const images = document.querySelectorAll('.zoom-sequence .image');
+                            let current = 0;
+
+                            function showImage(index) {
+                                images.forEach((img, i) => {
+                                    if (i === index) {
+                                        img.classList.add('show');
+                                        img.classList.remove('hide');
+                                    } else {
+                                        img.classList.remove('show');
+                                        img.classList.add('hide');
+                                    }
+                                });
+                            }
+
+                            showImage(current);
+
+                            setInterval(() => {
+                                current = (current + 1) % images.length;
+                                showImage(current);
+                            }, 5000);
+
+                        });
+                    </script>
+
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="about_content">
@@ -427,7 +474,7 @@ setInterval(() => {
                                 we continue to set new benchmarks in the education sector.
                             </p>
                         </div>
-                       
+
                         <div class="about-btn">
                             <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
                                     class="flaticon flaticon-right-arrow"></i></a>
@@ -435,10 +482,10 @@ setInterval(() => {
                     </div>
                 </div>
             </div>
-      
+
         </div>
     </section>
- 
+
     <div class="brand-area style-one mt-4">
         <div class="container">
             <div class="row">
@@ -482,7 +529,7 @@ setInterval(() => {
             </div>
         </div>
     </div>
-   
+
     <div class="case-study-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">
@@ -555,12 +602,12 @@ setInterval(() => {
                                         href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
                                 </h4>
                                 <div class="case-rating">
-                                 
+
                                     <div class="case-rating-num">
                                         <span>Duration: {{ $course->course_duration }}</span>
                                     </div>
                                 </div>
-                               
+
                                 <br><br>
                                 <div class="course-btn">
                                     <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
@@ -578,7 +625,7 @@ setInterval(() => {
                                 <div class="case-study-thumb">
                                     <img loading="lazy" src="{{ asset('storage/' . $course->image) }}"
                                         alt="case-study-thumb" title="case-study-thumb">
-                                
+
                                 </div>
                                 <div class="case-study-content">
                                     <h5>{{ $collection->name }}</h5>
@@ -586,12 +633,12 @@ setInterval(() => {
                                             href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
                                     </h4>
                                     <div class="case-rating">
-                                    
+
                                         <div class="case-rating-num">
                                             <span>Duration: {{ $course->course_duration }}</span>
                                         </div>
                                     </div>
-                                  
+
                                     <br><br>
                                     <div class="course-btn">
                                         <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
@@ -607,7 +654,7 @@ setInterval(() => {
         </div>
 
     </div>
-   
+
     <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
         <div class="container">
             <div class="row align-items-center">
@@ -690,7 +737,7 @@ setInterval(() => {
             </div>
         </div>
     </div>
-  
+
     <div class="brand-area style-one mt-4">
         <div class="container">
             <div class="row">
@@ -738,20 +785,21 @@ setInterval(() => {
             <div class="row">
                 <div class="col-lg-6">
                     <div class="course-design-thumb">
-    <div class="course-video-icon">
-        <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/HLiQiTTbX8g">
-            <i class="fa-classic fa-solid fa-play fa-fw"></i>
-        </a>
-        
-        <a href="{{ asset('assets/Final.mp4') }}" class="video-vemo-icon">
-            <i class="fa-classic fa-solid fa-play fa-fw"></i>
-        </a>
-    </div>
-</div>
-<video controls style="width:100%; max-width:600px;">
-    <source src="{{ asset('assets/Final.mp4') }}" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+                        <div class="course-video-icon">
+                            <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
+                                href="https://youtu.be/HLiQiTTbX8g">
+                                <i class="fa-classic fa-solid fa-play fa-fw"></i>
+                            </a>
+
+                            <a href="{{ asset('assets/Final.mp4') }}" class="video-vemo-icon">
+                                <i class="fa-classic fa-solid fa-play fa-fw"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <video controls style="width:100%; max-width:600px;">
+                        <source src="{{ asset('assets/Final.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
 
                 </div>
                 <div class="col-lg-6">
@@ -777,7 +825,7 @@ setInterval(() => {
                                 <a href="javascript:void(0);" onclick="openModal()">EXPLORE NOW<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>
-                            
+
                         </div>
                         <div class="offer-thumb">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
@@ -788,205 +836,210 @@ setInterval(() => {
             </div>
         </div>
     </div>
-    @if(count($videos) > 0)
-    <section class="video-slider py-5">
-        <div class="container">
-            <h2 class="text-center mb-3" style="font-size: 2rem;">
-                <span style="color: #f29c12;">Featured </span> Testimonials
-            </h2>
-            <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                Presenting our recent feedbacks — Have a look!
-            </p>
-    
-            <div class="owl-carousel gif-carousel">
-    
-    @foreach ($videos as $video)
-    <div class="text-center">
-        <div class="gif-wrapper"
-             data-bs-toggle="modal"
-             data-bs-target="#youtubeModal"
-             data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
-            <div class="gif-container">
-                <img src="{{ asset('storage/' . $video->image) }}"
-                     alt="{{ $video->name }}"
-                     class="gif-img rounded shadow-sm">
+    @if (count($videos) > 0)
+        <section class="video-slider py-5">
+            <div class="container">
+                <h2 class="text-center mb-3" style="font-size: 2rem;">
+                    <span style="color: #f29c12;">Featured </span> Testimonials
+                </h2>
+                <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+                    Presenting our recent feedbacks — Have a look!
+                </p>
+
+                <div class="owl-carousel gif-carousel">
+
+                    @foreach ($videos as $video)
+                        <div class="text-center">
+                            <div class="gif-wrapper" data-bs-toggle="modal" data-bs-target="#youtubeModal"
+                                data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
+                                <div class="gif-container">
+                                    <img src="{{ asset('storage/' . $video->image) }}" alt="{{ $video->name }}"
+                                        class="gif-img rounded shadow-sm">
+                                </div>
+                            </div>
+                            <div class="video-title mt-2 fw-semibold">{{ $video->name }}</div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-        </div>
-        <div class="video-title mt-2 fw-semibold">{{ $video->name }}</div>
-    </div>
-@endforeach
+            <div class="modal fade" id="youtubeModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered custom-youtube-dialog">
+                    <div class="youtube-modal-box">
+                        <button type="button" class="btn-close btn-close-white custom-close-btn" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+
+                        <div class="youtube-video-wrapper">
+                            <iframe id="youtubePlayer" src="" frameborder="0" allow="autoplay; encrypted-media"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-<div class="modal fade" id="youtubeModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered custom-youtube-dialog">
-        <div class="youtube-modal-box">
-            <button type="button"
-                    class="btn-close btn-close-white custom-close-btn"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-
-            <div class="youtube-video-wrapper">
-                <iframe id="youtubePlayer" src="" frameborder="0"
-                        allow="autoplay; encrypted-media"
-                        allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
 
 
-<style>
-    .responsive-video-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 177.77%; 
-        background-color: #000;
-    }
+            <style>
+                .responsive-video-wrapper {
+                    position: relative;
+                    width: 100%;
+                    padding-top: 177.77%;
+                    background-color: #000;
+                }
 
-    .responsive-video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-    .youtube-modal-box {
-    background-color: #000;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 420px;
-    margin: auto;
-    position: relative;
-}
+                .responsive-video-wrapper iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
 
-.youtube-video-wrapper {
-    position: relative;
-    width: 100%;
-    padding-top: 177.77%;
-    background-color: #000;
-}
+                .youtube-modal-box {
+                    background-color: #000;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    width: 100%;
+                    max-width: 420px;
+                    margin: auto;
+                    position: relative;
+                }
 
-.youtube-video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+                .youtube-video-wrapper {
+                    position: relative;
+                    width: 100%;
+                    padding-top: 177.77%;
+                    background-color: #000;
+                }
 
-.custom-youtube-dialog {
-    max-width: 100%;
-    width: auto;
-    margin: auto;
-}
+                .youtube-video-wrapper iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
 
-.custom-close-btn {
-    position: absolute;
-    color: black !important; 
-    background-color: transparent !important;
-    border: none !important; 
-    top: 10px;
-    right: 10px;
-    z-index: 10;
-    filter: invert(1);
-    opacity: 0.8;
-    transition: 0.2s;
-}
+                .custom-youtube-dialog {
+                    max-width: 100%;
+                    width: auto;
+                    margin: auto;
+                }
 
-.custom-close-btn:hover
-.custom-close-btn:focus  {
-    color: black !important;
-    opacity: 1;
-}
+                .custom-close-btn {
+                    position: absolute;
+                    color: black !important;
+                    background-color: transparent !important;
+                    border: none !important;
+                    top: 10px;
+                    right: 10px;
+                    z-index: 10;
+                    filter: invert(1);
+                    opacity: 0.8;
+                    transition: 0.2s;
+                }
 
-@media (max-width: 576px) {
-    .youtube-modal-box {
-        max-width: 90%;
-    }
-}
+                .custom-close-btn:hover .custom-close-btn:focus {
+                    color: black !important;
+                    opacity: 1;
+                }
+
+                @media (max-width: 576px) {
+                    .youtube-modal-box {
+                        max-width: 90%;
+                    }
+                }
 
 
-    .custom-modal-dialog {
-        max-width: 400px;
-        width: 100%;
-    }
+                .custom-modal-dialog {
+                    max-width: 400px;
+                    width: 100%;
+                }
 
-    @media (max-width: 576px) {
-        .custom-modal-dialog {
-            margin: 0 10px;
-        }
-    }
+                @media (max-width: 576px) {
+                    .custom-modal-dialog {
+                        margin: 0 10px;
+                    }
+                }
 
-            .gif-container {
-                width: 240px;
-                height: 426px;
-                margin: auto;
-                overflow: hidden;
-                border-radius: 12px;
-                background-color: #000;
-            }
-    
-            .gif-img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.3s ease;
-                cursor: pointer;
-            }
-    
-            .gif-img:hover {
-                transform: scale(1.03);
-            }
-    
-            .video-title {
-                font-size: 1rem;
-                color: #333;
-            }
-        </style>
-    
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                $('.gif-carousel').owlCarousel({
-                    loop: true,
-                    margin: 20,
-                    nav: false,
-                    autoplay: true,
-    autoplayTimeout: 3000, 
-                    dots: false,
-                    responsive: {
-            0: { items: 1 },
-            576: { items: 2 },
-            768: { items: 3 },
-            992: { items: 4 },
-            1200: { items: 5 }
-        }
-                });
-    
-                const cards = document.querySelectorAll('.gif-wrapper');
-                const player = document.getElementById('youtubePlayer');
-                const modal = document.getElementById('youtubeModal');
-    
-                cards.forEach(card => {
-                    card.addEventListener('click', function () {
-                        const videoUrl = this.getAttribute('data-youtube') + '?autoplay=1&modestbranding=1&rel=0';
-                        player.src = videoUrl;
+                .gif-container {
+                    width: 240px;
+                    height: 426px;
+                    margin: auto;
+                    overflow: hidden;
+                    border-radius: 12px;
+                    background-color: #000;
+                }
+
+                .gif-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                    cursor: pointer;
+                }
+
+                .gif-img:hover {
+                    transform: scale(1.03);
+                }
+
+                .video-title {
+                    font-size: 1rem;
+                    color: #333;
+                }
+            </style>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    $('.gif-carousel').owlCarousel({
+                        loop: true,
+                        margin: 20,
+                        nav: false,
+                        autoplay: true,
+                        autoplayTimeout: 3000,
+                        dots: false,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            576: {
+                                items: 2
+                            },
+                            768: {
+                                items: 3
+                            },
+                            992: {
+                                items: 4
+                            },
+                            1200: {
+                                items: 5
+                            }
+                        }
                     });
-                });
-    
-                modal.addEventListener('hidden.bs.modal', function () {
-    player.src = '';
-});
 
-            });
-        </script>
-    </section>
+                    const cards = document.querySelectorAll('.gif-wrapper');
+                    const player = document.getElementById('youtubePlayer');
+                    const modal = document.getElementById('youtubeModal');
+
+                    cards.forEach(card => {
+                        card.addEventListener('click', function() {
+                            const videoUrl = this.getAttribute('data-youtube') +
+                                '?autoplay=1&modestbranding=1&rel=0';
+                            player.src = videoUrl;
+                        });
+                    });
+
+                    modal.addEventListener('hidden.bs.modal', function() {
+                        player.src = '';
+                    });
+
+                });
+            </script>
+        </section>
     @endif
-    
-    
-    
+
+
+
 
 
     <div class="testimonial-area style-two mt-4">
@@ -1092,7 +1145,7 @@ setInterval(() => {
                             <span>+</span>
                             <p>Reviews</p>
                         </div>
-                       
+
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-12">
@@ -1106,11 +1159,11 @@ setInterval(() => {
                                                 <img loading="lazy"src="{{ asset('assets/images/home-three/testi-quote.webp') }}"
                                                     alt="testi-quote" title="testi-quote">
                                             </div>
-                                           
+
                                             <div class="testi-desc">
                                                 <p>{{ $story->stoire }}</p>
                                             </div>
-                                          
+
                                             <div class="testi-autor-box">
                                                 <div class="testi-autor">
                                                     <img loading="lazy"src="{{ asset('storage/' . $story->image) }}"
@@ -1193,7 +1246,7 @@ setInterval(() => {
                     <div class="choose-thumb">
                         <img loading="lazy"src="{{ asset('assets/images/home-one/roles.webp') }}" alt="roles"
                             title="roles">
-                        
+
                         <div class="choose-shape-dot">
                         </div>
                         <div class="choose-shape-star">
@@ -1207,7 +1260,7 @@ setInterval(() => {
             </div>
         </div>
     </div>
-  
+
     <div class="blog-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">
@@ -1301,14 +1354,15 @@ setInterval(() => {
                 <span onclick="closeModal()" style="font-size:22px; cursor:pointer; color:#fff;">&times;</span>
             </div>
             <p style="font-size:14px; color:#fff; margin-bottom:15px;">Need help? Call us at
-                <strong>01204538104</strong><br>or fill the form below.</p>
+                <strong>01204538104</strong><br>or fill the form below.
+            </p>
             <form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php"
                 style="width:100%; margin:0;">
                 @csrf
                 <input type="text" name="name" placeholder="Name" required
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-                <input type="tel" name="mobile" placeholder="Mobile Number" required
-                    pattern="\d{10}" title="Please enter a 10-digit mobile number" 
+                <input type="tel" name="mobile" placeholder="Mobile Number" required pattern="\d{10}"
+                    title="Please enter a 10-digit mobile number"
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                 <input type="email" name="email" placeholder="E-mail ID" required
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
@@ -1316,18 +1370,62 @@ setInterval(() => {
                 <input type="hidden" name="title" value="NA">
                 <input type="hidden" name="profession" value="NA">
                 <!-- Hidden Fields -->
-                						<input type="hidden" name="ib" value="">
+                <input type="hidden" name="ib" value="">
                 <input type="hidden" name="source" value="Website(Home Page)">
                 <input type="hidden" name="country" value="india">
                 <input type="hidden" name="comp_name" value="">
                 <input type="hidden" name="state" value="">
                 <input type="hidden" name="altr_mobile" value="">
 
-                <button type="submit" style="width:100%; padding:10px; background:#f29c12; color:white; border:none; border-radius:5px; font-weight:bold; margin-top:10px;">Submit</button>
+                <button type="submit"
+                    style="width:100%; padding:10px; background:#f29c12; color:white; border:none; border-radius:5px; font-weight:bold; margin-top:10px;">Submit</button>
             </form>
         </div>
     </div>
+    <div id="christmasOfferModal" class="christmas-offer-modal" style="display: flex;">
+        <div class="christmas-offer-content" onclick="openFormFromOffer()">
+        </div>
+        <span class="christmas-close-btn" onclick="closeChristmasModal(event)">×</span>
+    </div>
     <script>
+        window.onload = function() {
+            document.getElementById('christmasOfferModal').style.display = 'flex';
+        };
+
+        function openFormFromOffer() {
+            document.getElementById('christmasOfferModal').style.display = 'none';
+
+            const sourceInput = document.querySelector('#formModal input[name="source"]');
+            if (sourceInput) {
+                sourceInput.value = 'Website-Republic-sale';
+            }
+            openModal();
+        }
+
+        function closeChristmasModal(e) {
+            e.stopPropagation(); // prevent image click
+            document.getElementById('christmasOfferModal').style.display = 'none';
+        }
+
+        // window.onload = function() {
+        //     openModal();
+        // };
+
+        function openModal() {
+            document.getElementById("formModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("formModal").style.display = "none";
+        }
+        window.onclick = function(event) {
+            const modal = document.getElementById("formModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+    {{-- <script>
         window.onload = function() {
             openModal();
         };
@@ -1345,5 +1443,5 @@ setInterval(() => {
                 modal.style.display = "none";
             }
         };
-    </script>
+    </script> --}}
 @endsection
