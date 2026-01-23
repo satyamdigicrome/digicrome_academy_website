@@ -272,7 +272,7 @@
                                                 <h3>Success Story</h3>
                                             </div>
                                             <div class="testi-desc">
-                                                <p>{{ $story->stoire }}</p>
+                                                <p>{!! $story->stoire !!}</p>
                                             </div>
                                             <div class="testi-ratting">
                                                 <ul>
