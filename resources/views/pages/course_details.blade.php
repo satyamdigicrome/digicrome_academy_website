@@ -178,8 +178,8 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4">
-                            <img loading="lazy"src="{{ asset('assets/images/card2.webp') }}" width="190" height="120"
-                                alt="card1" title="card1" />
+                            {{-- <img loading="lazy"src="{{ asset('assets/images/card2.webp') }}" width="190" height="120"
+                                alt="card1" title="card1" /> --}}
                             {{-- <img loading="lazy"src="{{ asset('assets/images/Card.webp') }}" width="319" height="58" alt="card" title="card"
                          style="border: 2px solid #f29c12; border-radius: 5px;" /> --}}
                         </div>
