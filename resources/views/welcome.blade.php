@@ -22,7 +22,7 @@
             width: 90%;
             max-width: 900px;
             aspect-ratio: 16 / 9;
-            background: url('{{ asset('assets/images/website_special_offer.webp') }}') center center / contain no-repeat;
+            background: url('{{ asset('assets/images/website_special_offer.gif') }}') center center / contain no-repeat;
             cursor: pointer;
         }
 
