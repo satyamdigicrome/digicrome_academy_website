@@ -36,7 +36,7 @@
     </div> --}}
         </div>
     </div>
-    <div class="dropdown" id="customDropdown">
+    {{-- <div class="dropdown" id="customDropdown">
         <button class="dropdown-toggle" onclick="toggleDropdown()" id="selectedCountryBtn">
             Select Country
         </button>
@@ -45,7 +45,7 @@
                 <!-- Country list will appear here in 4 columns -->
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <script>
         const dropdownMenu = document.getElementById('dropdownMenu');
@@ -364,16 +364,16 @@
                             color: #999;
                         }
                     </style>
-<div class="row">
-  <div style="width: 90%; max-width: 700px; text-align: center;">
-                        <a href="https://rzp.io/rzp/nUTt5wT">
-                            <img loading="lazy"src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay"
-                                title="Pay with Razorpay"
-                                style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                        </a>
-                        <p style="margin-top: 10px; font-size: 18px; color: #333;">Pay via Razorpay</p>
+                    <div class="row">
+                        <div style="width: 90%; max-width: 700px; text-align: center;">
+                            <a href="https://rzp.io/rzp/nUTt5wT">
+                                <img loading="lazy"src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay"
+                                    title="Pay with Razorpay"
+                                    style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            </a>
+                            <p style="margin-top: 10px; font-size: 18px; color: #333;">Pay via Razorpay</p>
+                        </div>
                     </div>
-</div>
                     {{-- <div class="row">
                         <div class="col-4">
                             <div class="payment-card">

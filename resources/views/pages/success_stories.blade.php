@@ -149,7 +149,7 @@
                                   font-size: 15px; 
                                   line-height: 1.6; 
                                   color: #333;">
-                                            "{{ $story->stoire }}"
+                                            "{!! $story->stoire !!}"
                                         </p>
                                     </div>
                                     <div class="testi-autor-reviews"
@@ -221,7 +221,7 @@
                             <div class="card-body">
                                 <h5 class="fw-bold mb-1">{{ $story->studentname }}</h5>
                                 <span class="badge bg-warning text-dark mb-2">{{ $story->position }}</span>
-                                <p class="text-muted small">{{ $story->stoire }}</p>
+                                <p class="text-muted small">{!! $story->stoire !!}</p>
                                 <h6 class="text-primary fw-semibold mt-3">{{ $story->companyname }}</h6>
                             </div>
                         </div>
