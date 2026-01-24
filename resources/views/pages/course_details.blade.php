@@ -822,7 +822,8 @@
                     <div class="col-md-3">
                         <div class="stat-box p-4 rounded shadow-sm bg-white h-100">
                             <h5 class="mb-2 text-muted">Average Package</h5>
-                            <h2 class="text-danger fw-bold display-6">₹ 8 LPA</h2>
+                            <h2 class="text-danger fw-bold display-6" style="color:rgb(133 69 159) !important;">₹ 8 LPA
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -1441,7 +1442,7 @@
                         method: "POST",
                         headers: {
                             'X-CSRF-TOKEN': form.querySelector('[name="_token"]')
-                            .value, // Ensure CSRF token is being sent
+                                .value, // Ensure CSRF token is being sent
                         },
                         body: formData
                     })
