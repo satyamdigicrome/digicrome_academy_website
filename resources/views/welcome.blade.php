@@ -1161,7 +1161,7 @@
                                             </div>
 
                                             <div class="testi-desc">
-                                                <p>{{ $story->stoire }}</p>
+                                                <p>{!! $story->stoire !!}</p>
                                             </div>
 
                                             <div class="testi-autor-box">
@@ -1228,7 +1228,7 @@
                                         alt="choose-icon3" title="choose-icon3">25-27 LPA
                                     Highest CTC</li>
                                 <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon4.webp') }}"
-                                        alt="choose-icon4" title="choose-icon4">120 %
+                                        alt="choose-icon4" title="choose-icon4">80 %
                                     Average Hike</li>
                             </ul>
                         </div>
