@@ -39,29 +39,30 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" media="all">
     <!-- Coustom Animation CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}" type="text/css" media="all">
-    <!-- odometer CSS -->	
+    <!-- odometer CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" type="text/css" media="all">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all">	
-<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-<script src="https://cdn.tiny.cloud/1/4sp3qvbeo22peah4ugfvh9opjzturoe0nczxhb9d6xchh1se/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all">
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+    <script src="https://cdn.tiny.cloud/1/wcp1tmal2ys4cgnygufazq0546paq6e0ja6ufkk0jzfn564z/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
 
-<script>
-    tinymce.init({
-        selector: '#content',
-        height: 300,
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        menubar: false,
-        branding: false,
+    <script>
+        tinymce.init({
+            selector: '#content',
+            height: 300,
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+            menubar: false,
+            branding: false,
 
-        setup: function (editor) {
-            editor.on('change', function () {
-                tinymce.triggerSave();
-            });
-        }
-    });
-</script>
+            setup: function(editor) {
+                editor.on('change', function() {
+                    tinymce.triggerSave();
+                });
+            }
+        });
+    </script>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
