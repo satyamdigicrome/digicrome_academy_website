@@ -5,52 +5,6 @@
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
     <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
-    {{-- <style>
-        /* BACKDROP */
-        .christmas-offer-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 9998;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* IMAGE CONTAINER */
-        .christmas-offer-content {
-            width: 90%;
-            max-width: 900px;
-            aspect-ratio: 16 / 9;
-            background: url('{{ asset('assets/images/website_special_offer.gif') }}') center center / contain no-repeat;
-            cursor: pointer;
-        }
-
-        /* CLOSE BUTTON */
-        .christmas-close-btn {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 32px;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
-            z-index: 9999;
-            line-height: 1;
-        }
-
-        .christmas-close-btn:hover {
-            color: #ffcc66;
-        }
-
-        /* MOBILE */
-        @media (max-width: 576px) {
-            .christmas-offer-content {
-                width: 95%;
-                aspect-ratio: 4 / 5;
-            }
-        }
-    </style> --}}
 @endpush
 @section('content')
     <section class="hero_area style-one d-flex align-items-center">
@@ -109,8 +63,8 @@
                     <div class="hero-thumb-wrapper">
                         <div class="hero-thumb">
                             <img width="600" height="400" rel="preload" as="image"
-                                loading="lazy"src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}"
-                                alt="Digicrome thumb" title="Digicrome thumb">
+                                src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="Digicrome thumb"
+                                title="Digicrome thumb">
                         </div>
                         <div class="hero-arrow-shape">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
@@ -140,7 +94,6 @@
             </div>
         </div>
     </section>
-
     <section class="feature-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">
@@ -227,10 +180,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-
     <div class="container">
         <x-logo-slider :companyLogos="$companyLogos" />
     </div>
@@ -359,7 +310,6 @@
                     <img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
                         title="digicrome star">
                 </div>
-
             </div>
         </div>
     @else
@@ -378,11 +328,8 @@
                                 <img class="image" loading="lazy" src="{{ asset('assets/images/p2.webp') }}"
                                     alt="Third image" title="Third image">
                             </div>
-
-
                         </div>
                     </div>
-
                     <style>
                         .zoom-sequence {
                             position: relative;
@@ -408,7 +355,6 @@
                             transition: opacity 1.5s ease, transform 1.5s ease;
                         }
 
-
                         .zoom-sequence .image.show {
                             opacity: 1;
                             transform: scale(1);
@@ -421,7 +367,6 @@
                             z-index: 1;
                         }
                     </style>
-
                     <script>
                         window.addEventListener('DOMContentLoaded', () => {
                             const images = document.querySelectorAll('.zoom-sequence .image');
@@ -438,9 +383,7 @@
                                     }
                                 });
                             }
-
                             showImage(current);
-
                             setInterval(() => {
                                 current = (current + 1) % images.length;
                                 showImage(current);
@@ -448,7 +391,6 @@
 
                         });
                     </script>
-
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="about_content">
@@ -474,7 +416,6 @@
                                 we continue to set new benchmarks in the education sector.
                             </p>
                         </div>
-
                         <div class="about-btn">
                             <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
                                     class="flaticon flaticon-right-arrow"></i></a>
@@ -482,10 +423,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-
     <div class="brand-area style-one mt-4">
         <div class="container">
             <div class="row">
@@ -503,7 +442,6 @@
                         @endforeach
                     </div>
                 </div>
-
                 <div class="col-lg-5">
                     <div class="section_title mb-4">
                         <h2 class="heading-like-h1">Our Certification Partners</h2>
@@ -521,7 +459,6 @@
                             <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
                             <span><b>Career-Boosting Credentials: </b> Earn certifications that enhance your professional
                                 profile and open doors to global opportunities.
-
                             </span>
                         </li>
                     </ul>
@@ -529,7 +466,6 @@
             </div>
         </div>
     </div>
-
     <div class="case-study-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">
@@ -567,9 +503,7 @@
                     itemSelector: '.grid-item',
                     layoutMode: 'fitRows'
                 });
-
                 var filterButtons = document.querySelectorAll('.menu-filtering li');
-
                 filterButtons.forEach(function(button) {
                     button.addEventListener('click', function() {
                         filterButtons.forEach(btn => btn.classList.remove('current_menu_item'));
@@ -585,8 +519,6 @@
                 });
             });
         </script>
-
-
         <div class="container">
             <div class="row image_load">
                 @foreach ($upcomingCourses as $course)
@@ -617,7 +549,6 @@
                         </div>
                     </div>
                 @endforeach
-
                 @foreach ($collections as $collection)
                     @foreach ($collection->courses as $course)
                         <div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }}">
@@ -625,7 +556,6 @@
                                 <div class="case-study-thumb">
                                     <img loading="lazy" src="{{ asset('storage/' . $course->image) }}"
                                         alt="case-study-thumb" title="case-study-thumb">
-
                                 </div>
                                 <div class="case-study-content">
                                     <h5>{{ $collection->name }}</h5>
@@ -638,7 +568,6 @@
                                             <span>Duration: {{ $course->course_duration }}</span>
                                         </div>
                                     </div>
-
                                     <br><br>
                                     <div class="course-btn">
                                         <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
@@ -650,11 +579,8 @@
                     @endforeach
                 @endforeach
             </div>
-
         </div>
-
     </div>
-
     <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
         <div class="container">
             <div class="row align-items-center">
@@ -737,7 +663,6 @@
             </div>
         </div>
     </div>
-
     <div class="brand-area style-one mt-4">
         <div class="container">
             <div class="row">
@@ -762,7 +687,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="col-lg-7 mt-4">
                     <div class="brand-list owl-carousel">
                         @foreach ($awords as $logo)
@@ -784,23 +708,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="course-design-thumb">
+                    {{-- <div class="course-design-thumb">
                         <div class="course-video-icon">
                             <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
                                 href="https://youtu.be/HLiQiTTbX8g">
                                 <i class="fa-classic fa-solid fa-play fa-fw"></i>
                             </a>
-
                             <a href="{{ asset('assets/Final.mp4') }}" class="video-vemo-icon">
                                 <i class="fa-classic fa-solid fa-play fa-fw"></i>
                             </a>
                         </div>
-                    </div>
-                    <video controls style="width:100%; max-width:600px;">
+                    </div> --}}
+                    <video controls preload="none" poster="{{ asset('assets/images/thumbnail.webp') }}"
+                        style="width:100%; max-width:600px;">
                         <source src="{{ asset('assets/Final.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-
                 </div>
                 <div class="col-lg-6">
                     <div class="single-course-offer-box">
@@ -825,7 +748,6 @@
                                 <a href="javascript:void(0);" onclick="openModal()">EXPLORE NOW<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>
-
                         </div>
                         <div class="offer-thumb">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
@@ -845,9 +767,7 @@
                 <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
                     Presenting our recent feedbacks — Have a look!
                 </p>
-
                 <div class="owl-carousel gif-carousel">
-
                     @foreach ($videos as $video)
                         <div class="text-center">
                             <div class="gif-wrapper" data-bs-toggle="modal" data-bs-target="#youtubeModal"
@@ -867,16 +787,13 @@
                     <div class="youtube-modal-box">
                         <button type="button" class="btn-close btn-close-white custom-close-btn" data-bs-dismiss="modal"
                             aria-label="Close"></button>
-
                         <div class="youtube-video-wrapper">
-                            <iframe id="youtubePlayer" src="" frameborder="0" allow="autoplay; encrypted-media"
-                                allowfullscreen></iframe>
+                            <iframe id="youtubePlayer" loading="lazy" src="" frameborder="0"
+                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
-
-
             <style>
                 .responsive-video-wrapper {
                     position: relative;
@@ -950,7 +867,6 @@
                     }
                 }
 
-
                 .custom-modal-dialog {
                     max-width: 400px;
                     width: 100%;
@@ -988,7 +904,6 @@
                     color: #333;
                 }
             </style>
-
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     $('.gif-carousel').owlCarousel({
@@ -1016,11 +931,9 @@
                             }
                         }
                     });
-
                     const cards = document.querySelectorAll('.gif-wrapper');
                     const player = document.getElementById('youtubePlayer');
                     const modal = document.getElementById('youtubeModal');
-
                     cards.forEach(card => {
                         card.addEventListener('click', function() {
                             const videoUrl = this.getAttribute('data-youtube') +
@@ -1028,20 +941,13 @@
                             player.src = videoUrl;
                         });
                     });
-
                     modal.addEventListener('hidden.bs.modal', function() {
                         player.src = '';
                     });
-
                 });
             </script>
         </section>
     @endif
-
-
-
-
-
     <div class="testimonial-area style-two mt-4">
         <div class="container">
             <div class="row">
@@ -1073,7 +979,6 @@
                                             style="font-size:18px; font-weight:600; color:#f29c12; margin:10px 0;">
                                             {{ $testimonial->tagline }}
                                         </div>
-
                                         <div class="testi-desc">
                                             <p>“{{ $testimonial->review }}</p>
                                         </div>
@@ -1118,8 +1023,6 @@
         </div>
     </div>
     <x-mentor-popup :mentors="$mentors" />
-
-
     <div class="testimonial-area style-inner">
         <div class="container">
             <div class="row section-title-space">
@@ -1145,7 +1048,6 @@
                             <span>+</span>
                             <p>Reviews</p>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-12">
@@ -1369,7 +1271,6 @@
                 <input type="hidden" name="address" value="NA">
                 <input type="hidden" name="title" value="NA">
                 <input type="hidden" name="profession" value="NA">
-                <!-- Hidden Fields -->
                 <input type="hidden" name="ib" value="">
                 <input type="hidden" name="source" value="Website(Home Page)">
                 <input type="hidden" name="country" value="india">
@@ -1382,31 +1283,8 @@
             </form>
         </div>
     </div>
-    {{-- <div id="christmasOfferModal" class="christmas-offer-modal" style="display: flex;">
-        <div class="christmas-offer-content" onclick="openFormFromOffer()">
-        </div>
-        <span class="christmas-close-btn" onclick="closeChristmasModal(event)">×</span>
-    </div> --}}
+
     <script>
-        // window.onload = function() {
-        //     document.getElementById('christmasOfferModal').style.display = 'flex';
-        // };
-
-        // function openFormFromOffer() {
-        //     document.getElementById('christmasOfferModal').style.display = 'none';
-
-        //     const sourceInput = document.querySelector('#formModal input[name="source"]');
-        //     if (sourceInput) {
-        //         sourceInput.value = 'Website-Republic-sale';
-        //     }
-        //     openModal();
-        // }
-
-        // function closeChristmasModal(e) {
-        //     e.stopPropagation(); // prevent image click
-        //     document.getElementById('christmasOfferModal').style.display = 'none';
-        // }
-
         window.onload = function() {
             openModal();
         };
@@ -1425,23 +1303,4 @@
             }
         };
     </script>
-    {{-- <script>
-        window.onload = function() {
-            openModal();
-        };
-
-        function openModal() {
-            document.getElementById("formModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("formModal").style.display = "none";
-        }
-        window.onclick = function(event) {
-            const modal = document.getElementById("formModal");
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-    </script> --}}
 @endsection
