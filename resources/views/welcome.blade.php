@@ -5,7 +5,7 @@
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
     <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
-    <style>
+    {{-- <style>
         /* BACKDROP */
         .christmas-offer-modal {
             display: none;
@@ -50,7 +50,7 @@
                 aspect-ratio: 4 / 5;
             }
         }
-    </style>
+    </style> --}}
 @endpush
 @section('content')
     <section class="hero_area style-one d-flex align-items-center">
@@ -1382,34 +1382,34 @@
             </form>
         </div>
     </div>
-    <div id="christmasOfferModal" class="christmas-offer-modal" style="display: flex;">
+    {{-- <div id="christmasOfferModal" class="christmas-offer-modal" style="display: flex;">
         <div class="christmas-offer-content" onclick="openFormFromOffer()">
         </div>
         <span class="christmas-close-btn" onclick="closeChristmasModal(event)">×</span>
-    </div>
+    </div> --}}
     <script>
-        window.onload = function() {
-            document.getElementById('christmasOfferModal').style.display = 'flex';
-        };
-
-        function openFormFromOffer() {
-            document.getElementById('christmasOfferModal').style.display = 'none';
-
-            const sourceInput = document.querySelector('#formModal input[name="source"]');
-            if (sourceInput) {
-                sourceInput.value = 'Website-Republic-sale';
-            }
-            openModal();
-        }
-
-        function closeChristmasModal(e) {
-            e.stopPropagation(); // prevent image click
-            document.getElementById('christmasOfferModal').style.display = 'none';
-        }
-
         // window.onload = function() {
-        //     openModal();
+        //     document.getElementById('christmasOfferModal').style.display = 'flex';
         // };
+
+        // function openFormFromOffer() {
+        //     document.getElementById('christmasOfferModal').style.display = 'none';
+
+        //     const sourceInput = document.querySelector('#formModal input[name="source"]');
+        //     if (sourceInput) {
+        //         sourceInput.value = 'Website-Republic-sale';
+        //     }
+        //     openModal();
+        // }
+
+        // function closeChristmasModal(e) {
+        //     e.stopPropagation(); // prevent image click
+        //     document.getElementById('christmasOfferModal').style.display = 'none';
+        // }
+
+        window.onload = function() {
+            openModal();
+        };
 
         function openModal() {
             document.getElementById("formModal").style.display = "block";
