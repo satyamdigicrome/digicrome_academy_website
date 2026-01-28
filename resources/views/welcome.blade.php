@@ -3,6 +3,9 @@
 @section('title', $meta->title ?? 'Digicrome')
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
+@push('styles')
+    <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
+@endpush
 @push('scripts')
     <script>
         window.onload = function() {
