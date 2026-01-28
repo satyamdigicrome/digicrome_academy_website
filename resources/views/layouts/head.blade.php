@@ -21,43 +21,44 @@
     <link rel="canonical" href="{{ url()->current() }}" />
     <link rel="preconnect" as="font" type="font/woff2" href="https://fonts.bunny.net" crossorigin="anonymous">
     {{-- <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
-    <link rel="preload" href="{{ asset('assets/webfonts/fa-regular-400.woff2') }}" as="font" type="font/woff2" crossorigin>
     <link href="{{ asset('assets/css/fonts-bunny.css') }}" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" media="all"
         as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" type="text/css" media="all" as="style"
-        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" type="text/css" media="all" as="style"
-        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}" type="text/css" media="all"
         as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}" type="text/css" media="all"
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" media="all" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" media="all" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    @if (request()->is('/'))
+        <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
+    @endif
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" media="print" onload="this.media='all'"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" type="text/css" media="all"
         as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all"
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}" type="text/css" media="all"
         as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" type="text/css" media="all"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" media="all"
         as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}" type="text/css" media="all"
         as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" type="text/css"
-        media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" async></script>
     <script type="application/ld+json" >
     {

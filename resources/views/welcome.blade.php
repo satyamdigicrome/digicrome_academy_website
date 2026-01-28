@@ -3,9 +3,6 @@
 @section('title', $meta->title ?? 'Digicrome')
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
-@push('styles')
-    <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
-@endpush
 @push('scripts')
     <script>
         window.onload = function() {
@@ -92,8 +89,8 @@
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
                         <div class="hero-dot-shape">
-                            <img rel="preload" src="{{ asset('assets/images/home-one/hero-dot.webp') }}" alt="digicrome dot"
-                                title="digicrome dot">
+                            <img rel="preload" src="{{ asset('assets/images/home-one/hero-dot.webp') }}"
+                                alt="digicrome dot" title="digicrome dot">
                         </div>
                         <div class="hero-shape3 bounce-animate-3">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}"
@@ -779,7 +776,7 @@
             </div>
         </div>
     </div>
-   @if (count($videos) > 0)
+    @if (count($videos) > 0)
         <section class="video-slider py-5">
             <div class="container">
                 <h2 class="text-center mb-3" style="font-size: 2rem;">
@@ -794,13 +791,11 @@
                             <div class="gif-wrapper" data-bs-toggle="modal" data-bs-target="#youtubeModal"
                                 data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
                                 <div class="gif-container">
-                                    {{--<img src="{{ asset('storage/' . $video->image) }}" alt="{{ $video->name }}"
-                                        class="gif-img rounded shadow-sm">--}}
-                                    <video class="gif-img rounded shadow-sm" autoplay loop muted playsinline preload="metadata"
-                                        poster="{{ asset('storage/' . $video->image) }}">
-                                        <source
-                                            src="{{ asset('storage/' . $video->image) }}"
-                                            type="video/mp4">
+                                    {{-- <img src="{{ asset('storage/' . $video->image) }}" alt="{{ $video->name }}"
+                                        class="gif-img rounded shadow-sm"> --}}
+                                    <video class="gif-img rounded shadow-sm" autoplay loop muted playsinline
+                                        preload="metadata" poster="{{ asset('storage/' . $video->image) }}">
+                                        <source src="{{ asset('storage/' . $video->image) }}" type="video/mp4">
                                     </video>
                                 </div>
                             </div>

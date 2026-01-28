@@ -287,3 +287,6 @@
 <script src="{{ asset('assets/js/jquery.scrollUp.js') }}" defer></script>
 <script src="{{ asset('assets/js/jquery.barfiller.js') }}" defer></script>
 <script src="{{ asset('assets/js/theme.js') }}" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" media="print"
+    onload="this.media='all'">
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
