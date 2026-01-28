@@ -40,8 +40,8 @@
         as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all"
         as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}" type="text/css" media="all"
         as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" media="all"
