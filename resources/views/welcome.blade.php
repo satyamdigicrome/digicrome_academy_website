@@ -6,6 +6,27 @@
 @push('styles')
     <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
 @endpush
+@push('scripts')
+    <script>
+        window.onload = function() {
+            openModal();
+        };
+
+        function openModal() {
+            document.getElementById("formModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("formModal").style.display = "none";
+        }
+        window.onclick = function(event) {
+            const modal = document.getElementById("formModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+@endpush
 @section('content')
     <section class="hero_area style-one d-flex align-items-center">
         <div class="container">
@@ -67,11 +88,11 @@
                                 title="Digicrome thumb">
                         </div>
                         <div class="hero-arrow-shape">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
+                            <img rel="preload" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
                         <div class="hero-dot-shape">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/hero-dot.webp') }}" alt="digicrome dot"
+                            <img rel="preload" src="{{ asset('assets/images/home-one/hero-dot.webp') }}" alt="digicrome dot"
                                 title="digicrome dot">
                         </div>
                         <div class="hero-shape3 bounce-animate-3">
@@ -758,7 +779,7 @@
             </div>
         </div>
     </div>
-    @if (count($videos) > 0)
+   @if (count($videos) > 0)
         <section class="video-slider py-5">
             <div class="container">
                 <h2 class="text-center mb-3" style="font-size: 2rem;">
@@ -773,8 +794,14 @@
                             <div class="gif-wrapper" data-bs-toggle="modal" data-bs-target="#youtubeModal"
                                 data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
                                 <div class="gif-container">
-                                    <img src="{{ asset('storage/' . $video->image) }}" alt="{{ $video->name }}"
-                                        class="gif-img rounded shadow-sm">
+                                    {{--<img src="{{ asset('storage/' . $video->image) }}" alt="{{ $video->name }}"
+                                        class="gif-img rounded shadow-sm">--}}
+                                    <video class="gif-img rounded shadow-sm" autoplay loop muted playsinline preload="metadata"
+                                        poster="{{ asset('storage/' . $video->image) }}">
+                                        <source
+                                            src="{{ asset('storage/' . $video->image) }}"
+                                            type="video/mp4">
+                                    </video>
                                 </div>
                             </div>
                             <div class="video-title mt-2 fw-semibold">{{ $video->name }}</div>
@@ -1248,59 +1275,4 @@
             @endforeach
         </div>
     </section>
-
-    <div id="formModal" class="modal" id="mm">
-        <div class="modal-content">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                <h3 style="color:#f29c12; font-size:18px; margin:0;">Get a Quick Call</h3>
-                <span onclick="closeModal()" style="font-size:22px; cursor:pointer; color:#fff;">&times;</span>
-            </div>
-            <p style="font-size:14px; color:#fff; margin-bottom:15px;">Need help? Call us at
-                <strong>01204538104</strong><br>or fill the form below.
-            </p>
-            <form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php"
-                style="width:100%; margin:0;">
-                @csrf
-                <input type="text" name="name" placeholder="Name" required
-                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-                <input type="tel" name="mobile" placeholder="Mobile Number" required pattern="\d{10}"
-                    title="Please enter a 10-digit mobile number"
-                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-                <input type="email" name="email" placeholder="E-mail ID" required
-                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-                <input type="hidden" name="address" value="NA">
-                <input type="hidden" name="title" value="NA">
-                <input type="hidden" name="profession" value="NA">
-                <input type="hidden" name="ib" value="">
-                <input type="hidden" name="source" value="Website(Home Page)">
-                <input type="hidden" name="country" value="india">
-                <input type="hidden" name="comp_name" value="">
-                <input type="hidden" name="state" value="">
-                <input type="hidden" name="altr_mobile" value="">
-
-                <button type="submit"
-                    style="width:100%; padding:10px; background:#f29c12; color:white; border:none; border-radius:5px; font-weight:bold; margin-top:10px;">Submit</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        window.onload = function() {
-            openModal();
-        };
-
-        function openModal() {
-            document.getElementById("formModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("formModal").style.display = "none";
-        }
-        window.onclick = function(event) {
-            const modal = document.getElementById("formModal");
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-    </script>
 @endsection
