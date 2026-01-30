@@ -112,7 +112,7 @@
                                     alt="icon"><a href="{{ route('about') }}">About Us</a></li>
                             <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a
-                                    href="https://www.digicrome.com/our-courses/postgraduate-and-master-programs">All
+                                    href="{{ url('/') }}/our-courses/postgraduate-and-master-programs">All
                                     Courses</a></li>
                             <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('corporate_services') }}">Corporate Services</a>
@@ -167,34 +167,29 @@
             <div class="col-12 mb-4">
                 <h5 style="color: #ccc"><u>Data Science And AI</u></h5>
                 <p>
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-noida"
-                        style="color: #fff">
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-noida" style="color: #fff">
                         Data Science Training Course in Noida</a> |
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-gurgaon"
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-gurgaon"
                         style="color: #fff">
                         Data Science Training Course in Gurgaon</a> |
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-mumbai"
-                        style="color: #fff">
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-mumbai" style="color: #fff">
                         Data Science Training Course in Mumbai</a> |
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-kolkata"
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-kolkata"
                         style="color: #fff">
                         Data Science Training Course in Kolkata</a> |
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-pune"
-                        style="color: #fff">
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-pune" style="color: #fff">
                         Data Science Training Course in Pune</a> |
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-jaipur"
-                        style="color: #fff">
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-jaipur" style="color: #fff">
                         Data Science Training Course in Jaipur</a> |
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-delhi"
-                        style="color: #fff">
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-delhi" style="color: #fff">
                         Data Science Training Course in Delhi</a> |
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-chennai"
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-chennai"
                         style="color: #fff">
                         Data Science Training Course in Chennai</a> |
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-hyderabad"
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-hyderabad"
                         style="color: #fff">
                         Data Science Training Course in Hyderabad</a> |
-                    <a href="https://www.digicrome.com/courses/data-science-training-course-in-bangalore"
+                    <a href="{{ url('/') }}/courses/data-science-training-course-in-bangalore"
                         style="color: #fff">
                         Data Science Training Course in Bangalore</a>
                 </p>
@@ -209,25 +204,25 @@
             <div class="col-12 mb-4">
                 <h5 style="color: #ccc"><u>Artificial Intelligence Training Course</u></h5>
                 <p>
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-noida"
-                        style="color: #fff">Artificial Intelligence Training Course in Noida</a> |
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-delhi"
-                        style="color: #fff">Artificial Intelligence Training Course in Delhi</a> |
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-pune"
-                        style="color: #fff">Artificial Intelligence Training Course in Pune</a> |
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-hyderabad"
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-noida" style="color: #fff">Artificial
+                        Intelligence Training Course in Noida</a> |
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-delhi" style="color: #fff">Artificial
+                        Intelligence Training Course in Delhi</a> |
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-pune" style="color: #fff">Artificial
+                        Intelligence Training Course in Pune</a> |
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-hyderabad"
                         style="color: #fff">Artificial Intelligence Training Course in Hyderabad</a> |
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-bangalore"
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-bangalore"
                         style="color: #fff">Artificial Intelligence Training Course in Bangalore</a> |
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-gurgaon"
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-gurgaon"
                         style="color: #fff">Artificial Intelligence Training Course in Gurgaon</a> |
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-mumbai"
-                        style="color: #fff">Artificial Intelligence Training Course in Mumbai</a> |
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-kolkata"
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-mumbai" style="color: #fff">Artificial
+                        Intelligence Training Course in Mumbai</a> |
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-kolkata"
                         style="color: #fff">Artificial Intelligence Training Course in Kolkata</a> |
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-jaipur"
-                        style="color: #fff">Artificial Intelligence Training Course in Jaipur</a> |
-                    <a href="https://www.digicrome.com/courses/ai-training-course-in-chennai"
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-jaipur" style="color: #fff">Artificial
+                        Intelligence Training Course in Jaipur</a> |
+                    <a href="{{ url('/') }}/courses/ai-training-course-in-chennai"
                         style="color: #fff">Artificial Intelligence Training Course in Chennai</a>
                 </p>
                 <hr>
