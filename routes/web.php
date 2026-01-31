@@ -37,7 +37,7 @@ use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Admin\MentorController;
 use App\Http\Controllers\Admin\MediaPresenceController  as AdminMediaPresenceController;
 use App\Http\Controllers\LandingPageController;
-
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 
@@ -185,7 +185,7 @@ Route::get('/data-science', [LandingControler::class, 'data_science'])->name('da
 
 Route::get('/test-mail', function () {
     Mail::raw('Test email from Laravel', function ($message) {
-        $message->to('digicromeleads@gmail.com')
+        $message->to('satyam.digicrome@gmail.com')
                 ->subject('Test Mail');
     });
     return 'Mail Sent';
