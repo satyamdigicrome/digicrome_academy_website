@@ -136,7 +136,7 @@
           <div class="modal-body" style="padding: 0px;">
             <span class="close-btn" onclick="closeModal()" aria-label="Close modal">&times;</span>
 
-              <form class="form" method="post" action="https://demo.digicrome.com/post_lead.php" novalidate>
+              <form class="form" method="post" action="https://demo.digicrome.in/post_lead.php" novalidate>
                   @csrf
                   <h2 id="modalTitle" style="color: #000">Welcome to Digicrome</h2>
                   <div class="form-field">

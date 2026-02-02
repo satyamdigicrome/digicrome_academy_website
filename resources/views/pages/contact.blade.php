@@ -182,7 +182,7 @@
 		<div class="col-md-6">
 		<br>
 		<h3>Want a callback? Enter your details.</h3>
-		<form id="frm123"  method="post" action="https://demo.digicrome.com/post_lead.php">       
+		<form id="frm123"  method="post" action="https://demo.digicrome.in/post_lead.php">       
 
 		<div class="mb-3">
 			<input class="form-control" style="border-radius: 20px;   padding: 12px;" placeholder="Enter your name" name="name" type="text">
@@ -456,7 +456,7 @@
 								<h1>Feel Free to Contact Us</h1>
 							</div> --}}
 					<form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
-						action="https://demo.digicrome.com/post_lead.php">
+						action="https://demo.digicrome.in/post_lead.php">
 						@csrf
 						<h2 style="color: #f29c12;"> Register now!! And get a quick call</h2>
 						<div class="form-field">

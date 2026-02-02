@@ -1349,7 +1349,7 @@
                 <button id="closeFormBtn"
                     style="position: absolute; top: 10px; right: 10px; font-size: 24px; color: #000; background: transparent; border: none; cursor: pointer; padding: 0;">&#10005;</button>
                 <h4>Request a Callback</h4>
-                <form id="callbackForm" method="post" action="https://demo.digicrome.com/post_lead.php">
+                <form id="callbackForm" method="post" action="https://demo.digicrome.in/post_lead.php">
                     @csrf
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -1442,7 +1442,7 @@
                             <span class="close-btn" style="font-size: 22px;"
                                 onclick="closeEnrollModal()">&times;</span>
                             <div class="form-container">
-                                <form action="https://demo.digicrome.com/post_lead.php" method="post">
+                                <form action="https://demo.digicrome.in/post_lead.php" method="post">
                                     @csrf
                                     <input type="hidden" name="_token"
                                         value="rw1IePlAcOc1qGaBjZLwHSoR2hyn67owyCNWa6Mc">
@@ -1734,7 +1734,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <form action="https://demo.digicrome.com/post_lead.php" method="post">
+                            <form action="https://demo.digicrome.in/post_lead.php" method="post">
                                 @csrf
                                 <input type="hidden" name="_token"
                                     value="rw1IePlAcOc1qGaBjZLwHSoR2hyn67owyCNWa6Mc">
@@ -2700,7 +2700,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="https://demo.digicrome.com/post_lead.php" method="post">
+                                    <form action="https://demo.digicrome.in/post_lead.php" method="post">
                                         @csrf
                                         <input type="hidden" name="_token"
                                             value="rw1IePlAcOc1qGaBjZLwHSoR2hyn67owyCNWa6Mc">

@@ -18,7 +18,7 @@
 			</div>
 			<div class="col-lg-6 col-md-12">
 				<div class="contact-form-box style_six">
-					<form id="professionalForm" method="post" action="https://demo.digicrome.com/post_lead.php" style="width:100%; margin:0;">
+					<form id="professionalForm" method="post" action="https://demo.digicrome.in/post_lead.php" style="width:100%; margin:0;">
 						@csrf
 						<div class="row">
 							<div class="col-md-6">

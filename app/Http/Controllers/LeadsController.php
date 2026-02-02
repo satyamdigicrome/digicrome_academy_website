@@ -12,52 +12,52 @@ use App\Models\Course;
 class LeadsController extends Controller
 {
     public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'mobile' => 'required|string|max:20',
-        'email' => 'required|email|max:255',
-        'address' => 'nullable|string|max:255',
-        'title' => 'nullable|string|max:255',
-        'profession' => 'nullable|string|max:255',
-        'course_id' => 'required|exists:courses,id',
-    ]);
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'mobile' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'address' => 'nullable|string|max:255',
+            'title' => 'nullable|string|max:255',
+            'profession' => 'nullable|string|max:255',
+            'course_id' => 'required|exists:courses,id',
+        ]);
 
-    $lead = new Lead();
-    $lead->name = $request->name;
-    $lead->email = $request->email;
-    $lead->phone = $request->mobile;
-    $lead->address = $request->address;
-    $lead->qualification = $request->title;
-    $lead->experience = $request->profession;
-    $lead->save();
+        $lead = new Lead();
+        $lead->name = $request->name;
+        $lead->email = $request->email;
+        $lead->phone = $request->mobile;
+        $lead->address = $request->address;
+        $lead->qualification = $request->title;
+        $lead->experience = $request->profession;
+        $lead->save();
 
-    
-    // Get brochure path
-    $course = \App\Models\Course::find($request->course_id);
-    $brochurePath = $course->browser ? asset('storage/' . $course->browser) : null;
-    
-    $apiResponse = Http::asForm()->post('https://demo.digicrome.com/post_lead.php', [
-        'name'        => $request->name,
-        'mobile'      => $request->mobile,
-        'email'       => $request->email,
-        'title'       => $request->title,
-        'address'     => $request->address,
-        'profession'  => $request->profession,
-        'source'      => $request->source,
-        'ib'      => $request->ib,
-        'country'     => 'India',
-        'comp_name'   => '',
-        'state'       => '',
-        'altr_mobile' => null,
-    ]);
-    return response()->json([
-        'success' => true,
-        'message' => 'Lead saved successfully.',
-        'download_url' => $brochurePath,
-    ]);
-}
-public function leadsstore(Request $request)
+
+        // Get brochure path
+        $course = \App\Models\Course::find($request->course_id);
+        $brochurePath = $course->browser ? asset('storage/' . $course->browser) : null;
+
+        $apiResponse = Http::asForm()->post('https://demo.digicrome.in/post_lead.php', [
+            'name' => $request->name,
+            'mobile' => $request->mobile,
+            'email' => $request->email,
+            'title' => $request->title,
+            'address' => $request->address,
+            'profession' => $request->profession,
+            'source' => $request->source,
+            'ib' => $request->ib,
+            'country' => 'India',
+            'comp_name' => '',
+            'state' => '',
+            'altr_mobile' => null,
+        ]);
+        return response()->json([
+            'success' => true,
+            'message' => 'Lead saved successfully.',
+            'download_url' => $brochurePath,
+        ]);
+    }
+    public function leadsstore(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -75,25 +75,25 @@ public function leadsstore(Request $request)
             'page_name' => 'nullable|string|max:255',
         ]);
 
-        $apiResponse = Http::asForm()->post('https://demo.digicrome.com/post_lead.php', [
-            'name'        => $request->name,
-            'mobile'      => $request->phone,
-            'email'       => $request->email,
-            'title'       => $request->qualification,
-            'address'     => $request->address,
-            'profession'  => $request->experience,
-            'source'      => $request->source,
-            'ib'      => $request->ib,
-            'country'     => 'India',
-            'comp_name'   => '',
-            'state'       => '',
+        $apiResponse = Http::asForm()->post('https://demo.digicrome.in/post_lead.php', [
+            'name' => $request->name,
+            'mobile' => $request->phone,
+            'email' => $request->email,
+            'title' => $request->qualification,
+            'address' => $request->address,
+            'profession' => $request->experience,
+            'source' => $request->source,
+            'ib' => $request->ib,
+            'country' => 'India',
+            'comp_name' => '',
+            'state' => '',
             'altr_mobile' => null,
         ]);
 
         Lead::create($validated);
         Mail::send('emails.lead-notification', ['data' => $validated], function ($message) use ($validated) {
             $message->to('digicromeleads@gmail.com')
-                    ->subject('New Lead Submission - ' . ($validated['page_name'] ?? 'Course Page'));
+                ->subject('New Lead Submission - ' . ($validated['page_name'] ?? 'Course Page'));
         });
 
         return redirect()->route('thankyou');
@@ -101,54 +101,54 @@ public function leadsstore(Request $request)
 
 
     public function landingstore(Request $request)
-{
-    $validated = $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|email',
-        'phone' => 'required|string|max:20',
-        'address' => 'nullable|string|max:255',
-        'experience' => 'nullable|string|max:255',
-        'qualification' => 'nullable|string|max:255',
-        'message' => 'nullable|string',
-        'key1' => 'nullable|string|max:255',
-        'key2' => 'nullable|string|max:255',
-        'key3' => 'nullable|string|max:255',
-        'key4' => 'nullable|string|max:255',
-        'key5' => 'nullable|string|max:255',
-        'page_name' => 'nullable|string|max:255',
-    ]);
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'phone' => 'required|string|max:20',
+            'address' => 'nullable|string|max:255',
+            'experience' => 'nullable|string|max:255',
+            'qualification' => 'nullable|string|max:255',
+            'message' => 'nullable|string',
+            'key1' => 'nullable|string|max:255',
+            'key2' => 'nullable|string|max:255',
+            'key3' => 'nullable|string|max:255',
+            'key4' => 'nullable|string|max:255',
+            'key5' => 'nullable|string|max:255',
+            'page_name' => 'nullable|string|max:255',
+        ]);
 
-    // Optional: Get brochure URL from course
-    $course = Course::where('course_free', 1)->first();
-    $brochureUrl = $course && $course->browser ? asset('storage/' . $course->browser) : null;
+        // Optional: Get brochure URL from course
+        $course = Course::where('course_free', 1)->first();
+        $brochureUrl = $course && $course->browser ? asset('storage/' . $course->browser) : null;
 
-    // Send to API
-    Http::asForm()->post('https://demo.digicrome.com/post_lead.php', [
-        'name'        => $request->name,
-        'mobile'      => $request->phone,
-        'email'       => $request->email,
-        'title'       => $request->qualification,
-        'address'     => $request->address,
-        'profession'  => $request->experience,
-        'source'      => $request->source,
-        'ib'          => $request->ib,
-        'country'     => 'India',
-        'comp_name'   => '',
-        'state'       => '',
-        'altr_mobile' => 'NA',
-    ]);
+        // Send to API
+        Http::asForm()->post('https://demo.digicrome.in/post_lead.php', [
+            'name' => $request->name,
+            'mobile' => $request->phone,
+            'email' => $request->email,
+            'title' => $request->qualification,
+            'address' => $request->address,
+            'profession' => $request->experience,
+            'source' => $request->source,
+            'ib' => $request->ib,
+            'country' => 'India',
+            'comp_name' => '',
+            'state' => '',
+            'altr_mobile' => 'NA',
+        ]);
 
-    // Store lead
-    Lead::create($validated);
+        // Store lead
+        Lead::create($validated);
 
-    // Send mail
-    Mail::send('emails.lead-notification', ['data' => $validated], function ($message) use ($validated) {
-        $message->to('digicromeleads@gmail.com')
+        // Send mail
+        Mail::send('emails.lead-notification', ['data' => $validated], function ($message) use ($validated) {
+            $message->to('digicromeleads@gmail.com')
                 ->subject('New Lead Submission - ' . ($validated['page_name'] ?? 'Course Page'));
-    });
+        });
 
-    // Redirect to thank you with brochure URL in session
-    return redirect()->route('thankyou')->with('brochure', $brochureUrl);
-}
+        // Redirect to thank you with brochure URL in session
+        return redirect()->route('thankyou')->with('brochure', $brochureUrl);
+    }
 
 }
