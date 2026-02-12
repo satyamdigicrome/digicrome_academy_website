@@ -753,7 +753,7 @@
                     </div> --}}
                     <video controls preload="none" poster="{{ asset('assets/images/thumbnail2.webp') }}"
                         style="width:100%; max-width:600px;">
-                        <source src="{{ asset('assets/Final2.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('assets/Final2.MP4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
