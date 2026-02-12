@@ -342,12 +342,16 @@
                     <div class="about-thumb-wrapper">
                         <div class="about-thumb zoom-sequence">
                             <div class="image-container">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/digi.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p3.webp') }}"
                                     alt="First image" title="First image">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p1.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p4.webp') }}"
                                     alt="Second image" title="Second image">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p2.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p5.webp') }}"
                                     alt="Third image" title="Third image">
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p1.webp') }}"
+                                    alt="Fouth image" title="Fourth image">
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p2.webp') }}"
+                                    alt="Fifth image" title="Fifth image">
                             </div>
                         </div>
                     </div>
@@ -419,22 +423,30 @@
                             <h6>Our Achievement</h6>
                         </div>
                         <div class="section_title">
-                            <h2 class="heading-like-h1">Honoring Digicrome's Excellence <br>at the Excellency Iconic Awards
-                                2025</h2>
+                            <h2 class="heading-like-h1">Honoring Digicrome's Excellence <br>at the Bharat Gaurav Awards
+                                2026</h2>
 
                         </div>
                         <div class="section-title-desc two">
                             <p>
-                                Digicrome was honored with the prestigious <strong>Excellency Iconic Award 2025</strong> for
+                                Digicrome has been proudly honoured as <strong>Best EdTech in Online & Digital Education
+                                    2026</strong> at the
+                                <strong>Bharat Gaurav Education Summit & Awards</strong>, showing our excellence in
+                                innovative instruction,
+                                learners' success, and reformation in technical data knowledge.
+                                {{-- Digicrome was honored with the prestigious <strong>Excellency Iconic Award 2025</strong> for
                                 its outstanding contribution to innovative and accessible education.
                                 This recognition celebrates our commitment to delivering high-quality training and
-                                empowering learners across the globe.
+                                empowering learners across the globe. --}}
                             </p>
                             <p>
-                                Combining a rich legacy with cutting-edge technology, we foster both academic and personal
+                                Combining a rich tradition with modern technology, we foster both academic and individual
+                                progress. Skillfully architecting meta-duties through excellent whiteboard education
+                                experiences, we strive to set new benchmarks in the educational domain.
+                                {{-- Combining a rich legacy with cutting-edge technology, we foster both academic and personal
                                 growth.
                                 Conveniently architecting meta-services through world-class whiteboard learning experiences,
-                                we continue to set new benchmarks in the education sector.
+                                we continue to set new benchmarks in the education sector. --}}
                             </p>
                         </div>
                         <div class="about-btn">
@@ -698,13 +710,12 @@
                     <ul class="list-unstyled">
                         <li class="d-flex align-items-start mb-2">
                             <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                            <span><b> Successpreneur Award 2025 </b> being the best analytics EdTech business</span>
+                            <span><b> Bharat Gaurav Awards 2026 </b> for Best EdTech in Online and Digital Education</span>
                         </li>
                         <li class="d-flex align-items-start">
                             <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                            <span><b>Most Promising Digital Learning Platform 2025</b> for being one of the most promising
-                                digital
-                                learning platforms</span>
+                            <span>DigiCrome as <b>Most Promising Online Education EdTech Platform 2026</b> famous for its
+                                quality and innovation.</span>
                         </li>
                     </ul>
                 </div>
@@ -740,9 +751,9 @@
                             </a>
                         </div>
                     </div> --}}
-                    <video controls preload="none" poster="{{ asset('assets/images/thumbnail.webp') }}"
+                    <video controls preload="none" poster="{{ asset('assets/images/thumbnail2.webp') }}"
                         style="width:100%; max-width:600px;">
-                        <source src="{{ asset('assets/Final.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('assets/Final2.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>

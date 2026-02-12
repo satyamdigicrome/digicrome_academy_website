@@ -34,7 +34,7 @@ class LeadsController extends Controller
 
 
         // Get brochure path
-        $course = \App\Models\Course::find($request->course_id);
+        $course = Course::find($request->course_id);
         $brochurePath = $course->browser ? asset('storage/' . $course->browser) : null;
 
         $apiResponse = Http::asForm()->post('https://demo.digicrome.in/post_lead.php', [
