@@ -2,7 +2,5 @@ User-agent: *
 Disallow: /?search-field=
 Disallow: /upcoming-courses/
 Disallow: /upcoming-courses
-Disallow: /public
-Disallow: /public/
 
 Sitemap: https://www.digicrome.com/sitemap.xml

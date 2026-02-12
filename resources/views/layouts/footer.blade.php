@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="row add-footer-class">
-            <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="col-xl-4 col-lg-3 col-md-6">
                 <div class="footer-widget-content">
                     <div class="footer-widget-title">
                         <h4>Get in Touch</h4>
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="col-xl-4 col-lg-3 col-md-6">
                 <div class="footer-widget-content">
                     <div class="footer-widget-title">
                         <h4>Online Platform</h4>
@@ -125,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-2 col-md-6">
+            <div class="col-xl-4 col-lg-2 col-md-6">
                 <div class="footer-widget-content">
                     <div class="footer-widget-title">
                         <h4>Quick Links</h4>
@@ -147,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            {{--<div class="col-xl-3 col-lg-4 col-md-6">
                 <div class="footer-widget-title">
                     <h4>Our Application</h4>
                 </div>
@@ -159,7 +159,7 @@
                                 class="ap-logo"></a>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
     </div>
     <div class="container">

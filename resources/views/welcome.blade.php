@@ -92,13 +92,13 @@
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
                         <div class="hero-dot-shape">
-                            <img rel="preload" src="{{ asset('assets/images/home-one/hero-dot.webp') }}"
-                                alt="digicrome dot" title="digicrome dot">
+                            <img rel="preload" style="width: 306px; height: auto; position: relative; top: -209px; left: 70px;" src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
+                                title="digicrome dot">
                         </div>
-                        <div class="hero-shape3 bounce-animate-3">
+                        {{-- <div class="hero-shape3 bounce-animate-3">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}"
                                 alt="digicrome shape" title="digicrome shape">
-                        </div>
+                        </div> --}}
                         <div class="hero-autor-box">
                             <div class="autor-thumb">
                                 <img loading="lazy"src="{{ asset('assets/images/home-one/hero-autor.webp') }}"
@@ -753,7 +753,7 @@
                     </div> --}}
                     <video controls preload="none" poster="{{ asset('assets/images/thumbnail2.webp') }}"
                         style="width:100%; max-width:600px;">
-                        <source src="{{ asset('assets/Final2.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('assets/Final2.MP4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
