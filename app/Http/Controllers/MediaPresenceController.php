@@ -14,8 +14,8 @@ class MediaPresenceController extends Controller
     public function index()
     {
         $meta = Metatag::where('page_name', 'Media')->first();
-        $data = MediaPresence::all();
-         $articles = Article::all();
-        return view('pages.media_presence', compact('meta','data','articles')); 
+        $data = MediaPresence::latest()->get();
+        $articles = Article::all();
+        return view('pages.media_presence', compact('meta', 'data', 'articles'));
     }
 }
