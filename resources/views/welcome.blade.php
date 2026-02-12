@@ -352,6 +352,12 @@
                                     alt="Fouth image" title="Fourth image">
                                 <img class="image" loading="lazy" src="{{ asset('assets/images/p2.webp') }}"
                                     alt="Fifth image" title="Fifth image">
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p6.webp') }}"
+                                    alt="Sixth image" title="Sixth image">
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p7.webp') }}"
+                                    alt="Seven image" title="Seven image">
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p8.webp') }}"
+                                    alt="Eight image" title="Eight image">
                             </div>
                         </div>
                     </div>
@@ -751,11 +757,22 @@
                             </a>
                         </div>
                     </div> --}}
-                    <video controls preload="none" poster="{{ asset('assets/images/thumbnail2.webp') }}"
+                    {{-- <video controls preload="none" poster="{{ asset('assets/images/thumbnail2.webp') }}"
                         style="width:100%; max-width:600px;">
                         <source src="{{ asset('assets/Final2.MP4') }}" type="video/mp4">
+                        <source src="https://vimeo.com/1164337631?fl=pl&fe=sh" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> --}}
+                    <div style="width:100%; max-width:600px;">
+                        <iframe 
+                            src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
+                                width="100%" 
+                                height="340"
+                                frameborder="0" 
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="single-course-offer-box">
