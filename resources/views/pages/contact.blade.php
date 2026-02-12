@@ -152,7 +152,7 @@
 	<div class="container-fluid" style="width:80%">
 		<div class="top_bar">
 			<a style="font-size: 18px;" onclick="showContent('contact')"><i class="fas fa-phone"></i> Customer Contact No.</a>
-			<a style="font-size: 18px;" onclick="showContent('connect')"><i class="fas fa-globe"></i> Connect Online</a>
+			{{--<a style="font-size: 18px;" onclick="showContent('connect')"><i class="fas fa-globe"></i> Connect Online</a>--}}
 			<a style="font-size: 18px;" onclick="showContent('locate')"><i class="fas fa-map-marker-alt"></i> Locate Us</a>
 			<a style="font-size: 18px;" onclick="showContent('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 			<a style="font-size: 18px;" onclick="showContent('chatbot')"><i class="fas fa-comments"></i> Chatbot</a>

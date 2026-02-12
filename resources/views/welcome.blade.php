@@ -92,7 +92,7 @@
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
                         <div class="hero-dot-shape">
-                            <img rel="preload" src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
+                            <img rel="preload" style="width: 306px; height: auto; position: relative; top: -209px; left: 70px;" src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
                                 title="digicrome dot">
                         </div>
                         {{-- <div class="hero-shape3 bounce-animate-3">
