@@ -92,13 +92,13 @@
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
                         <div class="hero-dot-shape">
-                            <img rel="preload" src="{{ asset('assets/images/home-one/hero-dot.webp') }}"
-                                alt="digicrome dot" title="digicrome dot">
+                            <img rel="preload" src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
+                                title="digicrome dot">
                         </div>
-                        <div class="hero-shape3 bounce-animate-3">
+                        {{-- <div class="hero-shape3 bounce-animate-3">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}"
                                 alt="digicrome shape" title="digicrome shape">
-                        </div>
+                        </div> --}}
                         <div class="hero-autor-box">
                             <div class="autor-thumb">
                                 <img loading="lazy"src="{{ asset('assets/images/home-one/hero-autor.webp') }}"
