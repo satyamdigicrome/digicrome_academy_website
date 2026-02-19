@@ -49,7 +49,7 @@
         </div>
         <span class="christmas-close-btn" onclick="closeChristmasModal(event)">×</span>
     </div> --}}
-    {{-- 
+{{--     
         // window.onload = function() {
         //     document.getElementById('christmasOfferModal').style.display = 'flex';
         // };
