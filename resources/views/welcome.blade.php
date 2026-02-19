@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('title', $meta->title ?? 'Digicrome')
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
@@ -92,7 +91,9 @@
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
                         <div class="hero-dot-shape">
-                            <img rel="preload" style="width: 306px; height: auto; position: relative; top: -209px; left: 70px;" src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
+                            <img rel="preload"
+                                style="width: 306px; height: auto; position: relative; top: -209px; left: 70px;"
+                                src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
                                 title="digicrome dot">
                         </div>
                         {{-- <div class="hero-shape3 bounce-animate-3">
@@ -203,6 +204,32 @@
             </div>
         </div>
     </section>
+    <div class="hero-section">
+        <div class="hero-section" style="position: relative;">
+            <picture>
+                <source srcset="{{ asset('assets/images/home-one/ai-summit-mob.webp') }}"
+                    media="(max-width: 768px)">
+                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}"
+                    alt="Hero Banner" width="1200" height="400" fetchpriority="high" decoding="async"
+                    style="width:100%;height:auto;">
+            </picture>
+        </div>
+        <div class="container">
+            <div class="both-btn">
+                <button type="button" class="btn button-repfirst" onclick="openModal()" style="">
+                    CONNECT WITH US
+                </button>
+            </div>
+        </div>
+    </div>
+    {{-- <section class="ai-banner-section">
+
+        <div class="connect-btn-wrapper">
+            <a href="#" class="connect-btn">Connect With Us</a>
+        </div>
+
+        <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="AI Summit Banner" class="ai-banner-img">
+    </section> --}}
     <div class="container">
         <x-logo-slider :companyLogos="$companyLogos" />
     </div>
@@ -764,13 +791,10 @@
                         Your browser does not support the video tag.
                     </video> --}}
                     <div style="width:100%; max-width:600px;">
-                        <iframe 
+                        <iframe
                             src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
-                                width="100%" 
-                                height="340"
-                                frameborder="0" 
-                                allow="autoplay; fullscreen; picture-in-picture"
-                                allowfullscreen>
+                            width="100%" height="340" frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
                         </iframe>
                     </div>
                 </div>
@@ -1144,7 +1168,6 @@
             </div>
         </div>
     </div>
-
     <section class="py-5">
         <div class="container text-center">
             <h2 class="text-center mb-4" style="font-size: 2rem;">
@@ -1215,7 +1238,6 @@
             </div>
         </div>
     </div>
-
     <div class="blog-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">
