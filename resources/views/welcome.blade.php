@@ -209,18 +209,18 @@
             <picture>
                 <source srcset="{{ asset('assets/images/home-one/ai-summit-mob.webp') }}"
                     media="(max-width: 768px)">
-                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}"
+                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}"  onclick="openModal()"
                     alt="Hero Banner" width="1200" height="400" fetchpriority="high" decoding="async"
                     style="width:100%;height:auto;">
             </picture>
         </div>
-        <div class="container">
+        {{-- <div class="container">
             <div class="both-btn">
                 <button type="button" class="btn button-repfirst" onclick="openModal()" style="">
                     CONNECT WITH US
                 </button>
             </div>
-        </div>
+        </div> --}}
     </div>
     {{-- <section class="ai-banner-section">
 
