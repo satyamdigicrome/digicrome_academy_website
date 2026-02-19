@@ -154,7 +154,7 @@ Route::get('/corporate-services', [CorporateServicesController::class, 'index'])
 Route::get('/online-payment', [PaymentsController::class, 'index'])->name('payments');
 Route::get('/career', [CareerController::class, 'index'])->name('career');
 Route::get('/thankyou', [HomeController::class, 'thankyou'])->name('thankyou');
-Route::get('/thank-you', [HomeController::class, 'thanks'])->name('thankyou');
+Route::get('/thank-you', [HomeController::class, 'thanks'])->name('thank.you');
 Route::get('/DS_and_AI', [LandingControler::class, 'landing'])->name('landing');
 Route::get('/refer-and-earn', [ReferController::class, 'index'])->name('refer_and_earn');
 Route::get('/who-we-are', [WhoweareController::class, 'index'])->name('who_we_are');
