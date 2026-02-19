@@ -69,6 +69,11 @@
         //     document.getElementById('christmasOfferModal').style.display = 'none';
         // }
     --}}
+    {{-- <div id="christmasOfferModal" class="christmas-offer-modal" style="display: flex;">
+        <div class="christmas-offer-content" onclick="openFormFromOffer()">
+        </div>
+        <span class="christmas-close-btn" onclick="closeChristmasModal(event)">×</span>
+    </div> --}}
 
     {{-- <div class="row">
                         <div class="col-4">
