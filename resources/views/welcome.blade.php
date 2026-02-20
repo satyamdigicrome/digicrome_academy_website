@@ -4,6 +4,47 @@
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
     <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
+    <style>
+        .campus-tour-btn {
+            display: none;
+        }
+
+        @media (max-width: 991px) {
+            .campus-tour-btn {
+                display: block;
+                font-size: 14px;
+                height: 50px;
+                margin-left: 4px;
+                position: relative;
+                top: 1px;
+                left: 3px;
+            }
+
+            section.hero_area.style-one .hero-btn a {
+                display: inline-block;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: var(--color-white);
+                font-weight: 525;
+                font-family: "Outfit";
+                border-radius: 28px;
+                background-color: var(--primary-color);
+                padding: 17px 35px;
+                transition: 0.5s;
+                position: relative;
+                z-index: 1;
+            }
+            section.feature-area.style-one {
+                margin-top: 5rem;
+            }
+        }
+        /* Hide on mobile & tablet */
+        @media (max-width: 991px) {
+            .desktop-only2 {
+                display: none !important;
+            }
+        }
+    </style>
 @endpush
 @push('scripts')
     <script>
@@ -23,10 +64,6 @@
             if (event.target === modal) {
                 modal.style.display = "none";
             }
-        };
-
-        window.onload = function() {
-            document.getElementById('christmasOfferModal').style.display = 'flex';
         };
     </script>
 @endpush
@@ -53,14 +90,20 @@
                         @endif
                         <p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and
                             position yourself as the top choice for employers in your industry.</p>
-                        <div class="hero-button">
+                        <div class="hero-button d-flex">
                             <div class="hero-btn">
                                 <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>
+                            <div class="border rounded px-3 py-2 text-secondary campus-tour-btn"
+                                style="border-color: #000000 !important;" role="button">
+                                <a href="https://vimeo.com/1166319733" target="_blank">CAMPUS TOUR<i
+                                        class="fa-brands fa-youtube"
+                                        style="font-size: 18px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="hero-rating-box">
+                    <div class="hero-rating-box desktop-only2">
                         <div class="hero-rating-icon">
                             <span>10k+</span>
                         </div>
@@ -85,7 +128,8 @@
                             <div class="border rounded px-3 py-2 text-secondary mt-4"
                                 style="border-color: #000000 !important;" role="button">
                                 <a href="https://vimeo.com/1166319733" target="_blank">CAMPUS TOUR<i
-                                        class="fa-brands fa-youtube" style="font-size: 22px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
+                                        class="fa-brands fa-youtube"
+                                        style="font-size: 22px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
                             </div>
                         </div>
                     </div>
