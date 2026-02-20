@@ -24,10 +24,10 @@
                 modal.style.display = "none";
             }
         };
-        
+
         window.onload = function() {
             document.getElementById('christmasOfferModal').style.display = 'flex';
-        };   
+        };
     </script>
 @endpush
 @section('content')
@@ -79,6 +79,13 @@
                             </div>
                             <div class="hero-rating-des">
                                 <p>Successful Learners</p>
+                            </div>
+                        </div>
+                        <div class="hero-button">
+                            <div class="border rounded px-3 py-2 text-secondary mt-4"
+                                style="border-color: #000000 !important;" role="button">
+                                <a href="https://vimeo.com/1166319733" target="_blank">CAMPUS TOUR<i
+                                        class="fa-brands fa-youtube" style="font-size: 22px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -211,10 +218,9 @@
     <div class="hero-section">
         <div class="hero-section" style="position: relative;">
             <picture>
-                <source srcset="{{ asset('assets/images/home-one/ai-summit-mob.webp') }}"
-                    media="(max-width: 768px)">
-                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}"  onclick="openModal()"
-                    alt="Hero Banner" width="1200" height="400" fetchpriority="high" decoding="async"
+                <source srcset="{{ asset('assets/images/home-one/ai-summit-mob.webp') }}" media="(max-width: 768px)">
+                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" onclick="openModal()" alt="Hero Banner"
+                    width="1200" height="400" fetchpriority="high" decoding="async"
                     style="width:100%;height:auto;">
             </picture>
         </div>
