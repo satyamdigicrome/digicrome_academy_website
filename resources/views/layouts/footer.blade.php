@@ -132,7 +132,8 @@
                     </div>
                     <div class="footer-widget-menu">
                         <ul>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img
+                                    loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('who_we_are') }}">Who we are</a></li>
                             <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('success_stories') }}">Success stories</a></li>
@@ -147,7 +148,7 @@
                     </div>
                 </div>
             </div>
-            {{--<div class="col-xl-3 col-lg-4 col-md-6">
+            {{-- <div class="col-xl-3 col-lg-4 col-md-6">
                 <div class="footer-widget-title">
                     <h4>Our Application</h4>
                 </div>
@@ -159,7 +160,7 @@
                                 class="ap-logo"></a>
                     </div>
                 </div>
-            </div>--}}
+            </div> --}}
         </div>
     </div>
     <div class="container">

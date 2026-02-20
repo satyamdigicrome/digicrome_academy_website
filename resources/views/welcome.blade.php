@@ -3,6 +3,7 @@
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
     <style>
         .campus-tour-btn {
@@ -34,10 +35,12 @@
                 position: relative;
                 z-index: 1;
             }
+
             section.feature-area.style-one {
                 margin-top: 5rem;
             }
         }
+
         /* Hide on mobile & tablet */
         @media (max-width: 991px) {
             .desktop-only2 {
@@ -885,7 +888,7 @@
             </div>
         </div>
     </div>
-    @if (count($videos) > 0)
+    {{-- @if (count(value: $videos) > 0)
         <section class="video-slider py-5">
             <div class="container">
                 <h2 class="text-center mb-3" style="font-size: 2rem;">
@@ -900,8 +903,6 @@
                             <div class="gif-wrapper" data-bs-toggle="modal" data-bs-target="#youtubeModal"
                                 data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
                                 <div class="gif-container">
-                                    {{-- <img src="{{ asset('storage/' . $video->image) }}" alt="{{ $video->name }}"
-                                        class="gif-img rounded shadow-sm"> --}}
                                     <video class="gif-img rounded shadow-sm" autoplay loop muted playsinline
                                         preload="metadata" poster="{{ asset('storage/' . $video->image) }}">
                                         <source src="{{ asset('storage/' . $video->image) }}" type="video/mp4">
@@ -1078,7 +1079,425 @@
                 });
             </script>
         </section>
+    @endif --}}
+    @if (count($videos) > 0)
+        <section class="custom-testimonial-section">
+            <div class="container-fluid bg-image-section">
+                <div class="container">
+                    <div class="row py-5 align-items-start">
+                        <div class="col-lg-3 order-1 order-lg-1 mb-4 mb-lg-0">
+                            <h3 class="section-title">Our 3 Steps</h3>
+                            <p class="section-sub">Recruitment Process</p>
+                            <div class="steps-wrapper">
+                                <div class="step-item">
+                                    <div class="step-icon blue">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <h6>Profile Building</h6>
+                                        <small>Strong ATS-Friendly Resume</small>
+                                        <small>Optimize LinkedIn Profile</small>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-icon orange">
+                                        <i class="fa-solid fa-comments"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <h6>Mock Interviews</h6>
+                                        <small>Technical Interviews</small>
+                                        <small>Interview Strategy</small>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-icon green">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <h6>Right Opportunity</h6>
+                                        <small>Job Mapping</small>
+                                        <small>Interview Scheduling</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-2 order-lg-2">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+
+                                    @foreach ($videos as $video)
+                                        <div class="swiper-slide">
+                                            <div class="gif-wrapper" data-bs-toggle="modal"
+                                                data-bs-target="#youtubeModal"
+                                                data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
+
+                                                <div class="gif-container">
+                                                    <video class="gif-img" autoplay loop muted playsinline
+                                                        poster="{{ asset('storage/' . $video->image) }}">
+                                                        <source src="{{ asset('storage/' . $video->image) }}"
+                                                            type="video/mp4">
+                                                    </video>
+
+                                                    <div class="play-btn">▶</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 order-3 order-lg-3 mt-5 mt-lg-0">
+                            <h4 class="section-title">Beyond Courses:</h4>
+                            <p class="section-sub">Additional Support We Provide</p>
+                            <div class="beyond-grid">
+                                <div class="beyond-box">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Github Profile</span>
+                                </div>
+                                <div class="beyond-box">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                    <span>LinkedIn Profile</span>
+                                </div>
+                                <div class="beyond-box">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                    <span>Resume Writing</span>
+                                </div>
+                                <div class="beyond-box">
+                                    <i class="fa-solid fa-user-check"></i>
+                                    <span>Soft Skills</span>
+                                </div>
+                                <div class="beyond-box">
+                                    <i class="fa-solid fa-clipboard-list"></i>
+                                    <span>Interview Preparation</span>
+                                </div>
+                                <div class="beyond-box">
+                                    <i class="fa-solid fa-folder-open"></i>
+                                    <span>Live Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="youtubeModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered custom-youtube-dialog">
+                    <div class="youtube-modal-box">
+                        <button type="button" class="btn-close btn-close-white custom-close-btn" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                        <div class="youtube-video-wrapper">
+                            <iframe id="youtubePlayer" loading="lazy" src="" frameborder="0"
+                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+            .custom-testimonial-section .bg-image-section {
+                background:
+                    linear-gradient(90deg, rgba(242, 159, 26, 0.85), rgba(26, 20, 71, 0.9)),
+                    url('{{ asset('assets/images/testimonial-bg2.webp.jpeg') }}');
+                background-size: cover;
+                background-position: center;
+            }
+
+            /* Section Titles */
+            .section-title {
+                color: #fff;
+                font-weight: 800;
+                font-size: 24px;
+            }
+
+            .section-sub {
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            /* STEP LINE DESIGN */
+            .steps-wrapper {
+                position: relative;
+                padding-left: 35px;
+            }
+
+            .steps-wrapper::before {
+                content: "";
+                position: absolute;
+                left: 12px;
+                top: 10px;
+                width: 3px;
+                height: 85%;
+                background: #ffffff60;
+            }
+
+            .step-item {
+                position: relative;
+                display: flex;
+                margin-bottom: 10px;
+            }
+
+            .step-icon {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: -35px;
+                top: 3px;
+                font-size: 12px;
+                color: #fff;
+            }
+
+            .step-icon.blue {
+                background: #007bff;
+            }
+
+            .step-icon.orange {
+                background: #f29c12;
+            }
+
+            .step-icon.green {
+                background: #28a745;
+            }
+
+            .step-content {
+                background: #fff;
+                padding: 5px 15px;
+                border-radius: 6px;
+                width: 100%;
+            }
+
+            .step-content h6 {
+                font-weight: 700;
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+
+            .step-content small {
+                display: block;
+                font-size: 12px;
+                color: #555;
+            }
+
+            /* BEYOND GRID */
+            .beyond-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .beyond-box {
+                background: #fff;
+                padding: 15px;
+                border-radius: 8px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font-size: 13px;
+                font-weight: 600;
+                color: #034BA5;
+                transition: 0.3s;
+            }
+
+            .beyond-box i {
+                font-size: 22px;
+            }
+
+            .beyond-box:hover {
+                transform: translateY(-5px);
+            }
+
+            /* MOBILE RESPONSIVE */
+            @media(max-width:991px) {
+
+                .mySwiper {
+                    margin: 40px 0;
+                }
+
+            }
+
+            @media(max-width:768px) {
+
+                /* Slider 1 per view */
+                .swiper-slide {
+                    width: 220px;
+                }
+
+                .beyond-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .steps-wrapper::before {
+                    height: 90%;
+                }
+
+            }
+
+            .mySwiper {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .swiper-slide {
+                width: 250px;
+                transition: 0.4s;
+            }
+
+            .swiper-slide-active {
+                transform: scale(1.15);
+                z-index: 10;
+            }
+
+            .gif-container {
+                width: 250px;
+                height: 420px;
+                border-radius: 15px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .gif-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .play-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #fff;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+            }
+
+            .youtube-modal-box {
+                background-color: #000;
+                border-radius: 12px;
+                overflow: hidden;
+                width: 100%;
+                max-width: 420px;
+                margin: auto;
+                position: relative;
+            }
+
+            .youtube-video-wrapper {
+                position: relative;
+                width: 100%;
+                padding-top: 177.77%;
+                background-color: #000;
+            }
+
+            .youtube-video-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+            .custom-youtube-dialog {
+                max-width: 100%;
+                width: auto;
+                margin: auto;
+            }
+
+            .custom-close-btn {
+                position: absolute;
+                color: black !important;
+                background-color: transparent !important;
+                border: none !important;
+                top: 10px;
+                right: 10px;
+                z-index: 10;
+                filter: invert(1);
+                opacity: 0.8;
+                transition: 0.2s;
+            }
+
+            .custom-close-btn:hover .custom-close-btn:focus {
+                color: black !important;
+                opacity: 1;
+            }
+
+            @media (max-width: 576px) {
+                .youtube-modal-box {
+                    max-width: 90%;
+                }
+            }
+
+            .custom-modal-dialog {
+                max-width: 400px;
+                width: 100%;
+            }
+
+            @media (max-width: 576px) {
+                .custom-modal-dialog {
+                    margin: 0 10px;
+                }
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+
+                const swiper = new Swiper(".mySwiper", {
+                    effect: "coverflow",
+                    grabCursor: true,
+                    centeredSlides: true,
+                    loop: true,
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1
+                        },
+                        768: {
+                            slidesPerView: 2
+                        },
+                        992: {
+                            slidesPerView: 3
+                        }
+                    },
+                    coverflowEffect: {
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 250,
+                        modifier: 1,
+                        slideShadows: false,
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false
+                    }
+                });
+                const cards = document.querySelectorAll('.gif-wrapper');
+                const player = document.getElementById('youtubePlayer');
+                const modal = document.getElementById('youtubeModal');
+
+                cards.forEach(card => {
+                    card.addEventListener('click', function() {
+                        player.src = this.getAttribute('data-youtube') +
+                            '?autoplay=1&modestbranding=1&rel=0';
+                    });
+                });
+
+                modal.addEventListener('hidden.bs.modal', function() {
+                    player.src = '';
+                });
+
+            });
+        </script>
     @endif
+
     <div class="testimonial-area style-two mt-4">
         <div class="container">
             <div class="row">
