@@ -35,8 +35,7 @@
   "offers": {
     "@type": "AggregateOffer",
     "url": "{{ url()->current() }}",
-    "priceCurrency": "INR",
-    "lowPrice": "{{ $course->price }}"
+    "priceCurrency": "INR"
   },
   "aggregateRating": {
     "@type": "AggregateRating",

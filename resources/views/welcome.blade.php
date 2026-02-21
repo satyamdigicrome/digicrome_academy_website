@@ -265,7 +265,7 @@
     <div class="hero-section">
         <div class="hero-section" style="position: relative;">
             <picture>
-                <source srcset="{{ asset('assets/images/home-one/ai-summit-mob.webp') }}" media="(max-width: 768px)">
+                <source srcset="{{ asset('assets/images/home-one/ai-summit-mob2.webp') }}" media="(max-width: 768px)">
                 <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" onclick="openModal()" alt="Hero Banner"
                     width="1200" height="400" fetchpriority="high" decoding="async"
                     style="width:100%;height:auto;">
