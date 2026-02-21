@@ -436,6 +436,12 @@
     <section id="contactSection" class="Contact1" style="background-color: white; padding-top:20px;">
         <h1><b>Major Milestones in Our Journey</b></h1>
         <ul class="ul1" style="padding-top: 40px;">
+            <li style="--accent-color:#f49e1e">
+                <div class="date">2025</div>
+                <div class="title1"></div><br><br>
+                <div class="descr">We won the Excellency Iconic Award Winner 2025, which has acknowledged our dedication to
+                    offer best quality education, career guidance, and student success.</div>
+            </li>
             <li style="--accent-color:#28a745">
                 <div class="date">2024</div>
                 <div class="title1"></div><br><br>
