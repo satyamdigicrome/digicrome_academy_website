@@ -34,8 +34,7 @@
   "description": "{{ $course->about }}",
   "offers": {
     "@type": "AggregateOffer",
-    "url": "{{ url()->current() }}",
-    "priceCurrency": "INR"
+    "url": "{{ url()->current() }}"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
