@@ -25,6 +25,13 @@
                 modal.style.display = "none";
             }
         };
+       document.addEventListener('DOMContentLoaded', function() {
+           const heroImage = document.querySelector('.hero-section img');
+            if (heroImage) {
+                heroImage.addEventListener('click', openModal);
+            }
+        });
+
     </script>
 @endpush
 @section('content')
@@ -222,10 +229,16 @@
     <div class="hero-section">
         <div class="hero-section" style="position: relative;">
             <picture>
-                <source srcset="{{ asset('assets/images/home-one/ai-summit-mob2.webp') }}" media="(max-width: 768px)">
-                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" onclick="openModal()" alt="Hero Banner"
-                    width="1200" height="400" fetchpriority="high" decoding="async"
-                    style="width:100%;height:auto;">
+                {{-- Mobile --}}
+                <source media="(max-width: 768px)"
+                    srcset="
+                    {{ asset('assets/images/home-one/ai-summit-480.webp') }} 480w,
+                    {{ asset('assets/images/home-one/ai-summit-768.webp') }} 768w
+                "
+                    sizes="100vw">
+                {{-- <source srcset="{{ asset('assets/images/home-one/ai-summit-mob2.webp') }}" media="(max-width: 768px)"> --}}
+                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="Hero Banner" width="1200"
+                    height="400" decoding="async" style="width:100%;height:auto;">
             </picture>
         </div>
         {{-- <div class="container">
@@ -1245,7 +1258,6 @@
             });
         </script>
     @endif
-
     <div class="testimonial-area style-two mt-4">
         <div class="container">
             <div class="row">
@@ -1437,14 +1449,12 @@
                         <div class="iocn-google-review-section mt-4">
                             <!-- Google Review Section 1 -->
                             <div class="inner-div-icon">
-                                <div class="cover-google"> <img 
-                                        alt="Google logo" loading="lazy"
+                                <div class="cover-google"> <img alt="Google logo" loading="lazy"
                                         src="{{ asset('assets/images/see_what/google_home.svg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.2</p> <img 
-                                                alt="Star icon representing rating" width="15" loading="lazy"
-                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                            <p>4.2</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
                                             <p>1499+ Google Reviews</p>
@@ -1458,9 +1468,8 @@
                                         src="{{ asset('assets/images/see_what/course-report.png') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.8</p> <img
-                                                alt="Star icon representing rating" width="15" loading="lazy"
-                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                            <p>4.8</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
                                             <p>1568+ Course Report Reviews</p>
@@ -1470,14 +1479,12 @@
                             </div>
                             <!-- Google Review Section 3 -->
                             <div class="inner-div-icon">
-                                <div class="cover-google"> <img
-                                        alt="Sikhao logo" loading="lazy" class="lazyload10"
+                                <div class="cover-google"> <img alt="Sikhao logo" loading="lazy" class="lazyload10"
                                         src="{{ asset('assets/images/see_what/sikhao_home.svg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.5</p> <img
-                                                alt="Star icon representing rating" width="15" loading="lazy"
-                                                class="lazyload10"
+                                            <p>4.5</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy" class="lazyload10"
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
@@ -1488,13 +1495,12 @@
                             </div>
                             <!-- Google Review Section 4 -->
                             <div class="inner-div-icon">
-                                <div class="cover-google"> <img
-                                        alt="Muth Shout logo" loading="lazy" src="{{ asset('assets/images/see_what/muthshout_home.svg') }}">
+                                <div class="cover-google"> <img alt="Muth Shout logo" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/muthshout_home.svg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.5</p> <img
-                                                alt="Star icon representing rating" width="15" loading="lazy"
-                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                            <p>4.5</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
                                             <p>730+ MouthShut Reviews</p>
@@ -1504,14 +1510,12 @@
                             </div>
                             <!-- Google Review Section 5 -->
                             <div class="inner-div-icon last-switchupicon-hide">
-                                <div class="cover-google"> <img
-                                        alt="Face icon representing a review" loading="lazy"
+                                <div class="cover-google"> <img alt="Face icon representing a review" loading="lazy"
                                         src="{{ asset('assets/images/see_what/switchup.png') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.9</p> <img
-                                                alt="Star icon representing rating" width="15" loading="lazy"
-                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                            <p>4.9</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
                                             <p>2370+ Switchup Reviews</p>
