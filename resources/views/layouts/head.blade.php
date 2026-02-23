@@ -21,8 +21,7 @@
     <link rel="canonical" href="{{ url()->current() }}" />
     <link rel="preconnect" as="font" type="font/woff2" href="https://fonts.bunny.net" crossorigin="anonymous">
     <link rel="preload" href="{{ asset('assets/fonts/Flaticon.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
-    {{-- <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
-    <link href="{{ asset('assets/css/fonts-bunny.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/fonts-bunny.css') }}" rel="stylesheet" type="text/css"  media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
     <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
     <link  rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css"  media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
@@ -41,32 +40,32 @@
     <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">	
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" async></script>
-<script type="application/ld+json" >
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Digicrome",
-      "url": "https://www.digicrome.com",
-      "logo": "https://www.digicrome.com/assets/images/logo.webp",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "01204538125",
-        "contactType": "customer service",
-        "contactOption": "TollFree",
-        "areaServed": "IN",
-        "availableLanguage": ["en","Hindi"]
-      },
-      "sameAs": [
-        "https://www.facebook.com/digcrome.academy/",
-        "https://www.instagram.com/digicromeofficial",
-        "https://x.com/hashtag/Digicrome",
-        "https://www.youtube.com/@digicromeofficial",
-        "https://in.linkedin.com/company/digicromeofficial",
-        "https://es.pinterest.com/digicromeofficial/"
-      ]
-    }
-    </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" async defer></script>
+  <script type="application/ld+json" >
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Digicrome",
+        "url": "https://www.digicrome.com",
+        "logo": "https://www.digicrome.com/assets/images/logo.webp",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "01204538125",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "IN",
+          "availableLanguage": ["en","Hindi"]
+        },
+        "sameAs": [
+          "https://www.facebook.com/digcrome.academy/",
+          "https://www.instagram.com/digicromeofficial",
+          "https://x.com/hashtag/Digicrome",
+          "https://www.youtube.com/@digicromeofficial",
+          "https://in.linkedin.com/company/digicromeofficial",
+          "https://es.pinterest.com/digicromeofficial/"
+        ]
+      }
+      </script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

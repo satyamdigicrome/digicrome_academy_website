@@ -3,51 +3,8 @@
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
-    <style>
-        .campus-tour-btn {
-            display: none;
-        }
-
-        @media (max-width: 991px) {
-            .campus-tour-btn {
-                display: block;
-                font-size: 14px;
-                height: 50px;
-                margin-left: 4px;
-                position: relative;
-                top: 1px;
-                left: 3px;
-            }
-
-            section.hero_area.style-one .hero-btn a {
-                display: inline-block;
-                font-size: 12px;
-                text-transform: uppercase;
-                color: var(--color-white);
-                font-weight: 525;
-                font-family: "Outfit";
-                border-radius: 28px;
-                background-color: var(--primary-color);
-                padding: 17px 35px;
-                transition: 0.5s;
-                position: relative;
-                z-index: 1;
-            }
-
-            section.feature-area.style-one {
-                margin-top: 5rem;
-            }
-        }
-
-        /* Hide on mobile & tablet */
-        @media (max-width: 991px) {
-            .desktop-only2 {
-                display: none !important;
-            }
-        }
-    </style>
+    <link href="{{ asset('assets/css/home.css') }}" type="text/css" media="all" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
 @endpush
 @push('scripts')
     <script>
@@ -830,23 +787,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    {{-- <div class="course-design-thumb">
-                        <div class="course-video-icon">
-                            <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
-                                href="https://youtu.be/HLiQiTTbX8g">
-                                <i class="fa-classic fa-solid fa-play fa-fw"></i>
-                            </a>
-                            <a href="{{ asset('assets/Final.mp4') }}" class="video-vemo-icon">
-                                <i class="fa-classic fa-solid fa-play fa-fw"></i>
-                            </a>
-                        </div>
-                    </div> --}}
-                    {{-- <video controls preload="none" poster="{{ asset('assets/images/thumbnail2.webp') }}"
-                        style="width:100%; max-width:600px;">
-                        <source src="{{ asset('assets/Final2.MP4') }}" type="video/mp4">
-                        <source src="https://vimeo.com/1164337631?fl=pl&fe=sh" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video> --}}
                     <div style="width:100%; max-width:600px;">
                         <iframe
                             src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
@@ -888,198 +828,6 @@
             </div>
         </div>
     </div>
-    {{-- @if (count(value: $videos) > 0)
-        <section class="video-slider py-5">
-            <div class="container">
-                <h2 class="text-center mb-3" style="font-size: 2rem;">
-                    <span style="color: #f29c12;">Featured </span> Testimonials
-                </h2>
-                <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                    Presenting our recent feedbacks — Have a look!
-                </p>
-                <div class="owl-carousel gif-carousel">
-                    @foreach ($videos as $video)
-                        <div class="text-center">
-                            <div class="gif-wrapper" data-bs-toggle="modal" data-bs-target="#youtubeModal"
-                                data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
-                                <div class="gif-container">
-                                    <video class="gif-img rounded shadow-sm" autoplay loop muted playsinline
-                                        preload="metadata" poster="{{ asset('storage/' . $video->image) }}">
-                                        <source src="{{ asset('storage/' . $video->image) }}" type="video/mp4">
-                                    </video>
-                                </div>
-                            </div>
-                            <div class="video-title mt-2 fw-semibold">{{ $video->name }}</div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="modal fade" id="youtubeModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered custom-youtube-dialog">
-                    <div class="youtube-modal-box">
-                        <button type="button" class="btn-close btn-close-white custom-close-btn" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                        <div class="youtube-video-wrapper">
-                            <iframe id="youtubePlayer" loading="lazy" src="" frameborder="0"
-                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <style>
-                .responsive-video-wrapper {
-                    position: relative;
-                    width: 100%;
-                    padding-top: 177.77%;
-                    background-color: #000;
-                }
-
-                .responsive-video-wrapper iframe {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    border: none;
-                }
-
-                .youtube-modal-box {
-                    background-color: #000;
-                    border-radius: 12px;
-                    overflow: hidden;
-                    width: 100%;
-                    max-width: 420px;
-                    margin: auto;
-                    position: relative;
-                }
-
-                .youtube-video-wrapper {
-                    position: relative;
-                    width: 100%;
-                    padding-top: 177.77%;
-                    background-color: #000;
-                }
-
-                .youtube-video-wrapper iframe {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    border: none;
-                }
-
-                .custom-youtube-dialog {
-                    max-width: 100%;
-                    width: auto;
-                    margin: auto;
-                }
-
-                .custom-close-btn {
-                    position: absolute;
-                    color: black !important;
-                    background-color: transparent !important;
-                    border: none !important;
-                    top: 10px;
-                    right: 10px;
-                    z-index: 10;
-                    filter: invert(1);
-                    opacity: 0.8;
-                    transition: 0.2s;
-                }
-
-                .custom-close-btn:hover .custom-close-btn:focus {
-                    color: black !important;
-                    opacity: 1;
-                }
-
-                @media (max-width: 576px) {
-                    .youtube-modal-box {
-                        max-width: 90%;
-                    }
-                }
-
-                .custom-modal-dialog {
-                    max-width: 400px;
-                    width: 100%;
-                }
-
-                @media (max-width: 576px) {
-                    .custom-modal-dialog {
-                        margin: 0 10px;
-                    }
-                }
-
-                .gif-container {
-                    width: 240px;
-                    height: 426px;
-                    margin: auto;
-                    overflow: hidden;
-                    border-radius: 12px;
-                    background-color: #000;
-                }
-
-                .gif-img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transition: transform 0.3s ease;
-                    cursor: pointer;
-                }
-
-                .gif-img:hover {
-                    transform: scale(1.03);
-                }
-
-                .video-title {
-                    font-size: 1rem;
-                    color: #333;
-                }
-            </style>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    $('.gif-carousel').owlCarousel({
-                        loop: true,
-                        margin: 20,
-                        nav: false,
-                        autoplay: true,
-                        autoplayTimeout: 3000,
-                        dots: false,
-                        responsive: {
-                            0: {
-                                items: 1
-                            },
-                            576: {
-                                items: 2
-                            },
-                            768: {
-                                items: 3
-                            },
-                            992: {
-                                items: 4
-                            },
-                            1200: {
-                                items: 5
-                            }
-                        }
-                    });
-                    const cards = document.querySelectorAll('.gif-wrapper');
-                    const player = document.getElementById('youtubePlayer');
-                    const modal = document.getElementById('youtubeModal');
-                    cards.forEach(card => {
-                        card.addEventListener('click', function() {
-                            const videoUrl = this.getAttribute('data-youtube') +
-                                '?autoplay=1&modestbranding=1&rel=0';
-                            player.src = videoUrl;
-                        });
-                    });
-                    modal.addEventListener('hidden.bs.modal', function() {
-                        player.src = '';
-                    });
-                });
-            </script>
-        </section>
-    @endif --}}
     @if (count($videos) > 0)
         <section class="custom-testimonial-section">
             <div class="container-fluid bg-image-section">
@@ -1641,6 +1389,143 @@
             </div>
         </div>
     </div>
+    <section>
+        <div class="container-fluid Learner-say-combine">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h4>See What Our Learners Say!</h4>
+                        <div class="social-media-links">
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="whatsapp-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/whatsappicon.png') }}"></a>
+                            </div>
+
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="linkedin-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/linkedinicon.png') }}"></a>
+
+                            </div>
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="quora-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/quoraicon.png') }}"></a>
+
+                            </div>
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="facebook-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/facebookicon.png') }}"></a>
+
+                            </div>
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="google-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/googleicon.png') }}"></a>
+
+                            </div>
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="mouthshut-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/mouthshuticon.png') }}"></a>
+
+                            </div>
+                        </div>
+
+                        <div class="iocn-google-review-section mt-4">
+                            <!-- Google Review Section 1 -->
+                            <div class="inner-div-icon">
+                                <div class="cover-google"> <img 
+                                        alt="Google logo" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/google_home.svg') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.2</p> <img 
+                                                alt="Star icon representing rating" width="15" loading="lazy"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>1499+ Google Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Google Review Section 2 -->
+                            <div class="inner-div-icon">
+                                <div class="cover-google"> <img alt="Course Report logo" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/course-report.png') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.8</p> <img
+                                                alt="Star icon representing rating" width="15" loading="lazy"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>1568+ Course Report Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Google Review Section 3 -->
+                            <div class="inner-div-icon">
+                                <div class="cover-google"> <img
+                                        alt="Sikhao logo" loading="lazy" class="lazyload10"
+                                        src="{{ asset('assets/images/see_what/sikhao_home.svg') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.5</p> <img
+                                                alt="Star icon representing rating" width="15" loading="lazy"
+                                                class="lazyload10"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>456+ Shiksha Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Google Review Section 4 -->
+                            <div class="inner-div-icon">
+                                <div class="cover-google"> <img
+                                        alt="Muth Shout logo" loading="lazy" src="{{ asset('assets/images/see_what/muthshout_home.svg') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.5</p> <img
+                                                alt="Star icon representing rating" width="15" loading="lazy"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>730+ MouthShut Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Google Review Section 5 -->
+                            <div class="inner-div-icon last-switchupicon-hide">
+                                <div class="cover-google"> <img
+                                        alt="Face icon representing a review" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/switchup.png') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.9</p> <img
+                                                alt="Star icon representing rating" width="15" loading="lazy"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>2370+ Switchup Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="py-5">
         <div class="container text-center">
             <h2 class="text-center mb-4" style="font-size: 2rem;">

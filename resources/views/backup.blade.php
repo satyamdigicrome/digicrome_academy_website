@@ -368,3 +368,195 @@
         });
     </script>
 @endpush --}}
+    {{-- @if (count(value: $videos) > 0)
+        <section class="video-slider py-5">
+            <div class="container">
+                <h2 class="text-center mb-3" style="font-size: 2rem;">
+                    <span style="color: #f29c12;">Featured </span> Testimonials
+                </h2>
+                <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+                    Presenting our recent feedbacks — Have a look!
+                </p>
+                <div class="owl-carousel gif-carousel">
+                    @foreach ($videos as $video)
+                        <div class="text-center">
+                            <div class="gif-wrapper" data-bs-toggle="modal" data-bs-target="#youtubeModal"
+                                data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
+                                <div class="gif-container">
+                                    <video class="gif-img rounded shadow-sm" autoplay loop muted playsinline
+                                        preload="metadata" poster="{{ asset('storage/' . $video->image) }}">
+                                        <source src="{{ asset('storage/' . $video->image) }}" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="video-title mt-2 fw-semibold">{{ $video->name }}</div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="modal fade" id="youtubeModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered custom-youtube-dialog">
+                    <div class="youtube-modal-box">
+                        <button type="button" class="btn-close btn-close-white custom-close-btn" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                        <div class="youtube-video-wrapper">
+                            <iframe id="youtubePlayer" loading="lazy" src="" frameborder="0"
+                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .responsive-video-wrapper {
+                    position: relative;
+                    width: 100%;
+                    padding-top: 177.77%;
+                    background-color: #000;
+                }
+
+                .responsive-video-wrapper iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+
+                .youtube-modal-box {
+                    background-color: #000;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    width: 100%;
+                    max-width: 420px;
+                    margin: auto;
+                    position: relative;
+                }
+
+                .youtube-video-wrapper {
+                    position: relative;
+                    width: 100%;
+                    padding-top: 177.77%;
+                    background-color: #000;
+                }
+
+                .youtube-video-wrapper iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+
+                .custom-youtube-dialog {
+                    max-width: 100%;
+                    width: auto;
+                    margin: auto;
+                }
+
+                .custom-close-btn {
+                    position: absolute;
+                    color: black !important;
+                    background-color: transparent !important;
+                    border: none !important;
+                    top: 10px;
+                    right: 10px;
+                    z-index: 10;
+                    filter: invert(1);
+                    opacity: 0.8;
+                    transition: 0.2s;
+                }
+
+                .custom-close-btn:hover .custom-close-btn:focus {
+                    color: black !important;
+                    opacity: 1;
+                }
+
+                @media (max-width: 576px) {
+                    .youtube-modal-box {
+                        max-width: 90%;
+                    }
+                }
+
+                .custom-modal-dialog {
+                    max-width: 400px;
+                    width: 100%;
+                }
+
+                @media (max-width: 576px) {
+                    .custom-modal-dialog {
+                        margin: 0 10px;
+                    }
+                }
+
+                .gif-container {
+                    width: 240px;
+                    height: 426px;
+                    margin: auto;
+                    overflow: hidden;
+                    border-radius: 12px;
+                    background-color: #000;
+                }
+
+                .gif-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                    cursor: pointer;
+                }
+
+                .gif-img:hover {
+                    transform: scale(1.03);
+                }
+
+                .video-title {
+                    font-size: 1rem;
+                    color: #333;
+                }
+            </style>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    $('.gif-carousel').owlCarousel({
+                        loop: true,
+                        margin: 20,
+                        nav: false,
+                        autoplay: true,
+                        autoplayTimeout: 3000,
+                        dots: false,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            576: {
+                                items: 2
+                            },
+                            768: {
+                                items: 3
+                            },
+                            992: {
+                                items: 4
+                            },
+                            1200: {
+                                items: 5
+                            }
+                        }
+                    });
+                    const cards = document.querySelectorAll('.gif-wrapper');
+                    const player = document.getElementById('youtubePlayer');
+                    const modal = document.getElementById('youtubeModal');
+                    cards.forEach(card => {
+                        card.addEventListener('click', function() {
+                            const videoUrl = this.getAttribute('data-youtube') +
+                                '?autoplay=1&modestbranding=1&rel=0';
+                            player.src = videoUrl;
+                        });
+                    });
+                    modal.addEventListener('hidden.bs.modal', function() {
+                        player.src = '';
+                    });
+                });
+            </script>
+        </section>
+    @endif --}}
