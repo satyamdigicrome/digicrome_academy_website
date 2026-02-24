@@ -236,6 +236,15 @@
                     {{ asset('assets/images/home-one/ai-summit-768.webp') }} 768w
                 "
                     sizes="100vw">
+                {{-- AVIF Desktop --}}
+                <source 
+                    type="image/avif"
+                    srcset="{{ asset('assets/images/home-one/ai-summit.avif') }}">
+
+                {{-- WebP Desktop Fallback --}}
+                <source 
+                    type="image/webp"
+                    srcset="{{ asset('assets/images/home-one/ai-summit.webp') }}">
                 {{-- <source srcset="{{ asset('assets/images/home-one/ai-summit-mob2.webp') }}" media="(max-width: 768px)"> --}}
                 <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="Hero Banner" width="1200"
                     height="400" decoding="async" style="width:100%;height:auto;">
@@ -750,10 +759,10 @@
                 <img loading="lazy"src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape1"
                     title="shape1">
             </div>
-            <div class="choose-shape2">
+            {{-- <div class="choose-shape2">
                 <img loading="lazy"src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape2"
                     title="shape2">
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="brand-area style-one mt-4">
@@ -957,7 +966,11 @@
             .custom-testimonial-section .bg-image-section {
                 background:
                     linear-gradient(90deg, rgba(242, 159, 26, 0.85), rgba(26, 20, 71, 0.9)),
-                    url('{{ asset('assets/images/testimonial-bg2.webp.jpeg') }}');
+                    image-set(
+                        url('{{ asset("assets/images/testimonial-bg.avif") }}') type("image/avif"),
+                        url('{{ asset("assets/images/testimonial-bg.webp") }}') type("image/webp")
+                    );
+
                 background-size: cover;
                 background-position: center;
             }
