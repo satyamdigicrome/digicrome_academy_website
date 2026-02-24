@@ -363,7 +363,7 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="section_title">
-                            <h2 class="heading-like-h1">In Associated With:</h2>
+                            <h2 class="heading-like-h1">In Association With:</h2>
                         </div>
                         <div class="section-sub-title">
                             <h6 style="text-transform: capitalize; position: static; line-height: 30px; padding: 0px;">
