@@ -62,7 +62,7 @@
                                 <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>
-                            <div class="border rounded px-3 py-2 text-secondary campus-tour-btn"
+                            <div class="border rounded px-3 py-2 text-secondary campus-tour-btn d-lg-none"
                                 style="border-color: #000000 !important;" role="button">
                                 <a href="https://vimeo.com/1166319733" target="_blank">CAMPUS TOUR<i
                                         class="fa-brands fa-youtube"
