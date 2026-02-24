@@ -236,7 +236,7 @@
             <div class="row footer-bottom">
                 <div class="col-lg-6">
                     <div class="footer-bottom-desc">
-                        <p>Copyright 2020-2025 Digicrome Pvt Ltd. All Rights Reserved</p>
+                        <p>Copyright 2020-2026 Digicrome Pvt Ltd. All Rights Reserved</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
