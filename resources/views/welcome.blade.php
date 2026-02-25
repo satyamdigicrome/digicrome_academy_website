@@ -17,6 +17,10 @@
             align-items: center;
         }
 
+        .christmas-offer-modal.active {
+            display: flex;
+        }
+
         /* IMAGE CONTAINER */
         .christmas-offer-content {
             width: 90%;
@@ -78,11 +82,13 @@
         function closeModal() {
             document.getElementById("formModal").style.display = "none";
         }
-        window.onload = function() {
-            setTimeout(function(){
-                document.getElementById('christmasOfferModal').style.display = 'flex';
-            },3000);
-        };
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document
+                    .getElementById('christmasOfferModal')
+                    .classList.add('active');
+            }, 3000);
+        });
 
         function openFormFromOffer() {
             document.getElementById('christmasOfferModal').style.display = 'none';
@@ -207,9 +213,9 @@
                 <div class="col-lg-6">
                     <div class="hero-thumb-wrapper">
                         <div class="hero-thumb">
-                            <img width="600" fetchpriority="high" height="400" rel="preload" as="image" loading="eager"
-                                src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="Digicrome thumb"
-                                title="Digicrome thumb">
+                            <img width="600" fetchpriority="high" height="400" rel="preload" as="image"
+                                loading="eager" src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}"
+                                alt="Digicrome thumb" title="Digicrome thumb">
                         </div>
                         <div class="hero-arrow-shape">
                             <img rel="preload" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
