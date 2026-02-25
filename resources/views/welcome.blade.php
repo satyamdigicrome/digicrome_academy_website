@@ -5,46 +5,137 @@
 @push('styles')
     <link href="{{ asset('assets/css/home.css') }}" type="text/css" media="all" as="style"
         onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <style>
+        /* BACKDROP */
+        .christmas-offer-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9998;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* IMAGE CONTAINER */
+        .christmas-offer-content {
+            width: 90%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            background: url('{{ asset('assets/images/website_special_offer.webp') }}') center center / contain no-repeat;
+            cursor: pointer;
+        }
+
+        /* CLOSE BUTTON */
+        .christmas-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            z-index: 9999;
+            line-height: 1;
+        }
+
+        .christmas-close-btn:hover {
+            color: #ffcc66;
+        }
+
+        /* MOBILE */
+        @media (max-width: 576px) {
+            .christmas-offer-content {
+                width: 95%;
+                aspect-ratio: 4 / 5;
+            }
+        }
+    </style>
 @endpush
 @push('scripts')
     <script>
         let modalSource = null;
-        window.onload = function() {
-            openModal();
-        };
+        // window.onload = function() {
+        //     openModal();
+        // };
 
-        function openModal(source = 'normal') {
-            modalSource = source;
+        function openModal() {
             document.getElementById("formModal").style.display = "block";
+        }
+
+        function openPlacementModal() {
+            const PlacementsourceInput = document.querySelector('#placementformModal input[name="source"]');
+            if (PlacementsourceInput) {
+                PlacementsourceInput.value = 'Placement Report Website';
+            }
+            document.getElementById("placementformModal").style.display = "block";
+        }
+
+        function closePlacementModal() {
+            document.getElementById("placementformModal").style.display = "none";
         }
 
         function closeModal() {
             document.getElementById("formModal").style.display = "none";
         }
+        window.onload = function() {
+            document.getElementById('christmasOfferModal').style.display = 'flex';
+        };
+
+        function openFormFromOffer() {
+            document.getElementById('christmasOfferModal').style.display = 'none';
+            const sourceInput = document.querySelector('#formModal input[name="source"]');
+            if (sourceInput) {
+                sourceInput.value = 'Holi-sale';
+            }
+            openModal();
+        }
+
+        function closeChristmasModal(e) {
+            e.stopPropagation();
+            document.getElementById('christmasOfferModal').style.display = 'none';
+        }
         window.onclick = function(event) {
             const modal = document.getElementById("formModal");
+            const placementModal = document.getElementById("placementformModal");
             if (event.target === modal) {
                 modal.style.display = "none";
             }
+            if (event.target === placementModal) {
+                placementModal.style.display = "none";
+            }
         };
         document.addEventListener('DOMContentLoaded', function() {
-            const formfilled = document.getElementById('professionalForm');
+            const formfilled = document.getElementById('placementprofessionalForm');
             if (formfilled) {
                 formfilled.addEventListener('submit', function() {
-                    if (modalSource === 'placement') {
-                        window.open("{{ asset('assets/images/certificate/Digicrome Company Profile.pdf') }}","_blank");
-                    }
-                    modalSource = null;
+                    window.open("{{ asset('assets/images/certificate/Digicrome Company Profile.pdf') }}",
+                        "_blank");
                 });
             }
             const heroImage = document.querySelector('.hero-section img');
             if (heroImage) {
                 heroImage.addEventListener('click', openModal);
             }
+            const holioffer = document.querySelector('.new-holi-offer');
+            if (holioffer) {
+                holioffer.addEventListener('click', function() {
+                    const HoliSourceinput = document.querySelector('#formModal input[name="source"]');
+                    if (HoliSourceinput) {
+                        HoliSourceinput.value = 'Holi-sale';
+                    }
+                    openModal();
+                });
+            }
         });
     </script>
 @endpush
 @section('content')
+    <div id="christmasOfferModal" class="christmas-offer-modal" style="display: flex;">
+        <div class="christmas-offer-content" onclick="openFormFromOffer()">
+        </div>
+        <span class="christmas-close-btn" onclick="closeChristmasModal(event)">×</span>
+    </div>
     <section class="hero_area style-one d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
@@ -69,7 +160,7 @@
                             position yourself as the top choice for employers in your industry.</p>
                         <div class="hero-button d-flex">
                             <div class="hero-btn">
-                                <a href="javascript:void(0);" onclick="openModal('placement')">PLACEMENT REPORT<i
+                                <a href="javascript:void(0);" onclick="openPlacementModal();">PLACEMENT REPORT<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>
                             <div class="border rounded px-3 py-2 text-secondary campus-tour-btn d-lg-none"
@@ -114,7 +205,7 @@
                 <div class="col-lg-6">
                     <div class="hero-thumb-wrapper">
                         <div class="hero-thumb">
-                            <img width="600" height="400" rel="preload" as="image"
+                            <img width="600" fetchpriority="high" height="400" rel="preload" as="image"
                                 src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="Digicrome thumb"
                                 title="Digicrome thumb">
                         </div>
@@ -1517,7 +1608,8 @@
                                     <div class="start-icon">
                                         <div class="rating-section">
                                             <p>4.5</p> <img alt="Star icon representing rating" width="15"
-                                                loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                                loading="lazy"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
                                             <p>730+ MouthShut Reviews</p>

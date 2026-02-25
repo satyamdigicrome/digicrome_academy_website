@@ -31,7 +31,7 @@
     </div>
 </div> --}}
 <div class="sticky-top" style="z-index:1050;">
-    <div onclick="openModal()" class="position-relative w-100 d-flex align-items-center justify-content-between overflow-hidden cursor-pointer"
+    <div class="position-relative w-100 d-flex align-items-center justify-content-between overflow-hidden cursor-pointer new-holi-offer"
         style="background:#FFEDFA; height:55px;cursor:pointer;">
         <div class="d-none d-md-flex position-relative">
             <img src="{{ asset('assets/images/splash.webp') }}"
