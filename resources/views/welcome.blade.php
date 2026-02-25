@@ -79,7 +79,9 @@
             document.getElementById("formModal").style.display = "none";
         }
         window.onload = function() {
-            document.getElementById('christmasOfferModal').style.display = 'flex';
+            setTimeout(function(){
+                document.getElementById('christmasOfferModal').style.display = 'flex';
+            },3000);
         };
 
         function openFormFromOffer() {
@@ -205,7 +207,7 @@
                 <div class="col-lg-6">
                     <div class="hero-thumb-wrapper">
                         <div class="hero-thumb">
-                            <img width="600" fetchpriority="high" height="400" rel="preload" as="image"
+                            <img width="600" fetchpriority="high" height="400" rel="preload" as="image" loading="eager"
                                 src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="Digicrome thumb"
                                 title="Digicrome thumb">
                         </div>
