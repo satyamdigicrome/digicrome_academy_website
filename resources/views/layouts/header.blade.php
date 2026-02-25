@@ -10,7 +10,7 @@
     }
 </style>
 
-<div class="header-top-area">
+{{-- <div class="header-top-area">
     <div class="container-fluid">
         <div class="row header-top">
             <div class="col-xxl-6 col-xl-8 col-lg-8">
@@ -27,6 +27,44 @@
 
                 </div>
             </div>
+        </div>
+    </div>
+</div> --}}
+<div class="sticky-top" style="z-index:1050;">
+    <div onclick="openModal()" class="position-relative w-100 d-flex align-items-center justify-content-between overflow-hidden cursor-pointer"
+        style="background:#FFEDFA; height:55px;cursor:pointer;">
+        <div class="d-none d-md-flex position-relative">
+            <img src="{{ asset('assets/images/splash.webp') }}"
+                class="position-relative"
+                style="width:311px; height:272px; top:-95px; left:-60px;" alt="bg">
+            <img src="{{ asset('assets/images/splash.webp') }}"
+                class="position-relative"
+                style="width:311px; height:272px; top:90px; left:-220px;" alt="bg">
+        </div>
+        <div class="mx-auto text-center px-3">
+            <p class="fw-semibold d-none d-md-block mb-0 text-nowrap"
+                style="font-size:18px;
+                       background: linear-gradient(90deg,#FC4517 0%,#BA22D9 34%,#EF4080 100%);
+                       -webkit-background-clip:text;
+                       -webkit-text-fill-color:transparent;">
+                Flat 40% Discount on all Programs. Grab Now!
+            </p>
+            <p class="fw-semibold d-md-none mb-0 text-nowrap"
+                style="background: linear-gradient(90deg,#FC4517 0%,#BA22D9 34%,#EF4080 100%);
+                       -webkit-background-clip:text;
+                       -webkit-text-fill-color:transparent;">
+                40% OFF on All Programs. Grab Now!
+            </p>
+        </div>
+        <div class="d-none d-md-flex position-relative">
+            <img src="{{ asset('assets/images/splash.webp') }}"
+                class="position-relative"
+                style="width:311px; height:272px; top:100px; right:90px; transform:rotate(-210deg) scaleX(-1);"
+                alt="bg">
+            <img src="{{ asset('assets/images/splash.webp') }}"
+                class="position-relative"
+                style="width:311px; height:272px; top:-70px; right:20px; transform:rotate(-40deg) scaleX(-1);"
+                alt="bg">
         </div>
     </div>
 </div>

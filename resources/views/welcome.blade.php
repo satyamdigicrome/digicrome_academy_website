@@ -8,11 +8,13 @@
 @endpush
 @push('scripts')
     <script>
+        let modalSource = null;
         window.onload = function() {
             openModal();
         };
 
-        function openModal() {
+        function openModal(source = 'normal') {
+            modalSource = source;
             document.getElementById("formModal").style.display = "block";
         }
 
@@ -25,13 +27,21 @@
                 modal.style.display = "none";
             }
         };
-       document.addEventListener('DOMContentLoaded', function() {
-           const heroImage = document.querySelector('.hero-section img');
+        document.addEventListener('DOMContentLoaded', function() {
+            const formfilled = document.getElementById('professionalForm');
+            if (formfilled) {
+                formfilled.addEventListener('submit', function() {
+                    if (modalSource === 'placement') {
+                        window.open("{{ asset('assets/images/certificate/Digicrome Company Profile.pdf') }}","_blank");
+                    }
+                    modalSource = null;
+                });
+            }
+            const heroImage = document.querySelector('.hero-section img');
             if (heroImage) {
                 heroImage.addEventListener('click', openModal);
             }
         });
-
     </script>
 @endpush
 @section('content')
@@ -59,7 +69,7 @@
                             position yourself as the top choice for employers in your industry.</p>
                         <div class="hero-button d-flex">
                             <div class="hero-btn">
-                                <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
+                                <a href="javascript:void(0);" onclick="openModal('placement')">PLACEMENT REPORT<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>
                             <div class="border rounded px-3 py-2 text-secondary campus-tour-btn d-lg-none"
@@ -237,14 +247,10 @@
                 "
                     sizes="100vw">
                 {{-- AVIF Desktop --}}
-                <source 
-                    type="image/avif"
-                    srcset="{{ asset('assets/images/home-one/ai-summit.avif') }}">
+                <source type="image/avif" srcset="{{ asset('assets/images/home-one/ai-summit.avif') }}">
 
                 {{-- WebP Desktop Fallback --}}
-                <source 
-                    type="image/webp"
-                    srcset="{{ asset('assets/images/home-one/ai-summit.webp') }}">
+                <source type="image/webp" srcset="{{ asset('assets/images/home-one/ai-summit.webp') }}">
                 {{-- <source srcset="{{ asset('assets/images/home-one/ai-summit-mob2.webp') }}" media="(max-width: 768px)"> --}}
                 <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="Hero Banner" width="1200"
                     height="400" decoding="async" style="width:100%;height:auto;">
@@ -966,10 +972,8 @@
             .custom-testimonial-section .bg-image-section {
                 background:
                     linear-gradient(90deg, rgba(242, 159, 26, 0.85), rgba(26, 20, 71, 0.9)),
-                    image-set(
-                        url('{{ asset("assets/images/testimonial-bg.avif") }}') type("image/avif"),
-                        url('{{ asset("assets/images/testimonial-bg.webp") }}') type("image/webp")
-                    );
+                    image-set(url('{{ asset('assets/images/testimonial-bg.avif') }}') type("image/avif"),
+                        url('{{ asset('assets/images/testimonial-bg.webp') }}') type("image/webp"));
 
                 background-size: cover;
                 background-position: center;
@@ -1528,7 +1532,8 @@
                                     <div class="start-icon">
                                         <div class="rating-section">
                                             <p>4.9</p> <img alt="Star icon representing rating" width="15"
-                                                loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                                loading="lazy"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
                                             <p>2370+ Switchup Reviews</p>
