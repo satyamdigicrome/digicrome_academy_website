@@ -3,10 +3,10 @@
         <div class="row subscribe align-items-center">
             <div class="col-lg-6 col-md-12">
                 <div class="footer-logo">
-                    <a href="#"><img loading="lazy" width="247" height="79"
+                    <a href="#"><img loading="lazy" width="150" height="79"
                             src="{{ asset('assets/images/home-one/footer-logo.webp') }}"
                             alt="logo" class="footer-logo11"
-                            style="width:247px;height:auto;max-width:100%;"></a>
+                            style="width:150px;height:auto;max-width:100%;"></a>
                 </div>
                 <br>
                 <div class="section_title six">

@@ -107,6 +107,56 @@
         ]
       }
       </script>
+      <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Digicrome Academy",
+            "url": "https://www.digicrome.com",
+            "logo": "https://www.digicrome.com/logo.png",
+            "image": "https://www.digicrome.com/logo.png",
+            "telephone": "+91-7011101972",
+            "priceRange": "₹₹",
+            "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "B-49, B Block, Sector 59",
+            "addressLocality": "Noida",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "201301",
+            "addressCountry": "IN"
+            },
+            "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "28.6067",
+            "longitude": "77.3724"
+            },
+            "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "opens": "10:00",
+            "closes": "19:00"
+            }],
+            "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "ratingCount": "200"
+            },
+            "sameAs": [
+            "https://www.facebook.com/",
+            "https://www.instagram.com/",
+            "https://www.linkedin.com/"
+            ]
+            }
+        </script>
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];

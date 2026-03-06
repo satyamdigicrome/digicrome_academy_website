@@ -385,6 +385,10 @@
             padding: 12px;
             color: #fff;
         }
+
+        #sticky-header {
+            margin-bottom: 80px !important;
+        }
     </style>
     <div class="who-img d-flex">
         <div class="container">
@@ -436,6 +440,11 @@
     <section id="contactSection" class="Contact1" style="background-color: white; padding-top:20px;">
         <h1><b>Major Milestones in Our Journey</b></h1>
         <ul class="ul1" style="padding-top: 40px;">
+            <li style="--accent-color:#ea4335">
+                <div class="date">2026</div>
+                <div class="title1"></div><br><br>
+                <div class="descr">Honored at the 2026 Bharat Gaurav Education Excellence Summit & Awards with the Best EdTech in Online & Digital Education award, in recognition of superiority in online education, assurance to value education, and dedication to student progress.</div>
+            </li>
             <li style="--accent-color:#f49e1e">
                 <div class="date">2025</div>
                 <div class="title1"></div><br><br>
