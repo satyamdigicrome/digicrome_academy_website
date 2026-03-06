@@ -19,45 +19,69 @@
     <meta name="og:locale" content="en-IN" />
     <meta property="og:image" content="https://www.digicrome.com/assets/images/cover-image.webp" />
     <link rel="canonical" href="{{ url()->current() }}" />
-    <link rel="preconnect" as="font" type="font/woff2" href="https://fonts.bunny.net" crossorigin="anonymous">
-    <link rel="preload" href="{{ asset('assets/fonts/Flaticon.woff2') }}" as="font" type="font/woff2"
-        crossorigin="anonymous">
-    <link href="{{ asset('assets/css/fonts-bunny.css') }}" rel="stylesheet" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" />
-    <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" type="text/css" media="all" as="style"
-        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" type="text/css" media="all" as="style"
-        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" type="text/css"
-        media="all" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}" type="text/css" media="all"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" async defer></script>
+    {{-- Preconnect to external origins for faster font/CDN loading --}}
+    <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.bunny.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://player.vimeo.com">
+    <link rel="dns-prefetch" href="https://f.vimeocdn.com">
+
+    <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
+
+    {{-- Preload critical fonts to eliminate layout shifts --}}
+    <link rel="preload" href="{{ asset('assets/fonts/Flaticon.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ asset('assets/css/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ asset('assets/webfonts/fa-solid-900.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+
+    {{-- Critical CSS: load synchronously (bootstrap + theme) --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    {{-- google-fonts.css: loaded async (was previously @import-ed inside theme-default.css, causing render-blocking chain) --}}
+    <link rel="preload" href="{{ asset('assets/css/google-fonts.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}"></noscript>
+
+    {{-- Non-critical CSS: loaded async --}}
+    <link rel="preload" href="{{ asset('assets/css/fonts-bunny.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/fonts-bunny.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/all.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/bootstrap-icons.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/flaticon.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/owl.carousel.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/animate.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/animated-text.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/meanmenu.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/owl.transitions.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/responsive.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/coustom-animation.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/odometer-theme-default.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/scroll-up.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}"></noscript>
     <script type="application/ld+json" >
       {
         "@context": "https://schema.org",

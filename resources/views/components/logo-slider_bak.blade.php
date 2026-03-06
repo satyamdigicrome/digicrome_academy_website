@@ -7,13 +7,12 @@
             <div class="logo-track">
                 @foreach ($companyLogos as $logo)
                     <div class="logo-item">
-                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="brand" width="120" height="60">
+                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" loading="lazy" alt="brand">
                     </div>
                 @endforeach
-                {{-- Duplicate once for seamless infinite scroll --}}
                 @foreach ($companyLogos as $logo)
-                    <div class="logo-item" aria-hidden="true">
-                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="" width="120" height="60">
+                    <div class="logo-item">
+                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" loading="lazy" alt="brand">
                     </div>
                 @endforeach
             </div>
@@ -22,13 +21,12 @@
             <div class="logo-track">
                 @foreach ($companyLogos as $logo)
                     <div class="logo-item">
-                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="brand" width="120" height="60">
+                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand">
                     </div>
                 @endforeach
-                {{-- Duplicate once for seamless infinite scroll --}}
                 @foreach ($companyLogos as $logo)
-                    <div class="logo-item" aria-hidden="true">
-                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="" width="120" height="60">
+                    <div class="logo-item">
+                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand">
                     </div>
                 @endforeach
             </div>
@@ -45,9 +43,6 @@
     .logo-track {
         display: flex;
         width: max-content;
-        /* GPU-accelerated transform avoids layout reflows during animation */
-        will-change: transform;
-        contain: layout style;
     }
 
     .logo-item {
@@ -57,7 +52,6 @@
 
     .logo-item img {
         height: 60px;
-        width: auto;
         object-fit: contain;
     }
 
@@ -70,16 +64,22 @@
     }
 
     @keyframes scrollLeftToRight {
-        0% { transform: translateX(-50%); }
-        100% { transform: translateX(0); }
+        0% {
+            transform: translateX(-50%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
     }
 
     @keyframes scrollRightToLeft {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
+        0% {
+            transform: translateX(0);
+        }
 
-    @media (prefers-reduced-motion: reduce) {
-        .logo-track { animation: none; }
+        100% {
+            transform: translateX(-50%);
+        }
     }
 </style>

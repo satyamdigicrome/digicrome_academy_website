@@ -4,6 +4,7 @@
 <head>
     @include('layouts.head')
     @stack('styles')
+    @stack('scripts')
 </head>
 
 <body>
@@ -12,6 +13,7 @@
     @if (empty($hideHeader) || $hideHeader === false)
         @include('layouts.header')
     @endif
+    @if (request()->is('/'))
     <div id="formModal" class="modal" id="mm">
         <div class="modal-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
@@ -46,7 +48,6 @@
             </form>
         </div>
     </div>
-    @if (request()->is('/'))
     <div id="placementformModal" class="modal" id="mm">
         <div class="modal-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
@@ -87,7 +88,6 @@
     @if (empty($hideFooter) || $hideFooter === false)
         @include('layouts.footer')
     @endif
-    @stack('scripts')
 </body>
 
 </html>

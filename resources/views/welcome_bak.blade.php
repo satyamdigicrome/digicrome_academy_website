@@ -3,13 +3,8 @@
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
-    {{-- Preload the LCP hero image so the browser fetches it as early as possible --}}
-    <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" fetchpriority="high">
-    <link rel="preload" href="{{ asset('assets/css/home.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
-    </noscript>
+    <link href="{{ asset('assets/css/home.css') }}" type="text/css" media="all" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <style>
         /* BACKDROP */
         .christmas-offer-modal {
@@ -167,6 +162,7 @@
                                         style="width: 100%; height: auto; margin-top: 5px;">
                                 </div>
                             </div>
+                        @else
                         @endif
                         <p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and
                             position yourself as the top choice for employers in your industry.</p>
@@ -217,16 +213,16 @@
                 <div class="col-lg-6">
                     <div class="hero-thumb-wrapper">
                         <div class="hero-thumb">
-                            <img width="600" height="400" fetchpriority="high" loading="eager"
-                                src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="Digicrome thumb"
-                                title="Digicrome thumb">
+                            <img width="600" fetchpriority="high" height="400" rel="preload" as="image"
+                                loading="eager" src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}"
+                                alt="Digicrome thumb" title="Digicrome thumb">
                         </div>
                         <div class="hero-arrow-shape">
-                            <img loading="lazy" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
+                            <img rel="preload" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
                         <div class="hero-dot-shape">
-                            <img loading="lazy"
+                            <img rel="preload"
                                 style="width: 306px; height: auto; position: relative; top: -209px; left: 70px;"
                                 src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
                                 title="digicrome dot">
@@ -505,6 +501,7 @@
                 </div>
             </div>
         </div>
+    @else
     @endif
     <section class="about-area style-five">
         <div class="container">
@@ -918,7 +915,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div style="width:100%; max-width:600px;">
-                        <iframe loading="lazy"
+                        <iframe
                             src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
                             width="100%" height="340" frameborder="0"
                             allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
