@@ -99,7 +99,7 @@
                                         <div class="box">
                                             <video class="gif-img" autoplay loop muted playsinline loading="eager"
                                                 style="width: 163px;" poster="{{ asset('storage/' . $t->image) }}">
-                                                <source src="{{ asset('storage/' . $t->video) }}" type="video/mp4">
+                                                <source src="{{ asset('storage/' . $t->image) }}" type="video/mp4">
                                             </video>
                                             <a href="javascript:void(0);" rel="noopener noreferrer"
                                                 data-bs-toggle="modal" data-bs-target="#youtubeModal" class="youtubeopen"
