@@ -24,5 +24,4 @@ yarn-error.log
 /resources/views/admin_bak
 /resources/views/admin_layout_bak
 /app/Http/Controllers/Admin_bak
-resources/views/admin_layout/sidebar.blade.php
 .claude/
