@@ -10,7 +10,7 @@
     }
 </style>
 
-{{-- <div class="header-top-area">
+<div class="header-top-area">
     <div class="container-fluid">
         <div class="row header-top">
             <div class="col-xxl-6 col-xl-8 col-lg-8">
@@ -29,8 +29,8 @@
             </div>
         </div>
     </div>
-</div> --}}
-<div class="sticky-top" style="z-index:1050;">
+</div>
+{{-- <div class="sticky-top" style="z-index:1050;">
     <div class="position-relative w-100 d-flex align-items-center justify-content-between overflow-hidden cursor-pointer new-holi-offer"
         style="background:#FFEDFA; height:55px;cursor:pointer;">
         <div class="d-none d-md-flex position-relative">
@@ -67,7 +67,7 @@
                 alt="bg">
         </div>
     </div>
-</div>
+</div> --}}
 <div class="educate-header-area" id="sticky-header">
     <div class="container-fluid">
         <div class="row header-wrap align-items-center">

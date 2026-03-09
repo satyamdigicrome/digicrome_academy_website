@@ -181,21 +181,21 @@
                     <div class="section-divider"></div>
                 </div>
                 <div class="row g-4">
-                    @foreach ($studentStories->skip(3)->take(6) as $story)
+                    @foreach ($placements as $story)
                         <div class="col-md-6 col-lg-4">
                             <div class="placement-highlight-card">
                                 <div class="ph-card-top">
-                                    <img src="{{ asset('storage/' . $story->image) }}" alt="{{ $story->studentname }}"
+                                    <img src="{{ asset('storage/' . $story->image) }}" alt="{{ $story->name }}"
                                         class="ph-avatar" loading="lazy"
                                         onerror="this.src='{{ asset('assets/images/home-one/about-thumb1.webp') }}'">
-                                    <div class="ph-name">{{ $story->studentname }}</div>
+                                    <div class="ph-name">{{ $story->name }}</div>
                                     <span class="ph-badge">Career Upgrade</span>
                                 </div>
                                 <div class="ph-card-bottom">
                                     <div>
                                         <div class="ph-role">{{ $story->position }}</div>
                                         <div class="ph-company"><i class="fa-solid fa-building"
-                                                style="color:#f29c12; margin-right:4px;"></i>{{ $story->companyname }}
+                                                style="color:#f29c12; margin-right:4px;"></i>{{ !empty($story->package) ? $story->package . ' LPA PACKAGE' : 'COMPANY NAME' }}
                                         </div>
                                     </div>
                                     <div class="ph-arrow"><i class="fa-solid fa-arrow-right"></i></div>
@@ -235,7 +235,7 @@
         <section class="meet-champions-section">
             <div class="container">
                 <div class="section-header">
-                    <div class="sec-badge"><i class="fa-solid fa-users"></i> Complete Stories</div>
+                    <div class="sec-badge"><i class="fa-solid fa-users"></i> Completed Stories</div>
                     <h2>Meet All Our <span>Champions</span></h2>
                     <p>Every one of them started with a goal. Digicrome helped them achieve it.</p>
                     <div class="section-divider"></div>
@@ -247,11 +247,11 @@
                                 <img src="{{ asset('storage/' . $story->image) }}" alt="{{ $story->studentname }}"
                                     class="champ-grid-avatar" loading="lazy"
                                     onerror="this.src='{{ asset('assets/images/home-one/about-thumb1.webp') }}'">
-                                <div class="champ-stars">
+                                {{-- <div class="champ-stars">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star-half-stroke"></i>
-                                </div>
+                                </div> --}}
                                 <div class="champ-grid-name">{{ $story->studentname }}</div>
                                 <div class="champ-grid-role">{{ $story->position }}</div>
                                 <div class="champ-grid-company">
