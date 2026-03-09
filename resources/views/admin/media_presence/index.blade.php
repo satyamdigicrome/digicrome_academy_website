@@ -7,9 +7,8 @@
 <div class="container">
     <h2>Media Presence</h2>
 
-    <div class="row">
-       <button class="btn btn-primary" > <a href="{{ route('articalshow') }}"> Add Articals</a></button>
-
+    <div class="row mb-2">
+       <button class="btn-cms-primary text-center"><a href="{{ route('articalshow') }}" style="color:inherit;text-decoration:none;"> Add Articals</a></button>
     </div>
     @if(session('success'))
         <div style="color: green;">{{ session('success') }}</div>
@@ -20,7 +19,7 @@
         @csrf
         <div>
             <label>Image:</label>
-            <input type="file" name="image" required>
+            <input type="file" class="form-control" name="image" required>
         </div>
         <div>
             <label>Heading:</label>
@@ -28,9 +27,9 @@
         </div>
         <div>
             <label>Description:</label>
-            <textarea id="content" name="description" required></textarea>
+            <textarea id="content" class="form-control summernote-editor" name="description" required></textarea>
         </div>
-        <button class="btn btn-primary" type="submit">Add</button>
+        <button class="btn-cms-primary" type="submit">Add</button>
     </form>
 
     <hr>
@@ -69,7 +68,7 @@
     
                             <div style="margin-bottom: 5px;">
                                 <label style="font-size: 12px;">Description:</label><br>
-                                <textarea id="content" name="description" required style="width: 100%; padding: 5px;" rows="3">{{ $entry->description }}</textarea>
+                                <textarea id="content" class="form-control summernote-editor" name="description" required style="width: 100%; padding: 5px;" rows="3">{{ $entry->description }}</textarea>
                             </div>
     
                             <button type="submit" style="background-color: #4CAF50; color: white; padding: 6px 12px; border: none; border-radius: 3px; cursor: pointer;">Update</button>

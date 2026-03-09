@@ -41,12 +41,37 @@ class ModuleController extends Controller
         return back()->with('success', 'modules added successfully!');
     }
     
+    public function edit($id)
+    {
+        $module = Module::findOrFail($id);
+        return response()->json($module);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $module = Module::findOrFail($id);
+
+        $request->validate([
+            'question'  => 'required|string',
+            'answer'    => 'required|string',
+            'course_id' => 'required|exists:courses,id',
+        ]);
+
+        $module->update([
+            'question'  => $request->question,
+            'answer'    => $request->answer,
+            'course_id' => $request->course_id,
+        ]);
+
+        return redirect()->route('modules.create')->with('success', 'Module updated successfully.');
+    }
+
     public function destroy($id)
     {
         $faq = Module::findOrFail($id);
         $faq->delete();
-    
-        return redirect()->route('modules.create')->with('success', 'FAQ deleted successfully.');
+
+        return redirect()->route('modules.create')->with('success', 'Module deleted successfully.');
     }
-    
+
 }

@@ -1,4 +1,4 @@
-<!-- resources/views/layouts/header.blade.php -->
+<!-- Admin Top Navigation Header -->
 <header class="border-bottom shadow-sm bg-white">
     <div class="container py-2">
         <!-- Top Row -->
@@ -29,63 +29,52 @@
     <div class="bg-white border-top">
         <div class="container">
             <nav class="nav justify-content-center py-2">
-                <a class="nav-link text-dark px-3" href="#"><i class="bi bi-house-door"></i> Home</a>
-                <a class="nav-link text-dark px-3" href="#"><i class="bi bi-people"></i> Manage Users</a>
-                <a class="nav-link text-dark px-3" href="{{ route('sucess_stories') }}"><i class="bi bi-people"></i> Manage Stories</a>
-                <a class="nav-link text-dark px-3" href="{{ route('testimonial') }}"><i class="bi bi-people"></i> Testimonial</a>
-                <a class="nav-link text-dark px-3" href="{{ route('blogs.index') }}"><i class="bi bi-people"></i> Blogs</a>
-
+                <a class="nav-link text-dark px-3" href="{{ route('dashboard') }}"><i class="bi bi-house-door"></i> Home</a>
+                <a class="nav-link text-dark px-3" href="{{ route('sucess_stories') }}"><i class="bi bi-trophy"></i> Manage Stories</a>
+                <a class="nav-link text-dark px-3" href="{{ route('testimonial') }}"><i class="bi bi-chat-quote"></i> Testimonial</a>
+                <a class="nav-link text-dark px-3" href="{{ route('blogs.index') }}"><i class="bi bi-file-earmark-text"></i> Blogs</a>
 
                 <!-- Dropdown for Manage Courses -->
                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark px-3" href="#" role="button" data-bs-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle text-dark px-3" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-journal-text"></i> Manage Courses
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('admin.manage_courses') }}">All Courses</a></li>
-                        <li><a class="dropdown-item" href="{{ route('keypoints.index') }}">Key Points Manage</a></li>
-                        <li><a class="dropdown-item" href="{{ route('aparts.index') }}">Manage Aparts</a></li>
-                        <li><a class="dropdown-item" href="{{ route('modules.create') }}">Manage Modules</a></li>
+                        <li><a class="dropdown-item" href="{{ route('keypoints.index') }}">Key Points</a></li>
+                        <li><a class="dropdown-item" href="{{ route('aparts.index') }}">Manage Apart</a></li>
+                        <li><a class="dropdown-item" href="{{ route('modules.create') }}">Modules</a></li>
                         <li><a class="dropdown-item" href="{{ route('extra.index') }}">Extra</a></li>
-                        <li><a class="dropdown-item" href="{{ route('casestudy.index') }}">Case Studys</a></li>
+                        <li><a class="dropdown-item" href="{{ route('casestudy.index') }}">Case Studies</a></li>
                         <li><a class="dropdown-item" href="{{ route('project.index') }}">Projects</a></li>
-                        <li><a class="dropdown-item" href="{{ route('keyfeature.index') }}">keyfeature</a></li>
+                        <li><a class="dropdown-item" href="{{ route('keyfeature.index') }}">Key Features</a></li>
                         <li><a class="dropdown-item" href="{{ route('faqs.create') }}">Manage FAQ</a></li>
                     </ul>
-                    
-                </div>     
+                </div>
+
+                <!-- Dropdown for More Pages -->
                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark px-3" href="#" role="button" data-bs-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle text-dark px-3" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-journal-text"></i> More Pages
                     </a>
                     <ul class="dropdown-menu">
-                        <a class="nav-link text-dark px-3" href="{{route('mentor')}}"><i class="bi bi-people"></i> INSTRUCTOR</a>
-                        <a class="nav-link text-dark px-3" href="{{route('placement.index')}}"><i class="bi bi-people"></i> Placement</a>
-                <a class="nav-link text-dark px-3" href="{{route('logos.index')}}"><i class="bi bi-people"></i> Logo</a>
-                <a class="nav-link text-dark px-3" href="{{route('contant.index')}}"><i class="bi bi-people"></i> privacy-policy</a>
-                <a class="nav-link text-dark px-3" href="{{route('meta')}}"><i class="bi bi-people"></i> Meta Section</a>
-                <a class="nav-link text-dark px-3" href="{{route('videos.index')}}"><i class="bi bi-people"></i> Videos</a>
-                <a class="nav-link text-dark px-3" href="{{route('media.index')}}"><i class="bi bi-people"></i> Media</a>
-                <a class="nav-link text-dark px-3" href="{{route('leed')}}"><i class="bi bi-people"></i> Leads</a>
-                <a class="nav-link text-dark px-3" href="{{route('jobs')}}"><i class="bi bi-people"></i> Add Job</a>
-                <a class="nav-link text-dark px-3" href="{{route('show_job')}}"><i class="bi bi-people"></i> Show JObs</a>
-
-
-
-
-
-
+                        <li><a class="dropdown-item" href="{{ route('mentor') }}"><i class="bi bi-person-badge me-1"></i> Instructor</a></li>
+                        <li><a class="dropdown-item" href="{{ route('placement.index') }}"><i class="bi bi-briefcase me-1"></i> Placement</a></li>
+                        <li><a class="dropdown-item" href="{{ route('logos.index') }}"><i class="bi bi-images me-1"></i> Logo</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contant.index') }}"><i class="bi bi-file-lock me-1"></i> Privacy Policy</a></li>
+                        <li><a class="dropdown-item" href="{{ route('meta') }}"><i class="bi bi-tags me-1"></i> Meta Section</a></li>
+                        <li><a class="dropdown-item" href="{{ route('videos.index') }}"><i class="bi bi-camera-video me-1"></i> Videos</a></li>
+                        <li><a class="dropdown-item" href="{{ route('media.index') }}"><i class="bi bi-newspaper me-1"></i> Media</a></li>
+                        <li><a class="dropdown-item" href="{{ route('leed') }}"><i class="bi bi-graph-up me-1"></i> Leads</a></li>
+                        <li><a class="dropdown-item" href="{{ route('jobs') }}"><i class="bi bi-bag-plus me-1"></i> Add Job</a></li>
+                        <li><a class="dropdown-item" href="{{ route('show_job') }}"><i class="bi bi-people me-1"></i> Show Jobs</a></li>
                     </ul>
-                    
-                </div>            
-                
+                </div>
 
-                <a class="nav-link text-dark px-3" href="#"><i class="bi bi-gear"></i> Settings</a>
+                <a class="nav-link text-dark px-3" href="{{ route('meta') }}"><i class="bi bi-gear"></i> Settings</a>
             </nav>
         </div>
     </div>
 </header>
-
-<!-- Include Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

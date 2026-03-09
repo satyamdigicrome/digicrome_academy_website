@@ -44,11 +44,47 @@ class LogoController extends Controller
 
         return redirect()->route('logos.index')->with('success', 'Logo created successfully.');
     }
+    public function edit($id)
+    {
+        $logo = Logo::findOrFail($id);
+        return response()->json($logo);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $logo = Logo::findOrFail($id);
+
+        $request->validate([
+            'type'      => 'required|string|max:255',
+            'name'      => 'required|string|max:255',
+            'country'   => 'required|string|max:255',
+            'course_id' => 'nullable|exists:courses,id',
+            'image'     => 'nullable|image|mimes:jpeg,png,webp,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($logo->image) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($logo->image);
+            }
+            $logo->image = $request->file('image')->store('logo', 'public');
+            $logo->save();
+        }
+
+        $logo->update([
+            'type'      => $request->type,
+            'name'      => $request->name,
+            'country'   => $request->country,
+            'course_id' => $request->course_id,
+        ]);
+
+        return redirect()->route('logos.index')->with('success', 'Logo updated successfully.');
+    }
+
     public function destroy($id)
     {
         $logo = Logo::findOrFail($id);
         $logo->delete();
 
-        return redirect()->route('logos.index')->with('success', 'logos deleted successfully.');
+        return redirect()->route('logos.index')->with('success', 'Logo deleted successfully.');
     }
 }

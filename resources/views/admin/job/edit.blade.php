@@ -21,7 +21,7 @@
 
         @include('admin.job.form', ['vacancy' => $vacancy])
 
-        <button type="submit" class="btn btn-primary mt-3">Update Vacancy</button>
+        <button type="submit" class="btn-cms-primary mt-3">Update Vacancy</button>
     </form>
 </div>
 @endsection

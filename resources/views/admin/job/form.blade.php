@@ -19,7 +19,7 @@
 
 <div class="form-group mb-3">
     <label>Description</label>
-    <textarea class="form-control" name="description" id="content" rows="4" required>{{ old('description', $vacancy->description ?? '') }}</textarea>
+    <textarea class="form-control summernote-editor" name="description" id="content" rows="4" required>{{ old('description', $vacancy->description ?? '') }}</textarea>
 </div>
 
 <div class="form-group mb-3">
@@ -49,5 +49,5 @@
 
 <div class="form-group mb-3">
     <label>Requirements</label>
-    <textarea class="form-control" name="requirements" id="content" rows="3">{{ old('requirements', $vacancy->requirements ?? '') }}</textarea>
+    <textarea class="form-control summernote-editor" name="requirements" id="content" rows="3">{{ old('requirements', $vacancy->requirements ?? '') }}</textarea>
 </div>

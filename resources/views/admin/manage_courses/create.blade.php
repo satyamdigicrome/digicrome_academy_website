@@ -198,8 +198,8 @@
         
         
 
-        <button type="submit" class="btn btn-primary">Add Course</button>
-        <a href="{{ route('admin.manage_courses') }}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn-cms-primary">Add Course</button>
+        <a href="{{ route('admin.manage_courses') }}" class="btn-cms-secondary">Cancel</a>
     </form>
     <!-- Initialize CKEditor -->
 

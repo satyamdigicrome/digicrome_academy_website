@@ -33,12 +33,35 @@ class ContantController extends Controller
 
         return redirect()->route('contant.index')->with('success', 'Logo created successfully.');
     }
+    public function edit($id)
+    {
+        $content = Content::findOrFail($id);
+        return response()->json($content);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $content = Content::findOrFail($id);
+
+        $request->validate([
+            'content'      => 'required',
+            'content_type' => 'required|string|max:255',
+        ]);
+
+        $content->update([
+            'content'      => $request->content,
+            'content_type' => $request->content_type,
+        ]);
+
+        return redirect()->route('contant.index')->with('success', 'Content updated successfully.');
+    }
+
     public function destroy($id)
     {
         $logo = Content::findOrFail($id);
         $logo->delete();
 
-        return redirect()->route('contant.index')->with('success', 'logos deleted successfully.');
+        return redirect()->route('contant.index')->with('success', 'Content deleted successfully.');
     }
 
     public function leads()

@@ -51,12 +51,39 @@ class MetaController extends Controller
     
         return redirect()->route('meta')->with('success', 'Meta tag saved successfully.');
     }
+    public function edit($id)
+    {
+        $metatag = Metatag::findOrFail($id);
+        return response()->json($metatag);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $metatag = Metatag::findOrFail($id);
+
+        $request->validate([
+            'page_name'   => 'required|string|max:255|unique:metatags,page_name,' . $metatag->id,
+            'title'       => 'nullable|string|max:255',
+            'keywords'    => 'nullable|string',
+            'description' => 'nullable|string',
+        ]);
+
+        $metatag->update([
+            'page_name'   => $request->page_name,
+            'title'       => $request->title,
+            'keywords'    => $request->keywords,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('meta')->with('success', 'Meta tag updated successfully.');
+    }
+
     public function destroy($id)
     {
         $metatag = Metatag::findOrFail($id);
         $metatag->delete();
-    
+
         return redirect()->route('meta')->with('success', 'Meta tag deleted successfully.');
     }
-        
+
 }

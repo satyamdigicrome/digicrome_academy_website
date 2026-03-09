@@ -9,7 +9,7 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <a href="{{ route('vacancies.create') }}" class="btn btn-success mb-3">Post New Vacancy</a>
+    <a href="{{ route('vacancies.create') }}" class="btn-cms-primary mb-3">Post New Vacancy</a>
 
     <table class="table table-bordered">
         <thead>
@@ -31,10 +31,10 @@
                 <td>{{ $vacancy->type }}</td>
                 <td>{{ $vacancy->salary }}</td>
                 <td>
-                    <a href="{{ route('vacancies.edit', $vacancy->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{{ route('vacancies.edit', $vacancy->id) }}" class="btn-cms-edit">Edit</a>
                     <form action="{{ route('vacancies.destroy', $vacancy->id) }}" method="POST" style="display:inline-block">
                         @csrf @method('DELETE')
-                        <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                        <button class="btn-cms-delete" onclick="return confirm('Are you sure?')">Delete</button>
                     </form>
                 </td>
             </tr>

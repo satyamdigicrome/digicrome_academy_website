@@ -41,6 +41,31 @@ class ProjectController extends Controller
         return redirect()->route('project.index')->with('success', 'Project added successfully.');
     }
 
+    public function edit($id)
+    {
+        $project = Project::findOrFail($id);
+        return response()->json($project);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $project = Project::findOrFail($id);
+
+        $request->validate([
+            'heading'   => 'required|string|max:255',
+            'paragraph' => 'required|string',
+            'course_id' => 'required|exists:courses,id',
+        ]);
+
+        $project->update([
+            'heading'   => $request->heading,
+            'paragraph' => $request->paragraph,
+            'course_id' => $request->course_id,
+        ]);
+
+        return redirect()->route('project.index')->with('success', 'Project updated successfully.');
+    }
+
     public function destroy(Project $project)
     {
         $project->delete();

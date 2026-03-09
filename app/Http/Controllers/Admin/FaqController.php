@@ -42,6 +42,31 @@ public function store(Request $request)
     return back()->with('success', 'FAQs added successfully!');
 }
 
+public function edit($id)
+{
+    $faq = Faq::findOrFail($id);
+    return response()->json($faq);
+}
+
+public function update(Request $request, $id)
+{
+    $faq = Faq::findOrFail($id);
+
+    $request->validate([
+        'question'  => 'required|string',
+        'answer'    => 'required|string',
+        'course_id' => 'required|exists:courses,id',
+    ]);
+
+    $faq->update([
+        'question'  => $request->question,
+        'answer'    => $request->answer,
+        'course_id' => $request->course_id,
+    ]);
+
+    return redirect()->route('faqs.create')->with('success', 'FAQ updated successfully.');
+}
+
 public function destroy($id)
 {
     $faq = Faq::findOrFail($id);

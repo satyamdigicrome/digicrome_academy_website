@@ -242,7 +242,7 @@
         
         
     
-        <button type="submit" class="btn btn-primary">Update Course</button>
+        <button type="submit" class="btn-cms-primary">Update Course</button>
     </form>
      <!-- Initialize CKEditor -->
 

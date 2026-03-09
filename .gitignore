@@ -21,3 +21,8 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+/resources/views/admin_bak
+/resources/views/admin_layout_bak
+/app/Http/Controllers/Admin_bak
+resources/views/admin_layout/sidebar.blade.php
+.claude/

@@ -46,11 +46,47 @@ class KeyFeatureController extends Controller
         return redirect()->route('keyfeature.index')->with('success', 'keyfeature added successfully.');
     }
 
+    public function edit($id)
+    {
+        $keyfeature = KeyFeature::findOrFail($id);
+        return response()->json($keyfeature);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $keyfeature = KeyFeature::findOrFail($id);
+
+        $request->validate([
+            'heading'   => 'required|string|max:255',
+            'paragraph' => 'required|string',
+            'course_id' => 'required|exists:courses,id',
+            'image'     => 'nullable|image|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($keyfeature->image) {
+                Storage::disk('public')->delete($keyfeature->image);
+            }
+            $keyfeature->image = $request->file('image')->store('keyfeature', 'public');
+            $keyfeature->save();
+        }
+
+        $keyfeature->update([
+            'heading'   => $request->heading,
+            'paragraph' => $request->paragraph,
+            'course_id' => $request->course_id,
+        ]);
+
+        return redirect()->route('keyfeature.index')->with('success', 'Key Feature updated successfully.');
+    }
+
     public function destroy(KeyFeature $keyfeature)
     {
-        Storage::disk('public')->delete($keyfeature->image);
-        
+        if ($keyfeature->image) {
+            Storage::disk('public')->delete($keyfeature->image);
+        }
+
         $keyfeature->delete();
-        return redirect()->route('keyfeature.index')->with('success', 'keyfeature deleted successfully.');
+        return redirect()->route('keyfeature.index')->with('success', 'Key Feature deleted successfully.');
     }
 }

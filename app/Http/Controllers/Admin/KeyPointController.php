@@ -41,9 +41,41 @@ class KeyPointController extends Controller
     return redirect()->route('keypoints.index')->with('success', 'Key Points added successfully.');
 }
 
+    public function edit($id)
+    {
+        $keypoint = KeyPoint::findOrFail($id);
+        return response()->json($keypoint);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $keypoint = KeyPoint::findOrFail($id);
+
+        $request->validate([
+            'name'      => 'required|string|max:255',
+            'course_id' => 'required|exists:courses,id',
+            'image'     => 'nullable|image|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($keypoint->image) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($keypoint->image);
+            }
+            $keypoint->image = $request->file('image')->store('keypoints', 'public');
+            $keypoint->save();
+        }
+
+        $keypoint->update([
+            'name'      => $request->name,
+            'course_id' => $request->course_id,
+        ]);
+
+        return redirect()->route('keypoints.index')->with('success', 'Key Point updated successfully.');
+    }
+
     public function destroy(KeyPoint $keypoint)
     {
         $keypoint->delete();
-        return redirect()->route('keypoints.index');
+        return redirect()->route('keypoints.index')->with('success', 'Key Point deleted.');
     }
 }

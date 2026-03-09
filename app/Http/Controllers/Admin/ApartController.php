@@ -48,15 +48,51 @@ class ApartController extends Controller
         return redirect()->route('aparts.index')->with('success', 'Apart added successfully.');
     }
 
-    public function destroy(Apart $apart)
-{
-    if ($apart->image && Storage::disk('public')->exists($apart->image)) {
-        Storage::disk('public')->delete($apart->image);
+    public function edit($id)
+    {
+        $apart = Apart::findOrFail($id);
+        return response()->json($apart);
     }
-    
-    $apart->delete();
 
-    return redirect()->route('aparts.index')->with('success', 'Apart deleted successfully.');
-}
+    public function update(Request $request, $id)
+    {
+        $apart = Apart::findOrFail($id);
+
+        $request->validate([
+            'heading'   => 'required|string|max:255',
+            'tagline'   => 'required|string|max:255',
+            'paragraph' => 'required|string',
+            'course_id' => 'required|exists:courses,id',
+            'image'     => 'nullable|image|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($apart->image && Storage::disk('public')->exists($apart->image)) {
+                Storage::disk('public')->delete($apart->image);
+            }
+            $apart->image = $request->file('image')->store('aparts', 'public');
+            $apart->save();
+        }
+
+        $apart->update([
+            'heading'   => $request->heading,
+            'tagline'   => $request->tagline,
+            'paragraph' => $request->paragraph,
+            'course_id' => $request->course_id,
+        ]);
+
+        return redirect()->route('aparts.index')->with('success', 'Apart updated successfully.');
+    }
+
+    public function destroy(Apart $apart)
+    {
+        if ($apart->image && Storage::disk('public')->exists($apart->image)) {
+            Storage::disk('public')->delete($apart->image);
+        }
+
+        $apart->delete();
+
+        return redirect()->route('aparts.index')->with('success', 'Apart deleted successfully.');
+    }
 
 }

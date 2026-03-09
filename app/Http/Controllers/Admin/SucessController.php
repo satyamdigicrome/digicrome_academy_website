@@ -40,6 +40,42 @@ class SucessController extends Controller
     return redirect()->back()->with('success', 'Story added successfully!');
 }
 
+    public function edit($id)
+    {
+        $story = StudentStory::findOrFail($id);
+        return response()->json($story);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $story = StudentStory::findOrFail($id);
+
+        $request->validate([
+            'studentname' => 'required|string',
+            'position'    => 'required|string',
+            'companyname' => 'required|string',
+            'stoire'      => 'required|string',
+            'image'       => 'nullable|image|mimes:webp,jpeg,png,jpg|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($story->image) {
+                Storage::disk('public')->delete($story->image);
+            }
+            $story->image = $request->file('image')->store('student_images', 'public');
+            $story->save();
+        }
+
+        $story->update([
+            'studentname' => $request->studentname,
+            'position'    => $request->position,
+            'companyname' => $request->companyname,
+            'stoire'      => $request->stoire,
+        ]);
+
+        return redirect()->back()->with('success', 'Story updated successfully!');
+    }
+
     public function destroy($id)
     {
         $story = StudentStory::findOrFail($id);

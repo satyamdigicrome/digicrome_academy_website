@@ -38,12 +38,37 @@ class CasestudyController extends Controller
 
         return redirect()->route('casestudy.index')->with('success', 'Case study added successfully!');
     }
-    public function destroy($id)
-{
-    $caseStudies = CaseStudy::findOrFail($id);
-    $caseStudies->delete();
+    public function edit($id)
+    {
+        $caseStudy = CaseStudy::findOrFail($id);
+        return response()->json($caseStudy);
+    }
 
-    return redirect()->route('casestudy.index')->with('success', 'caseStudies deleted successfully.');
-}
+    public function update(Request $request, $id)
+    {
+        $caseStudy = CaseStudy::findOrFail($id);
+
+        $request->validate([
+            'heading'   => 'required|string|max:255',
+            'paragraph' => 'required|string',
+            'course_id' => 'required|exists:courses,id',
+        ]);
+
+        $caseStudy->update([
+            'heading'   => $request->heading,
+            'paragraph' => $request->paragraph,
+            'course_id' => $request->course_id,
+        ]);
+
+        return redirect()->route('casestudy.index')->with('success', 'Case study updated successfully.');
+    }
+
+    public function destroy($id)
+    {
+        $caseStudies = CaseStudy::findOrFail($id);
+        $caseStudies->delete();
+
+        return redirect()->route('casestudy.index')->with('success', 'Case study deleted successfully.');
+    }
 
 }

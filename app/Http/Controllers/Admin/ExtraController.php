@@ -39,6 +39,31 @@ class ExtraController extends Controller
     return redirect()->route('extra.index')->with('success', 'Extra added successfully.');
 }
 
+public function edit($id)
+{
+    $extra = Extra::findOrFail($id);
+    return response()->json($extra);
+}
+
+public function update(Request $request, $id)
+{
+    $extra = Extra::findOrFail($id);
+
+    $request->validate([
+        'heading'   => 'required|string|max:255',
+        'part'      => 'required|string|max:255',
+        'course_id' => 'required|exists:courses,id',
+    ]);
+
+    $extra->update([
+        'heading'   => $request->heading,
+        'part'      => $request->part,
+        'course_id' => $request->course_id,
+    ]);
+
+    return redirect()->route('extra.index')->with('success', 'Extra updated successfully.');
+}
+
 public function destroy($id)
 {
     $extra = Extra::findOrFail($id);

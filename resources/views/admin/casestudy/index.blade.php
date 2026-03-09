@@ -1,79 +1,174 @@
 @extends('admin_layout.app')
 
-@section('title', 'Manage Case Studies')
+@section('page-title', 'Case Studies')
 
 @section('content')
-<div class="container mt-4">
-    <h2 class="mb-4">Add Case Study</h2>
 
-    <form action="{{ route('casestudy.store') }}" method="POST">
-        @csrf
-        <div class="mb-3">
-            <label for="heading" class="form-label">Heading</label>
-            <input type="text" class="form-control" id="heading" name="heading" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="paragraph" class="form-label">Paragraph</label>
-            <textarea class="form-control" id="content" name="paragraph" rows="3" required></textarea>
-        </div>
-        
-        
-       
-        
-
-        <div class="mb-3">
-            <label for="courses" class="form-label">Select Courses</label>
-            <select class="form-select" name="course_id[]" id="course_id" multiple required>
-                @foreach($courses as $course)
-                    <option value="{{ $course->id }}">{{ $course->name }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Add Case Study</button>
-    </form>
-
-    
-</div>
-<div class="container mt-4">
-    <h2 class="mb-4">Manage Case Studies</h2>
-
-    <div class="table-responsive">
-        <table class="table table-bordered align-middle">
-            <thead class="table-light">
-                <tr>
-                    <th>Heading</th>
-                    <th>Course</th>
-                    <th>User</th>
-                    <th>Paragraph</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($caseStudies as $caseStudy)
-                    <tr>
-                        <td>{{ $caseStudy->heading }}</td>
-                        <td>{{ $caseStudy->course->name ?? 'N/A' }}</td>
-                        <td>{{ $caseStudy->user->name ?? 'N/A' }}</td>
-                        <td>{{ $caseStudy->paragraph }}</td>
-                        <td>
-                            <form action="{{route('caseStudy.destroy',$caseStudy->id)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn-outline-danger">
-                                    <i class="bi bi-trash"></i> Delete
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="4" class="text-center text-muted">No case studies found.</td>
-                    </tr>
-                @endforelse
-            </tbody>
-        </table>
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Case Studies</h1>
+        <p class="page-subtitle">Manage course case studies and practical examples</p>
     </div>
 </div>
+
+<div class="row g-4">
+    {{-- Add Form --}}
+    <div class="col-lg-4">
+        <div class="cms-card">
+            <div class="cms-card-header">
+                <h5 class="cms-card-title"><i class="bi bi-plus-circle me-2"></i>Add Case Study</h5>
+            </div>
+            <div class="cms-card-body">
+                <form action="{{ route('casestudy.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Heading <span class="text-danger">*</span></label>
+                        <input type="text" name="heading" class="form-control" placeholder="Case study heading" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Paragraph <span class="text-danger">*</span></label>
+                        <textarea name="paragraph" class="form-control summernote-editor" rows="4" placeholder="Case study description..." required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Select Courses <span class="text-danger">*</span></label>
+                        <select name="course_id[]" class="form-select" multiple required style="min-height:100px;">
+                            @foreach($courses as $course)
+                                <option value="{{ $course->id }}">{{ $course->name }}</option>
+                            @endforeach
+                        </select>
+                        <small class="text-muted">Hold Ctrl/Cmd to select multiple</small>
+                    </div>
+                    <button type="submit" class="btn-cms-primary w-100">
+                        <i class="bi bi-plus-circle me-1"></i> Add Case Study
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{-- Case Studies Table --}}
+    <div class="col-lg-8">
+        <div class="cms-card">
+            <div class="cms-card-header">
+                <h5 class="cms-card-title"><i class="bi bi-briefcase me-2"></i>All Case Studies</h5>
+                <span class="badge bg-primary">{{ $caseStudies->count() }} total</span>
+            </div>
+            <div class="cms-card-body p-0">
+                @if($caseStudies->isEmpty())
+                    <div class="empty-state">
+                        <i class="bi bi-briefcase"></i>
+                        <p>No case studies yet. Add one to get started.</p>
+                    </div>
+                @else
+                <div class="table-responsive">
+                    <table class="cms-table">
+                        <thead>
+                            <tr>
+                                <th>Heading</th>
+                                <th>Course</th>
+                                <th>Preview</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($caseStudies as $caseStudy)
+                            <tr>
+                                <td class="fw-semibold">{{ Str::limit($caseStudy->heading, 40) }}</td>
+                                <td>
+                                    <span class="badge bg-info text-dark">{{ $caseStudy->course->name ?? 'N/A' }}</span>
+                                </td>
+                                <td>
+                                    <small class="text-muted">{{ Str::limit(strip_tags($caseStudy->paragraph), 60) }}</small>
+                                </td>
+                                <td>
+                                    <div class="action-group">
+                                        <button class="btn-cms-edit"
+                                            onclick="openEditModal({{ $caseStudy->id }}, {{ json_encode($caseStudy) }})">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <form action="{{ route('caseStudy.destroy', $caseStudy->id) }}" method="POST"
+                                              onsubmit="return confirm('Delete this case study?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn-cms-delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- Edit Modal --}}
+<div class="modal fade" id="editModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-pencil-square me-2"></i>Edit Case Study</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="editForm" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Heading</label>
+                        <input type="text" name="heading" id="edit_heading" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Paragraph</label>
+                        <textarea name="paragraph" id="edit_paragraph" class="form-control summernote-editor" rows="5" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Course</label>
+                        <select name="course_id" id="edit_course_id" class="form-select" required>
+                            @foreach($courses as $course)
+                                <option value="{{ $course->id }}">{{ $course->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-cms-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn-cms-primary">
+                        <i class="bi bi-check-circle me-1"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function openEditModal(id, data) {
+    document.getElementById('editForm').action = '/admin/case-studies/' + id;
+    document.getElementById('edit_heading').value = data.heading || '';
+    // document.getElementById('edit_paragraph').value = data.paragraph || '';
+
+    var courseSelect = document.getElementById('edit_course_id');
+    for (var i = 0; i < courseSelect.options.length; i++) {
+        if (courseSelect.options[i].value == data.course_id) {
+            courseSelect.selectedIndex = i;
+            break;
+        }
+    }
+
+    var $editor = $('#edit_paragraph');
+    if ($editor.hasClass('note-editor') || $editor.next('.note-editor').length) {
+        $editor.summernote('code', data.paragraph || '');
+    } else {
+        $editor.val(data.paragraph || '');
+    }
+
+    new bootstrap.Modal(document.getElementById('editModal')).show();
+}
+</script>
+
 @endsection

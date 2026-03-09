@@ -35,7 +35,7 @@ use App\Http\Controllers\Admin\ContantController;
 use App\Http\Controllers\Admin\MetaController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Admin\MentorController;
-use App\Http\Controllers\Admin\MediaPresenceController  as AdminMediaPresenceController;
+use App\Http\Controllers\Admin\MediaPresenceController as AdminMediaPresenceController;
 use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
@@ -112,7 +112,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/admin/extra/{id}', [ContantController::class, 'destroy'])->name('admin.extra.destroy');
     Route::get('/contant', [ContantController::class, 'index'])->name('contant.index');
     Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
-    Route::post('/videos/store', [VideoController::class, 'store'])->name('videos.store'); 
+    Route::post('/videos/store', [VideoController::class, 'store'])->name('videos.store');
     Route::delete('/videos/{id}', [VideoController::class, 'destroy'])->name('videos.destroy');
     Route::get('/meta_tag', [MetaController::class, 'index'])->name('meta');
     Route::post('/store', [MetaController::class, 'store'])->name('meta.store');
@@ -120,23 +120,23 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/meta/delete/{id}', [MetaController::class, 'destroy'])->name('meta.delete');
     Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
     Route::post('/vacancies', [JobController::class, 'store'])->name('vacancies.store');
-Route::get('/vacancies/{id}/edit', [JobController::class, 'edit'])->name('vacancies.edit');
-Route::post('/vacancies/{id}', [JobController::class, 'update'])->name('vacancies.update');
-Route::delete('/vacancies/{id}', [JobController::class, 'destroy'])->name('vacancies.destroy');
-Route::get('/vacancies/create', [JobController::class, 'create'])->name('vacancies.create');
-Route::get('/show_job', [JobController::class, 'show_job'])->name('show_job');
-Route::delete('/application/{id}', [JobController::class, 'delete_application'])->name('application.delete');
-Route::get('/mentor', [MentorController::class, 'index'])->name('mentor');
-Route::post('/mentor_store', [MentorController::class, 'store'])->name('mentor.store');
-Route::delete('/admin/mentor{id}', [MentorController::class, 'destroy'])->name('mentor.destroy');
-Route::get('/admin/media-presence', [AdminMediaPresenceController::class, 'index'])->name('media.index');
-Route::post('/admin/media-presence', [AdminMediaPresenceController::class, 'store'])->name('media.store');
-Route::post('/admin/media-presence/update/{id}', [AdminMediaPresenceController::class, 'update'])->name('media.update');
-Route::get('/admin/media-presence/delete/{id}', [AdminMediaPresenceController::class, 'destroy'])->name('media.delete');
+    Route::get('/vacancies/{id}/edit', [JobController::class, 'edit'])->name('vacancies.edit');
+    Route::post('/vacancies/{id}', [JobController::class, 'update'])->name('vacancies.update');
+    Route::delete('/vacancies/{id}', [JobController::class, 'destroy'])->name('vacancies.destroy');
+    Route::get('/vacancies/create', [JobController::class, 'create'])->name('vacancies.create');
+    Route::get('/show_job', [JobController::class, 'show_job'])->name('show_job');
+    Route::delete('/application/{id}', [JobController::class, 'delete_application'])->name('application.delete');
+    Route::get('/mentor', [MentorController::class, 'index'])->name('mentor');
+    Route::post('/mentor_store', [MentorController::class, 'store'])->name('mentor.store');
+    Route::delete('/admin/mentor{id}', [MentorController::class, 'destroy'])->name('mentor.destroy');
+    Route::get('/admin/media-presence', [AdminMediaPresenceController::class, 'index'])->name('media.index');
+    Route::post('/admin/media-presence', [AdminMediaPresenceController::class, 'store'])->name('media.store');
+    Route::post('/admin/media-presence/update/{id}', [AdminMediaPresenceController::class, 'update'])->name('media.update');
+    Route::get('/admin/media-presence/delete/{id}', [AdminMediaPresenceController::class, 'destroy'])->name('media.delete');
 
-Route::get('/admin/media/article', [AdminMediaPresenceController::class, 'show'])->name('articalshow');
-Route::post('/admin/media/article/store', [AdminMediaPresenceController::class, 'articalstore'])->name('articalstore');
-Route::delete('/admin/media/article/delete/{id}', [AdminMediaPresenceController::class, 'articaldelete'])->name('articaldelete');
+    Route::get('/admin/media/article', [AdminMediaPresenceController::class, 'show'])->name('articalshow');
+    Route::post('/admin/media/article/store', [AdminMediaPresenceController::class, 'articalstore'])->name('articalstore');
+    Route::delete('/admin/media/article/delete/{id}', [AdminMediaPresenceController::class, 'articaldelete'])->name('articaldelete');
 
 
 
@@ -144,6 +144,55 @@ Route::delete('/admin/media/article/delete/{id}', [AdminMediaPresenceController:
 
 
     // Add routes for edit, update, and delete as needed
+    // ── Admin Edit / Update routes (all prefixed /admin/ to avoid frontend conflicts) ───────────
+    // Testimonials
+    Route::get('/admin/testimonial/{id}/edit', [TestimonialController::class, 'edit'])->name('admin.testimonial.edit');
+    Route::post('/admin/testimonial/{id}', [TestimonialController::class, 'update'])->name('admin.testimonial.update');
+    // Success Stories
+    Route::get('/admin/success-stories/{id}/edit', [SucessController::class, 'edit'])->name('admin.success.edit');
+    Route::post('/admin/success-stories/{id}/update', [SucessController::class, 'update'])->name('admin.success.update');
+    // Mentors
+    Route::get('/admin/mentor/{id}/edit', [MentorController::class, 'edit'])->name('admin.mentor.edit');
+    Route::post('/admin/mentor/{id}', [MentorController::class, 'update'])->name('admin.mentor.update');
+    // FAQs
+    Route::get('/admin/faqs/{id}/edit', [FaqController::class, 'edit'])->name('admin.faqs.edit');
+    Route::post('/admin/faqs/{id}', [FaqController::class, 'update'])->name('admin.faqs.update');
+    // Modules
+    Route::get('/admin/modules/{id}/edit', [ModuleController::class, 'edit'])->name('admin.modules.edit');
+    Route::post('/admin/modules/{id}', [ModuleController::class, 'update'])->name('admin.modules.update');
+    // Videos
+    Route::get('/admin/videos/{id}/edit', [VideoController::class, 'edit'])->name('admin.videos.edit');
+    Route::post('/admin/videos/{id}', [VideoController::class, 'update'])->name('admin.videos.update');
+    // Meta Tags
+    Route::get('/admin/meta/{id}/edit', [MetaController::class, 'edit'])->name('admin.meta.edit');
+    Route::post('/admin/meta/{id}', [MetaController::class, 'update'])->name('admin.meta.update');
+    // Content
+    Route::get('/admin/contant/{id}/edit', [ContantController::class, 'edit'])->name('admin.contant.edit');
+    Route::post('/admin/contant/{id}', [ContantController::class, 'update'])->name('admin.contant.update');
+    // Key Points
+    Route::get('/admin/keypoints/{id}/edit', [KeyPointController::class, 'edit'])->name('admin.keypoints.edit');
+    Route::post('/admin/keypoints/{id}', [KeyPointController::class, 'update'])->name('admin.keypoints.update');
+    // Aparts
+    Route::get('/admin/aparts/{id}/edit', [ApartController::class, 'edit'])->name('admin.aparts.edit');
+    Route::post('/admin/aparts/{id}', [ApartController::class, 'update'])->name('admin.aparts.update');
+    // Case Studies
+    Route::get('/admin/case-studies/{id}/edit', [CasestudyController::class, 'edit'])->name('admin.casestudy.edit');
+    Route::post('/admin/case-studies/{id}', [CasestudyController::class, 'update'])->name('admin.casestudy.update');
+    // Placements
+    Route::get('/admin/placement/{id}/edit', [PlacementController::class, 'edit'])->name('admin.placement.edit');
+    Route::post('/admin/placement/{id}/update', [PlacementController::class, 'update'])->name('admin.placement.update');
+    // Logos
+    Route::get('/admin/logos/{id}/edit', [LogoController::class, 'edit'])->name('admin.logos.edit');
+    Route::post('/admin/logos/{id}', [LogoController::class, 'update'])->name('admin.logos.update');
+    // Projects
+    Route::get('/admin/project/{id}/edit', [ProjectController::class, 'edit'])->name('admin.project.edit');
+    Route::post('/admin/project/{id}', [ProjectController::class, 'update'])->name('admin.project.update');
+    // Key Features
+    Route::get('/admin/keyfeature/{id}/edit', [KeyFeatureController::class, 'edit'])->name('admin.keyfeature.edit');
+    Route::post('/admin/keyfeature/{id}', [KeyFeatureController::class, 'update'])->name('admin.keyfeature.update');
+    // Extra
+    Route::get('/admin/extras/{id}/edit', [ExtraController::class, 'edit'])->name('admin.extra.edit');
+    Route::post('/admin/extras/{id}', [ExtraController::class, 'update'])->name('admin.extra.update');
 });
 Route::get('/search-courses', [CourseController::class, 'searchCourses'])->name('search.courses');
 Route::get('/about-us', [AboutController::class, 'index'])->name('about');
@@ -159,7 +208,7 @@ Route::get('/DS_and_AI', [LandingControler::class, 'landing'])->name('landing');
 Route::get('/refer-and-earn', [ReferController::class, 'index'])->name('refer_and_earn');
 Route::get('/who-we-are', [WhoweareController::class, 'index'])->name('who_we_are');
 Route::get('/success-stories', [SucessStoriesController::class, 'index'])->name('success_stories');
-Route::get('/media-presence', [MediaPresenceController ::class, 'index'])->name('media_presence');
+Route::get('/media-presence', [MediaPresenceController::class, 'index'])->name('media_presence');
 // Route::get('/upcoming-courses/{slug}', [CourseController::class, 'course_details'])->name('course_details');
 // Route::redirect('/upcoming-courses/{slug}', '/courses/{slug}', 301);
 // Route::get('/courses/{slug}', [CourseController::class, 'course_details'])->name('www.products.show');
@@ -186,7 +235,7 @@ Route::get('/data-science', [LandingControler::class, 'data_science'])->name('da
 Route::get('/test-mail', function () {
     Mail::raw('Test email from Laravel', function ($message) {
         $message->to('satyam.digicrome@gmail.com')
-                ->subject('Test Mail');
+            ->subject('Test Mail');
     });
     return 'Mail Sent';
 });
@@ -198,4 +247,4 @@ Route::redirect('/upcoming-courses/post-graduate-program-in-data-science-and-mac
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

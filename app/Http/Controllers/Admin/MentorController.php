@@ -49,6 +49,44 @@ class MentorController extends Controller
         return redirect()->route('mentor')->with('success', 'Mentor(s) added successfully!');
     }
 
+    public function edit($id)
+    {
+        $mentor = Mentor::findOrFail($id);
+        return response()->json($mentor);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $mentor = Mentor::findOrFail($id);
+
+        $request->validate([
+            'course_id'   => 'required|exists:courses,id',
+            'name'        => 'required|string',
+            'description' => 'nullable|string',
+            'position'    => 'nullable|string',
+            'experience'  => 'nullable|integer',
+            'photo'       => 'nullable|image|max:2048',
+        ]);
+
+        if ($request->hasFile('photo')) {
+            if ($mentor->photo) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($mentor->photo);
+            }
+            $mentor->photo = $request->file('photo')->store('mentor_photos', 'public');
+            $mentor->save();
+        }
+
+        $mentor->update([
+            'course_id'   => $request->course_id,
+            'name'        => $request->name,
+            'description' => $request->description,
+            'position'    => $request->position,
+            'experience'  => $request->experience,
+        ]);
+
+        return redirect()->route('mentor')->with('success', 'Mentor updated successfully.');
+    }
+
     public function destroy($id)
     {
         $mentor = Mentor::findOrFail($id);

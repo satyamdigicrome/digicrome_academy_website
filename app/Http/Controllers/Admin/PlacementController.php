@@ -36,6 +36,39 @@ class PlacementController extends Controller
 
         return redirect()->route('placement.index')->with('success', 'Placement created successfully.');
     }
+    public function edit($id)
+    {
+        $placement = Placement::findOrFail($id);
+        return response()->json($placement);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $placement = Placement::findOrFail($id);
+
+        $request->validate([
+            'name'     => 'required|string|max:255',
+            'position' => 'required|string|max:255',
+            'package'  => 'required|numeric',
+            'image'    => 'nullable|image|max:2048',
+        ]);
+        if ($request->hasFile('image')) {
+            if ($placement->image) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($placement->image);
+            }
+            $placement->image = $request->file('image')->store('placement', 'public');
+            $placement->save();
+        }
+
+        $placement->update([
+            'name'     => $request->name,
+            'position' => $request->position,
+            'package'  => $request->package,
+        ]);
+
+        return redirect()->route('placement.index')->with('success', 'Placement updated successfully.');
+    }
+
     public function destroy($id)
     {
         $placement = Placement::findOrFail($id);

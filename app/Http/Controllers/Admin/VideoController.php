@@ -42,6 +42,38 @@ class VideoController extends Controller
     }
     
 
+    public function edit($id)
+    {
+        $video = Video::findOrFail($id);
+        return response()->json($video);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $video = Video::findOrFail($id);
+
+        $request->validate([
+            'video_link' => 'required|string',
+            'name'       => 'required|string|max:255',
+            'image'      => 'nullable|mimes:jpeg,jpg,png,webp,gif|max:4096',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($video->image) {
+                Storage::disk('public')->delete($video->image);
+            }
+            $video->image = $request->file('image')->store('videos', 'public');
+            $video->save();
+        }
+
+        $video->update([
+            'video_link' => $request->video_link,
+            'name'       => $request->name,
+        ]);
+
+        return redirect()->back()->with('success', 'Video updated successfully.');
+    }
+
     public function destroy($id)
     {
         $video = Video::findOrFail($id);

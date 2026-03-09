@@ -45,7 +45,7 @@
                 <form action="{{ route('application.delete', $app->id) }}" method="POST" onsubmit="return confirm('Are you sure to delete this application?');">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                    <button class="btn-cms-delete" type="submit">Delete</button>
                 </form>
             </td>
         </tr>

@@ -27,7 +27,7 @@
             <input type="date" name="date" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Add Article</button>
+        <button type="submit" class="btn-cms-primary">Add Article</button>
     </form>
 
     <hr>
@@ -54,7 +54,7 @@
                     <form action="{{ route('articaldelete', $article->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger btn-sm">Delete</button>
+                        <button class="btn-cms-delete">Delete</button>
                     </form>
                 </td>
             </tr>
