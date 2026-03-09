@@ -48,7 +48,7 @@
             <div class="collapse {{ request()->routeIs('keypoints.*') || request()->routeIs('aparts.*') || request()->routeIs('modules.*') || request()->routeIs('faqs.*') || request()->routeIs('casestudy.*') || request()->routeIs('project.*') || request()->routeIs('keyfeature.*') || request()->routeIs('extra.*') ? 'show' : '' }}" id="courseExtras">
                 <div class="nav-sub-links">
                     <a href="{{ route('keypoints.index') }}" class="nav-sub-link {{ request()->routeIs('keypoints.*') ? 'active' : '' }}">Key Points</a>
-                    <a href="{{ route('aparts.index') }}" class="nav-sub-link {{ request()->routeIs('aparts.*') ? 'active' : '' }}">What Sets Apart</a>
+                    <a href="{{ route('aparts.index') }}" class="nav-sub-link {{ request()->routeIs('aparts.*') ? 'active' : '' }}">Manage Apart</a>
                     <a href="{{ route('modules.create') }}" class="nav-sub-link {{ request()->routeIs('modules.*') ? 'active' : '' }}">Modules</a>
                     <a href="{{ route('faqs.create') }}" class="nav-sub-link {{ request()->routeIs('faqs.*') ? 'active' : '' }}">FAQs</a>
                     <a href="{{ route('casestudy.index') }}" class="nav-sub-link {{ request()->routeIs('casestudy.*') ? 'active' : '' }}">Case Studies</a>

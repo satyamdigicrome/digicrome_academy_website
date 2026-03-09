@@ -65,11 +65,6 @@
     </script>
 @endpush
 @section('content')
-    <div id="christmasOfferModal" class="christmas-offer-modal" style="display: flex;">
-        <div class="christmas-offer-content" onclick="openFormFromOffer()">
-        </div>
-        <span class="christmas-close-btn" onclick="closeChristmasModal(event)">×</span>
-    </div>
     <section class="hero_area style-one d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">

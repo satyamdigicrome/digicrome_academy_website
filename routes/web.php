@@ -50,7 +50,17 @@ use Illuminate\Support\Facades\Redirect;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $stats = [
+        'courses'      => \App\Models\Course::count(),
+        'blogs'        => \App\Models\Blog::count(),
+        'leads'        => \App\Models\Lead::count(),
+        'testimonials' => \App\Models\Testimonial::count(),
+        'mentors'      => \App\Models\Mentor::count(),
+        'jobs'         => \App\Models\Vacancy::count(),
+    ];
+    $recentLeads   = \App\Models\Lead::latest()->limit(5)->get();
+    $recentBlogs   = \App\Models\Blog::latest()->limit(5)->get(['id','heading','status','created_at']);
+    return view('dashboard', compact('stats', 'recentLeads', 'recentBlogs'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
