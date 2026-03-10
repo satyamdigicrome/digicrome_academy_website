@@ -231,7 +231,7 @@
         <div class="row">
             <div class="form-group col-12">
                 <label for="description">Course Description</label>
-                <textarea class="form-control" id="content" name="description" required>{{ $course->description }}</textarea>
+                <textarea class="form-control summernote-editor" id="content" name="description" required>{{ $course->description }}</textarea>
             </div>
         </div>
         
