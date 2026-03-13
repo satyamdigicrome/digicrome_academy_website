@@ -58,6 +58,11 @@
 }
 </script>
     <link href="{{ asset('assets/css/courses.css') }}" rel="stylesheet">
+    <style>
+        #sticky-header {
+            margin-bottom: 80px !important;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -719,13 +724,12 @@
                     <ul class="list-unstyled">
                         <li class="d-flex align-items-start mb-2">
                             <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                            <span><b> Successpreneur Award 2025 </b> being the best analytics EdTech business</span>
+                            <span><b> Bharat Gaurav Awards 2026 </b> for Best EdTech in Online and Digital Education</span>
                         </li>
                         <li class="d-flex align-items-start">
                             <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                            <span><b>Most Promising Digital Learning Platform 2025</b> for being one of the most promising
-                                digital
-                                learning platforms</span>
+                            <span>DigiCrome as <b>Most Promising Online Education EdTech Platform 2026</b> famous for its
+                                quality and innovation.</span>
                         </li>
                     </ul>
                 </div>
