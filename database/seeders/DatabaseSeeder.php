@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call(CollectionsTableSeeder::class);
         $this->call(CoursesTableSeeder::class);
-
+        $this->call(RolePermissionSeeder::class);
     }
 }

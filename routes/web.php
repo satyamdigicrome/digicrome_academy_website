@@ -36,6 +36,8 @@ use App\Http\Controllers\Admin\MetaController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Admin\MentorController;
 use App\Http\Controllers\Admin\MediaPresenceController as AdminMediaPresenceController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
@@ -48,161 +50,244 @@ use Illuminate\Support\Facades\Redirect;
 //     return view('welcome');
 // });
 Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/dashboard', function () {
-    $stats = [
-        'courses'      => \App\Models\Course::count(),
-        'blogs'        => \App\Models\Blog::count(),
-        'leads'        => \App\Models\Lead::count(),
-        'testimonials' => \App\Models\Testimonial::count(),
-        'mentors'      => \App\Models\Mentor::count(),
-        'jobs'         => \App\Models\Vacancy::count(),
-    ];
-    $recentLeads   = \App\Models\Lead::latest()->limit(5)->get();
-    $recentBlogs   = \App\Models\Blog::latest()->limit(5)->get(['id','heading','status','created_at']);
-    return view('dashboard', compact('stats', 'recentLeads', 'recentBlogs'));
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get('/dashboard', function () {
+    $user = auth()->user();
+    $stats = [];
+    if ($user->hasModulePermission('courses'))
+        $stats['courses'] = \App\Models\Course::count();
+    if ($user->hasModulePermission('blogs'))
+        $stats['blogs'] = \App\Models\Blog::count();
+    if ($user->hasModulePermission('leads'))
+        $stats['leads'] = \App\Models\Lead::count();
+    if ($user->hasModulePermission('testimonials'))
+        $stats['testimonials'] = \App\Models\Testimonial::count();
+    if ($user->hasModulePermission('instructors'))
+        $stats['mentors'] = \App\Models\Mentor::count();
+    if ($user->hasModulePermission('jobs'))
+        $stats['jobs'] = \App\Models\Vacancy::count();
+
+    $recentLeads = $user->hasModulePermission('leads')
+        ? \App\Models\Lead::latest()->limit(5)->get()
+        : collect();
+    $recentBlogs = $user->hasModulePermission('blogs')
+        ? \App\Models\Blog::latest()->limit(5)->get(['id', 'heading', 'status', 'created_at'])
+        : collect();
+
+    return view('dashboard', compact('stats', 'recentLeads', 'recentBlogs'));
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+// ── Profile (auth only) ────────────────────────────────────────────────────────
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+/*
+|--------------------------------------------------------------------------
+| CMS Admin Routes — grouped by module, each guarded by module middleware.
+| Super Admin bypasses all module checks automatically (CheckModulePermission).
+|--------------------------------------------------------------------------
+*/
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/admin/manage-courses', [AdminCourseController::class, 'index'])->name('admin.manage_courses');
-    Route::get('/admin/courses/create', [AdminCourseController::class, 'create'])->name('course.create');
-    Route::post('/admin/courses', [AdminCourseController::class, 'store'])->name('course.store');
-    Route::delete('/admin/courses{id}', [AdminCourseController::class, 'destroy'])->name('course.destroy');
-    Route::get('/courses/{id}/edit', [AdminCourseController::class, 'edit'])->name('courses.edit');
-    Route::put('/courses/{id}', [AdminCourseController::class, 'update'])->name('courses.update');
-    Route::get('/keypoints', [KeyPointController::class, 'index'])->name('keypoints.index');
-    Route::post('/keypoints', [KeyPointController::class, 'store'])->name('keypoints.store');
-    Route::delete('/keypoints/{keypoint}', [KeyPointController::class, 'destroy'])->name('keypoints.destroy');
-    Route::get('/aparts', [ApartController::class, 'index'])->name('aparts.index');
-    Route::post('/aparts', [ApartController::class, 'store'])->name('aparts.store');
-    Route::delete('/aparts/{aparts}', [ApartController::class, 'destroy'])->name('aparts.destroy');
-    Route::get('/admin/faqs', [FaqController::class, 'create'])->name('faqs.create');
-    Route::post('/admin/faqs', [FaqController::class, 'store'])->name('faqs.store');
-    Route::delete('/admin/faqs/{id}', [FaqController::class, 'destroy'])->name('faqs.destroy');
-    Route::get('/admin/extra', [ExtraController::class, 'index'])->name('extra.index');
-    Route::post('/admin/extra', [ExtraController::class, 'store'])->name('extra.store');
-    Route::delete('/admin/extras/{id}', [ExtraController::class, 'destroy'])->name('extra.destroys');
-    Route::get('/extras', [ExtraController::class, 'filter'])->name('extra.filter');
-    Route::get('/case-studies', [CasestudyController::class, 'index'])->name('casestudy.index');
-    Route::post('/case-studies', [CaseStudyController::class, 'store'])->name('casestudy.store');
-    Route::delete('/admin/caseStudy{id}', [CaseStudyController::class, 'destroy'])->name('caseStudy.destroy');
-    Route::get('/placement', [PlacementController::class, 'index'])->name('placement.index');
-    Route::post('/placement', [PlacementController::class, 'store'])->name('placement.store');
-    Route::delete('/admin/placement{id}', [PlacementController::class, 'destroy'])->name('placement.destroy');
-    Route::get('/logos', [LogoController::class, 'index'])->name('logos.index');
-    Route::post('/logos', [LogoController::class, 'store'])->name('logos.store');
-    Route::delete('/admin/logos{id}', [LogoController::class, 'destroy'])->name('logos.destroy');
-    Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
-    Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
-    Route::delete('/project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
-    Route::get('/keyfeature', [KeyFeatureController::class, 'index'])->name('keyfeature.index');
-    Route::post('/keyfeature', [KeyFeatureController::class, 'store'])->name('keyfeature.store');
-    Route::delete('/keyfeature/{keyfeature}', [KeyFeatureController::class, 'destroy'])->name('keyfeature.destroy');
-    Route::get('/admin/modules', [ModuleController::class, 'create'])->name('modules.create');
-    Route::post('/admin/modules', [ModuleController::class, 'store'])->name('modules.store');
-    Route::delete('/admin/modules/{id}', [ModuleController::class, 'destroy'])->name('modules.destroy');
-    Route::get('/sucess_stories', [SucessController::class, 'index'])->name('sucess_stories');
-    Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonial');
-    Route::post('/success-stories', [SucessController::class, 'store'])->name('success.store');
-    Route::delete('/success-stories/{id}', [SucessController::class, 'destroy'])->name('success.destroy');
-    Route::post('testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
-    Route::delete('/testimonial/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
-    Route::get('blogs', [AdminBlogController::class, 'index'])->name('blogs.index');
-    Route::get('blogs/create', [AdminBlogController::class, 'create'])->name('blogs.create');
-    Route::post('blogs', [AdminBlogController::class, 'store'])->name('blogs.store');
-    Route::get('blogs/{id}/edit', [AdminBlogController::class, 'edit'])->name('blogs.edit');
-    Route::put('blogs/{id}', [AdminBlogController::class, 'update'])->name('blogs.update');
-    Route::delete('blogs/{id}', [AdminBlogController::class, 'destroy'])->name('blogs.destroy');
-    Route::post('/admin/extra/store', [ContantController::class, 'store'])->name('admin.extra.store');
-    Route::delete('/admin/extra/{id}', [ContantController::class, 'destroy'])->name('admin.extra.destroy');
-    Route::get('/contant', [ContantController::class, 'index'])->name('contant.index');
-    Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
-    Route::post('/videos/store', [VideoController::class, 'store'])->name('videos.store');
-    Route::delete('/videos/{id}', [VideoController::class, 'destroy'])->name('videos.destroy');
-    Route::get('/meta_tag', [MetaController::class, 'index'])->name('meta');
-    Route::post('/store', [MetaController::class, 'store'])->name('meta.store');
-    Route::get('/get_leads', [ContantController::class, 'leads'])->name('leed');
-    Route::delete('/meta/delete/{id}', [MetaController::class, 'destroy'])->name('meta.delete');
-    Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
-    Route::post('/vacancies', [JobController::class, 'store'])->name('vacancies.store');
-    Route::get('/vacancies/{id}/edit', [JobController::class, 'edit'])->name('vacancies.edit');
-    Route::post('/vacancies/{id}', [JobController::class, 'update'])->name('vacancies.update');
-    Route::delete('/vacancies/{id}', [JobController::class, 'destroy'])->name('vacancies.destroy');
-    Route::get('/vacancies/create', [JobController::class, 'create'])->name('vacancies.create');
-    Route::get('/show_job', [JobController::class, 'show_job'])->name('show_job');
-    Route::delete('/application/{id}', [JobController::class, 'delete_application'])->name('application.delete');
-    Route::get('/mentor', [MentorController::class, 'index'])->name('mentor');
-    Route::post('/mentor_store', [MentorController::class, 'store'])->name('mentor.store');
-    Route::delete('/admin/mentor{id}', [MentorController::class, 'destroy'])->name('mentor.destroy');
-    Route::get('/admin/media-presence', [AdminMediaPresenceController::class, 'index'])->name('media.index');
-    Route::post('/admin/media-presence', [AdminMediaPresenceController::class, 'store'])->name('media.store');
-    Route::post('/admin/media-presence/update/{id}', [AdminMediaPresenceController::class, 'update'])->name('media.update');
-    Route::get('/admin/media-presence/delete/{id}', [AdminMediaPresenceController::class, 'destroy'])->name('media.delete');
 
-    Route::get('/admin/media/article', [AdminMediaPresenceController::class, 'show'])->name('articalshow');
-    Route::post('/admin/media/article/store', [AdminMediaPresenceController::class, 'articalstore'])->name('articalstore');
-    Route::delete('/admin/media/article/delete/{id}', [AdminMediaPresenceController::class, 'articaldelete'])->name('articaldelete');
+    // ── Courses ────────────────────────────────────────────────────────────
+    Route::middleware('module:courses')->group(function () {
+        Route::get('/admin/manage-courses', [AdminCourseController::class, 'index'])->name('admin.manage_courses');
+        Route::get('/admin/courses/create', [AdminCourseController::class, 'create'])->name('course.create');
+        Route::post('/admin/courses', [AdminCourseController::class, 'store'])->name('course.store');
+        Route::delete('/admin/courses{id}', [AdminCourseController::class, 'destroy'])->name('course.destroy');
+        Route::get('/courses/{id}/edit', [AdminCourseController::class, 'edit'])->name('courses.edit');
+        Route::put('/courses/{id}', [AdminCourseController::class, 'update'])->name('courses.update');
+    });
 
+    // ── Course Details (Key Points, FAQs, Modules, Aparts, etc.) ──────────
+    Route::middleware('module:course-details')->group(function () {
+        Route::get('/keypoints', [KeyPointController::class, 'index'])->name('keypoints.index');
+        Route::post('/keypoints', [KeyPointController::class, 'store'])->name('keypoints.store');
+        Route::delete('/keypoints/{keypoint}', [KeyPointController::class, 'destroy'])->name('keypoints.destroy');
+        Route::get('/admin/keypoints/{id}/edit', [KeyPointController::class, 'edit'])->name('admin.keypoints.edit');
+        Route::post('/admin/keypoints/{id}', [KeyPointController::class, 'update'])->name('admin.keypoints.update');
 
+        Route::get('/aparts', [ApartController::class, 'index'])->name('aparts.index');
+        Route::post('/aparts', [ApartController::class, 'store'])->name('aparts.store');
+        Route::delete('/aparts/{aparts}', [ApartController::class, 'destroy'])->name('aparts.destroy');
+        Route::get('/admin/aparts/{id}/edit', [ApartController::class, 'edit'])->name('admin.aparts.edit');
+        Route::post('/admin/aparts/{id}', [ApartController::class, 'update'])->name('admin.aparts.update');
 
+        Route::get('/admin/faqs', [FaqController::class, 'create'])->name('faqs.create');
+        Route::post('/admin/faqs', [FaqController::class, 'store'])->name('faqs.store');
+        Route::delete('/admin/faqs/{id}', [FaqController::class, 'destroy'])->name('faqs.destroy');
+        Route::get('/admin/faqs/{id}/edit', [FaqController::class, 'edit'])->name('admin.faqs.edit');
+        Route::post('/admin/faqs/{id}', [FaqController::class, 'update'])->name('admin.faqs.update');
 
+        Route::get('/admin/extra', [ExtraController::class, 'index'])->name('extra.index');
+        Route::post('/admin/extra', [ExtraController::class, 'store'])->name('extra.store');
+        Route::delete('/admin/extras/{id}', [ExtraController::class, 'destroy'])->name('extra.destroys');
+        Route::get('/extras', [ExtraController::class, 'filter'])->name('extra.filter');
+        Route::get('/admin/extras/{id}/edit', [ExtraController::class, 'edit'])->name('admin.extra.edit');
+        Route::post('/admin/extras/{id}', [ExtraController::class, 'update'])->name('admin.extra.update');
 
+        Route::get('/case-studies', [CasestudyController::class, 'index'])->name('casestudy.index');
+        Route::post('/case-studies', [CasestudyController::class, 'store'])->name('casestudy.store');
+        Route::delete('/admin/caseStudy{id}', [CasestudyController::class, 'destroy'])->name('caseStudy.destroy');
+        Route::get('/admin/case-studies/{id}/edit', [CasestudyController::class, 'edit'])->name('admin.casestudy.edit');
+        Route::post('/admin/case-studies/{id}', [CasestudyController::class, 'update'])->name('admin.casestudy.update');
 
-    // Add routes for edit, update, and delete as needed
-    // ── Admin Edit / Update routes (all prefixed /admin/ to avoid frontend conflicts) ───────────
-    // Testimonials
-    Route::get('/admin/testimonial/{id}/edit', [TestimonialController::class, 'edit'])->name('admin.testimonial.edit');
-    Route::post('/admin/testimonial/{id}', [TestimonialController::class, 'update'])->name('admin.testimonial.update');
-    // Success Stories
-    Route::get('/admin/success-stories/{id}/edit', [SucessController::class, 'edit'])->name('admin.success.edit');
-    Route::post('/admin/success-stories/{id}/update', [SucessController::class, 'update'])->name('admin.success.update');
-    // Mentors
-    Route::get('/admin/mentor/{id}/edit', [MentorController::class, 'edit'])->name('admin.mentor.edit');
-    Route::post('/admin/mentor/{id}', [MentorController::class, 'update'])->name('admin.mentor.update');
-    // FAQs
-    Route::get('/admin/faqs/{id}/edit', [FaqController::class, 'edit'])->name('admin.faqs.edit');
-    Route::post('/admin/faqs/{id}', [FaqController::class, 'update'])->name('admin.faqs.update');
-    // Modules
-    Route::get('/admin/modules/{id}/edit', [ModuleController::class, 'edit'])->name('admin.modules.edit');
-    Route::post('/admin/modules/{id}', [ModuleController::class, 'update'])->name('admin.modules.update');
-    // Videos
-    Route::get('/admin/videos/{id}/edit', [VideoController::class, 'edit'])->name('admin.videos.edit');
-    Route::post('/admin/videos/{id}', [VideoController::class, 'update'])->name('admin.videos.update');
-    // Meta Tags
-    Route::get('/admin/meta/{id}/edit', [MetaController::class, 'edit'])->name('admin.meta.edit');
-    Route::post('/admin/meta/{id}', [MetaController::class, 'update'])->name('admin.meta.update');
-    // Content
-    Route::get('/admin/contant/{id}/edit', [ContantController::class, 'edit'])->name('admin.contant.edit');
-    Route::post('/admin/contant/{id}', [ContantController::class, 'update'])->name('admin.contant.update');
-    // Key Points
-    Route::get('/admin/keypoints/{id}/edit', [KeyPointController::class, 'edit'])->name('admin.keypoints.edit');
-    Route::post('/admin/keypoints/{id}', [KeyPointController::class, 'update'])->name('admin.keypoints.update');
-    // Aparts
-    Route::get('/admin/aparts/{id}/edit', [ApartController::class, 'edit'])->name('admin.aparts.edit');
-    Route::post('/admin/aparts/{id}', [ApartController::class, 'update'])->name('admin.aparts.update');
-    // Case Studies
-    Route::get('/admin/case-studies/{id}/edit', [CasestudyController::class, 'edit'])->name('admin.casestudy.edit');
-    Route::post('/admin/case-studies/{id}', [CasestudyController::class, 'update'])->name('admin.casestudy.update');
-    // Placements
-    Route::get('/admin/placement/{id}/edit', [PlacementController::class, 'edit'])->name('admin.placement.edit');
-    Route::post('/admin/placement/{id}/update', [PlacementController::class, 'update'])->name('admin.placement.update');
-    // Logos
-    Route::get('/admin/logos/{id}/edit', [LogoController::class, 'edit'])->name('admin.logos.edit');
-    Route::post('/admin/logos/{id}', [LogoController::class, 'update'])->name('admin.logos.update');
-    // Projects
-    Route::get('/admin/project/{id}/edit', [ProjectController::class, 'edit'])->name('admin.project.edit');
-    Route::post('/admin/project/{id}', [ProjectController::class, 'update'])->name('admin.project.update');
-    // Key Features
-    Route::get('/admin/keyfeature/{id}/edit', [KeyFeatureController::class, 'edit'])->name('admin.keyfeature.edit');
-    Route::post('/admin/keyfeature/{id}', [KeyFeatureController::class, 'update'])->name('admin.keyfeature.update');
-    // Extra
-    Route::get('/admin/extras/{id}/edit', [ExtraController::class, 'edit'])->name('admin.extra.edit');
-    Route::post('/admin/extras/{id}', [ExtraController::class, 'update'])->name('admin.extra.update');
+        Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
+        Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
+        Route::delete('/project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
+        Route::get('/admin/project/{id}/edit', [ProjectController::class, 'edit'])->name('admin.project.edit');
+        Route::post('/admin/project/{id}', [ProjectController::class, 'update'])->name('admin.project.update');
+
+        Route::get('/keyfeature', [KeyFeatureController::class, 'index'])->name('keyfeature.index');
+        Route::post('/keyfeature', [KeyFeatureController::class, 'store'])->name('keyfeature.store');
+        Route::delete('/keyfeature/{keyfeature}', [KeyFeatureController::class, 'destroy'])->name('keyfeature.destroy');
+        Route::get('/admin/keyfeature/{id}/edit', [KeyFeatureController::class, 'edit'])->name('admin.keyfeature.edit');
+        Route::post('/admin/keyfeature/{id}', [KeyFeatureController::class, 'update'])->name('admin.keyfeature.update');
+
+        Route::get('/admin/modules', [ModuleController::class, 'create'])->name('modules.create');
+        Route::post('/admin/modules', [ModuleController::class, 'store'])->name('modules.store');
+        Route::delete('/admin/modules/{id}', [ModuleController::class, 'destroy'])->name('modules.destroy');
+        Route::get('/admin/modules/{id}/edit', [ModuleController::class, 'edit'])->name('admin.modules.edit');
+        Route::post('/admin/modules/{id}', [ModuleController::class, 'update'])->name('admin.modules.update');
+    });
+
+    // ── Blogs ──────────────────────────────────────────────────────────────
+    Route::middleware('module:blogs')->group(function () {
+        Route::get('blogs', [AdminBlogController::class, 'index'])->name('blogs.index');
+        Route::get('blogs/create', [AdminBlogController::class, 'create'])->name('blogs.create');
+        Route::post('blogs', [AdminBlogController::class, 'store'])->name('blogs.store');
+        Route::get('blogs/{id}/edit', [AdminBlogController::class, 'edit'])->name('blogs.edit');
+        Route::put('blogs/{id}', [AdminBlogController::class, 'update'])->name('blogs.update');
+        Route::delete('blogs/{id}', [AdminBlogController::class, 'destroy'])->name('blogs.destroy');
+    });
+
+    // ── Success Stories ────────────────────────────────────────────────────
+    Route::middleware('module:success-stories')->group(function () {
+        Route::get('/sucess_stories', [SucessController::class, 'index'])->name('sucess_stories');
+        Route::post('/success-stories', [SucessController::class, 'store'])->name('success.store');
+        Route::delete('/success-stories/{id}', [SucessController::class, 'destroy'])->name('success.destroy');
+        Route::get('/admin/success-stories/{id}/edit', [SucessController::class, 'edit'])->name('admin.success.edit');
+        Route::post('/admin/success-stories/{id}/update', [SucessController::class, 'update'])->name('admin.success.update');
+    });
+
+    // ── Testimonials ───────────────────────────────────────────────────────
+    Route::middleware('module:testimonials')->group(function () {
+        Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonial');
+        Route::post('testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
+        Route::delete('/testimonial/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
+        Route::get('/admin/testimonial/{id}/edit', [TestimonialController::class, 'edit'])->name('admin.testimonial.edit');
+        Route::post('/admin/testimonial/{id}', [TestimonialController::class, 'update'])->name('admin.testimonial.update');
+    });
+
+    // ── Videos ────────────────────────────────────────────────────────────
+    Route::middleware('module:videos')->group(function () {
+        Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
+        Route::post('/videos/store', [VideoController::class, 'store'])->name('videos.store');
+        Route::delete('/videos/{id}', [VideoController::class, 'destroy'])->name('videos.destroy');
+        Route::get('/admin/videos/{id}/edit', [VideoController::class, 'edit'])->name('admin.videos.edit');
+        Route::post('/admin/videos/{id}', [VideoController::class, 'update'])->name('admin.videos.update');
+    });
+
+    // ── Instructors / Mentors ──────────────────────────────────────────────
+    Route::middleware('module:instructors')->group(function () {
+        Route::get('/mentor', [MentorController::class, 'index'])->name('mentor');
+        Route::post('/mentor_store', [MentorController::class, 'store'])->name('mentor.store');
+        Route::delete('/admin/mentor{id}', [MentorController::class, 'destroy'])->name('mentor.destroy');
+        Route::get('/admin/mentor/{id}/edit', [MentorController::class, 'edit'])->name('admin.mentor.edit');
+        Route::post('/admin/mentor/{id}', [MentorController::class, 'update'])->name('admin.mentor.update');
+    });
+
+    // ── Media Presence ─────────────────────────────────────────────────────
+    Route::middleware('module:media-presence')->group(function () {
+        Route::get('/admin/media-presence', [AdminMediaPresenceController::class, 'index'])->name('media.index');
+        Route::post('/admin/media-presence', [AdminMediaPresenceController::class, 'store'])->name('media.store');
+        Route::post('/admin/media-presence/update/{id}', [AdminMediaPresenceController::class, 'update'])->name('media.update');
+        Route::get('/admin/media-presence/delete/{id}', [AdminMediaPresenceController::class, 'destroy'])->name('media.delete');
+        Route::get('/admin/media/article', [AdminMediaPresenceController::class, 'show'])->name('articalshow');
+        Route::post('/admin/media/article/store', [AdminMediaPresenceController::class, 'articalstore'])->name('articalstore');
+        Route::delete('/admin/media/article/delete/{id}', [AdminMediaPresenceController::class, 'articaldelete'])->name('articaldelete');
+    });
+
+    // ── Logos & Partners ───────────────────────────────────────────────────
+    Route::middleware('module:logos')->group(function () {
+        Route::get('/logos', [LogoController::class, 'index'])->name('logos.index');
+        Route::post('/logos', [LogoController::class, 'store'])->name('logos.store');
+        Route::delete('/admin/logos{id}', [LogoController::class, 'destroy'])->name('logos.destroy');
+        Route::get('/admin/logos/{id}/edit', [LogoController::class, 'edit'])->name('admin.logos.edit');
+        Route::post('/admin/logos/{id}', [LogoController::class, 'update'])->name('admin.logos.update');
+    });
+
+    // ── Placements ─────────────────────────────────────────────────────────
+    Route::middleware('module:placements')->group(function () {
+        Route::get('/placement', [PlacementController::class, 'index'])->name('placement.index');
+        Route::post('/placement', [PlacementController::class, 'store'])->name('placement.store');
+        Route::delete('/admin/placement{id}', [PlacementController::class, 'destroy'])->name('placement.destroy');
+        Route::get('/admin/placement/{id}/edit', [PlacementController::class, 'edit'])->name('admin.placement.edit');
+        Route::post('/admin/placement/{id}/update', [PlacementController::class, 'update'])->name('admin.placement.update');
+    });
+
+    // ── Job Postings ───────────────────────────────────────────────────────
+    Route::middleware('module:jobs')->group(function () {
+        Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
+        Route::get('/vacancies/create', [JobController::class, 'create'])->name('vacancies.create');
+        Route::post('/vacancies', [JobController::class, 'store'])->name('vacancies.store');
+        Route::get('/vacancies/{id}/edit', [JobController::class, 'edit'])->name('vacancies.edit');
+        Route::post('/vacancies/{id}', [JobController::class, 'update'])->name('vacancies.update');
+        Route::delete('/vacancies/{id}', [JobController::class, 'destroy'])->name('vacancies.destroy');
+    });
+
+    // ── Applications ───────────────────────────────────────────────────────
+    Route::middleware('module:applications')->group(function () {
+        Route::get('/show_job', [JobController::class, 'show_job'])->name('show_job');
+        Route::delete('/application/{id}', [JobController::class, 'delete_application'])->name('application.delete');
+    });
+
+    // ── Meta Tags ──────────────────────────────────────────────────────────
+    Route::middleware('module:meta-tags')->group(function () {
+        Route::get('/meta_tag', [MetaController::class, 'index'])->name('meta');
+        Route::post('/store', [MetaController::class, 'store'])->name('meta.store');
+        Route::delete('/meta/delete/{id}', [MetaController::class, 'destroy'])->name('meta.delete');
+        Route::get('/admin/meta/{id}/edit', [MetaController::class, 'edit'])->name('admin.meta.edit');
+        Route::post('/admin/meta/{id}', [MetaController::class, 'update'])->name('admin.meta.update');
+    });
+
+    // ── Privacy / Terms / Content ──────────────────────────────────────────
+    Route::middleware('module:content')->group(function () {
+        Route::get('/contant', [ContantController::class, 'index'])->name('contant.index');
+        Route::post('/admin/extra/store', [ContantController::class, 'store'])->name('admin.extra.store');
+        Route::delete('/admin/extra/{id}', [ContantController::class, 'destroy'])->name('admin.extra.destroy');
+        Route::get('/admin/contant/{id}/edit', [ContantController::class, 'edit'])->name('admin.contant.edit');
+        Route::post('/admin/contant/{id}', [ContantController::class, 'update'])->name('admin.contant.update');
+    });
+
+    // ── Leads ──────────────────────────────────────────────────────────────
+    Route::middleware('module:leads')->group(function () {
+        Route::get('/get_leads', [ContantController::class, 'leads'])->name('leed');
+    });
+
+    // ── Users & Roles (Super Admin only via CheckModulePermission + isSuperAdmin) ──
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+        Route::post('/users', [UserController::class, 'store'])->name('users.store');
+        Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+        Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+        Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+        Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
+        Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
+        Route::get('/roles/{role}/edit', [RoleController::class, 'edit'])->name('roles.edit');
+        Route::put('/roles/{role}', [RoleController::class, 'update'])->name('roles.update');
+        Route::delete('/roles/{role}', [RoleController::class, 'destroy'])->name('roles.destroy');
+    });
 });
 Route::get('/search-courses', [CourseController::class, 'searchCourses'])->name('search.courses');
 Route::get('/about-us', [AboutController::class, 'index'])->name('about');
@@ -254,7 +339,5 @@ Route::get('/test-mail', function () {
 Route::redirect('/upcoming-courses/post-graduate-program-in-data-science-and-artificial-intelligence', '/courses/pgp-in-data-science-and-ai', 301);
 Route::redirect('/upcoming-courses/advance-certification-program-in-artificial-intelligence-machine-learning', '/courses/advance-certification-in-ai-machine-learning', 301);
 Route::redirect('/upcoming-courses/post-graduate-program-in-data-science-and-machine-learning', '/courses/online-data-analytics-and-machine-learning-program', 301);
-
-
 
 require __DIR__ . '/auth.php';

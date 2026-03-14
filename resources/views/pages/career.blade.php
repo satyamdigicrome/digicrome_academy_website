@@ -459,128 +459,452 @@
     </div>
   </div>
 </section>
-<section class="py-5 bg-white" id="career">
+<style>
+  /* ── Job Cards ── */
+  .career-section {
+    background: #f4f7fc;
+    padding: 60px 0;
+  }
+  .career-section .section-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a237e;
+  }
+  .job-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e3e8f0;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(26, 35, 126, 0.12);
+  }
+  .job-card .card-accent {
+    height: 4px;
+    background: linear-gradient(90deg, #1a237e, #f29c12);
+  }
+  .job-card .card-inner {
+    padding: 22px 22px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .job-card .job-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 6px;
+  }
+  .job-card .job-meta {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 4px;
+  }
+  .job-card .job-meta i {
+    color: #f29c12;
+    margin-right: 5px;
+  }
+  .job-card .positions-badge {
+    display: inline-block;
+    background: #eef0f8;
+    color: #1a237e;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+  }
+  .job-card .salary-tag {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 14px;
+  }
+  .job-card .btn-apply {
+    display: inline-block;
+    margin-top: auto;
+    border: 2px solid #f29c12;
+    color: #f29c12;
+    background: transparent;
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 7px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    align-self: flex-start;
+  }
+  .job-card .btn-apply:hover {
+    background: #f29c12;
+    color: #fff;
+  }
+  .job-card .card-footer-bar {
+    height: 3px;
+    background: #f29c12;
+  }
+
+  /* ── Apply Modal ── */
+  /* Override Bootstrap 5's CSS variable that controls modal max-width */
+  .apply-modal {
+    --bs-modal-width: min(92vw, 1050px) !important;
+  }
+  .apply-modal .modal-dialog {
+    width: min(92vw, 1050px) !important;
+    max-width: min(92vw, 1050px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .apply-modal .modal-content {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    width:auto;
+    margin:0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .apply-modal .modal-header-custom {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .apply-modal .modal-header-custom .modal-title-wrap h5 {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 3px;
+  }
+  .apply-modal .modal-header-custom .modal-title-wrap small {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.8rem;
+  }
+  .apply-modal .modal-header-custom .btn-close-custom {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .apply-modal .modal-header-custom .btn-close-custom:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  .apply-modal .modal-body-split {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .apply-modal .job-detail-panel {
+    flex: 0 0 55%;
+    overflow-y: auto;
+    padding: 28px 30px;
+    border-right: 1px solid #e8eaf6;
+    background: #fafbff;
+  }
+  .apply-modal .job-detail-panel::-webkit-scrollbar { width: 5px; }
+  .apply-modal .job-detail-panel::-webkit-scrollbar-track { background: #f0f0f0; }
+  .apply-modal .job-detail-panel::-webkit-scrollbar-thumb { background: #c5cae9; border-radius: 4px; }
+  .apply-modal .job-detail-panel .meta-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0;
+  }
+  .apply-modal .job-detail-panel .meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #e8eaf6;
+    color: #1a237e;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+  .apply-modal .job-detail-panel .salary-chip {
+    background: #e8f5e9;
+    color: #1b5e20;
+  }
+  .apply-modal .job-detail-panel h6.section-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1a237e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 20px 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #e8eaf6;
+  }
+  .apply-modal .job-detail-panel .desc-content {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.7;
+  }
+  .apply-modal .form-panel {
+    flex: 0 0 45%;
+    overflow-y: auto;
+    padding: 28px 28px 22px;
+    background: #fff;
+  }
+  .apply-modal .form-panel::-webkit-scrollbar { width: 5px; }
+  .apply-modal .form-panel::-webkit-scrollbar-track { background: #f0f0f0; }
+  .apply-modal .form-panel::-webkit-scrollbar-thumb { background: #c5cae9; border-radius: 4px; }
+  .apply-modal .form-panel h6 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e8eaf6;
+  }
+  .apply-modal .form-panel .form-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 4px;
+  }
+  .apply-modal .form-panel .form-control {
+    font-size: 0.88rem;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 9px 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .apply-modal .form-panel .form-control:focus {
+    border-color: #1a237e;
+    box-shadow: 0 0 0 3px rgba(26,35,126,0.1);
+    outline: none;
+  }
+  .apply-modal .form-panel .file-upload-area {
+    border: 2px dashed #c5cae9;
+    border-radius: 8px;
+    padding: 18px 16px;
+    text-align: center;
+    background: #f5f6ff;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .apply-modal .form-panel .file-upload-area:hover {
+    border-color: #1a237e;
+  }
+  .apply-modal .form-panel .file-upload-area input[type="file"] {
+    display: none;
+  }
+  .apply-modal .form-panel .btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+    margin-top: 6px;
+  }
+  .apply-modal .form-panel .btn-submit:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .apply-modal .modal-dialog {
+      width: 100vw !important;
+      max-width: 100vw !important;
+      margin: 0 !important;
+    }
+    .apply-modal .modal-content {
+      height: 100dvh;
+      border-radius: 0;
+    }
+    .apply-modal .modal-body-split {
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .apply-modal .job-detail-panel {
+      flex: none;
+      border-right: none;
+      border-bottom: 1px solid #e8eaf6;
+      overflow-y: visible;
+    }
+    .apply-modal .form-panel {
+      flex: none;
+      overflow-y: visible;
+    }
+  }
+</style>
+
+<section class="career-section" id="career">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 style="font-size: 30px" class="fw-bold">Join Our Dynamic Team</h2>
-      <p class="lead text-muted">Discover exciting career opportunities and become a part of something great.</p>
+      <h2 class="section-heading">Join Our Dynamic Team</h2>
+      <p class="text-muted mt-2">Discover exciting career opportunities and become a part of something great.</p>
       <p class="text-secondary"><small>Your region: {{ $userCountry }}</small></p>
     </div>
 
-
     <div class="row g-4">
       @foreach($vacancies as $vacancy)
-      <div class="col-lg-6 mb-4">
-        <div class="card h-100 shadow-sm border-0 rounded-3">
-          <div class="card-body d-flex flex-column">
-            <!-- Header: Job Title and Type Badge -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <h5 class="card-title mb-0 text-primary fw-bold">{{ $vacancy->title }}</h5>
-              <span class="badge bg-info text-dark text-uppercase px-3 py-1 fw-semibold">{{ $vacancy->type }}</span>
-            </div>
-
-            <!-- Company, Location, Experience and Salary -->
-            <p class="text-muted mb-1"><i class="bi bi-building me-2"></i>{{ $vacancy->company_name }}</p>
-            <p class="text-muted mb-1"><i class="bi bi-geo-alt-fill me-2"></i>{{ $vacancy->location }}</p>
-            <p class="text-muted mb-1"><i class="bi bi-briefcase-fill me-2"></i>{{ $vacancy->experience_level }}</p>
-            <p class="text-success fw-semibold fs-5 mb-3">💰 {{ $vacancy->salary }}</p>
-
-            <!-- Industry Badge -->
-            <div class="mb-3">
-              <span class="badge bg-secondary text-white">{{ $vacancy->industry }}</span>
-            </div>
-
-            <!-- Button to open modal -->
+      <div class="col-lg-4 col-md-6 d-flex">
+        <div class="job-card w-100">
+          <div class="card-accent"></div>
+          <div class="card-inner">
+            <div class="job-title">{{ $vacancy->title }}</div>
+            <div class="job-meta"><i class="bi bi-geo-alt-fill"></i>Job Location : {{ $vacancy->location }}</div>
+            <div class="job-meta"><i class="bi bi-building"></i>{{ $vacancy->company_name }}</div>
+            @if($vacancy->experience_level)
+            <div class="job-meta"><i class="bi bi-briefcase-fill"></i>{{ $vacancy->experience_level }}</div>
+            @endif
+            <span class="positions-badge"><i class="bi bi-people-fill me-1"></i>Current Positions: {{ $vacancy->positions ?? 12 }}</span>
+            @if($vacancy->salary)
+            <div class="salary-tag">💰 {{ $vacancy->salary }}</div>
+            @endif
             <button
-              class="btn btn-primary mt-auto"
+              class="btn-apply"
               data-bs-toggle="modal"
               data-bs-target="#applyModal{{ $vacancy->id }}">
-              View & Apply
+              Apply Now
             </button>
           </div>
+          <div class="card-footer-bar"></div>
         </div>
       </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="applyModal{{ $vacancy->id }}" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content border-0 shadow-lg" style="max-height: 90vh;">
-            <form action="{{ route('vacancy.apply') }}" method="POST" enctype="multipart/form-data" class="p-3">
-              @csrf
-              <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title">Apply for: {{ $vacancy->title }}</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      <!-- Improved Apply Modal -->
+      <div class="modal fade apply-modal" id="applyModal{{ $vacancy->id }}" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="width:92vw;max-width:1050px;margin:auto;">
+          <div class="modal-content" style="height:88vh;display:flex;flex-direction:column;border:none;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.22);">
+            <!-- Custom Header -->
+            <div class="modal-header-custom">
+              <div class="modal-title-wrap">
+                <h5>{{ $vacancy->title }}</h5>
+                <small><i class="bi bi-geo-alt-fill me-1"></i>{{ $vacancy->location }} &nbsp;|&nbsp; <i class="bi bi-building me-1"></i>{{ $vacancy->company_name }}</small>
               </div>
+              <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
 
-              <div class="modal-body" style="max-height: 75vh; overflow-y: hidden;">
-                <div class="row g-4">
-                  <!-- Left side: Job info (70% width) -->
-                  <div class="col-lg-8" style="max-height: 70vh; overflow-y: auto; border-right: 1px solid #ddd; padding-right: 30px;">
-                    <h4 class="fw-bold mb-3">{{ $vacancy->title }}</h4>
-                    <p class="mb-1"><strong>Company:</strong> {{ $vacancy->company_name }}</p>
-                    <p class="mb-1"><strong>Location:</strong> {{ $vacancy->location }}</p>
-                    <p class="mb-1"><strong>Type:</strong> {{ $vacancy->type }}</p>
-                    <p class="mb-1"><strong>Experience Level:</strong> {{ $vacancy->experience_level }}</p>
-                    <p class="mb-4 text-success fw-semibold fs-5">💰 {{ $vacancy->salary }}</p>
+            <!-- Body: split panel -->
+            <div class="modal-body-split" style="display:flex;flex:1;min-height:0;overflow:hidden;">
 
-                    <h5 class="fw-semibold mb-2">Job Description</h5>
-                    <div class="mb-4" style="list-style: disc;">{!! $vacancy->description !!}</div>
-
-                    <h5 class="fw-semibold mb-2">Requirements</h5>
-                    <div style="list-style: disc;">{!! $vacancy->requirements !!}</div>
-                  </div>
-
-                  <!-- Right side: Application form (30% width) -->
-                  <div class="col-lg-4" style="max-height: 70vh; overflow-y: auto; padding-left: 30px;">
-                    @error('resume')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
-                    <input type="hidden" name="vacancy_id" value="{{ $vacancy->id }}">
-
-                    <div class="mb-3">
-                      <label for="name{{ $vacancy->id }}" class="form-label fw-semibold">Name</label>
-                      <input type="text" name="name" id="name{{ $vacancy->id }}" class="form-control form-control-sm" placeholder="Your full name" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="email{{ $vacancy->id }}" class="form-label fw-semibold">Email</label>
-                      <input type="email" name="email" id="email{{ $vacancy->id }}" class="form-control form-control-sm" placeholder="you@example.com" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="phone{{ $vacancy->id }}" class="form-label fw-semibold">Phone</label>
-                      <input type="tel" name="phone" id="phone{{ $vacancy->id }}" class="form-control form-control-sm" placeholder="+1234567890" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="cover_letter{{ $vacancy->id }}" class="form-label fw-semibold">Message</label>
-                      <textarea name="cover_letter" id="cover_letter{{ $vacancy->id }}" class="form-control form-control-sm" rows="3" placeholder="Write a brief cover letter" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                      <label for="resume{{ $vacancy->id }}" class="form-label fw-semibold">Resume</label>
-                      <input
-                        type="file"
-                        name="resume"
-                        id="resume{{ $vacancy->id }}"
-                        class="form-control form-control-sm"
-                        required
-                        accept=".pdf,.doc,.docx" />
-                      <small class="text-muted">Max file size: 5MB</small>
-                    </div>
-                    <button type="submit" class="btn btn-success w-100 mt-2 fw-semibold">Submit Application</button>
-                  </div>
+              <!-- Left: Job Details -->
+              <div class="job-detail-panel" style="flex:0 0 55%;overflow-y:auto;padding:28px 30px;border-right:1px solid #e8eaf6;background:#fafbff;">
+                <div class="meta-chips">
+                  <span class="meta-chip"><i class="bi bi-tag-fill"></i>{{ $vacancy->type }}</span>
+                  <span class="meta-chip"><i class="bi bi-briefcase-fill"></i>{{ $vacancy->experience_level }}</span>
+                  <span class="meta-chip"><i class="bi bi-grid-fill"></i>{{ $vacancy->industry }}</span>
+                  @if($vacancy->salary)
+                  <span class="meta-chip salary-chip"><i class="bi bi-cash-stack"></i>{{ $vacancy->salary }}</span>
+                  @endif
                 </div>
+
+                <h6 class="section-label">Job Description</h6>
+                <div class="desc-content">{!! $vacancy->description !!}</div>
+
+                <h6 class="section-label">Requirements</h6>
+                <div class="desc-content">{!! $vacancy->requirements !!}</div>
               </div>
-            </form>
+
+              <!-- Right: Application Form -->
+              <div class="form-panel" style="flex:0 0 45%;overflow-y:auto;padding:28px 28px 22px;background:#fff;">
+                <form action="{{ route('vacancy.apply') }}" method="POST" enctype="multipart/form-data">
+                  @csrf
+                  <input type="hidden" name="vacancy_id" value="{{ $vacancy->id }}">
+
+                  <h6><i class="bi bi-send-fill me-2" style="color:#f29c12"></i>Quick Apply</h6>
+
+                  @error('resume')
+                  <div class="alert alert-danger py-2 mb-3" style="font-size:0.83rem">{{ $message }}</div>
+                  @enderror
+
+                  <div class="mb-3">
+                    <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                    <input type="text" name="name" class="form-control" placeholder="Your full name" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                    <input type="email" name="email" class="form-control" placeholder="you@example.com" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                    <input type="tel" name="phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Cover Letter / Message <span class="text-danger">*</span></label>
+                    <textarea name="cover_letter" class="form-control" rows="4" placeholder="Tell us why you're a great fit..." required></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Resume <span class="text-danger">*</span></label>
+                    <label class="file-upload-area d-block" for="resume{{ $vacancy->id }}">
+                      <i class="bi bi-cloud-upload-fill" style="font-size:1.6rem; color:#1a237e; display:block; margin-bottom:6px;"></i>
+                      <span style="font-size:0.85rem; color:#555; font-weight:600;">Click to upload your resume</span><br>
+                      <small class="text-muted">PDF, DOC, DOCX &mdash; Max 5MB</small>
+                      <input type="file" name="resume" id="resume{{ $vacancy->id }}" required accept=".pdf,.doc,.docx">
+                    </label>
+                    <p id="file-name-{{ $vacancy->id }}" style="font-size:0.78rem; color:#1a237e; margin-top:5px;"></p>
+                  </div>
+
+                  <button type="submit" class="btn-submit">
+                    <i class="bi bi-send-fill me-2"></i>Submit Application
+                  </button>
+                </form>
+              </div>
+
+            </div><!-- /modal-body-split -->
           </div>
         </div>
       </div>
-
-
-
       @endforeach
-
     </div>
   </div>
 </section>
+
+<script>
+  // Force modal width on every open — guaranteed override of Bootstrap internals
+  document.querySelectorAll('.apply-modal').forEach(function(modal) {
+    modal.addEventListener('show.bs.modal', function() {
+      var dialog = this.querySelector('.modal-dialog');
+      if (dialog) {
+        var w = Math.min(window.innerWidth * 0.92, 1050);
+        dialog.style.cssText += ';width:' + w + 'px!important;max-width:' + w + 'px!important;margin:auto!important;';
+      }
+    });
+  });
+
+  // Show selected filename in file upload areas
+  document.querySelectorAll('.file-upload-area input[type="file"]').forEach(function(input) {
+    input.addEventListener('change', function() {
+      var id = this.id.replace('resume', '');
+      var display = document.getElementById('file-name-' + id);
+      if (display) {
+        display.textContent = this.files.length ? '📎 ' + this.files[0].name : '';
+      }
+    });
+  });
+</script>
 @if(session('success'))
 <div class="alert alert-success">
   {{ session('success') }}

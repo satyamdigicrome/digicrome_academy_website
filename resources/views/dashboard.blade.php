@@ -5,6 +5,8 @@
 
 @section('content')
 
+@php $user = auth()->user(); @endphp
+
 <style>
 /* ── Stats Cards ── */
 .stat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px; margin-bottom:28px; }
@@ -58,16 +60,25 @@
             <p>Here's a snapshot of your CMS — everything is running smoothly.</p>
         </div>
         <div class="welcome-quick mt-3">
+            @if($user->hasModulePermission('courses'))
             <a href="{{ route('admin.manage_courses') }}" class="wq-primary"><i class="bi bi-plus-lg me-1"></i> Add Course</a>
+            @endif
+            @if($user->hasModulePermission('blogs'))
             <a href="{{ route('blogs.create') }}" class="wq-outline"><i class="bi bi-pencil me-1"></i> Write Blog</a>
+            @endif
+            @if($user->hasModulePermission('leads'))
             <a href="{{ route('leed') }}" class="wq-outline"><i class="bi bi-graph-up me-1"></i> View Leads</a>
+            @endif
         </div>
     </div>
     <i class="bi bi-speedometer2 welcome-icon"></i>
 </div>
 
-{{-- Stats --}}
+{{-- Stats Grid — only shows cards the user has access to --}}
+@if(!empty($stats))
 <div class="stat-grid">
+
+    @if(isset($stats['courses']))
     <a href="{{ route('admin.manage_courses') }}" class="stat-card">
         <div class="stat-icon blue"><i class="bi bi-journal-bookmark-fill"></i></div>
         <div>
@@ -75,6 +86,9 @@
             <div class="stat-label">Total Courses</div>
         </div>
     </a>
+    @endif
+
+    @if(isset($stats['blogs']))
     <a href="{{ route('blogs.index') }}" class="stat-card">
         <div class="stat-icon green"><i class="bi bi-file-earmark-text-fill"></i></div>
         <div>
@@ -82,6 +96,9 @@
             <div class="stat-label">Blog Posts</div>
         </div>
     </a>
+    @endif
+
+    @if(isset($stats['leads']))
     <a href="{{ route('leed') }}" class="stat-card">
         <div class="stat-icon orange"><i class="bi bi-graph-up-arrow"></i></div>
         <div>
@@ -89,6 +106,9 @@
             <div class="stat-label">Leads Collected</div>
         </div>
     </a>
+    @endif
+
+    @if(isset($stats['testimonials']))
     <a href="{{ route('testimonial') }}" class="stat-card">
         <div class="stat-icon purple"><i class="bi bi-chat-quote-fill"></i></div>
         <div>
@@ -96,6 +116,9 @@
             <div class="stat-label">Testimonials</div>
         </div>
     </a>
+    @endif
+
+    @if(isset($stats['mentors']))
     <a href="{{ route('mentor') }}" class="stat-card">
         <div class="stat-icon teal"><i class="bi bi-person-badge-fill"></i></div>
         <div>
@@ -103,6 +126,9 @@
             <div class="stat-label">Instructors</div>
         </div>
     </a>
+    @endif
+
+    @if(isset($stats['jobs']))
     <a href="{{ route('jobs') }}" class="stat-card">
         <div class="stat-icon red"><i class="bi bi-bag-fill"></i></div>
         <div>
@@ -110,7 +136,11 @@
             <div class="stat-label">Job Postings</div>
         </div>
     </a>
+    @endif
+
 </div>
+@endif
+{{-- /Stats --}}
 
 {{-- Two Columns: Quick Actions + Recent --}}
 <div class="row g-4">
@@ -123,20 +153,48 @@
             </div>
             <div class="cms-card-body">
                 <div class="qa-grid">
+                    @if($user->hasModulePermission('courses'))
                     <a href="{{ route('admin.manage_courses') }}" class="qa-btn"><i class="bi bi-journal-bookmark"></i>Courses</a>
+                    @endif
+                    @if($user->hasModulePermission('blogs'))
                     <a href="{{ route('blogs.index') }}" class="qa-btn"><i class="bi bi-file-earmark-text"></i>Blogs</a>
+                    @endif
+                    @if($user->hasModulePermission('success-stories'))
                     <a href="{{ route('sucess_stories') }}" class="qa-btn"><i class="bi bi-trophy"></i>Stories</a>
+                    @endif
+                    @if($user->hasModulePermission('testimonials'))
                     <a href="{{ route('testimonial') }}" class="qa-btn"><i class="bi bi-chat-quote"></i>Testimonials</a>
+                    @endif
+                    @if($user->hasModulePermission('instructors'))
                     <a href="{{ route('mentor') }}" class="qa-btn"><i class="bi bi-person-badge"></i>Instructors</a>
+                    @endif
+                    @if($user->hasModulePermission('videos'))
                     <a href="{{ route('videos.index') }}" class="qa-btn"><i class="bi bi-camera-video"></i>Videos</a>
+                    @endif
+                    @if($user->hasModulePermission('logos'))
                     <a href="{{ route('logos.index') }}" class="qa-btn"><i class="bi bi-images"></i>Logos</a>
+                    @endif
+                    @if($user->hasModulePermission('placements'))
                     <a href="{{ route('placement.index') }}" class="qa-btn"><i class="bi bi-briefcase"></i>Placements</a>
+                    @endif
+                    @if($user->hasModulePermission('jobs'))
                     <a href="{{ route('jobs') }}" class="qa-btn"><i class="bi bi-bag-plus"></i>Jobs</a>
+                    @endif
+                    @if($user->hasModulePermission('applications'))
                     <a href="{{ route('show_job') }}" class="qa-btn"><i class="bi bi-people"></i>Applications</a>
+                    @endif
+                    @if($user->hasModulePermission('media-presence'))
                     <a href="{{ route('media.index') }}" class="qa-btn"><i class="bi bi-newspaper"></i>Media</a>
+                    @endif
+                    @if($user->hasModulePermission('leads'))
                     <a href="{{ route('leed') }}" class="qa-btn"><i class="bi bi-graph-up"></i>Leads</a>
+                    @endif
+                    @if($user->hasModulePermission('meta-tags'))
                     <a href="{{ route('meta') }}" class="qa-btn"><i class="bi bi-tags"></i>Meta Tags</a>
+                    @endif
+                    @if($user->hasModulePermission('content'))
                     <a href="{{ route('contant.index') }}" class="qa-btn"><i class="bi bi-file-lock"></i>Privacy/Terms</a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -145,7 +203,8 @@
     {{-- Recent Activity Column --}}
     <div class="col-lg-7">
 
-        {{-- Recent Leads --}}
+        {{-- Recent Leads — hidden from users without leads permission --}}
+        @if($user->hasModulePermission('leads'))
         <div class="cms-card mb-4">
             <div class="cms-card-header">
                 <h5 class="cms-card-title"><i class="bi bi-graph-up-arrow"></i> Recent Leads</h5>
@@ -178,8 +237,11 @@
                 @endif
             </div>
         </div>
+        @endif
+        {{-- /Recent Leads --}}
 
-        {{-- Recent Blogs --}}
+        {{-- Recent Blogs — hidden from users without blogs permission --}}
+        @if($user->hasModulePermission('blogs'))
         <div class="cms-card">
             <div class="cms-card-header">
                 <h5 class="cms-card-title"><i class="bi bi-file-earmark-text"></i> Recent Blogs</h5>
@@ -218,6 +280,8 @@
                 @endif
             </div>
         </div>
+        @endif
+        {{-- /Recent Blogs --}}
 
     </div>
 </div>
