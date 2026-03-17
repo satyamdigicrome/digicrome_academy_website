@@ -86,6 +86,12 @@ body.cms-body{margin:0;padding:0;background:var(--content-bg);font-family:'Figtr
 .empty-state{text-align:center;padding:48px 24px;color:var(--text-muted);}
 .empty-state i{font-size:48px;opacity:.3;margin-bottom:12px;display:block;}
 .empty-state p{font-size:14px;margin:0;}
+/* SUMMERNOTE — restore list styles reset by Tailwind Preflight */
+.note-editable ul{list-style-type:disc;padding-left:2rem;margin:.5rem 0;}
+.note-editable ol{list-style-type:decimal;padding-left:2rem;margin:.5rem 0;}
+.note-editable li{display:list-item;}
+.note-editable ul ul{list-style-type:circle;}
+.note-editable ul ul ul{list-style-type:square;}
 /* RESPONSIVE */
 .sidebar-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:1039;}
 .sidebar-toggle{display:none;background:none;border:none;padding:8px;cursor:pointer;color:var(--text-primary);font-size:20px;}
