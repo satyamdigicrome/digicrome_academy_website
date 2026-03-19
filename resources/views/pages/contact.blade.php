@@ -11,6 +11,9 @@
 	.contact-img {
 		padding: 346px 0 135px;
 	}
+	#sticky-header {
+		margin-bottom: 80px !important;
+	}
 </style>
 <!--==================================================-->
 <!-- Start educate Breadcumb Area -->

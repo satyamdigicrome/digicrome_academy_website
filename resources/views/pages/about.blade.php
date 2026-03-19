@@ -17,6 +17,10 @@
         section.about-area.style-three .section-title-desc p {
             margin: 0px;
         }
+
+        #sticky-header {
+            margin-bottom: 80px !important;
+        }
     </style>
     <div class="breadcumb-area d-flex">
         <div class="container">
