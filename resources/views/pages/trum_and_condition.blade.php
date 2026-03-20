@@ -4,8 +4,11 @@
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @section('content')
 @include('components.lead-form-popup')
-
-
+<style>
+    #sticky-header {
+        margin-bottom: 80px !important;
+    }
+</style>
 <div class="breadcumb-area d-flex">
     <div class="container">
         <div class="row align-items-center">
@@ -20,9 +23,6 @@
         </div>
         <div class="breadcumb-shape">
             <img loading="lazy" src="assets/images/inner-img/breadcumb-dot.webp" alt="dot" title="dot">
-        </div>
-        <div class="breadcumb-shape2">
-            <img loading="lazy" src="assets/images/inner-img/breadcumb-ball.webp" alt="ball" title="ball">
         </div>
     </div>
 </div>
