@@ -16,6 +16,7 @@
 
         section.about-area.style-three .section-title-desc p {
             margin: 0px;
+            text-align: justify;
         }
 
         #sticky-header {
