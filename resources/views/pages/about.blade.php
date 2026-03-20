@@ -10,7 +10,7 @@
     <style>
         .section-title-desc p {
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 500;
 
         }
 

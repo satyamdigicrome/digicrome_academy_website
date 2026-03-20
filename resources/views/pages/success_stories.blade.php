@@ -180,30 +180,24 @@
                     <p>A glimpse into where our students are now — roles across top organizations in India and beyond.</p>
                     <div class="section-divider"></div>
                 </div>
-                <div class="row g-4">
-                    @foreach ($placements as $story)
-                        <div class="col-md-6 col-lg-4">
-                            <div class="placement-highlight-card">
-                                <div class="ph-card-top">
-                                    <img src="{{ asset('storage/' . $story->image) }}" alt="{{ $story->name }}"
-                                        class="ph-avatar" loading="lazy"
-                                        onerror="this.src='{{ asset('assets/images/home-one/about-thumb1.webp') }}'">
-                                    <div class="ph-name">{{ $story->name }}</div>
-                                    <span class="ph-badge">Career Upgrade</span>
-                                </div>
-                                <div class="ph-card-bottom">
-                                    <div>
-                                        <div class="ph-role">{{ $story->position }}</div>
-                                        <div class="ph-company"><i class="fa-solid fa-building"
-                                                style="color:#f29c12; margin-right:4px;"></i>{{ !empty($story->package) ? $story->package . ' LPA PACKAGE' : 'COMPANY NAME' }}
-                                        </div>
-                                    </div>
-                                    <div class="ph-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-                                </div>
+                <div class="row g-4" id="placement-grid">
+                    @foreach ($placements as $index => $story)
+                        <div class="col-6 col-md-3 placement-img-item{{ $index >= 8 ? ' placement-hidden' : '' }}">
+                            <div class="placement-img-card">
+                                <img src="{{ asset('storage/' . $story->image) }}" alt="{{ $story->name }}"
+                                    loading="lazy"
+                                    onerror="this.src='{{ asset('assets/images/home-one/about-thumb1.webp') }}'">
                             </div>
                         </div>
                     @endforeach
                 </div>
+                @if ($placements->count() > 8)
+                    <div class="text-center mt-4">
+                        <button class="btn-placement-toggle" id="placement-toggle-btn" onclick="togglePlacements()">
+                            Show More <i class="fa-solid fa-chevron-down ms-1"></i>
+                        </button>
+                    </div>
+                @endif
             </div>
         </section>
     @endif
@@ -241,24 +235,24 @@
                     <div class="section-divider"></div>
                 </div>
                 <div class="row g-4">
-                    @foreach ($studentStories as $story)
+                    @foreach ($studentStories as $index => $story)
                         <div class="col-md-6 col-lg-4 col-xl-3">
                             <div class="champ-grid-card">
                                 <img src="{{ asset('storage/' . $story->image) }}" alt="{{ $story->studentname }}"
                                     class="champ-grid-avatar" loading="lazy"
                                     onerror="this.src='{{ asset('assets/images/home-one/about-thumb1.webp') }}'">
-                                {{-- <div class="champ-stars">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star-half-stroke"></i>
-                                </div> --}}
                                 <div class="champ-grid-name">{{ $story->studentname }}</div>
                                 <div class="champ-grid-role">{{ $story->position }}</div>
                                 <div class="champ-grid-company">
                                     <i class="fa-solid fa-briefcase"
                                         style="color:#f29c12; margin-right:4px;"></i>{{ $story->companyname }}
                                 </div>
-                                <div class="champ-grid-text">{{ strip_tags($story->stoire) }}</div>
+                                <div class="champ-grid-text" id="champ-text-{{ $index }}">{{ strip_tags($story->stoire) }}</div>
+                                @if (strlen(strip_tags($story->stoire)) > 120)
+                                    <button class="champ-read-more-btn" onclick="toggleChampText({{ $index }}, this)">
+                                        Read More <i class="fa-solid fa-chevron-down ms-1"></i>
+                                    </button>
+                                @endif
                             </div>
                         </div>
                     @endforeach
@@ -353,11 +347,39 @@
             });
         });
         function openModal() {
-                document.getElementById("formModal").style.display = "block";
+            document.getElementById("formModal").style.display = "block";
         }
 
         function closeModal() {
             document.getElementById("formModal").style.display = "none";
+        }
+
+        function togglePlacements() {
+            const hidden = document.querySelectorAll('.placement-hidden');
+            const btn = document.getElementById('placement-toggle-btn');
+            if (hidden.length > 0) {
+                hidden.forEach(el => el.classList.remove('placement-hidden'));
+                btn.innerHTML = 'Show Less <i class="fa-solid fa-chevron-up ms-1"></i>';
+            } else {
+                const items = document.querySelectorAll('.placement-img-item');
+                items.forEach((el, i) => {
+                    if (i >= 8) el.classList.add('placement-hidden');
+                });
+                btn.innerHTML = 'Show More <i class="fa-solid fa-chevron-down ms-1"></i>';
+                document.querySelector('.placement-section').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function toggleChampText(index, btn) {
+            const textEl = document.getElementById('champ-text-' + index);
+            const isExpanded = textEl.classList.contains('champ-text-expanded');
+            if (isExpanded) {
+                textEl.classList.remove('champ-text-expanded');
+                btn.innerHTML = 'Read More <i class="fa-solid fa-chevron-down ms-1"></i>';
+            } else {
+                textEl.classList.add('champ-text-expanded');
+                btn.innerHTML = 'Read Less <i class="fa-solid fa-chevron-up ms-1"></i>';
+            }
         }
     </script>
 @endpush
