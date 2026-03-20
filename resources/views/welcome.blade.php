@@ -415,10 +415,10 @@
                     <img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="digicrome arrow"
                         title="digicrome arrow">
                 </div>
-                <div class="brand-star-shape">
+                {{-- <div class="brand-star-shape">
                     <img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
                         title="digicrome star">
-                </div>
+                </div> --}}
             </div>
         </div>
     @endif
@@ -1488,11 +1488,11 @@
                                         src="{{ asset('assets/images/see_what/google_home.svg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.2</p> <img alt="Star icon representing rating" width="15"
+                                            <p>4.8</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
-                                            <p>1499+ Google Reviews</p>
+                                            <p>399+ Google Reviews</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1515,15 +1515,15 @@
                             <!-- Google Review Section 3 -->
                             <div class="inner-div-icon">
                                 <div class="cover-google"> <img alt="Sikhao logo" loading="lazy" class="lazyload10"
-                                        src="{{ asset('assets/images/see_what/sikhao_home.svg') }}">
+                                        src="{{ asset('assets/images/see_what/ambition-box.jpeg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.5</p> <img alt="Star icon representing rating" width="15"
+                                            <p>4.3</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy" class="lazyload10"
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
-                                            <p>456+ Shiksha Reviews</p>
+                                            <p>50+ Ambition Box Reviews</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1539,7 +1539,7 @@
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
-                                            <p>730+ MouthShut Reviews</p>
+                                            <p>230+ MouthShut Reviews</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1547,15 +1547,15 @@
                             <!-- Google Review Section 5 -->
                             <div class="inner-div-icon last-switchupicon-hide">
                                 <div class="cover-google"> <img alt="Face icon representing a review" loading="lazy"
-                                        src="{{ asset('assets/images/see_what/switchup.png') }}">
+                                        src="{{ asset('assets/images/see_what/favicon.ico') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.9</p> <img alt="Star icon representing rating" width="15"
+                                            <p>4.0</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy"
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
-                                            <p>2370+ Switchup Reviews</p>
+                                            <p>100+ Glassdoor Reviews</p>
                                         </div>
                                     </div>
                                 </div>
