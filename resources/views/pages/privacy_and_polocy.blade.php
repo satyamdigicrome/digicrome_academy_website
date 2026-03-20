@@ -6,8 +6,11 @@
 
 @section('content')
 @include('components.lead-form-popup')
-
-
+<style>
+    #sticky-header {
+        margin-bottom: 80px !important;
+    }
+</style>
 <div class="breadcumb-area d-flex">
     <div class="container">
         <div class="row align-items-center">
