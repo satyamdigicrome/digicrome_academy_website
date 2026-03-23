@@ -28,7 +28,6 @@ class CorporateServicesController extends Controller
             return Logo::where('type', 'companies')->get(['id', 'image']);
         });
         $meta = Metatag::where('page_name', 'Conporate')->first();
-
         return view('pages.corporate_services',compact('collections','meta', 'upcomingCourses','companyLogos','awords')); 
     }
 }

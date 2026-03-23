@@ -105,7 +105,7 @@
       <script type="application/ld+json">
             {
             "@context": "https://schema.org",
-            "@type": "EducationalOrganization",
+            "@type": "LocalBusiness",
             "name": "Digicrome Academy",
             "url": "https://www.digicrome.com",
             "logo": "https://www.digicrome.com/logo.png",
@@ -166,6 +166,13 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-NLXJ6MV');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "w08flkqvsv");
     </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

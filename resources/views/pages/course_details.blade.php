@@ -188,7 +188,7 @@
                         </div>
 
 
-                        <h1 class="fw-bold text-capitalize text-dark" style="font-size: 43px;">{{ $course->name }}</h1>
+                        <h2 class="fw-bold text-capitalize text-dark" style="font-size: 43px;">{{ $course->name }}</h2>
 
                         <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
                             <i class="fa-solid fa-shield-halved text-primary me-2"></i>

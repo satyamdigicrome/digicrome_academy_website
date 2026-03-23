@@ -114,7 +114,7 @@
                                     alt="icon"><a href="{{ route('about') }}">About Us</a></li>
                             <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a
-                                    href="{{ url('/') }}/our-courses/postgraduate-and-master-programs">All
+                                    href="{{ route('course') }}">All
                                     Courses</a></li>
                             <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('corporate_services') }}">Corporate Services</a>

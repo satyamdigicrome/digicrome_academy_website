@@ -45,9 +45,7 @@
                                 <i class="bi bi-check2"></i> Assured Placement Support
                             </h5>
                             <h1 data-animation="fadeInUp" style="color:black;" data-delay="100ms">
-                                Accelerate Your Career Growth
-                            </h1>
-                            <h1 data-animation="fadeInUp" style="color:black;" data-delay="100ms">
+                                Accelerate Your Career Growth 
                                 With <span>Digicrome</span>'s Expert-Led Courses
                             </h1>
                             <p data-animation="fadeInUp" data-delay="100ms" style="color:black;">

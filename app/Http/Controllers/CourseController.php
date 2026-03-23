@@ -10,8 +10,6 @@ use App\Models\Logo;
 use App\Models\Testimonial;
 use App\Models\Mentor;
 use App\Models\Metatag;
-
-
 use Illuminate\Support\Facades\Cache;
 
 class CourseController extends Controller
@@ -120,12 +118,10 @@ public function searchCourses(Request $request)
 
 
     public function showByCategory($slug)
-{
-    $collection = Collection::where('slug', $slug)->firstOrFail(); 
-
-    $courses = $collection->courses()->where('status', 1)->get();
-
-    return view('pages.course', compact('courses', 'collection'));
-}
+    {
+        $collection = Collection::where('slug', $slug)->firstOrFail(); 
+        $courses = $collection->courses()->where('status', 1)->get();
+        return view('pages.course', compact('courses', 'collection'));
+    }
 
 }

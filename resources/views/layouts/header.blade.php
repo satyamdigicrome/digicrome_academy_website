@@ -98,9 +98,8 @@
                                                 <h6 class="fw-bold mb-3 text-primary">Popular Categories</h6>
                                                 <ul class="list-unstyled mb-0">
                                                     <li class="mb-2">
-                                                        <a href="javascript:void(0);"
-                                                            class="text-dark d-flex justify-content-between align-items-center category-link"
-                                                            data-ids="1,3,55">
+                                                        <a href="{{ route('course.category', 'data-science-course') }}"
+                                                            class="text-dark d-flex justify-content-between align-items-center">
                                                             Data Science & AI
                                                             <i class="bi bi-chevron-right"></i>
                                                         </a>
@@ -114,15 +113,14 @@
                                                         </a>
                                                     </li>
                                                     <li class="mb-2">
-                                                        <a href="https://www.digicrome.com/courses/investment-banking-certification-course"
-                                                            class="text-dark d-flex justify-content-between align-items-center category-link"
-                                                            data-ids="61">
+                                                        <a href="{{ route('course.category', 'investment-banking-course') }}"
+                                                            class="text-dark d-flex justify-content-between align-items-center">
                                                             Investment Banking
                                                             <i class="bi bi-chevron-right"></i>
                                                         </a>
                                                     </li>
 
-                                                    @foreach ($header_collections as $collection)
+                                                    @foreach ($header_collections->whereNotIn('id', [5, 6]) as $collection)
                                                         <li class="mb-2">
                                                             <a href="{{ route('course.category', $collection->slug) }}"
                                                                 class="text-dark d-flex justify-content-between align-items-center">
@@ -345,17 +343,17 @@
                     <ul class="sub_menu">
 
                         <li>
-                            <a href="{{ route('course', ['ids' => '1,3,55', 'name' => 'Data Science and AI']) }}">
+                            <a href="{{ route('course.category', 'data-science-course') }}">
                                 Data Science with Artificial Intelligence
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('course', ['ids' => '61', 'name' => 'Investment Banking']) }}">
+                            <a href="{{ route('course.category', 'investment-banking-course') }}">
                                 Investment Banking
                             </a>
                         </li>
 
-                        @foreach ($header_collections as $collection)
+                        @foreach ($header_collections->whereNotIn('id', [5, 6]) as $collection)
                             <li>
                                 <a href="{{ route('course.category', $collection->slug) }}">
                                     {{ $collection->name }}
