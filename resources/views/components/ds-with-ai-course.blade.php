@@ -1,6 +1,6 @@
 	<style>
 		#sticky-header{
-    margin-bottom: 0px !important;
+    margin-bottom: 80px !important;
 }
 .nedesign {
     margin-top: 0px;
