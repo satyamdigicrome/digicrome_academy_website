@@ -1275,7 +1275,8 @@
         <script>
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = 'flex';
-                    const form = document.getElementById(modalId).querySelector('form');
+                const modalcourse = document.getElementById(modalId);
+                    const form = modalcourse.querySelector('form');
                     if (form) {
                         const aisecuritysource = form.querySelector('[name="source"]');
                         if (window.location.pathname.includes('/courses/ai-security-online-training/')) {
