@@ -138,7 +138,6 @@
                                                     @endforeach
                                                 </ul>
                                             </div>
-
                                             <div class="col-md-8">
                                                 <h6 class="fw-bold mb-3 text-primary">Top Courses</h6>
                                                 <div id="course-container" class="d-flex flex-column gap-2"
@@ -165,8 +164,8 @@
 
                                                                 </div>
                                                             </div>
+                                                        @endif
                                                 </div>
-                                                @endif
                                                 @endforeach
                                             </div>
                                         </div>
