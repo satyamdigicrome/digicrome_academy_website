@@ -143,7 +143,7 @@
                                                 <h6 class="fw-bold mb-3 text-primary">Top Courses</h6>
                                                 <div id="course-container" class="d-flex flex-column gap-2"
                                                     style="max-height: 460px; overflow-y: auto;">
-                                                    @foreach ([1, 3, 55] as $id)
+                                                    @foreach ([1, 3, 55, 85] as $id)
                                                         @if (isset($header_courses[$id]))
                                                             @php $course = $header_courses[$id]; @endphp
                                                             <div class="card border-0 shadow-sm rounded-3 p-2">
