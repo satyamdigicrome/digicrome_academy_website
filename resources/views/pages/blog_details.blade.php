@@ -96,6 +96,30 @@
                                         margin-bottom: 6px;
                                     }
 
+                                    /* Restore bold/strong appearance overridden by global CSS */
+                                    .blog-desc2 strong,
+                                    .blog-desc2 b {
+                                        width: auto !important;
+                                        height: auto !important;
+                                        line-height: inherit !important;
+                                        background: none !important;
+                                        display: inline !important;
+                                        text-align: unset !important;
+                                        font-size: inherit !important;
+                                        color: inherit !important;
+                                        border-radius: 0 !important;
+                                        margin-right: 0 !important;
+                                        font-weight: 700 !important;
+                                    }
+
+                                    /* Restore anchor link appearance — no !important so inline style="color:..." wins */
+                                    .blog-desc2 a {
+                                        display: inline;
+                                        color: #0d6efd;
+                                        text-decoration: underline;
+                                        font-weight: inherit;
+                                    }
+
                                     .blog-title {
                                         font-size: 30px;
                                         font-weight: 700;

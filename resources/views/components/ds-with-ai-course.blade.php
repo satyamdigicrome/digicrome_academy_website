@@ -1,10 +1,10 @@
 	<style>
 		#sticky-header{
-    margin-bottom: 80px !important;
-}
-.nedesign {
-    margin-top: 0px;
-}
+        margin-bottom: 0px !important;
+    }
+  .nedesign {
+      margin-top: 0px;
+  }
 	</style>
 <div class="nedesign">
     <section class="courses-details ds-banner ds-banner-mobile"

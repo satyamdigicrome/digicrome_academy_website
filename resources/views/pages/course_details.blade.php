@@ -155,17 +155,20 @@
                                     <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}"
                                         class="lazyload" alt="best online data science programs"
                                         title="best online data science programs">
-                                    <p>06 Months</p>
+                                    <p>{{ $course->course_duration ?? '06 Months' }}</p>
                                     <span>Live Online Classes</span>
                                 </div>
                             </div>
                             <div class="features-box text-center flex-fill min-w-0">
-                                <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}"
-                                    class="lazyload" alt="data science programs near me"
-                                    title="data science programs near me">
-                                <p style="color: #f8b700">
-                                    {{ $course->course_online_payment }} </p>
-                                <span>Next Batch starts on</span>
+                                <div class="date-border">
+                                    <img loading="lazy"
+                                        src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}"
+                                        class="lazyload" alt="data science programs near me"
+                                        title="data science programs near me">
+                                    <p style="color: #f8b700">
+                                        {{ $course->course_online_payment }} </p>
+                                    <span>Next Batch starts on</span>
+                                </div>
                             </div>
                         </div>
                     </div>
