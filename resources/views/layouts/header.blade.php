@@ -1,14 +1,3 @@
-<style>
-    .footer-logo11 {
-        width: 59%;
-    }
-
-    @media (max-width: 768px) {
-        .footer-logo11 {
-            width: 35%;
-        }
-    }
-</style>
 
 <div class="header-top-area">
     <div class="container-fluid">
@@ -138,6 +127,7 @@
                                                     @endforeach
                                                 </ul>
                                             </div>
+
                                             <div class="col-md-8">
                                                 <h6 class="fw-bold mb-3 text-primary">Top Courses</h6>
                                                 <div id="course-container" class="d-flex flex-column gap-2"
@@ -164,45 +154,13 @@
 
                                                                 </div>
                                                             </div>
-                                                        @endif
                                                 </div>
+                                                @endif
                                                 @endforeach
                                             </div>
                                         </div>
                                     </div>
-                                    <script>
-                                        $(document).ready(function() {
-                                            let allheader_courses = @json($header_courses);
-
-                                            $('.category-link').on('click', function() {
-                                                let ids = $(this).data('ids').toString().split(',');
-                                                let container = $('#course-container');
-                                                container.empty();
-
-                                                ids.forEach(function(id) {
-                                                    let course = allheader_courses[id];
-                                                    if (course) {
-                                                        container.append(`
-																<div class="card border-0 shadow-sm rounded-3 p-2 mb-2">
-																	<div class="d-flex align-items-center">
-																	<a href="/courses/${course.slug}">
-																		<img loading="lazy"src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
-																		<div class="ms-3 flex-grow-1">
-																			<h6 class="fw-semibold" style="line-height: 24px;">${course.name}</h6></a>
-																			<p class="text-muted small">Duration: ${course.course_duration ?? 'N/A'}</p></a>
-																			
-																		</div>
-																	</div>
-																</div>
-															`);
-                                                    }
-                                                });
-                                            });
-                                        });
-                                    </script>
-
-
-
+                                    
                 </div>
                 </li>
                 </ul>
@@ -264,51 +222,6 @@
     </div>
 </div>
 </div>
-<style>
-    /* Hide mobile menu initially until page is fully loaded */
-    .mobile-menu-area {
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    /* Once page is fully loaded, show the mobile menu */
-    body.loaded .mobile-menu-area {
-        visibility: visible;
-        opacity: 1;
-        transition: visibility 0s, opacity 0.5s ease-in;
-    }
-
-    @media (max-width: 767px) {
-        .desktop-only {
-            display: none !important;
-            /* Hide desktop header */
-        }
-
-        .mobile-only {
-            display: block !important;
-            /* Force show mobile header */
-        }
-    }
-
-    /* Ensure the desktop version is visible only on larger screens */
-    @media (min-width: 768px) {
-        .desktop-only {
-            display: block !important;
-            /* Force show desktop header */
-        }
-
-        .mobile-only {
-            display: none !important;
-            /* Hide mobile header */
-        }
-    }
-</style>
-<script>
-    // Add the 'loaded' class once the page is fully loaded
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-    });
-</script>
 
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
     <div class="container-fluid">
@@ -405,49 +318,6 @@
     </form>
 </div>
 
-<script>
-    $(document).ready(function() {
-        $('#search1').on('input', function() {
-            let query = $(this).val();
-            if (query.length > 1) {
-                $.ajax({
-                    url: "{{ route('search.courses') }}",
-                    type: "GET",
-                    data: {
-                        query: query
-                    },
-                    success: function(data) {
-                        let results = $('#search-results');
-                        results.empty().show();
-
-                        if (data.length > 0) {
-                            data.forEach(course => {
-                                results.append(`
-                                <a href="/courses/${course.slug}" class="d-flex align-items-center mb-2 text-dark text-decoration-none">
-                                    <img loading="lazy"src="/storage/${course.image}" class="me-2" width="50" height="50" style="object-fit: cover; border-radius: 6px;">
-                                    <div>
-                                        <div><strong>${course.name}</strong></div>
-                                        <small class="text-muted">${course.tag_line}</small>
-                                    </div>
-                                </a>
-                            `);
-                            });
-                        } else {
-                            results.append('<p class="text-muted">No courses found.</p>');
-                        }
-                    }
-                });
-            } else {
-                $('#search-results').hide().empty();
-            }
-        });
-        $(document).click(function(e) {
-            if (!$(e.target).closest('.form-group').length) {
-                $('#search-results').hide().empty();
-            }
-        });
-    });
-</script>
 
 <div class="xs-sidebar-group info-group">
     <div class="xs-overlay xs-bg-black"></div>
@@ -497,86 +367,6 @@
         </div>
     </div>
 </div>
-<style>
-    .bottom-fixed-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f8f9fa;
-        padding: 10px 0;
-        z-index: 9999;
-        box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
-        font-size: 14px;
-    }
-
-    .bottom-fixed-bar .btn {
-        margin: 0 8px;
-        font-size: 13px;
-        padding: 6px 12px;
-        display: inline-flex;
-        align-items: center;
-        font-weight: 500;
-        border-radius: 20px;
-    }
-
-    .btn-whatsapp {
-        background-color: #25D366;
-        color: white;
-    }
-
-    .btn-whatsapp:hover {
-        background-color: #1ebe5d;
-        color: white;
-    }
-
-    .btn-callback {
-        background-color: #343a40;
-        color: white;
-    }
-
-    .btn-callback:hover {
-        background-color: #23272b;
-        color: white;
-    }
-
-    .bottom-fixed-bar i {
-        margin-right: 6px;
-    }
-
-    .sub_menu {
-        position: absolute;
-        background: #fff;
-        border-radius: 10px;
-        border: 1px solid #ddd;
-        z-index: 999;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        min-width: 650px;
-        max-width: 1000px;
-    }
-
-    .sub_menu li a:hover {
-        background-color: #f8f9fa;
-        text-decoration: none;
-    }
-
-    .card:hover {
-        transform: translateY(-2px);
-        transition: all 0.2s ease-in-out;
-    }
-
-    .course-card:hover {
-        background-color: #f9f9ff;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-    }
-
-    .course-card h6,
-    .course-card p,
-    .course-card a {
-        margin-bottom: 0;
-    }
-</style>
 
 <div class="bottom-fixed-bar desktop-only text-center">
     <span class="me-2">Need help? Reach us instantly:</span>
@@ -598,68 +388,3 @@
     </a>
 </div>
 
-<style>
-    .bottom-fixed-bar {
-        position: fixed;
-        right: 20px;
-        bottom: 0px;
-        z-index: 1000;
-        background: white;
-        padding: 10px 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-    }
-
-    .bottom-fixed-bar a {
-        margin: 0 5px;
-    }
-
-    .mobile-only {
-        display: none;
-    }
-
-    .desktop-only {
-        display: block;
-    }
-
-    @media (max-width: 767px) {
-        .desktop-only {
-            display: none;
-        }
-
-        .mobile-only {
-            display: block;
-        }
-
-        .mobile-contact-icons {
-            position: fixed;
-            left: 15px;
-            bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1000;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            font-size: 20px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-icon.whatsapp {
-            background-color: #25D366;
-        }
-
-        .contact-icon.call {
-            background-color: #1a1447;
-        }
-    }
-</style>

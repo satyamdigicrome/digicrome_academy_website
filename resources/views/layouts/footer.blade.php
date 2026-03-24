@@ -4,9 +4,8 @@
             <div class="col-lg-6 col-md-12">
                 <div class="footer-logo">
                     <a href="#"><img loading="lazy" width="150" height="79"
-                            src="{{ asset('assets/images/home-one/footer-logo.webp') }}"
-                            alt="logo" class="footer-logo11"
-                            style="width:150px;height:auto;max-width:100%;"></a>
+                            src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"
+                            class="footer-logo11" style="width:150px;height:auto;max-width:100%;"></a>
                 </div>
                 <br>
                 <div class="section_title six">
@@ -113,8 +112,7 @@
                             <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('about') }}">About Us</a></li>
                             <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a
-                                    href="{{ route('course') }}">All
+                                    alt="icon"><a href="{{ route('course') }}">All
                                     Courses</a></li>
                             <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('corporate_services') }}">Corporate Services</a>
@@ -134,8 +132,7 @@
                     </div>
                     <div class="footer-widget-menu">
                         <ul>
-                            <li><img
-                                    loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('who_we_are') }}">Who we are</a></li>
                             <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('success_stories') }}">Success stories</a></li>
@@ -271,7 +268,7 @@
 </div>
 
 <script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/vendor/jquery-3.6.2.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/vendor/jquery-3.6.2.min.js') }}"></script>
 <script src="{{ asset('assets/js/popper.min.js') }}" defer></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
 <script src="{{ asset('assets/js/owl.carousel.min.js') }}" defer></script>
@@ -288,3 +285,74 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" media="print"
     onload="this.media='all'">
 <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    $(document).ready(function() {
+        let allheader_courses = @json($header_courses);
+        $('.category-link').on('click', function() {
+            let ids = $(this).data('ids').toString().split(',');
+            let container = $('#course-container');
+            container.empty();
+
+            ids.forEach(function(id) {
+                let course = allheader_courses[id];
+                if (course) {
+                    container.append(`
+                                <div class="card border-0 shadow-sm rounded-3 p-2 mb-2">
+                                    <div class="d-flex align-items-center">
+                                    <a href="/courses/${course.slug}">
+                                        <img loading="lazy"src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+                                        <div class="ms-3 flex-grow-1">
+                                            <h6 class="fw-semibold" style="line-height: 24px;">${course.name}</h6></a>
+                                            <p class="text-muted small">Duration: ${course.course_duration ?? 'N/A'}</p></a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            `);
+                }
+            });
+        });
+        $('#search1').on('input', function() {
+            let query = $(this).val();
+            if (query.length > 1) {
+                $.ajax({
+                    url: "{{ route('search.courses') }}",
+                    type: "GET",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let results = $('#search-results');
+                        results.empty().show();
+
+                        if (data.length > 0) {
+                            data.forEach(course => {
+                                results.append(`
+                                <a href="/courses/${course.slug}" class="d-flex align-items-center mb-2 text-dark text-decoration-none">
+                                    <img loading="lazy"src="/storage/${course.image}" class="me-2" width="50" height="50" style="object-fit: cover; border-radius: 6px;">
+                                    <div>
+                                        <div><strong>${course.name}</strong></div>
+                                        <small class="text-muted">${course.tag_line}</small>
+                                    </div>
+                                </a>
+                            `);
+                            });
+                        } else {
+                            results.append('<p class="text-muted">No courses found.</p>');
+                        }
+                    }
+                });
+            } else {
+                $('#search-results').hide().empty();
+            }
+        });
+        $(document).click(function(e) {
+            if (!$(e.target).closest('.form-group').length) {
+                $('#search-results').hide().empty();
+            }
+        });
+    });
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+    });
+</script>

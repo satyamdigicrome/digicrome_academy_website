@@ -1273,14 +1273,18 @@
 
         <!-- JS to Control Modals -->
         <script>
-            // Function to open modal based on its ID
             function openModal(modalId) {
-                document.getElementById(modalId).style.display = 'flex'; // Open the modal by its ID
+                document.getElementById(modalId).style.display = 'flex';
+                    const form = document.getElementById(modalId).querySelector('form');
+                    if (form) {
+                        const aisecuritysource = form.querySelector('[name="source"]');
+                        if (window.location.pathname.includes('/courses/ai-security-online-training/')) {
+                            aisecuritysource.value = 'Website Ai Security';
+                        }
+                    }
             }
-
-            // Function to close modal based on its ID
             function closeModal(modalId) {
-                document.getElementById(modalId).style.display = 'none'; // Close the modal by its ID
+                document.getElementById(modalId).style.display = 'none';
             }
         </script>
 

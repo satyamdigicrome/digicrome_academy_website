@@ -30,53 +30,100 @@
     <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
 
     {{-- Preload critical fonts to eliminate layout shifts --}}
-    <link rel="preload" href="{{ asset('assets/fonts/Flaticon.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="{{ asset('assets/css/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="{{ asset('assets/webfonts/fa-solid-900.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ asset('assets/fonts/Flaticon.woff2') }}" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" href="{{ asset('assets/css/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2') }}"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ asset('assets/webfonts/fa-solid-900.woff2') }}" as="font" type="font/woff2"
+        crossorigin="anonymous">
 
     {{-- Critical CSS: load synchronously (bootstrap + theme) --}}
-    <link rel="preload" href="{{ asset('assets/css/bootstrap.min.css') }}" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="{{ asset('assets/css/theme-default.css') }}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{{ asset('assets/css/bootstrap.min.css') }}" as="style"
+        onload="this.rel='stylesheet'">
+    <link rel="preload" href="{{ asset('assets/css/theme-default.css') }}" as="style"
+        onload="this.rel='stylesheet'">
     <link rel="preload" href="{{ asset('assets/css/style.css') }}" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="{{ asset('assets/css/google-fonts.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}"></noscript>
-    <link rel="preload" href="{{ asset('assets/css/fonts-bunny.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/fonts-bunny.css') }}"></noscript>
-    <link rel="preload" href="{{ asset('assets/css/all.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/google-fonts.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}">
+    </noscript>
+    <link rel="preload" href="{{ asset('assets/css/fonts-bunny.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/fonts-bunny.css') }}">
+    </noscript>
+    <link rel="preload" href="{{ asset('assets/css/all.min.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/bootstrap-icons.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/bootstrap-icons.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/flaticon.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/flaticon.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/owl.carousel.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/owl.carousel.min.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/animate.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/animate.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/animated-text.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/animated-text.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/meanmenu.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/meanmenu.min.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/owl.transitions.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/owl.transitions.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/responsive.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/responsive.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/coustom-animation.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/coustom-animation.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/odometer-theme-default.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/odometer-theme-default.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}">
+    </noscript>
 
-    <link rel="preload" href="{{ asset('assets/css/scroll-up.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}"></noscript>
+    <link rel="preload" href="{{ asset('assets/css/scroll-up.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}">
+    </noscript>
     <script type="application/ld+json" >
       {
         "@context": "https://schema.org",
@@ -102,7 +149,7 @@
         ]
       }
       </script>
-      <script type="application/ld+json">
+    <script type="application/ld+json">
             {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
@@ -168,10 +215,15 @@
         })(window, document, 'script', 'dataLayer', 'GTM-NLXJ6MV');
     </script>
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "w08flkqvsv");
     </script>
     <!--Start of Tawk.to Script-->
@@ -188,5 +240,196 @@
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
+    <style>
+        .footer-logo11 {
+            width: 59%;
+        }
+
+        @media (max-width: 768px) {
+            .footer-logo11 {
+                width: 35%;
+            }
+        }
+
+        /* Hide mobile menu initially until page is fully loaded */
+        .mobile-menu-area {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        /* Once page is fully loaded, show the mobile menu */
+        body.loaded .mobile-menu-area {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0s, opacity 0.5s ease-in;
+        }
+
+        @media (max-width: 767px) {
+            .desktop-only {
+                display: none !important;
+                /* Hide desktop header */
+            }
+
+            .mobile-only {
+                display: block !important;
+                /* Force show mobile header */
+            }
+        }
+
+        /* Ensure the desktop version is visible only on larger screens */
+        @media (min-width: 768px) {
+            .desktop-only {
+                display: block !important;
+                /* Force show desktop header */
+            }
+
+            .mobile-only {
+                display: none !important;
+                /* Hide mobile header */
+            }
+        }
+
+        .bottom-fixed-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            z-index: 9999;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+
+        .bottom-fixed-bar .btn {
+            margin: 0 8px;
+            font-size: 13px;
+            padding: 6px 12px;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            border-radius: 20px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe5d;
+            color: white;
+        }
+
+        .btn-callback {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .btn-callback:hover {
+            background-color: #23272b;
+            color: white;
+        }
+
+        .bottom-fixed-bar i {
+            margin-right: 6px;
+        }
+
+        .sub_menu {
+            position: absolute;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            z-index: 999;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            min-width: 650px;
+            max-width: 1000px;
+        }
+
+        .sub_menu li a:hover {
+            background-color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .course-card:hover {
+            background-color: #f9f9ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+        }
+
+        .course-card h6,
+        .course-card p,
+        .course-card a {
+            margin-bottom: 0;
+        }
+        .bottom-fixed-bar {
+            position: fixed;
+            right: 20px;
+            bottom: 0px;
+            z-index: 1000;
+            background: white;
+            padding: 10px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .bottom-fixed-bar a {
+            margin: 0 5px;
+        }
+
+        .mobile-only {
+            display: none;
+        }
+
+        .desktop-only {
+            display: block;
+        }
+
+        @media (max-width: 767px) {
+            .desktop-only {
+                display: none;
+            }
+
+            .mobile-only {
+                display: block;
+            }
+
+            .mobile-contact-icons {
+                position: fixed;
+                left: 15px;
+                bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                z-index: 1000;
+            }
+
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                font-size: 20px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            }
+
+            .contact-icon.whatsapp {
+                background-color: #25D366;
+            }
+
+            .contact-icon.call {
+                background-color: #1a1447;
+            }
+        }
+    </style>
     <!--End of Tawk.to Script-->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
