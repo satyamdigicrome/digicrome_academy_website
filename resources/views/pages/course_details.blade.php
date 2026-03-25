@@ -208,7 +208,7 @@
 
                         <p class="text-dark fs-6 mb-2">
                             <i class="fa-solid fa-clock text-warning me-2"></i>
-                            Suitable for Final Years, Graduates and Early Professionals
+                            Suitable for Final Year Graduates and Working Professionals
                         </p>
 
                         <p class="text-dark fs-6 mb-0">
