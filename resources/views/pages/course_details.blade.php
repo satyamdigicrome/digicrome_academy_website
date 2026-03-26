@@ -198,7 +198,7 @@
 
                         <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
                             <i class="fa-solid fa-shield-halved text-primary me-2"></i>
-                            Get 100% Placement Aid in {{ $course->name }}
+                            Get 100% Placement Assistance in {{ $course->name }}
                         </p>
 
                         <p class="text-dark fs-6 mb-2">
