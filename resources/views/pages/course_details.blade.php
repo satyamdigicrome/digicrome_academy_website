@@ -1326,7 +1326,7 @@
                                 <input type="hidden" name="address" value="NA">
                                 <input type="hidden" name="qualification" value="NA">
                                 <input type="hidden" name="experience" value="NA">
-                                <input type="hidden" name="ib" value="">
+                                <input type="hidden" name="aiss" value="">
 
                                 <!-- Other hidden fields -->
                                 <input type="hidden" name="page_name" value="{{ $course->name }}">

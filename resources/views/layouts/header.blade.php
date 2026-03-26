@@ -267,11 +267,15 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ route('course_details', 'ai-security-online-training') }}">
+                                AI Security Specialist
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ route('course.category', 'investment-banking-course') }}">
                                 Investment Banking
                             </a>
                         </li>
-
                         @foreach ($header_collections->whereNotIn('id', [5, 6]) as $collection)
                             <li>
                                 <a href="{{ route('course.category', $collection->slug) }}">
