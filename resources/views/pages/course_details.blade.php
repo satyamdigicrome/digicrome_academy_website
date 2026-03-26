@@ -179,6 +179,292 @@
 
         </div>
         </div>
+    @elseif($course->course_free == 3)
+    {{-- ===== DARK CYBER HERO — AI Security & similar courses ===== --}}
+        <style>
+            #sticky-header {
+                margin-bottom: 0px !important;
+            }
+            .cyber-hero {
+                position: relative;
+                z-index: 0;
+                isolation: isolate;
+                min-height: auto;
+                background: linear-gradient(135deg, #050a18 0%, #0a1628 50%, #0d1f3c 100%);
+                overflow: hidden;
+                padding: 70px 0 18px;  /* compact: fits everything in 1 viewport */
+            }
+            /* ---- Responsive padding ---- */
+            @media (max-width: 991.98px) {
+                .cyber-hero { padding: 65px 0 16px; }
+            }
+            @media (max-width: 767.98px) {
+                .cyber-hero { padding: 60px 0 14px; }
+            }
+            .cyber-hero::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                z-index: 0;
+                background-image:
+                    linear-gradient(rgba(0,255,200,.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,255,200,.04) 1px, transparent 1px);
+                background-size: 48px 48px;
+                pointer-events: none;
+            }
+            .cyber-hero::after {
+                content: '';
+                position: absolute;
+                top: -80px; left: -80px;
+                z-index: 0;
+                width: 420px; height: 420px;
+                background: radial-gradient(circle, rgba(0,220,180,.18) 0%, transparent 70%);
+                pointer-events: none;
+                animation: cyber-pulse 6s ease-in-out infinite;
+            }
+            @@keyframes cyber-pulse {
+                0%,100% { opacity: .6; transform: scale(1); }
+                50%      { opacity: 1;  transform: scale(1.12); }
+            }
+            /* ---- Badge ---- */
+            .cyber-hero .cyber-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background: rgba(0,220,180,.12);
+                border: 1px solid rgba(0,220,180,.35);
+                color: #00ddb4;
+                font-size: .72rem;
+                font-weight: 600;
+                letter-spacing: .07em;
+                text-transform: uppercase;
+                padding: 4px 11px;
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            /* ---- Title ---- */
+            .cyber-hero h2.cyber-title {
+                font-size: clamp(22px, 2.8vw, 34px);
+                font-weight: 800;
+                color: #fff;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+            .cyber-hero h2.cyber-title span.cyber-accent {
+                color: #00ddb4;
+                text-shadow: 0 0 16px rgba(0,220,180,.5);
+            }
+            /* ---- Bullet points ---- */
+            .cyber-hero .cyber-point {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                color: #c8d8f0;
+                font-size: .85rem;
+                margin-bottom: 7px;
+            }
+            .cyber-hero .cyber-point i { margin-top: 2px; flex-shrink: 0; font-size: .8rem; }
+            /* ---- Buttons ---- */
+            .cyber-hero .btn-cyber-primary {
+                background: linear-gradient(135deg, #00ddb4, #00a88a);
+                border: none;
+                color: #050a18;
+                font-weight: 700;
+                padding: 8px 20px;
+                font-size: .88rem;
+                border-radius: 6px;
+                transition: all .25s;
+                box-shadow: 0 0 14px rgba(0,220,180,.35);
+            }
+            .cyber-hero .btn-cyber-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0 24px rgba(0,220,180,.6);
+                color: #050a18;
+            }
+            .cyber-hero .btn-cyber-outline {
+                background: transparent;
+                border: 2px solid #00ddb4;
+                color: #00ddb4;
+                font-weight: 700;
+                padding: 8px 20px;
+                font-size: .88rem;
+                border-radius: 6px;
+                transition: all .25s;
+            }
+            .cyber-hero .btn-cyber-outline:hover {
+                background: rgba(0,220,180,.12);
+                transform: translateY(-2px);
+            }
+            /* ---- Right image ---- */
+            .cyber-hero .cyber-banner-wrap {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .cyber-hero .cyber-banner-wrap img {
+                border-radius: 10px;
+                box-shadow: 0 0 30px rgba(0,220,180,.22), 0 0 60px rgba(0,100,200,.12);
+                max-height: 300px;
+                object-fit: cover;
+                width: 100%;
+            }
+            /* ---- Corner brackets ---- */
+            .cyber-corner {
+                position: absolute;
+                width: 22px; height: 22px;
+                border-color: #00ddb4;
+                border-style: solid;
+                opacity: .7;
+            }
+            .cyber-corner.tl { top: -5px;    left: -5px;  border-width: 2px 0 0 2px; }
+            .cyber-corner.tr { top: -5px;    right: -5px; border-width: 2px 2px 0 0; }
+            .cyber-corner.bl { bottom: -5px; left: -5px;  border-width: 0 0 2px 2px; }
+            .cyber-corner.br { bottom: -5px; right: -5px; border-width: 0 2px 2px 0; }
+            /* ---- Stats strip — compact, always visible ---- */
+            .cyber-stats {
+                background: rgba(255,255,255,.05);
+                border: 1px solid rgba(0,220,180,.18);
+                border-radius: 8px;
+                padding: 12px 20px;
+                margin-top: 18px;
+                backdrop-filter: blur(6px);
+            }
+            .cyber-stats .stat-item { text-align: center; }
+            .cyber-stats .stat-num {
+                font-size: 1.15rem;
+                font-weight: 800;
+                color: #00ddb4;
+                line-height: 1.1;
+            }
+            .cyber-stats .stat-label {
+                font-size: .67rem;
+                color: #8aa8c8;
+                text-transform: uppercase;
+                letter-spacing: .05em;
+                margin-top: 2px;
+            }
+            /* ---- Dividers between stats ---- */
+            .cyber-stats .stat-item + .stat-item {
+                border-left: 1px solid rgba(0,220,180,.15);
+            }
+
+            /* ---- Responsive: mobile ---- */
+            @media (max-width: 575.98px) {
+                .cyber-hero .cyber-badge    { font-size: .65rem; }
+                .cyber-hero h2.cyber-title  { font-size: 21px; }
+                .cyber-hero .cyber-point    { font-size: .8rem; }
+                .cyber-hero .btn-cyber-primary,
+                .cyber-hero .btn-cyber-outline { width: 100%; text-align: center; }
+                .cyber-stats { padding: 10px 8px; margin-top: 12px; }
+                .cyber-stats .stat-num  { font-size: 1rem; }
+                .cyber-stats .stat-item + .stat-item { border-left: none; border-top: 1px solid rgba(0,220,180,.15); }
+            }
+            /* ---- Responsive: hide corners on mobile ---- */
+            @media (max-width: 767.98px) {
+                .cyber-corner { display: none; }
+                .cyber-hero .cyber-banner-wrap img { max-height: 220px; }
+            }
+            /* ---- Responsive: tablet ---- */
+            @media (min-width: 576px) and (max-width: 991.98px) {
+                .cyber-hero h2.cyber-title  { font-size: 26px; }
+                .cyber-stats .stat-num      { font-size: 1.05rem; }
+            }
+
+            .cyber-hero { background:
+                linear-gradient(135deg, rgba(5,10,24,0.88) 0%, rgba(5,10,24,0.72) 100%),
+                url('{{ asset('assets/images/ds-withai-course/aiss-hero-bg.jpg') }}') no-repeat center center / cover; }
+        </style>
+
+        <div class="cyber-hero">
+            <div class="container position-relative" style="z-index:1;">
+                <div class="row align-items-center gy-2">
+
+                    {{-- LEFT: text --}}
+                    <div class="col-lg-6">
+                        <div class="cyber-badge">
+                            <i class="fa-solid fa-lock"></i> AI Cyber Security Program
+                        </div>
+
+                        <h2 class="cyber-title">
+                            Post Graduate Program In<br>
+                            <span class="cyber-accent">{{ $course->name }}</span>
+                        </h2>
+
+                        <div class="cyber-point">
+                            <i class="fa-solid fa-shield-halved text-info"></i>
+                            <span>Get <strong style="color:#00ddb4;">100% Placement Assistance</strong> in {{ $course->name }}</span>
+                        </div>
+                        <div class="cyber-point">
+                            <i class="fa-solid fa-briefcase" style="color:#00ddb4;"></i>
+                            <span>Learn from global experts and get certified by Digicrome</span>
+                        </div>
+                        <div class="cyber-point">
+                            <i class="fa-solid fa-clock text-warning"></i>
+                            <span>Suitable for Final Year Graduates and Working Professionals</span>
+                        </div>
+                        <div class="cyber-point">
+                            <i class="fa-solid fa-trophy text-warning"></i>
+                            <span>You're guaranteed to find something that's right for you.</span>
+                        </div>
+
+                        <div class="mt-2 d-flex flex-wrap gap-2">
+                            @if ($course->browser)
+                                <a class="btn btn-cyber-outline" id="downloadBrochureBtn" onclick="openModal('leadPopup')">
+                                    <i class="fa fa-download me-1"></i>Download Brochure
+                                </a>
+                            @endif
+                            <a class="btn btn-cyber-primary" id="quickResponseBtn" onclick="openModal('applyNowPopup')">
+                                <i class="fa fa-paper-plane me-1"></i>Apply Now
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- RIGHT: course image / designer banner --}}
+                    <div class="col-lg-6 cyber-banner-wrap">
+                        <div class="cyber-corner tl"></div>
+                        <div class="cyber-corner tr"></div>
+                        <div class="cyber-corner bl"></div>
+                        <div class="cyber-corner br"></div>
+                        @if ($course->banner_image)
+                            <img loading="lazy"
+                                 src="{{ asset('storage/' . $course->banner_image) }}"
+                                 alt="{{ $course->name }}"
+                                 title="{{ $course->name }}"
+                                 class="img-fluid" />
+                        @else
+                            <div style="width:100%;min-height:260px;background:rgba(0,220,180,.06);border:1px solid rgba(0,220,180,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                                <span style="color:rgba(0,220,180,.4);font-size:.9rem;">[Designer Banner Goes Here]</span>
+                            </div>
+                        @endif
+                    </div>
+
+                </div>
+
+                {{-- Stats strip — compact, fully visible without scroll --}}
+                <div class="cyber-stats">
+                    <div class="row g-0">
+                        <div class="col-6 col-md-3 stat-item py-1">
+                            <div class="stat-num">5000+</div>
+                            <div class="stat-label">Careers Transformed</div>
+                        </div>
+                        <div class="col-6 col-md-3 stat-item py-1">
+                            <div class="stat-num">100%</div>
+                            <div class="stat-label">Placement Assistance</div>
+                        </div>
+                        <div class="col-6 col-md-3 stat-item py-1">
+                            <div class="stat-num">{{ $course->course_duration ?? '6 Months' }}</div>
+                            <div class="stat-label">Live Online Classes</div>
+                        </div>
+                        <div class="col-6 col-md-3 stat-item py-1">
+                            <div class="stat-num" style="color:#f8b700;">{{ $course->course_online_payment ?? 'Upcoming' }}</div>
+                            <div class="stat-label">Next Batch Starts</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     @else
         <div class="breadcumb-area two d-flex"
             @if ($course->banner_image) style="background: url('{{ asset('storage/' . $course->banner_image) }}') no-repeat center center / cover;" @endif>
@@ -837,8 +1123,9 @@
                 </div>
             </div>
         </section>
+        @if($course->course_free != 3)
         <x-mentor-popup :mentors="$mentors" />
-
+        @endif
         <section class="my-5">
             <div class="container">
                 <h2 class="text-center mb-2" style="font-size: 2rem;">
@@ -1273,17 +1560,31 @@
 
         <!-- JS to Control Modals -->
         <script>
+            // Returns true when visitor is on the AI Security course page
+            function isAISSPage() {
+                return window.location.pathname
+                    .replace(/\/+$/, '')          // strip trailing slash
+                    .endsWith('/courses/ai-security-online-training');
+            }
+
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = 'flex';
-                const modalcourse = document.getElementById(modalId);
-                    const form = modalcourse.querySelector('form');
-                    if (form) {
-                        const aisecuritysource = form.querySelector('[name="source"]');
-                        if (window.location.pathname.includes('/courses/ai-security-online-training/')) {
-                            aisecuritysource.value = 'Website Ai Security';
+
+                // Override source for AISS page on every modal (brochure, apply-now, enroll-now)
+                if (isAISSPage()) {
+                    const modal = document.getElementById(modalId);
+                    const sourceField = modal.querySelector('form [name="source"]');
+                    if (sourceField) {
+                        // Source label for brochure vs apply/enroll
+                        if (modalId === 'leadPopup') {
+                            sourceField.value = 'Website AISS Course (Brochure)';
+                        } else {
+                            sourceField.value = 'Website AISS Course';
                         }
                     }
+                }
             }
+
             function closeModal(modalId) {
                 document.getElementById(modalId).style.display = 'none';
             }
