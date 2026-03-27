@@ -243,14 +243,14 @@
                 margin-bottom: 10px;
             }
             /* ---- Title ---- */
-            .cyber-hero h2.cyber-title {
+            .cyber-hero h1.cyber-title {
                 font-size: clamp(22px, 2.8vw, 34px);
                 font-weight: 800;
                 color: #fff;
                 line-height: 1.2;
                 margin-bottom: 10px;
             }
-            .cyber-hero h2.cyber-title span.cyber-accent {
+            .cyber-hero h1.cyber-title span.cyber-accent {
                 color: #00ddb4;
                 text-shadow: 0 0 16px rgba(0,220,180,.5);
             }
@@ -352,7 +352,7 @@
             /* ---- Responsive: mobile ---- */
             @media (max-width: 575.98px) {
                 .cyber-hero .cyber-badge    { font-size: .65rem; }
-                .cyber-hero h2.cyber-title  { font-size: 21px; }
+                .cyber-hero h1.cyber-title  { font-size: 21px; }
                 .cyber-hero .cyber-point    { font-size: .8rem; }
                 .cyber-hero .btn-cyber-primary,
                 .cyber-hero .btn-cyber-outline { width: 100%; text-align: center; }
@@ -367,7 +367,7 @@
             }
             /* ---- Responsive: tablet ---- */
             @media (min-width: 576px) and (max-width: 991.98px) {
-                .cyber-hero h2.cyber-title  { font-size: 26px; }
+                .cyber-hero h1.cyber-title  { font-size: 26px; }
                 .cyber-stats .stat-num      { font-size: 1.05rem; }
             }
 
@@ -383,13 +383,13 @@
                     {{-- LEFT: text --}}
                     <div class="col-lg-6">
                         <div class="cyber-badge">
-                            <i class="fa-solid fa-lock"></i> AI Cyber Security Program
+                            <i class="fa-solid fa-lock"></i> Next-Gen AI Security Program
                         </div>
 
-                        <h2 class="cyber-title">
+                        <h1 class="cyber-title">
                             Post Graduate Program In<br>
                             <span class="cyber-accent">{{ $course->name }}</span>
-                        </h2>
+                        </h1>
 
                         <div class="cyber-point">
                             <i class="fa-solid fa-shield-halved text-info"></i>
@@ -401,7 +401,7 @@
                         </div>
                         <div class="cyber-point">
                             <i class="fa-solid fa-clock text-warning"></i>
-                            <span>Suitable for Final Year Graduates and Working Professionals</span>
+                            <span>Suitable for Beginners, Freshers, and Working Professionals</span>
                         </div>
                         <div class="cyber-point">
                             <i class="fa-solid fa-trophy text-warning"></i>
@@ -721,11 +721,6 @@
                             <div class="event-sidebar-thumb">
                                 <img loading="lazy"src="{{ asset('storage/' . $course->image) }}"
                                     alt="event-sidebar-thumb" title="event-sidebar-thumb">
-                                <div class="course-video-icon">
-                                    <a href="{{ asset('storage/' . $course->image) }}">
-                                        {{-- <i class="fa-classic fa-solid fa-play fa-fw"></i> --}}
-                                    </a>
-                                </div>
                             </div>
                             <div class="event-info">
                                 <div class="event-info-title">
@@ -1569,13 +1564,10 @@
 
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = 'flex';
-
-                // Override source for AISS page on every modal (brochure, apply-now, enroll-now)
                 if (isAISSPage()) {
                     const modal = document.getElementById(modalId);
                     const sourceField = modal.querySelector('form [name="source"]');
                     if (sourceField) {
-                        // Source label for brochure vs apply/enroll
                         if (modalId === 'leadPopup') {
                             sourceField.value = 'Website AISS Course (Brochure)';
                         } else {
@@ -1584,18 +1576,10 @@
                     }
                 }
             }
-
             function closeModal(modalId) {
                 document.getElementById(modalId).style.display = 'none';
             }
         </script>
-
-
-
-
-        <!-- Apply Now Modal -->
-        <!-- Modal Start -->
-        <!-- Simple Modal with JS Control -->
         <div id="applyNowPopup" class="modal-container">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content custom-reg-modal-content" style="padding: 10px;">

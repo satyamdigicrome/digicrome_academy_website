@@ -6,6 +6,18 @@
     $hideHeader = true;
     $hideFooter = true;
 @endphp
+@push('styles')
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18024221657"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18024221657');
+</script>
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-18024221657/7tH2CL7qxJAcENmXz5JD'});
+</script>
+@endpush
 
 @section('content')
 @include('components.lead-form-popup')
