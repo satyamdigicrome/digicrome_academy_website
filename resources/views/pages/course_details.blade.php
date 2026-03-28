@@ -719,7 +719,7 @@
                     <div class="event-sidebar-wrapper" style="margin-top: 0px;">
                         <div class="event-sidebar">
                             <div class="event-sidebar-thumb">
-                                <img loading="lazy"src="{{ asset('storage/' . $course->image) }}"
+                                <img  style="border-radius: 10px;" loading="lazy"src="{{ asset('storage/' . $course->image) }}"
                                     alt="event-sidebar-thumb" title="event-sidebar-thumb">
                             </div>
                             <div class="event-info">
