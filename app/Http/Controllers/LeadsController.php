@@ -96,7 +96,7 @@ class LeadsController extends Controller
                 ->subject('New Lead Submission - ' . ($validated['page_name'] ?? 'Course Page'));
         });
 
-        return redirect()->route('thankyou');
+        return redirect()->route('thank.you');
     }
 
 
