@@ -25,7 +25,7 @@ class HomeController extends Controller
 
     $collections = Collection::with(['courses' => function ($query) {
         $query->where('status', 1)->limit(4); 
-    }])->where('status', 1)->orderBy('position')->get();
+    }])->where('status', 1)->whereNotIn('id', [5, 6])->orderBy('position')->get();
 
     if ($userCountry === 'India') {
         $upcomingCourses = Course::where('status', 1)
