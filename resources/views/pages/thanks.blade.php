@@ -2,9 +2,9 @@
 
 @section('title',  'Digicrome')
 @php
-    // Set flags to hide header and footer
-    $hideHeader = true;
-    $hideFooter = true;
+    // // Set flags to hide header and footer
+    // $hideHeader = true;
+    // $hideFooter = true;
 @endphp
 
 @section('content')
@@ -23,6 +23,10 @@
     <p class="text-muted mb-4">
       Our team will get in touch with you shortly. In the meantime, feel free to explore more about Digicrome.
     </p>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="{{ url('/') }}" class="btn btn-primary px-4">Go to Homepage</a>
+    </div>
 </div>
 
     @if(session('brochure'))
