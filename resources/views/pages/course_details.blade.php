@@ -388,7 +388,7 @@
 
                         <h1 class="cyber-title">
                             Post Graduate Program In<br>
-                            <span class="cyber-accent">{{ $course->name }}</span>
+                            <span class="cyber-accent">AI Security Specialist</span>
                         </h1>
 
                         <div class="cyber-point">
@@ -1707,19 +1707,17 @@
                 color: #ffffff;
                 text-decoration: underline;
             }
-
             .custom-reg-submit-btn {
-                background-color: rgba(255, 255, 255, 0.9);
+                background: linear-gradient(135deg, #EF9F1B, #ffb84d) !important;
                 color: #000;
                 font-weight: 600;
                 border: none;
+                transition: all 0.3s ease;
             }
-
             .custom-reg-submit-btn:hover {
-                background-color: #fff;
+                background: linear-gradient(135deg, #ffb84d, #EF9F1B) !important;
                 color: #000;
             }
-
             #form1 {
                 background: none !important;
             }

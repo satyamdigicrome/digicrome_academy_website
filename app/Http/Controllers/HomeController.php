@@ -37,6 +37,7 @@ class HomeController extends Controller
                                  ->whereIn('id', [60, 58, 55, 61])
                                  ->get();
     }
+    // dd($upcomingCourses);
     $companyLogos = Cache::remember('company_logos', 60, function () {
             return Logo::where('type', 'companies')->get(['id', 'image']);
         });

@@ -63,7 +63,7 @@
             <div class="col-lg-2">
                 <div class="header-logo">
                     <a class="active_logo" href="/"><img loading="lazy"
-                            src="{{ asset('assets/images/logo.webp') }}" alt="logo"></a>
+                            src="{{ asset('assets/images/logo.webp') }}" style="width:150px;" alt="logo"></a>
                     <a class="logo_two" href="/"><img class="footer-logo11" loading="lazy"
                             src="{{ asset('assets/images/footer-logo.webp') }}" alt="logo"></a>
                 </div>

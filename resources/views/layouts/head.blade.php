@@ -38,11 +38,9 @@
         crossorigin="anonymous">
 
     {{-- Critical CSS: load synchronously (bootstrap + theme) --}}
-    <link rel="preload" href="{{ asset('assets/css/bootstrap.min.css') }}" as="style"
-        onload="this.rel='stylesheet'">
-    <link rel="preload" href="{{ asset('assets/css/theme-default.css') }}" as="style"
-        onload="this.rel='stylesheet'">
-    <link rel="preload" href="{{ asset('assets/css/style.css') }}" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="preload" href="{{ asset('assets/css/google-fonts.css') }}" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>

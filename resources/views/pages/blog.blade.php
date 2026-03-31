@@ -39,7 +39,7 @@
 		<div class="row align-items-center">
 			<div class="col-lg-6">
 				<!-- hero content -->
-				<div class="hero_content">
+				{{-- <div class="hero_content">
 					<h5 data-animation="fadeInUp" data-delay="100ms">
 						<i class="bi bi-check2"></i> 100% Satisfaction
 					</h5>
@@ -97,23 +97,8 @@
 
 					<!-- hero button -->
 					<div class="hero-button" data-animation="fadeInUp" data-delay="100ms">
-						{{-- <div class="hero-btn">
-								<a href="contact.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
-							</div>
-							<div class="hero-course-btn">
-								<a href="course.html">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
-							</div> --}}
 					</div>
-					{{-- <div class="hero-shape31">
-							<img loading="lazy"src="assets/images/home-three/hero-shape31.webp" alt="hero-shape">
-						</div>
-						<div class="hero-shape32">
-							<img loading="lazy"src="assets/images/home-three/hero-shape32.webp" alt="hero-shape">
-						</div>
-						<div class="hero-shape33">
-							<img loading="lazy"src="assets/images/home-three/hero-shape33.webp" alt="hero-shape">
-						</div> --}}
-				</div>
+				</div> --}}
 			</div>
 			<div class="col-lg-6"></div>
 		</div>

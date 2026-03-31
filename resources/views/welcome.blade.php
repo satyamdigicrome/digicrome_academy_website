@@ -647,6 +647,7 @@
         </script>
         <div class="container">
             <div class="row image_load">
+                {{-- @dd($upcomingCourses) --}}
                 @foreach ($upcomingCourses as $course)
                     <div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
                         <div class="case-study-single-box">
