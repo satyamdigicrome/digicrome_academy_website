@@ -300,13 +300,24 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="about-thumb-wrapper">
                         <div class="about-thumb">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-thumb1.webp') }}"
-                                alt="digicrome thumb" title="digicrome thumb">
+                            <picture>
+                                <source 
+                                    media="(max-width: 767px)" 
+                                    srcset="{{ asset('assets/images/home-one/about-thumb1-mobile.webp') }}">
+                                <img 
+                                    loading="lazy"
+                                    src="{{ asset('assets/images/home-one/about-thumb1.webp') }}"
+                                    alt="digicrome thumb" 
+                                    title="digicrome thumb"
+                                    width="600"
+                                    height="400"
+                                    style="width:100%;height:auto;">
+                            </picture>
                         </div>
-                        <div class="about-thumb-shape1 bounce-animate-3">
+                        {{-- <div class="about-thumb-shape1 bounce-animate-3">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape1.webp') }}"
                                 alt="digicrome shape" title="digicrome shape">
-                        </div>
+                        </div> --}}
                         <div class="about-thumb-shape2 rotateme">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape2.webp') }}"
                                 alt="diicrome shape" title="digicrome shapr">
@@ -376,10 +387,10 @@
                     </div>
                 </div>
             </div>
-            <div class="about-shape5">
+            {{-- <div class="about-shape5">
                 <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="digicrome shape"
                     title="digicrome shape">
-            </div>
+            </div> --}}
         </div>
     </section>
     @if ($userCountry === 'India')
