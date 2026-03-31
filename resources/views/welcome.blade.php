@@ -5,6 +5,7 @@
 @push('styles')
     {{-- Preload the LCP hero image so the browser fetches it as early as possible --}}
     <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" fetchpriority="high">
+    <link rel="preload"  as="image"  href="https://www.digicrome.com/assets/images/home-one/short.webp" type="image/webp" fetchpriority="high">
     <link rel="preload" href="{{ asset('assets/css/home.css') }}" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -142,8 +143,8 @@
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
                         <div class="hero-dot-shape">
-                            <img loading="lazy"
-                                style="width: 306px; height: auto; position: relative; top: -209px; left: 70px;"
+                            <img fetchpriority="high" loading="eager" decoding="async"
+                                style="width: 306px; height: auto;   transform: translate(70px, -209px);"
                                 src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
                                 title="digicrome dot">
                         </div>
@@ -634,7 +635,7 @@
             </div>
         </div>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
+            window.addEventListener('load', function () {
                 var grid = document.querySelector('.image_load');
                 var iso = new Isotope(grid, {
                     itemSelector: '.grid-item',
@@ -1257,8 +1258,7 @@
             }
         </style>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-
+            window.addEventListener('load', function () {
                 const swiper = new Swiper(".mySwiper", {
                     effect: "coverflow",
                     grabCursor: true,

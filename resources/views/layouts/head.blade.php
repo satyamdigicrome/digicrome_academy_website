@@ -248,6 +248,7 @@
         .mobile-menu-area {
             visibility: hidden;
             opacity: 0;
+            min-height:60px;
         }
 
         /* Once page is fully loaded, show the mobile menu */
