@@ -1,4 +1,3 @@
-
 <div class="header-top-area">
     <div class="container-fluid">
         <div class="row header-top">
@@ -63,7 +62,8 @@
             <div class="col-lg-2">
                 <div class="header-logo">
                     <a class="active_logo" href="/"><img loading="lazy"
-                            src="{{ asset('assets/images/logo.webp') }}" width="150" height="50" alt="logo"></a>
+                            src="{{ asset('assets/images/logo.webp') }}" width="150" height="50"
+                            alt="logo"></a>
                     <a class="logo_two" href="/"><img class="footer-logo11" loading="lazy"
                             src="{{ asset('assets/images/logonew.webp') }}" alt="logo"></a>
                 </div>
@@ -96,7 +96,7 @@
                                                     <li class="mb-2">
                                                         <a href="{{ route('course_details', 'ai-security-online-training') }}"
                                                             class="text-dark d-flex justify-content-between align-items-center">
-                                                                AI Security Specialist
+                                                            AI Security Specialist
                                                             <i class="bi bi-chevron-right"></i>
                                                         </a>
                                                     </li>
@@ -160,7 +160,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                 </div>
                 </li>
                 </ul>
@@ -249,7 +249,7 @@
     <div class="mobile-menu">
         <nav class="header-menu">
             <div class="mobile-logo" style="z-index: -9;">
-                <img class="footer-logo11" loading="lazy" src="{{ asset('assets/images/footer-logo.webp') }}"
+                <img class="footer-logo11" loading="lazy" src="{{ asset('assets/images/logonew.webp') }}"
                     alt="logo">
             </div>
             <ul class="nav_scroll">
@@ -336,8 +336,8 @@
                 <div class="sidebar-info-contents">
                     <div class="content-inner">
                         <div class="nav-logo">
-                            <a href="/"><img loading="lazy"
-                                    src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
+                            <a href="/"><img loading="lazy" src="{{ asset('assets/images/logonew.webp') }}"
+                                    alt="logo"></a>
                         </div>
                         <div class="content-box">
                             <h2>About Us</h2>
@@ -391,4 +391,3 @@
         <i class="fas fa-phone-alt"></i>
     </a>
 </div>
-

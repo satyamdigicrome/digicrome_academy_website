@@ -4,7 +4,7 @@
             <div class="col-lg-6 col-md-12">
                 <div class="footer-logo">
                     <a href="#"><img loading="lazy" width="150" height="79"
-                            src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"
+                            src="{{ asset('assets/images/logonew.webp') }}" alt="logo"
                             class="footer-logo11" style="width:150px;height:auto;max-width:100%;"></a>
                 </div>
                 <br>
