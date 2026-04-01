@@ -15,7 +15,7 @@
 
     <div class="payment-img d-flex" style="background-image: url({{ asset('assets/images/contact-header-img.png') }})">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-ite   -center">
                 <div class="col-lg-12">
                     <div class="breadcumb-content">
                         <div class="breadcumb-title">
@@ -335,7 +335,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="payment-card green-card">
                                 <div class="card-bg">
-                                    <img src="{{ asset('assets/images/icons8-bank-100.svg') }}" class="card-icon">
+                                    <img src="{{ asset('assets/images/icons8-bank-100.svg') }}" alt="Bank Image" class="card-icon">
                                 </div>
 
                                 <div class="card-content">
@@ -353,7 +353,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="payment-card orange-card">
                                 <div class="card-bg">
-                                    <img src="{{ asset('assets/images/upi.webp') }}" class="card-icon"
+                                    <img src="{{ asset('assets/images/upi.webp') }}" alt="UPI Image" class="card-icon"
                                         style="border-radius: 0px 10px 10px 0px;">
                                 </div>
 
@@ -375,7 +375,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="payment-card blue-card">
                                 <div class="card-bg">
-                                    <img src="{{ asset('assets/images/razorpay-icon.svg') }}" class="card-icon">
+                                    <img src="{{ asset('assets/images/razorpay-icon.svg') }}" alt="Razorpay Payment" class="card-icon">
                                 </div>
 
                                 <div class="card-content">

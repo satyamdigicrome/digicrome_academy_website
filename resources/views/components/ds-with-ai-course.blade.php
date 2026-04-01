@@ -18,7 +18,7 @@
                      <div class="course-heading-banner col-flex">
                          <h1 style="color: #fff;">{{ $course->name }}<br> </h1> <small
                              style=" font-size: 20px; color: #fff;">in collaboration with</small>
-                         <img loading="lazy"src='{{ asset('assets/images/ds-withai-course/mslogo.png') }}'
+                         <img loading="lazy"src='{{ asset('assets/images/ds-withai-course/mslogo.png') }} alt="Microsoft Logo"'
                              class='ds-logo lazyload'>
                          <div class="black-box">
                              <span class="yellow-text">Aligned with competency standards set by Microsoft & IBM.</span>
@@ -62,7 +62,7 @@
                              <ul>
                                  <li><strong>Silver</strong><br> Business <br>Partner</li>
                                  <li><img loading="lazy"src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}"
-                                         class="lazyload" alt="nasscom">
+                                         class="lazyload" alt="Microsoft Logo">
                                  </li>
                              </ul>
                          </div>

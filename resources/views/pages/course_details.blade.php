@@ -5,8 +5,6 @@
 @section('meta_keywords', $course->meta_keywords ?? $course->name)
 
 @push('styles')
-    @include('components.lead-form-popup')
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -69,6 +67,7 @@
 @endpush
 
 @section('content')
+    @include('components.lead-form-popup')
     @if ($course->course_free == 1)
 
         <x-ds-with-ai-course :course="$course" />
@@ -480,7 +479,7 @@
                         </div>
 
 
-                        <h2 class="fw-bold text-capitalize text-dark course-heading" style="font-size: 43px;">{{ $course->name }}</h2>
+                        <h1 class="fw-bold text-capitalize text-dark course-heading" style="font-size: 43px;">{{ $course->name }}</h1>
 
                         <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
                             <i class="fa-solid fa-shield-halved text-primary me-2"></i>
