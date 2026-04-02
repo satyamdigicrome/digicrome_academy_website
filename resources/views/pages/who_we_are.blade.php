@@ -396,7 +396,7 @@
                 <div class="col-lg-12">
                     <div class="breadcumb-content">
                         <div class="breadcumb-title">
-                            <h4>Who We Are</h4>
+                            <h1>Who We Are</h1>
                         </div>
 
                     </div>
@@ -415,7 +415,7 @@
         <div class="container-fluid" style="color: black; ">
             <div class="row">
                 <div class="col-lg-6 col-md-12" style="padding-left: 10%;">
-                    <h5 style="color: #43505b; font-weight: 700; "><b>Digicrome Academy is a</b></h5>
+                    <h2 style="color: #43505b; font-weight: 700; "><b>Digicrome Academy is a</b></h2f
                     <span style="font-size: 43px; font-family: Inter, sans-serif; color: #f29c12;"><b>
                             <b> Global IT Upskilling<br> Edtech Platform</b>
                         </b></span>
@@ -438,7 +438,7 @@
 
     </section>
     <section id="contactSection" class="Contact1" style="background-color: white; padding-top:20px;">
-        <h1><b>Major Milestones in Our Journey</b></h1>
+        <h2 class="text-center"><b>Major Milestones in Our Journey</b></h2>
         <ul class="ul1" style="padding-top: 40px;">
             <li style="--accent-color:#ea4335">
                 <div class="date">2026</div>
@@ -497,8 +497,8 @@
                 Stay Ahead with the Support of our Learner Community
             </div>
 
-            <h5 style="border: 2px solid #f29c12; border-radius: 30px; display: inline-block; padding:5px;"><b> &nbsp; You
-                    Also Include Yourself &nbsp;</b></h5>
+            <h3 style="border: 2px solid #f29c12; border-radius: 30px; display: inline-block; padding:5px;"><b> &nbsp; You
+                    Also Include Yourself &nbsp;</b></h3>
         </div>
         <div class="map">
             <img loading="lazy" src="{{ asset('assets/images/dc/map.webp') }}" alt="map" title="map" />

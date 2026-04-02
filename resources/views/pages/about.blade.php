@@ -29,7 +29,7 @@
                 <div class="col-lg-12">
                     <div class="breadcumb-content">
                         <div class="breadcumb-title">
-                            <h4>About Us</h4>
+                            <h1>About Us</h1>
                         </div>
                     </div>
                 </div>
@@ -54,8 +54,8 @@
                                     alt="icon" title="icon">
                             </div>
                             <div class="learn-title">
-                                <h5>Learn Online
-                                    Anywhere</h5>
+                                <p>Learn Online
+                                    Anywhere</p>
                             </div>
                         </div>
                         <div class="about-thumb">

@@ -45,7 +45,7 @@
 			<div class="col-lg-12">
 				<div class="breadcumb-content">
 							<div class="breadcumb-title">
-								<h4 style="color: #fff; margin-bottom: 210px ;">Contact US</h4>
+								<h1 style="color: #fff; margin-bottom: 210px ;">Contact Us</h1>
 							</div>
 							{{-- <ul>
 								<li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
@@ -360,7 +360,7 @@
 				<img loading="lazy"src="{{ asset('assets/images/coustome.svg') }}" alt="Contact Image" title="Contact Image">
 			</div>
 			<div class="col-md-7">
-				<h2>Customer Contact Number</h2>
+				<h3 class="fs-4">Customer Contact Number</h3>
 				<p>Call us for assistance.</p>
 				<a href="tel:+1234567890" class="btn btn-dark btn-call">
 					<i class="fas fa-phone"></i> Call Now
@@ -368,27 +368,26 @@
 				<div class="row mt-4">
 					<div class="col-md-4">
 						<div class="info-box">
-							<h5>For Admission Queries</h5>
+							<h4>For Admission Queries</h4>
 							<p><i class="fas fa-phone"></i> 01204538125</p>
 							<p><i class="fas fa-envelope"></i> info@digicrome.com</p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="info-box">
-							<h5>For Account Department</h5>
+							<h4>For Account Department</h4>
 							<p><i class="fas fa-phone"></i> 01204538104</p>
 							<p><i class="fas fa-envelope"></i> accounts@digicrome.com</p>
 						</div>
 					</div>
 					<div class="col-md-4">
-		<div class="info-box">
-			<h5>For Students Support</h5>
-			<p><i class="fas fa-phone"></i> 7011101972 <br><small>Available: 10 AM to 9 PM</small></p>
-			<p><i class="fas fa-phone"></i> 01204538125 <br><small>Available: 11 AM to 6 PM</small></p>
-			<p><i class="fas fa-envelope"></i> support@digicrome.com</p>
-		</div>
-	</div>
-
+						<div class="info-box">
+							<h4>For Students Support</h4>
+							<p><i class="fas fa-phone"></i> 7011101972 <br><small>Available: 10 AM to 9 PM</small></p>
+							<p><i class="fas fa-phone"></i> 01204538125 <br><small>Available: 11 AM to 6 PM</small></p>
+							<p><i class="fas fa-envelope"></i> support@digicrome.com</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -409,13 +408,14 @@
 			<div class="col-lg-6">
 				<!-- section title -->
 				<div class="section-sub-title three">
-					<h6><img loading="lazy" src="assets/images/inner-img/sub-title2.webp" alt="icon" title="icon">GET IN TOUCH</h6>
+					<h2 style="color:var(--primary-color);font-size:20px;"><img loading="lazy" src="assets/images/inner-img/sub-title2.webp" alt="icon" title="icon">GET IN TOUCH</h2>
 				</div>
 				<div class="section_title">
-					<h1>Trusted By the Genious</h1>
-					<div class="fs-1 fw-bold" style="color: #1a1447;">
+					<h3 class="fs-1 fw-bold" style="color: #1a1447;">Trusted By the Genious
+					<div>
 						People with Digicrome
 					</div>
+					</h3>
 				</div>
 				<div class="section-title-desc">
 					<p>We combine media leadership, cross-media innovation, and advanced technology to develop standardized platforms with expert consultation.</p>
@@ -461,7 +461,7 @@
 					<form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
 						action="https://demo.digicrome.in/post_lead.php">
 						@csrf
-						<h2 style="color: #f29c12;"> Register now!! And get a quick call</h2>
+						<h3 style="color: #f29c12;font-size: 24px; margin-bottom: 20px;font-weight:500;"> Register now!! And get a quick call</h3>
 						<div class="form-field">
 							<!--<label style="color:#fff;" for="name">Name:</label> -->
 							<input type="text" id="name" name="name" placeholder="Name">
@@ -541,17 +541,17 @@
 <!--==================================================-->
 <div class="row p-4">
 	<div class="col-lg-6">
-		<h2 class="mb-2" style="font-size: 2rem; margin-top: 15px;">
+		<h3 class="mb-2" style="font-size: 2rem; margin-top: 15px;">
 			Nation Navigator: <span style="color: #141414;"> India </span>
-		</h2>
+		</h3>
 		<iframe
 			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448075.6264138498!2d76.86013065725662!3d28.671967696656612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5639a2a0f31%3A0x4c3b8b61bc63b342!2sDigiCrome%20Academy!5e0!3m2!1sen!2sin!4v1643104363026!5m2!1sen!2sin"
 			width="100%" height="520" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 	</div>
 	<div class="col-lg-6">
-		<h2 class="mb-2" style="font-size: 2rem; margin-top: 15px;">
+		<h3 class="mb-2" style="font-size: 2rem; margin-top: 15px;">
 			Map Matrix:<span style="color: #141414;">USA</span>
-		</h2>
+		</h3>
 		<iframe
 			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167704831202!2d-106.95752532389567!3d44.79777077107091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a655555%3A0x3265c73ab4e065e!2s30%20N%20Gould%20St%20STE%20ST%20R%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sin!4v1698755458200!5m2!1sen!2sin"
 			width="100%" height="520" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>

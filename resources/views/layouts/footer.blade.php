@@ -10,8 +10,9 @@
                 <br>
                 <div class="section_title six">
                     <h2 style="color: #fff; font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;">
-                        Let’s Connect and</h2>
-                    <h2 style="color: #fff; font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;">
+                        Let’s Connect and 
+                    {{-- </h2>
+                    <h2 style="color: #fff; font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;"> --}}
                         Grow Your Future Together!</h2>
                 </div>
                 <div class="section-title-desc">

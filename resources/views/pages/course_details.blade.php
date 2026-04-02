@@ -69,7 +69,6 @@
 @section('content')
     @include('components.lead-form-popup')
     @if ($course->course_free == 1)
-
         <x-ds-with-ai-course :course="$course" />
     @elseif ($course->course_free == 2)
         <div class="breadcumb-area two d-flex">

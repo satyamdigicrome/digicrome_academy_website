@@ -19,7 +19,7 @@
                 <div class="col-lg-12">
                     <div class="breadcumb-content">
                         <div class="breadcumb-title">
-                            <h4 style="color: #fff">Payments</h4>
+                            <h1 style="color: #fff;font-size:50px;font-weight:600;">Payments</h1>
                         </div>
                         {{-- <ul>
         <li><a href="#" style="color: #fff">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
@@ -294,7 +294,7 @@
 
     <section style="padding: 40px; background-color: #f8f9fa;">
         <div style="text-align: center; margin-bottom: 30px;">
-            <h1 style="font-size: 32px; color: #333;">Choose Your Payment Method</h1>
+            <h2 style="font-size: 32px; color: #333;">Choose Your Payment Method</h2>
             <p style="font-size: 18px; color: #555;">Select a convenient option below to make your payment</p>
         </div>
 

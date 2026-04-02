@@ -13,11 +13,11 @@
                 <div class="row">
                     <div class="col-lg-7 banner-left-section">
                         <h4>MEET OUR TOP ACHIEVERS</h4>
-                        <h2 class="for-box-design">Student Success Stories</h2>
-                        <h3>That Drive You!</h3>
+                        <h1 class="for-box-design">Student Success Stories</h1>
+                        <h2>That Drive You!</h2>
                         <p> <span>Career Progress isn’t about luck or shortcuts.</span><br>It’s about smart work, sacrifice,
                             and patience that pays off.<br> Create the career you actually love! </p>
-                        <h6>Digicrome alumni build rewarding careers at top firms.</h6>
+                        <h3>Digicrome alumni build rewarding careers at top firms.</h3>
                         <div class="work-alimini-section">
                             <div class="marquee-content">
                                 <!-- Original Set of Images -->
@@ -62,21 +62,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 first-explore-section">
-                        <h1>Discover </h1>
-                        <h6>Placement and Career Activities</h6>
+                        <h2>Discover
+                        <span>Placement and Career Activities</span>
+                        </h2>
                         <p>Click here to find our placement events and career support.<br> Take charge of your future today!
                         </p>
                         <div class="four-btn-sect">
-                            <a href="" class="button-repfirst first-btn-selected">
+                            <a href="javascript:void(0);" class="button-repfirst first-btn-selected">
                                 Placement Events
                             </a>
-                            <a href="" class="button-repfirst">
+                            <a href="javascript:void(0);" class="button-repfirst">
                                 Recruitment Drives
                             </a>
-                            <a href="#" class="button-repfirst">
+                            <a href="javascript:void(0);" class="button-repfirst">
                                 Drive Highlights
                             </a>
-                            <a href="#" class="button-repfirst">
+                            <a href="javascript:void(0);" class="button-repfirst">
                                 Recent Recruitments
                             </a>
                         </div>
@@ -143,7 +144,7 @@
                         @foreach ($studentStories->take(4) as $story)
                             <div class="first-card"> <img src="{{ asset('storage/' . $story->image) }}" alt="person"
                                     loading="eager" class="person-image" width="121px">
-                                <h3>{{ $story->studentname }}</h3>
+                                <h6>{{ $story->studentname }}</h6>
                                 <div class="for-inner-logo">{{ $story->companyname }}</div>
                                 <p>career upgrade</p>
                             </div>
@@ -157,15 +158,15 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
-                    <h2 class="fw-bold display-5 text-primary">5000+</h2>
+                    <h6 class="fw-bold display-5 text-primary">5000+</h6>
                     <p class="mb-0 fs-5">Students Placed</p>
                 </div>
                 <div class="col-md-4">
-                    <h2 class="fw-bold display-5 text-primary">100+</h2>
+                    <h6 class="fw-bold display-5 text-primary">100+</h6>
                     <p class="mb-0 fs-5">Top Companies</p>
                 </div>
                 <div class="col-md-4">
-                    <h2 class="fw-bold display-5 text-primary">100%</h2>
+                    <h6 class="fw-bold display-5 text-primary">100%</h6>
                     <p class="mb-0 fs-5">Career Growth Support</p>
                 </div>
             </div>
