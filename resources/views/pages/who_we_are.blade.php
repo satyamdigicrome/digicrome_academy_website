@@ -415,8 +415,8 @@
         <div class="container-fluid" style="color: black; ">
             <div class="row">
                 <div class="col-lg-6 col-md-12" style="padding-left: 10%;">
-                    <h2 style="color: #43505b; font-weight: 700; "><b>Digicrome Academy is a</b></h2f
-                    <span style="font-size: 43px; font-family: Inter, sans-serif; color: #f29c12;"><b>
+                    <h2 style="color: #43505b; font-weight: 700; "><b>Digicrome Academy is a</b></h2>
+                    <span style="font-size: 21px; font-family: Inter, sans-serif; color: #f29c12;"><b>
                             <b> Global IT Upskilling<br> Edtech Platform</b>
                         </b></span>
                     <hr>
@@ -438,7 +438,7 @@
 
     </section>
     <section id="contactSection" class="Contact1" style="background-color: white; padding-top:20px;">
-        <h2 class="text-center"><b>Major Milestones in Our Journey</b></h2>
+        <h2 style="text:center !important;"><b>Major Milestones in Our Journey</b></h2>
         <ul class="ul1" style="padding-top: 40px;">
             <li style="--accent-color:#ea4335">
                 <div class="date">2026</div>

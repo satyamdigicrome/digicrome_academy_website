@@ -25,7 +25,7 @@
                             <div class="mentor-card-inner">
 
                                 <div class="mentor-content-top text-start">
-                                    <h5 class="mentor-name">{{ $mentor->name }}</h5>
+                                    <h3 class="mentor-name">{{ $mentor->name }}</h3>
                                     <p class="mentor-position">{{ $mentor->position }}</p>
                                     <p class="mentor-experience">{{ $mentor->experience }}+ Years Experience</p>
                                 </div>

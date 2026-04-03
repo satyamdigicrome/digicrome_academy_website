@@ -410,7 +410,9 @@
 <section class="company-form contactpage-form" style="padding-top: 50px;">
   <div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
     <div class="section__title fw-bold" style="text-align: center; font-size: 36px; padding-bottom: 40px; color: #1a1447;">
+      <h2>
       Why Work with Us?
+      </h2>
     </div>
 
     <div class="row">
@@ -418,7 +420,7 @@
         <div>
           <img loading="lazy" src="{{ asset('assets/images/dc/1e.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 38%;">
-          <h4 style="padding-top:20px; ">Make an Impact</h4>
+          <h3 style="padding-top:20px; ">Make an Impact</h3>
           <p
             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
             Your role directly contributes to empowering thousands of learners and professionals across the country.
@@ -429,7 +431,7 @@
         <div>
           <img loading="lazy" src="{{ asset('assets/images/dc/1f.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 35%;">
-          <h4 style="padding-top:20px; ">Growth & Learning Culture</h4>
+          <h3 style="padding-top:20px; ">Growth & Learning Culture</h3>
           <p
             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
             We believe in continuous growth — not just for our learners, but for our team too. You’ll have access to resources, mentorship, and opportunities to keep learning and evolving.</p>
@@ -439,7 +441,7 @@
         <div>
           <img loading="lazy" src="{{ asset('assets/images/dc/1g.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 35%;">
-          <h4 style="padding-top:20px; ">Grow Together</h4>
+          <h3 style="padding-top:20px; ">Grow Together</h3>
           <p
             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
             Work with a team that values empathy, creativity, and collaboration. We celebrate wins together and support each other in every challenge.</p>
@@ -449,7 +451,7 @@
         <div>
           <img loading="lazy" src="{{ asset('assets/images/dc/1e.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 38%;">
-          <h4 style="padding-top:20px; ">Flexible & Inclusive</h4>
+          <h3 style="padding-top:20px; ">Flexible & Inclusive</h3>
           <p
             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
             Whether you're working from our office or remotely, we foster a healthy work-life balance, respect individuality, and encourage diverse perspectives.

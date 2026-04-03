@@ -72,7 +72,7 @@
                 <div class="col-lg-6">
                     <div class="hero_content">
                         <h5><i class="bi bi-check2"></i>Enhance Your future skills with just a click</h5>
-                        <h1>Start building your<br>
+                        <h1 class="text-capitalize">Start building your<br>
                             future with a better career transition</h1>
                         @if ($userCountry === 'India')
                             <div style="text-align: left; margin: 10px 0; width: 60%;">
@@ -158,7 +158,7 @@
                                     alt="digicrome autor" title="digicrome author">
                             </div>
                             <div class="hero-autor-content">
-                                <h3 class="counter">130</h3>
+                                <span class="counter">130</span>
                                 <span>+</span>
                                 <p>Expert Instructor</p>
                             </div>
@@ -173,13 +173,12 @@
             <div class="row align-items-center section-title-space">
                 <div class="col-lg-6">
                     <div class="section-sub-title pt-6" style="    margin-top: 50px;">
-                        <h6>core features</h6>
+                        <h2>core features</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h2 style="font-size: 30px; font-weight: bold;">Get Expertise & Hands On Advancement </h2>
-                        <h2 style="font-size: 30px; font-weight: bold;">In Your Career With Best Industry Experts!</h2>
+                        <h3 style="font-size: 30px; font-weight: bold;">Get Expertise & Hands On Advancement In Your Career With Best Industry Experts!</h3>
                     </div>
                 </div>
             </div>
@@ -332,10 +331,10 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="about_content">
                         <div class="section-sub-title">
-                            <h6>ABOUT US</h6>
+                            <h2>ABOUT US</h2>
                         </div>
                         <div class="section_title">
-                            <h2 class="heading-like-h1">Who Are We – Introduction to Digicrome Online Platform</h2>
+                            <h3 class="heading-like-h1">Who Are We – Introduction to Digicrome Online Platform</h3>
                         </div>
                         <div class="section-title-desc">
                             <p>We are a globally reputed online educational academy. We skill up students and professionals
@@ -394,7 +393,7 @@
             </div> --}}
         </div>
     </section>
-    @if ($userCountry === 'India')
+    {{-- @if ($userCountry === 'India') --}}
         <div class="brand-area style-one">
             <div class="container">
                 <div class="row">
@@ -433,8 +432,8 @@
                 </div> --}}
             </div>
         </div>
-    @endif
-    <section class="about-area style-five">
+    {{-- @endif --}}
+    <section class="about-area style-five pt-5 pb-0">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6">
@@ -525,11 +524,11 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="about_content">
                         <div class="section-sub-title">
-                            <h6>Our Achievement</h6>
+                            <h2>Our Achievement</h2>
                         </div>
                         <div class="section_title">
-                            <h2 class="heading-like-h1"> Digicrome wins Best Edtech award <br>in online digital education
-                                at the <br> Bharat Gaurav summit 2026</h2>
+                            <h3 class="heading-like-h1 text-capitalize"> Digicrome wins Best Edtech award in online digital education
+                                at the Bharat Gaurav summit 2026</h3>
 
                         </div>
                         <div class="section-title-desc two">
@@ -581,8 +580,8 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="section_title mb-4">
-                        <h2 class="heading-like-h1">Our Certification Partners</h2>
+                    <div class="section_title">
+                        <h2 class="heading-like-h1 text-capitalize">Our Certification Partners</h2>
                     </div>
                     <p class="mb-4">
                         Empowering learners through globally recognized certifications with industry-leading organizations.
@@ -609,13 +608,13 @@
             <div class="row align-items-center section-title-space">
                 <div class="col-lg-6">
                     <div class="section-sub-title">
-                        <h6>OUR COURSES</h6>
+                        <h2>OUR COURSES</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h2 class="heading-like-h1">Our Courses – Comprehensive</br>
-                            Available all programs</h2>
+                        <h3 class="heading-like-h1">Our Courses – Comprehensive</br>
+                            Available all programs</h3>
                     </div>
                 </div>
             </div>
@@ -726,10 +725,10 @@
                 <div class="col-lg-7">
                     <div class="choose-content">
                         <div class="section-sub-title">
-                            <h6>why choose us?</h6>
+                            <h2>why choose us?</h2>
                         </div>
                         <div class="section_title">
-                            <h2 class="heading-like-h1">We Bring You Closer To<br>A Successful Career</h2>
+                            <h3 class="heading-like-h1">We Bring You Closer To<br>A Successful Career</h3>
                         </div>
                         <div class="section-title-desc">
                             <p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we
@@ -893,7 +892,7 @@
                 <div class="container">
                     <div class="row py-5 align-items-start">
                         <div class="col-lg-3 order-1 order-lg-1 mb-4 mb-lg-0">
-                            <h3 class="section-title">Our 3 Steps</h3>
+                            <h2 class="section-title">Our 3 Steps</h2>
                             <p class="section-sub">Recruitment Process</p>
                             <div class="steps-wrapper">
                                 <div class="step-item">
@@ -901,7 +900,7 @@
                                         <i class="fa-solid fa-user"></i>
                                     </div>
                                     <div class="step-content">
-                                        <h6>Profile Building</h6>
+                                        <h3>Profile Building</h3>
                                         <small>Strong ATS-Friendly Resume</small>
                                         <small>Optimize LinkedIn Profile</small>
                                     </div>
@@ -911,7 +910,7 @@
                                         <i class="fa-solid fa-comments"></i>
                                     </div>
                                     <div class="step-content">
-                                        <h6>Mock Interviews</h6>
+                                        <h3>Mock Interviews</h3>
                                         <small>Technical Interviews</small>
                                         <small>Interview Strategy</small>
                                     </div>
@@ -921,7 +920,7 @@
                                         <i class="fa-solid fa-briefcase"></i>
                                     </div>
                                     <div class="step-content">
-                                        <h6>Right Opportunity</h6>
+                                        <h3>Right Opportunity</h3>
                                         <small>Job Mapping</small>
                                         <small>Interview Scheduling</small>
                                     </div>
@@ -954,7 +953,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3 order-3 order-lg-3 mt-5 mt-lg-0">
-                            <h4 class="section-title">Beyond Courses:</h4>
+                            <h2 class="section-title">Beyond Courses:</h2>
                             <p class="section-sub">Additional Support We Provide</p>
                             <div class="beyond-grid">
                                 <div class="beyond-box">
@@ -1310,12 +1309,12 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="section-sub-title two">
-                        <h6><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
-                                alt="subtitle-icon" title="subtitle-icon">TESTIMONIALS</h6>
+                        <h2 style="font-size: 16px; line-height: 30px; color: var(--primary-color); border-radius: 18px; background-color: rgb(30 194 142 / 10%); padding: 3px 16px; margin-bottom: 25px;"><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
+                                alt="subtitle-icon" title="subtitle-icon">TESTIMONIALS</h2>
                     </div>
                     <div class="section_title two">
-                        <h2 class="heading-like-h1">What Students Say About</br>
-                            Digicrome Experience</h2>
+                        <h3 class="heading-like-h1">What Students Say About 
+                            Digicrome Experience</h3>
                     </div>
                     <div class="section-title-desc two">
                         <p>Students love the hands-on learning, expert mentors, and real-world projects that make the
@@ -1385,15 +1384,14 @@
             <div class="row section-title-space">
                 <div class="col-xl-4 col-lg-12">
                     <div class="section-sub-title three">
-                        <h6><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
+                        <h2 style="color:var(--primary-color);"><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
                                 alt="sub-title2" title="sub-title2">Success Stories
-                        </h6>
+                        </h2>
                     </div>
                     <div class="section_title">
-                        <h2 class="heading-like-h1">All Real Experiences
-                            <br>From Our Dedicated</br>
-                            Learners
-                        </h2>
+                        <h3 class="heading-like-h1">All Real Experiences 
+                            From Our Dedicated Learners
+                        </h3>
                     </div>
                     <div class="testi-review-box">
                         <div class="review-image">
@@ -1453,7 +1451,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h4>See What Our Learners Say!</h4>
+                        <h2>See What Our Learners Say!</h2>
                         <div class="social-media-links">
                             <div class="first-card">
                                 <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
@@ -1594,11 +1592,11 @@
                 <div class="col-lg-7">
                     <div class="choose-content">
                         <div class="section-sub-title">
-                            <h6>Explore Career Opportunities in the most future-oriented sector</h6>
+                            <h2 style="font-size:14px;">Explore Career Opportunities in the most future-oriented sector</h2>
                         </div>
                         <div class="section_title">
-                            <h2>Build Skills. Grab Opportunities.</br>
-                                Start Now.</h2>
+                            <h3>Build Skills. Grab Opportunities.</br>
+                                Start Now.</h3>
                         </div>
                         <div class="section-title-desc">
                             <p>Become a professional at what you learn. Start from scratch and make your way to a career
@@ -1654,13 +1652,13 @@
             <div class="row align-items-center section-title-space">
                 <div class="col-lg-6">
                     <div class="section-sub-title">
-                        <h6>LATEST BLOGS</h6>
+                        <h2>LATEST BLOGS</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h2 class="heading-like-h1">Read out our latest updates</br>
-                            from digicrome</h2>
+                        <h3 class="heading-like-h1">Read out our latest updates</br>
+                            from digicrome</h3>
                     </div>
                 </div>
             </div>
