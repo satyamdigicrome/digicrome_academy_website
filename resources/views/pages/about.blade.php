@@ -49,7 +49,7 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="about-thumb-wrapper">
                         <div class="about-learn-box">
-                            <div class="about-learn-icon">
+                            <div class="about-learn-icon" style="position: relative; top: 18px;">
                                 <img loading="lazy" src="{{ asset('assets/images/home-three/learn-icon.webp') }}"
                                     alt="icon" title="icon">
                             </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="about-experience-box">
                             <div class="about-experience-count">
-                                <h3 class="counter">10</h3>
+                                <p class="counter" style="display: inline-block; font-size: 60px; line-height: 52px; text-transform: uppercase; color: var(--primary-color);">10</p>
                                 <span>+</span>
                             </div>
                             <div class="about-experience-desc">
@@ -152,7 +152,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="p-3">
-                        <h3 class="mb-3" style="font-style: italic;">Certified - Online Learning Platform </h3>
+                        <h2 class="mb-3" style="font-style: italic;">Certified - Online Learning Platform </h2>
                         <p class="text-muted">
                             We are proud to be MSME and MCA certified, ensuring credibility and trust.
                         </p>
@@ -172,7 +172,7 @@
                                 alt="feature-icon" title="feature-icon">
                         </div>
                         <div class="feature-content">
-                            <h4 class="feature-title">Flexible Learning</h4>
+                            <h3 class="feature-title fs-4">Flexible Learning</h3>
                             <p class="feature-desc">Flexible learning increases flexibility in time, location, teaching
                                 methods, and other aspects of education. Flexible learning is a principle of practice in
                                 formal education.</p>
@@ -186,7 +186,7 @@
                                 alt="feature-icon" title="feature-icon">
                         </div>
                         <div class="feature-content">
-                            <h4 class="feature-title">Regular Assessments</h4>
+                            <h3 class="feature-title fs-4">Regular Assessments</h3>
                             <p class="feature-desc">The regular assessment of students serves critical educational and
                                 life-learning functions. It focuses the efforts of educators and students on mastering
                                 important material.</p>
@@ -200,7 +200,7 @@
                                 alt="feature-icon" title="feature-icon">
                         </div>
                         <div class="feature-content">
-                            <h4 class="feature-title">Cost-Effective</h4>
+                            <h3 class="feature-title fs-4">Cost-Effective</h3>
                             <p class="feature-desc">Cost-effectiveness analysis is a valuable tool for evaluating
                                 educational programs, helping planners optimize learning outcomes while reducing costs.</p>
                         </div>
@@ -236,8 +236,8 @@
             <div class="row section-title-space">
                 <div class="col-xl-4 col-lg-12">
                     <div class="section-sub-title three">
-                        <h6><img loading="lazy" src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
-                                alt="icon" title="icon">Success Stories</h6>
+                        <h2 style="color:var(--primary-color);"><img loading="lazy" src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
+                                alt="icon" title="icon">Success Stories</h2>
                     </div>
                     <div class="section_title text-left">
                         <div class="fs-1 fw-bold mb-1">All Real Experiences</div>
@@ -251,7 +251,7 @@
                                 alt="instructor" title="instructor">
                         </div>
                         <div class="testi-review-content">
-                            <h3 class="counter">130</h3>
+                            <span class="counter">130</span>
                             <span>+</span>
                             <p>Reviews</p>
                         </div>
@@ -317,12 +317,11 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="section-sub-title two">
-                        <h6><img loading="lazy" src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
-                                alt="icon" title="icon">TESTIMONIALS</h6>
+                        <h2 style="color:var(--primary-color);"><img loading="lazy" src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
+                                alt="icon" title="icon">TESTIMONIALS</h2>
                     </div>
                     <div class="section_title text-left">
-                        <div class="fs-2 fw-bold mb-1">What Students Say About</div>
-                        <div class="fs-2 fw-bold">Digicrome Experience</div>
+                        <h3 class="fs-2 fw-bold mb-1">What Students Say About Digicrome Experience</h3>
                     </div>
 
                     <div class="section-title-desc two">
@@ -431,14 +430,13 @@
             <div class="row section-title-space">
                 <div class="col-lg-6">
                     <div class="section-sub-title">
-                        <h6>LATEST BLOGS & RECENT UPDATES</h6>
+                        <h2>LATEST BLOGS & RECENT UPDATES</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h1>Read our latest updates <br> from Digicrome</h1>
+                        <h3 style="font-size: 42px; line-height: 52px; color: var(--title-color); font-weight: 600;">Read our latest updates <br> from Digicrome</h3>
                     </div>
-
                 </div>
             </div>
         </div>

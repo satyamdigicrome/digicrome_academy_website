@@ -393,7 +393,7 @@
             </div> --}}
         </div>
     </section>
-    {{-- @if ($userCountry === 'India') --}}
+    @if ($userCountry === 'India')
         <div class="brand-area style-one">
             <div class="container">
                 <div class="row">
@@ -432,7 +432,7 @@
                 </div> --}}
             </div>
         </div>
-    {{-- @endif --}}
+    @endif
     <section class="about-area style-five pt-5 pb-0">
         <div class="container">
             <div class="row align-items-center">
