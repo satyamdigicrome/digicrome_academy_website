@@ -386,7 +386,7 @@
 
                         <h2 class="cyber-title">
                             AI-Specialized 
-                            <span class="cyber-accent">Cybersecurity Program</span>
+                            <br><span class="cyber-accent">Cybersecurity Program</span>
                         </h2>
 
                         <div class="cyber-point">
@@ -570,7 +570,7 @@
         <div class="container my-5">
             @if($course->course_free == 3)
             <h1 class="text-center mb-2" style="font-size: 2rem;">
-                AI Security and <br><span style="color: #f29c12;">Cybersecurity</span> Program
+                AI Security and <span style="color: #f29c12;">Cybersecurity</span> Program
             </h1>
             <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
                 Discover the key features and benefits you'll gain from joining our program
