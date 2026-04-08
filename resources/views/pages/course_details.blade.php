@@ -241,14 +241,14 @@
                 margin-bottom: 10px;
             }
             /* ---- Title ---- */
-            .cyber-hero h1.cyber-title {
+            .cyber-hero h2.cyber-title {
                 font-size: clamp(22px, 2.8vw, 34px);
                 font-weight: 800;
                 color: #fff;
                 line-height: 1.2;
                 margin-bottom: 10px;
             }
-            .cyber-hero h1.cyber-title span.cyber-accent {
+            .cyber-hero h2.cyber-title span.cyber-accent {
                 color: #00ddb4;
                 text-shadow: 0 0 16px rgba(0,220,180,.5);
             }
@@ -384,10 +384,10 @@
                             <i class="fa-solid fa-lock"></i> Next-Gen AI Security Program
                         </div>
 
-                        <h1 class="cyber-title">
-                            Post Graduate Program In<br>
-                            <span class="cyber-accent">AI Specialist Cybersecurity Program</span>
-                        </h1>
+                        <h2 class="cyber-title">
+                            AI-Specialized 
+                            <span class="cyber-accent">Cybersecurity Program</span>
+                        </h2>
 
                         <div class="cyber-point">
                             <i class="fa-solid fa-shield-halved text-info"></i>
@@ -568,12 +568,18 @@
     <!--==================================================-->
     @if ($course->keypoints && $course->keypoints->count())
         <div class="container my-5">
-            <h2 class="text-center mb-2" style="font-size: 2rem;">
-                What Our <span style="color: #f29c12;">Program</span> Offers?
-            </h2>
-            <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                Discover the key features and benefits you'll gain from joining our program
-            </p>
+            @if($course->course_free == 3)
+            <h1 class="text-center mb-2" style="font-size: 2rem;">
+                AI Security and <span style="color: #f29c12;">Cybersecurity</span> Program
+            </h1>
+            @else
+                <h2 class="text-center mb-2" style="font-size: 2rem;">
+                    What Our <span style="color: #f29c12;">Program</span> Offers?
+                </h2>
+                <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
+                    Discover the key features and benefits you'll gain from joining our program
+                </p>
+            @endif
             <div class="bg-white rounded shadow p-4">
                 @foreach ($course->keypoints->chunk(4) as $chunk)
                     <div class="row mb-4"> <!-- gap between rows -->
