@@ -386,7 +386,7 @@
 
                         <h1 class="cyber-title">
                             Post Graduate Program In<br>
-                            <span class="cyber-accent">AI Security Specialist</span>
+                            <span class="cyber-accent">Ai Specialist Cybersecurity Program</span>
                         </h1>
 
                         <div class="cyber-point">
