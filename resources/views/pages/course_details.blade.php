@@ -372,6 +372,14 @@
             .cyber-hero { background:
                 linear-gradient(135deg, rgba(5,10,24,0.88) 0%, rgba(5,10,24,0.72) 100%),
                 url('{{ asset('assets/images/ds-withai-course/aiss-hero-bg.jpg') }}') no-repeat center center / cover; }
+
+            .visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip: rect(0,0,0,0);
+            }
         </style>
 
         <div class="cyber-hero">
@@ -383,10 +391,10 @@
                         <div class="cyber-badge">
                             <i class="fa-solid fa-lock"></i> Next-Gen AI Security Program
                         </div>
-
+                        <h1 class="visually-hidden">AI Security and Cybersecurity Program</h1>
                         <h2 class="cyber-title">
-                            AI-Specialized 
-                            <br><span class="cyber-accent">Cybersecurity Program</span>
+                            Cyber Security: 
+                            <br><span class="cyber-accent">Security of AI</span>
                         </h2>
 
                         <div class="cyber-point">
