@@ -576,24 +576,15 @@
     <!--==================================================-->
     @if ($course->keypoints && $course->keypoints->count())
         <div class="container my-5">
-            @if($course->course_free == 3)
-            <h1 class="text-center mb-2" style="font-size: 2rem;">
-                AI Security and <span style="color: #f29c12;">Cybersecurity</span> Program
-            </h1>
+            <h2 class="text-center mb-2" style="font-size: 2rem;">
+                What Our <span style="color: #f29c12;">Program</span> Offers?
+            </h2>
             <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
                 Discover the key features and benefits you'll gain from joining our program
             </p>
-            @else
-                <h2 class="text-center mb-2" style="font-size: 2rem;">
-                    What Our <span style="color: #f29c12;">Program</span> Offers?
-                </h2>
-                <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                    Discover the key features and benefits you'll gain from joining our program
-                </p>
-            @endif
             <div class="bg-white rounded shadow p-4">
                 @foreach ($course->keypoints->chunk(4) as $chunk)
-                    <div class="row mb-4"> <!-- gap between rows -->
+                    <div class="row mb-4">
                         @foreach ($chunk as $keypoint)
                             <div class="col-md-3 mb-3">
                                 <div class="d-flex align-items-center">
