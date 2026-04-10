@@ -1468,9 +1468,7 @@
                             class="form-control custom-lead-input" required>
                         <input type="email" name="email" style="color: #fff" placeholder="E-mail ID"
                             class="form-control custom-lead-input" required>
-                        <input type="email" name="email" style="color: #fff" placeholder="E-mail ID"
-                            class="form-control custom-lead-input" required>
-                        <input type="text" name="address" style="color: #fff" placeholder="Address"
+                        <input type="text" name="address" style="color: #fff" placeholder="City"
                             class="form-control custom-lead-input" required>
 
                         <!-- Hidden Fields -->
@@ -1617,7 +1615,7 @@
                                 </div>
                                 <div class="col-12">
                                     <input type="text" name="address" class="form-control custom-reg-input"
-                                        placeholder="Address" required>
+                                        placeholder="City" required>
                                 </div>
 
                                 <input type="hidden" name="qualification" value="NA">
