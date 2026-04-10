@@ -31,8 +31,6 @@
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                 <input type="email" name="email" placeholder="E-mail ID" required
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-                <input type="text" name="name" placeholder="Name" required
-                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                 <input type="text" name="address" placeholder="City" required
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                 <input type="hidden" name="title" value="NA">
