@@ -96,7 +96,7 @@
                                                     <li class="mb-2">
                                                         <a href="{{ route('course_details', 'ai-security-online-training') }}"
                                                             class="text-dark d-flex justify-content-between align-items-center">
-                                                            AI Security Specialist
+                                                            Cyber Security: Security of AI
                                                             <i class="bi bi-chevron-right"></i>
                                                         </a>
                                                     </li>
@@ -268,7 +268,7 @@
                         </li>
                         <li>
                             <a href="{{ route('course_details', 'ai-security-online-training') }}">
-                                AI Security Specialist
+                                Cyber Security: Security of AI
                             </a>
                         </li>
                         <li>

@@ -148,7 +148,9 @@
                   <div class="form-field">
                       <input type="email" id="gmail" name="email" placeholder="E-mail ID" required autocomplete="email" />
                   </div>
-                  <input type="hidden" name="address" value="NA" />
+                  <div class="form-field">
+                      <input type="text" id="address" name="address" placeholder="City" required autocomplete="address" />
+                  </div>
                   <input type="hidden" name="title" value="NA" />
                   <input type="hidden" name="profession" value="NA" />
                   <input type="hidden" name="source" value="Home Page" />
