@@ -1468,9 +1468,12 @@
                             class="form-control custom-lead-input" required>
                         <input type="email" name="email" style="color: #fff" placeholder="E-mail ID"
                             class="form-control custom-lead-input" required>
+                        <input type="email" name="email" style="color: #fff" placeholder="E-mail ID"
+                            class="form-control custom-lead-input" required>
+                        <input type="text" name="address" style="color: #fff" placeholder="Address"
+                            class="form-control custom-lead-input" required>
 
                         <!-- Hidden Fields -->
-                        <input type="hidden" name="address" value="NA">
                         <input type="hidden" name="source" value="Website(broucher)">
                         <input type="hidden" name="ib" value="">
                         <input type="hidden" name="title" value="NA">
@@ -1612,9 +1615,11 @@
                                     <input type="email" name="email" class="form-control custom-reg-input"
                                         placeholder="E-mail ID" required>
                                 </div>
+                                <div class="col-12">
+                                    <input type="text" name="address" class="form-control custom-reg-input"
+                                        placeholder="Address" required>
+                                </div>
 
-                                <!-- Hidden fields with value "NA" -->
-                                <input type="hidden" name="address" value="NA">
                                 <input type="hidden" name="qualification" value="NA">
                                 <input type="hidden" name="experience" value="NA">
                                 <input type="hidden" name="aiss" value="">
