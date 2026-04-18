@@ -1,534 +1,700 @@
 @extends('layouts.app')
 
-@section('title', $meta->title ?? 'Digicrome')
-@section('meta_description', $meta->description ?? 'Digicrome')
-@section('meta_keywords', $meta->keywords ?? 'Digicrome')
+@section('title', $meta->title ?? 'Corporate Training & Services - Digicrome')
+@section('meta_description',
+    $meta->description ??
+    'Advanced corporate training programs, upskilling solutions, and
+    custom learning experiences for enterprises.')
+@section('meta_keywords',
+    $meta->keywords ??
+    'corporate training, employee upskilling, enterprise learning, corporate
+    upskilling, training programs')
+
+    @push('styles')
+        <style>
+            .corporate-hero {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .corporate-hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('{{ asset('assets/images/home-one/hero-arrow.webp') }}') no-repeat center/cover;
+                opacity: 0.1;
+                z-index: 1;
+            }
+
+            .corporate-hero-content {
+                position: relative;
+                z-index: 2;
+                max-width: 800px;
+            }
+
+            .corporate-hero h1 {
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                background: linear-gradient(45deg, #fff, #f0f4ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: fadeInUp 1s ease-out;
+            }
+
+            .corporate-hero p {
+                font-size: 1.3rem;
+                color: rgba(255, 255, 255, 0.9);
+                margin: 1.5rem 0 2.5rem;
+                animation: fadeInUp 1s ease-out 0.2s both;
+            }
+
+            .hero-cta {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                animation: fadeInUp 1s ease-out 0.4s both;
+            }
+
+            .btn-corporate-primary {
+                background: linear-gradient(45deg, #f29c12, #ff8c00);
+                border: none;
+                padding: 1rem 2rem;
+                font-weight: 600;
+                border-radius: 50px;
+                color: white;
+                transition: all 0.3s ease;
+                box-shadow: 0 10px 30px rgba(242, 156, 18, 0.4);
+            }
+
+            .btn-corporate-primary:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 40px rgba(242, 156, 18, 0.6);
+            }
+
+            .btn-corporate-secondary {
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                background: transparent;
+                padding: 1rem 2rem;
+                font-weight: 600;
+                border-radius: 50px;
+                color: white;
+                transition: all 0.3s ease;
+            }
+
+            .btn-corporate-secondary:hover {
+                background: white;
+                color: #667eea;
+            }
+
+            .services-grid {
+                padding: 5rem 0;
+                background: linear-gradient(180deg, #f8faff 0%, #e8f4fd 100%);
+            }
+
+            .service-card {
+                background: white;
+                border-radius: 20px;
+                padding: 2.5rem 2rem;
+                text-align: center;
+                transition: all 0.4s ease;
+                border: none;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .service-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, #f29c12, #ff6b35);
+            }
+
+            .service-card:hover {
+                transform: translateY(-15px);
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            }
+
+            .service-icon {
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(135deg, #f29c12, #ff8c00);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1.5rem;
+                font-size: 2rem;
+                color: white;
+                transition: all 0.3s ease;
+            }
+
+            .service-card:hover .service-icon {
+                transform: scale(1.1) rotate(5deg);
+            }
+
+            .stats-section {
+                padding: 5rem 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                overflow: hidden;
+            }
+
+            .stat-item {
+                text-align: center;
+                position: relative;
+            }
+
+            .stat-number {
+                font-size: clamp(2.5rem, 8vw, 5rem);
+                font-weight: 800;
+                background: linear-gradient(45deg, #fff, #f0f4ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                display: inline-block;
+            }
+
+            .stat-label {
+                font-size: 1.1rem;
+                opacity: 0.9;
+                margin-top: 0.5rem;
+            }
+
+            .logo-grid {
+                padding: 5rem 0;
+                background: #f8f9fa;
+            }
+
+            .logo-item {
+                filter: grayscale(100%);
+                transition: all 0.4s ease;
+                opacity: 0.7;
+            }
+
+            .logo-item:hover {
+                filter: grayscale(0%);
+                opacity: 1;
+                transform: scale(1.05);
+            }
+
+            .case-study-card {
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+                transition: all 0.4s ease;
+                background: white;
+            }
+
+            .case-study-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .case-study-img {
+                height: 250px;
+                object-fit: cover;
+            }
+
+            .testimonial-card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 20px;
+                padding: 2.5rem;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            .hero-float {
+                animation: float 6s ease-in-out infinite;
+            }
+
+            @media (max-width: 768px) {
+                .hero-cta {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+
+                .btn-corporate-primary,
+                .btn-corporate-secondary {
+                    width: 100%;
+                }
+            }
+        </style>
+    @endpush
 
 @section('content')
-@include('components.lead-form-popup')
-<style>
-	 #sticky-header {
-            margin-bottom: 80px !important;
+    @include('components.lead-form-popup')
+
+    <!-- Hero Section -->
+    <section class="corporate-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="corporate-hero-content">
+                        <h1 data-aos="fade-up" data-aos-delay="100">Transforming <span class="text-warning">Corporate</span>
+                            Learning</h1>
+                        <p data-aos="fade-up" data-aos-delay="200">Empower your workforce with cutting-edge training programs.
+                            From AI & Data Science to Leadership Development, scale your team's potential with customized
+                            learning solutions.</p>
+                        <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                            <a href="#services" class="btn btn-corporate-primary">Explore Solutions <i
+                                    class="fas fa-arrow-right ms-2"></i></a>
+                            <a href="#contact" class="btn btn-corporate-secondary">Request Demo <i
+                                    class="fas fa-play ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="hero-float" data-aos="fade-left" data-aos-delay="400">
+                        <img src="{{ asset('assets/images/cor.webp') }}" alt="Corporate Training"
+                            class="img-fluid rounded-5 shadow-lg"
+                            style="max-height: 500px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Logo Grid -->
+    <section class="logo-grid">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 data-aos="fade-up">Trusted by Leading Enterprises</h2>
+                    <p data-aos="fade-up" data-aos-delay="200" class="lead">Join 50+ organizations who've transformed
+                        their workforce with our training programs</p>
+                </div>
+            </div>
+            <div class="row g-4" data-aos="fade-up" data-aos-delay="300">
+                @foreach ($companyLogos->take(12) as $index => $logo)
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div class="logo-item p-4 border rounded-3 h-100 d-flex align-items-center justify-content-center">
+                            <img src="{{ asset('storage/' . $logo->image) }}" alt="{{ $logo->name ?? 'Partner' }}"
+                                class="img-fluid" style="max-height: 60px;">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="services-grid">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 data-aos="fade-up">Corporate Training <span class="text-warning">Solutions</span></h2>
+                    <p data-aos="fade-up" data-aos-delay="200" class="lead">Tailored programs designed to upskill your
+                        workforce and drive business success</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                        <h4>Employee Upskilling</h4>
+                        <p>Comprehensive training programs in AI, Data Science, Cloud, and Digital Transformation for your
+                            entire workforce.</p>
+                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs fa-2x"></i>
+                        </div>
+                        <h4>Custom Learning Paths</h4>
+                        <p>Bespoke training solutions tailored to your organization's specific needs and industry
+                            requirements.</p>
+                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line fa-2x"></i>
+                        </div>
+                        <h4>Leadership Development</h4>
+                        <p>Executive training programs focusing on strategic leadership, innovation, and digital
+                            transformation.</p>
+                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake fa-2x"></i>
+                        </div>
+                        <h4>Certification Programs</h4>
+                        <p>Industry-recognized certifications that validate your team's skills and boost professional
+                            credibility.</p>
+                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code fa-2x"></i>
+                        </div>
+                        <h4>Technical Bootcamps</h4>
+                        <p>Intensive, hands-on bootcamps for rapid skill acquisition in emerging technologies.</p>
+                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-trophy fa-2x"></i>
+                        </div>
+                        <h4>Performance Analytics</h4>
+                        <p>Advanced learning analytics to measure ROI, track progress, and optimize training effectiveness.
+                        </p>
+                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Metrics -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="500">0</span><span>+</span>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="10K">0</span><span>K+</span>
+                        <div class="stat-label">Trained Professionals</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="95">0</span><span>%</span>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="4.8">0</span>
+                        <div class="stat-label">Avg Rating</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="24">0</span>
+                        <span>+</span>
+                        <div class="stat-label">Programs Delivered</div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="50">0</span>
+                        <span>+</span>
+                        <div class="stat-label">Industry Partners</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Courses Section for Corporate -->
+    <div class="case-study-area style-one">
+        <div class="container">
+            <div class="row align-items-center section-title-space">
+                <div class="col-lg-6">
+                    <div class="section-sub-title">
+                        <h2>OUR COURSES</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="section_title">
+                        <h3 class="heading-like-h1">Our Courses – Comprehensive</br>
+                            Available all programs</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row case-study-bg">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="case_study_nav">
+                        <div class="case_study_menu">
+                            <ul class="menu-filtering">
+                                <li class="current_menu_item filter-btn" data-filter=".Upcoming">Upcoming Courses</li>
+                                @foreach ($collections->whereNotIn('id',[6]) as $collection)
+                                    <li class="filter-btn" data-filter=".{{ Str::slug($collection->name) }}">
+                                        {{ $collection->name }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row image_load">
+                {{-- @dd($upcomingCourses) --}}
+                @foreach ($upcomingCourses as $course)
+                    <div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
+                        <div class="case-study-single-box">
+                            <div class="case-study-thumb">
+                                <img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="case-study-thumb"
+                                    title="case-study-thumb">
+                            </div>
+                            <div class="case-study-content">
+                                <h5>Courses</h5>
+                                <h4><a
+                                        href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
+                                </h4>
+                                <div class="case-rating">
+
+                                    <div class="case-rating-num">
+                                        <span>Duration: {{ $course->course_duration }}</span>
+                                    </div>
+                                </div>
+
+                                <br><br>
+                                <div class="course-btn">
+                                    <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
+                                            class="flaticon flaticon-right-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                @foreach ($collections as $collection)
+                    @foreach ($collection->courses as $course)
+                        <div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }}">
+                            <div class="case-study-single-box">
+                                <div class="case-study-thumb">
+                                    <img loading="lazy" src="{{ asset('storage/' . $course->image) }}"
+                                        alt="case-study-thumb" title="case-study-thumb">
+                                </div>
+                                <div class="case-study-content">
+                                    <h5>{{ $collection->name }}</h5>
+                                    <h4><a
+                                            href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
+                                    </h4>
+                                    <div class="case-rating">
+
+                                        <div class="case-rating-num">
+                                            <span>Duration: {{ $course->course_duration }}</span>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <div class="course-btn">
+                                        <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
+                                                class="flaticon flaticon-right-arrow"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endforeach
+            </div>
+        </div>
+    </div>
+    <!-- Custom Styles for Enhanced Courses -->
+    <style>
+        .filter-btn:hover,
+        .filter-btn.current_menu_item {
+            background: linear-gradient(45deg, #f29c12, #ff8c00) !important;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(242, 156, 18, 0.4);
         }
-</style>
-<div class="corporate-img d-flex">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-12">
-				<div class="breadcumb-content">
-					<div class="breadcumb-title">
-						<h4>Corporate Services</h4>
-					</div>
-					{{-- <ul>
-							<li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-							<li>Corporate Services</li>
-						</ul> --}}
-				</div>
-			</div>
-		</div>
-		{{-- <div class="breadcumb-shape">
-			<img loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
-		</div> --}}
-		<div class="breadcumb-shape2">
-			<img loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
-		</div>
-	</div>
-</div>
-<section class="py-5" style="background-color: #fff8f0;">
-	<div class="container">
-		<div class="row align-items-center">
+    </style>
 
-			<!-- Left: Image -->
-			<div class="col-md-6 mb-4 mb-md-0 text-center">
-				<img loading="lazy" src="{{ asset('assets/images/cor.webp') }}" alt="Main Image" title="Main Image"
-					class="img-fluid rounded" style="max-width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-			</div>
+    <!-- CTA Section -->
+    <section class="py-5 bg-warning text-dark">
+        <div class="container text-center">
+            <h2 data-aos="zoom-in">Ready to Transform Your Workforce?</h2>
+            <p class="lead mb-4" data-aos="zoom-in" data-aos-delay="200">Schedule a free consultation with our corporate
+                training experts</p>
+            <div data-aos="zoom-in" data-aos-delay="400">
+                <a href="#contact" class="btn btn-dark btn-lg me-3 px-5 py-3">Get Started</a>
+                <a href="tel:+01204538125" class="btn btn-outline-dark btn-lg px-5 py-3">Call Now</a>
+            </div>
+        </div>
+    </section>
 
-			<!-- Right: Text + Logos -->
-			<div class="col-md-6">
-				<div class="section_title">
-					<p class="fw-bold mb-2 text-warning fs-2">Amplifying Growth, Achieving Impact</p>
-				</div>
-				<h5 class="text-muted mb-4">Customer Success Stories</h5>
-				<!-- Logo Grid -->
-				<div class="row g-3">
-					@foreach($companyLogos->take(16) as $logo)
-					<div class="col-3 text-center">
-						<img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="Logo" title="Logo" class="img-fluid">
-					</div>
-					@endforeach
-				</div>
-
-			</div>
-		</div>
-	</div>
-</section>
-
-<div class="brand-area style-one mt-4">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-5">
-				<!-- Main heading -->
-				<div class="section_title mb-4">
-					<p class="display-6 fw-bold">Moments of Honour</p>
-				</div>
-
-				<!-- Description -->
-				<p class="mb-4">
-					In our EdTech journey of <b> more than a decade,</b> we have received numerous awards.<br>
-					Some of the recent notable awards we have received in analytics are:
-				</p>
-
-				<!-- List of awards with cup icons aligned -->
-				<ul class="list-unstyled">
-					<li class="d-flex align-items-start mb-2">
-						<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-						<span><b> Bharat Gaurav Awards 2026 </b> for Best EdTech in Online and Digital Education</span>
-					</li>
-					<li class="d-flex align-items-start">
-						<i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-						<span>DigiCrome as <b>Most Promising Online Education EdTech Platform 2026</b> famous for its
-                                quality and innovation.</span>
-					</li>
-				</ul>
-			</div>
-
-			<div class="col-lg-7 mt-4">
-				<div class="brand-list owl-carousel">
-					@foreach($awords as $logo)
-					<div class="col-lg-12">
-						<div class="single-brand-box">
-							<div class="brand-thumb">
-								<img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="brand" title="brand">
-							</div>
-						</div>
-					</div>
-					@endforeach
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="case-study-area style-one">
-	<div class="container">
-		<div class="row align-items-center section-title-space">
-			<div class="col-lg-6">
-				<div class="section-sub-title">
-					<h6>OUR COURSES</h6>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="section_title">
-					<p class="fs-2 fw-semibold mb-1">Our Courses – Comprehensive</p>
-					<p class="fs-2 fw-semibold">Available all programs</p>
-				</div>
-			</div>
-		</div>
-		<div class="row case-study-bg">
-			<div class="col-lg-12 col-sm-12">
-				<div class="case_study_nav">
-					<div class="case_study_menu">
-						<ul class="menu-filtering">
-							<li class="current_menu_item" data-filter=".Upcoming">Upcoming Courses</li>
-							@foreach($collections as $collection)
-							<li data-filter=".{{ Str::slug($collection->name) }}">{{ $collection->name }}</li>
-							@endforeach
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var grid = document.querySelector('.image_load');
-			var iso = new Isotope(grid, {
-				itemSelector: '.grid-item',
-				layoutMode: 'fitRows'
-			});
-
-			var filterButtons = document.querySelectorAll('.menu-filtering li');
-
-			filterButtons.forEach(function(button) {
-				button.addEventListener('click', function() {
-					filterButtons.forEach(btn => btn.classList.remove('current_menu_item'));
-					this.classList.add('current_menu_item');
-					var filterValue = this.getAttribute('data-filter');
-					iso.arrange({
-						filter: filterValue
-					});
-				});
-			});
-
-			// Show Upcoming by default
-			iso.arrange({
-				filter: '.Upcoming'
-			});
-		});
-	</script>
-
-
-	<div class="container">
-		<div class="row image_load">
-			{{-- Upcoming Courses --}}
-			@foreach($upcomingCourses as $course)
-			<div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
-				<div class="case-study-single-box">
-					{{-- Use same HTML course card template --}}
-					<div class="case-study-thumb">
-						<img loading="lazy" src="{{ asset('storage/' . $course->image) }}" alt="thumb" title="thumb">
-						{{-- <div class="case-meta-top">
-									<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
-					</div> --}}
-				</div>
-				<div class="case-study-content">
-					<h5>Courses</h5>
-					<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
-					<div class="case-rating">
-						{{-- <ul>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star"></i></li>
-											<li><i class="fa-solid fa-star-half-stroke"></i></li>
-										</ul> --}}
-						<div class="case-rating-num">
-							<span>Duration: {{ $course->course_duration }}</span>
-						</div>
-					</div>
-					{{-- <div class="case-autor-box">
-									<div class="case-autor-img">
-										<img loading="lazy"src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
-				</div>
-				<div class="case-autor-content">
-					<h3>Instructor</h3>
-					<p>Instructor</p>
-				</div>
-			</div> --}}
-			{{-- <div class="case-course-content">
-									<div class="course-lesson">
-										<span><i class="fa-regular fa-file-lines"></i> 12 Lessons</span>
-									</div>
-									<div class="course-student">
-										<span><i class="fa-regular fa-user"></i> 1200 Students</span>
-									</div>
-								</div> --}}
-			<br><br>
-			<div class="course-btn">
-				<a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i class="flaticon flaticon-right-arrow"></i></a>
-			</div>
-		</div>
-	</div>
-</div>
-@endforeach
-
-{{-- Courses by Collection --}}
-@foreach($collections as $collection)
-@foreach($collection->courses as $course)
-<div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }}">
-	<div class="case-study-single-box">
-		{{-- Same card HTML reused --}}
-		<div class="case-study-thumb">
-			<img loading="lazy" src="{{ asset('storage/' . $course->image) }}" alt="thumb" title="thumb">
-			{{-- <div class="case-meta-top">
-										<span>{{ $course->course_free ? 'Free' : '$' . $course->price }}</span>
-		</div> --}}
-	</div>
-	<div class="case-study-content">
-		<h5>{{ $collection->name }}</h5>
-		<h4><a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
-		<div class="case-rating">
-			<ul>
-				<li><i class="fa-solid fa-star"></i></li>
-				<li><i class="fa-solid fa-star"></i></li>
-				<li><i class="fa-solid fa-star"></i></li>
-				<li><i class="fa-solid fa-star"></i></li>
-				<li><i class="fa-solid fa-star-half-stroke"></i></li>
-			</ul>
-			<div class="case-rating-num">
-				<span>(4.5/3 Ratings)</span>
-			</div>
-		</div>
-		{{-- <div class="case-autor-box">
-										<div class="case-autor-img">
-											<img loading="lazy"src="{{ asset('assets/images/home-one/case-autor.webp') }}" alt="autor">
-	</div>
-	<div class="case-autor-content">
-		<h3>Instructor</h3>
-		<p>Instructor</p>
-	</div>
-</div>
-<div class="case-course-content">
-	<div class="course-lesson">
-		<span><i class="fa-regular fa-file-lines"></i> 12 Lessons</span>
-	</div>
-	<div class="course-student">
-		<span><i class="fa-regular fa-user"></i> 1200 Students</span>
-	</div>
-</div> --}}
-<br><br>
-<div class="course-btn">
-	<a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i class="flaticon flaticon-right-arrow"></i></a>
-</div>
-</div>
-</div>
-</div>
-@endforeach
-@endforeach
-</div>
-
-</div>
-
-</div>
-
-
-
-
-<section class="py-5" style="background-color: #fff8f0;">
-	<div class="container text-center">
-		<div class="row g-4 justify-content-center">
-			@php
-			$stats = [
-			['icon' => 'fa-chart-line', 'value' => '5/6', 'text' => 'Learners experienced career advancement'],
-			['icon' => 'fa-bullseye', 'value' => '87%', 'text' => 'Achieved the program objectives'],
-			['icon' => 'fa-lightbulb', 'value' => '82%', 'text' => 'Gained better clarity on the subject'],
-			['icon' => 'fa-users', 'value' => '1k+', 'text' => 'Industry Experts & Mentors'],
-			['icon' => 'fa-briefcase', 'value' => '71%', 'text' => 'Feel confident applying skills on the job'],
-			['icon' => 'fa-check-circle', 'value' => '93%', 'text' => 'Program completion rate'],
-			];
-			@endphp
-
-			@foreach($stats as $stat)
-			<div class="col-6 col-md-4 col-lg-2">
-				<div class="p-3 bg-white rounded-3 shadow-sm h-100">
-					<div class="mb-2">
-						<i class="fa {{ $stat['icon'] }} fa-2x text-warning"></i>
-					</div>
-					<h2 class="fw-bold text-warning" style="font-size: 2rem;">{{ $stat['value'] }}</h2>
-					<p class="mb-0 small">{{ $stat['text'] }}</p>
-				</div>
-			</div>
-			@endforeach
-		</div>
-	</div>
-</section>
-
-<section class="feature-area style-one">
-	<div class="container">
-		<div class="row align-items-center section-title-space">
-			<div class="col-lg-6">
-				<div class="section-sub-title">
-					<h6>core features</h6>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="section_title text-right">
-					<div class="fs-1 fw-bold mb-1">Climb your career ladder</div>
-					<div class="fs-1 fw-bold">with world-class Professionals.</div>
-				</div>
-
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-				<div class="single-feature-box box-1">
-					<div class="feature-icon">
-						<img loading="lazy" src="{{ asset('assets/images/home-one/feature-icon1.webp') }}" alt="feature-icon" title="feature-icon">
-					</div>
-					<div class="feature-content">
-						<h4 class="feature-title">500+ Hiring Partners</h4>
-						<p class="feature-desc">We provide placement assistance through partnerships with 500+ global hiring partners to assist students in securing job opportunities.</p>
-					</div>
-					<div class="educate-hover-box hover-bx"></div>
-					<div class="educate-hover-box hover-bx2"></div>
-					<div class="educate-hover-box hover-bx3"></div>
-					<div class="educate-hover-box hover-bx4"></div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-				<div class="single-feature-box box-2">
-					<div class="feature-icon">
-						<img loading="lazy" src="{{ asset('assets/images/home-one/feature-icon2.webp') }}" alt="feature-icon" title="feature-icon">
-					</div>
-					<div class="feature-content">
-						<h4 class="feature-title">45+ Industry-Relevant Projects</h4>
-						<p class="feature-desc">Work on our industry-based live projects to harness top-level industry experience and to gain real-world experience and build a successful career.</p>
-					</div>
-					<div class="educate-hover-box hover-bx"></div>
-					<div class="educate-hover-box hover-bx2"></div>
-					<div class="educate-hover-box hover-bx3"></div>
-					<div class="educate-hover-box hover-bx4"></div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-				<div class="single-feature-box box-3">
-					<div class="feature-icon">
-						<img loading="lazy" src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon" title="feature-icon">
-					</div>
-					<div class="feature-content">
-						<h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
-						<p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong foundation, with 24/7 support available.</p>
-					</div>
-					<div class="educate-hover-box hover-bx"></div>
-					<div class="educate-hover-box hover-bx2"></div>
-					<div class="educate-hover-box hover-bx3"></div>
-					<div class="educate-hover-box hover-bx4"></div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-				<div class="single-feature-box box-3">
-					<div class="feature-icon">
-						<img loading="lazy" src="{{ asset('assets/images/home-one/feature-icon3.webp') }}" alt="feature-icon" title="feature-icon">
-					</div>
-					<div class="feature-content">
-						<h4 class="feature-title">Job Ready Program</h4>
-						<p class="feature-desc">Exclusive placement cell dedicated to students completing the course, we help secure job opportunities. So far, we have successfully placed 5,000+ students.</p>
-					</div>
-					<div class="educate-hover-box hover-bx"></div>
-					<div class="educate-hover-box hover-bx2"></div>
-					<div class="educate-hover-box hover-bx3"></div>
-					<div class="educate-hover-box hover-bx4"></div>
-				</div>
-			</div>
-		</div>
-		<div class="feature-shape1">
-			<img loading="lazy" src="{{ asset('assets/images/home-one/feature-shape1.webp') }}" alt="shape" title="shape">
-		</div>
-		<div class="feature-shape2 rotateme">
-			<img loading="lazy" src="{{ asset('assets/images/home-one/feature-shape2.webp') }}" alt="shape2" title="shape2">
-		</div>
-	</div>
-</section>
-<section class="contact_area inner_section">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-6">
-				<!-- section title -->
-				<div class="section-sub-title three">
-					<h6><img loading="lazy" src="assets/images/inner-img/sub-title2.webp" alt="icon" title="icon">GET IN TOUCH</h6>
-				</div>
-				<div class="section_title text-left">
-					<div class="fs-1 fw-bold mb-1">Trusted By the Genius</div>
-					<div class="fs-1 fw-bold">People with EducateX</div>
-				</div>
-
-				<div class="section-title-desc">
-					<p>Media leadership skills before cross-media innovation main technology
-						develop standardized platforms without consalt.</p>
-				</div>
-				<div class="contact_main_info">
-					<div class="call-do-action-info">
-						<div class="call-do-social_icon">
-							<i class="fas fa-phone-alt"></i>
-						</div>
-						<div class="call_info">
-							<p>Call us Anytime</p>
-							<h3> 01204538125</h3>
-						</div>
-					</div>
-					<div class="call-do-action-info">
-						<div class="call-do-social_icon">
-							<i class="fas fa-envelope-open"></i>
-						</div>
-						<div class="call_info">
-							<p>Email us Anytime</p>
-							<h3>info@digicrome.com</h3>
-						</div>
-					</div>
-					<div class="call-do-action-info">
-						<div class="call-do-social_icon">
-							<i class="fas fa-map-marker-alt"></i>
-						</div>
-						<div class="call_info">
-							<p>Our Locations</p>
-							<span>B-49, First Floor, Block B, Sector 59, <br>Noida, Uttar Pradesh 201301</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<!-- contact form box -->
-				<div class="contact-form-box style_two">
-					<!-- section title -->
-					<div class="contact-section-title">
-						<h4>CONTACT US</h4>
-						<h1>Feel Free to Contact Us</h1>
-					</div>
-					<form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
-						action="https://demo.digicrome.in/post_lead.php">
-						@csrf
-						<h2 style="    color: #f29c12;"> Register now!! And get a quick call</h2>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="name">Name:</label> -->
-							<input type="text" id="name" name="name" placeholder="Name">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
-							<input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  id="mobile" name="mobile" placeholder="Mobile Number">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
-							<input type="email" id="gmail" name="email" placeholder="E-mail ID:">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="city">City:</label> -->
-							<input type="text" id="city" name="address" placeholder="City">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="Qualification">Qualification:</label> -->
-							<input type="text" id="qualification" name="title" placeholder="Qualification">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="qualification">Experience:</label> -->
-							<select class="selecttype" id="qualification" name="profession">
-								<option value="" disabled selected>Select Experience</option>
-								<option value="Working Professional - Technincal Roles">Working Professional -
-									Technincal Roles</option>
-								<option value="Working Professional - Non Technincal">Working Professional - Non
-									Technincal</option>
-								<option value="College Student - Final Year">College Student - Final Year</option>
-								<option value="College Student - 1st to pre-final Year">College Student - 1st to
-									pre-final Year</option>
-								<option value="Other">Other</option>
-							</select>
-						</div>
-
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="source" Value="Home Page"
-								placeholder="Mobile Number">
-						</div>
-						<input type="hidden" name="ib" value="">
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="country" value="india"
-								placeholder="Mobile Number">
-						</div>
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
-						</div>
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
-						</div>
-						<!--<div class="form-field">-->
-						<!--    <input type="text" id="mobile" name="profession" placeholder="Mobile Number">-->
-						<!--</div>-->
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
-						</div>
-
-						<p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms
-								and Conditions</a> and our <a href="https://digicrome.com/privacy-policy">Privacy
-								Policy.</a> </p><br>
-						<button type="submit">Submit</button>
-					</form>
-					<div id="status"></div>
-				</div>
-			</div>
-		</div>
-		<div class="contact_shape2 dance2">
-			<img loading="lazy" src="assets/images/inner-img/contact-shape.webp" alt="shape" title="shape">
-		</div>
-	</div>
-</section>
-
+    <!-- Contact Section -->
+    <section id="contact" class="py-5" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-form-box">
+                        <h3 class="mb-4">Let's Discuss Your Training Needs</h3>
+                        <form method="post" action="https://demo.digicrome.in/post_lead.php" class="row g-3">
+                            @csrf
+                            <input type="hidden" name="source" value="corporate_services">
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="name"
+                                    placeholder="Company/Your Name *" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="email" class="form-control" name="email" placeholder="Company Email *"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" name="mobile" placeholder="Phone *"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="title" placeholder="Job Title">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" name="address" rows="4" placeholder="Address..."></textarea>
+                            </div>
+                            <input type="hidden" name="ib" value="">
+                            <input type="hidden" id="mobile" name="country" value="india"
+                                placeholder="Mobile Number">
+                            <input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
+                            <input type="hidden" id="mobile" name="state" value=""
+                                placeholder="Mobile Number">
+                            <input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-warning w-100 py-3 fw-bold fs-5">Request Corporate
+                                    Demo</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="text-center text-lg-start">
+                        <h3>Connect with Us</h3>
+                        <div class="mt-4">
+                            <div class="mb-3 d-flex align-items-center">
+                                <i class="fas fa-phone fa-2x text-warning me-3"></i>
+                                <div>
+                                    <div class="fw-bold">Call Us</div>
+                                    <a href="tel:+01204538125" class="text-dark text-decoration-none">+0120 4538125</a>
+                                </div>
+                            </div>
+                            <div class="mb-3 d-flex align-items-center">
+                                <i class="fas fa-envelope fa-2x text-warning me-3"></i>
+                                <div>
+                                    <div class="fw-bold">Email</div>
+                                    <a href="mailto:info@digicrome.com"
+                                        class="text-dark text-decoration-none">info@digicrome.com</a>
+                                </div>
+                            </div>
+                            <div class="mb-3 d-flex align-items-start">
+                                <i class="fas fa-map-marker-alt fa-2x text-warning me-3 mt-1"></i>
+                                <div>
+                                    <div class="fw-bold">Visit Us</div>
+                                    <div>B-49, First Floor, Block B<br>Sector 59, Noida, UP 201301</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
+
+@push('scripts')
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 20);
+            });
+        }
+
+        // Intersection Observer for counters
+        const observerOptions = {
+            threshold: 0.5
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(document.querySelector('.stats-section'));
+
+        window.addEventListener('load', function() {
+            var grid = document.querySelector('.image_load');
+            var iso = new Isotope(grid, {
+                itemSelector: '.grid-item',
+                layoutMode: 'fitRows'
+            });
+            var filterButtons = document.querySelectorAll('.menu-filtering li');
+            filterButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('current_menu_item'));
+                    this.classList.add('current_menu_item');
+                    var filterValue = this.getAttribute('data-filter');
+                    iso.arrange({
+                        filter: filterValue
+                    });
+                });
+            });
+            iso.arrange({
+                filter: '.Upcoming'
+            });
+        });
+    </script>
+@endpush
