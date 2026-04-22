@@ -63,6 +63,9 @@
         .course-heading {
             margin-top: 4rem;
         }
+        h2{
+            display: block !important;
+        }
     </style>
 @endpush
 

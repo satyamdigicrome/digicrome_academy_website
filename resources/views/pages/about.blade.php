@@ -64,7 +64,9 @@
                         </div>
                         <div class="about-experience-box">
                             <div class="about-experience-count">
-                                <p class="counter" style="display: inline-block; font-size: 60px; line-height: 52px; text-transform: uppercase; color: var(--primary-color);">10</p>
+                                <p class="counter"
+                                    style="display: inline-block; font-size: 60px; line-height: 52px; text-transform: uppercase; color: var(--primary-color);">
+                                    10</p>
                                 <span>+</span>
                             </div>
                             <div class="about-experience-desc">
@@ -82,30 +84,35 @@
                     <div class="about_content">
 
                         <div class="section-title-desc">
-                            <p>Digicrome is a leading ed-tech platform that helps students and professionals build
-                                successful careers with high-quality training. Our goal is to provide industry-focused
-                                skills through expert-designed courses.</p>
+                            <p>Digicrome is a leading Digital EdTech platform. It is built with a vision to remodel how
+                                learners access education in the modern era. We are a dedicated team of experts. We empower
+                                students and working professionals by delivering them high-impact, industry-aligned
+                                knowledge that goes beyond expectations. Driven by progressive technology, Digicrome serves
+                                learners with positive learning surroundings where knowledge is experienced, appropriate,
+                                and future-ready. </p>
                         </div>
                         <div class="section-title-desc">
-                            <p>We offer 50+ live classes monthly across 60+ countries, impacting over 10,000 learners
-                                globally. Our programs include live interactive sessions, real-world projects, and a
-                                12-month internship to ensure hands-on learning.</p>
+                            <p>Our programs have equipped 10,000+ learners with in-demand skills across domains such as Data
+                                Science, Artificial Intelligence, AI security, cybersecurity, and Digital Innovation. We
+                                ensure they stay passionate in a fast-changing worldwide workforce.</p>
                         </div>
                         <div class="section-title-desc">
-                            <p>Our courses cover Data Science with AI, Data Science with Python, Business Development with
-                                Project Management, Full Stack Development, Cybersecurity, Big Data, Investment Banking,
-                                Digital Marketing, DevOps, Machine Learning, Advanced Python, Deep Learning, and NLP.</p>
+                            <p>At the center of Digicrome’s principles is experiential subject learning. Through live doubt
+                                sessions, 30+ real-world projects, and full-time internship convenience, our learners gain
+                                industry exposure. This prepares them for real industry challenges. This approach not only
+                                enhances their market expertise but also builds their logical, critical thinking, and
+                                professional skills. We trust that education should lead to profitable results. </p>
                         </div>
                         <div class="section-title-desc">
-                            <p>We train students in the latest tools and software like ChatGPT, OpenAI, GeminiAI,
-                                DeepSeek.AI, Apache Hadoop, SAS Software, MATLAB, Jupyter, Python, TensorFlow, Scikit-learn,
-                                Tableau, and Power BI to keep them industry-ready.</p>
+                            <p>That is the reason Digicrome places a strong priority on personalized mentorship, career
+                                support, and job readiness. Our learning platform supports learners at every stage, from
+                                skill enhancement to job interview guidance. We help them unlock new career paths and
+                                realize innovative professional development. </p>
                         </div>
                         <div class="section-title-desc">
-                            <p>At Digicrome, we focus on personalized mentorship, industry-ready curriculum, and 100% job
-                                assistance, ensuring every student is job-ready from day one. With a strong network of 500+
-                                global hiring partners, our learners achieve up to 120% salary hikes and secure placements
-                                in top companies worldwide.</p>
+                            <p>With an increasing global community and expanding 500+ industry partnerships, Digicrome
+                                continues to lead in the digital education sector. This makes us more approachable,
+                                realistic, and aligned with the needs of today’s progressing job market.</p>
                         </div>
                         <div class="about-iteam-list">
                             <ul>
@@ -236,8 +243,9 @@
             <div class="row section-title-space">
                 <div class="col-xl-4 col-lg-12">
                     <div class="section-sub-title three">
-                        <h2 style="color:var(--primary-color);"><img loading="lazy" src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
-                                alt="icon" title="icon">Success Stories</h2>
+                        <h2 style="color:var(--primary-color);"><img loading="lazy"
+                                src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="icon"
+                                title="icon">Success Stories</h2>
                     </div>
                     <div class="section_title text-left">
                         <div class="fs-1 fw-bold mb-1">All Real Experiences</div>
@@ -317,8 +325,9 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="section-sub-title two">
-                        <h2 style="color:var(--primary-color);"><img loading="lazy" src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
-                                alt="icon" title="icon">TESTIMONIALS</h2>
+                        <h2 style="color:var(--primary-color);"><img loading="lazy"
+                                src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}" alt="icon"
+                                title="icon">TESTIMONIALS</h2>
                     </div>
                     <div class="section_title text-left">
                         <h3 class="fs-2 fw-bold mb-1">What Students Say About Digicrome Experience</h3>
@@ -435,7 +444,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h3 style="font-size: 42px; line-height: 52px; color: var(--title-color); font-weight: 600;">Read our latest updates <br> from Digicrome</h3>
+                        <h3 style="font-size: 42px; line-height: 52px; color: var(--title-color); font-weight: 600;">Read
+                            our latest updates <br> from Digicrome</h3>
                     </div>
                 </div>
             </div>
