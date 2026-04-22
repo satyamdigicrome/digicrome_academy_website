@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', $meta->title ?? 'Digicrome')
-@section('meta_description', $meta->description ?? 'Digicrome')
-@section('meta_keywords', $meta->keywords ?? 'Digicrome')
+@section('title', $collection->meta_title ?? 'Digicrome')
+@section('meta_description', $collection->meta_description ?? 'Digicrome')
+@section('meta_keywords', $collection->meta_keywords ?? 'Digicrome')
 
 @section('content')
     @include('components.lead-form-popup')

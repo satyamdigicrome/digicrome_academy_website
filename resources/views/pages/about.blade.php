@@ -104,12 +104,6 @@
                                 professional skills. We trust that education should lead to profitable results. </p>
                         </div>
                         <div class="section-title-desc">
-                            <p>That is the reason Digicrome places a strong priority on personalized mentorship, career
-                                support, and job readiness. Our learning platform supports learners at every stage, from
-                                skill enhancement to job interview guidance. We help them unlock new career paths and
-                                realize innovative professional development. </p>
-                        </div>
-                        <div class="section-title-desc">
                             <p>With an increasing global community and expanding 500+ industry partnerships, Digicrome
                                 continues to lead in the digital education sector. This makes us more approachable,
                                 realistic, and aligned with the needs of today’s progressing job market.</p>

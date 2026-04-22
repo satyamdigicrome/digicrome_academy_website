@@ -56,7 +56,7 @@
                             media="(max-width:991px)">
 
                         <!-- Desktop -->
-                        <img src="{{ asset('assets/images/home-three/blog-bg2.webp') }}" class="hero-img" alt="">
+                        <img src="{{ asset('assets/images/home-three/blog-bg3.webp') }}" class="hero-img" alt="">
                     </picture>
                 </div>
 

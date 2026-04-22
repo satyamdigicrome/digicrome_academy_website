@@ -222,6 +222,8 @@
 
 					<input type="hidden" id="mobile" name="country" value="india" placeholder="Mobile Number">
 <input type="hidden" name="ib" value="">
+				<input type="text" name="our_custom" style="display:none;" value="digicrome">
+                <input type="hidden" name="form_time" value="<?php echo time(); ?>">
 					<input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
 
 					<input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
@@ -508,6 +510,8 @@
 						<div class="form-field">
 							<input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
 						</div>
+						<input type="text" name="our_custom" style="display:none;" value="digicrome">
+						<input type="hidden" name="form_time" value="<?php echo time(); ?>">
 						<div class="form-field">
 							<input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
 						</div>
