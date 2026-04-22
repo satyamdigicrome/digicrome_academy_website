@@ -77,6 +77,7 @@
     <div class="blog-area style-one blog">
         <div class="container">
             <div class="row">
+				<h1 class="fs-2 text-center fw-bold">Latest Blog Posts</h1>
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($blogs as $blog)
