@@ -12,6 +12,16 @@
 
     @push('styles')
         <style>
+            h2 {
+                font-size: 2rem;
+            }
+            .heading-like-h1 {
+                font-size: 36px;
+                font-weight: 700;
+                line-height: 1.2;
+                color: #000;
+                margin-bottom: 20px;
+            }
             .corporate-hero {
                 background: linear-gradient(135deg, #667eea 0%, #1A1447 100%);
                 min-height: 100vh;
@@ -46,10 +56,12 @@
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
                 animation: fadeInUp 1s ease-out;
+                padding-bottom: 10px;
             }
 
             .corporate-hero p {
-                font-size: 1.3rem;
+                /* font-size: 1.3rem; */
+                text-align: justify;
                 color: rgba(255, 255, 255, 0.9);
                 margin: 1.5rem 0 2.5rem;
                 animation: fadeInUp 1s ease-out 0.2s both;
@@ -178,7 +190,7 @@
             }
 
             .logo-item {
-                filter: grayscale(100%);
+                /* filter: grayscale(100%); */
                 transition: all 0.4s ease;
                 opacity: 0.7;
             }
@@ -267,9 +279,14 @@
                     <div class="corporate-hero-content">
                         <h1 data-aos="fade-up" data-aos-delay="100">Transforming <span class="text-warning">Corporate</span>
                             Learning</h1>
-                        <p data-aos="fade-up" data-aos-delay="200">Empower your workforce with cutting-edge training programs.
-                            From AI & Data Science to Leadership Development, scale your team's potential with customized
-                            learning solutions.</p>
+                        <p data-aos="fade-up" data-aos-delay="200">Drive significant impact through smart learning pathways,
+                            we ensure each person, from basic-level to senior-level leaders, acquires skills that directly
+                            contribute to business growth. Our training mix experiential projects, live expert sessions, and
+                            useful case studies, allowing teams to move beyond theory and apply skills in high-stakes
+                            environments. With a focus on future-leading abilities, we help businesses build skills in top
+                            domains such as machine learning, cybersecurity, cloud computing, and others. At the same time,
+                            guidance modules cultivate integral thinking, ideas, and innovation-led mindsets essential for
+                            handling intricate trade ecosystems.</p>
                         <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
                             <a href="#services" class="btn btn-corporate-primary">Explore Solutions <i
                                     class="fas fa-arrow-right ms-2"></i></a>
@@ -442,7 +459,7 @@
         <div class="container">
             <div class="row align-items-center section-title-space">
                 <div class="col-lg-6">
-                    <div class="section-sub-title">
+                    <div class="section-sub-title" style="font-size: 16px;">
                         <h2>OUR COURSES</h2>
                     </div>
                 </div>
@@ -459,7 +476,7 @@
                         <div class="case_study_menu">
                             <ul class="menu-filtering">
                                 <li class="current_menu_item filter-btn" data-filter=".Upcoming">Upcoming Courses</li>
-                                @foreach ($collections->whereNotIn('id',[6]) as $collection)
+                                @foreach ($collections->whereNotIn('id', [6]) as $collection)
                                     <li class="filter-btn" data-filter=".{{ Str::slug($collection->name) }}">
                                         {{ $collection->name }}</li>
                                 @endforeach
