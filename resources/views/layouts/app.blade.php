@@ -34,7 +34,7 @@
                 <input type="text" name="address" placeholder="City" required
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                 <input type="hidden" name="title" value="NA">
-                <input type="text" name="website" style="display:none;">
+                <input type="text" name="our_custom" style="display:none;" value="digicrome">
                 <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                 <input type="hidden" name="profession" value="NA">
                 <input type="hidden" name="aiss" value="">
@@ -74,7 +74,7 @@
                     <input type="text" name="address" placeholder="City" required
                         style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                     <input type="hidden" name="title" value="NA">
-                    <input type="text" name="website" style="display:none;">
+                    <input type="text" name="our_custom" style="display:none;" value="digicrome">
                     <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                     <input type="hidden" name="profession" value="NA">
                     <input type="hidden" name="aiss" value="">
