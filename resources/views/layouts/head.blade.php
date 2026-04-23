@@ -36,6 +36,7 @@
         as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{{ asset('assets/webfonts/fa-solid-900.woff2') }}" as="font" type="font/woff2"
         crossorigin="anonymous">
+    <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
     {{-- Critical CSS: load synchronously (bootstrap + theme) --}}
     <link rel="preload" href="{{ asset('assets/css/bootstrap.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">

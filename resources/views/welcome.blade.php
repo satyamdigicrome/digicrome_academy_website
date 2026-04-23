@@ -79,7 +79,7 @@
                                 <div
                                     style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
                                     <small style="font-size: 14px; color: #555;">In collaboration with</small>
-                                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}"
+                                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/msblack.webp') }}"
                                         class="ds-logo lazyload" alt="Microsoft Logo" title="Microsoft logo"
                                         style="width: 100%; height: auto; margin-top: 5px;">
                                 </div>
