@@ -1881,7 +1881,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-12" style="padding-left: 5%; padding-top:2%">
                         <h1 id="mob4">Build a Successful<br> Career in Data Science & AI</h1>
-                        <p style="color:#000;"><b>In Collaboration With IBM & Microsoft</b></p>
+                        <p style="color:#000;"><b>In Collaboration With PMI & Microsoft</b></p>
                         <div>
                             <span id="mob5"
                                 style="background-color: #ebc68c; padding: 12px; color:#000; border-radius: 8px;">
