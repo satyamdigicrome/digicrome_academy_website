@@ -100,10 +100,6 @@
                     <p class="mb-3">
                       By simply referring others to our platform, you not only help them but also us to grow more. Our community values development, collaboration, and opportunities.
                     </p>
-                    <p class="mb-3">
-                        We provide a stipend of <strong>₹5000</strong> for every successful referral. Just follow the steps
-                        below:
-                    </p>
                     <h2>How It Works</h2>
                     <ol class="mb-3 ps-3">
                         <li>Fill out a quick referral form.</li>
