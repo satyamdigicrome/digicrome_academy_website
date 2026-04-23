@@ -42,10 +42,10 @@
 			</div>
 		</div>
 	</div> --}}
-    <section class="hero_area style-three four">
+    <section class="hero_area style-three four" style="height: auto !important;">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-12 text-center">
+                <div class="hero-wrapper col-lg-12 text-center">
                     <picture>
                         <!-- Mobile -->
                         <source srcset="{{ asset('assets/images/home-three/blog-mobile-bg.webp') }}"

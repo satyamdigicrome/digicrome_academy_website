@@ -71,102 +71,81 @@
             <div class="col-lg-8">
                 <div class="header-menu">
                     <ul class="nav_scroll">
+                    <li class="menu-item-has-children">
+                        <a href="#"
+                            style="background:#1c1647; border:2px solid #fff; border-radius:8px; padding:3px 7px; color:#fff; display:flex; align-items:center; gap:5px;">
+                            <i class="bi bi-journal-bookmark-fill text-light"></i>
+                            Courses
+                            <i class="bi bi-chevron-down text-light"></i>
+                        </a>
+
+                    <!-- 🔥 ONLY THIS submenu is mega-menu -->
+                    <ul class="sub_menu mega-menu">
                         <li>
-                            <a href="#"
-                                style=" background-color: #1c1647; border: 2px solid #fff; border-radius: 8px; padding: 3px 7px; color: #fff; display: flex; align-items: center; gap: 5px;">
-                                <i style="color: #fff" class="bi bi-journal-bookmark-fill"></i>
-                                <!-- Icon before text -->
-                                Courses
-                                <i style="color: #fff" class="bi bi-chevron-down"></i>
-                            </a>
-                            <ul class="sub_menu" style="list-style: none; padding: 0; margin: 0;">
-                                <li style="padding: 0;">
-                                    <div class="container-fluid px-3 py-3" style="min-width: 600px; max-width: 1000px;">
-                                        <div class="row g-4">
-                                            <div class="col-md-4 border-end">
-                                                <h6 class="fw-bold mb-3 text-primary">Popular Categories</h6>
-                                                <ul class="list-unstyled mb-0">
-                                                    <li class="mb-2">
-                                                        <a href="{{ route('course.category', 'data-science-course') }}"
-                                                            class="text-dark d-flex justify-content-between align-items-center">
-                                                            Data Science & AI
-                                                            <i class="bi bi-chevron-right"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="mb-2">
-                                                        <a href="{{ route('course_details', 'ai-security-online-training') }}"
-                                                            class="text-dark d-flex justify-content-between align-items-center">
-                                                            Cyber Security: Security of AI
-                                                            <i class="bi bi-chevron-right"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="mb-2">
-                                                        <a href="http://digicromeuniversity.com"
-                                                            class="text-dark d-flex justify-content-between align-items-center category-link"
-                                                            data-ids="61">
-                                                            UG/PG Courses
-                                                            <i class="bi bi-chevron-right"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="mb-2">
-                                                        <a href="{{ route('course.category', 'investment-banking-course') }}"
-                                                            class="text-dark d-flex justify-content-between align-items-center">
-                                                            Investment Banking
-                                                            <i class="bi bi-chevron-right"></i>
-                                                        </a>
-                                                    </li>
+                            <div class="mega-wrapper">
 
-                                                    @foreach ($header_collections->whereNotIn('id', [5, 6]) as $collection)
-                                                        <li class="mb-2">
-                                                            <a href="{{ route('course.category', $collection->slug) }}"
-                                                                class="text-dark d-flex justify-content-between align-items-center">
-                                                                {{ $collection->name }}
-                                                                <i class="bi bi-chevron-right"></i>
-                                                            </a>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
+                                <div class="mega-left">
+                                    <h6>Popular Categories</h6>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ route('course.category', 'data-science-course') }}"
+                                                class="text-dark d-flex justify-content-between align-items-center">
+                                                Data Science & AI <i class="bi bi-chevron-right"></i>
+                                            </a>
+                                        </li>
 
-                                            <div class="col-md-8">
-                                                <h6 class="fw-bold mb-3 text-primary">Top Courses</h6>
-                                                <div id="course-container" class="d-flex flex-column gap-2"
-                                                    style="max-height: 460px; overflow-y: auto;">
-                                                    @foreach ([1, 3, 85, 55] as $id)
-                                                        @if (isset($header_courses[$id]))
-                                                            @php $course = $header_courses[$id]; @endphp
-                                                            <div class="card border-0 shadow-sm rounded-3 p-2">
-                                                                <div class="d-flex align-items-center">
-                                                                    <a
-                                                                        href="{{ route('course_details', ['slug' => $course->slug]) }}">
-                                                                        <img loading="lazy"
-                                                                            src="{{ asset('storage/' . $course->image) }}"
-                                                                            alt="{{ $course->name }}" class="rounded"
-                                                                            style="width: 80px; height: 60px; object-fit: cover;">
-                                                                        <div class="ms-3 flex-grow-1">
-                                                                            <h6 class="fw-semibold"
-                                                                                style="line-height: 24px;">
-                                                                                {{ $course->name }}</h6>
-                                                                            <p class="text-muted small">Duration:
-                                                                                {{ $course->course_duration ?? 'N/A' }}
-                                                                            </p>
-                                                                    </a>
+                                        <li>
+                                            <a href="{{ route('course_details', 'ai-security-online-training') }}" class="text-dark d-flex justify-content-between align-items-center">
+                                                Cyber Security: Security of AI
+                                                <i class="bi bi-chevron-right"></i>
+                                            </a>
+                                        </li>
 
-                                                                </div>
-                                                            </div>
-                                                </div>
-                                                @endif
-                                                @endforeach
-                                            </div>
-                                        </div>
+                                        <li>
+                                            <a href="http://digicromeuniversity.com" class="text-dark d-flex justify-content-between align-items-center">
+                                                UG/PG Courses <i class="bi bi-chevron-right"></i>
+                                            </a>
+                                        </li>
+
+                                        @foreach ($header_collections->whereNotIn('id', [5, 6]) as $collection)
+                                            <li>
+                                                <a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
+                                                    {{ $collection->name }}
+                                                    <i class="bi bi-chevron-right"></i>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+
+                                <div class="mega-right">
+                                    <h6>Top Courses</h6>
+
+                                    <div class="course-list">
+                                        @foreach ([1,3,85,55] as $id)
+                                            @if (isset($header_courses[$id]))
+                                                @php $course = $header_courses[$id]; @endphp
+
+                                                <a href="{{ route('course_details', $course->slug) }}" class="course-item">
+
+                                                    <img src="{{ asset('storage/'.$course->image) }}" alt="">
+
+                                                    <div class="course-info">
+                                                        <h6>{{ $course->name }}</h6>
+                                                        <p>{{ $course->course_duration ?? 'N/A' }}</p>
+                                                    </div>
+
+                                                </a>
+                                            @endif
+                                        @endforeach
                                     </div>
 
-                </div>
-                </li>
-                </ul>
+                                </div>
 
+                            </div>
+                        </li>
+                    </ul>
                 </li>
-
                 <li><a href="/">Home</a>
                 </li>
                 <li><a href="{{ route('about') }}">About</a></li>
