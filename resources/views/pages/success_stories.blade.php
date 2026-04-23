@@ -31,8 +31,8 @@
                                         alt="accenture" loading="eager"></div>
                                 <div class="first-box"><img src="{{ asset('assets/images/company/tcs.webp') }}"
                                         alt="tcs" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/ibm.webp') }}"
-                                        alt="ibm" loading="eager"></div>
+                                {{-- <div class="first-box"><img src="{{ asset('assets/images/company/ibm.webp') }}"
+                                        alt="ibm" loading="eager"></div> --}}
                                 <!-- Duplicate Set of Images (to create seamless effect) -->
                                 <div class="first-box"><img src="{{ asset('assets/images/company/deloite.webp') }}"
                                         alt="deloite" loading="eager"></div>
@@ -44,8 +44,8 @@
                                         alt="accenture" loading="eager"></div>
                                 <div class="first-box"><img src="{{ asset('assets/images/company/tcs.webp') }}"
                                         alt="tcs" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/ibm.webp') }}"
-                                        alt="ibm" loading="eager"></div>
+                                {{-- <div class="first-box"><img src="{{ asset('assets/images/company/ibm.webp') }}"
+                                        alt="ibm" loading="eager"></div> --}}
                             </div>
                         </div>
                     </div>
