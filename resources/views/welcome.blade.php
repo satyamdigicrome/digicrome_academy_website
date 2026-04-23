@@ -96,7 +96,7 @@
                                 style="border-color: #000000 !important;" role="button">
                                 <a href="https://vimeo.com/1166319733" target="_blank">CAMPUS TOUR<i
                                         class="fa-brands fa-youtube"
-                                        style="font-size: 18px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
+                                        style="display: inline-block; width: 22px; height: 22px;font-size: 18px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -482,6 +482,7 @@
                             opacity: 0;
                             transform: scale(0.8);
                             transition: opacity 1.5s ease, transform 1.5s ease;
+                            /* aspect-ratio: 3/4; */
                         }
 
                         .zoom-sequence .image.show {

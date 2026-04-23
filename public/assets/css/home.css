@@ -354,10 +354,7 @@ form button {
     overflow: hidden;
     box-shadow: 0 8px 24px rgb(0 0 0 / .15)
 }
-img {
-    max-width: 100%;
-    height: auto;
-}
+
 .form-container img {
     width: 100%;
     max-width: 400px;
@@ -532,13 +529,7 @@ form button:hover {
     .campus-tour-btn a {
         line-height: 2.5
     }
-    .hero_area {
-        aspect-ratio: 16 / 9;
-    }
-    .hero-thumb {
-        aspect-ratio: 3 / 2;
-        width: 100%;
-    }
+
     section.hero_area.style-one .hero-btn a i {
         display: none
     }
