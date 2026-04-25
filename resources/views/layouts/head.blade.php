@@ -235,12 +235,12 @@
         });
     </script>
     <style>
-        /* body {
+        body {
             font-family: 'Inter', sans-serif;
         }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
-        } */
+        }
         .footer-logo11 {
             width: 59%;
         }

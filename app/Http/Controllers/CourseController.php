@@ -120,7 +120,7 @@ public function searchCourses(Request $request)
     public function showByCategory($slug)
     {
         $collection = Collection::where('slug', $slug)->firstOrFail(); 
-        $courses = $collection->courses()->where('status', 1)->get();
+        $courses = $collection->courses()->where('status', 1)->paginate(10);
         return view('pages.course', compact('courses', 'collection'));
     }
 

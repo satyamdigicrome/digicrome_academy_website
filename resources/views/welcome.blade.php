@@ -831,7 +831,7 @@
                             <div class="col-lg-12">
                                 <div class="single-brand-box">
                                     <div class="brand-thumb">
-                                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
+                                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
                                             title="brand-thumb">
                                     </div>
                                 </div>

@@ -3,7 +3,65 @@
 @section('title', $collection->meta_title ?? 'Digicrome')
 @section('meta_description', $collection->meta_description ?? 'Digicrome')
 @section('meta_keywords', $collection->meta_keywords ?? 'Digicrome')
+@push('styles')
+    <style>
+        .course-pagination-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            padding: 12px 18px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
 
+        .pagination-info {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .pagination-list {
+            display: flex;
+            gap: 6px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pagination-list li a,
+        .pagination-list li span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 34px;
+            height: 34px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .pagination-list li a:hover {
+            background: rgba(28, 22, 71, 0.1);
+            color: #1c1647;
+        }
+
+        .pagination-list .active {
+            color: #1c1647;
+            border-bottom: 2px solid #1c1647;
+        }
+
+        .pagination-list .dots {
+            pointer-events: none;
+        }
+
+        .next-btn {
+            background: #e5e7eb;
+            padding: 0 10px;
+            border-radius: 6px;
+        }
+    </style>
+@endpush
 @section('content')
     @include('components.lead-form-popup')
 
@@ -163,6 +221,10 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {{ $courses->links('pagination.course-pagination') }}                </div>
             </div>
         </div>
     </div>

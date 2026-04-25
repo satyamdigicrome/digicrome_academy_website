@@ -10,21 +10,21 @@ use App\Models\Metatag;
 class BlogController extends Controller
 {
     public function index()
-{
-    $blogs = Blog::where('status', 'published')
-                ->orderByDesc('created_at')
-                ->get();
+    {
+        $blogs = Blog::where('status', 'published')
+            ->orderByDesc('created_at')
+            ->paginate(10);
 
-    $meta = Metatag::where('page_name', 'Blog')->first();
+        $meta = Metatag::where('page_name', 'Blog')->first();
 
-    return view ('pages.blog', compact('blogs','meta'));
-}
-public function blog_details($slug)
-{
-    $blog = Blog::where('slug', $slug)->firstOrFail();
+        return view('pages.blog', compact('blogs', 'meta'));
+    }
+    public function blog_details($slug)
+    {
+        $blog = Blog::where('slug', $slug)->firstOrFail();
 
-    $blog->increment('views');
+        $blog->increment('views');
 
-    return view ('pages.blog_details', compact('blog'));
-}
+        return view('pages.blog_details', compact('blog'));
+    }
 }

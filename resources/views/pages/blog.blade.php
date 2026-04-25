@@ -9,7 +9,52 @@
             height: auto;
             display: block;
         }
-    </style>
+	.paginations {
+		text-align: center;
+	}
+
+	.paginations .page-numbers {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.paginations .page-numbers li {
+		display: inline-block;
+	}
+
+	.paginations .page-numbers a,
+	.paginations .page-numbers span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 42px;
+		height: 42px;
+		border-radius: 8px;
+		border: 1px solid #ddd;
+		text-decoration: none;
+		color: #333;
+		font-weight: 500;
+	}
+
+	.paginations .page-numbers .current {
+		background: #1c1647;
+		color: #fff;
+	}
+
+	.paginations .page-numbers .dots {
+		border: none;
+	}
+
+	.paginations .page-numbers .disabled {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+</style>
 @endpush
 @section('content')
     @include('components.lead-form-popup')
@@ -67,6 +112,66 @@
         #sticky-header {
             margin-bottom: 0px !important;
         }
+
+        .blog-pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        .blog-pagination .pagination {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .blog-pagination .page-item {
+            margin: 0;
+        }
+
+        .blog-pagination .page-link {
+            min-width: 44px;
+            height: 44px;
+            padding: 0 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(113, 128, 150, 0.25);
+            color: #1f2937;
+            background: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .blog-pagination .page-link:hover {
+            border-color: var(--theme-color, var(--primary-color, #1c1647)) !important;
+            background: rgba(30, 194, 142, 0.08) !important;
+            color: var(--theme-color, var(--primary-color, #1c1647)) !important;
+        }
+
+        .blog-pagination .page-item.active .page-link,
+        .blog-pagination .page-link.active,
+        .blog-pagination .page-item.active span.page-link,
+        .blog-pagination .page-item.active a[aria-current="page"],
+        .blog-pagination .page-item.active span[aria-current="page"] {
+            background: var(--theme-color, var(--primary-color, #1c1647)) !important;
+            border-color: var(--theme-color, var(--primary-color, #1c1647)) !important;
+            color: #ffffff !important;
+            box-shadow: 0 8px 20px rgba(28, 22, 71, 0.14) !important;
+        }
+
+        .blog-pagination .page-item.disabled .page-link {
+            opacity: 0.45;
+            pointer-events: none;
+            background: #f8fafc;
+        }
     </style>
     <!--==================================================-->
     <!-- End educate Breadcumb Area -->
@@ -77,7 +182,7 @@
     <div class="blog-area style-one blog">
         <div class="container">
             <div class="row">
-				<h1 class="fs-2 text-center fw-bold">Latest Blog Posts</h1>
+                <h1 class="fs-2 text-center fw-bold">Latest Blog Posts</h1>
                 <div class="col-lg-12">
                     <div class="row">
                         @foreach ($blogs as $blog)
@@ -122,97 +227,16 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="blog-pagination">
+                                {{ $blogs->links('pagination.blog-pagination') }}
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
-                {{-- <div class="col-lg-4">
-					<div class="blog-right-sidebar">
-						<div class="widget widget_search">
-							<div class="search">
-								<form action="https://formspree.io/f/myyleorq" method="POST">
-									<input type="text" name="s" value="" placeholder="Search..." title="Search for:"
-										required="">
-									<button type="submit" class="icons"><i class="fa fa-search"></i></button>
-								</form>
-							</div>
-						</div>
-						<div class="widget-categories-box">
-							<!-- categories title -->
-							<h4 class="sidebar-title">Categories</h4>
-							<!-- widget categories menu -->
-							<div class="widget-categories-menu">
-								<ul>
-									<li class=""><a href="blog.html">Educational</a></li>
-									<li class=""><a href="blog.html">Business</a></li>
-									<li class=""><a href="blog.html">Artificial Intelligence</a></li>
-									<li class=""><a href="blog.html">Business and Finance</a></li>
-									<li class=""><a href="blog.html">Learning</a></li>
-									<li class=""><a href="blog.html">Innovations</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="widget-categories-box">
-							<h4 class="sidebar-title">Recent Posts</h4>
-							<!-- widget recent post -->
-							<div class="widget-recent-post d-flex">
-								<div class="rpost-thumb">
-									<a href="#"><img loading="lazy"src="assets/images/inner-img/rpost-thumb1.webp" alt="post-thumb" title="post-thumb"></a>
-								</div>
-								<div class="rpost-content">
-									<div class="rpost-title">
-										<h4><a href="#">How Gamification is
-												Changing the Way...</a></h4>
-										<span>20 Feb, 2025</span>
-									</div>
-								</div>
-							</div>
-							<!-- widget recent post -->
-							<div class="widget-recent-post d-flex">
-								<div class="rpost-thumb">
-									<a href="#"><img loading="lazy"src="assets/images/inner-img/rpost-thumb2.webp" alt="post-thumb" title="post-thumb"></a>
-								</div>
-								<div class="rpost-content">
-									<div class="rpost-title">
-										<h4><a href="#">Learning is the Key soft
-												skills and Professional</a></h4>
-										<span>20 Feb, 2025</span>
-									</div>
-								</div>
-							</div>
-							<!-- widget recent post -->
-							<div class="widget-recent-post d-flex">
-								<div class="rpost-thumb">
-									<a href="#"><img loading="lazy"src="assets/images/inner-img/rpost-thumb3.webp" alt="post-thumb" title="post-thumb"></a>
-								</div>
-								<div class="rpost-content">
-									<div class="rpost-title">
-										<h4><a href="#">The Importance of Critical
-												Thinking in Education</a></h4>
-										<span>20 Feb, 2025</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="widget-categories-box">
-							<!-- categories title -->
-							<h4 class="sidebar-title">Tag Clouds</h4>
-							<div class="sidebar-tag-item style-two">
-								<ul>
-									<li><a href="#!">Education</a></li>
-									<li><a href="#!">Business</a></li>
-									<li><a href="#!">Ai</a></li>
-									<li><a href="#!">University</a></li>
-									<li><a href="#!">Innovations</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div> --}}
             </div>
         </div>
     </div>
-    <!--==================================================-->
-    <!-- end educate blog Area -->
-    <!--==================================================-->
-
-
 @endsection

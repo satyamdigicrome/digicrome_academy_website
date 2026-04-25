@@ -438,7 +438,7 @@
 
     </section>
     <section id="contactSection" class="Contact1" style="background-color: white; padding-top:20px;">
-        <h2 style="text:center !important;"><b>Major Milestones in Our Journey</b></h2>
+        <h2 style="text-align:center;display:block;"><b>Major Milestones in Our Journey</b></h2>
         <ul class="ul1" style="padding-top: 40px;">
             <li style="--accent-color:#ea4335">
                 <div class="date">2026</div>
