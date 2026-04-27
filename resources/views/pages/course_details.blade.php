@@ -394,7 +394,7 @@
                         <div class="cyber-badge">
                             <i class="fa-solid fa-lock"></i> Next-Gen AI Security Program
                         </div>
-                        <h1 class="visually-hidden">AI Security and Cybersecurity Program</h1>
+                        <h1 class="visually-hidden">Best AI Cybersecurity Course</h1>
                         <h2 class="cyber-title">
                             Cyber Security: 
                             <br><span class="cyber-accent">Security of AI</span>
