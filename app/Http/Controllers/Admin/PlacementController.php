@@ -20,6 +20,7 @@ class PlacementController extends Controller
             'name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
             'package' => 'required|numeric',
+            'category' => 'required|string|max:255|in:DS,AISS,IB',
         ]);
 
         $imagePath = $request->file('image')->store('placement', 'public');
@@ -32,6 +33,7 @@ class PlacementController extends Controller
             'position' => $request->position,
             'package' => $request->package,
             'user_id' => $userId,
+            'category' => $request->category,
         ]);
 
         return redirect()->route('placement.index')->with('success', 'Placement created successfully.');
@@ -50,6 +52,7 @@ class PlacementController extends Controller
             'name'     => 'required|string|max:255',
             'position' => 'required|string|max:255',
             'package'  => 'required|numeric',
+            'category' => 'required|string|max:255|in:DS,AISS,IB',
             'image'    => 'nullable|image|max:2048',
         ]);
         if ($request->hasFile('image')) {
@@ -64,6 +67,7 @@ class PlacementController extends Controller
             'name'     => $request->name,
             'position' => $request->position,
             'package'  => $request->package,
+            'category' => $request->category,
         ]);
 
         return redirect()->route('placement.index')->with('success', 'Placement updated successfully.');

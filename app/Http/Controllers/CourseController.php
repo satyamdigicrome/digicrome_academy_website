@@ -56,10 +56,17 @@ class CourseController extends Controller
         return Course::latest()->take(3)->get(['id', 'name', 'slug', 'image', 'tag_line']);
     });
 
-    $placements = Cache::remember('placements', 60, function () {
-        return Placement::all(['id', 'name', 'image']);
+    $placements = Cache::remember('placements', 60, function () use ($course) {
+        if($course->course_free == 1) {
+            return Placement::where('category', 'DS')->get(['id', 'name', 'position', 'package', 'image']);
+        } elseif($course->course_free == 2) {
+            return Placement::where('category', 'IB')->get(['id', 'name', 'position', 'package', 'image']);
+        } elseif($course->course_free == 3) {
+            return Placement::where('category', 'AISS')->get(['id', 'name', 'position', 'package', 'image']);
+        }else{
+            return Placement::all(['id', 'name', 'image']);
+        }
     });
-
     $companyLogos = Cache::remember('company_logos', 60, function () {
         return Logo::where('type', 'companies')->get(['id', 'image']);
     });

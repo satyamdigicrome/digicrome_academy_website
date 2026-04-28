@@ -4,8 +4,8 @@
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
     {{-- Preload the LCP hero image so the browser fetches it as early as possible --}}
-    <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" fetchpriority="high">
-    <link rel="preload"  as="image"  href="https://www.digicrome.com/assets/images/home-one/short.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb3.webp') }}" fetchpriority="high">
+    {{-- <link rel="preload"  as="image"  href="https://www.digicrome.com/assets/images/home-one/short.webp" type="image/webp" fetchpriority="high"> --}}
     <link rel="preload" href="{{ asset('assets/css/home.css') }}" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -135,19 +135,19 @@
                     <div class="hero-thumb-wrapper">
                         <div class="hero-thumb">
                             <img width="600" height="400" fetchpriority="high" loading="eager"
-                                src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}" alt="Digicrome thumb"
+                                src="{{ asset('assets/images/home-one/hero-thumb3.webp') }}" alt="Digicrome thumb"
                                 title="Digicrome thumb">
                         </div>
                         <div class="hero-arrow-shape">
                             <img loading="lazy" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
-                        <div class="hero-dot-shape">
+                        {{-- <div class="hero-dot-shape">
                             <img fetchpriority="high" loading="eager" decoding="async"
                                 style="width: 306px; height: auto;   transform: translate(70px, -209px);"
                                 src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
                                 title="digicrome dot">
-                        </div>
+                        </div> --}}
                         {{-- <div class="hero-shape3 bounce-animate-3">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}"
                                 alt="digicrome shape" title="digicrome shape">

@@ -15,7 +15,16 @@ class Placement extends Model
         'position',
         'package',
         'user_id',
+        'category',
     ];
+
+    public function scopeCategory($query ,string $category)
+    {
+        if ($category) {
+            return $query->where('category', $category);
+        }
+        return $query;
+    }
 
     // Define the relationship with the User model
     public function user()

@@ -37,6 +37,15 @@
                         <label class="form-label fw-semibold">Photo <span class="text-danger">*</span></label>
                         <input type="file" name="image" accept="image/*" class="form-control" required>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Category <span class="text-danger">*</span></label>
+                        <select name="category" id="category" required class="form-control">
+                            <option value="" disabled selected>Select category</option>
+                            <option value="DS">Data Science</option>
+                            <option value="AISS">AI Cyber Security</option>
+                            <option value="IB">Investment Banking</option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn-cms-primary w-100">
                         <i class="bi bi-plus-circle me-1"></i> Add Placement
                     </button>
@@ -67,6 +76,7 @@
                                 <th>Name</th>
                                 <th>Position</th>
                                 <th>Package</th>
+                                <th>Category</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -88,6 +98,9 @@
                                 <td>{{ $placement->position }}</td>
                                 <td>
                                     <span class="badge bg-success">{{ $placement->package }} LPA</span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-info">{{ $placement->category }}</span>
                                 </td>
                                 <td>
                                     <div class="action-group">
@@ -144,6 +157,15 @@
                         <input type="file" name="image" accept="image/*" class="form-control">
                         <div id="edit_current_image" class="mt-2"></div>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Category</label>
+                        <select name="category" id="edit_category" class="form-control" required>
+                            <option value="" disabled selected>Select category</option>
+                            <option value="DS">Data Science</option>
+                            <option value="AISS">AI Cyber Security</option>
+                            <option value="IB">Investment Banking</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-cms-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -164,7 +186,7 @@ function openEditModal(id, data) {
     document.getElementById('edit_name').value = data.name || '';
     document.getElementById('edit_position').value = data.position || '';
     document.getElementById('edit_package').value = data.package || '';
-
+    document.getElementById('edit_category').value = data.category || '';
     var imgDiv = document.getElementById('edit_current_image');
     if (data.image) {
         imgDiv.innerHTML = '<img src="/storage/' + data.image + '" class="rounded-circle" style="width:40px;height:40px;object-fit:cover;" alt="Current">' +
