@@ -9,52 +9,52 @@
             height: auto;
             display: block;
         }
-	.paginations {
-		text-align: center;
-	}
+        .paginations {
+            text-align: center;
+        }
 
-	.paginations .page-numbers {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 8px;
-		padding: 0;
-		margin: 0;
-		list-style: none;
-	}
+        .paginations .page-numbers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
 
-	.paginations .page-numbers li {
-		display: inline-block;
-	}
+        .paginations .page-numbers li {
+            display: inline-block;
+        }
 
-	.paginations .page-numbers a,
-	.paginations .page-numbers span {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 42px;
-		height: 42px;
-		border-radius: 8px;
-		border: 1px solid #ddd;
-		text-decoration: none;
-		color: #333;
-		font-weight: 500;
-	}
+        .paginations .page-numbers a,
+        .paginations .page-numbers span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
 
-	.paginations .page-numbers .current {
-		background: #1c1647;
-		color: #fff;
-	}
+        .paginations .page-numbers .current {
+            background: #1c1647;
+            color: #fff;
+        }
 
-	.paginations .page-numbers .dots {
-		border: none;
-	}
+        .paginations .page-numbers .dots {
+            border: none;
+        }
 
-	.paginations .page-numbers .disabled {
-		opacity: 0.4;
-		pointer-events: none;
-	}
-</style>
+        .paginations .page-numbers .disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+    </style>
 @endpush
 @section('content')
     @include('components.lead-form-popup')
@@ -201,12 +201,11 @@
                                                 @if ($blog->author_image)
                                                     <img loading="lazy" src="{{ asset('storage/' . $blog->author_image) }}"
                                                         alt="author" title="author"
-                                                        style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                                                        style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: white;">
                                                 @endif
                                                 {{ $blog->author_name }}
                                             </h4>
                                         </div>
-
                                         <div class="blog-title">
                                             <h3>
                                                 <a href="{{ route('blog.details', $blog->slug) }}">

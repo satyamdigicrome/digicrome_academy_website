@@ -1683,7 +1683,7 @@
                                             @if ($blog->author_image)
                                                 <img loading="lazy"src="{{ asset('storage/' . $blog->author_image) }}"
                                                     alt="author-img" title="author-img"
-                                                    style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                                                    style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: white;">
                                             @endif
                                             {{ $blog->author_name }}
                                         </h4>
