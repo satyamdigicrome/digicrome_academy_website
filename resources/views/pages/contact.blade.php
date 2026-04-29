@@ -290,7 +290,7 @@
 				<div class="card">
 				  <div class="card-body">
 					<div class="d-flex align-items-center">
-					  <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png" alt="US Flag" title="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+					  <img loading="lazy"src="{{ asset('assets/images/us_logo.svg') }}" alt="US Flag" title="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
 					  <h5 class="card-title">Office in the US</h5>
 					</div>
 					<br>
@@ -304,7 +304,7 @@
 				<div class="card">
 				  <div class="card-body">
 					<div class="d-flex align-items-center">
-					  <img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/2560px-Flag_of_India.svg.png" alt="India Flag" title="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+					  <img loading="lazy"src="{{ asset('assets/images/indialogo.svg') }}" alt="India Flag" title="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
 					  <h5 class="card-title">Office in India</h5>
 					</div>
 					<br>
