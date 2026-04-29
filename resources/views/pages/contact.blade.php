@@ -349,7 +349,7 @@
 			<div class="col-md-7 chat-text">
 				<h2>Have more queries?</h2>
 				<p>Get them answered instantly.</p>
-				<a href="https://embed.tawk.to/6515c050e6bed319d003dd5f/1hbefefnp" class="btn btn-light text-primary fw-bold">
+				<a href="https://tawk.to/chat/68f9d2f2d84f3b1958008620/1j87u01d2" class="btn btn-light text-primary fw-bold">
 					<i class="fas fa-comments"></i> SAY HELLO
 				</a>
 			</div>
