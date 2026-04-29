@@ -23,9 +23,9 @@ class CourseController extends Controller
         $ids = explode(',', $request->ids);
         $courses = Course::whereIn('id', $ids)
                          ->where('status', 1)
-                         ->get();
+                         ->paginate(10);
     } else {
-        $courses = Course::where('status', 1)->get(); // Only active courses
+        $courses = Course::where('status', 1)->paginate(10); // Only active courses
     }
 
     return view('pages.course', compact('courses', 'meta', 'name'));
