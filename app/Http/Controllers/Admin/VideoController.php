@@ -20,7 +20,7 @@ class VideoController extends Controller
         $request->validate([
             'video_link' => 'required|string',
             'name' => 'required|string|max:255',
-            'image' => 'nullable|mimes:jpeg,jpg,png,webp,gif|max:4096'
+            'image' => 'nullable|mimes:jpeg,jpg,png,webp,gif,webm|max:4096'
         ]);
     
         $imagePath = null;

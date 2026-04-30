@@ -145,7 +145,7 @@
                             <div class="first-card"> <img src="{{ asset('storage/' . $story->image) }}" alt="person"
                                     loading="eager" class="person-image" width="121px">
                                 <h6>{{ $story->studentname }}</h6>
-                                <div class="for-inner-logo">{{ $story->companyname }}</div>
+                                <div class="for-inner-logo text-center">{{ $story->companyname }}</div>
                                 <p>career upgrade</p>
                             </div>
                         @endforeach
