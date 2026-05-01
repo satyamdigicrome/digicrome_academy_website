@@ -15,7 +15,7 @@
   gtag('config', 'AW-18024221657');
 </script>
 <script>
-  gtag('event', 'conversion', {'send_to': 'AW-18024221657/7tH2CL7qxJAcENmXz5JD'});
+  gtag('event', 'conversion', {'send_to': 'AW-18024221657/yG9QCPC93qUcENmXz5JD'});
 </script>
 @endpush
 
