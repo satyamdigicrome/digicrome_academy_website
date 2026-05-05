@@ -1,8 +1,12 @@
 User-agent: *
+
 Disallow: /?search-field=
 Disallow: /upcoming-courses/
 Disallow: /upcoming-courses
-Disallow: /public
 Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
 
 Sitemap: https://www.digicrome.com/sitemap.xml
