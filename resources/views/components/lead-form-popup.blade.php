@@ -151,6 +151,14 @@
                   <div class="form-field">
                       <input type="text" id="address" name="address" placeholder="City" required autocomplete="address" />
                   </div>
+                  <div class="form-field">
+                    <select name="title" class="form-select" required>
+                        <option value="" disabled selected style="color: #999;">Select Course</option>
+                        <option value="DS">Data Science</option>
+                        <option value="AISS">AI Security Online </option>
+                        <option value="other">Other</option>
+                    </select>
+                  </div>
                   <input type="hidden" name="title" value="NA" />
                   <input type="text" name="our_custom" style="display:none;" value="digicrome">
                   <input type="hidden" name="form_time" value="<?php echo time(); ?>">

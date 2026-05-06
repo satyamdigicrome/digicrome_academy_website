@@ -1473,13 +1473,18 @@
                             class="form-control custom-lead-input" required>
                         <input type="text" name="address" style="color: #fff" placeholder="City"
                             class="form-control custom-lead-input" required>
-
+                        <select name="title" class="form-select custom-lead-input" required>
+                            <option value="" disabled selected style="color: #999;">Select Course</option>
+                            <option value="DS">Data Science</option>
+                            <option value="AISS">AI Security Online </option>
+                            <option value="other">Other</option>
+                        </select>
                         <!-- Hidden Fields -->
                         <input type="text" name="our_custom" style="display:none;" value="digicrome">
                         <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                         <input type="hidden" name="source" value="Website(broucher)">
                         <input type="hidden" name="ib" value="">
-                        <input type="hidden" name="title" value="NA">
+                        {{-- <input type="hidden" name="title" value="NA"> --}}
                         <input type="hidden" name="profession" value="NA">
 
                         <button type="submit" style="background: green;"
@@ -1579,11 +1584,14 @@
                 if (isAISSPage()) {
                     const modal = document.getElementById(modalId);
                     const sourceField = modal.querySelector('form [name="source"]');
+                    const ibField = modal.querySelector('form [name="ib"]');
                     if (sourceField) {
                         if (modalId === 'leadPopup') {
                             sourceField.value = 'Website AISS Course (Brochure)';
+                            ibField.value = 'AISS';
                         } else {
                             sourceField.value = 'Website AISS Course';
+                            ibField.value = 'AISS';
                         }
                     }
                 }
@@ -1622,12 +1630,20 @@
                                     <input type="text" name="address" class="form-control custom-reg-input"
                                         placeholder="City" required>
                                 </div>
+                                <div class="col-12">
+                                    <select name="title" class="form-select custom-reg-input" required>
+                                        <option value="" disabled selected style="color: #999;">Select Course</option>
+                                        <option value="DS">Data Science</option>
+                                        <option value="AISS">AI Security Online </option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
 
                                 <input type="hidden" name="qualification" value="NA">
                                 <input type="text" name="our_custom" style="display:none;" value="digicrome">
                                 <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                                 <input type="hidden" name="experience" value="NA">
-                                <input type="hidden" name="aiss" value="">
+                                <input type="hidden" name="ib" value="">
 
                                 <!-- Other hidden fields -->
                                 <input type="hidden" name="page_name" value="{{ $course->name }}">

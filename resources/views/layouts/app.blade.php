@@ -33,7 +33,13 @@
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                 <input type="text" name="address" placeholder="City" required
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-                <input type="hidden" name="title" value="NA">
+                <select name="title" class="form-select" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+                    <option value="" disabled selected style="color: #999;">Select Course</option>
+                    <option value="DS">Data Science</option>
+                    <option value="AISS">AI Security Online </option>
+                    <option value="other">Other</option>
+                </select>
+                {{-- <input type="hidden" name="title" value="NA"> --}}
                 <input type="text" name="our_custom" style="display:none;" value="digicrome">
                 <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                 <input type="hidden" name="profession" value="NA">
@@ -73,7 +79,13 @@
                         style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                     <input type="text" name="address" placeholder="City" required
                         style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-                    <input type="hidden" name="title" value="NA">
+                    <select name="title" class="form-select" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+                        <option value="" disabled selected style="color: #999;">Select Course</option>
+                        <option value="DS">Data Science</option>
+                        <option value="AISS">AI Security Online </option>
+                        <option value="other">Other</option>
+                    </select>
+                    {{-- <input type="hidden" name="title" value="NA"> --}}
                     <input type="text" name="our_custom" style="display:none;" value="digicrome">
                     <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                     <input type="hidden" name="profession" value="NA">
