@@ -1475,8 +1475,8 @@
                             class="form-control custom-lead-input" required>
                         <select name="title" class="form-select custom-lead-input" required>
                             <option value="" disabled selected style="color: #999;">Select Course</option>
-                            <option value="DS">Data Science</option>
-                            <option value="AISS">AI Security Online </option>
+                            <option value="DS">Data Science & AI</option>
+                            <option value="AISS">Cyber Security</option>
                             <option value="other">Other</option>
                         </select>
                         <!-- Hidden Fields -->
@@ -1633,8 +1633,8 @@
                                 <div class="col-12">
                                     <select name="title" class="form-select custom-reg-input" required>
                                         <option value="" disabled selected style="color: #999;">Select Course</option>
-                                        <option value="DS">Data Science</option>
-                                        <option value="AISS">AI Security Online </option>
+                                        <option value="DS">Data Science & AI</option>
+                                        <option value="AISS">Cyber Security</option>
                                         <option value="other">Other</option>
                                     </select>
                                 </div>

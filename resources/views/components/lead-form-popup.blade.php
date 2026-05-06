@@ -154,8 +154,8 @@
                   <div class="form-field">
                     <select name="title" class="form-select" required>
                         <option value="" disabled selected style="color: #999;">Select Course</option>
-                        <option value="DS">Data Science</option>
-                        <option value="AISS">AI Security Online </option>
+                        <option value="DS">Data Science & AI</option>
+                        <option value="AISS">Cyber Security</option>
                         <option value="other">Other</option>
                     </select>
                   </div>

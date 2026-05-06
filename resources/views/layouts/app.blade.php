@@ -35,8 +35,8 @@
                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                 <select name="title" class="form-select" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                     <option value="" disabled selected style="color: #999;">Select Course</option>
-                    <option value="DS">Data Science</option>
-                    <option value="AISS">AI Security Online </option>
+                    <option value="DS">Data Science & AI</option>
+                    <option value="AISS">Cyber Security</option>
                     <option value="other">Other</option>
                 </select>
                 {{-- <input type="hidden" name="title" value="NA"> --}}
@@ -81,8 +81,8 @@
                         style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                     <select name="title" class="form-select" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
                         <option value="" disabled selected style="color: #999;">Select Course</option>
-                        <option value="DS">Data Science</option>
-                        <option value="AISS">AI Security Online </option>
+                        <option value="DS">Data Science & AI</option>
+                        <option value="AISS">Cyber Security</option>
                         <option value="other">Other</option>
                     </select>
                     {{-- <input type="hidden" name="title" value="NA"> --}}
