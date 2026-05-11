@@ -156,5 +156,4 @@ class LeadsController extends Controller
         // Redirect to thank you with brochure URL in session
         return redirect()->route('thankyou')->with('brochure', $brochureUrl);
     }
-
 }
