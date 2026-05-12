@@ -36,6 +36,7 @@
                             <option value="tools">Tools</option>
                             <option value="gallery">Gallery</option>
                             <option value="certificate">Certificate</option>
+                            <option value="media">Media</option>
                         </select>
                     </div>
                     <div class="mb-3" id="add_course_selector" style="display:none;">

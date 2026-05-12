@@ -560,3 +560,19 @@
             </script>
         </section>
     @endif --}}
+ {{-- <div class="hero-section">
+        <div class="hero-section" style="position: relative;">
+            <picture>
+                <source media="(max-width: 768px)"
+                    srcset="
+                    {{ asset('assets/images/home-one/ai-summit-480.webp') }} 480w,
+                    {{ asset('assets/images/home-one/ai-summit-768.webp') }} 768w
+                "
+                    sizes="100vw">
+                <source type="image/avif" srcset="{{ asset('assets/images/home-one/ai-summit.avif') }}">
+                <source type="image/webp" srcset="{{ asset('assets/images/home-one/ai-summit.webp') }}">
+                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="Hero Banner" width="1200"
+                    height="400" decoding="async" style="width:100%;height:auto;">
+            </picture>
+        </div>
+    </div> --}}

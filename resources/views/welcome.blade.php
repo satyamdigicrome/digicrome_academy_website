@@ -255,33 +255,50 @@
             </div>
         </div>
     </section>
-    <div class="hero-section">
-        <div class="hero-section" style="position: relative;">
-            <picture>
-                {{-- Mobile --}}
-                <source media="(max-width: 768px)"
-                    srcset="
-                    {{ asset('assets/images/home-one/ai-summit-480.webp') }} 480w,
-                    {{ asset('assets/images/home-one/ai-summit-768.webp') }} 768w
-                "
-                    sizes="100vw">
-                {{-- AVIF Desktop --}}
-                <source type="image/avif" srcset="{{ asset('assets/images/home-one/ai-summit.avif') }}">
-
-                {{-- WebP Desktop Fallback --}}
-                <source type="image/webp" srcset="{{ asset('assets/images/home-one/ai-summit.webp') }}">
-                {{-- <source srcset="{{ asset('assets/images/home-one/ai-summit-mob2.webp') }}" media="(max-width: 768px)"> --}}
-                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="Hero Banner" width="1200"
-                    height="400" decoding="async" style="width:100%;height:auto;">
-            </picture>
-        </div>
-        {{-- <div class="container">
-            <div class="both-btn">
-                <button type="button" class="btn button-repfirst" onclick="openModal()" style="">
-                    CONNECT WITH US
-                </button>
+    <div class="course-design-offer-area style-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="width:100%; max-width:600px;">
+                        <iframe loading="lazy"
+                            src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
+                            width="100%" height="340" frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-course-offer-box">
+                        <div class="course-offer-content">
+                            <h6>Digicrome</h6>
+                            <h4>Data Science With</h4>
+                            <h4>Artificial Intelligence</h4>
+                            <div class="offer-rating">
+                                <ul>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
+                                </ul>
+                                <div class="offer-rating-rate">
+                                    <span>(4.8 Ratings)</span>
+                                </div>
+                                <br><br>
+                            </div>
+                            <div class="course-offer-btn">
+                                <a href="javascript:void(0);" onclick="openModal()">EXPLORE NOW<i
+                                        class="flaticon flaticon-right-arrow"></i></a>
+                            </div>
+                        </div>
+                        <div class="offer-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
+                                alt="offer-thumb" title="offer-thumb">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div> --}}
+        </div>
     </div>
     {{-- <section class="ai-banner-section">
 
@@ -838,51 +855,6 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="course-design-offer-area style-one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div style="width:100%; max-width:600px;">
-                        <iframe loading="lazy"
-                            src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
-                            width="100%" height="340" frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-course-offer-box">
-                        <div class="course-offer-content">
-                            <h6>Digicrome</h6>
-                            <h4>Data Science With</h4>
-                            <h4>Artificial Intelligence</h4>
-                            <div class="offer-rating">
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-                                </ul>
-                                <div class="offer-rating-rate">
-                                    <span>(4.8 Ratings)</span>
-                                </div>
-                                <br><br>
-                            </div>
-                            <div class="course-offer-btn">
-                                <a href="javascript:void(0);" onclick="openModal()">EXPLORE NOW<i
-                                        class="flaticon flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                        <div class="offer-thumb">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
-                                alt="offer-thumb" title="offer-thumb">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1693,7 +1665,7 @@
                                     <div class="blog-title">
                                         <h3>
                                             <a href="{{ route('blog.details', $blog->slug) }}">
-                                                {{ $blog->heading }}
+                                                {{ Str::words($blog->heading, 7, '...') }}
                                             </a>
                                         </h3>
                                     </div>
