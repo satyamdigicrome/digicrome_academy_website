@@ -525,7 +525,7 @@
         <div class="container">
             <div class="owl-carousel mentor-carousel">
                 @foreach ($articles as $article)
-                    <div class="card h-100 shadow-sm rounded-4 p-2 mb-4">
+                    <div class="card h-40 shadow-sm rounded-4 p-2 mb-4">
                         <img src="{{ asset('uploads/articles/' . $article->image) }}" class="card-img-top rounded-4"
                             alt="Article Image">
                         <div class="card-body d-flex flex-column">
