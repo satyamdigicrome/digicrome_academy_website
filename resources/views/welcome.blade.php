@@ -604,6 +604,7 @@
             </div>
         </div>
     </div>
+    {{-- @include('components.certification_partners_compact', ['certificate'=>$certificate]) --}}
     <div class="case-study-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">

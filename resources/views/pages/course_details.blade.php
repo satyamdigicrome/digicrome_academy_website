@@ -1661,6 +1661,20 @@
         </div>
         <!-- Styles -->
         <style>
+            .modal-content{
+               width: 420px;
+               transform: translateY(-30px);
+               opacity: 0;
+               margin: 6% auto;
+               animation: slideDownFadeIn 0.4s forwards ease-in-out;
+            }
+            @keyframes slideDownFadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+                    
             .modal-container {
                 display: none;
                 position: fixed;

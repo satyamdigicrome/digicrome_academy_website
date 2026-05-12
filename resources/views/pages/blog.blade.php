@@ -9,6 +9,7 @@
             height: auto;
             display: block;
         }
+
         .paginations {
             text-align: center;
         }
@@ -55,6 +56,15 @@
             pointer-events: none;
         }
     </style>
+@endpush
+@push('scripts')
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                openModal();
+            }, 3000)
+        });
+    </script>
 @endpush
 @section('content')
     @include('components.lead-form-popup')

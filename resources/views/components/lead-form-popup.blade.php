@@ -1,196 +1,203 @@
 <style>
-    /* Modal Background */
-    #formModal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.5);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      backdrop-filter: blur(5px);
+    /* Modal Background - Scoped */
+    #formModal.df-modal-overlay {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        backdrop-filter: blur(4px);
     }
-  
-    /* Modal Content */
-    .modal-content {
-      background: #fff;
-      margin: 6% auto;
-      border-radius: 15px;
-      width: 420px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      color: #111;
-      position: relative;
-      opacity: 0;
-      transform: translateY(-30px);
-      animation: slideDownFadeIn 0.4s forwards ease-in-out;
-    }
-  
-    @keyframes slideDownFadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  
-    /* Header */
-    .modal-header {
-      font-weight: 700;
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: #222;
-      text-align: center;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 12px;
-    }
-    .modal-header .phone {
-      font-weight: 600;
-      font-size: 16px;
-      color: #555;
-      margin-top: 4px;
-    }
-  
-    /* Close button */
-    .close-btn {
-      position: absolute;
-      top: 18px;
-      right: 22px;
-      font-size: 28px;
-      font-weight: 700;
-      color: #888;
-      cursor: pointer;
-      user-select: none;
-      transition: color 0.2s ease;
-    }
-    .close-btn:hover {
-      color: #000;
-    }
-  
-    /* Form */
-    form.form {
-      width: 100%;
-      margin-top: 20px;
-    }
-  
-    form h2 {
-      color: #333;
-      margin-bottom: 20px;
-      font-weight: 600;
-      text-align: center;
-    }
-  
-    /* Input fields */
-    .form-field {
-      margin-bottom: 18px;
-    }
-    input[type="text"],
-    input[type="tel"],
-    input[type="email"] {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 8px;
-      border: 1.8px solid #ddd;
-      /* background: #fafafa; */
-      color: #222;
-      font-size: 15px;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      outline: none;
-      box-shadow: inset 2px 2px 5px #eee, inset -2px -2px 5px #fff;
-    }
-    input[type="text"]::placeholder,
-    input[type="tel"]::placeholder,
-    input[type="email"]::placeholder {
-      color: #bbb;
-    }
-    input[type="text"]:focus,
-    input[type="tel"]:focus,
-    input[type="email"]:focus {
-      border-color: #222;
-      box-shadow: 0 0 8px #ddd;
-      /* background: #fff; */
-    }
-  
-    /* Submit Button */
-    button[type="submit"] {
-      width: 100%;
-      padding: 14px;
-      background: #222;
-      border: none;
-      border-radius: 10px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-    button[type="submit"]:hover {
-      background: #444;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    }
-  
-  </style>
-  
-  <div id="formModal" class="modal" aria-modal="true" role="dialog" aria-labelledby="modalTitle">
-      <div class="modal-content">
-          <div class="modal-body" style="padding: 0px;">
-            <span class="close-btn" onclick="closeModal()" aria-label="Close modal">&times;</span>
 
-              <form class="form" method="post" action="https://demo.digicrome.in/post_lead.php" novalidate>
-                  @csrf
-                  <h2 id="modalTitle" style="color: #000">Welcome to Digicrome</h2>
-                  <div class="form-field">
-                      <input type="text" id="name" name="name" placeholder="Name" required autocomplete="name" />
-                  </div>
-                  <div class="form-field">
-                      <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" required autocomplete="tel" />
-                  </div>
-                  <div class="form-field">
-                      <input type="email" id="gmail" name="email" placeholder="E-mail ID" required autocomplete="email" />
-                  </div>
-                  <div class="form-field">
-                      <input type="text" id="address" name="address" placeholder="City" required autocomplete="address" />
-                  </div>
-                  <div class="form-field">
-                    <select name="title" class="form-select" required>
-                        <option value="" disabled selected style="color: #999;">Select Course</option>
+    /* Modal Content - Scoped */
+    .df-modal-container {
+        background: #fff;
+        margin: 4% auto;
+        border-radius: 12px;
+        width: 340px; /* Compact width */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+        animation: dfScaleIn 0.3s ease-out;
+    }
+
+    @keyframes dfScaleIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .df-modal-header {
+        background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        padding: 15px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .df-modal-header h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: #fff !important; /* Force color to prevent override */
+    }
+
+    .df-close-x {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .df-close-x:hover { color: #fff; }
+
+    .df-form-body {
+        padding: 20px;
+    }
+
+    .df-input-group {
+        margin-bottom: 12px;
+    }
+
+    /* SPECIFIC CLASS NAMES to avoid tag-based styling */
+    .df-input-field {
+        width: 100% !important;
+        padding: 10px 12px !important;
+        border-radius: 6px !important;
+        border: 1px solid #ddd !important;
+        background-color: #fcfcfc !important;
+        color: #333 !important;
+        font-size: 14px !important;
+        box-sizing: border-box !important;
+        outline: none !important;
+        transition: border 0.2s !important;
+        display: block !important;
+    }
+
+    .df-input-field:focus {
+        border-color: #f39c12 !important;
+        background-color: #fff !important;
+    }
+
+    /* Dropdown specific */
+    select.df-input-field {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 12px center !important;
+    }
+
+    .df-btn-submit {
+        width: 100%;
+        padding: 12px;
+        background: #f39c12;
+        border: none;
+        border-radius: 6px;
+        color: #fff !important;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: background 0.2s;
+    }
+
+    .df-btn-submit:hover {
+        background: #e67e22;
+    }
+
+    .df-footer-caption {
+        font-size: 11px;
+        color: #999;
+        text-align: center;
+        margin-top: 15px;
+    }
+</style>
+
+<div id="formModal" class="df-modal-overlay">
+    <div class="df-modal-container">
+        <span class="df-close-x" onclick="closeModal()">&times;</span>
+
+        <div class="df-modal-header">
+            <h2 id="modalTitle">Get a Quick Call</h2>
+        </div>
+
+        <div class="df-form-body">
+            <form class="form" method="post" action="https://demo.digicrome.in/post_lead.php">
+                @csrf
+
+                <div class="df-input-group">
+                    <input type="text" id="name" name="name" class="df-input-field" placeholder="Name" required autocomplete="name" />
+                </div>
+
+                <div class="df-input-group">
+                    <input type="tel" id="mobile" name="mobile" class="df-input-field" placeholder="Mobile Number" required autocomplete="tel" />
+                </div>
+
+                <div class="df-input-group">
+                    <input type="email" id="gmail" name="email" class="df-input-field" placeholder="E-mail ID" required autocomplete="email" />
+                </div>
+
+                <div class="df-input-group">
+                    <input type="text" id="address" name="address" class="df-input-field" placeholder="City" required autocomplete="address" />
+                </div>
+
+                <div class="df-input-group">
+                    <select name="title" class="df-input-field" required>
+                        <option value="" disabled selected>Select Course</option>
                         <option value="DS">Data Science & AI</option>
                         <option value="AISS">Cyber Security</option>
                         <option value="other">Other</option>
                     </select>
-                  </div>
-                  <input type="hidden" name="title" value="NA" />
-                  <input type="text" name="our_custom" style="display:none;" value="digicrome">
-                  <input type="hidden" name="form_time" value="<?php echo time(); ?>">
-                  <input type="hidden" name="profession" value="NA" />
-                  <input type="hidden" name="source" value="Home Page" />
-                  <input type="hidden" name="country" value="india" />
-                  <input type="hidden" name="comp_name" value="" />
-                  <input type="hidden" name="state" value="" />
-                  <input type="hidden" name="aiss" value="">
-                  <input type="hidden" name="altr_mobile" value="" />
-                  <button type="submit" aria-label="Submit form" style="background-color: green" >Submit</button>
-              </form>
-          </div>
-      </div>
-  </div>
-  
-  <script>
+                </div>
+
+                <input type="text" name="our_custom" style="display:none;" value="digicrome">
+                <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+                <input type="hidden" name="profession" value="NA" />
+                <input type="hidden" name="source" value="Home Page" id="sourceInput" />
+                <input type="hidden" name="country" value="india" />
+                <input type="hidden" name="comp_name" value="" />
+                <input type="hidden" name="state" value="" />
+                <input type="hidden" name="aiss" value="">
+                <input type="hidden" name="altr_mobile" value="" />
+                
+                <button type="submit" class="df-btn-submit">Submit</button>
+                <p class="df-footer-caption">Expert assistance is just a click away.</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const currentUrl = window.location.href.toLowerCase();
+        const sourceField = document.getElementById('sourceInput');
+
+        if (sourceField) {
+            if (currentUrl.includes('course')) {
+                sourceField.value = 'Website (Course)';
+            } else if (currentUrl.includes('blog')) {
+                sourceField.value = 'Website (Blog)';
+            }
+        }
+    });
+
     function openModal() {
-      const modal = document.getElementById("formModal");
-      modal.style.display = "block";
-      // Trigger reflow to restart animation if needed
-      void modal.offsetWidth;
-      // Add animation class (already handled by CSS animation)
+        document.getElementById("formModal").style.display = "block";
     }
+
     function closeModal() {
-      document.getElementById("formModal").style.display = "none";
+        document.getElementById("formModal").style.display = "none";
     }
+
     window.onclick = function(event) {
-      const modal = document.getElementById("formModal");
-      if (event.target === modal) {
-        closeModal();
-      }
+        const modal = document.getElementById("formModal");
+        if (event.target === modal) {
+            closeModal();
+        }
     };
-  </script>
-  
+</script>

@@ -3,7 +3,15 @@
 @section('title', $blog->meta_title ?? $blog->heading)
 @section('meta_description', $blog->meta_description ?? 'Digicrome')
 @section('meta_keywords', $blog->meta_keywords ?? 'Digicrome')
-
+@push('scripts')
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                openModal();
+            }, 3000)
+        });
+    </script>
+@endpush
 @section('content')
     @include('components.lead-form-popup')
 
