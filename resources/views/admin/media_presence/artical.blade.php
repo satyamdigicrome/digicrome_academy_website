@@ -18,6 +18,11 @@
         </div>
 
         <div class="form-group mb-3">
+            <label for="description">Description:</label>
+            <textarea type="text" name="description" class="form-control" required></textarea>
+        </div>
+
+        <div class="form-group mb-3">
             <label for="link">Link:</label>
             <input type="url" name="link" class="form-control" required>
         </div>

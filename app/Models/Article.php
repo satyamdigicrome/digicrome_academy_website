@@ -8,5 +8,5 @@ class Article extends Model
 {
     protected $table = 'articals';
 
-    protected $fillable = ['image', 'heading', 'link', 'date'];
+    protected $fillable = ['image', 'heading', 'description', 'link', 'date'];
 }

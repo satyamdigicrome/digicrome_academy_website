@@ -81,6 +81,7 @@ class MediaPresenceController extends Controller
         $request->validate([
             'image' => 'required|image',
             'heading' => 'required|string',
+            'description' => 'required|string',
             'link' => 'required|url',
             'date' => 'required|date',
         ]);
@@ -91,6 +92,7 @@ class MediaPresenceController extends Controller
         Article::create([
             'image' => $imageName,
             'heading' => $request->heading,
+            'description' => $request->description,
             'link' => $request->link,
             'date' => $request->date,
         ]);

@@ -40,7 +40,6 @@
                     <option value="AISS">Cyber Security</option>
                     <option value="other">Other</option>
                 </select>
-                {{-- <input type="hidden" name="title" value="NA"> --}}
                 <input type="text" name="our_custom" style="display:none;" value="digicrome">
                 <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                 <input type="hidden" name="profession" value="NA">
@@ -87,7 +86,6 @@
                         <option value="AISS">Cyber Security</option>
                         <option value="other">Other</option>
                     </select>
-                    {{-- <input type="hidden" name="title" value="NA"> --}}
                     <input type="text" name="our_custom" style="display:none;" value="digicrome">
                     <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                     <input type="hidden" name="profession" value="NA">

@@ -1484,7 +1484,6 @@
                         <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                         <input type="hidden" name="source" value="Website(broucher)">
                         <input type="hidden" name="ib" value="">
-                        {{-- <input type="hidden" name="title" value="NA"> --}}
                         <input type="hidden" name="profession" value="NA">
 
                         <button type="submit" style="background: green;"

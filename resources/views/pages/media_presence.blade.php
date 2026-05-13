@@ -290,23 +290,28 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
         @media (max-width: 576px) {
             .logo-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .about-text p {
                 font-size: 0.95rem;
             }
+
             .about-image-wrapper {
                 margin-top: 20px;
             }
         }
+
         .video-section {
             background-color: #0a1931;
             color: #ffffff;
             position: relative;
             overflow: hidden;
         }
+
         .video-section::before {
             content: "";
             position: absolute;
@@ -318,11 +323,13 @@
             opacity: 0.1;
             pointer-events: none;
         }
+
         .video-section-title {
             font-weight: 700;
             font-size: 1.8rem;
             color: #ffffff;
         }
+
         .see-all-link {
             color: #ffffff;
             text-decoration: none;
@@ -330,9 +337,11 @@
             font-size: 0.9rem;
             transition: color 0.3s;
         }
+
         .see-all-link:hover {
             color: #f39c12;
         }
+
         .main-video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -341,6 +350,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
+
         .main-video-container iframe {
             position: absolute;
             top: 0;
@@ -348,6 +358,7 @@
             width: 100%;
             height: 100%;
         }
+
         .thumb-video {
             position: relative;
             padding-bottom: 56.25%;
@@ -358,9 +369,11 @@
             border: 2px solid transparent;
             transition: border-color 0.3s;
         }
+
         .thumb-video:hover {
             border-color: #f39c12;
         }
+
         .thumb-video iframe {
             position: absolute;
             top: 0;
@@ -368,6 +381,7 @@
             width: 100%;
             height: 100%;
         }
+
         .video-description-box p {
             line-height: 1.6;
             font-size: 1rem;
@@ -379,12 +393,89 @@
             .video-section-title {
                 font-size: 1.4rem;
             }
+
             .video-description-box {
                 text-align: center;
             }
+
             .video-description-box img {
                 margin: 0 auto 10px auto !important;
             }
+        }
+
+        .story-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .media-logo-wrapper {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .story-link {
+            color: #ff5722 !important;
+            /* Brand orange color from reference image */
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+        }
+
+        .story-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .more-stories-btn {
+            color: #ff5722;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .more-stories-btn:hover {
+            color: #e64a19;
+        }
+
+        /* Standardizes the description height for clean grid alignment */
+        .story-content p {
+            min-height: 80px;
+        }
+
+        .story-item {
+            transition: opacity 0.4s ease;
+        }
+
+        .more-stories-btn {
+            color: #ff5722;
+            /* Your brand orange from the reference image */
+            font-size: 1.1rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .more-stories-btn:hover {
+            color: #e64a19;
+        }
+
+        .story-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        .story-link {
+            color: #ff5722 !important;
+            text-decoration: none;
         }
     </style>
 @endpush
@@ -469,7 +560,8 @@
             <div class="row g-4">
                 <div class="col-lg-7">
                     <div class="main-video-container">
-                        <iframe src="https://www.youtube.com/embed/9KSsPoegNCM?si=x8iJVa_MRTx3_Z_t" title="YouTube video player" frameborder="0"
+                        <iframe src="https://www.youtube.com/embed/9KSsPoegNCM?si=x8iJVa_MRTx3_Z_t"
+                            title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -483,8 +575,12 @@
                             <h4 class="mb-0 text-white fs-3 fw-3">Excellence in EdTech | Digicrome</h4>
                         </div>
                         <p class="text-light">
-                            Nowadays, without coding, we cannot imagine any digital elements. Coding has become a crucial part of tasks like developing websites, mobile applications, and other software. Coding skills are crucial and in demand now. The opportunities in every tech field are increasing day by day.
-                            <br><br> Digicrome is the solution here. We consist of a number of courses like Data Science with AI, AI Security, Machine Learning, and Cybersecurity programs. These in-demand courses ensure your career in the growing job market in the 21st century.
+                            Nowadays, without coding, we cannot imagine any digital elements. Coding has become a crucial
+                            part of tasks like developing websites, mobile applications, and other software. Coding skills
+                            are crucial and in demand now. The opportunities in every tech field are increasing day by day.
+                            <br><br> Digicrome is the solution here. We consist of a number of courses like Data Science
+                            with AI, AI Security, Machine Learning, and Cybersecurity programs. These in-demand courses
+                            ensure your career in the growing job market in the 21st century.
                         </p>
                     </div>
                 </div>
@@ -521,25 +617,51 @@
         </div>
     </section>
 
+    <!-- Stories Section -->
+    <!-- Stories Section -->
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="owl-carousel mentor-carousel">
+            <h2 class="fw-bold mb-4" style="font-size: 2rem; color: #333;">Stories</h2>
+
+            <div class="row g-4" id="stories-grid">
                 @foreach ($articles as $article)
-                    <div class="card shadow-sm rounded-4 p-2 mb-4" style="height: 40%;">
-                        <img src="{{ asset('uploads/articles/' . $article->image) }}" class="card-img-top rounded-4"
-                            alt="Article Image">
-                        <div class="card-body d-flex flex-column">
-                            <h5 style="line-height: 29px;" class="card-title">{{ $article->heading }}</h5>
-                            <p class="card-text text-muted small mb-2">Date:
-                                {{ \Carbon\Carbon::parse($article->date)->format('F d, Y') }}</p>
-                            <div class="mt-auto text-center">
-                                <a href="{{ $article->link }}" class="read-article-link" target="_blank" rel="nofollow">Read
-                                    Article</a>
+                    <!-- Hide items with index 6 or higher (7th item onwards) -->
+                    <div class="col-md-6 col-lg-4 story-item {{ $loop->index >= 6 ? 'd-none' : '' }}">
+                        <div class="story-card h-100 shadow-sm border-0 rounded-3 bg-white p-4 d-flex flex-column">
+                            <div class="media-logo-wrapper mb-3">
+                                <img src="{{ asset('uploads/articles/' . $article->image) }}" alt="{{ $article->heading }}"
+                                    class="img-fluid" style="max-height: 40px; object-fit: contain;">
+                            </div>
+
+                            <div class="story-content mb-4">
+                                <h5 class="fw-bold mb-3" style="color: #333; line-height: 1.4;">
+                                    {{ $article->heading }}
+                                </h5>
+                                <p class="text-muted small"
+                                    style="line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+                                    {!! strip_tags($article->description) !!}
+                                </p>
+                            </div>
+
+                            <div class="mt-auto">
+                                <a href="{{ $article->link }}" class="story-link fw-bold" target="_blank" rel="nofollow">
+                                    See More
+                                </a>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
+
+            <!-- Toggle Button Container -->
+            @if (count($articles) > 6)
+                <div class="text-center mt-5">
+                    <button id="toggle-stories-btn" class="more-stories-btn fw-bold border-0 bg-transparent">
+                        <span class="btn-text">More Stories</span>
+                        <i class="fa fa-chevron-down ms-1 btn-icon"></i>
+                    </button>
+                </div>
+            @endif
         </div>
     </section>
 
@@ -565,44 +687,66 @@
         @endforeach
     </div>
 @endsection
-
-<script>
-    $(document).ready(function() {
-        $(".mentor-carousel").owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: false,
-            dots: true,
-            autoplay: true,
-            autoplayTimeout: 4000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $(".hero-slider").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                nav: true,
+                dots: true,
+                navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    }
                 }
-            }
+            });
         });
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('toggle-stories-btn');
+            const storyItems = document.querySelectorAll('.story-item');
+            const btnText = toggleBtn.querySelector('.btn-text');
+            const btnIcon = toggleBtn.querySelector('.btn-icon');
 
-        $(".hero-slider").owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            nav: true,
-            dots: true,
-            navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: true
+            let isExpanded = false;
+
+            toggleBtn.addEventListener('click', function() {
+                isExpanded = !isExpanded;
+
+                storyItems.forEach((item, index) => {
+                    if (index >= 6) {
+                        if (isExpanded) {
+                            item.classList.remove('d-none');
+                            // Add a small fade-in effect
+                            item.style.opacity = 0;
+                            setTimeout(() => {
+                                item.style.opacity = 1;
+                                item.style.transition = 'opacity 0.5s';
+                            }, 10);
+                        } else {
+                            item.classList.add('d-none');
+                        }
+                    }
+                });
+
+                // Update Button UI
+                if (isExpanded) {
+                    btnText.textContent = 'Less Stories';
+                    btnIcon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    // Smooth scroll back to section top if closing (optional)
+                } else {
+                    btnText.textContent = 'More Stories';
+                    btnIcon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    document.getElementById('stories-grid').scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
-            }
+            });
         });
-    });
-</script>
+    </script>
+@endpush
