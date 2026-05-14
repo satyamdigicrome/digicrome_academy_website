@@ -560,7 +560,7 @@
             <div class="row g-4">
                 <div class="col-lg-7">
                     <div class="main-video-container">
-                        <iframe src="https://www.youtube.com/embed/9KSsPoegNCM?si=x8iJVa_MRTx3_Z_t"
+                        <iframe src="https://www.youtube.com/embed/S0WM-6DiIdM?si=z3QUcDBAv8sopP3x"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -589,13 +589,13 @@
                     <div class="row g-3">
                         <div class="col-6 col-md-3">
                             <div class="thumb-video">
-                                <iframe src="https://www.youtube.com/embed/Kyv3WSiPUIw?si=-s0IJBTBg3r2ieiN" frameborder="0"
+                                <iframe src="https://www.youtube.com/embed/9KSsPoegNCM?si=x8iJVa_MRTx3_Z_t" frameborder="0"
                                     allowfullscreen></iframe>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
                             <div class="thumb-video">
-                                <iframe src="https://www.youtube.com/embed/HLiQiTTbX8g?si=SFl0FuGB4xKekMCz" frameborder="0"
+                                <iframe src="https://www.youtube.com/embed/Kyv3WSiPUIw?si=-s0IJBTBg3r2ieiN" frameborder="0"
                                     allowfullscreen></iframe>
                             </div>
                         </div>
