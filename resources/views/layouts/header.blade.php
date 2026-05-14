@@ -181,14 +181,14 @@
                     <div class="header-btn">
                         <a href="javascript:void(0);"
                             onclick="{{ Route::is('course_details') ? 'openModal(\'applyNowPopup\')' : 'openModal()' }}"
-                            style="display: inline-block; 
-          border: 2px solid #fff; 
-          color: #fff; 
-          background-color: #1c1647; 
-          padding: 8px 20px; 
-          font-size: 14px; 
-          white-space: nowrap; 
-          min-width: 120px; 
+                            style="display: inline-block;
+          border: 2px solid #fff;
+          color: #fff;
+          background-color: #1c1647;
+          padding: 8px 20px;
+          font-size: 14px;
+          white-space: nowrap;
+          min-width: 120px;
           text-align: center;">
                             ENROLL NOW
                         </a>
@@ -232,14 +232,10 @@
                     alt="logo">
             </div>
             <ul class="nav_scroll">
-                <li><a href="/">Home</a>
-
-                </li>
-                <li><a href="{{ route('about') }}">about</a></li>
-
-                <li><a href="#">courses<i class="bi bi-chevron-down"></i></a>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ route('about') }}">About</a></li>
+                <li><a href="#">Courses<i class="bi bi-chevron-down"></i></a>
                     <ul class="sub_menu">
-
                         <li>
                             <a href="{{ route('course.category', 'data-science-course') }}">
                                 Data Science with Artificial Intelligence
@@ -264,25 +260,19 @@
                         @endforeach
                     </ul>
                 </li>
-
-                <li><a href="{{ route('corporate_services') }}">Corporate Services </a>
-                <li><a href="{{ route('blog') }}">Blog</a>
-                <li><a href="{{ route('payments') }}">Payments </a>
-
-                </li>
+                <li><a href="{{ route('success_stories') }}">Success stories</a></li>
+                <li><a href="{{ route('blog') }}">Blog</a></li>
+                <li><a href="{{ route('payments') }}">Payments </a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
                 <li><a href="#">More<i class="bi bi-chevron-down"></i></a>
                     <ul class="sub_menu">
                         <li><a href="{{ route('who_we_are') }}">Who we are</a></li>
-                        <li><a href="{{ route('success_stories') }}">Success stories</a></li>
+                        <li><a href="{{ route('corporate_services') }}">Corporate Services </a></li>
                         <li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
                         <li><a href="{{ route('career') }}">Career</a></li>
-                        <li><a href="{{ route('media_presence') }}">Media Presence</a>
-                        </li>
-
+                        <li><a href="{{ route('media_presence') }}">Media Presence</a></li>
                     </ul>
                 </li>
-
             </ul>
         </nav>
     </div>
