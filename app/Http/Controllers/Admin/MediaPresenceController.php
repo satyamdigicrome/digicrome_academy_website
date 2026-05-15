@@ -100,6 +100,38 @@ class MediaPresenceController extends Controller
         return redirect()->back()->with('success', 'Article added successfully!');
     }
 
+    public function articalupdate(Request $request, $id)
+    {
+        $article = Article::findOrFail($id);
+
+        $request->validate([
+            'image' => 'nullable|image',
+            'heading' => 'required|string',
+            'description' => 'required|string',
+            'link' => 'required|url',
+            'date' => 'required|date',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = public_path('uploads/articles/' . $article->image);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads/articles'), $imageName);
+            $article->image = $imageName;
+        }
+
+        $article->heading = $request->heading;
+        $article->description = $request->description;
+        $article->link = $request->link;
+        $article->date = $request->date;
+        $article->save();
+
+        return redirect()->back()->with('success', 'Article updated successfully!');
+    }
+
     public function articaldelete($id)
     {
         $article = Article::findOrFail($id);

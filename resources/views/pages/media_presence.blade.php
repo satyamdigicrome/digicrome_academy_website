@@ -218,8 +218,8 @@
 
         .logo-item {
             background: #fff;
-            border: 1px solid #eee;
-            padding: 15px;
+            /* border: .5px solid #eee; */
+            /* padding: 5px; */
             width: 100%;
             height: 150px;
             display: flex;
@@ -235,7 +235,7 @@
 
         .logo-item img {
             max-height: 100%;
-            filter: grayscale(100%);
+            /* filter: grayscale(100%); */
             opacity: 0.7;
             transition: all 0.3s;
         }

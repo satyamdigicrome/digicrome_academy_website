@@ -212,6 +212,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/admin/media-presence/delete/{id}', [AdminMediaPresenceController::class, 'destroy'])->name('media.delete');
         Route::get('/admin/media/article', [AdminMediaPresenceController::class, 'show'])->name('articalshow');
         Route::post('/admin/media/article/store', [AdminMediaPresenceController::class, 'articalstore'])->name('articalstore');
+        Route::put('/admin/media/article/{id}', [AdminMediaPresenceController::class, 'articalupdate'])->name('articalupdate');
         Route::delete('/admin/media/article/delete/{id}', [AdminMediaPresenceController::class, 'articaldelete'])->name('articaldelete');
     });
 
