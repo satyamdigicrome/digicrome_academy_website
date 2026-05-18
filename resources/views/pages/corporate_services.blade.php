@@ -414,7 +414,7 @@
             <div class="row g-4 text-center">
                 <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="stat-item">
-                        <span class="stat-number counter" data-target="500">0</span><span>+</span>
+                        <span class="stat-number counter" data-target="5000">0</span><span>+</span>
                         <div class="stat-label">Happy Clients</div>
                     </div>
                 </div>
