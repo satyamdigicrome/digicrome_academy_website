@@ -5,179 +5,173 @@
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 
 @section('content')
-@include('components.lead-form-popup')
+    @include('components.lead-form-popup')
 
-<style>
-	.contact-img {
-		padding: 346px 0 135px;
-	}
-	#sticky-header {
-		margin-bottom: 80px !important;
-	}
-</style>
-<!--==================================================-->
-<!-- Start educate Breadcumb Area -->
-<!--==================================================-->
-<style>
-	.contact-img {
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		width: 100%;
-		height: 300px;
-		/* Default height for desktop */
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+    <style>
+        .contact-img {
+            padding: 432px 0 136px;
+        }
 
-	@media (max-width: 768px) {
-		.contact-img {
-			height: 180px;
-			/* Smaller height for mobile */
-		}
-	}
-</style>
+        #sticky-header {
+            margin-bottom: 80px !important;
+        }
+    </style>
+    <!--==================================================-->
+    <!-- Start educate Breadcumb Area -->
+    <!--==================================================-->
+    <style>
+        .contact-img {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 300px;
+            /* Default height for desktop */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('{{ asset('assets/images/contactnew.webp') }}');
+        }
 
-<div class="contact-img d-flex" style="background-image: url('{{ asset('assets/images/cotn.webp') }}')">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-12">
-				<div class="breadcumb-content">
-							<div class="breadcumb-title">
-								<h1 style="color: #fff; margin-bottom: 210px ;">Contact Us</h1>
-							</div>
-							{{-- <ul>
-								<li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-								<li>Contact</li>
-							</ul> --}}
-						</div>
-			</div>
-		</div>
-		{{-- <div class="breadcumb-shape">
-					<img loading="lazy"src="assets/images/inner-img/breadcumb-dot.webp" alt="dot">
-				</div>
-				<div class="breadcumb-shape2">
-					<img loading="lazy"src="assets/images/inner-img/breadcumb-ball.webp" alt="ball">
-				</div> --}}
-	</div>
-</div>
-<!--==================================================-->
-<!-- End educate Breadcumb Area -->
-<!--==================================================-->
-<div id="main">
+        @media (max-width: 768px) {
+            .contact-img {
+                height: 180px;
+                background-image: url('{{ asset('assets/images/contactnewmob.webp') }}');
+                padding:0px;
+            }
+        }
+    </style>
 
-	<h2 class="text-center mb-2" style="font-size: 2rem; margin-top: 15px;">
-		Contact Digicrome <span style="color: #f29c12;">Support</span> at  01204538125 / +91 6299 611 702
-	</h2>
-	<p class="text-center text-muted mb-4" style="font-size: 15px;">
-		Need assistance? Whether it's admission queries, account-related concerns, or student support, our dedicated team is here to help you. Reach out to us via call or email, and we'll ensure a smooth experience for you.
-	</p>
-</div>
-<style>
-	.top_bar {
-		background-color: #f29c12;
-		color: white;
-		padding: 10px 0;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		border-radius: 20px 20px 0 0;
-		flex-wrap: wrap;
+    <div class="contact-img d-flex">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="breadcumb-content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==================================================-->
+    <!-- End educate Breadcumb Area -->
+    <!--==================================================-->
+    <div id="main">
 
-	}
+        <h1 class="text-center mb-2" style="font-size: 2rem; margin-top: 15px;">
+            Contact Digicrome
+        </h1>
+        <p class="text-center text-muted mb-4" style="font-size: 15px;">
+            Need assistance? Whether it's admission queries, account-related concerns, or student support, our dedicated
+            team is here to help you. Reach out to us via call or email, and we'll ensure a smooth experience for you.
+        </p>
+    </div>
+    <style>
+        .top_bar {
+            background-color: #f29c12;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 20px 20px 0 0;
+            flex-wrap: wrap;
 
-	/* Tablet (Medium Screens: 768px - 991px) */
-	@media (max-width: 991px) {
-		.top_bar {
-			flex-direction: column;
-			/* कॉलम में आइटम दिखाने के लिए */
-			text-align: center;
-			padding: 15px 0;
-		}
+        }
 
-		.top_bar a {
-			display: block;
-			padding: 8px 0;
-		}
-	}
+        /* Tablet (Medium Screens: 768px - 991px) */
+        @media (max-width: 991px) {
+            .top_bar {
+                flex-direction: column;
+                /* कॉलम में आइटम दिखाने के लिए */
+                text-align: center;
+                padding: 15px 0;
+            }
 
-	/* Mobile (Small Screens: 480px - 767px) */
-	@media (max-width: 767px) {
-		.top_bar {
-			flex-direction: column;
-			text-align: center;
-			padding: 15px 10px;
-		}
+            .top_bar a {
+                display: block;
+                padding: 8px 0;
+            }
+        }
 
-		.top_bar a {
-			display: block;
-			padding: 10px;
-			font-size: 14px;
-		}
-	}
+        /* Mobile (Small Screens: 480px - 767px) */
+        @media (max-width: 767px) {
+            .top_bar {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 10px;
+            }
 
-	/* Extra Small Screens (Less than 480px) */
-	@media (max-width: 480px) {
-		.top_bar {
-			padding: 10px 5px;
-		}
+            .top_bar a {
+                display: block;
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
 
-		.top_bar a {
-			font-size: 12px;
-			padding: 8px;
-		}
-	}
+        /* Extra Small Screens (Less than 480px) */
+        @media (max-width: 480px) {
+            .top_bar {
+                padding: 10px 5px;
+            }
 
-	.top_bar a {
-		color: white;
-		text-decoration: none;
-		font-size: 14px;
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-	}
+            .top_bar a {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
 
-	.top_bar a i {
-		margin-right: 5px;
-	}
+        .top_bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
 
-	.content-section {
-		background-color: #f5f5f5;
-		padding: 20px;
-		border-radius: 8px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		border-radius: 0 0 20px 20px;
-	}
-</style>
+        .top_bar a i {
+            margin-right: 5px;
+        }
 
-<section>
-	<div class="container-fluid" style="width:80%">
-		<div class="top_bar">
-			<a style="font-size: 18px;" onclick="showContent('contact')"><i class="fas fa-phone"></i> Customer Contact No.</a>
-			{{--<a style="font-size: 18px;" onclick="showContent('connect')"><i class="fas fa-globe"></i> Connect Online</a>--}}
-			<a style="font-size: 18px;" onclick="showContent('locate')"><i class="fas fa-map-marker-alt"></i> Locate Us</a>
-			<a style="font-size: 18px;" onclick="showContent('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-			<a style="font-size: 18px;" onclick="showContent('chatbot')"><i class="fas fa-comments"></i> Chatbot</a>
-			<a style="font-size: 18px;" onclick="showContent('callback')"><i class="fas fa-phone-alt"></i> Get A Callback</a>
+        .content-section {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 20px 20px;
+        }
+    </style>
+
+    <section>
+        <div class="container-fluid" style="width:80%">
+            <div class="top_bar">
+                <a style="font-size: 18px;" onclick="showContent('contact')"><i class="fas fa-phone"></i> Customer Contact
+                    No.</a>
+                {{-- <a style="font-size: 18px;" onclick="showContent('connect')"><i class="fas fa-globe"></i> Connect Online</a> --}}
+                <a style="font-size: 18px;" onclick="showContent('locate')"><i class="fas fa-map-marker-alt"></i> Locate
+                    Us</a>
+                <a style="font-size: 18px;" onclick="showContent('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a style="font-size: 18px;" onclick="showContent('chatbot')"><i class="fas fa-comments"></i> Chatbot</a>
+                <a style="font-size: 18px;" onclick="showContent('callback')"><i class="fas fa-phone-alt"></i> Get A
+                    Callback</a>
 
 
-		</div>
-		<div class="container-fluid">
-			<div class="row"> 
-				<div class="col-md-12 content-section" id="content">
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 content-section" id="content">
 
-					<h2>Click an option to see details here</h2>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<script>
-	function showContent(type) {
-		let content = document.getElementById('content');
-		if (type === 'callback') {
-			content.innerHTML = `
+                        <h2>Click an option to see details here</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function showContent(type) {
+            let content = document.getElementById('content');
+            if (type === 'callback') {
+                content.innerHTML = `
 					<div class="row">
 		<div class="col-md-6 d-flex justify-content-center align-items-center">
 			<img loading="lazy"src="{{ asset('assets/images/cot1.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
@@ -185,7 +179,7 @@
 		<div class="col-md-6">
 		<br>
 		<h3>Want a callback? Enter your details.</h3>
-		<form id="frm123"  method="post" action="https://demo.digicrome.in/post_lead.php">       
+		<form id="frm123"  method="post" action="https://demo.digicrome.in/post_lead.php">
 
 		<div class="mb-3">
 			<input class="form-control" style="border-radius: 20px;   padding: 12px;" placeholder="Enter your name" name="name" type="text">
@@ -234,16 +228,16 @@
 		   </form>
 
 		<p class="mt-3 text-muted text-center" style="font-size: 14px;">
-			By continuing, you confirm that you have read and agreed to 
-			<a href="#" class="text-decoration-none">Digicrome Terms</a> and 
+			By continuing, you confirm that you have read and agreed to
+			<a href="#" class="text-decoration-none">Digicrome Terms</a> and
 			<a href="#" class="text-decoration-none">Privacy Policy</a>.
 		</p>
 	</div>
 
 	</div>
 	`;
-		} else if (type === 'connect') {
-			content.innerHTML = `
+            } else if (type === 'connect') {
+                content.innerHTML = `
 					<div class="row">
 		<div class="col-md-6 d-flex justify-content-center align-items-center">
 			<img loading="lazy"src="{{ asset('assets/images/cot2.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
@@ -270,8 +264,8 @@
 
 	</div>
 	`;
-		} else if (type === 'locate') {
-			content.innerHTML = `<div class="container mt-5">
+            } else if (type === 'locate') {
+                content.innerHTML = `<div class="container mt-5">
 		<div class="row align-items-center">
 		  <!-- Left side: Image -->
 		  <div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -320,8 +314,8 @@
 		  </div>
 		</div>
 	  </div>`;
-		} else if (type === 'whatsapp') {
-			content.innerHTML = `<div class="container mt-5">
+            } else if (type === 'whatsapp') {
+                content.innerHTML = `<div class="container mt-5">
 		<div class="row align-items-center">
 		  <!-- Left side: Image -->
 		  <div class="col-md-6">
@@ -340,8 +334,8 @@
 		  </div>
 		</div>
 	  </div>`;
-		} else if (type === 'chatbot') {
-			content.innerHTML = `<div class="container mt-5">
+            } else if (type === 'chatbot') {
+                content.innerHTML = `<div class="container mt-5">
 		<div class="row align-items-center chat-box">
 			<div class="col-md-5 text-center">
 				<img loading="lazy"src="{{ asset('assets/images/chat.png') }}" alt="Chat Image" title="Chat Image">
@@ -355,8 +349,8 @@
 			</div>
 		</div>
 	</div>`;
-		} else if (type === 'contact') {
-			content.innerHTML = `<div class="container mt-5">
+            } else if (type === 'contact') {
+                content.innerHTML = `<div class="container mt-5">
 		<div class="row align-items-center contact-box">
 			<div class="col-md-5 text-center">
 				<img loading="lazy"src="{{ asset('assets/images/coustome.svg') }}" alt="Contact Image" title="Contact Image">
@@ -395,176 +389,184 @@
 		</div>
 	</div>
 	`;
-		}
-	}
-	window.onload = function() {
-		showContent('contact');
-	};
-</script>
-<!--==================================================-->
-<!-- Start Consalt Contact Area Inner Page -->
-<!--==================================================-->
-<section class="contact_area inner_section">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-6">
-				<!-- section title -->
-				<div class="section-sub-title three">
-					<h2 style="color:var(--primary-color);font-size:20px;"><img loading="lazy" src="assets/images/inner-img/sub-title2.webp" alt="icon" title="icon">GET IN TOUCH</h2>
-				</div>
-				<div class="section_title">
-					<h3 class="fs-1 fw-bold" style="color: #1a1447;">Trusted By the Genious
-					<div>
-						People with Digicrome
-					</div>
-					</h3>
-				</div>
-				<div class="section-title-desc">
-					<p>We combine media leadership, cross-media innovation, and advanced technology to develop standardized platforms with expert consultation.</p>
-				</div>
-				<div class="contact_main_info">
-					<div class="call-do-action-info">
-						<div class="call-do-social_icon">
-							<i class="fas fa-phone-alt"></i>
-						</div>
-						<div class="call_info">
-							<p>Call us Anytime</p>
-							<h3> 01204538125</h3>
-						</div>
-					</div>
-					<div class="call-do-action-info">
-						<div class="call-do-social_icon">
-							<i class="fas fa-envelope-open"></i>
-						</div>
-						<div class="call_info">
-							<p>Email us Anytime</p>
-							<h3>info@digicrome.com</h3>
-						</div>
-					</div>
-					<div class="call-do-action-info">
-						<div class="call-do-social_icon">
-							<i class="fas fa-map-marker-alt"></i>
-						</div>
-						<div class="call_info">
-							<p>Our Location</p>
-							<span>Address: B-49, First Floor, Block B, Sector 59<br>Noida, Uttar Pradesh 201301</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<!-- contact form box -->
-				<div class="contact-form-box style_two">
-					<!-- section title -->
-					{{-- <div class="contact-section-title">
+            }
+        }
+        window.onload = function() {
+            showContent('contact');
+        };
+    </script>
+    <!--==================================================-->
+    <!-- Start Consalt Contact Area Inner Page -->
+    <!--==================================================-->
+    <section class="contact_area inner_section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- section title -->
+                    <div class="section-sub-title three">
+                        <h2 style="color:var(--primary-color);font-size:20px;"><img loading="lazy"
+                                src="assets/images/inner-img/sub-title2.webp" alt="icon" title="icon">GET IN TOUCH
+                        </h2>
+                    </div>
+                    <div class="section_title">
+                        <h3 class="fs-1 fw-bold" style="color: #1a1447;">Trusted By the Genious
+                            <div>
+                                People with Digicrome
+                            </div>
+                        </h3>
+                    </div>
+                    <div class="section-title-desc">
+                        <p>We combine media leadership, cross-media innovation, and advanced technology to develop
+                            standardized platforms with expert consultation.</p>
+                    </div>
+                    <div class="contact_main_info">
+                        <div class="call-do-action-info">
+                            <div class="call-do-social_icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="call_info">
+                                <p>Call us Anytime</p>
+                                <h3> 01204538125</h3>
+                            </div>
+                        </div>
+                        <div class="call-do-action-info">
+                            <div class="call-do-social_icon">
+                                <i class="fas fa-envelope-open"></i>
+                            </div>
+                            <div class="call_info">
+                                <p>Email us Anytime</p>
+                                <h3>info@digicrome.com</h3>
+                            </div>
+                        </div>
+                        <div class="call-do-action-info">
+                            <div class="call-do-social_icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="call_info">
+                                <p>Our Location</p>
+                                <span>Address: B-49, First Floor, Block B, Sector 59<br>Noida, Uttar Pradesh 201301</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- contact form box -->
+                    <div class="contact-form-box style_two">
+                        <!-- section title -->
+                        {{-- <div class="contact-section-title">
 								<h4>CONTACT US</h4>
 								<h1>Feel Free to Contact Us</h1>
 							</div> --}}
-					<form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
-						action="https://demo.digicrome.in/post_lead.php">
-						@csrf
-						<h3 style="color: #f29c12;font-size: 24px; margin-bottom: 20px;font-weight:500;"> Register now!! And get a quick call</h3>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="name">Name:</label> -->
-							<input type="text" id="name" name="name" placeholder="Name">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
-							<input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"  id="mobile" name="mobile" placeholder="Mobile Number">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
-							<input type="email" id="gmail" name="email" placeholder="E-mail ID:">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="city">City:</label> -->
-							<input type="text" id="city" name="address" placeholder="City">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="Qualification">Qualification:</label> -->
-							<input type="text" id="qualification" name="title" placeholder="Qualification">
-						</div>
-						<div class="form-field">
-							<!--<label style="color:#fff;" for="qualification">Experience:</label> -->
-							<select class="selecttype" id="qualification" name="profession">
-								<option value="" disabled selected>Select Experience</option>
-								<option value="Working Professional - Technincal Roles">Working Professional -
-									Technincal Roles</option>
-								<option value="Working Professional - Non Technincal">Working Professional - Non
-									Technincal</option>
-								<option value="College Student - Final Year">College Student - Final Year</option>
-								<option value="College Student - 1st to pre-final Year">College Student - 1st to
-									pre-final Year</option>
-								<option value="Other">Other</option>
-							</select>
-						</div>
+                        <form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
+                            action="https://demo.digicrome.in/post_lead.php">
+                            @csrf
+                            <h3 style="color: #f29c12;font-size: 24px; margin-bottom: 20px;font-weight:500;"> Register now!!
+                                And get a quick call</h3>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="name">Name:</label> -->
+                                <input type="text" id="name" name="name" placeholder="Name">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="mobile">Mobile Number:</label> -->
+                                <input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"
+                                    id="mobile" name="mobile" placeholder="Mobile Number">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="gmail">Gmail ID:</label> -->
+                                <input type="email" id="gmail" name="email" placeholder="E-mail ID:">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="city">City:</label> -->
+                                <input type="text" id="city" name="address" placeholder="City">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="Qualification">Qualification:</label> -->
+                                <input type="text" id="qualification" name="title" placeholder="Qualification">
+                            </div>
+                            <div class="form-field">
+                                <!--<label style="color:#fff;" for="qualification">Experience:</label> -->
+                                <select class="selecttype" id="qualification" name="profession">
+                                    <option value="" disabled selected>Select Experience</option>
+                                    <option value="Working Professional - Technincal Roles">Working Professional -
+                                        Technincal Roles</option>
+                                    <option value="Working Professional - Non Technincal">Working Professional - Non
+                                        Technincal</option>
+                                    <option value="College Student - Final Year">College Student - Final Year</option>
+                                    <option value="College Student - 1st to pre-final Year">College Student - 1st to
+                                        pre-final Year</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
 
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="source" Value="Home Page"
-								placeholder="Mobile Number">
-						</div>
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="country" value="india"
-								placeholder="Mobile Number">
-						</div>
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
-						</div>
-						<input type="text" name="our_custom" style="display:none;" value="digicrome">
-						<input type="hidden" name="form_time" value="<?php echo time(); ?>">
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
-						</div>
-						<!--<div class="form-field">-->
-						<!--    <input type="text" id="mobile" name="profession" placeholder="Mobile Number">-->
-						<!--</div>-->
-						<div class="form-field">
-							<input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
-						</div>
-						<input type="hidden" name="ib" value="">
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="source" Value="Home Page"
+                                    placeholder="Mobile Number">
+                            </div>
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="country" value="india"
+                                    placeholder="Mobile Number">
+                            </div>
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
+                            </div>
+                            <input type="text" name="our_custom" style="display:none;" value="digicrome">
+                            <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="state" value=""
+                                    placeholder="Mobile Number">
+                            </div>
+                            <!--<div class="form-field">-->
+                            <!--    <input type="text" id="mobile" name="profession" placeholder="Mobile Number">-->
+                            <!--</div>-->
+                            <div class="form-field">
+                                <input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
+                            </div>
+                            <input type="hidden" name="ib" value="">
 
-						{{-- <p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms
+                            {{-- <p style="    line-height: 30px;">By submitting the form, you agree to our <a href="">Terms
 								and Conditions</a> and our <a href="https://digicrome.com/privacy-policy">Privacy
 								Policy.</a> </p><br> --}}
-						<button type="submit">Submit</button>
-					</form>
-					<div id="status"></div>
-				</div>
-			</div>
-		</div>
-		<div class="contact_shape2 dance2">
-			<img loading="lazy" src="assets/images/inner-img/contact-shape.webp" alt="shape" title="shape">
-		</div>
-	</div>
-</section>
-<!--==================================================-->
-<!-- End Consalt Contact Area  Inner Page -->
-<!--==================================================-->
-<!--==================================================-->
-<!-- Start Consalt Map Area -->
-<!--==================================================-->
-<div class="row p-4">
-	<div class="col-lg-6">
-		<h3 class="mb-2" style="font-size: 2rem; margin-top: 15px;">
-			Nation Navigator: <span style="color: #141414;"> India </span>
-		</h3>
-		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448075.6264138498!2d76.86013065725662!3d28.671967696656612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5639a2a0f31%3A0x4c3b8b61bc63b342!2sDigiCrome%20Academy!5e0!3m2!1sen!2sin!4v1643104363026!5m2!1sen!2sin"
-			width="100%" height="520" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-	</div>
-	<div class="col-lg-6">
-		<h3 class="mb-2" style="font-size: 2rem; margin-top: 15px;">
-			Map Matrix:<span style="color: #141414;">USA</span>
-		</h3>
-		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167704831202!2d-106.95752532389567!3d44.79777077107091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a655555%3A0x3265c73ab4e065e!2s30%20N%20Gould%20St%20STE%20ST%20R%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sin!4v1698755458200!5m2!1sen!2sin"
-			width="100%" height="520" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            <button type="submit">Submit</button>
+                        </form>
+                        <div id="status"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact_shape2 dance2">
+                <img loading="lazy" src="assets/images/inner-img/contact-shape.webp" alt="shape" title="shape">
+            </div>
+        </div>
+    </section>
+    <!--==================================================-->
+    <!-- End Consalt Contact Area  Inner Page -->
+    <!--==================================================-->
+    <!--==================================================-->
+    <!-- Start Consalt Map Area -->
+    <!--==================================================-->
+    <div class="row p-4">
+        <div class="col-lg-6">
+            <h3 class="mb-2" style="font-size: 2rem; margin-top: 15px;">
+                Nation Navigator: <span style="color: #141414;"> India </span>
+            </h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448075.6264138498!2d76.86013065725662!3d28.671967696656612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5639a2a0f31%3A0x4c3b8b61bc63b342!2sDigiCrome%20Academy!5e0!3m2!1sen!2sin!4v1643104363026!5m2!1sen!2sin"
+                width="100%" height="520" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+        </div>
+        <div class="col-lg-6">
+            <h3 class="mb-2" style="font-size: 2rem; margin-top: 15px;">
+                Map Matrix:<span style="color: #141414;">USA</span>
+            </h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167704831202!2d-106.95752532389567!3d44.79777077107091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a655555%3A0x3265c73ab4e065e!2s30%20N%20Gould%20St%20STE%20ST%20R%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sin!4v1698755458200!5m2!1sen!2sin"
+                width="100%" height="520" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
 
-	</div>
-</div>
+        </div>
+    </div>
 
 
-<!-- Start Consalt Map Area -->
-<!--==================================================-->
+    <!-- Start Consalt Map Area -->
+    <!--==================================================-->
 
 @endsection

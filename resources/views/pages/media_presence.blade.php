@@ -486,7 +486,7 @@
         <div class="owl-carousel hero-slider">
             <div class="hero-slide">
                 <picture>
-                    <source media="(max-width: 767px)" srcset="{{ asset('assets/images/mediamain.webp') }}">
+                    <source media="(max-width: 767px)" srcset="{{ asset('assets/images/mediamainmob.webp') }}">
                     <img src="{{ asset('assets/images/mediamain.webp') }}" alt="Digicrome Banner" class="hero-img">
                 </picture>
             </div>
