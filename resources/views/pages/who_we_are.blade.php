@@ -389,6 +389,12 @@
         #sticky-header {
             margin-bottom: 80px !important;
         }
+        @media (max-width: 768px) {
+            .who-img {
+                padding:0px;
+                margin-top:70px;
+            }
+        }
     </style>
     <div class="who-img d-flex">
         <div class="container">
@@ -396,7 +402,7 @@
                 <div class="col-lg-12">
                     <div class="breadcumb-content">
                         <div class="breadcumb-title">
-                            <h1>Who We Are</h1>
+                            <h1></h1>
                         </div>
 
                     </div>
