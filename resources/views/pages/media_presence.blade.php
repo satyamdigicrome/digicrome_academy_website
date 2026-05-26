@@ -484,29 +484,19 @@
 
     <div class="custom-hero-banner">
         <div class="owl-carousel hero-slider">
-            @php
-                $slides = [
-                    ['db' => 'media1.webp', 'mb' => 'media1mob.webp'],
-                    ['db' => 'media2.webp', 'mb' => 'media2mob.webp'],
-                    ['db' => 'media3.webp', 'mb' => 'media3mob.webp'],
-                    ['db' => 'media4.webp', 'mb' => 'media4mob.webp'],
-                ];
-            @endphp
-            @foreach ($slides as $slide)
-                <div class="hero-slide">
-                    <picture>
-                        <source media="(max-width: 767px)" srcset="{{ asset('assets/images/' . $slide['mb']) }}">
-                        <img src="{{ asset('assets/images/' . $slide['db']) }}" alt="Digicrome Banner" class="hero-img">
-                    </picture>
-                </div>
-            @endforeach
+            <div class="hero-slide">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="{{ asset('assets/images/mediamain.webp') }}">
+                    <img src="{{ asset('assets/images/mediamain.webp') }}" alt="Digicrome Banner" class="hero-img">
+                </picture>
+            </div>
         </div>
 
-        <div class="hero-overlay">
+        {{-- <div class="hero-overlay">
             <a href="javascript:void(0);" onclick="openModal();" class="see-more-btn">
                 <i class="fa fa-arrow-down"></i> See More
             </a>
-        </div>
+        </div> --}}
     </div>
 
     <section class="press-room py-5">
