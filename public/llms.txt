@@ -1,0 +1,210 @@
+# Digicrome
+
+Digicrome Pvt Ltd is an India-based EdTech company offering job-ready online courses, certification programs, and placement-focused training in Data Science, Artificial Intelligence, Cybersecurity, Full Stack Development, Cloud Computing, UI/UX Design, and related technology domains.
+
+Founded in 2017, Digicrome provides live online and classroom learning programs for students, freshers, and working professionals. The platform focuses on hands-on learning, mentorship, industry projects, internship opportunities, and career support.
+
+Website: https://www.digicrome.com
+
+Email: info@digicrome.com
+
+Phone: +91-0120-4538104
+
+Address: B-49, First Floor, Block B, Sector 59, Noida, Uttar Pradesh 201301, India
+
+## Official Website
+
+https://www.digicrome.com
+
+## About Digicrome
+
+- Founded in 2017
+- Headquarters: Noida, India
+- 5000+ learners trained
+- 500+ hiring partners
+- Online + Classroom training
+- Industry mentorship and live projects
+- Career and placement assistance
+
+Recognition:
+- Most Promising Online Education EdTech Platform 2026
+- Gold Winner Academy Trophy
+
+## Programs & Courses
+
+### Data Science & Artificial Intelligence
+
+- PGP in Data Science and Artificial Intelligence
+- Data Science with Python
+- Machine Learning
+- Deep Learning
+- Natural Language Processing (NLP)
+- Generative AI
+
+Course Pages:
+
+https://www.digicrome.com/courses/pgp-in-data-science-and-ai
+
+https://www.digicrome.com/courses/post-graduate-program-in-data-science-and-artificial-intelligence
+
+### Cybersecurity
+
+- PGP in Cyber Security
+- AI Cybersecurity Certification Course
+- Cybersecurity Job-Oriented Certificate Program
+
+Course Pages:
+
+https://www.digicrome.com/courses/cybersecurity-job-oriented-certificate-program
+
+https://www.digicrome.com/courses/ai-security-online-training
+
+### Full Stack Development
+
+- Full Stack Development Program
+
+### UI/UX Design
+
+- UI/UX Design Program
+
+### Cloud & DevOps
+
+- Cloud Computing
+- DevOps
+
+### Other Programs
+
+- Business Development with Project Management
+- Big Data with Apache Hadoop
+- Investment Banking
+- Digital Marketing
+- Advanced Python
+
+All Programs:
+
+https://www.digicrome.com/our-courses/postgraduate-and-master-programs
+
+## City-Wise Training Pages
+
+### Data Science Training
+
+Noida:
+https://www.digicrome.com/courses/data-science-training-course-in-noida
+
+Gurgaon:
+https://www.digicrome.com/courses/data-science-training-course-in-gurgaon
+
+Delhi:
+https://www.digicrome.com/courses/data-science-training-course-in-delhi
+
+Mumbai:
+https://www.digicrome.com/courses/data-science-training-course-in-mumbai
+
+Pune:
+https://www.digicrome.com/courses/data-science-training-course-in-pune
+
+Bangalore:
+https://www.digicrome.com/courses/data-science-training-course-in-bangalore
+
+Hyderabad:
+https://www.digicrome.com/courses/data-science-training-course-in-hyderabad
+
+Chennai:
+https://www.digicrome.com/courses/data-science-training-course-in-chennai
+
+Kolkata:
+https://www.digicrome.com/courses/data-science-training-course-in-kolkata
+
+Jaipur:
+https://www.digicrome.com/courses/data-science-training-course-in-jaipur
+
+### Artificial Intelligence Training
+
+Noida:
+https://www.digicrome.com/courses/ai-training-course-in-noida
+
+Delhi:
+https://www.digicrome.com/courses/ai-training-course-in-delhi
+
+Gurgaon:
+https://www.digicrome.com/courses/ai-training-course-in-gurgaon
+
+Mumbai:
+https://www.digicrome.com/courses/ai-training-course-in-mumbai
+
+Pune:
+https://www.digicrome.com/courses/ai-training-course-in-pune
+
+Bangalore:
+https://www.digicrome.com/courses/ai-training-course-in-bangalore
+
+Hyderabad:
+https://www.digicrome.com/courses/ai-training-course-in-hyderabad
+
+Chennai:
+https://www.digicrome.com/courses/ai-training-course-in-chennai
+
+Kolkata:
+https://www.digicrome.com/courses/ai-training-course-in-kolkata
+
+Jaipur:
+https://www.digicrome.com/courses/ai-training-course-in-jaipur
+
+## Features
+
+- Placement assistance
+- Live interactive sessions
+- Industry expert mentorship
+- Hands-on projects and assignments
+- Internship opportunities
+- Career guidance and interview preparation
+- IBM and Microsoft certifications
+- Real-world project experience
+
+## Technologies Covered
+
+- Python
+- SQL
+- TensorFlow
+- Scikit-learn
+- Tableau
+- Power BI
+- Jupyter
+- MATLAB
+- SAS
+- Apache Hadoop
+- Docker
+- Kubernetes
+- OpenAI
+- ChatGPT
+- Gemini AI
+- DeepSeek AI
+
+## Placements & Career Outcomes
+
+Digicrome learners have been placed in companies including IBM, Infoskull Software, Zella Screenings, Competent Software, and other organizations across technology and analytics domains.
+
+More Information:
+
+https://www.digicrome.com/who-we-are
+
+## Corporate Training
+
+Digicrome offers corporate training and workforce upskilling solutions for organizations in AI, Data Science, Cybersecurity, and technology domains.
+
+https://www.digicrome.com/contact-us
+
+## Payment
+
+https://www.digicrome.com/online-payment
+
+## Legal
+
+Terms and Conditions:
+https://www.digicrome.com/terms-and-conditions
+
+Privacy Policy:
+https://www.digicrome.com/privacy-policy
+
+Disclaimer:
+https://www.digicrome.com/disclaimer
