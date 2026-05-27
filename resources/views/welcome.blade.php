@@ -318,13 +318,13 @@
                     <div class="about-thumb-wrapper">
                         <div class="about-thumb">
                             <picture>
-                                <source 
-                                    media="(max-width: 767px)" 
+                                <source
+                                    media="(max-width: 767px)"
                                     srcset="{{ asset('assets/images/home-one/about-thumb1-mobile.webp') }}">
-                                <img 
+                                <img
                                     loading="lazy"
                                     src="{{ asset('assets/images/home-one/about-thumb1.webp') }}"
-                                    alt="digicrome thumb" 
+                                    alt="digicrome thumb"
                                     title="digicrome thumb"
                                     width="600"
                                     height="400"
@@ -1287,7 +1287,7 @@
                                 alt="subtitle-icon" title="subtitle-icon">TESTIMONIALS</h2>
                     </div>
                     <div class="section_title two">
-                        <h3 class="heading-like-h1">What Students Say About 
+                        <h3 class="heading-like-h1">What Students Say About
                             Digicrome Experience</h3>
                     </div>
                     <div class="section-title-desc two">
@@ -1363,7 +1363,7 @@
                         </h2>
                     </div>
                     <div class="section_title">
-                        <h3 class="heading-like-h1">All Real Experiences 
+                        <h3 class="heading-like-h1">All Real Experiences
                             From Our Dedicated Learners
                         </h3>
                     </div>

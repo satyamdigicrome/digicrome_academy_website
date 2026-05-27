@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <div class="section_title">
                     <h2 class="heading-like-h1">
-                        Introducing the Educators and Professional Instructors
+                        Meet the Educators Behind Your Success
                     </h2>
                 </div>
             </div>
