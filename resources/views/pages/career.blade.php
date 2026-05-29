@@ -351,11 +351,11 @@
 </style>
 
 <div class="custom-hero-banner">
-  <img src="{{ asset('assets/images/care.webp') }}" alt="Career Banner" class="hero-img" loading="lazy">
+  <img src="{{ asset('assets/images/carrer.webp') }}" alt="Career Banner" class="hero-img" loading="lazy">
 
   <div class="container banner-text">
     <div class="breadcumb-content">
-      <div class="breadcumb-title">
+      {{-- <div class="breadcumb-title">
         <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 15px;">
           Career at <span style="color: #f29c12;">Digicrome</span>
         </h1>
@@ -375,7 +375,7 @@
         <a href="#career" style="padding: 12px 25px; background-color: #f29c12; color: white; text-decoration: none; font-weight: bold; border-radius: 4px;">
           Explore Open Positions
         </a>
-      </div>
+      </div> --}}
     </div>
   </div>
 </div>
