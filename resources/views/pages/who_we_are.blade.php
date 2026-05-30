@@ -402,7 +402,6 @@
                 <div class="col-lg-12">
                     <div class="breadcumb-content">
                         <div class="breadcumb-title">
-                            <h1></h1>
                         </div>
 
                     </div>
