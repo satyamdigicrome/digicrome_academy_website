@@ -409,7 +409,7 @@
                         </h2>
                     </div>
                     <div class="section_title">
-                        <h3 class="fs-1 fw-bold" style="color: #1a1447;">Trusted By the Genious
+                        <h3 class="fs-1 fw-bold" style="color: #1a1447;">Trusted By the Genius
                             <div>
                                 People with Digicrome
                             </div>

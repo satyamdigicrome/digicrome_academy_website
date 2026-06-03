@@ -83,32 +83,16 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="about_content">
 
-                        <div class="section-title-desc">
-                            <p>Digicrome is a leading Digital EdTech platform. It is built with a vision to remodel how
-                                learners access education in the modern era. We are a dedicated team of experts. We empower
-                                students and working professionals by delivering them high-impact, industry-aligned
-                                knowledge that goes beyond expectations. Driven by progressive technology, Digicrome serves
-                                learners with positive learning surroundings where knowledge is experienced, appropriate,
-                                and future-ready. </p>
+                        <div class="section-title-desc mb-2">
+                            <p>Digicrome is a leading Digital EdTech platform with a vision to provide the accessibility of digital education to students and professionals. We have a dedicated team of experts who empower and motivate students and working professionals by delivering them high-quality, industry-based knowledge with the best certification courses. We are equipped with the latest technologies, which provide learners with positive learning experiences. Our environment is where knowledge is experienced, appropriate, and future-ready. </p>
+                        </div>
+                        <div class="section-title-desc mb-2">
+                            <p>Our programs have equipped 10,000+ learners with in-demand skills across domains such as Data Science, Artificial Intelligence, and Cybersecurity. We ensure they stay passionate in a fast-changing workplace around the world. At the center of Digicrome’s principles is experiential subject learning. Through live doubt sessions, 30+ real-world projects, and a full-time internship facility, our learners gain industry-level knowledge. </p>
                         </div>
                         <div class="section-title-desc">
-                            <p>Our programs have equipped 10,000+ learners with in-demand skills across domains such as Data
-                                Science, Artificial Intelligence, AI security, cybersecurity, and Digital Innovation. We
-                                ensure they stay passionate in a fast-changing worldwide workforce.</p>
+                            <p>Our courses help them prepare for real-world challenges. This approach not only enhances their knowledge but also builds their logical, critical thinking, and professional skills. We trust that education should lead to profitable results. With an increasing global community and expanding 500+ industry partnerships, Digicrome continues to lead in the digital or online education sector. This makes us more approachable, realistic, and aligned with today’s every industry's needs. </p>
                         </div>
-                        <div class="section-title-desc">
-                            <p>At the center of Digicrome’s principles is experiential subject learning. Through live doubt
-                                sessions, 30+ real-world projects, and full-time internship convenience, our learners gain
-                                industry exposure. This prepares them for real industry challenges. This approach not only
-                                enhances their market expertise but also builds their logical, critical thinking, and
-                                professional skills. We trust that education should lead to profitable results. </p>
-                        </div>
-                        <div class="section-title-desc">
-                            <p>With an increasing global community and expanding 500+ industry partnerships, Digicrome
-                                continues to lead in the digital education sector. This makes us more approachable,
-                                realistic, and aligned with the needs of today’s progressing job market.</p>
-                        </div>
-                        <div class="about-iteam-list">
+                        <div class="about-iteam-list"> 
                             <ul>
                                 <li><img loading="lazy" src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
                                         alt="icon31" title="icon31">Course
@@ -324,7 +308,7 @@
                                 title="icon">TESTIMONIALS</h2>
                     </div>
                     <div class="section_title text-left">
-                        <h3 class="fs-2 fw-bold mb-1">What Students Say About Digicrome Experience</h3>
+                        <h3 class="fs-2 fw-bold mb-1">What Students Say About Digicrome</h3>
                     </div>
 
                     <div class="section-title-desc two">
@@ -437,7 +421,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="section_title">
+                    <div class="section_title text-capitalize">
                         <h3 style="font-size: 42px; line-height: 52px; color: var(--title-color); font-weight: 600;">Read
                             our latest updates <br> from Digicrome</h3>
                     </div>

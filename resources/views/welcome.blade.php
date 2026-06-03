@@ -207,9 +207,9 @@
                                 alt="digicrome feature-icon" title="digicrome feature-icon">
                         </div>
                         <div class="feature-content">
-                            <h4 class="feature-title">45+ Industry-Relevant Projects</h4>
+                            <h4 class="feature-title">45+ Relevant Projects</h4>
                             <p class="feature-desc">Work on our industry-based live projects to harness top-level industry
-                                experience and make way to a winning career.</p>
+                                experience and make way to a winning career opportunity.</p>
                         </div>
                         <div class="educate-hover-box hover-bx"></div>
                         <div class="educate-hover-box hover-bx2"></div>
@@ -224,7 +224,7 @@
                                 alt="digicrome feature-icon" title="digicrome feature-icon">
                         </div>
                         <div class="feature-content">
-                            <h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
+                            <h4 class="feature-title">60+ Case Studies</h4>
                             <p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong
                                 foundation. Get 24/7 assistance available for assignments.</p>
                         </div>
@@ -242,7 +242,7 @@
                         </div>
                         <div class="feature-content">
                             <h4 class="feature-title">Job Ready Program</h4>
-                            <p class="feature-desc">Exclusive placement cell dedicated to students completing the course,
+                            <p class="feature-desc">Placement cell dedicated to students completing the course,
                                 we
                                 help secure job opportunities. So far, 5,000+ students have been employed.</p>
                         </div>
@@ -351,7 +351,7 @@
                             <h2>ABOUT US</h2>
                         </div>
                         <div class="section_title">
-                            <h3 class="heading-like-h1">Who Are We – Introduction to Digicrome Online Platform</h3>
+                            <h3 class="heading-like-h1">Who Are We</h3>
                         </div>
                         <div class="section-title-desc">
                             <p>We are a globally reputed online educational academy. We skill up students and professionals
@@ -632,8 +632,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h3 class="heading-like-h1">Our Courses – Comprehensive</br>
-                            Available all programs</h3>
+                        <h3 class="heading-like-h1">Comprehensive 
+                            Available All Programs</h3>
                     </div>
                 </div>
             </div>
@@ -1288,7 +1288,7 @@
                     </div>
                     <div class="section_title two">
                         <h3 class="heading-like-h1">What Students Say About
-                            Digicrome Experience</h3>
+                            Digicrome</h3>
                     </div>
                     <div class="section-title-desc two">
                         <p>Students love the hands-on learning, expert mentors, and real-world projects that make the
@@ -1569,8 +1569,7 @@
                             <h2 style="font-size:14px;">Explore Career Opportunities in the most future-oriented sector</h2>
                         </div>
                         <div class="section_title">
-                            <h3>Build Skills. Grab Opportunities.</br>
-                                Start Now.</h3>
+                            <h3>Build Skills. Grab Opportunities.</h3>
                         </div>
                         <div class="section-title-desc">
                             <p>Become a professional at what you learn. Start from scratch and make your way to a career
@@ -1631,7 +1630,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h3 class="heading-like-h1">Read out our latest updates</br>
+                        <h3 class="heading-like-h1 text-capitalize">Read out our latest updates</br>
                             from digicrome</h3>
                     </div>
                 </div>

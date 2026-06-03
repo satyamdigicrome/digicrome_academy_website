@@ -465,8 +465,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h3 class="heading-like-h1">Our Courses – Comprehensive</br>
-                            Available all programs</h3>
+                        <h3 class="heading-like-h1">Comprehensive
+                            Available All Programs</h3>
                     </div>
                 </div>
             </div>

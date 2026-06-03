@@ -393,11 +393,10 @@
                         </b></span>
                     <hr> --}}<br><br><br>
 
-        <span style="text-align: justify; font-size: 28px; color: white; font-family:arial; mt-6">
-          We’re a team of passionate educators, tech enthusiasts, creators, and innovators, all working together to transform the way professionals upskill and grow.<br><br>
-          If you're driven by purpose, inspired by change, and looking for more than just a job — Welcome to Digicrome.
-
-        </span>
+        <span style="text-align: justify; font-size: 22px; color: white; font-family:arial; mt-6">
+          We’re a team of passionate educators, tech enthusiasts, creators, and innovators. We all work together to transform the way professionals upskill and grow.<br><br>
+          If you're living with purpose, inspired by change, looking for more than just a job, and want to be a tech expert, Welcome to Digicrome.<br><br>
+          Here, we help you transform your career into a well and top tech companies by upgrading your skills with our best courses on the latest technologies: AI, ML, Data Science, and Cybersecurity.        </span>
       </div>
       <div id="teem" class="col-lg-6 col-md-12" style="padding-top: 70px;">
         <img loading="lazy" src="{{ asset('assets/images/dc/1d.webp')}}" alt="Image" title="Image"
@@ -407,7 +406,7 @@
   </div>
 
 </section>
-<section class="company-form contactpage-form" style="padding-top: 50px;">
+<section class="company-form contactpage-form" style="padding-top: 50px; padding-bottom: 50px;">
   <div class="container-fluid" style="color: white; padding-left: 50px; padding-right: 50px;">
     <div class="section__title fw-bold" style="text-align: center; font-size: 36px; padding-bottom: 40px; color: #1a1447;">
       <h2>
@@ -423,7 +422,7 @@
           <h3 style="padding-top:20px; ">Make an Impact</h3>
           <p
             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
-            Your role directly contributes to empowering thousands of learners and professionals across the country.
+            Your role directly contributes to empowering thousands of learners and professionals who are available all over the country.
           </p>
         </div>
       </div>
@@ -434,7 +433,7 @@
           <h3 style="padding-top:20px; ">Growth & Learning Culture</h3>
           <p
             style="padding-left: 50px; padding-right:50px; font-size: 1rem; font-weight: 400;line-height: 1.8; ">
-            We believe in continuous growth — not just for our learners, but for our team too. You’ll have access to resources, mentorship, and opportunities to keep learning and evolving.</p>
+            We believe in continuous growth not just for our learners. You’ll have access to resources, mentorship, and opportunities to keep learning and evolving.</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-12 text-center" style="padding-top: 30px;">
