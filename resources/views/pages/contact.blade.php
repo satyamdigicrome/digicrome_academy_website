@@ -7,66 +7,211 @@
 @section('content')
     @include('components.lead-form-popup')
 
+    <!--==================================================-->
+    <!-- Start Hero / Banner (IMAGE ONLY) -->
+    <!--==================================================-->
     <style>
-        .contact-img {
-            padding: 432px 0 136px;
+        .contact-hero {
+            position: relative;
+            width: 100%;
+            height: 568px;
+            overflow: hidden;
+            background: #0f1226;
         }
 
-        #sticky-header {
-            margin-bottom: 80px !important;
-        }
-    </style>
-    <!--==================================================-->
-    <!-- Start educate Breadcumb Area -->
-    <!--==================================================-->
-    <style>
-        .contact-img {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        .contact-hero picture,
+        .contact-hero img {
+            position: absolute;
+            inset: 0;
             width: 100%;
-            height: 300px;
-            /* Default height for desktop */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('{{ asset('assets/images/contactnew.webp') }}');
+            height: 100%;
+        }
+
+        .contact-hero img {
+            object-fit: cover;
+        }
+
+        .contact-hero {
+            opacity: 0;
+            transform: translateY(6px);
+            animation: contactHeroIn 600ms ease-out forwards;
+        }
+
+        @keyframes contactHeroIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
-            .contact-img {
-                height: 180px;
-                background-image: url('{{ asset('assets/images/contactnewmob.webp') }}');
-                padding:0px;
+            .contact-hero {
+                height: 263px;
+                margin-top:95px;
             }
         }
     </style>
 
-    <div class="contact-img d-flex">
+    <div class="contact-hero">
+        <picture>
+            <source srcset="{{ asset('assets/images/contactnewmob.webp') }}" media="(max-width: 768px)">
+            <img src="{{ asset('assets/images/contactnew.webp') }}" alt="Contact Digicrome" loading="eager">
+        </picture>
+    </div>
+    <!--==================================================-->
+    <!-- End Hero / Banner -->
+    <!--==================================================-->
+
+    <!--==================================================-->
+    <!-- Start Modern Intro + Quick Actions -->
+    <!--==================================================-->
+    <style>
+        .contact-modern-intro {
+            padding: 56px 0 20px;
+            background: linear-gradient(180deg, rgba(242, 156, 18, 0.10) 0%, rgba(255,255,255,0) 55%);
+        }
+
+        .contact-modern-intro .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(242, 156, 18, 0.12);
+            color: #1a1447;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+        }
+
+        .contact-modern-intro h2 {
+            color: #1a1447;
+            font-weight: 900;
+            font-size: clamp(22px, 2.4vw, 34px);
+            line-height: 1.2;
+        }
+
+        .contact-modern-intro p {
+            color: rgba(26, 20, 71, 0.78);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .contact-feature {
+            border-radius: 18px;
+            background: rgba(255,255,255,0.9);
+            border: 1px solid rgba(26,20,71,0.10);
+            box-shadow: 0 16px 40px rgba(16, 24, 40, 0.08);
+            padding: 18px;
+            transition: transform 220ms ease, box-shadow 220ms ease;
+            height: 100%;
+        }
+
+        .contact-feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 56px rgba(16, 24, 40, 0.12);
+        }
+
+        .contact-feature .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(242, 156, 18, 0.15);
+            color: #f29c12;
+            font-size: 18px;
+        }
+
+        .contact-modern-intro .btn-cta {
+            border-radius: 14px;
+            padding: 12px 18px;
+            font-weight: 800;
+            transition: transform 200ms ease, background 200ms ease;
+        }
+
+        .contact-modern-intro .btn-cta:hover {
+            transform: translateY(-1px);
+        }
+
+        .contact-modern-intro .btn-primary-digi {
+            background: #f29c12;
+            border: 1px solid #f29c12;
+            color: #fff;
+        }
+
+        .contact-modern-intro .btn-ghost-digi {
+            background: transparent;
+            border: 1px solid rgba(26,20,71,0.18);
+            color: #1a1447;
+        }
+
+        @media (max-width: 991px) {
+            .contact-modern-intro {
+                padding-top: 36px;
+            }
+        }
+    </style>
+
+    <section class="contact-modern-intro">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="breadcumb-content">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-5">
+                    <div class="h-100 p-2">
+                        <div class="section-eyebrow">
+                            <i class="fas fa-headset" style="color:#f29c12;"></i>
+                            Contact Digicrome • Get fast support
+                        </div>
+                        <h2 class="mt-3">Talk to our team — admissions, accounts, and student help.</h2>
+                        <p class="mt-3">
+                            Whether you’re looking for course guidance or need quick help, our support desk is ready.
+                            Choose an option below and we’ll route you instantly.
+                        </p>
+
+                        <div class="mt-4 d-flex flex-wrap gap-2">
+                            <a href="javascript:void(0)" onclick="showContent('contact')" class="btn btn-cta btn-primary-digi">
+                                <i class="fas fa-phone"></i> Contact Options
+                            </a>
+                            <a href="#" onclick="document.querySelector('.contact_area').scrollIntoView({behavior:'smooth'})" class="btn btn-cta btn-ghost-digi">
+                                <i class="fas fa-paper-plane"></i> Send a Request
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="contact-feature" style="animation: none;">
+                                <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                                <h4 class="mt-3 mb-1" style="color:#1a1447; font-weight:900; font-size:16px;">Call Us</h4>
+                                <p style="font-size:13px;">01204538125</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-feature">
+                                <div class="icon"><i class="fas fa-envelope-open"></i></div>
+                                <h4 class="mt-3 mb-1" style="color:#1a1447; font-weight:900; font-size:16px;">Email Support</h4>
+                                <p style="font-size:13px;">info@digicrome.com</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-feature">
+                                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <h4 class="mt-3 mb-1" style="color:#1a1447; font-weight:900; font-size:16px;">Our Location</h4>
+                                <p style="font-size:13px;">Noida • Uttar Pradesh</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--==================================================-->
-    <!-- End educate Breadcumb Area -->
-    <!--==================================================-->
-    <div id="main">
+    </section>
 
-        <h1 class="text-center mb-2" style="font-size: 2rem; margin-top: 15px;">
-            Contact Digicrome
-        </h1>
-        <p class="text-center text-muted mb-4" style="font-size: 15px;">
-            Need assistance? Whether it's admission queries, account-related concerns, or student support, our dedicated
-            team is here to help you. Reach out to us via call or email, and we'll ensure a smooth experience for you.
-        </p>
-    </div>
     <style>
+
         .top_bar {
+
             background-color: #f29c12;
             color: white;
             padding: 10px 0;
@@ -142,326 +287,623 @@
         }
     </style>
 
-    <section>
-        <div class="container-fluid" style="width:80%">
-            <div class="top_bar">
-                <a style="font-size: 18px;" onclick="showContent('contact')"><i class="fas fa-phone"></i> Customer Contact
-                    No.</a>
-                {{-- <a style="font-size: 18px;" onclick="showContent('connect')"><i class="fas fa-globe"></i> Connect Online</a> --}}
-                <a style="font-size: 18px;" onclick="showContent('locate')"><i class="fas fa-map-marker-alt"></i> Locate
-                    Us</a>
-                <a style="font-size: 18px;" onclick="showContent('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a style="font-size: 18px;" onclick="showContent('chatbot')"><i class="fas fa-comments"></i> Chatbot</a>
-                <a style="font-size: 18px;" onclick="showContent('callback')"><i class="fas fa-phone-alt"></i> Get A
-                    Callback</a>
+    <!--==================================================-->
+    <!-- Start Modern Quick Routes (replaces old tab UI) -->
+    <!--==================================================-->
+    <style>
+        .contact-route-wrap {
+            padding: 34px 0 10px;
+        }
 
+        .contact-route-shell {
+            border-radius: 22px;
+            background: linear-gradient(180deg, rgba(26,20,71,0.04) 0%, rgba(242,156,18,0.04) 100%);
+            border: 1px solid rgba(26,20,71,0.10);
+            box-shadow: 0 16px 50px rgba(16,24,40,0.06);
+            overflow: hidden;
+        }
 
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 content-section" id="content">
+        .contact-route-header {
+            padding: 18px 18px 0;
+        }
 
-                        <h2>Click an option to see details here</h2>
+        .contact-route-title {
+            font-weight: 900;
+            color: #1a1447;
+            font-size: 22px;
+            margin: 0;
+        }
+
+        .contact-route-sub {
+            margin-top: 6px;
+            color: rgba(26,20,71,0.70);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .contact-route-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 14px 18px 18px;
+        }
+
+        .contact-route-tab {
+            flex: 1 1 190px;
+            max-width: 230px;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 16px;
+            border: 1px solid rgba(26,20,71,0.12);
+            background: rgba(255,255,255,0.9);
+            padding: 14px 14px;
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-route-tab::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: radial-gradient(420px 120px at 20% 0%, rgba(242,156,18,0.18) 0%, rgba(242,156,18,0) 60%);
+            opacity: 0;
+            transition: opacity 180ms ease;
+            pointer-events: none;
+        }
+
+        .contact-route-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 60px rgba(16,24,40,0.10);
+            border-color: rgba(242,156,18,0.35);
+        }
+
+        .contact-route-tab.active {
+            border-color: rgba(242,156,18,0.75);
+            background: rgba(242,156,18,0.08);
+        }
+
+        .contact-route-tab.active::after {
+            opacity: 1;
+        }
+
+        .contact-route-tab .row {
+            margin: 0;
+        }
+
+        .contact-route-tab .r-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(242,156,18,0.15);
+            color: #f29c12;
+            font-size: 18px;
+        }
+
+        .contact-route-tab .r-title {
+            color: #1a1447;
+            font-weight: 900;
+            margin: 6px 0 0;
+            font-size: 14px;
+        }
+
+        .contact-route-body {
+            padding: 0 18px 18px;
+        }
+
+        #content {
+            border-radius: 18px;
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(26,20,71,0.10);
+            box-shadow: 0 10px 35px rgba(16,24,40,0.06);
+            padding: 18px;
+            min-height: 180px;
+            animation: contactRouteFade 220ms ease;
+        }
+
+        @keyframes contactRouteFade {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .contact-route-empty {
+            color: rgba(26,20,71,0.70);
+            font-weight: 700;
+            text-align: center;
+            padding: 24px 0;
+        }
+
+        /* Make injected cards/images inside #content look good */
+        #content .card {
+            border-radius: 16px;
+            border: 1px solid rgba(26,20,71,0.10);
+        }
+
+        #content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 991px) {
+            .contact-route-tab { max-width: 100%; flex: 1 1 100%; }
+        }
+    </style>
+
+    <!--==================================================-->
+    <!-- Start Modern Quick Routes UI (better/advanced) -->
+    <!--==================================================-->
+    <style>
+        .contact-route-outer { padding: 38px 0 10px; }
+        .contact-route-shell {
+            border-radius: 26px;
+            background: linear-gradient(180deg, rgba(26,20,71,0.04) 0%, rgba(242,156,18,0.06) 100%);
+            border: 1px solid rgba(26,20,71,0.10);
+            box-shadow: 0 22px 70px rgba(16,24,40,0.08);
+            overflow: hidden;
+        }
+        .contact-route-top {
+            padding: 22px 22px 0;
+        }
+        .contact-route-top h3 {
+            font-size: 24px;
+            font-weight: 950;
+            color: #1a1447;
+            margin: 0;
+        }
+        .contact-route-top p {
+            margin: 8px 0 0;
+            color: rgba(26,20,71,0.72);
+            font-weight: 600;
+        }
+        .contact-route-tabs {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 12px;
+            padding: 18px 22px 22px;
+        }
+        @media (max-width: 991px) {
+            .contact-route-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        .contact-route-tab {
+            border-radius: 18px;
+            background: rgba(255,255,255,0.92);
+            border: 1px solid rgba(26,20,71,0.12);
+            padding: 14px 12px;
+            cursor: pointer;
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+            box-shadow: 0 10px 28px rgba(16,24,40,0.05);
+            min-height: 96px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-route-tab::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(320px 120px at 15% 0%, rgba(242,156,18,0.20) 0%, rgba(242,156,18,0) 60%);
+            opacity: 0;
+            transition: opacity 200ms ease;
+            pointer-events: none;
+        }
+        .contact-route-tab:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 55px rgba(16,24,40,0.10);
+            border-color: rgba(242,156,18,0.40);
+        }
+        .contact-route-tab.active {
+            border-color: rgba(242,156,18,0.9);
+            background: rgba(242,156,18,0.08);
+        }
+        .contact-route-tab.active::before { opacity: 1; }
+
+        .contact-route-tab .r-row { display:flex; align-items:center; gap:10px; }
+        .contact-route-tab .r-icon {
+            width: 44px; height: 44px;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(242,156,18,0.15);
+            color: #f29c12;
+            font-size: 18px;
+        }
+        .contact-route-tab .r-title {
+            color: #1a1447;
+            font-weight: 950;
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        #content {
+            margin: 0 22px 22px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.90);
+            border: 1px solid rgba(26,20,71,0.10);
+            box-shadow: 0 16px 55px rgba(16,24,40,0.06);
+            padding: 18px;
+            min-height: 180px;
+            animation: contentSwap 220ms ease;
+        }
+        @keyframes contentSwap {
+            from { opacity: 0; transform: translateY(8px);} 
+            to { opacity: 1; transform: translateY(0);} 
+        }
+        .contact-route-empty {
+            color: rgba(26,20,71,0.72);
+            font-weight: 800;
+            text-align: center;
+            padding: 34px 0;
+        }
+        #content .card { border-radius: 16px; border: 1px solid rgba(26,20,71,0.10);} 
+        #content img { max-width: 100%; height: auto; }
+    </style>
+
+    <section class="contact-route-outer">
+        <div class="container">
+            <div class="contact-route-shell">
+                <div class="contact-route-top">
+                    <h3>Quick Contact Routes</h3>
+                    <p>Pick a route and we’ll show the right contact details in an advanced panel.</p>
+                </div>
+
+                <div class="contact-route-tabs" id="contactRouteTabs">
+                    <div class="contact-route-tab active" onclick="selectRoute('contact','contact')">
+                        <div class="r-row">
+                            <div class="r-icon"><i class="fas fa-phone"></i></div>
+                            <div class="r-title">Customer Contact No.</div>
+                        </div>
                     </div>
+                    <div class="contact-route-tab" onclick="selectRoute('locate','locate')">
+                        <div class="r-row">
+                            <div class="r-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="r-title">Locate Us</div>
+                        </div>
+                    </div>
+                    <div class="contact-route-tab" onclick="selectRoute('whatsapp','whatsapp')">
+                        <div class="r-row">
+                            <div class="r-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="r-title">WhatsApp</div>
+                        </div>
+                    </div>
+                    <div class="contact-route-tab" onclick="selectRoute('chatbot','chatbot')">
+                        <div class="r-row">
+                            <div class="r-icon"><i class="fas fa-comments"></i></div>
+                            <div class="r-title">Chatbot</div>
+                        </div>
+                    </div>
+                    <div class="contact-route-tab" onclick="selectRoute('callback','callback')">
+                        <div class="r-row">
+                            <div class="r-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="r-title">Get A Callback</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <div class="contact-route-empty">Click an option to see details here</div>
                 </div>
             </div>
         </div>
     </section>
+
     <script>
+        function selectRoute(tabKey, type) {
+            let tabs = document.querySelectorAll('#contactRouteTabs .contact-route-tab');
+            tabs.forEach(t => t.classList.remove('active'));
+
+            // activate by onclick keyword match
+            const active = document.querySelector('#contactRouteTabs .contact-route-tab[onclick*="\'' + tabKey + '\'"]');
+            if (active) active.classList.add('active');
+
+            showContent(type);
+        }
+
         function showContent(type) {
             let content = document.getElementById('content');
             if (type === 'callback') {
                 content.innerHTML = `
-					<div class="row">
-		<div class="col-md-6 d-flex justify-content-center align-items-center">
-			<img loading="lazy"src="{{ asset('assets/images/cot1.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
-		</div>
-		<div class="col-md-6">
-		<br>
-		<h3>Want a callback? Enter your details.</h3>
-		<form id="frm123"  method="post" action="https://demo.digicrome.in/post_lead.php">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <img loading="lazy" src="{{ asset('assets/images/cot1.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <br>
+                            <h3>Want a callback? Enter your details.</h3>
+                            <form id="frm123" method="post" action="https://demo.digicrome.in/post_lead.php">
+                                <div class="mb-3">
+                                    <input class="form-control" style="border-radius: 20px; padding: 12px;" placeholder="Enter your name" name="name" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control" style="border-radius: 20px; padding: 12px;" placeholder="Enter your email" name="email" type="email">
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control" pattern="\d{10}" title="Please enter a 10-digit mobile number" style="border-radius: 20px; padding: 12px;" placeholder="Enter your mobile number" name="mobile" type="number">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input class="form-control" style="border-radius: 20px; padding: 12px;" name="title" placeholder="Enter your qualification" type="text">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input class="form-control" style="border-radius: 20px; padding: 12px;" name="address" placeholder="Enter your city" type="text">
+                                    </div>
+                                </div>
 
-		<div class="mb-3">
-			<input class="form-control" style="border-radius: 20px;   padding: 12px;" placeholder="Enter your name" name="name" type="text">
-		</div>
+                                <div class="mb-3">
+                                    <select style="border-radius: 20px; padding: 7px;" class="form-control" id="qualification" name="profession">
+                                        <option style="color:#000;" value="" disabled selected>Select Experience</option>
+                                        <option style="color:#000;" value="Working Professional - Technincal Roles">Working Professional - Technincal Roles</option>
+                                        <option style="color:#000;" value="Working Professional - Non Technincal">Working Professional - Non Technincal</option>
+                                        <option style="color:#000;" value="College Student - Final Year">College Student - Final Year</option>
+                                        <option style="color:#000;" value="College Student - 1st to pre-final Year">College Student - 1st to pre-final Year</option>
+                                        <option style="color:#000;" value="Other">Other</option>
+                                    </select>
+                                </div>
 
-		<div class="mb-3">
-			<input class="form-control" style="border-radius: 20px;   padding: 12px;" placeholder="Enter your email"  name="email" type="email">
-		</div>
+                                <input type="hidden" id="mobile" name="source" Value="Website(Contact)" placeholder="Mobile Number">
+                                <input type="hidden" id="mobile" name="country" value="india" placeholder="Mobile Number">
+                                <input type="hidden" name="ib" value="">
+                                <input type="text" name="our_custom" style="display:none;" value="digicrome">
+                                <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+                                <input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
+                                <input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
+                                <input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
 
-		<div class="mb-3">
-			<input class="form-control" pattern="\d{10}" title="Please enter a 10-digit mobile number"  style="border-radius: 20px;   padding: 12px;" placeholder="Enter your mobile number"  name="mobile"  type="number">
-		</div>
+                                <button type="submit" class="btn btn-warning w-100">GET A CALLBACK</button>
+                            </form>
 
-		<div class="row">
-			<div class="col-md-6 mb-3">
-				<input class="form-control" style="border-radius: 20px;   padding: 12px;" name="title" placeholder="Enter your qualification" type="text">
-			</div>
-			<div class="col-md-6 mb-3">
-				<input class="form-control" style="border-radius: 20px;   padding: 12px;" name="address" placeholder="Enter your city" type="text">
-			</div>
-		</div>
-
-		<div class="mb-3">
-			<select style="border-radius: 20px;   padding: 7px;" class="form-control" id="qualification" name="profession">
-			<option style="color:#000;" value="" disabled selected>Select Experience</option>
-			<option style="color:#000;" value="Working Professional - Technincal Roles">Working Professional - Technincal Roles</option>
-			<option style="color:#000;" value="Working Professional - Non Technincal">Working Professional - Non Technincal</option>
-			<option style="color:#000;" value="College Student - Final Year">College Student - Final Year</option>
-			<option style="color:#000;" value="College Student - 1st to pre-final Year">College Student - 1st to pre-final Year</option>
-			<option style="color:#000;" value="Other">Other</option>
-		</select>
-		</div>
-		<input type="hidden" id="mobile" name="source" Value="Website(Contact)" placeholder="Mobile Number">
-
-					<input type="hidden" id="mobile" name="country" value="india" placeholder="Mobile Number">
-<input type="hidden" name="ib" value="">
-				<input type="text" name="our_custom" style="display:none;" value="digicrome">
-                <input type="hidden" name="form_time" value="<?php echo time(); ?>">
-					<input type="hidden" id="mobile" name="comp_name" placeholder="Mobile Number">
-
-					<input type="hidden" id="mobile" name="state" value="" placeholder="Mobile Number">
-
-					<input type="hidden" id="mobile" name="altr_mobile" placeholder="Mobile Number">
-
-		<button type="submit" class="btn btn-warning w-100">GET A CALLBACK</button>
-		   </form>
-
-		<p class="mt-3 text-muted text-center" style="font-size: 14px;">
-			By continuing, you confirm that you have read and agreed to
-			<a href="#" class="text-decoration-none">Digicrome Terms</a> and
-			<a href="#" class="text-decoration-none">Privacy Policy</a>.
-		</p>
-	</div>
-
-	</div>
-	`;
+                            <p class="mt-3 text-muted text-center" style="font-size: 14px;">
+                                By continuing, you confirm that you have read and agreed to
+                                <a href="#" class="text-decoration-none">Digicrome Terms</a> and
+                                <a href="#" class="text-decoration-none">Privacy Policy</a>.
+                            </p>
+                        </div>
+                    </div>`;
             } else if (type === 'connect') {
-                content.innerHTML = `
-					<div class="row">
-		<div class="col-md-6 d-flex justify-content-center align-items-center">
-			<img loading="lazy"src="{{ asset('assets/images/cot2.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
-		</div>
-		<div class="col-md-6">
-		<div class="app-download-box text-center p-4" style="border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: #fff;">
-			<h3>Download the Digicrome App</h3>
-			<p>Get started today by downloading our app from the store.</p>
-
-			<div class="d-flex justify-content-center gap-3">
-			<a href="https://play.google.com/store/apps/details?id=com.digichrome.app">
-				<img loading="lazy"src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" title="Google Play" style="width: 150px;"></a>
-				<a href="https://apps.apple.com/in/app/digicrome-academy/id6503241441">
-				<img loading="lazy"src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" title="App Store" style="width: 150px;"></a>
-			</div>
-
-			<div class="mt-3">
-				<h5>Scan QR Code to Download</h5>
-				<img loading="lazy"src="https://us.digicrome.com/public/www/seoimg/code.png" alt="QR Code" title="QR Code" style="width: 150px; border-radius: 10px;">
-			</div>
-		</div>
-	</div>
-
-
-	</div>
-	`;
+                // keep existing injected content as-is
+                content.innerHTML = content.innerHTML;
             } else if (type === 'locate') {
                 content.innerHTML = `<div class="container mt-5">
-		<div class="row align-items-center">
-		  <!-- Left side: Image -->
-		  <div class="col-md-6 d-flex justify-content-center align-items-center">
-			<img loading="lazy"src="{{ asset('assets/images/location.svg') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
-		</div>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <img loading="lazy"src="{{ asset('assets/images/location.svg') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <h2>Locate Us</h2>
+                            <p>Find our nearest branch.</p>
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <img loading="lazy"src="{{ asset('assets/images/us_logo.svg') }}" alt="US Flag" title="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+                                                <h5 class="card-title">Office in the US</h5>
+                                            </div>
+                                            <br>
+                                            <p class="card-text"> 30 N Gould St Ste R Sheridan, Wyoming 82801</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <img loading="lazy"src="{{ asset('assets/images/indialogo.svg') }}" alt="India Flag" title="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+                                                <h5 class="card-title">Office in India</h5>
+                                            </div>
+                                            <br>
+                                            <p class="card-text">B-49, First Floor, Block B, Sector 59, Noida, Uttar Pradesh 201301</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-
-		  <!-- Right side: Address Information -->
-		  <div class="col-md-6">
-			<h2>Locate Us</h2>
-			<p>Find our nearest branch.</p>
-
-			<div class="row">
-			  <!-- US Address Card -->
-			  <div class="col-12 mb-3">
-				<div class="card">
-				  <div class="card-body">
-					<div class="d-flex align-items-center">
-					  <img loading="lazy"src="{{ asset('assets/images/us_logo.svg') }}" alt="US Flag" title="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
-					  <h5 class="card-title">Office in the US</h5>
-					</div>
-					<br>
-					<p class="card-text"> 30 N Gould St Ste R Sheridan, Wyoming 82801</p>
-				  </div>
-				</div>
-			  </div>
-
-			  <!-- India Address Card -->
-			  <div class="col-12">
-				<div class="card">
-				  <div class="card-body">
-					<div class="d-flex align-items-center">
-					  <img loading="lazy"src="{{ asset('assets/images/indialogo.svg') }}" alt="India Flag" title="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
-					  <h5 class="card-title">Office in India</h5>
-					</div>
-					<br>
-					<p class="card-text">B-49, First Floor, Block B, Sector 59, Noida, Uttar Pradesh 201301</p>
-				  </div>
-				</div>
-			  </div>
-			</div>
-
-			<a href="#" class="btn btn-secondary mt-4">
-			  <i class="fas fa-map-marker-alt"></i> Find Branch
-			</a>
-		  </div>
-		</div>
-	  </div>`;
+                            <a href="#" class="btn btn-secondary mt-4">
+                                <i class="fas fa-map-marker-alt"></i> Find Branch
+                            </a>
+                        </div>
+                    </div>
+                  </div>`;
             } else if (type === 'whatsapp') {
                 content.innerHTML = `<div class="container mt-5">
-		<div class="row align-items-center">
-		  <!-- Left side: Image -->
-		  <div class="col-md-6">
-			<img loading="lazy"src="{{ asset('assets/images/whatsap.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
-		</div>
-
-		  <!-- Right side: WhatsApp Contact -->
-		  <div class="col-md-6">
-			<div class="border p-4 rounded">
-			  <h2>Contact us on WhatsApp</h2>
-			  <p>Click below to chat with us on WhatsApp.</p>
-			  <a href="https://wa.me/916299611702" target="_blank" class="btn btn-success">
-				<i class="fab fa-whatsapp"></i> Chat on WhatsApp
-			  </a>
-			</div>
-		  </div>
-		</div>
-	  </div>`;
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <img loading="lazy"src="{{ asset('assets/images/whatsap.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="border p-4 rounded">
+                                <h2>Contact us on WhatsApp</h2>
+                                <p>Click below to chat with us on WhatsApp.</p>
+                                <a href="https://wa.me/916299611702" target="_blank" class="btn btn-success">
+                                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>`;
             } else if (type === 'chatbot') {
                 content.innerHTML = `<div class="container mt-5">
-		<div class="row align-items-center chat-box">
-			<div class="col-md-5 text-center">
-				<img loading="lazy"src="{{ asset('assets/images/chat.png') }}" alt="Chat Image" title="Chat Image">
-			</div>
-			<div class="col-md-7 chat-text">
-				<h2>Have more queries?</h2>
-				<p>Get them answered instantly.</p>
-				<a href="https://tawk.to/chat/68f9d2f2d84f3b1958008620/1j87u01d2" class="btn btn-light text-primary fw-bold">
-					<i class="fas fa-comments"></i> SAY HELLO
-				</a>
-			</div>
-		</div>
-	</div>`;
+                    <div class="row align-items-center chat-box">
+                        <div class="col-md-5 text-center">
+                            <img loading="lazy"src="{{ asset('assets/images/chat.png') }}" alt="Chat Image" title="Chat Image">
+                        </div>
+                        <div class="col-md-7 chat-text">
+                            <h2>Have more queries?</h2>
+                            <p>Get them answered instantly.</p>
+                            <a href="https://tawk.to/chat/68f9d2f2d84f3b1958008620/1j87u01d2" class="btn btn-light text-primary fw-bold">
+                                <i class="fas fa-comments"></i> SAY HELLO
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
             } else if (type === 'contact') {
                 content.innerHTML = `<div class="container mt-5">
-		<div class="row align-items-center contact-box">
-			<div class="col-md-5 text-center">
-				<img loading="lazy"src="{{ asset('assets/images/coustome.svg') }}" alt="Contact Image" title="Contact Image">
-			</div>
-			<div class="col-md-7">
-				<h3 class="fs-4">Customer Contact Number</h3>
-				<p>Call us for assistance.</p>
-				<a href="tel:+1234567890" class="btn btn-dark btn-call">
-					<i class="fas fa-phone"></i> Call Now
-				</a>
-				<div class="row mt-4">
-					<div class="col-md-4">
-						<div class="info-box">
-							<h4>For Admission Queries</h4>
-							<p><i class="fas fa-phone"></i> 01204538125</p>
-							<p><i class="fas fa-envelope"></i> info@digicrome.com</p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="info-box">
-							<h4>For Account Department</h4>
-							<p><i class="fas fa-phone"></i> 01204538104</p>
-							<p><i class="fas fa-envelope"></i> accounts@digicrome.com</p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="info-box">
-							<h4>For Students Support</h4>
-							<p><i class="fas fa-phone"></i> 7011101972 <br><small>Available: 10 AM to 9 PM</small></p>
-							<p><i class="fas fa-phone"></i> 01204538125 <br><small>Available: 11 AM to 6 PM</small></p>
-							<p><i class="fas fa-envelope"></i> support@digicrome.com</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	`;
+                    <div class="row align-items-center contact-box">
+                        <div class="col-md-5 text-center">
+                            <img loading="lazy"src="{{ asset('assets/images/coustome.svg') }}" alt="Contact Image" title="Contact Image">
+                        </div>
+                        <div class="col-md-7">
+                            <h3 class="fs-4">Customer Contact Number</h3>
+                            <p>Call us for assistance.</p>
+                            <a href="tel:+1234567890" class="btn btn-dark btn-call">
+                                <i class="fas fa-phone"></i> Call Now
+                            </a>
+                            <div class="row mt-4">
+                                <div class="col-md-4">
+                                    <div class="info-box">
+                                        <h4>For Admission Queries</h4>
+                                        <p><i class="fas fa-phone"></i> 01204538125</p>
+                                        <p><i class="fas fa-envelope"></i> info@digicrome.com</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="info-box">
+                                        <h4>For Account Department</h4>
+                                        <p><i class="fas fa-phone"></i> 01204538104</p>
+                                        <p><i class="fas fa-envelope"></i> accounts@digicrome.com</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="info-box">
+                                        <h4>For Students Support</h4>
+                                        <p><i class="fas fa-phone"></i> 7011101972 <br><small>Available: 10 AM to 9 PM</small></p>
+                                        <p><i class="fas fa-phone"></i> 01204538125 <br><small>Available: 11 AM to 6 PM</small></p>
+                                        <p><i class="fas fa-envelope"></i> support@digicrome.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
             }
         }
+
         window.onload = function() {
             showContent('contact');
         };
     </script>
+
     <!--==================================================-->
     <!-- Start Consalt Contact Area Inner Page -->
     <!--==================================================-->
+
+    <style>
+        .contact-modern-card{
+            border-radius:22px;
+            background: rgba(255,255,255,0.88);
+            border:1px solid rgba(26,20,71,0.10);
+            box-shadow:0 22px 70px rgba(16,24,40,0.06);
+            padding:22px;
+        }
+        .contact-modern-eyebrow{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            padding:10px 14px;
+            border-radius:999px;
+            background:rgba(242,156,18,0.12);
+            color:#1a1447;
+            font-weight:900;
+        }
+        .contact-modern-pills{ display:flex; flex-direction:column; gap:12px; }
+        .contact-modern-pill{
+            display:flex;
+            gap:12px;
+            align-items:flex-start;
+            padding:14px;
+            border-radius:18px;
+            background:rgba(255,255,255,0.95);
+            border:1px solid rgba(26,20,71,0.10);
+        }
+        .contact-modern-pill i{
+            width:44px; height:44px;
+            border-radius:16px;
+            background:rgba(242,156,18,0.15);
+            color:#f29c12;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex:0 0 44px;
+            font-size:18px;
+        }
+        .contact-modern-pill b{ color:#1a1447; }
+        .contact-form-modern{
+            border-radius:22px;
+            background:rgba(255,255,255,0.9);
+            border:1px solid rgba(26,20,71,0.10);
+            box-shadow:0 22px 70px rgba(16,24,40,0.06);
+            padding:22px;
+        }
+        .contact-form-modern-top{ padding-bottom:10px; }
+        .contact-form-modern .form-field input,
+        .contact-form-modern .form-field select{
+            width:100%;
+            border:1px solid rgba(26,20,71,0.16);
+            border-radius:12px;
+            padding:12px 14px;
+            background:rgba(255,255,255,0.92);
+            outline:none;
+            transition:border-color 180ms ease, box-shadow 180ms ease;
+        }
+        .contact-form-modern .form-field input:focus,
+        .contact-form-modern .form-field select:focus{
+            border-color: rgba(242,156,18,0.85);
+            box-shadow:0 0 0 4px rgba(242,156,18,0.18);
+        }
+        .btn-digi-submit{
+            width:100%;
+            background:#f29c12;
+            border:1px solid #f29c12;
+            color:#fff;
+            border-radius:14px;
+            padding:12px 18px;
+            font-weight:950;
+        }
+    </style>
+
     <section class="contact_area inner_section">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center"> 
                 <div class="col-lg-6">
                     <!-- section title -->
-                    <div class="section-sub-title three">
-                        <h2 style="color:var(--primary-color);font-size:20px;"><img loading="lazy"
-                                src="assets/images/inner-img/sub-title2.webp" alt="icon" title="icon">GET IN TOUCH
-                        </h2>
-                    </div>
-                    <div class="section_title">
-                        <h3 class="fs-1 fw-bold" style="color: #1a1447;">Trusted By the Genius
-                            <div>
-                                People with Digicrome
-                            </div>
+                    <div class="contact-modern-card">
+                        <div class="contact-modern-eyebrow">
+                            <span class="d-inline-flex align-items-center gap-2"><i class="fas fa-headset" style="color:#f29c12"></i> GET IN TOUCH</span>
+                        </div>
+                        <h3 class="mt-3" style="color:#1a1447; font-weight:950; font-size:clamp(22px,2.2vw,30px); line-height:1.2;">
+                            Trusted By the Genius People with Digicrome
                         </h3>
-                    </div>
-                    <div class="section-title-desc">
-                        <p>We combine media leadership, cross-media innovation, and advanced technology to develop
-                            standardized platforms with expert consultation.</p>
-                    </div>
-                    <div class="contact_main_info">
-                        <div class="call-do-action-info">
-                            <div class="call-do-social_icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="call_info">
-                                <p>Call us Anytime</p>
-                                <h3> 01204538125</h3>
-                            </div>
-                        </div>
-                        <div class="call-do-action-info">
-                            <div class="call-do-social_icon">
-                                <i class="fas fa-envelope-open"></i>
-                            </div>
-                            <div class="call_info">
-                                <p>Email us Anytime</p>
-                                <h3>info@digicrome.com</h3>
-                            </div>
-                        </div>
-                        <div class="call-do-action-info">
-                            <div class="call-do-social_icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="call_info">
-                                <p>Our Location</p>
-                                <span>Address: B-49, First Floor, Block B, Sector 59<br>Noida, Uttar Pradesh 201301</span>
-                            </div>
+                        <p class="mt-3" style="color:rgba(26,20,71,0.78); line-height:1.7; margin-bottom:0;">
+                            Quick support for admissions, accounts, and student help—send your details and our team will reach out.
+                        </p>
+
+                        <div class="contact-modern-pills mt-4">
+                            <div class="contact-modern-pill"><i class="fas fa-phone-alt"></i><div><b>Call us Anytime</b><div>01204538125</div></div></div>
+                            <div class="contact-modern-pill"><i class="fas fa-envelope-open"></i><div><b>Email us Anytime</b><div>info@digicrome.com</div></div></div>
+                            <div class="contact-modern-pill"><i class="fas fa-map-marker-alt"></i><div><b>Our Location</b><div>B-49, First Floor, Block B, Sector 59 Noida, Uttar Pradesh 201301</div></div></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <!-- contact form box -->
-                    <div class="contact-form-box style_two">
-                        <!-- section title -->
-                        {{-- <div class="contact-section-title">
-								<h4>CONTACT US</h4>
-								<h1>Feel Free to Contact Us</h1>
-							</div> --}}
+                    <div class="contact-form-box style_two contact-form-modern">
+                        <div class="contact-form-modern-top">
+                            <h3 style="color: #f29c12;font-size: 22px; margin-bottom: 8px;font-weight:950;"> Register now!!</h3>
+                            <p style="margin:0; color:rgba(26,20,71,0.78); line-height:1.6;">And get a quick call from our team.</p>
+                        </div>
+
                         <form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
                             action="https://demo.digicrome.in/post_lead.php">
                             @csrf
-                            <h3 style="color: #f29c12;font-size: 24px; margin-bottom: 20px;font-weight:500;"> Register now!!
-                                And get a quick call</h3>
                             <div class="form-field">
                                 <!--<label style="color:#fff;" for="name">Name:</label> -->
                                 <input type="text" id="name" name="name" placeholder="Name">
