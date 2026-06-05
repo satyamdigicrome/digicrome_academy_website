@@ -130,6 +130,8 @@
     <noscript>
         <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}">
     </noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" media="print"
+        onload="this.media='all'">
     <script type="application/ld+json" >
       {
         "@context": "https://schema.org",

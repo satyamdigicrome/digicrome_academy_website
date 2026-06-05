@@ -117,19 +117,14 @@
                                         @endforeach
                                     </ul>
                                 </div>
-
                                 <div class="mega-right">
                                     <h6>Top Courses</h6>
-
                                     <div class="course-list">
                                         @foreach ([1,3,85,55] as $id)
                                             @if (isset($header_courses[$id]))
                                                 @php $course = $header_courses[$id]; @endphp
-
                                                 <a href="{{ route('course_details', $course->slug) }}" class="course-item">
-
                                                     <img src="{{ asset('storage/'.$course->image) }}" alt="">
-
                                                     <div class="course-info">
                                                         <h6>{{ $course->name }}</h6>
                                                         <p>{{ $course->course_duration ?? 'N/A' }}</p>
@@ -148,23 +143,18 @@
                 </li>
                 <li><a href="/">Home</a>
                 </li>
-                <li><a href="{{ route('about') }}">About</a></li>
-
+                <li><a href="{{ route('about') }}">About Us</a></li>
                 <li><a href="{{ route('success_stories') }}">Success stories</a></li>
-                <li><a href="{{ route('blog') }}">Blog </a>
-                <li><a href="{{ route('payments') }}">Payments </a>
-
-                </li>
+                <li><a href="{{ route('blog') }}">Blog </a></li>
+                <li><a href="{{ route('payments') }}">Payments </a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
                 <li><a href="#">More<i class="bi bi-chevron-down"></i></a>
                     <ul class="sub_menu">
-                        <li><a href="{{ route('who_we_are') }}">Who we are</a></li>
-                        <li><a href="{{ route('corporate_services') }}">Corporate Services </a>
+                        {{-- <li><a href="{{ route('who_we_are') }}">Who we are</a></li> --}}
+                        <li><a href="{{ route('corporate_services') }}">Corporate Services </a></li>
                         <li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
                         <li><a href="{{ route('career') }}">Career</a></li>
-                        <li><a href="{{ route('media_presence') }}">Media Presence</a>
-                        </li>
-
+                        <li><a href="{{ route('media_presence') }}">Media Presence</a></li>
                     </ul>
                 </li>
                 <li>
@@ -233,7 +223,7 @@
             </div>
             <ul class="nav_scroll">
                 <li><a href="/">Home</a></li>
-                <li><a href="{{ route('about') }}">About</a></li>
+                <li><a href="{{ route('about') }}">About Us</a></li>
                 <li><a href="#">Courses<i class="bi bi-chevron-down"></i></a>
                     <ul class="sub_menu">
                         <li>
@@ -267,7 +257,7 @@
                 <li><a href="{{ route('media_presence') }}">Media Presence</a></li>
                 <li><a href="#">More<i class="bi bi-chevron-down"></i></a>
                     <ul class="sub_menu">
-                        <li><a href="{{ route('who_we_are') }}">Who we are</a></li>
+                        {{-- <li><a href="{{ route('who_we_are') }}">Who we are</a></li> --}}
                         <li><a href="{{ route('corporate_services') }}">Corporate Services </a></li>
                         <li><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
                         <li><a href="{{ route('career') }}">Career</a></li>
