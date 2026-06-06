@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-12">
                     <div class="about_content">
-
+                        <h1 class="title fw-bold fs-3">About Digicrome</h1>
                         <div class="section-title-desc mb-2">
                             <p>Digicrome is a leading Digital EdTech platform with a vision to provide the accessibility of
                                 digital education to students and professionals. We have a dedicated team of experts who
