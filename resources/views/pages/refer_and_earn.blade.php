@@ -942,6 +942,7 @@
                     <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#referFaq">
                         <div class="accordion-body">
                             No. Referral rewards are applicable only for new candidates who have not previously registered, submitted an inquiry, attended counseling sessions, or enrolled in any Digicrome program.
+                        </div>
                     </div>
                 </div>
 
@@ -957,22 +958,6 @@
                     <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#referFaq">
                         <div class="accordion-body">
                             Yes, family members, friends, colleagues, and classmates can be referred, provided they meet the program eligibility criteria.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 7 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq7">
-                            Is there any fee to join the Refer & Earn Program?
-                        </button>
-                    </h2>
-
-                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#referFaq">
-                        <div class="accordion-body">
-                            No. Participation in the referral program is completely free.
                         </div>
                     </div>
                 </div>
