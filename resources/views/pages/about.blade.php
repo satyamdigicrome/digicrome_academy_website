@@ -18,31 +18,31 @@
             margin: 0px;
             text-align: justify;
         }
+    </style>
+    <style>
+        .about-banner-wrapper {
+            width: 100%;
+            overflow: hidden;
+        }
 
-        #sticky-header {
-            margin-bottom: 80px !important;
+        .about-banner-image {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media (max-width: 767px) {
+            .about-banner-wrapper {
+                margin-top: 70px;
+            }
         }
     </style>
-    <div class="breadcumb-area d-flex">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="breadcumb-content">
-                        <div class="breadcumb-title">
-                            <h1>About Us</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- <div class="breadcumb-shape">
-			<img loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
-		</div> --}}
-            <div class="breadcumb-shape2">
-                <img loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball"
-                    title="ball">
-            </div>
-        </div>
-    </div>
+    <section class="about-banner-wrapper">
+        <picture>
+            <source media="(max-width: 767px)" srcset="{{ asset('assets/images/about-banner-mobile.webp') }}">
+            <img src="{{ asset('assets/images/about-banner-desktop.webp') }}" alt="About Us Banner" class="about-banner-image">
+        </picture>
+    </section>
     <section class="about-area style-three inner">
         <div class="container">
             <div class="row">
@@ -84,15 +84,29 @@
                     <div class="about_content">
 
                         <div class="section-title-desc mb-2">
-                            <p>Digicrome is a leading Digital EdTech platform with a vision to provide the accessibility of digital education to students and professionals. We have a dedicated team of experts who empower and motivate students and working professionals by delivering them high-quality, industry-based knowledge with the best certification courses. We are equipped with the latest technologies, which provide learners with positive learning experiences. Our environment is where knowledge is experienced, appropriate, and future-ready. </p>
+                            <p>Digicrome is a leading Digital EdTech platform with a vision to provide the accessibility of
+                                digital education to students and professionals. We have a dedicated team of experts who
+                                empower and motivate students and working professionals by delivering them high-quality,
+                                industry-based knowledge with the best certification courses. We are equipped with the
+                                latest technologies, which provide learners with positive learning experiences. Our
+                                environment is where knowledge is experienced, appropriate, and future-ready. </p>
                         </div>
                         <div class="section-title-desc mb-2">
-                            <p>Our programs have equipped 10,000+ learners with in-demand skills across domains such as Data Science, Artificial Intelligence, and Cybersecurity. We ensure they stay passionate in a fast-changing workplace around the world. At the center of Digicrome’s principles is experiential subject learning. Through live doubt sessions, 30+ real-world projects, and a full-time internship facility, our learners gain industry-level knowledge. </p>
+                            <p>Our programs have equipped 10,000+ learners with in-demand skills across domains such as Data
+                                Science, Artificial Intelligence, and Cybersecurity. We ensure they stay passionate in a
+                                fast-changing workplace around the world. At the center of Digicrome’s principles is
+                                experiential subject learning. Through live doubt sessions, 30+ real-world projects, and a
+                                full-time internship facility, our learners gain industry-level knowledge. </p>
                         </div>
                         <div class="section-title-desc">
-                            <p>Our courses help them prepare for real-world challenges. This approach not only enhances their knowledge but also builds their logical, critical thinking, and professional skills. We trust that education should lead to profitable results. With an increasing global community and expanding 500+ industry partnerships, Digicrome continues to lead in the digital or online education sector. This makes us more approachable, realistic, and aligned with today’s every industry's needs. </p>
+                            <p>Our courses help them prepare for real-world challenges. This approach not only enhances
+                                their knowledge but also builds their logical, critical thinking, and professional skills.
+                                We trust that education should lead to profitable results. With an increasing global
+                                community and expanding 500+ industry partnerships, Digicrome continues to lead in the
+                                digital or online education sector. This makes us more approachable, realistic, and aligned
+                                with today’s every industry's needs. </p>
                         </div>
-                        <div class="about-iteam-list"> 
+                        <div class="about-iteam-list">
                             <ul>
                                 <li><img loading="lazy" src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
                                         alt="icon31" title="icon31">Course

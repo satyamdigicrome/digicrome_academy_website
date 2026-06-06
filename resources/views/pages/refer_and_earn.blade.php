@@ -1001,14 +1001,12 @@
                             When is a referral considered successful?
                         </button>
                     </h2>
-
                     <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#referFaq">
                         <div class="accordion-body">
                             A referral is considered successful when the referred candidate completes admission, fee payment, and all required enrollment formalities.
                         </div>
                     </div>
                 </div>
-
                 <!-- FAQ 10 -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
@@ -1017,16 +1015,13 @@
                             Do I need to be a Digicrome student to refer someone?
                         </button>
                     </h2>
-
                     <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#referFaq">
                         <div class="accordion-body">
                             No. Anyone can refer a candidate to Digicrome and become eligible for referral rewards, subject to verification and program terms.
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
     <section class="refer-cta-section">
