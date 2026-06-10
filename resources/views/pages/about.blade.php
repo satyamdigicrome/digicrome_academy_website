@@ -87,6 +87,12 @@
             height: auto;
             display: block;
         }
+        .testimonial-area.style-inner {
+            padding: 30px 0 0px;
+        }
+        .testimonial-area.style-two {
+            padding: 50px 0px;
+        }
     </style>
     <section class="about-banner-wrapper">
         <picture>
