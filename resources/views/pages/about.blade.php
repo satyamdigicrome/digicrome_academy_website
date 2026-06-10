@@ -3,7 +3,6 @@
 @section('title', $meta->title ?? 'Digicrome')
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
-
 @section('content')
     @include('components.lead-form-popup')
 
@@ -11,7 +10,6 @@
         .section-title-desc p {
             font-size: 13px;
             font-weight: 500;
-
         }
 
         section.about-area.style-three .section-title-desc p {
@@ -35,6 +33,13 @@
             .about-banner-wrapper {
                 margin-top: 70px;
             }
+        }
+
+        .about-iteam-list ul li {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            margin-bottom: 10px;
         }
     </style>
     <section class="about-banner-wrapper">
@@ -131,6 +136,316 @@
                         </div>
 
     </section>
+    @push('styles')
+        <style>
+            .founders-showcase {
+                background: #f8fbfc;
+                overflow: hidden;
+            }
+
+            .founder-label {
+                display: inline-block;
+                padding: 10px 20px;
+                border-radius: 50px;
+                background: rgba(0, 188, 212, .1);
+                color: #00bcd4;
+                font-weight: 700;
+            }
+
+            .founders-heading {
+                font-size: 48px;
+                font-weight: 900;
+                color: #081120;
+                margin-top: 10px;
+                text-transform: none;
+            }
+
+            .founders-subtitle {
+                color: #6c757d;
+                font-size: 18px;
+                margin-top: 10px;
+            }
+
+            .founder-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 30px;
+                cursor: pointer;
+                height: 620px;
+                transition: .5s;
+                transform-style: preserve-3d;
+            }
+
+            .founder-card:hover {
+                transform: translateY(-12px);
+            }
+
+            .founder-card::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                padding: 2px;
+                border-radius: 30px;
+                background: linear-gradient(130deg,
+                        #00bcd4,
+                        #4facfe,
+                        #00bcd4);
+                background-size: 300% 300%;
+                animation: borderMove 5s linear infinite;
+                z-index: 0;
+            }
+
+            .founder-image {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: .6s;
+            }
+
+            .founder-card:hover .founder-image {
+                transform: scale(1.08);
+            }
+
+            .founder-overlay {
+                position: absolute;
+                bottom: 25px;
+                left: 25px;
+                right: 25px;
+                z-index: 2;
+
+                padding: 24px;
+
+                border-radius: 20px;
+
+                backdrop-filter: blur(15px);
+
+                background: rgba(255, 255, 255, .15);
+
+                border: 1px solid rgba(255, 255, 255, .2);
+            }
+
+            .founder-overlay h3 {
+                margin: 0;
+                color: white;
+                font-size: 28px;
+                font-weight: 800;
+            }
+
+            .founder-overlay span {
+                color: white;
+                opacity: .9;
+            }
+
+            @keyframes borderMove {
+
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                100% {
+                    background-position: 100% 50%;
+                }
+
+            }
+
+            .founder-modal .modal-content {
+                border: 0;
+                overflow: hidden;
+                border-radius: 30px;
+            }
+
+            .modal-founder-img {
+                width: 100%;
+                height: 100%;
+                min-height: 500px;
+                object-fit: cover;
+            }
+
+            .founder-modal-content {
+                padding: 50px;
+            }
+
+            .modal-badge {
+                display: inline-block;
+                padding: 10px 18px;
+                border-radius: 50px;
+                background: rgba(0, 188, 212, .1);
+                color: #00bcd4;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+
+            .founder-modal-content h3 {
+                font-size: 42px;
+                font-weight: 900;
+                color: #081120;
+                margin-bottom: 20px;
+            }
+
+            .founder-modal-content p {
+                font-size: 18px;
+                line-height: 1.9;
+                color: #5f6672;
+            }
+
+            .founder-close {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                z-index: 10;
+            }
+
+            @media(max-width:991px) {
+
+                .founders-heading {
+                    font-size: 40px;
+                }
+
+                .founder-card {
+                    height: 500px;
+                }
+
+                .modal-founder-img {
+                    min-height: 350px;
+                }
+
+                .founder-modal-content {
+                    padding: 30px;
+                }
+            }
+        </style>
+    @endpush
+    <section class="founders-showcase py-5">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <span class="founder-label">Founders</span>
+                <h2 class="founders-heading d-block">Meet Our Founders</h2>
+                <p class="founders-subtitle">
+                    The visionaries behind Digicrome.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- Founder 1 -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="founder-card" data-bs-toggle="modal" data-bs-target="#parichitModal">
+
+                        <img src="{{ asset('assets/images/founders/parichit.webp') }}" alt="Parichit Bhamri"
+                            class="founder-image">
+
+                        <div class="founder-overlay">
+                            <h3>Parichit Bhamri</h3>
+                            <span>Founder Profile</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Founder 2 -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="founder-card" data-bs-toggle="modal" data-bs-target="#ranvirModal">
+
+                        <img src="{{ asset('assets/images/founders/ranvir.webp') }}" alt="Ranvir Rawal"
+                            class="founder-image">
+
+                        <div class="founder-overlay">
+                            <h3>Ranvir Rawal</h3>
+                            <span>Founder Profile</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <div class="modal fade founder-modal" id="parichitModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+
+            <div class="modal-content">
+
+                <button type="button" class="btn-close founder-close" data-bs-dismiss="modal"></button>
+
+                <div class="row g-0">
+
+                    <div class="col-lg-5">
+                        <img src="{{ asset('assets/images/founders/parichit.webp') }}" class="modal-founder-img"
+                            alt="">
+                    </div>
+
+                    <div class="col-lg-7">
+
+                        <div class="founder-modal-content">
+
+                            <span class="modal-badge">
+                                Founder Profile
+                            </span>
+
+                            <h3>
+                                Parichit Bhamri
+                            </h3>
+
+                            <p>
+                                Leading Digicrome with a vision focused on innovation,
+                                growth, and creating impactful learning experiences.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade founder-modal" id="ranvirModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+
+            <div class="modal-content">
+
+                <button type="button" class="btn-close founder-close" data-bs-dismiss="modal"></button>
+
+                <div class="row g-0">
+
+                    <div class="col-lg-5">
+                        <img src="{{ asset('assets/images/founders/ranvir.webp') }}" class="modal-founder-img"
+                            alt="">
+                    </div>
+
+                    <div class="col-lg-7">
+
+                        <div class="founder-modal-content">
+
+                            <span class="modal-badge">
+                                Founder Profile
+                            </span>
+
+                            <h3>
+                                Ranvir Rawal
+                            </h3>
+
+                            <p>
+                                Driving the company forward through leadership,
+                                strategic direction, and a commitment to excellence.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
     <style>
         .about-education-box {
             margin-right: 50%;

@@ -195,7 +195,6 @@
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
     <div class="container-fluid">
         <div class="row align-items-center py-1">
-
             <!-- Left side: Contact Number -->
             <div class="col-6 text-start">
                 <span class="text-white fw-bold small">01204538104</span>
