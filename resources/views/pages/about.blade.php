@@ -41,6 +41,52 @@
             gap: 2px;
             margin-bottom: 10px;
         }
+
+        .about-thumb-single {
+            height: 100%;
+        }
+
+        .about-thumb-single img {
+            width: 100%;
+            height: 650px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        section.about-area.style-three {
+            padding: 50px 0;
+        }
+
+        .achievement-banner-section {
+            background: #fff;
+        }
+
+        .achievement-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .achievement-subtitle {
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .achievement-banner {
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .achievement-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
     </style>
     <section class="about-banner-wrapper">
         <picture>
@@ -50,54 +96,32 @@
     </section>
     <section class="about-area style-three inner">
         <div class="container">
+            <h1 class="title fw-bold fs-1 text-center mb-3">About Digicrome</h1>
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
-                    <div class="about-thumb-wrapper">
-                        <div class="about-learn-box">
-                            <div class="about-learn-icon" style="position: relative; top: 18px;">
-                                <img loading="lazy" src="{{ asset('assets/images/home-three/learn-icon.webp') }}"
-                                    alt="icon" title="icon">
-                            </div>
-                            <div class="learn-title">
-                                <p>Learn Online
-                                    Anywhere</p>
-                            </div>
-                        </div>
-                        <div class="about-thumb">
-                            <img loading="lazy" src="{{ asset('assets/images/home-three/about-thumb31.webp') }}"
-                                alt="thumb" title="thumb">
-                        </div>
-                        <div class="about-experience-box">
-                            <div class="about-experience-count">
-                                <p class="counter"
-                                    style="display: inline-block; font-size: 60px; line-height: 52px; text-transform: uppercase; color: var(--primary-color);">
-                                    10</p>
-                                <span>+</span>
-                            </div>
-                            <div class="about-experience-desc">
-                                <p>Years of<br>
-                                    Experience</p>
-                            </div>
-                        </div>
-                        <div class="about-shape32">
-                            <img loading="lazy" src="{{ asset('assets/images/home-three/about-shape32.webp') }}"
-                                alt="shape" title="shape">
-                        </div>
+                    <div class="about-thumb-single">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="{{ asset('assets/images/founders/bothmb.webp') }}">
+
+                            <img loading="lazy" src="{{ asset('assets/images/founders/both.webp') }}" alt="About Digicrome"
+                                class="img-fluid w-100">
+                        </picture>
+
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-12">
                     <div class="about_content">
-                        <h1 class="title fw-bold fs-3">About Digicrome</h1>
                         <div class="section-title-desc mb-2">
-                            <p>Digicrome is a leading Digital EdTech platform with a vision to provide the accessibility of
-                                digital education to students and professionals. We have a dedicated team of experts who
+                            <p>Digicrome is a leading Digital EdTech platform founded by Mr. Parichit Bhamri and Mr. Ranvir
+                                Rawal, with a vision to provide access to online education for students and working
+                                professionals. We have a dedicated team of experts who
                                 empower and motivate students and working professionals by delivering them high-quality,
                                 industry-based knowledge with the best certification courses. We are equipped with the
                                 latest technologies, which provide learners with positive learning experiences. Our
                                 environment is where knowledge is experienced, appropriate, and future-ready. </p>
                         </div>
                         <div class="section-title-desc mb-2">
-                            <p>Our programs have equipped 10,000+ learners with in-demand skills across domains such as Data
+                            <p>Our programs have equipped 20,000+ learners with in-demand skills across domains such as Data
                                 Science, Artificial Intelligence, and Cybersecurity. We ensure they stay passionate in a
                                 fast-changing workplace around the world. At the center of Digicrome’s principles is
                                 experiential subject learning. Through live doubt sessions, 30+ real-world projects, and a
@@ -111,7 +135,7 @@
                                 digital or online education sector. This makes us more approachable, realistic, and aligned
                                 with today’s every industry's needs. </p>
                         </div>
-                        <div class="about-iteam-list">
+                        <div class="about-iteam-list mt-3">
                             <ul>
                                 <li><img loading="lazy" src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
                                         alt="icon31" title="icon31">Course
@@ -136,316 +160,6 @@
                         </div>
 
     </section>
-    @push('styles')
-        <style>
-            .founders-showcase {
-                background: #f8fbfc;
-                overflow: hidden;
-            }
-
-            .founder-label {
-                display: inline-block;
-                padding: 10px 20px;
-                border-radius: 50px;
-                background: rgba(0, 188, 212, .1);
-                color: #00bcd4;
-                font-weight: 700;
-            }
-
-            .founders-heading {
-                font-size: 48px;
-                font-weight: 900;
-                color: #081120;
-                margin-top: 10px;
-                text-transform: none;
-            }
-
-            .founders-subtitle {
-                color: #6c757d;
-                font-size: 18px;
-                margin-top: 10px;
-            }
-
-            .founder-card {
-                position: relative;
-                overflow: hidden;
-                border-radius: 30px;
-                cursor: pointer;
-                height: 620px;
-                transition: .5s;
-                transform-style: preserve-3d;
-            }
-
-            .founder-card:hover {
-                transform: translateY(-12px);
-            }
-
-            .founder-card::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                padding: 2px;
-                border-radius: 30px;
-                background: linear-gradient(130deg,
-                        #00bcd4,
-                        #4facfe,
-                        #00bcd4);
-                background-size: 300% 300%;
-                animation: borderMove 5s linear infinite;
-                z-index: 0;
-            }
-
-            .founder-image {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: .6s;
-            }
-
-            .founder-card:hover .founder-image {
-                transform: scale(1.08);
-            }
-
-            .founder-overlay {
-                position: absolute;
-                bottom: 25px;
-                left: 25px;
-                right: 25px;
-                z-index: 2;
-
-                padding: 24px;
-
-                border-radius: 20px;
-
-                backdrop-filter: blur(15px);
-
-                background: rgba(255, 255, 255, .15);
-
-                border: 1px solid rgba(255, 255, 255, .2);
-            }
-
-            .founder-overlay h3 {
-                margin: 0;
-                color: white;
-                font-size: 28px;
-                font-weight: 800;
-            }
-
-            .founder-overlay span {
-                color: white;
-                opacity: .9;
-            }
-
-            @keyframes borderMove {
-
-                0% {
-                    background-position: 0% 50%;
-                }
-
-                100% {
-                    background-position: 100% 50%;
-                }
-
-            }
-
-            .founder-modal .modal-content {
-                border: 0;
-                overflow: hidden;
-                border-radius: 30px;
-            }
-
-            .modal-founder-img {
-                width: 100%;
-                height: 100%;
-                min-height: 500px;
-                object-fit: cover;
-            }
-
-            .founder-modal-content {
-                padding: 50px;
-            }
-
-            .modal-badge {
-                display: inline-block;
-                padding: 10px 18px;
-                border-radius: 50px;
-                background: rgba(0, 188, 212, .1);
-                color: #00bcd4;
-                font-weight: 700;
-                margin-bottom: 20px;
-            }
-
-            .founder-modal-content h3 {
-                font-size: 42px;
-                font-weight: 900;
-                color: #081120;
-                margin-bottom: 20px;
-            }
-
-            .founder-modal-content p {
-                font-size: 18px;
-                line-height: 1.9;
-                color: #5f6672;
-            }
-
-            .founder-close {
-                position: absolute;
-                right: 20px;
-                top: 20px;
-                z-index: 10;
-            }
-
-            @media(max-width:991px) {
-
-                .founders-heading {
-                    font-size: 40px;
-                }
-
-                .founder-card {
-                    height: 500px;
-                }
-
-                .modal-founder-img {
-                    min-height: 350px;
-                }
-
-                .founder-modal-content {
-                    padding: 30px;
-                }
-            }
-        </style>
-    @endpush
-    <section class="founders-showcase py-5">
-        <div class="container">
-
-            <div class="text-center mb-5">
-                <span class="founder-label">Founders</span>
-                <h2 class="founders-heading d-block">Meet Our Founders</h2>
-                <p class="founders-subtitle">
-                    The visionaries behind Digicrome.
-                </p>
-            </div>
-
-            <div class="row g-4 justify-content-center">
-
-                <!-- Founder 1 -->
-                <div class="col-lg-5 col-md-6">
-                    <div class="founder-card" data-bs-toggle="modal" data-bs-target="#parichitModal">
-
-                        <img src="{{ asset('assets/images/founders/parichit.webp') }}" alt="Parichit Bhamri"
-                            class="founder-image">
-
-                        <div class="founder-overlay">
-                            <h3>Parichit Bhamri</h3>
-                            <span>Founder Profile</span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Founder 2 -->
-                <div class="col-lg-5 col-md-6">
-                    <div class="founder-card" data-bs-toggle="modal" data-bs-target="#ranvirModal">
-
-                        <img src="{{ asset('assets/images/founders/ranvir.webp') }}" alt="Ranvir Rawal"
-                            class="founder-image">
-
-                        <div class="founder-overlay">
-                            <h3>Ranvir Rawal</h3>
-                            <span>Founder Profile</span>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    <div class="modal fade founder-modal" id="parichitModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-
-            <div class="modal-content">
-
-                <button type="button" class="btn-close founder-close" data-bs-dismiss="modal"></button>
-
-                <div class="row g-0">
-
-                    <div class="col-lg-5">
-                        <img src="{{ asset('assets/images/founders/parichit.webp') }}" class="modal-founder-img"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-7">
-
-                        <div class="founder-modal-content">
-
-                            <span class="modal-badge">
-                                Founder Profile
-                            </span>
-
-                            <h3>
-                                Parichit Bhamri
-                            </h3>
-
-                            <p>
-                                Leading Digicrome with a vision focused on innovation,
-                                growth, and creating impactful learning experiences.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-    <div class="modal fade founder-modal" id="ranvirModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-
-            <div class="modal-content">
-
-                <button type="button" class="btn-close founder-close" data-bs-dismiss="modal"></button>
-
-                <div class="row g-0">
-
-                    <div class="col-lg-5">
-                        <img src="{{ asset('assets/images/founders/ranvir.webp') }}" class="modal-founder-img"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-7">
-
-                        <div class="founder-modal-content">
-
-                            <span class="modal-badge">
-                                Founder Profile
-                            </span>
-
-                            <h3>
-                                Ranvir Rawal
-                            </h3>
-
-                            <p>
-                                Driving the company forward through leadership,
-                                strategic direction, and a commitment to excellence.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
     <style>
         .about-education-box {
             margin-right: 50%;
@@ -458,7 +172,7 @@
         }
     </style>
     @if ($userCountry === 'India')
-        <div class="container my-5">
+        <div class="container mb-5">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
                     <img loading="lazy" src="{{ asset('assets/images/home-one/msme.webp') }}" alt="Education Image"
@@ -525,26 +239,36 @@
     </section>
 
     {{-- <div class="call-to-action style-two">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-6">
-				<div class="call-to-title">
-					<h3>Start learning from Anywhere!</h3>
-					<h3>Anytime, get a free trial.</h3>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="call-to-btn">
-					<a href="{{ route('course') }}">all programs<i class="flaticon flaticon-right-arrow"></i></a>
-				</div>
-			</div>
-		</div>
-		<div class="call-to-shape31">
-			<img loading="lazy" src="{{ asset('assets/images/home-three/call-to-arrow2.webp') }}" alt="shape" title="shape">
-		</div>
-	</div>
-</div> --}}
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="call-to-title">
+                        <h3>Start learning from Anywhere!</h3>
+                        <h3>Anytime, get a free trial.</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="call-to-btn">
+                        <a href="{{ route('course') }}">all programs<i class="flaticon flaticon-right-arrow"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="call-to-shape31">
+                <img loading="lazy" src="{{ asset('assets/images/home-three/call-to-arrow2.webp') }}" alt="shape" title="shape">
+            </div>
+        </div>
+    </div> --}}
 
+    <section class="achievement-banner-section py-5">
+        <div class="container">
+
+            <div class="achievement-banner">
+                <img src="{{ asset('assets/images/aboutmilestone.webp') }}" alt="Digicrome Achievements"
+                    title="Digicrome Achievements" class="img-fluid">
+            </div>
+
+        </div>
+    </section>
     <div class="testimonial-area style-inner">
         <div class="container">
             <div class="row section-title-space">

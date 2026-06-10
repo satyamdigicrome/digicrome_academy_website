@@ -102,7 +102,7 @@
                     </div>
                     <div class="hero-rating-box desktop-only2">
                         <div class="hero-rating-icon">
-                            <span>10k+</span>
+                            <span>20k+</span>
                         </div>
                         <div class="hero-rating-item-box">
                             <div class="hero-star-icon">
@@ -389,7 +389,7 @@
                             <div class="col-lg-6">
                                 <div class="about-item-box two">
                                     <div class="about-iteam-count">
-                                        <h3 class="counter">10</h3>
+                                        <h3 class="counter">20</h3>
                                         <span>k+</span>
                                     </div>
                                     <div class="about-item-desc last">

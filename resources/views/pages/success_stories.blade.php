@@ -158,7 +158,7 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
-                    <h6 class="fw-bold display-5 text-primary">5000+</h6>
+                    <h6 class="fw-bold display-5 text-primary">10000+</h6>
                     <p class="mb-0 fs-5">Students Placed</p>
                 </div>
                 <div class="col-md-4">
