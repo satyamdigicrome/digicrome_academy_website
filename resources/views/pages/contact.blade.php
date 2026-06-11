@@ -28,7 +28,11 @@
         }
 
         .contact-hero img {
-            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            /* background: #0f1226; */
         }
 
         .contact-hero {
