@@ -15,6 +15,7 @@
             h2 {
                 font-size: 2rem;
             }
+
             .heading-like-h1 {
                 font-size: 36px;
                 font-weight: 700;
@@ -22,8 +23,10 @@
                 color: #000;
                 margin-bottom: 20px;
             }
+
             .corporate-hero {
-                background: linear-gradient(135deg, #667eea 0%, #1A1447 100%);
+                /* background: linear-gradient(135deg, #667eea 0%, #1A1447 100%); */
+                background: white;
                 min-height: 100vh;
                 display: flex;
                 align-items: center;
@@ -50,8 +53,8 @@
             }
 
             .corporate-hero h1 {
-                font-size: clamp(2.5rem, 5vw, 4rem);
-                background: linear-gradient(45deg, #fff, #f0f4ff);
+                font-size: clamp(2.5rem, 3vw, 4rem);
+                background: linear-gradient(45deg, #272251, #f19e18);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
@@ -62,7 +65,7 @@
             .corporate-hero p {
                 /* font-size: 1.3rem; */
                 text-align: justify;
-                color: rgba(255, 255, 255, 0.9);
+                /* color: rgba(255, 255, 255, 0.9); */
                 margin: 1.5rem 0 2.5rem;
                 animation: fadeInUp 1s ease-out 0.2s both;
             }
@@ -92,7 +95,7 @@
 
             .btn-corporate-secondary {
                 border: 2px solid rgba(255, 255, 255, 0.3);
-                background: transparent;
+                background: #5f1212;
                 padding: 1rem 2rem;
                 font-weight: 600;
                 border-radius: 50px;
@@ -185,20 +188,32 @@
             }
 
             .logo-grid {
-                padding: 5rem 0;
-                background: #f8f9fa;
+                overflow: hidden;
+            }
+
+            .companyLogoSwiper {
+                padding: 10px 0;
+            }
+
+            .companyLogoSwiper .swiper-slide {
+                height: auto;
             }
 
             .logo-item {
-                /* filter: grayscale(100%); */
-                transition: all 0.4s ease;
-                opacity: 0.7;
+                background: #fff;
+                min-height: 120px;
+                transition: all .3s ease;
             }
 
             .logo-item:hover {
-                filter: grayscale(0%);
-                opacity: 1;
-                transform: scale(1.05);
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+            }
+
+            .logo-item img {
+                max-height: 60px;
+                width: auto;
+                object-fit: contain;
             }
 
             .case-study-card {
@@ -216,6 +231,12 @@
             .case-study-img {
                 height: 250px;
                 object-fit: cover;
+            }
+
+            .btn-outline-warning {
+                border: 2px solid #f29c12;
+                color: #f29c12;
+                transition: all 0.3s ease;
             }
 
             .testimonial-card {
@@ -263,6 +284,103 @@
                 .btn-corporate-primary,
                 .btn-corporate-secondary {
                     width: 100%;
+                    margin-bottom: 20px;
+                }
+
+                .corporate-hero {
+                    margin-top: 120px;
+                }
+            }
+
+            .digicrome-cta {
+                background: #0f172a;
+            }
+
+            .cta-wrapper {
+                background:
+                    linear-gradient(90deg,
+                        rgba(15, 23, 42, 0.98),
+                        rgba(17, 24, 39, 0.96));
+                border-radius: 24px;
+                padding: 30px 15px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .cta-wrapper::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background:
+                    repeating-linear-gradient(90deg,
+                        rgba(255, 255, 255, 0.02) 0px,
+                        rgba(255, 255, 255, 0.02) 2px,
+                        transparent 2px,
+                        transparent 40px);
+                pointer-events: none;
+            }
+
+            .cta-title {
+                font-size: 42px;
+                font-weight: 500;
+                line-height: 1.15;
+                color: #fff;
+                margin-bottom: 0;
+            }
+
+            .stat-label {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 18px;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+
+            .stat-number {
+                color: #fff;
+                font-size: 42px;
+                font-weight: 600;
+                line-height: 1;
+                margin: 0;
+            }
+
+            .cta-buttons .btn-light {
+                border-radius: 12px;
+                font-weight: 600;
+                color: #0f172a;
+            }
+
+            .cta-buttons .btn-outline-light {
+                border-radius: 12px;
+                font-weight: 600;
+                border-width: 1px;
+            }
+
+            @media (max-width: 991px) {
+                .cta-wrapper {
+                    padding: 50px 30px;
+                }
+
+                .cta-title {
+                    font-size: 2.8rem;
+                }
+
+                .stat-number {
+                    font-size: 3.5rem;
+                }
+
+                .cta-buttons .btn {
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .cta-title {
+                    font-size: 2.2rem;
+                }
+
+                .stat-number {
+                    font-size: 3rem;
                 }
             }
         </style>
@@ -277,20 +395,19 @@
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="corporate-hero-content">
-                        <h1 data-aos="fade-up" data-aos-delay="100">Transforming <span class="text-warning">Corporate</span>
-                            Learning</h1>
-                        <p data-aos="fade-up" data-aos-delay="200">Drive significant impact through smart learning pathways,
-                            we ensure each person, from basic-level to senior-level leaders, acquires skills that directly
-                            contribute to business growth. Our training mix experiential projects, live expert sessions, and
-                            useful case studies, allowing teams to move beyond theory and apply skills in high-stakes
-                            environments. With a focus on future-leading abilities, we help businesses build skills in top
-                            domains such as machine learning, cybersecurity, cloud computing, and others. At the same time,
-                            guidance modules cultivate integral thinking, ideas, and innovation-led mindsets essential for
-                            handling intricate trade ecosystems.</p>
+                        <span class="border p-1 rounded-pill shadow" data-aos="fade-up" data-aos-delay="50">&nbsp;Corporate
+                            Services&nbsp;</span>
+                        <h1 data-aos="fade-up" data-aos-delay="100" class="mt-2">Empowering Teams for <span
+                                class="text-warning">AI, Data </span>
+                            & Digital Transformation</h1>
+                        <p data-aos="fade-up" data-aos-delay="200">Upskill your workforce with industry-relevant training in
+                            AI, Data Science, Cybersecurity, and emerging digital technologies. Through expert-led sessions,
+                            hands-on projects, and real-world case studies, we empower teams to build future-ready skills
+                            that drive innovation, enhance productivity, and accelerate business growth.</p>
                         <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
-                            <a href="#services" class="btn btn-corporate-primary">Explore Solutions <i
-                                    class="fas fa-arrow-right ms-2"></i></a>
-                            <a href="#contact" class="btn btn-corporate-secondary">Request Demo <i
+                            {{-- <a href="#services" class="btn btn-corporate-primary">Explore Solutions <i
+                                    class="fas fa-arrow-right ms-2"></i></a> --}}
+                            <a href="#contact" class="btn btn-corporate-secondary">Get Started <i
                                     class="fas fa-play ms-2"></i></a>
                         </div>
                     </div>
@@ -307,24 +424,88 @@
     </section>
 
     <!-- Partners Logo Grid -->
-    <section class="logo-grid">
+    <section class="logo-grid py-5">
         <div class="container">
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8">
-                    <h2 data-aos="fade-up">Trusted by Leading Enterprises</h2>
-                    <p data-aos="fade-up" data-aos-delay="200" class="lead">Join 50+ organizations who've transformed
-                        their workforce with our training programs</p>
+                    <h2 data-aos="fade-up" style="text-transform: none;">Trusted by leading organisations worldwide</h2>
+                    <p data-aos="fade-up" data-aos-delay="200" class="lead">
+                        Join 250+ organizations who've transformed their workforce with our training programs
+                    </p>
                 </div>
             </div>
-            <div class="row g-4" data-aos="fade-up" data-aos-delay="300">
-                @foreach ($companyLogos->take(12) as $index => $logo)
-                    <div class="col-lg-2 col-md-3 col-6">
-                        <div class="logo-item p-4 border rounded-3 h-100 d-flex align-items-center justify-content-center">
-                            <img src="{{ asset('storage/' . $logo->image) }}" alt="{{ $logo->name ?? 'Partner' }}"
-                                class="img-fluid" style="max-height: 60px;">
+
+            <div class="swiper companyLogoSwiper" data-aos="fade-up" data-aos-delay="300">
+                <div class="swiper-wrapper">
+
+                    @foreach ($companyLogos as $logo)
+                        <div class="swiper-slide">
+                            <div class="logo-item p-4 border rounded-3 d-flex align-items-center justify-content-center">
+                                <img src="{{ asset('storage/' . $logo->image) }}" alt="{{ $logo->name ?? 'Partner' }}"
+                                    class="img-fluid">
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="digicrome-cta py-3">
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="row align-items-center g-4">
+
+                    <!-- Left Content -->
+                    <div class="col-lg-5">
+                        <h2 class="cta-title">
+                            Digicrome SkillUp+ <br>
+                            Offerings
+                        </h2>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="col-lg-7">
+                        <div class="row text-center text-lg-start">
+
+                            <div class="col-md-4 mb-4 mb-md-0">
+                                <p class="stat-label">
+                                    Industry-Relevant Courses
+                                </p>
+                                <h3 class="stat-number">100+</h3>
+                            </div>
+
+                            <div class="col-md-4 mb-4 mb-md-0">
+                                <p class="stat-label">
+                                    Corporate Training Programs
+                                </p>
+                                <h3 class="stat-number">500+</h3>
+                            </div>
+
+                            <div class="col-md-4">
+                                <p class="stat-label">
+                                    Workforce Skills Development
+                                </p>
+                                <h3 class="stat-number">5000+</h3>
+                            </div>
+
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="cta-buttons mt-4">
+                            <a href="#contact" class="btn btn-light btn-lg px-4 py-3 me-3">
+                                Get a Free Trial
+                            </a>
+
+                            <a href="{{ route('course') }}" class="btn btn-outline-light btn-lg px-4 py-3">
+                                Explore Digicrome SkillUp+
+                                <span class="ms-2">→</span>
+                            </a>
                         </div>
                     </div>
-                @endforeach
+
+                </div>
             </div>
         </div>
     </section>
@@ -407,160 +588,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Success Metrics -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="row g-4 text-center">
-                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="stat-item">
-                        <span class="stat-number counter" data-target="5000">0</span><span>+</span>
-                        <div class="stat-label">Happy Clients</div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="stat-item">
-                        <span class="stat-number counter" data-target="10K">0</span><span>K+</span>
-                        <div class="stat-label">Trained Professionals</div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="stat-item">
-                        <span class="stat-number counter" data-target="95">0</span><span>%</span>
-                        <div class="stat-label">Success Rate</div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="stat-item">
-                        <span class="stat-number counter" data-target="4.8">0</span>
-                        <div class="stat-label">Avg Rating</div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="stat-item">
-                        <span class="stat-number counter" data-target="24">0</span>
-                        <span>+</span>
-                        <div class="stat-label">Programs Delivered</div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="stat-item">
-                        <span class="stat-number counter" data-target="50">0</span>
-                        <span>+</span>
-                        <div class="stat-label">Industry Partners</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Advanced Courses Section for Corporate -->
-    <div class="case-study-area style-one">
-        <div class="container">
-            <div class="row align-items-center section-title-space">
-                <div class="col-lg-6">
-                    <div class="section-sub-title" style="font-size: 16px;">
-                        <h2>OUR COURSES</h2>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="section_title">
-                        <h3 class="heading-like-h1">Comprehensive
-                            Available All Programs</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row case-study-bg">
-                <div class="col-lg-12 col-sm-12">
-                    <div class="case_study_nav">
-                        <div class="case_study_menu">
-                            <ul class="menu-filtering">
-                                <li class="current_menu_item filter-btn" data-filter=".Upcoming">Upcoming Courses</li>
-                                @foreach ($collections->whereNotIn('id', [6]) as $collection)
-                                    <li class="filter-btn" data-filter=".{{ Str::slug($collection->name) }}">
-                                        {{ $collection->name }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row image_load">
-                {{-- @dd($upcomingCourses) --}}
-                @foreach ($upcomingCourses as $course)
-                    <div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
-                        <div class="case-study-single-box">
-                            <div class="case-study-thumb">
-                                <img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="case-study-thumb"
-                                    title="case-study-thumb">
-                            </div>
-                            <div class="case-study-content">
-                                <h5>Courses</h5>
-                                <h4><a
-                                        href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
-                                </h4>
-                                <div class="case-rating">
-
-                                    <div class="case-rating-num">
-                                        <span>Duration: {{ $course->course_duration }}</span>
-                                    </div>
-                                </div>
-
-                                <br><br>
-                                <div class="course-btn">
-                                    <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
-                                            class="flaticon flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                @foreach ($collections as $collection)
-                    @foreach ($collection->courses as $course)
-                        <div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }}">
-                            <div class="case-study-single-box">
-                                <div class="case-study-thumb">
-                                    <img loading="lazy" src="{{ asset('storage/' . $course->image) }}"
-                                        alt="case-study-thumb" title="case-study-thumb">
-                                </div>
-                                <div class="case-study-content">
-                                    <h5>{{ $collection->name }}</h5>
-                                    <h4><a
-                                            href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
-                                    </h4>
-                                    <div class="case-rating">
-
-                                        <div class="case-rating-num">
-                                            <span>Duration: {{ $course->course_duration }}</span>
-                                        </div>
-                                    </div>
-                                    <br><br>
-                                    <div class="course-btn">
-                                        <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
-                                                class="flaticon flaticon-right-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                @endforeach
-            </div>
-        </div>
-    </div>
-    <!-- Custom Styles for Enhanced Courses -->
-    <style>
-        .filter-btn:hover,
-        .filter-btn.current_menu_item {
-            background: linear-gradient(45deg, #f29c12, #ff8c00) !important;
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(242, 156, 18, 0.4);
-        }
-    </style>
-
-    <!-- CTA Section -->
+        <!-- CTA Section -->
     <section class="py-5 bg-warning text-dark">
         <div class="container text-center">
             <h2 data-aos="zoom-in">Ready to Transform Your Workforce?</h2>
@@ -658,40 +686,6 @@
             once: true
         });
 
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const target = parseFloat(counter.getAttribute('data-target'));
-                const increment = target / 100;
-                let current = 0;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        counter.textContent = target;
-                        clearInterval(timer);
-                    } else {
-                        counter.textContent = Math.floor(current);
-                    }
-                }, 20);
-            });
-        }
-
-        // Intersection Observer for counters
-        const observerOptions = {
-            threshold: 0.5
-        };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        observer.observe(document.querySelector('.stats-section'));
-
         window.addEventListener('load', function() {
             var grid = document.querySelector('.image_load');
             var iso = new Isotope(grid, {
@@ -712,6 +706,43 @@
             iso.arrange({
                 filter: '.Upcoming'
             });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+
+            new Swiper('.companyLogoSwiper', {
+                loop: true,
+                speed: 2500,
+
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+
+                breakpoints: {
+                    0: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    576: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                    992: {
+                        slidesPerView: 5,
+                        spaceBetween: 25,
+                    },
+                    1200: {
+                        slidesPerView: 6,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+
         });
     </script>
 @endpush

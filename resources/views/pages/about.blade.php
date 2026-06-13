@@ -267,7 +267,17 @@
 
     <section class="achievement-banner-section py-5">
         <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="achievement-title">
+                    Celebrating Excellence & Achievements
+                </h2>
 
+                <p class="achievement-subtitle">
+                    Over the years, Digicrome has earned recognition for innovation,
+                    educational excellence, and commitment to student success across
+                    the globe.
+                </p>
+            </div>
             <div class="achievement-banner">
                 <img src="{{ asset('assets/images/aboutmilestone.webp') }}" alt="Digicrome Achievements"
                     title="Digicrome Achievements" class="img-fluid">
