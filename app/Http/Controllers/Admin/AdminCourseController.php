@@ -40,6 +40,7 @@ class AdminCourseController extends Controller
             'price' => 'nullable|numeric',
             'dubai_price' => 'nullable|numeric',
             'us_price' => 'nullable|numeric',
+            'singapore_price' => 'nullable|numeric',
             'discount' => 'nullable|numeric',
             'meta_title' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string',
@@ -71,6 +72,7 @@ class AdminCourseController extends Controller
         $course->price = $request->price;
         $course->dubai_price = $request->dubai_price;
         $course->us_price = $request->us_price;
+        $course->singapore_price = $request->singapore_price;
         $course->discount = $request->discount;
         $course->meta_title = $request->meta_title;
         $course->meta_keywords = $request->meta_keywords;
@@ -110,7 +112,7 @@ class AdminCourseController extends Controller
             'course_duration' => 'nullable|string|max:255',
             'price' => 'nullable|numeric|min:0',
             'dubai_price' => 'nullable|numeric|min:0',
-            'us_price' => 'nullable|numeric|min:0',
+            'singapore_price' => 'nullable|numeric|min:0',
             'discount' => 'nullable|numeric|min:0',
             'meta_title' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string',

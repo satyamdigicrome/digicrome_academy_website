@@ -126,6 +126,12 @@
                     <input type="number" class="form-control" id="us_price" name="us_price" value="{{ $course->us_price }}" step="0.01">
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="singapore_price">Singapore Price</label>
+                    <input type="number" class="form-control" id="singapore_price" name="singapore_price" value="{{ $course->singapore_price }}" step="0.01">
+                </div>
+            </div>
     
             <div class="col-md-4">
                 <div class="form-group">

@@ -752,9 +752,15 @@
                                     </li>
                                     <li>
                                         <div class="label">
-                                            Dubai Price
+                                            UAE Price
                                         </div>
                                         <span class="value-dollar">{{ $course->dubai_price }}AED</span>
+                                    </li>
+                                    <li>
+                                        <div class="label">
+                                            Singapore Price
+                                        </div>
+                                        <span class="value-dollar">{{ $course->singapore_price }}SGD</span>
                                     </li>
                                     <li>
                                         <div class="label">

@@ -24,6 +24,7 @@ class Course extends Model
         'price',
         'dubai_price',
         'us_price',
+        'singapore_price',
         'discount',
         'meta_title',
         'meta_keywords',

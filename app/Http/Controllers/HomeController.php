@@ -27,16 +27,16 @@ class HomeController extends Controller
         $query->where('status', 1)->limit(4); 
     }])->where('status', 1)->whereNotIn('id', [5, 6])->orderBy('position')->get();
 
-    if ($userCountry === 'India') {
+    // if ($userCountry === 'India') {
         $upcomingCourses = Course::where('status', 1)
                                  ->orderByRaw('ISNULL(position), position ASC')
                                  ->limit(4)
                                  ->get();
-    } else {
-        $upcomingCourses = Course::where('status', 1)
-                                 ->whereIn('id', [60, 58, 55, 61])
-                                 ->get();
-    }
+    // } else {
+    //     $upcomingCourses = Course::where('status', 1)
+    //                              ->whereIn('id', [60, 58, 55, 61])
+    //                              ->get();
+    // }
     // dd($upcomingCourses);
     $companyLogos = Cache::remember('company_logos', 60, function () {
             return Logo::where('type', 'companies')->get(['id', 'image']);

@@ -290,6 +290,10 @@
                 .corporate-hero {
                     margin-top: 120px;
                 }
+
+                .btn-outline-warning {
+                    color: #0f172a;
+                }
             }
 
             .digicrome-cta {
@@ -381,6 +385,171 @@
 
                 .stat-number {
                     font-size: 3rem;
+                }
+            }
+
+            .how-it-works {
+                background: #f8f7f5;
+            }
+
+            .section-tag {
+                display: inline-block;
+                padding: 5px 17px;
+                border: 1px solid #d6d6d6;
+                border-radius: 50px;
+                font-size: 16px;
+                font-weight: 600;
+                color: #19335a;
+                background: #fff;
+            }
+
+            .section-title {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 1.4;
+                color: #0f2d4e;
+            }
+
+            .section-desc {
+                font-size: 16px;
+                line-height: 1.4;
+                color: #555;
+            }
+
+            .steps-wrapper {
+                border-top: 1px solid #e8e8e8;
+            }
+
+            .step-card {
+                position: relative;
+                padding: 10px 15px;
+                height: 100%;
+                border-right: 1px solid #e8e8e8;
+                overflow: hidden;
+                transition: all .45s ease;
+                background: transparent;
+            }
+
+            /* Top accent background */
+            .step-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 0;
+                background: #f7ede4;
+                transition: height .45s ease;
+                z-index: 0;
+            }
+
+            /* Large circle */
+            .step-card::after {
+                content: "";
+                position: absolute;
+                width: 260px;
+                height: 260px;
+                border: 28px solid rgba(0, 0, 0, 0.03);
+                border-radius: 50%;
+                top: 50px;
+                right: -80px;
+                transition: all .5s ease;
+                z-index: 0;
+            }
+
+            .step-card::after {
+                border-top-color: rgba(0,0,0,.08);
+                border-right-color: rgba(0,0,0,.08);
+                border-bottom-color: rgba(0,0,0,.02);
+                border-left-color: rgba(0,0,0,.02);
+            }
+
+            .step-card>* {
+                position: relative;
+                z-index: 2;
+            }
+
+            .step-icon {
+                font-size: 30px;
+                margin-bottom: 75px;
+                color: #2f3747;
+                transition: all .35s ease;
+            }
+
+            .step-badge {
+                display: inline-block;
+                padding: 3px 5px;
+                border-radius: 8px;
+                border: 1px solid #d9d9d9;
+                background: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 20px;
+                transition: all .35s ease;
+            }
+
+            .step-card h4 {
+                font-size: 20px;
+                font-weight: 500;
+                color: #0f2d4e;
+                margin-bottom: 10px;
+            }
+
+            .step-card p {
+                font-size: 16px;
+                line-height: 1.4;
+                color: #555;
+            }
+
+            /* Hover Effect */
+            .step-card:hover {
+                background: #fff;
+                transform: translateY(-12px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+                z-index: 5;
+            }
+
+            .step-card:hover::before {
+                height: 110px;
+            }
+
+            .step-card:hover::after {
+                top: -70px;
+                transform: scale(1.15) rotate(25deg);
+            }
+
+            .step-card:hover .step-badge {
+                background: #f7ede4;
+                border-color: #e4c7a7;
+                color: #b8722d;
+            }
+
+            .step-card:hover .step-icon {
+                transform: translateY(-5px);
+                color: #0f2d4e;
+            }
+
+            @media (max-width: 991px) {
+                .section-title {
+                    font-size: 38px;
+                }
+
+                .section-desc {
+                    margin-top: 20px;
+                    font-size: 16px;
+                }
+
+                .step-card {
+                    border-right: none;
+                    border-bottom: 1px solid #e5e5e5;
+                }
+
+                .step-card h4 {
+                    font-size: 24px;
+                }
+
+                .step-card p {
+                    font-size: 16px;
                 }
             }
         </style>
@@ -509,6 +678,106 @@
             </div>
         </div>
     </section>
+
+    <section class="how-it-works py-5">
+        <div class="container">
+
+            <div class="row align-items-start mb-5">
+                <div class="col-lg-7">
+                    <span class="section-tag">HOW IT WORKS</span>
+                    <h2 class="section-title mt-3">
+                        We Build Skills That Drive <br>
+                        Business Impact
+                    </h2>
+                </div>
+
+                <div class="col-lg-5">
+                    <p class="section-desc">
+                        From skills gap assessment to measurable business impact,
+                        a structured approach to drive outcome-driven learning for AI
+                        and digital skills across your workforce.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-0 steps-wrapper">
+
+                <!-- Step 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+
+                        <span class="step-badge">STEP 1</span>
+
+                        <h4>Assess Skills Gaps</h4>
+
+                        <p>
+                            Assess skill gaps aligned to business goals and assign
+                            licenses to targeted learner groups.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card active">
+                        <div class="step-icon">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+
+                        <span class="step-badge">STEP 2</span>
+
+                        <h4>Learning Journeys by Role</h4>
+
+                        <p>
+                            Unlimited access to curated courses and structured
+                            paths tailored to job roles.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="bi bi-globe"></i>
+                        </div>
+
+                        <span class="step-badge">STEP 3</span>
+
+                        <h4>Enable Learning at Scale</h4>
+
+                        <p>
+                            Blended learning across live sessions, async content,
+                            and certification prep.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card border-end-0">
+                        <div class="step-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+
+                        <span class="step-badge">STEP 4</span>
+
+                        <h4>See the Impact</h4>
+
+                        <p>
+                            Track engagement, completion, and adoption through
+                            dashboards and reports.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
     <!-- Services Section -->
     <section id="services" class="services-grid">
         <div class="container">
@@ -588,7 +857,7 @@
             </div>
         </div>
     </section>
-        <!-- CTA Section -->
+    <!-- CTA Section -->
     <section class="py-5 bg-warning text-dark">
         <div class="container text-center">
             <h2 data-aos="zoom-in">Ready to Transform Your Workforce?</h2>
