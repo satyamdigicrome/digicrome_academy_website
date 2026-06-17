@@ -134,7 +134,7 @@
                 left: 0;
                 right: 0;
                 height: 4px;
-                background: linear-gradient(90deg, #f29c12, #ff6b35);
+                background: linear-gradient(90deg, #1A1447, #ff6b35);
             }
 
             .service-card:hover {
@@ -145,7 +145,7 @@
             .service-icon {
                 width: 80px;
                 height: 80px;
-                background: linear-gradient(135deg, #f29c12, #ff8c00);
+                background: linear-gradient(135deg, #1A1447, #ff6b35);
                 border-radius: 20px;
                 display: flex;
                 align-items: center;
@@ -839,7 +839,6 @@
                         <h4>Employee Upskilling</h4>
                         <p>Comprehensive training programs in AI, Data Science, Cloud, and Digital Transformation for your
                             entire workforce.</p>
-                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
@@ -850,7 +849,6 @@
                         <h4>Custom Learning Paths</h4>
                         <p>Bespoke training solutions tailored to your organization's specific needs and industry
                             requirements.</p>
-                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
@@ -861,7 +859,6 @@
                         <h4>Leadership Development</h4>
                         <p>Executive training programs focusing on strategic leadership, innovation, and digital
                             transformation.</p>
-                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
@@ -872,7 +869,6 @@
                         <h4>Certification Programs</h4>
                         <p>Industry-recognized certifications that validate your team's skills and boost professional
                             credibility.</p>
-                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
@@ -882,7 +878,6 @@
                         </div>
                         <h4>Technical Bootcamps</h4>
                         <p>Intensive, hands-on bootcamps for rapid skill acquisition in emerging technologies.</p>
-                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
@@ -893,7 +888,6 @@
                         <h4>Performance Analytics</h4>
                         <p>Advanced learning analytics to measure ROI, track progress, and optimize training effectiveness.
                         </p>
-                        <a href="#contact" class="btn btn-outline-warning mt-3">Learn More</a>
                     </div>
                 </div>
             </div>
