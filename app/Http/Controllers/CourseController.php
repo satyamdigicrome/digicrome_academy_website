@@ -15,118 +15,96 @@ use Illuminate\Support\Facades\Cache;
 class CourseController extends Controller
 {
     public function index(Request $request)
-{
-    $name = $request->name;
-    $meta = Metatag::where('page_name', 'Course')->first();
-
-    if ($request->filled('ids')) {
-        $ids = explode(',', $request->ids);
-        $courses = Course::whereIn('id', $ids)
-                         ->where('status', 1)
-                         ->paginate(10);
-    } else {
-        $courses = Course::where('status', 1)->paginate(10); // Only active courses
+    {
+        $name = $request->name;
+        $meta = Metatag::where('page_name', 'Course')->first();
+        if ($request->filled('ids')) {
+            $ids = explode(',', $request->ids);
+            $courses = Course::whereIn('id', $ids)->where('status', 1)->paginate(10);
+        } else {
+            $courses = Course::where('status', 1)->paginate(10);
+        }
+        return view('pages.course', compact('courses', 'meta', 'name'));
     }
-
-    return view('pages.course', compact('courses', 'meta', 'name'));
-}
-
-
-    
-
 
     public function course_details($slug)
-{
-    $course = Course::with([
-        'keypoints:id,course_id,name',
-        'aparts:id,course_id,image,heading,tagline,paragraph',
-        'faqs:id,course_id,question,answer',
-        'extraPartOne:id,course_id,heading',
-        'extraPartTwo:id,course_id,heading',
-        'projects:id,course_id,heading,paragraph',
-        'caseStudies:id,course_id,heading,paragraph',
-        'keyFeatures:id,course_id,heading,paragraph,image',
-        'modules:id,course_id,question,answer',
-    ])
-    ->select('id', 'name', 'slug', 'sku', 'course_online_payment', 'description', 'browser', 'meta_title', 'meta_description', 'meta_keywords', 'image','banner_image', 'tag_line','about','course_free','singapore_price','us_price','dubai_price','price', 'course_duration') // load only needed course fields
-    ->where('slug', $slug)
-    ->firstOrFail();
-
-    $courses = Cache::remember('latest_courses', 60, function () {
-        return Course::latest()->take(3)->get(['id', 'name', 'slug', 'image', 'tag_line']);
-    });
-    $cacheKey = 'placements_course_' . $course->course_free;
-    $placements = Cache::remember($cacheKey, 60, function () use ($course) {
-        if ($course->course_free == 1) {
-            return Placement::where('category', 'DS')
-                ->get(['id', 'name', 'position', 'package', 'image']);
-        } elseif ($course->course_free == 2) {
-            return Placement::where('category', 'IB')
-                ->get(['id', 'name', 'position', 'package', 'image']);
-        } elseif ($course->course_free == 3) {
-            return Placement::where('category', 'AISS')
-                ->get(['id', 'name', 'position', 'package', 'image']);
-        } else {
-            return Placement::all(['id', 'name', 'image']);
+    {
+        $course = Course::with([
+            'keypoints:id,course_id,name',
+            'aparts:id,course_id,image,heading,tagline,paragraph',
+            'faqs:id,course_id,question,answer',
+            'extraPartOne:id,course_id,heading',
+            'extraPartTwo:id,course_id,heading',
+            'projects:id,course_id,heading,paragraph',
+            'caseStudies:id,course_id,heading,paragraph',
+            'keyFeatures:id,course_id,heading,paragraph,image',
+            'modules:id,course_id,question,answer',
+        ])
+        ->select('id', 'name', 'slug', 'sku', 'course_online_payment', 'description', 'browser', 'meta_title', 'meta_description', 'meta_keywords', 'image','banner_image', 'tag_line','about','course_free','singapore_price','us_price','dubai_price','price', 'course_duration') // load only needed course fields
+        ->where('slug', $slug)
+        ->firstOrFail();
+        $courses = Cache::remember('latest_courses', 60, function () {
+            return Course::latest()->take(3)->get(['id', 'name', 'slug', 'image', 'tag_line']);
+        });
+        $cacheKey = 'placements_course_' . $course->course_free;
+        $placements = Cache::remember($cacheKey, 60, function () use ($course) {
+            if ($course->course_free == 1) {
+                return Placement::where('category', 'DS')
+                    ->get(['id', 'name', 'position', 'package', 'image']);
+            } elseif ($course->course_free == 2) {
+                return Placement::where('category', 'IB')
+                    ->get(['id', 'name', 'position', 'package', 'image']);
+            } elseif ($course->course_free == 3) {
+                return Placement::where('category', 'AISS')
+                    ->get(['id', 'name', 'position', 'package', 'image']);
+            } else {
+                return Placement::all(['id', 'name', 'image']);
+            }
+        });
+        $companyLogos = Cache::remember('company_logos', 60, function () {
+            return Logo::where('type', 'companies')->get(['id', 'image']);
+        });
+        $awords = Cache::remember('awords', 60, function () {
+            return Logo::where('type', 'awords')->get(['id', 'image']);
+        });
+        $plainLogos = Logo::where('type', 'tools')
+        ->where('course_id', $course->id)
+        ->get(['id', 'image']);
+        $certificate = Cache::remember('certificate_logo', 60, function () {
+            return Logo::where('type', 'certification_partner')->get(['id', 'image']);
+        });
+        $testimonials = Testimonial::latest()->get();
+        $mentors = Mentor::where('course_id', $course->id)->get();
+        // If no mentors found, get all
+        if ($mentors->isEmpty()) {
+            $mentors = Mentor::all();
         }
-    });
-
-    $companyLogos = Cache::remember('company_logos', 60, function () {
-        return Logo::where('type', 'companies')->get(['id', 'image']);
-    });
-    $awords = Cache::remember('awords', 60, function () {
-        return Logo::where('type', 'awords')->get(['id', 'image']);
-    });
-
-    $plainLogos = Logo::where('type', 'tools')
-    ->where('course_id', $course->id)
-    ->get(['id', 'image']);
-
-
-    $certificate = Cache::remember('certificate_logo', 60, function () {
-        return Logo::where('type', 'certification_partner')->get(['id', 'image']);
-    });
-    $testimonials = Testimonial::latest()->get();
-
-    $mentors = Mentor::where('course_id', $course->id)->get();
-
-    // If no mentors found, get all
-    if ($mentors->isEmpty()) {
-        $mentors = Mentor::all();
+        $certificateLogos = Logo::where('type', 'certificate')
+        ->where('course_id', $course->id)
+        ->get(['id', 'name', 'image']); 
+        return view('pages.course_details', compact(
+            'course',
+            'courses',
+            'placements',
+            'companyLogos',
+            'plainLogos',
+            'certificate',
+            'testimonials',
+            'awords',
+            'mentors',
+            'certificateLogos'
+        ));
     }
-    $certificateLogos = Logo::where('type', 'certificate')
-    ->where('course_id', $course->id)
-    ->get(['id', 'name', 'image']); 
-    return view('pages.course_details', compact(
-        'course',
-        'courses',
-        'placements',
-        'companyLogos',
-        'plainLogos',
-        'certificate',
-        'testimonials',
-        'awords',
-        'mentors',
-        'certificateLogos'
-    ));
-}
 
-public function searchCourses(Request $request)
-{
-    $query = $request->get('query');
-
-    $courses = Course::where('name', 'like', '%' . $query . '%')
-        ->select('name', 'slug', 'image', 'tag_line')
-        ->limit(5)
-        ->get();
-
-    return response()->json($courses);
-}
-
-
-
-
-
+    public function searchCourses(Request $request)
+    {
+        $query = $request->get('query');
+        $courses = Course::where('name', 'like', '%' . $query . '%')
+            ->select('name', 'slug', 'image', 'tag_line')
+            ->limit(5)
+            ->get();
+        return response()->json($courses);
+    }
 
     public function showByCategory($slug)
     {
@@ -134,5 +112,4 @@ public function searchCourses(Request $request)
         $courses = $collection->courses()->where('status', 1)->paginate(10);
         return view('pages.course', compact('courses', 'collection'));
     }
-
 }

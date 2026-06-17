@@ -27,7 +27,8 @@
             .corporate-hero {
                 /* background: linear-gradient(135deg, #667eea 0%, #1A1447 100%); */
                 background: white;
-                min-height: 100vh;
+                /* min-height: 100vh; */
+                padding: 80px 0;
                 display: flex;
                 align-items: center;
                 position: relative;
@@ -48,7 +49,7 @@
 
             .corporate-hero-content {
                 position: relative;
-                z-index: 2;
+                z-index: 1;
                 max-width: 800px;
             }
 
@@ -392,6 +393,16 @@
                 background: #f8f7f5;
             }
 
+            .how-it-works .container {
+                max-width: 1320px;
+            }
+
+            .heading-wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
             .section-tag {
                 display: inline-block;
                 padding: 5px 17px;
@@ -401,6 +412,7 @@
                 font-weight: 600;
                 color: #19335a;
                 background: #fff;
+                width: fit-content;
             }
 
             .section-title {
@@ -408,6 +420,7 @@
                 font-weight: 700;
                 line-height: 1.4;
                 color: #0f2d4e;
+                text-transform: none;
             }
 
             .section-desc {
@@ -420,10 +433,18 @@
                 border-top: 1px solid #e8e8e8;
             }
 
+            .steps-wrapper>div {
+                display: flex;
+            }
+
+
             .step-card {
+                display: flex;
+                flex-direction: column;
                 position: relative;
                 padding: 10px 15px;
                 height: 100%;
+                min-height: 320px;
                 border-right: 1px solid #e8e8e8;
                 overflow: hidden;
                 transition: all .45s ease;
@@ -458,10 +479,10 @@
             }
 
             .step-card::after {
-                border-top-color: rgba(0,0,0,.08);
-                border-right-color: rgba(0,0,0,.08);
-                border-bottom-color: rgba(0,0,0,.02);
-                border-left-color: rgba(0,0,0,.02);
+                border-top-color: rgba(0, 0, 0, .08);
+                border-right-color: rgba(0, 0, 0, .08);
+                border-bottom-color: rgba(0, 0, 0, .02);
+                border-left-color: rgba(0, 0, 0, .02);
             }
 
             .step-card>* {
@@ -471,7 +492,7 @@
 
             .step-icon {
                 font-size: 30px;
-                margin-bottom: 75px;
+                margin-bottom: 4rem;
                 color: #2f3747;
                 transition: all .35s ease;
             }
@@ -486,6 +507,7 @@
                 font-weight: 600;
                 margin-bottom: 20px;
                 transition: all .35s ease;
+                width: fit-content;
             }
 
             .step-card h4 {
@@ -493,12 +515,28 @@
                 font-weight: 500;
                 color: #0f2d4e;
                 margin-bottom: 10px;
+                min-height: 60px;
             }
 
             .step-card p {
                 font-size: 16px;
                 line-height: 1.4;
                 color: #555;
+            }
+
+            @media (min-width:992px) {
+
+                .steps-wrapper {
+                    display: flex;
+                }
+
+                .steps-wrapper>div {
+                    display: flex;
+                }
+
+                .step-card {
+                    width: 100%;
+                }
             }
 
             /* Hover Effect */
@@ -510,7 +548,7 @@
             }
 
             .step-card:hover::before {
-                height: 110px;
+                height: 28%;
             }
 
             .step-card:hover::after {
@@ -679,20 +717,24 @@
         </div>
     </section>
 
-    <section class="how-it-works py-5">
+    <section class="how-it-works p-5">
         <div class="container">
 
-            <div class="row align-items-start mb-5">
+            <div class="row justify-content-between mb-5">
                 <div class="col-lg-7">
-                    <span class="section-tag">HOW IT WORKS</span>
-                    <h2 class="section-title mt-3">
-                        We Build Skills That Drive <br>
-                        Business Impact
-                    </h2>
+                    <div class="heading-wrap">
+                        <span class="section-tag">HOW IT WORKS</span>
+
+                        <h2 class="section-title">
+                            We Build Skills That Drive
+                            <br>
+                            Business Impact
+                        </h2>
+                    </div>
                 </div>
 
-                <div class="col-lg-5">
-                    <p class="section-desc">
+                <div class="col-lg-5 d-flex align-items-end">
+                    <p class="section-desc mb-0">
                         From skills gap assessment to measurable business impact,
                         a structured approach to drive outcome-driven learning for AI
                         and digital skills across your workforce.
