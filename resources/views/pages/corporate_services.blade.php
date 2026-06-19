@@ -53,6 +53,23 @@
                 max-width: 800px;
             }
 
+            .corporate-hero-content .hero-badge {
+                display: block;
+                margin-bottom: 25px;
+            }
+
+            .corporate-tag {
+                display: inline-block;
+                padding: 10px 22px;
+                background: #fff;
+                border: 1px solid #e5e5e5;
+                border-radius: 50px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+                font-size: 16px;
+                font-weight: 500;
+                color: #666;
+            }
+
             .corporate-hero h1 {
                 font-size: clamp(2.5rem, 3vw, 4rem);
                 background: linear-gradient(45deg, #272251, #f19e18);
@@ -590,6 +607,40 @@
                     font-size: 16px;
                 }
             }
+            .corporate-cta {
+            background: linear-gradient(
+                135deg,
+                #0f172a 0%,
+                #1e3a8a 35%,
+                #2563eb 70%,
+                #3b82f6 100%
+            );
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .corporate-cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+
+        .corporate-cta::after {
+            content: '';
+            position: absolute;
+            bottom: -120px;
+            left: -120px;
+            width: 350px;
+            height: 350px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
         </style>
     @endpush
 
@@ -602,8 +653,11 @@
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="corporate-hero-content">
-                        <span class="border p-1 rounded-pill shadow" data-aos="fade-up" data-aos-delay="50">&nbsp;Corporate
-                            Services&nbsp;</span>
+                        <div class="hero-badge mb-4" data-aos="fade-up" data-aos-delay="50">
+                            <span class="corporate-tag">
+                                Corporate Services
+                            </span>
+                        </div>
                         <h1 data-aos="fade-up" data-aos-delay="100" class="mt-2">Empowering Teams for <span
                                 class="text-warning">AI, Data </span>
                             & Digital Transformation</h1>
@@ -678,7 +732,7 @@
 
                             <div class="col-md-4 mb-4 mb-md-0">
                                 <p class="stat-label">
-                                    Industry-Relevant Courses
+                                    Industry Relevant Online Courses
                                 </p>
                                 <h3 class="stat-number">100+</h3>
                             </div>
@@ -702,7 +756,7 @@
                         <!-- CTA Buttons -->
                         <div class="cta-buttons mt-4">
                             <a href="#contact" class="btn btn-light btn-lg px-4 py-3 me-3">
-                                Get a Free Trial
+                                Join the Program
                             </a>
 
                             <a href="{{ route('course') }}" class="btn btn-outline-light btn-lg px-4 py-3">
@@ -726,18 +780,17 @@
                         <span class="section-tag">HOW IT WORKS</span>
 
                         <h2 class="section-title">
-                            We Build Skills That Drive
+                            We Build Skills That Promote Career
                             <br>
-                            Business Impact
+                            and Business Growth
                         </h2>
                     </div>
                 </div>
 
                 <div class="col-lg-5 d-flex align-items-end">
                     <p class="section-desc mb-0">
-                        From skills gap assessment to measurable business impact,
-                        a structured approach to drive outcome-driven learning for AI
-                        and digital skills across your workforce.
+                        From training needs analysis to measurable results, we take a structured method to upskilling your
+                        workforce in Data Science, AI, Machine Learning, Cybersecurity, and digital skills.
                     </p>
                 </div>
             </div>
@@ -753,11 +806,11 @@
 
                         <span class="step-badge">STEP 1</span>
 
-                        <h4>Assess Skills Gaps</h4>
+                        <h4>Understand Your Training Needs</h4>
 
                         <p>
-                            Assess skill gaps aligned to business goals and assign
-                            licenses to targeted learner groups.
+                            We start by identifying skill gaps in your teams and aligning them with your business goals and
+                            the specific roles you are hiring or developing for.
                         </p>
                     </div>
                 </div>
@@ -771,11 +824,11 @@
 
                         <span class="step-badge">STEP 2</span>
 
-                        <h4>Learning Journeys by Role</h4>
+                        <h4>Build a Custom Learning Path</h4>
 
                         <p>
-                            Unlimited access to curated courses and structured
-                            paths tailored to job roles.
+                            We design structured learning programmes according to your workforce and covering the right
+                            tools, technologies, and domain knowledge your teams actually need.
                         </p>
                     </div>
                 </div>
@@ -789,11 +842,11 @@
 
                         <span class="step-badge">STEP 3</span>
 
-                        <h4>Enable Learning at Scale</h4>
+                        <h4>Deliver Training That Matters</h4>
 
                         <p>
-                            Blended learning across live sessions, async content,
-                            and certification prep.
+                            We provide Live instructor-led sessions, hands-on projects, doubt-solving sessions, and
+                            real-world assignments, and ensure that learning is not just limited to theory.
                         </p>
                     </div>
                 </div>
@@ -807,11 +860,11 @@
 
                         <span class="step-badge">STEP 4</span>
 
-                        <h4>See the Impact</h4>
+                        <h4>Measure Growth and Impact</h4>
 
                         <p>
-                            Track engagement, completion, and adoption through
-                            dashboards and reports.
+                            Track progress, completion rates, and skill development through regular assessments and
+                            reporting, so you can see clearly the return on every training investment.
                         </p>
                     </div>
                 </div>
@@ -894,14 +947,19 @@
         </div>
     </section>
     <!-- CTA Section -->
-    <section class="py-5 bg-warning text-dark">
+    <section class="py-5 corporate-cta">
         <div class="container text-center">
-            <h2 data-aos="zoom-in">Ready to Transform Your Workforce?</h2>
-            <p class="lead mb-4" data-aos="zoom-in" data-aos-delay="200">Schedule a free consultation with our corporate
-                training experts</p>
+            <h2 class="text-light" data-aos="zoom-in">Ready to Transform Your Workforce?</h2>
+            <p class="lead mb-4 text-light" data-aos="zoom-in" data-aos-delay="200">
+                Schedule a free consultation with our corporate training experts
+            </p>
             <div data-aos="zoom-in" data-aos-delay="400">
-                <a href="#contact" class="btn btn-dark btn-lg me-3 px-5 py-3">Get Started</a>
-                <a href="tel:+01204538125" class="btn btn-outline-dark btn-lg px-5 py-3">Call Now</a>
+                <a href="#contact" class="btn btn-dark btn-lg me-3 px-5 py-3">
+                    Book Your Seat
+                </a>
+                <a href="tel:+01204538125" class="btn btn-outline-light btn-lg px-5 py-3">
+                    Talk to Our Experts
+                </a>
             </div>
         </div>
     </section>
