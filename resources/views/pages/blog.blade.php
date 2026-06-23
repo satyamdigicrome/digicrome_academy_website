@@ -55,6 +55,53 @@
             opacity: 0.4;
             pointer-events: none;
         }
+
+        .df-hero-section {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: #f8fafc;
+            overflow: hidden;
+        }
+
+        .df-hero-container {
+            width: 100%;
+            max-width: 100%;
+            /* Spans full width to ensure image responds to viewport flawlessly */
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .df-hero-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 0;
+            /* Eliminates tiny ghost spacing at the bottom of the image */
+        }
+
+        /* Core Image Handling - Prevents Stretching AND Cropping */
+        .df-hero-responsive-img {
+            width: 100%;
+            height: auto;
+            /* Keeps correct proportional aspect ratio */
+            max-width: 100%;
+            object-fit: cover;
+            /* CHANGED FROM contain TO cover TO PREVENT CROPPING */
+            display: block;
+        }
+
+        /* Target specific adjustments if necessary for smaller screens */
+        @media (max-width: 576px) {
+            .df-hero-section {
+                margin-top: 95px;
+            }
+            .df-hero-responsive-img {
+                /* Ensures mobile-optimized image naturally expands or handles screen width cleanly */
+                height: auto !important;
+            }
+        }
     </style>
 @endpush
 @push('scripts')
@@ -97,24 +144,24 @@
 			</div>
 		</div>
 	</div> --}}
-    <section class="hero_area style-three four" style="height: auto !important;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="hero-wrapper col-lg-12 text-center">
+    <section class="df-hero-section">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-center">
+                <div class="df-hero-wrapper col-lg-12 text-center">
                     <picture>
                         <!-- Mobile -->
                         <source srcset="{{ asset('assets/images/home-three/blog-mobile-bg.webp') }}"
-                            media="(max-width:576px)">
+                            media="(max-width: 576px)">
 
                         <!-- Tablet -->
                         <source srcset="{{ asset('assets/images/home-three/blog-tablet-bg.webp') }}"
-                            media="(max-width:991px)">
+                            media="(max-width: 991px)">
 
                         <!-- Desktop -->
-                        <img src="{{ asset('assets/images/home-three/blog-bg3.webp') }}" class="hero-img" alt="">
+                        <img src="{{ asset('assets/images/home-three/blog-bg3.webp') }}" class="df-hero-responsive-img"
+                            alt="Hero Banner">
                     </picture>
                 </div>
-
             </div>
         </div>
     </section>
@@ -189,7 +236,7 @@
     <!--==================================================-->
     <!-- start educate blog Area -->
     <!--==================================================-->
-    <div class="blog-area style-one blog">
+    <div class="blog-area style-one blog" style="padding: 25px 0;">
         <div class="container">
             <div class="row">
                 <h1 class="fs-2 text-center fw-bold">Latest Blog Posts</h1>

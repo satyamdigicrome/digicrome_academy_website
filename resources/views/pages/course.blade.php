@@ -61,38 +61,59 @@
             border-radius: 6px;
         }
     </style>
+    <style>
+        /* Scoped Modern Hero Section Wrapper */
+        .df-hero-slide-section {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: #ffffff;
+            /* Clean canvas background */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .df-hero-slide-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .df-hero-slide-media-box {
+            width: 100%;
+            display: block;
+            line-height: 0;
+            /* Erases layout gap at the baseline of the graphic */
+        }
+
+        /* Core Visual Strategy: Pure Responsive Asset Layout without Stretching/Cropping */
+        .df-hero-slide-responsive-graphic {
+            width: 100%;
+            height: auto;
+            /* Forces proper aspect ratios dynamically */
+            max-width: 100%;
+            object-fit: cover;
+            /* Spans perfectly across screen edge changes with no cutoff distortion */
+            display: block;
+        }
+
+        /* Optional: Specific adjustments for mobile viewports if needed */
+        @media (max-width: 576px) {
+            .df-hero-slide-responsive-graphic {
+                height: auto !important;
+            }
+            .df-hero-slide-section{
+                margin-top: 90px;
+            }
+        }
+    </style>
 @endpush
 @section('content')
     @include('components.lead-form-popup')
-
-    <!--==================================================-->
-    <!-- Start educate Breadcumb Area -->
-    <!--==================================================-->
-    {{-- <div class="breadcumb-area two d-flex">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="breadcumb-content text-center">
-                        <div class="breadcumb-title">
-                            <h4>{{ $name ?? (isset($collection) ? 'Courses in ' . $collection->name : 'Courses') }}</h4>
-
-                        </div>
-                        <ul>
-                            <li><a href="index.html">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-                            <li>{{ $name ?? (isset($collection) ? 'Courses in ' . $collection->name : 'Courses') }}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="breadcumb-shape">
-                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
-            </div>
-            <div class="breadcumb-shape2">
-                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball" title="ball">
-            </div>
-        </div>
-    </div> --}}
-    <div class="hero-slider owl-carousel">
+    {{-- <div class="hero-slider owl-carousel">
         <section class="hero_area style-three d-flex align-items-center" style="height: 600px;">
             <div class="container">
                 <div class="row align-items-center">
@@ -103,30 +124,14 @@
                                 <i class="bi bi-check2"></i> Assured Placement Support
                             </h5>
                             <h1 data-animation="fadeInUp" style="color:black;" data-delay="100ms">
-                                Accelerate Your Career Growth 
+                                Accelerate Your Career Growth
                                 With <span>Digicrome</span>'s Expert-Led Courses
                             </h1>
                             <p data-animation="fadeInUp" data-delay="100ms" style="color:black;">
                                 {{ $name ?? (isset($collection) ? 'Explore Top Courses in ' . $collection->name : 'Discover Industry-Focused Courses') }}
                             </p>
-                            <!-- hero button -->
                             <div class="hero-button" data-animation="fadeInUp" data-delay="100ms">
-                                {{-- <div class="hero-btn">
-                                    <a href="contact.html">GET STARTED<i class="flaticon flaticon-right-arrow"></i></a>
-                                </div>
-                                <div class="hero-course-btn">
-                                    <a href="course.html">FIND COURSE<i class="flaticon flaticon-right-arrow"></i></a>
-                                </div> --}}
                             </div>
-                            {{-- <div class="hero-shape31">
-                                <img loading="lazy"src="assets/images/home-three/hero-shape31.webp" alt="hero-shape" title="hero-shape">
-                            </div>
-                            <div class="hero-shape32">
-                                <img loading="lazy"src="assets/images/home-three/hero-shape32.webp" alt="hero-shape" title="hero-shape">
-                            </div>
-                            <div class="hero-shape33">
-                                <img loading="lazy"src="assets/images/home-three/hero-shape33.webp" alt="hero-shape" title="hero-shape">
-                            </div> --}}
                         </div>
                     </div>
                     <div class="col-lg-4"></div>
@@ -134,7 +139,24 @@
             </div>
         </section>
 
-    </div>
+    </div> --}}
+    <section class="df-hero-slide-section">
+        <div class="df-hero-slide-container">
+            <div class="df-hero-slide-media-box">
+                <picture style="width: 100%;">
+                    <!-- Mobile: Viewports up to 576px width -->
+                    <source srcset="{{ asset('assets/images/home-three/course-bg-mob.webp') }}" media="(max-width: 576px)">
+
+                    <!-- Tablet: Viewports between 577px and 991px width -->
+                    <source srcset="{{ asset('assets/images/home-three/course-bg.webp') }}" media="(max-width: 991px)">
+
+                    <!-- Desktop & Large Screens: Viewports 992px and up -->
+                    <img src="{{ asset('assets/images/home-three/course-bg.webp') }}" class="df-hero-slide-responsive-graphic"
+                        alt="Digicrome Expert-Led Courses Banner">
+                </picture>
+            </div>
+        </div>
+    </section>
     <style>
         #sticky-header {
             margin-bottom: 0px !important;
@@ -151,7 +173,7 @@
             <div class="row align-items-center section-title-space">
                 <div class="col-lg-12">
                     <div class="section_title text-center">
-                        <h2>{{ $name ?? (isset($collection) ? 'Courses in ' . $collection->name : 'Courses') }}</h2>
+                        <h1>{{ $name ?? (isset($collection) ? 'Courses in ' . $collection->name : 'Courses') }}</h1>
                     </div>
                 </div>
             </div>
@@ -224,7 +246,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    {{ $courses->links('pagination.course-pagination') }}                </div>
+                    {{ $courses->links('pagination.course-pagination') }} </div>
             </div>
         </div>
     </div>

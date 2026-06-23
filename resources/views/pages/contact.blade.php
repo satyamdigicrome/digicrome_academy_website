@@ -16,7 +16,8 @@
             width: 100%;
             height: 568px;
             overflow: hidden;
-            background: #0f1226;
+            /* background: #0f1226; */
+            background: linear-gradient(to right, #000b2a 50%, #010d4a 50%);
         }
 
         .contact-hero picture,
@@ -51,7 +52,7 @@
         @media (max-width: 768px) {
             .contact-hero {
                 height: 263px;
-                margin-top:95px;
+                margin-top: 95px;
             }
         }
     </style>
@@ -72,7 +73,7 @@
     <style>
         .contact-modern-intro {
             padding: 56px 0 20px;
-            background: linear-gradient(180deg, rgba(242, 156, 18, 0.10) 0%, rgba(255,255,255,0) 55%);
+            background: linear-gradient(180deg, rgba(242, 156, 18, 0.10) 0%, rgba(255, 255, 255, 0) 55%);
         }
 
         .contact-modern-intro .section-eyebrow {
@@ -102,8 +103,8 @@
 
         .contact-feature {
             border-radius: 18px;
-            background: rgba(255,255,255,0.9);
-            border: 1px solid rgba(26,20,71,0.10);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(26, 20, 71, 0.10);
             box-shadow: 0 16px 40px rgba(16, 24, 40, 0.08);
             padding: 18px;
             transition: transform 220ms ease, box-shadow 220ms ease;
@@ -146,7 +147,7 @@
 
         .contact-modern-intro .btn-ghost-digi {
             background: transparent;
-            border: 1px solid rgba(26,20,71,0.18);
+            border: 1px solid rgba(26, 20, 71, 0.18);
             color: #1a1447;
         }
 
@@ -173,10 +174,13 @@
                         </p>
 
                         <div class="mt-4 d-flex flex-wrap gap-2">
-                            <a href="javascript:void(0)" onclick="showContent('contact')" class="btn btn-cta btn-primary-digi">
+                            <a href="javascript:void(0)" onclick="showContent('contact')"
+                                class="btn btn-cta btn-primary-digi">
                                 <i class="fas fa-phone"></i> Contact Options
                             </a>
-                            <a href="#" onclick="document.querySelector('.contact_area').scrollIntoView({behavior:'smooth'})" class="btn btn-cta btn-ghost-digi">
+                            <a href="#"
+                                onclick="document.querySelector('.contact_area').scrollIntoView({behavior:'smooth'})"
+                                class="btn btn-cta btn-ghost-digi">
                                 <i class="fas fa-paper-plane"></i> Send a Request
                             </a>
                         </div>
@@ -195,14 +199,16 @@
                         <div class="col-md-4">
                             <div class="contact-feature">
                                 <div class="icon"><i class="fas fa-envelope-open"></i></div>
-                                <h4 class="mt-3 mb-1" style="color:#1a1447; font-weight:900; font-size:16px;">Email Support</h4>
+                                <h4 class="mt-3 mb-1" style="color:#1a1447; font-weight:900; font-size:16px;">Email Support
+                                </h4>
                                 <p style="font-size:13px;">info@digicrome.com</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="contact-feature">
                                 <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-                                <h4 class="mt-3 mb-1" style="color:#1a1447; font-weight:900; font-size:16px;">Our Location</h4>
+                                <h4 class="mt-3 mb-1" style="color:#1a1447; font-weight:900; font-size:16px;">Our Location
+                                </h4>
                                 <p style="font-size:13px;">Noida • Uttar Pradesh</p>
                             </div>
                         </div>
@@ -213,7 +219,6 @@
     </section>
 
     <style>
-
         .top_bar {
 
             background-color: #f29c12;
@@ -301,9 +306,9 @@
 
         .contact-route-shell {
             border-radius: 22px;
-            background: linear-gradient(180deg, rgba(26,20,71,0.04) 0%, rgba(242,156,18,0.04) 100%);
-            border: 1px solid rgba(26,20,71,0.10);
-            box-shadow: 0 16px 50px rgba(16,24,40,0.06);
+            background: linear-gradient(180deg, rgba(26, 20, 71, 0.04) 0%, rgba(242, 156, 18, 0.04) 100%);
+            border: 1px solid rgba(26, 20, 71, 0.10);
+            box-shadow: 0 16px 50px rgba(16, 24, 40, 0.06);
             overflow: hidden;
         }
 
@@ -320,7 +325,7 @@
 
         .contact-route-sub {
             margin-top: 6px;
-            color: rgba(26,20,71,0.70);
+            color: rgba(26, 20, 71, 0.70);
             font-size: 14px;
             line-height: 1.6;
         }
@@ -338,8 +343,8 @@
             cursor: pointer;
             user-select: none;
             border-radius: 16px;
-            border: 1px solid rgba(26,20,71,0.12);
-            background: rgba(255,255,255,0.9);
+            border: 1px solid rgba(26, 20, 71, 0.12);
+            background: rgba(255, 255, 255, 0.9);
             padding: 14px 14px;
             transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
             position: relative;
@@ -350,7 +355,7 @@
             content: '';
             position: absolute;
             inset: -1px;
-            background: radial-gradient(420px 120px at 20% 0%, rgba(242,156,18,0.18) 0%, rgba(242,156,18,0) 60%);
+            background: radial-gradient(420px 120px at 20% 0%, rgba(242, 156, 18, 0.18) 0%, rgba(242, 156, 18, 0) 60%);
             opacity: 0;
             transition: opacity 180ms ease;
             pointer-events: none;
@@ -358,13 +363,13 @@
 
         .contact-route-tab:hover {
             transform: translateY(-3px);
-            box-shadow: 0 18px 60px rgba(16,24,40,0.10);
-            border-color: rgba(242,156,18,0.35);
+            box-shadow: 0 18px 60px rgba(16, 24, 40, 0.10);
+            border-color: rgba(242, 156, 18, 0.35);
         }
 
         .contact-route-tab.active {
-            border-color: rgba(242,156,18,0.75);
-            background: rgba(242,156,18,0.08);
+            border-color: rgba(242, 156, 18, 0.75);
+            background: rgba(242, 156, 18, 0.08);
         }
 
         .contact-route-tab.active::after {
@@ -382,7 +387,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: rgba(242,156,18,0.15);
+            background: rgba(242, 156, 18, 0.15);
             color: #f29c12;
             font-size: 18px;
         }
@@ -400,21 +405,28 @@
 
         #content {
             border-radius: 18px;
-            background: rgba(255,255,255,0.85);
-            border: 1px solid rgba(26,20,71,0.10);
-            box-shadow: 0 10px 35px rgba(16,24,40,0.06);
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(26, 20, 71, 0.10);
+            box-shadow: 0 10px 35px rgba(16, 24, 40, 0.06);
             padding: 18px;
             min-height: 180px;
             animation: contactRouteFade 220ms ease;
         }
 
         @keyframes contactRouteFade {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .contact-route-empty {
-            color: rgba(26,20,71,0.70);
+            color: rgba(26, 20, 71, 0.70);
             font-weight: 700;
             text-align: center;
             padding: 24px 0;
@@ -423,7 +435,7 @@
         /* Make injected cards/images inside #content look good */
         #content .card {
             border-radius: 16px;
-            border: 1px solid rgba(26,20,71,0.10);
+            border: 1px solid rgba(26, 20, 71, 0.10);
         }
 
         #content img {
@@ -432,7 +444,10 @@
         }
 
         @media (max-width: 991px) {
-            .contact-route-tab { max-width: 100%; flex: 1 1 100%; }
+            .contact-route-tab {
+                max-width: 100%;
+                flex: 1 1 100%;
+            }
         }
     </style>
 
@@ -440,46 +455,56 @@
     <!-- Start Modern Quick Routes UI (better/advanced) -->
     <!--==================================================-->
     <style>
-        .contact-route-outer { padding: 38px 0 10px; }
+        .contact-route-outer {
+            padding: 38px 0 10px;
+        }
+
         .contact-route-shell {
             border-radius: 26px;
-            background: linear-gradient(180deg, rgba(26,20,71,0.04) 0%, rgba(242,156,18,0.06) 100%);
-            border: 1px solid rgba(26,20,71,0.10);
-            box-shadow: 0 22px 70px rgba(16,24,40,0.08);
+            background: linear-gradient(180deg, rgba(26, 20, 71, 0.04) 0%, rgba(242, 156, 18, 0.06) 100%);
+            border: 1px solid rgba(26, 20, 71, 0.10);
+            box-shadow: 0 22px 70px rgba(16, 24, 40, 0.08);
             overflow: hidden;
         }
+
         .contact-route-top {
             padding: 22px 22px 0;
         }
+
         .contact-route-top h3 {
             font-size: 24px;
             font-weight: 950;
             color: #1a1447;
             margin: 0;
         }
+
         .contact-route-top p {
             margin: 8px 0 0;
-            color: rgba(26,20,71,0.72);
+            color: rgba(26, 20, 71, 0.72);
             font-weight: 600;
         }
+
         .contact-route-tabs {
             display: grid;
             grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: 12px;
             padding: 18px 22px 22px;
         }
+
         @media (max-width: 991px) {
-            .contact-route-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .contact-route-tabs {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         .contact-route-tab {
             border-radius: 18px;
-            background: rgba(255,255,255,0.92);
-            border: 1px solid rgba(26,20,71,0.12);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(26, 20, 71, 0.12);
             padding: 14px 12px;
             cursor: pointer;
             transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
-            box-shadow: 0 10px 28px rgba(16,24,40,0.05);
+            box-shadow: 0 10px 28px rgba(16, 24, 40, 0.05);
             min-height: 96px;
             display: flex;
             flex-direction: column;
@@ -489,37 +514,50 @@
             position: relative;
             overflow: hidden;
         }
+
         .contact-route-tab::before {
             content: '';
             position: absolute;
             inset: -2px;
-            background: radial-gradient(320px 120px at 15% 0%, rgba(242,156,18,0.20) 0%, rgba(242,156,18,0) 60%);
+            background: radial-gradient(320px 120px at 15% 0%, rgba(242, 156, 18, 0.20) 0%, rgba(242, 156, 18, 0) 60%);
             opacity: 0;
             transition: opacity 200ms ease;
             pointer-events: none;
         }
+
         .contact-route-tab:hover {
             transform: translateY(-4px);
-            box-shadow: 0 18px 55px rgba(16,24,40,0.10);
-            border-color: rgba(242,156,18,0.40);
+            box-shadow: 0 18px 55px rgba(16, 24, 40, 0.10);
+            border-color: rgba(242, 156, 18, 0.40);
         }
-        .contact-route-tab.active {
-            border-color: rgba(242,156,18,0.9);
-            background: rgba(242,156,18,0.08);
-        }
-        .contact-route-tab.active::before { opacity: 1; }
 
-        .contact-route-tab .r-row { display:flex; align-items:center; gap:10px; }
+        .contact-route-tab.active {
+            border-color: rgba(242, 156, 18, 0.9);
+            background: rgba(242, 156, 18, 0.08);
+        }
+
+        .contact-route-tab.active::before {
+            opacity: 1;
+        }
+
+        .contact-route-tab .r-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .contact-route-tab .r-icon {
-            width: 44px; height: 44px;
+            width: 44px;
+            height: 44px;
             border-radius: 16px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: rgba(242,156,18,0.15);
+            background: rgba(242, 156, 18, 0.15);
             color: #f29c12;
             font-size: 18px;
         }
+
         .contact-route-tab .r-title {
             color: #1a1447;
             font-weight: 950;
@@ -531,25 +569,42 @@
         #content {
             margin: 0 22px 22px;
             border-radius: 20px;
-            background: rgba(255,255,255,0.90);
-            border: 1px solid rgba(26,20,71,0.10);
-            box-shadow: 0 16px 55px rgba(16,24,40,0.06);
+            background: rgba(255, 255, 255, 0.90);
+            border: 1px solid rgba(26, 20, 71, 0.10);
+            box-shadow: 0 16px 55px rgba(16, 24, 40, 0.06);
             padding: 18px;
             min-height: 180px;
             animation: contentSwap 220ms ease;
         }
+
         @keyframes contentSwap {
-            from { opacity: 0; transform: translateY(8px);} 
-            to { opacity: 1; transform: translateY(0);} 
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .contact-route-empty {
-            color: rgba(26,20,71,0.72);
+            color: rgba(26, 20, 71, 0.72);
             font-weight: 800;
             text-align: center;
             padding: 34px 0;
         }
-        #content .card { border-radius: 16px; border: 1px solid rgba(26,20,71,0.10);} 
-        #content img { max-width: 100%; height: auto; }
+
+        #content .card {
+            border-radius: 16px;
+            border: 1px solid rgba(26, 20, 71, 0.10);
+        }
+
+        #content img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 
     <section class="contact-route-outer">
@@ -801,99 +856,133 @@
     <!--==================================================-->
 
     <style>
-        .contact-modern-card{
-            border-radius:22px;
-            background: rgba(255,255,255,0.88);
-            border:1px solid rgba(26,20,71,0.10);
-            box-shadow:0 22px 70px rgba(16,24,40,0.06);
-            padding:22px;
+        .contact-modern-card {
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(26, 20, 71, 0.10);
+            box-shadow: 0 22px 70px rgba(16, 24, 40, 0.06);
+            padding: 22px;
         }
-        .contact-modern-eyebrow{
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-            padding:10px 14px;
-            border-radius:999px;
-            background:rgba(242,156,18,0.12);
-            color:#1a1447;
-            font-weight:900;
+
+        .contact-modern-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(242, 156, 18, 0.12);
+            color: #1a1447;
+            font-weight: 900;
         }
-        .contact-modern-pills{ display:flex; flex-direction:column; gap:12px; }
-        .contact-modern-pill{
-            display:flex;
-            gap:12px;
-            align-items:flex-start;
-            padding:14px;
-            border-radius:18px;
-            background:rgba(255,255,255,0.95);
-            border:1px solid rgba(26,20,71,0.10);
+
+        .contact-modern-pills {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
-        .contact-modern-pill i{
-            width:44px; height:44px;
-            border-radius:16px;
-            background:rgba(242,156,18,0.15);
-            color:#f29c12;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            flex:0 0 44px;
-            font-size:18px;
+
+        .contact-modern-pill {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 14px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(26, 20, 71, 0.10);
         }
-        .contact-modern-pill b{ color:#1a1447; }
-        .contact-form-modern{
-            border-radius:22px;
-            background:rgba(255,255,255,0.9);
-            border:1px solid rgba(26,20,71,0.10);
-            box-shadow:0 22px 70px rgba(16,24,40,0.06);
-            padding:22px;
+
+        .contact-modern-pill i {
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            background: rgba(242, 156, 18, 0.15);
+            color: #f29c12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 44px;
+            font-size: 18px;
         }
-        .contact-form-modern-top{ padding-bottom:10px; }
+
+        .contact-modern-pill b {
+            color: #1a1447;
+        }
+
+        .contact-form-modern {
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(26, 20, 71, 0.10);
+            box-shadow: 0 22px 70px rgba(16, 24, 40, 0.06);
+            padding: 22px;
+        }
+
+        .contact-form-modern-top {
+            padding-bottom: 10px;
+        }
+
         .contact-form-modern .form-field input,
-        .contact-form-modern .form-field select{
-            width:100%;
-            border:1px solid rgba(26,20,71,0.16);
-            border-radius:12px;
-            padding:12px 14px;
-            background:rgba(255,255,255,0.92);
-            outline:none;
-            transition:border-color 180ms ease, box-shadow 180ms ease;
+        .contact-form-modern .form-field select {
+            width: 100%;
+            border: 1px solid rgba(26, 20, 71, 0.16);
+            border-radius: 12px;
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.92);
+            outline: none;
+            transition: border-color 180ms ease, box-shadow 180ms ease;
         }
+
         .contact-form-modern .form-field input:focus,
-        .contact-form-modern .form-field select:focus{
-            border-color: rgba(242,156,18,0.85);
-            box-shadow:0 0 0 4px rgba(242,156,18,0.18);
+        .contact-form-modern .form-field select:focus {
+            border-color: rgba(242, 156, 18, 0.85);
+            box-shadow: 0 0 0 4px rgba(242, 156, 18, 0.18);
         }
-        .btn-digi-submit{
-            width:100%;
-            background:#f29c12;
-            border:1px solid #f29c12;
-            color:#fff;
-            border-radius:14px;
-            padding:12px 18px;
-            font-weight:950;
+
+        .btn-digi-submit {
+            width: 100%;
+            background: #f29c12;
+            border: 1px solid #f29c12;
+            color: #fff;
+            border-radius: 14px;
+            padding: 12px 18px;
+            font-weight: 950;
         }
     </style>
 
     <section class="contact_area inner_section">
         <div class="container">
-            <div class="row align-items-center"> 
+            <div class="row align-items-center">
                 <div class="col-lg-6">
                     <!-- section title -->
                     <div class="contact-modern-card">
                         <div class="contact-modern-eyebrow">
-                            <span class="d-inline-flex align-items-center gap-2"><i class="fas fa-headset" style="color:#f29c12"></i> GET IN TOUCH</span>
+                            <span class="d-inline-flex align-items-center gap-2"><i class="fas fa-headset"
+                                    style="color:#f29c12"></i> GET IN TOUCH</span>
                         </div>
-                        <h3 class="mt-3" style="color:#1a1447; font-weight:950; font-size:clamp(22px,2.2vw,30px); line-height:1.2;">
+                        <h3 class="mt-3"
+                            style="color:#1a1447; font-weight:950; font-size:clamp(22px,2.2vw,30px); line-height:1.2;">
                             Trusted By the Genius People with Digicrome
                         </h3>
                         <p class="mt-3" style="color:rgba(26,20,71,0.78); line-height:1.7; margin-bottom:0;">
-                            Quick support for admissions, accounts, and student help—send your details and our team will reach out.
+                            Quick support for admissions, accounts, and student help—send your details and our team will
+                            reach out.
                         </p>
 
                         <div class="contact-modern-pills mt-4">
-                            <div class="contact-modern-pill"><i class="fas fa-phone-alt"></i><div><b>Call us Anytime</b><div>01204538125</div></div></div>
-                            <div class="contact-modern-pill"><i class="fas fa-envelope-open"></i><div><b>Email us Anytime</b><div>info@digicrome.com</div></div></div>
-                            <div class="contact-modern-pill"><i class="fas fa-map-marker-alt"></i><div><b>Our Location</b><div>B-49, First Floor, Block B, Sector 59 Noida, Uttar Pradesh 201301</div></div></div>
+                            <div class="contact-modern-pill"><i class="fas fa-phone-alt"></i>
+                                <div><b>Call us Anytime</b>
+                                    <div>01204538125</div>
+                                </div>
+                            </div>
+                            <div class="contact-modern-pill"><i class="fas fa-envelope-open"></i>
+                                <div><b>Email us Anytime</b>
+                                    <div>info@digicrome.com</div>
+                                </div>
+                            </div>
+                            <div class="contact-modern-pill"><i class="fas fa-map-marker-alt"></i>
+                                <div><b>Our Location</b>
+                                    <div>B-49, First Floor, Block B, Sector 59 Noida, Uttar Pradesh 201301</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -901,8 +990,10 @@
                     <!-- contact form box -->
                     <div class="contact-form-box style_two contact-form-modern">
                         <div class="contact-form-modern-top">
-                            <h3 style="color: #f29c12;font-size: 22px; margin-bottom: 8px;font-weight:950;"> Register now!!</h3>
-                            <p style="margin:0; color:rgba(26,20,71,0.78); line-height:1.6;">And get a quick call from our team.</p>
+                            <h3 style="color: #f29c12;font-size: 22px; margin-bottom: 8px;font-weight:950;"> Register now!!
+                            </h3>
+                            <p style="margin:0; color:rgba(26,20,71,0.78); line-height:1.6;">And get a quick call from our
+                                team.</p>
                         </div>
 
                         <form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
