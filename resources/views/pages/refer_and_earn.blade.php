@@ -575,6 +575,7 @@
         </picture>
     </section>
     <section class="refer-how-it-works py-5">
+        <h1>Refer and Earn</h1>
         <div class="container">
 
             <div class="how-card">

@@ -384,6 +384,7 @@
 
 
 <section class="company-form contactpage-form" style="background-color: orange; padding:20px">
+  <h1 class="text-center h1 text-dark fw-bolder">Career</h1>
   <div class="container-fluid" style="color: white; padding-left:50px; padding-right:50px;">
     <div class="row">
       <div class="col-lg-6 col-md-12">

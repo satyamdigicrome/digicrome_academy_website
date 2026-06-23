@@ -417,6 +417,7 @@
         </div>
     </div>
     <section class="company-form contactpage-form" style="background-color: white;">
+        <h1 class="p-3 fw-bolder h1 text-dark">Who we are</h1>
         <div class="container-fluid" style="color: black; ">
             <div class="row">
                 <div class="col-lg-6 col-md-12" style="padding-left: 10%;">

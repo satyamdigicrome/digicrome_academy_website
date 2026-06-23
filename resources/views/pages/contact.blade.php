@@ -159,6 +159,7 @@
     </style>
 
     <section class="contact-modern-intro">
+        <h1 class="p-3 text-center h1 text-dark fw-bolder">Contact Us</h1>
         <div class="container">
             <div class="row g-4 align-items-stretch">
                 <div class="col-lg-5">
