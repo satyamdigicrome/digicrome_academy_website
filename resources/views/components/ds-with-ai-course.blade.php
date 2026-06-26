@@ -93,7 +93,7 @@
                              <span>Hiring <br> Partners</span>
                          </div>
                          <div class="fill-btn">
-                             <a style="color: #fff" id="downloadBrochureBtn" onclick="openModal('leadPopup')"
+                             <a style="color: #fff" id="downloadBrochureBtn" onclick="openModal('downloadLeadPopup')"
                                  download="">Download Brochure</a>
                          </div>
                          <!--<button type="button" class="fill-btn" href="#form1" data-toggle="modal" data-target="#buy-form" onclick="buNow('102')">Apply-->
@@ -111,7 +111,7 @@
                      <div class="fill-btn"
                          style="color: #fff;  background: green;
                     border: 2px solid;">
-                         <a id="downloadBrochureBtn" onclick="openModal('leadPopup')" download=""
+                         <a id="downloadBrochureBtn" onclick="openModal('downloadLeadPopup')" download=""
                              style="color:#fff">Download
                              Brochure</a>
                      </div>

@@ -114,7 +114,7 @@
                         <div class="mt-4 d-flex gap-3">
                             @if ($course->browser)
                                 <button class="btn btn-outline-primary" style="background-color: green;"
-                                    id="downloadBrochureBtn" onclick="openModal('leadPopup')">
+                                    id="downloadBrochureBtn" onclick="openModal('downloadLeadPopup')">
                                     <i class="fa fa-download me-2"></i>Download Brochure
                                 </button>
                             @endif
@@ -419,7 +419,7 @@
 
                         <div class="mt-2 d-flex flex-wrap gap-2">
                             @if ($course->browser)
-                                <a class="btn btn-cyber-outline" id="downloadBrochureBtn" onclick="openModal('leadPopup')">
+                                <a class="btn btn-cyber-outline" id="downloadBrochureBtn" onclick="openModal('downloadLeadPopup')">
                                     <i class="fa fa-download me-1"></i>Download Brochure
                                 </a>
                             @endif
@@ -514,7 +514,7 @@
 
                         <div class="mt-4 d-flex gap-3">
                             @if ($course->browser)
-                                <a class="btn btn-outline-primary" id="downloadBrochureBtn" onclick="openModal('leadPopup')"
+                                <a class="btn btn-outline-primary" id="downloadBrochureBtn" onclick="openModal('downloadLeadPopup')"
                                     style="background-color: green;">
                                     <i class="fa fa-download me-2"></i>Download Brochure
                                 </a>
@@ -1458,48 +1458,405 @@
         <!-- Bootstrap Modal -->
         <!-- Modal for Download Brochure (Lead Form) -->
         <!-- Modal for Download Brochure (Lead Form) -->
-        <div id="leadPopup" class="modal-container">
-            <div class="modal-dialog">
-                <div class="modal-content custom-lead-modal-content">
-                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
-                        onclick="closeModal('leadPopup')" style="filter: invert(1);"></button>
+{{-- ============================================================
+     Download Brochure modal — redesigned
+     Drop this in place of your existing #downloadLeadPopup block.
+     The <style> and <script> are inline here for convenience —
+     move them into your layout's main stylesheet / script bundle
+     once you're happy with the design.
+     ============================================================ --}}
+@push('styles')
+<style>
+  #downloadLeadPopup{
+    --lpx-ink:#060A12;
+    --lpx-panel-soft:#161F2B;
+    --lpx-line:rgba(255,255,255,.08);
+    --lpx-line-strong:rgba(255,255,255,.16);
+    --lpx-text:#F3F6FA;
+    --lpx-text-soft:#8C97A6;
+    --lpx-text-faint:#5C6675;
+    --lpx-amber:#F4B860;
+    --lpx-amber-deep:#C9853A;
+    --lpx-cyan:#54D7DD;
+  }
 
-                    <form id="leadForm" action="{{ route('lead.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="course_id" value="{{ $course->id }}">
+  #downloadLeadPopup.lpx-overlay{
+    position:fixed;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(circle at 50% 15%, rgba(244,184,96,.10), transparent 55%),
+      rgba(3,5,9,.82);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    z-index:999;
+    padding:20px;
+    opacity:0;
+    transition:opacity .25s ease;
+  }
+  #downloadLeadPopup.lpx-overlay.is-open{ display:flex; opacity:1; }
 
-                        <h4 class="custom-lead-modal-title">Download Brochure</h4>
+  #downloadLeadPopup .lpx-dialog{
+    perspective:1400px;
+    width:100%;
+    max-width:440px;
+    max-height:92vh;
+  }
 
-                        <input type="text" name="name" style="color: #fff" placeholder="Name"
-                            class="form-control custom-lead-input" required>
-                        <input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"
-                            name="mobile" style="color: #fff" placeholder="Mobile Number"
-                            class="form-control custom-lead-input" required>
-                        <input type="email" name="email" style="color: #fff" placeholder="E-mail ID"
-                            class="form-control custom-lead-input" required>
-                        <input type="text" name="address" style="color: #fff" placeholder="City"
-                            class="form-control custom-lead-input" required>
-                        <select name="title" class="form-select custom-lead-input" required>
-                            <option value="" disabled selected style="color: #999;">Select Course</option>
+  #downloadLeadPopup .lpx-card{
+    position:relative;
+    max-height:92vh;
+    overflow-y:auto;
+    background: linear-gradient(165deg, #344863 0%, #22334f 100%);
+    border:1px solid var(--lpx-line-strong);
+    border-radius:26px;
+    padding:0;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.02) inset;
+    transform-style:preserve-3d;
+    scrollbar-width:thin;
+  }
+  #downloadLeadPopup .lpx-card::-webkit-scrollbar{ width:6px; }
+  #downloadLeadPopup .lpx-card::-webkit-scrollbar-thumb{ background:var(--lpx-line-strong); border-radius:6px; }
+
+  #downloadLeadPopup .lpx-card.lpx-card-in{
+    animation:lpxCardIn .65s cubic-bezier(.16,1,.3,1) forwards;
+  }
+  @keyframes lpxCardIn{
+    0%{ transform:rotateY(-62deg) translateZ(-90px) scale(.86); opacity:0; }
+    100%{ transform:rotateY(0) translateZ(0) scale(1); opacity:1; }
+  }
+
+  #downloadLeadPopup .lpx-stripe{
+    height:13px;
+    border-radius:25px 25px 0 0;
+    background:linear-gradient(100deg,#caa05a 0%,#f4b860 22%,#fde9c8 38%,#54d7dd 52%,#f4b860 70%,#caa05a 100%);
+    background-size:220% 100%;
+    animation:lpxHoloSheen 8s linear infinite;
+  }
+  @keyframes lpxHoloSheen{
+    0%{ background-position:0% 0; }
+    100%{ background-position:220% 0; }
+  }
+
+  #downloadLeadPopup .lpx-body{ padding:28px 32px 30px; font-family:'IBM Plex Sans',Arial,sans-serif; }
+
+  #downloadLeadPopup .lpx-head{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    margin-bottom:16px;
+  }
+
+  #downloadLeadPopup .lpx-chip{
+    width:34px; height:25px;
+    border-radius:5px;
+    border:1px solid rgba(244,184,96,.4);
+    background:
+      repeating-linear-gradient(90deg, rgba(244,184,96,.55) 0 3px, transparent 3px 7px),
+      linear-gradient(135deg,#2b2418,#15110a);
+  }
+
+  #downloadLeadPopup .lpx-close{
+    width:32px; height:32px;
+    border-radius:50%;
+    border:1px solid var(--lpx-line-strong);
+    background:rgba(255,255,255,.03);
+    color:var(--lpx-text-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:16px;
+    line-height:1;
+    transition:transform .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;
+  }
+  #downloadLeadPopup .lpx-close:hover{
+    transform:rotate(90deg);
+    border-color:var(--lpx-cyan);
+    color:var(--lpx-cyan);
+    box-shadow:0 0 16px rgba(84,215,221,.35);
+  }
+
+  #downloadLeadPopup .lpx-eyebrow{
+    font:11px/1 'IBM Plex Mono',monospace;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--lpx-amber);
+    margin:0 0 10px;
+  }
+
+  #downloadLeadPopup h4.lpx-heading{
+    font:600 25px/1.15 'Space Grotesk',Arial,sans-serif;
+    color:var(--lpx-text);
+    margin:0 0 8px;
+  }
+
+  #downloadLeadPopup p.lpx-subtext{
+    font:14px/1.55 'IBM Plex Sans',Arial,sans-serif;
+    color:var(--lpx-text-soft);
+    margin:0 0 24px;
+  }
+
+  #downloadLeadPopup .lpx-field{ position:relative; margin-bottom:16px; }
+
+  #downloadLeadPopup .lpx-field input.lpx-input{
+    width:100%;
+    background:var(--lpx-panel-soft);
+    border:1px solid var(--lpx-line);
+    border-radius:13px;
+    padding:19px 16px 9px;
+    font:15px/1.4 'IBM Plex Sans',Arial,sans-serif;
+    color:var(--lpx-text);
+    outline:none;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  #downloadLeadPopup .lpx-field input.lpx-input::placeholder{ color:transparent; }
+  #downloadLeadPopup .lpx-field input.lpx-input:focus{
+    border-color:var(--lpx-cyan);
+    box-shadow:0 0 0 3px rgba(84,215,221,.15);
+  }
+
+  #downloadLeadPopup .lpx-field label{
+    position:absolute;
+    left:16px; top:16px;
+    font:15px 'IBM Plex Sans',Arial,sans-serif;
+    color:var(--lpx-text-soft);
+    pointer-events:none;
+    transition:all .18s ease;
+  }
+  #downloadLeadPopup .lpx-field input:focus ~ label,
+  #downloadLeadPopup .lpx-field input:not(:placeholder-shown) ~ label{
+    top:8px;
+    font-size:10.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--lpx-cyan);
+  }
+
+  #downloadLeadPopup .lpx-hint{
+    display:block;
+    margin:6px 0 0 4px;
+    font:11px 'IBM Plex Mono',monospace;
+    color:var(--lpx-text-faint);
+  }
+
+  #downloadLeadPopup .lpx-field-select{ margin-bottom:20px; }
+  #downloadLeadPopup .lpx-select-label{
+    display:block;
+    margin:0 0 8px 2px;
+    font:10.5px 'IBM Plex Mono',monospace;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--lpx-text-soft);
+  }
+  #downloadLeadPopup select.lpx-input{
+    width:100%;
+    appearance:none;
+    -webkit-appearance:none;
+    background:var(--lpx-panel-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%238C97A6' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
+    border:1px solid var(--lpx-line);
+    border-radius:13px;
+    padding:14px 40px 14px 16px;
+    color:var(--lpx-text);
+    font:15px 'IBM Plex Sans',Arial,sans-serif;
+    outline:none;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  #downloadLeadPopup select.lpx-input:focus{
+    border-color:var(--lpx-cyan);
+    box-shadow:0 0 0 3px rgba(84,215,221,.15);
+  }
+  #downloadLeadPopup select.lpx-input option{ background:#11161F; color:#fff; }
+
+  #downloadLeadPopup .lpx-divider{
+    height:1px;
+    margin:8px 0 22px;
+    background-image:linear-gradient(90deg, var(--lpx-line-strong) 50%, transparent 50%);
+    background-size:9px 1px;
+  }
+
+  #downloadLeadPopup .lpx-submit{
+    position:relative;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:linear-gradient(135deg, var(--lpx-amber) 0%, var(--lpx-amber-deep) 100%) !important;
+    color:#1A1206;
+    font:600 15px 'Space Grotesk',Arial,sans-serif;
+    border:none;
+    border-radius:13px;
+    padding:16px 20px;
+    cursor:pointer;
+    overflow:hidden;
+    box-shadow:0 10px 24px -8px rgba(244,184,96,.45);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  #downloadLeadPopup .lpx-submit:hover{
+    transform:translateY(-2px);
+    box-shadow:0 16px 32px -10px rgba(244,184,96,.6);
+  }
+  #downloadLeadPopup .lpx-submit:active{ transform:translateY(0) scale(.98); }
+  #downloadLeadPopup .lpx-submit:disabled{ cursor:default; opacity:.85; transform:none; }
+
+  #downloadLeadPopup .lpx-submit::after{
+    content:"";
+    position:absolute;
+    top:0; left:-60%;
+    width:35%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
+    transform:skewX(-20deg);
+    transition:left .55s ease;
+  }
+  #downloadLeadPopup .lpx-submit:hover::after{ left:130%; }
+
+  #downloadLeadPopup .lpx-arrow{ transition:transform .2s ease; font-style:normal; }
+  #downloadLeadPopup .lpx-submit:hover .lpx-arrow{ transform:translateX(4px); }
+
+  #downloadLeadPopup .lpx-footnote{
+    margin:14px 0 0;
+    text-align:center;
+    font:11px 'IBM Plex Mono',monospace;
+    color:var(--lpx-text-faint);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    #downloadLeadPopup .lpx-card.lpx-card-in{ animation:none; opacity:1; }
+    #downloadLeadPopup .lpx-stripe{ animation:none; }
+    #downloadLeadPopup .lpx-submit::after{ transition:none; }
+  }
+
+  @media (max-width:480px){
+    #downloadLeadPopup .lpx-body{ padding:24px 22px 26px; }
+    #downloadLeadPopup h4.lpx-heading{ font-size:21px; }
+    #downloadLeadPopup .lpx-chip{ width:30px; height:22px; }
+  }
+</style>
+@endpush
+<div id="downloadLeadPopup" class="lpx-overlay">
+    <div class="lpx-dialog">
+        <div class="lpx-card" id="leadCard">
+            <div class="lpx-stripe" aria-hidden="true"></div>
+            <div class="lpx-body">
+                <div class="lpx-head">
+                    <div class="lpx-chip" aria-hidden="true"></div>
+                    <button type="button" class="lpx-close" onclick="closeModal('downloadLeadPopup')" aria-label="Close">&#10005;</button>
+                </div>
+
+                <p class="lpx-eyebrow">Digicrome &middot; course access</p>
+                <h4 class="lpx-heading">Download brochure</h4>
+                <p class="lpx-subtext">Enter your details and we&rsquo;ll send the full course breakdown to your inbox.</p>
+
+                <form id="leadForm" action="{{ route('lead.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="course_id" value="{{ $course->id }}">
+
+                    <div class="lpx-field">
+                        <input type="text" id="lp-name" name="name" placeholder=" " class="lpx-input" required>
+                        <label for="lp-name">Full name</label>
+                    </div>
+
+                    <div class="lpx-field">
+                        <input type="tel" id="lp-mobile" pattern="\d{10}" title="Please enter a 10-digit mobile number"
+                            name="mobile" placeholder=" " class="lpx-input" required>
+                        <label for="lp-mobile">Mobile number</label>
+                        <span class="lpx-hint">10 digits, no spaces</span>
+                    </div>
+
+                    <div class="lpx-field">
+                        <input type="email" id="lp-email" name="email" placeholder=" " class="lpx-input" required>
+                        <label for="lp-email">Email address</label>
+                    </div>
+
+                    <div class="lpx-field">
+                        <input type="text" id="lp-address" name="address" placeholder=" " class="lpx-input" required>
+                        <label for="lp-address">City</label>
+                    </div>
+
+                    <div class="lpx-field lpx-field-select">
+                        <select id="lp-title" name="title" class="lpx-input" required>
+                            <option value="" disabled selected>Select course</option>
                             <option value="DS">Data Science & AI</option>
                             <option value="AISS">Cyber Security</option>
                             <option value="other">Other</option>
                         </select>
-                        <!-- Hidden Fields -->
-                        <input type="text" name="our_custom" style="display:none;" value="digicrome">
-                        <input type="hidden" name="form_time" value="<?php echo time(); ?>">
-                        <input type="hidden" name="source" value="Website(broucher)">
-                        <input type="hidden" name="ib" value="">
-                        <input type="hidden" name="profession" value="NA">
+                    </div>
 
-                        <button type="submit" style="background: green;"
-                            class="btn custom-lead-submit-btn w-100 mt-2">Download Brochure</button>
-                    </form>
-                </div>
+                    <!-- Hidden Fields -->
+                    <input type="text" name="our_custom" style="display:none;" value="digicrome">
+                    <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+                    <input type="hidden" name="source" value="Website(broucher)">
+                    <input type="hidden" name="ib" value="">
+                    <input type="hidden" name="profession" value="NA">
+
+                    <div class="lpx-divider" aria-hidden="true"></div>
+
+                    <button type="submit" style="background: none;" class="lpx-submit" id="leadSubmitBtn">
+                        <span id="leadSubmitLabel">Get Brochure</span>
+                        <i class="lpx-arrow">&rarr;</i>
+                    </button>
+                    <p class="lpx-footnote">We&rsquo;ll only use this to send your brochure &mdash; no spam.</p>
+                </form>
             </div>
         </div>
+    </div>
+</div>
 
+<script>
+  (function () {
+    var popup = document.getElementById('downloadLeadPopup');
+    var card = document.getElementById('leadCard');
+    var dialog = card.closest('.lpx-dialog');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var tiltReady = reduceMotion;
 
+    var observer = new MutationObserver(function () {
+      if (popup.classList.contains('is-open')) {
+        card.classList.remove('lpx-card-in');
+        card.style.transform = '';
+        void card.offsetWidth;
+        card.classList.add('lpx-card-in');
+      }
+    });
+    observer.observe(popup, { attributes: true, attributeFilter: ['class'] });
+
+    card.addEventListener('animationend', function () {
+      card.classList.remove('lpx-card-in');
+      card.style.transform = '';
+      tiltReady = true;
+    });
+
+    if (finePointer && !reduceMotion) {
+      dialog.addEventListener('mousemove', function (e) {
+        if (!tiltReady) return;
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = 'rotateY(' + (x * 9).toFixed(2) + 'deg) rotateX(' + (-y * 9).toFixed(2) + 'deg)';
+      });
+      dialog.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+      });
+    }
+
+    popup.addEventListener('click', function (e) {
+      if (e.target === popup) { closeModal('downloadLeadPopup'); }
+    });
+
+    // Visual "sending" feedback only — does not block the real submit.
+    document.getElementById('leadForm').addEventListener('submit', function () {
+      var btn = document.getElementById('leadSubmitBtn');
+      var label = document.getElementById('leadSubmitLabel');
+      btn.disabled = true;
+      label.textContent = 'Sending...';
+    });
+  })();
+</script>
         <!-- Styles -->
         <style>
             .modal-container {
@@ -1577,7 +1934,6 @@
 
         <!-- JS to Control Modals -->
         <script>
-            // Returns true when visitor is on the AI Security course page
             function isAISSPage() {
                 return window.location.pathname
                     .replace(/\/+$/, '')          // strip trailing slash
@@ -1585,195 +1941,432 @@
             }
 
             function openModal(modalId) {
-                document.getElementById(modalId).style.display = 'flex';
-                if (isAISSPage()) {
-                    const modal = document.getElementById(modalId);
-                    const sourceField = modal.querySelector('form [name="source"]');
-                    const ibField = modal.querySelector('form [name="ib"]');
+                if (modalId === 'downloadLeadPopup') {
+                    var el = document.getElementById(modalId);
+                    el.classList.add('is-open');
+                    document.body.style.overflow = 'hidden';
+                    var card = document.getElementById('leadCard');
+                    card.classList.remove('lpx-card-in');
+                    card.style.transform = '';
+                    void card.offsetWidth;
+                    card.classList.add('lpx-card-in');
+                    const sourceField = el.querySelector('form [name="source"]');
+                    const ibField = el.querySelector('form [name="ib"]');
                     if (sourceField) {
-                        if (modalId === 'leadPopup') {
+                        if (isAISSPage()) {
                             sourceField.value = 'Website AISS Course (Brochure)';
                             ibField.value = 'AISS';
                         } else {
-                            sourceField.value = 'Website AISS Course';
-                            ibField.value = 'AISS';
+                            sourceField.value = 'Website Course Brochure';
+                            ibField.value = '';
+                        }
+                    }
+                }else{
+                    var el = document.getElementById(modalId);
+                    el.classList.add('is-open');
+                    document.body.style.overflow = 'hidden';
+                    var card = document.getElementById('applyNowCard');
+                    card.classList.remove('qr-card-in');
+                    void card.offsetWidth;
+                    card.classList.add('qr-card-in');
+                    if (isAISSPage()) {
+                        const modal = document.getElementById(modalId);
+                        const sourceField = modal.querySelector('form [name="source"]');
+                        const ibField = modal.querySelector('form [name="ib"]');
+                        if (sourceField) {
+                            if (modalId === 'downloadLeadPopup') {
+                                sourceField.value = 'Website AISS Course (Brochure)';
+                                ibField.value = 'AISS';
+                            } else {
+                                sourceField.value = 'Website AISS Course';
+                                ibField.value = 'AISS';
+                            }
                         }
                     }
                 }
             }
             function closeModal(modalId) {
-                document.getElementById(modalId).style.display = 'none';
-            }
-        </script>
-        <div id="applyNowPopup" class="modal-container">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content custom-reg-modal-content" style="padding: 10px;">
-                    <div class="modal-header custom-reg-modal-header"
-                        style="background: #fff; border-radius: 7px; padding: 10px;">
-                        <h5 class="modal-title custom-reg-modal-title" style="color:#000;">Quick Response</h5>
-                        <button type="button" class="custom-close-icon" onclick="closeModal('applyNowPopup')">×</button>
-                    </div>
-
-                    <form method="POST" id="leadForm" action="{{ route('lead.store') }}">
-                        @csrf
-                        <div class="modal-body" id="form1">
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <input type="text" name="name" class="form-control custom-reg-input"
-                                        placeholder="Name" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="tel" pattern="\d{10}" title="Please enter a 10-digit mobile number"
-                                        name="phone" class="form-control custom-reg-input" placeholder="Mobile Number"
-                                        required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" name="email" class="form-control custom-reg-input"
-                                        placeholder="E-mail ID" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" name="address" class="form-control custom-reg-input"
-                                        placeholder="City" required>
-                                </div>
-                                <div class="col-12">
-                                    <select name="title" class="form-select custom-reg-input" required>
-                                        <option value="" disabled selected style="color: #999;">Select Course</option>
-                                        <option value="DS">Data Science & AI</option>
-                                        <option value="AISS">Cyber Security</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-
-                                <input type="hidden" name="qualification" value="NA">
-                                <input type="text" name="our_custom" style="display:none;" value="digicrome">
-                                <input type="hidden" name="form_time" value="<?php echo time(); ?>">
-                                <input type="hidden" name="experience" value="NA">
-                                <input type="hidden" name="ib" value="">
-
-                                <!-- Other hidden fields -->
-                                <input type="hidden" name="page_name" value="{{ $course->name }}">
-                                <input type="hidden" name="source" value="Website(Course)">
-                                <input type="hidden" name="course_id" value="{{ $course->id ?? '' }}">
-                            </div>
-                        </div><br>
-
-                        <div class="modal-footer border-0">
-                            <button type="submit" class="btn custom-reg-submit-btn w-100">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- Styles -->
-        <style>
-            .modal-content{
-               width: 420px;
-               transform: translateY(-30px);
-               opacity: 0;
-               margin: 6% auto;
-               animation: slideDownFadeIn 0.4s forwards ease-in-out;
-            }
-            @keyframes slideDownFadeIn {
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
+                if(modalId === 'downloadLeadPopup'){
+                    var el = document.getElementById(modalId);
+                    el.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                }else{                
+                    var el = document.getElementById(modalId);
+                    el.classList.remove('is-open');
+                    document.body.style.overflow = '';
                 }
             }
-                    
-            .modal-container {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                justify-content: center;
-                align-items: center;
-                z-index: 999;
-            }
+            document.getElementById('applyNowPopup').addEventListener('click', function(e){
+                if(e.target === this){ closeModal('applyNowPopup'); }
+            });
 
-            .modal-dialog {
-                max-width: 800px;
-                width: 100%;
-            }
+            var submitBtn = document.getElementById('applyNowSubmitBtn');
+            submitBtn.addEventListener('click', function(e){
+                var rect = submitBtn.getBoundingClientRect();
+                var size = Math.max(rect.width, rect.height) * 2;
+                var ripple = document.createElement('span');
+                ripple.className = 'qr-ripple';
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                submitBtn.appendChild(ripple);
+                setTimeout(function(){ ripple.remove(); }, 650);
+            });
 
-            .custom-reg-modal-content {
-                background: rgba(255, 255, 255, 0.05);
-                -webkit-backdrop-filter: blur(12px);
-                backdrop-filter: blur(12px);
-                border-radius: 16px;
-                color: #fff;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
+            document.getElementById('applyNowForm').addEventListener('submit', function(e){
+                e.preventDefault();
+                var label = document.getElementById('applyNowSubmitLabel');
+                submitBtn.disabled = true;
+                label.textContent = 'Sending...';
+                setTimeout(function(){
+                label.textContent = 'Got it — we\u2019ll call you soon';
+                setTimeout(function(){
+                    label.textContent = 'Request callback';
+                    submitBtn.disabled = false;
+                }, 1800);
+                }, 900);
+            });
+        </script>
+        <div id="applyNowPopup" class="qr-overlay">
+            <div class="qr-shell">
+                <div class="qr-card" id="applyNowCard">
 
-            .custom-close-icon {
-                position: absolute;
-                background: none;
-                border: none;
-                font-size: 2rem;
-                color: #000;
-                cursor: pointer;
-                right: 17px;
-            }
+                <div class="qr-aside">
+                    <div class="qr-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
 
-            .custom-reg-modal-header {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
+                    <div class="qr-badge"><span class="qr-dot"></span> Avg. response under 2 hrs</div>
 
-            .custom-reg-modal-title {
-                color: #ffffff;
-                font-weight: 600;
-                font-size: 1.25rem;
-            }
+                    <h2 class="qr-aside-title">Quick Response</h2>
+                    <p class="qr-aside-text">Share a few details and our counsellor will get back to you fast — no waiting in line.</p>
 
-            .custom-reg-input {
-                background: rgba(255, 255, 255, 0.07);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                color: #fff !important;
-            }
+                    <ul class="qr-list">
+                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Callback within 2 hours</li>
+                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Free 1:1 counselling session</li>
+                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> No obligation to enroll</li>
+                    </ul>
+                </div>
 
-            .custom-reg-input::placeholder {
-                color: rgba(255, 255, 255, 0.6);
-            }
+                <div class="qr-main">
+                    <button type="button" class="qr-close" onclick="closeModal('applyNowPopup')" aria-label="Close">&#10005;</button>
+                    <h3 class="qr-form-title">Your details</h3>
 
-            .custom-reg-input:focus {
-                background: rgba(255, 255, 255, 0.1);
-                border-color: #ffffff;
-                color: #fff;
-                box-shadow: none;
-            }
+                    <form method="POST" id="applyNowForm" action="{{ route('lead.store') }}">
+                        @csrf
+                    <div class="qr-field">
+                        <input type="text" id="qr-name" name="name" placeholder=" " class="qr-input" required>
+                        <label for="qr-name">Full name</label>
+                        <span class="qr-underline"></span>
+                    </div>
 
-            .form-select.custom-reg-input option {
-                background-color: #1a1a1a;
-                color: #fff;
-            }
+                    <div class="qr-field">
+                        <input type="tel" id="qr-phone" pattern="\d{10}" title="Please enter a 10-digit mobile number" name="phone" placeholder=" " class="qr-input" required>
+                        <label for="qr-phone">Mobile number</label>
+                        <span class="qr-underline"></span>
+                    </div>
 
-            .custom-reg-note {
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 0.9rem;
-            }
+                    <div class="qr-field">
+                        <input type="email" id="qr-email" name="email" placeholder=" " class="qr-input" required>
+                        <label for="qr-email">Email address</label>
+                        <span class="qr-underline"></span>
+                    </div>
 
-            .custom-reg-link {
-                color: #ffffff;
-                text-decoration: underline;
-            }
-            .custom-reg-submit-btn {
-                background: linear-gradient(135deg, #EF9F1B, #ffb84d) !important;
-                color: #000;
-                font-weight: 600;
-                border: none;
-                transition: all 0.3s ease;
-            }
-            .custom-reg-submit-btn:hover {
-                background: linear-gradient(135deg, #ffb84d, #EF9F1B) !important;
-                color: #000;
-            }
-            #form1 {
-                background: none !important;
-            }
-        </style>
+                    <div class="qr-field">
+                        <input type="text" id="qr-address" name="address" placeholder=" " class="qr-input" required>
+                        <label for="qr-address">City</label>
+                        <span class="qr-underline"></span>
+                    </div>
 
+                    <div class="qr-field">
+                        <select id="qr-title" name="title" class="qr-input" required>
+                        <option value="" disabled selected>Select course</option>
+                        <option value="DS">Data Science &amp; AI</option>
+                        <option value="AISS">Cyber Security</option>
+                        <option value="other">Other</option>
+                        </select>
+                        <label for="qr-title">Course</label>
+                        <span class="qr-underline"></span>
+                    </div>
+
+                    <input type="hidden" name="qualification" value="NA">
+                    <input type="text" name="our_custom" style="display:none;" value="digicrome">
+                    <input type="hidden" name="form_time" value="0">
+                    <input type="hidden" name="experience" value="NA">
+                    <input type="hidden" name="ib" value="">
+                    <input type="hidden" name="page_name" value="Data Science &amp; AI Bootcamp">
+                    <input type="hidden" name="source" value="Website(Course)">
+                    <input type="hidden" name="course_id" value="42">
+
+                    <div class="qr-actions">
+                        <button type="submit" class="qr-submit" id="applyNowSubmitBtn">
+                        <span id="applyNowSubmitLabel">Request callback</span>
+                        </button>
+                        <p class="qr-note">We typically respond within 2 hours, Mon&ndash;Sat.</p>
+                    </div>
+                    </form>
+                </div>
+
+                </div>
+            </div>
+            </div>
+            <style>
+  :root{
+    --qr-ink:#0B0D10;
+    --qr-panel:#15191D;
+    --qr-panel-soft:#1B2024;
+    --qr-line:rgba(255,255,255,.09);
+    --qr-line-strong:rgba(255,255,255,.18);
+    --qr-text:#F5F6F7;
+    --qr-text-soft:#9AA1A9;
+    --qr-text-faint:#5B6268;
+    --qr-coral:#FF6B4A;
+    --qr-coral-deep:#E5532F;
+    --qr-violet:#9B8CFF;
+  }
+.qr-stage{ text-align:center; }
+  .qr-trigger{
+    background:transparent;
+    border:1px solid var(--qr-line-strong);
+    color:var(--qr-text);
+    font:500 14px 'Plus Jakarta Sans',sans-serif;
+    padding:14px 26px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:border-color .2s, color .2s;
+  }
+  .qr-trigger:hover{ border-color:var(--qr-coral); color:var(--qr-coral); }
+  .qr-stage p{ margin-top:14px; font:12px 'JetBrains Mono',monospace; color:var(--qr-text-faint); }
+
+  /* ---------- modal ---------- */
+
+  #applyNowPopup.qr-overlay{
+    position:fixed;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:rgba(4,5,7,.78);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    z-index:999;
+    padding:20px;
+    opacity:0;
+    transition:opacity .25s ease;
+  }
+  #applyNowPopup.qr-overlay.is-open{ display:flex; opacity:1; }
+
+  #applyNowPopup .qr-shell{ width:100%; max-width:860px; max-height:92vh; }
+
+  #applyNowPopup .qr-card{
+    display:flex;
+    background:var(--qr-panel);
+    border:1px solid var(--qr-line-strong);
+    border-radius:22px;
+    overflow:hidden;
+    max-height:92vh;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.6);
+    transform:translateY(36px) scale(.96);
+    opacity:0;
+  }
+  #applyNowPopup .qr-card.qr-card-in{
+    animation:qrRise .5s cubic-bezier(.22,1,.36,1) forwards;
+  }
+  @keyframes qrRise{ to{ transform:translateY(0) scale(1); opacity:1; } }
+
+  #applyNowPopup .qr-aside{
+    flex:0 0 38%;
+    position:relative;
+    padding:36px 30px;
+    background:
+      radial-gradient(circle at 30% 18%, rgba(255,107,74,.16), transparent 55%),
+      var(--qr-ink);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  #applyNowPopup .qr-pulse{
+    position:absolute;
+    top:-40px; right:-60px;
+    width:220px; height:220px;
+    pointer-events:none;
+  }
+  #applyNowPopup .qr-pulse span{
+    position:absolute; inset:0;
+    border:1px solid rgba(255,107,74,.35);
+    border-radius:50%;
+    animation:qrPing 3.2s ease-out infinite;
+  }
+  #applyNowPopup .qr-pulse span:nth-child(2){ animation-delay:1.05s; }
+  #applyNowPopup .qr-pulse span:nth-child(3){ animation-delay:2.1s; }
+  @keyframes qrPing{
+    0%{ transform:scale(.3); opacity:.7; }
+    100%{ transform:scale(1.4); opacity:0; }
+  }
+
+  #applyNowPopup .qr-badge{
+    display:inline-flex; align-items:center; gap:7px;
+    font:11px/1 'JetBrains Mono',monospace;
+    letter-spacing:.04em; text-transform:uppercase;
+    color:var(--qr-text-soft);
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--qr-line);
+    border-radius:99px;
+    padding:7px 12px;
+    width:max-content;
+    margin-bottom:22px;
+    position:relative; z-index:1;
+  }
+  #applyNowPopup .qr-dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--qr-coral);
+    animation:qrBlink 1.8s ease-in-out infinite;
+  }
+  @keyframes qrBlink{
+    0%,100%{ box-shadow:0 0 0 0 rgba(255,107,74,.5); }
+    50%{ box-shadow:0 0 0 5px rgba(255,107,74,0); }
+  }
+
+  #applyNowPopup .qr-aside-title{ font:700 32px/1.15 'Sora',sans-serif; color:var(--qr-text); margin:0 0 12px; position:relative; z-index:1; }
+  #applyNowPopup .qr-aside-text{ font:14px/1.6 'Plus Jakarta Sans',sans-serif; color:var(--qr-text-soft); margin:0 0 22px; position:relative; z-index:1; }
+
+  #applyNowPopup .qr-course-tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font:12px 'Plus Jakarta Sans',sans-serif; color:var(--qr-text);
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--qr-line);
+    border-radius:10px;
+    padding:8px 12px;
+    margin-bottom:22px;
+    width:max-content;
+    max-width:100%;
+    position:relative; z-index:1;
+  }
+  #applyNowPopup .qr-course-tag b{ color:var(--qr-coral); font-weight:600; }
+
+  #applyNowPopup .qr-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; position:relative; z-index:1; }
+  #applyNowPopup .qr-list li{ display:flex; gap:10px; align-items:flex-start; font:13px/1.5 'Plus Jakarta Sans',sans-serif; color:var(--qr-text-soft); }
+  #applyNowPopup .qr-list svg{ flex-shrink:0; margin-top:2px; }
+
+  #applyNowPopup .qr-main{
+    flex:1 1 auto;
+    position:relative;
+    padding:30px 34px;
+    overflow-y:auto;
+  }
+  #applyNowPopup .qr-main::-webkit-scrollbar{ width:6px; }
+  #applyNowPopup .qr-main::-webkit-scrollbar-thumb{ background:var(--qr-line-strong); border-radius:6px; }
+
+  #applyNowPopup .qr-close{
+    position:absolute; top:20px; right:20px;
+    width:34px; height:34px; border-radius:50%;
+    border:1px solid var(--qr-line-strong);
+    background:rgba(255,255,255,.03);
+    color:var(--qr-text-soft);
+    font-size:18px; line-height:1;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    transition:background .2s ease, color .2s ease, transform .2s ease;
+  }
+  #applyNowPopup .qr-close:hover{ background:rgba(255,255,255,.1); color:var(--qr-text); transform:scale(1.08); }
+
+  #applyNowPopup .qr-form-title{ font:600 18px 'Sora',sans-serif; color:var(--qr-text); margin:0 0 20px; }
+
+  #applyNowPopup .qr-field{ position:relative; margin-bottom:22px; opacity:0; transform:translateY(10px); }
+  #applyNowPopup .qr-card.qr-card-in .qr-field{ animation:qrFieldIn .45s ease forwards; }
+  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(1){ animation-delay:.12s; }
+  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(2){ animation-delay:.18s; }
+  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(3){ animation-delay:.24s; }
+  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(4){ animation-delay:.30s; }
+  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(5){ animation-delay:.36s; }
+  @keyframes qrFieldIn{ to{ opacity:1; transform:translateY(0); } }
+
+  #applyNowPopup .qr-input{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid var(--qr-line-strong);
+    padding:10px 2px 10px;
+    font:15px 'Plus Jakarta Sans',sans-serif;
+    color:var(--qr-text);
+    outline:none;
+  }
+  #applyNowPopup .qr-input::placeholder{ color:transparent; }
+
+  #applyNowPopup .qr-field label{
+    position:absolute; left:2px; top:10px;
+    font:15px 'Plus Jakarta Sans',sans-serif;
+    color:var(--qr-text-soft);
+    pointer-events:none;
+    transition:all .18s ease;
+  }
+  #applyNowPopup .qr-input:focus ~ label,
+  #applyNowPopup .qr-input:not(:placeholder-shown) ~ label{
+    top:-14px; font-size:11px; letter-spacing:.03em; color:var(--qr-coral);
+  }
+
+  #applyNowPopup .qr-underline{
+    position:absolute; left:0; bottom:0; height:2px; width:0%;
+    background:linear-gradient(90deg, var(--qr-coral), var(--qr-violet));
+    transition:width .25s ease;
+  }
+  #applyNowPopup .qr-input:focus ~ .qr-underline{ width:100%; }
+
+  #applyNowPopup select.qr-input{
+    appearance:none; -webkit-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%239AA1A9' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 2px center;
+    padding-right:20px;
+  }
+  #applyNowPopup select.qr-input option{ background:#1B2024; color:#fff; }
+
+  #applyNowPopup .qr-actions{ margin-top:8px; }
+  #applyNowPopup .qr-submit{
+    position:relative;
+    width:100%;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    background:linear-gradient(135deg, var(--qr-coral), var(--qr-coral-deep));
+    color:#1A0A04;
+    font:600 15px 'Sora',sans-serif;
+    border:none; border-radius:12px;
+    padding:15px 20px;
+    cursor:pointer;
+    overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 10px 24px -10px rgba(255,107,74,.5);
+  }
+  #applyNowPopup .qr-submit:hover{ transform:translateY(-2px); box-shadow:0 16px 30px -10px rgba(255,107,74,.65); }
+  #applyNowPopup .qr-submit:active{ transform:translateY(0) scale(.98); }
+  #applyNowPopup .qr-submit:disabled{ cursor:default; opacity:.85; transform:none; }
+
+  #applyNowPopup .qr-ripple{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.5);
+    transform:scale(0);
+    animation:qrRippleAnim .6s ease-out;
+    pointer-events:none;
+  }
+  @keyframes qrRippleAnim{ to{ transform:scale(2.6); opacity:0; } }
+
+  #applyNowPopup .qr-note{ margin:12px 0 0; text-align:center; font:12px 'Plus Jakarta Sans',sans-serif; color:var(--qr-text-faint); }
+
+  @media (prefers-reduced-motion: reduce){
+    #applyNowPopup .qr-card.qr-card-in{ animation:none; opacity:1; transform:none; }
+    #applyNowPopup .qr-card.qr-card-in .qr-field{ animation:none; opacity:1; transform:none; }
+    #applyNowPopup .qr-pulse span{ animation:none; }
+    #applyNowPopup .qr-dot{ animation:none; }
+  }
+
+  @media (max-width:760px){
+    #applyNowPopup .qr-card{ flex-direction:column; }
+    #applyNowPopup .qr-aside{ flex:none; padding:26px 24px; }
+    #applyNowPopup .qr-pulse{ width:150px; height:150px; top:-30px; right:-40px; }
+    #applyNowPopup .qr-aside-title{ font-size:24px; }
+    #applyNowPopup .qr-main{ padding:26px 24px 28px; }
+  }
+</style>
         <!-- JS to Control Modal -->
 
 
@@ -1796,14 +2389,13 @@
                     .then(res => res.json())
                     .then(data => {
                         if (data.success && data.download_url) {
-                            // Close the modal if it's open
-                            var modalElement = document.getElementById('leadPopup');
-                            var modal = bootstrap.Modal.getInstance(modalElement);
-                            if (modal) {
-                                modal.hide();
-                            }
-
-                            // Trigger the brochure download
+                            var el = document.getElementById('downloadLeadPopup');
+                            el.classList.remove('is-open');
+                            document.body.style.overflow = '';
+                            var btn = document.getElementById('leadSubmitBtn');
+                            var label = document.getElementById('leadSubmitLabel');
+                            btn.disabled = false;
+                            label.textContent = 'Get Brochure';
                             window.open(data.download_url, '_blank'); // Open the URL in a new tab
                         } else {
                             alert("Submission failed! Please try again.");
