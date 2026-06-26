@@ -2034,15 +2034,14 @@
                 <div class="qr-aside">
                     <div class="qr-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
 
-                    <div class="qr-badge"><span class="qr-dot"></span> Avg. response under 2 hrs</div>
+                    <div class="qr-badge"><span class="qr-dot"></span> Quick Response, 24×7 Support</div>
 
                     <h2 class="qr-aside-title">Quick Response</h2>
                     <p class="qr-aside-text">Share a few details and our counsellor will get back to you fast — no waiting in line.</p>
-
                     <ul class="qr-list">
-                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Callback within 2 hours</li>
-                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Free 1:1 counselling session</li>
-                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> No obligation to enroll</li>
+                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Personalized course guidance</li>
+                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Free career counselling</li>
+                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Hassle-free admission support</li>
                     </ul>
                 </div>
 
@@ -2098,9 +2097,9 @@
 
                     <div class="qr-actions">
                         <button type="submit" class="qr-submit" id="applyNowSubmitBtn">
-                        <span id="applyNowSubmitLabel">Request callback</span>
+                        <span id="applyNowSubmitLabel">Request Callback</span>
                         </button>
-                        <p class="qr-note">We typically respond within 2 hours, Mon&ndash;Sat.</p>
+                        <p class="qr-note">Get quick and reliable support anytime with our dedicated team.</p>
                     </div>
                     </form>
                 </div>
