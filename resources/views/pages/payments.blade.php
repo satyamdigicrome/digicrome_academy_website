@@ -4,7 +4,35 @@
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 
+@push('styles')
+<style>
+    .payment-hero-banner {
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
 
+    .payment-hero-banner picture,
+    .payment-hero-banner img {
+        display: block;
+        width: 100%;
+    }
+
+    .payment-hero-banner img {
+        height: auto;
+        object-fit: cover;
+    }
+
+    @media (max-width: 575px) {
+        .payment-hero-banner img {
+            height: auto;
+        }
+        .payment-hero-banner {
+            margin-top: 95px;
+        }
+    }
+</style>
+@endpush
 @section('content')
     @include('components.lead-form-popup')
 
@@ -12,40 +40,19 @@
         const detectedCountry = @json($userCountry); // Laravel-passed country
     </script>
 
+    <section class="payment-hero-banner">
+        <picture>
+            {{-- Mobile --}}
+            <source media="(max-width: 575px)"
+                srcset="{{ asset('assets/images/payment-mobile.webp') }}">
 
-    <div class="payment-img d-flex" style="background-image: url({{ asset('assets/images/contact-header-img.png') }})">
-        <div class="container">
-            <div class="row align-ite   -center">
-                <div class="col-lg-12">
-                    <div class="breadcumb-content">
-                        <div class="breadcumb-title">
-                            <h1 style="color: #fff;font-size:50px;font-weight:600;">Payments</h1>
-                        </div>
-                        {{-- <ul>
-        <li><a href="#" style="color: #fff">Home <span><i class="fa-solid fa-arrow-right-long"></i></span></a></li>
-        <li style="color: #fff">Payments</li>
-        </ul> --}}
-                    </div>
-                </div>
-            </div>
-            {{-- <div class="breadcumb-shape">
-      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot">
-    </div>
-    <div class="breadcumb-shape2">
-      <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball">
-    </div> --}}
-        </div>
-    </div>
-    {{-- <div class="dropdown" id="customDropdown">
-        <button class="dropdown-toggle" onclick="toggleDropdown()" id="selectedCountryBtn">
-            Select Country
-        </button>
-        <div class="dropdown-menu" id="dropdownMenu">
-            <div class="dropdown-columns" id="dropdownColumns">
-                <!-- Country list will appear here in 4 columns -->
-            </div>
-        </div>
-    </div> --}}
+            {{-- Tablet --}}
+            <source media="(max-width: 991px)"
+                srcset="{{ asset('assets/images/payment-mobile.webp') }}">
+
+            <img src="{{ asset('assets/images/payment-laptop.webp') }}" alt="payment-banner" title="payment-banner">
+        </picture>
+    </section>
 
     <script>
         const dropdownMenu = document.getElementById('dropdownMenu');

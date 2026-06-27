@@ -433,116 +433,142 @@
                 background-color: #1a1447;
             }
         }
-        /* 🔥 ONLY Courses menu */
-/* 🔥 CENTER THE MEGA MENU */
-.sub_menu.mega-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    min-width: 690px;
-    width: 100%;
-    max-width: 1200px;
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    z-index: 999;
-}
-/* Wrapper */
-.mega-wrapper {
-    display: flex;
-    gap: 25px;
-}
+    .sub_menu.mega-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        min-width: 690px;
+        width: 100%;
+        max-width: 1200px;
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        z-index: 999;
+    }
+    /* Wrapper */
+    .mega-wrapper {
+        display: flex;
+        gap: 25px;
+    }
 
-/* LEFT SIDE */
-.mega-left {
-    width: 30%;
-    border-right: 1px solid #eee;
-    padding-right: 15px;
-}
+    /* LEFT SIDE */
+    .mega-left {
+        width: 30%;
+        border-right: 1px solid #eee;
+        padding-right: 15px;
+    }
 
-.mega-left h6 {
-    font-weight: 600;
-    margin-bottom: 10px;
-}
+    .mega-left h6 {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
 
-.mega-left ul {
-    list-style: none;
-    padding: 0;
-}
+    .mega-left ul {
+        list-style: none;
+        padding: 0;
+    }
 
-.mega-left li {
-    margin-bottom: 8px;
-}
+    .mega-left li {
+        margin-bottom: 8px;
+    }
 
-.mega-left a {
-    display: flex;
-    justify-content: space-between;
-    text-decoration: none;
-    color: #222;
-    font-size: 14px;
-}
-.mega-left a:hover {
-    color: #ff7a00;
-}
+    .mega-left a {
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #222;
+        font-size: 14px;
+    }
+    .mega-left a:hover {
+        color: #ff7a00;
+    }
 
-/* RIGHT SIDE */
-.mega-right {
-    width: 70%;
-}
+    /* RIGHT SIDE */
+    .mega-right {
+        width: 70%;
+    }
 
-.mega-right h6 {
-    font-weight: 600;
-    margin-bottom: 10px;
-}
+    .mega-right h6 {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
 
-/* COURSE LIST */
-.course-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 🔥 2 cards */
-    gap: 15px;
-    max-height: 420px;
-    overflow-y: auto;
-}
+    /* COURSE LIST */
+    .course-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 🔥 2 cards */
+        gap: 15px;
+        max-height: 420px;
+        overflow-y: auto;
+    }
 
-/* COURSE ITEM */
-.course-item {
-    display: block;
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    padding: 12px;
-    text-decoration: none;
-    transition: 0.3s;
-}
+    /* COURSE ITEM */
+    .course-item {
+        display: block;
+        background: #fff;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        padding: 12px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
 
-.course-item:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-/* IMAGE */
-.course-item img {
-    width: 100%;
-    height: 140px;   /* 🔥 bigger image */
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-/* TEXT */
-.course-info h6 {
-    font-size: 15px;
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 5px;
-    line-height: 22px;
-}
+    .course-item:hover {
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    /* IMAGE */
+    .course-item img {
+        width: 100%;
+        height: 140px;   /* 🔥 bigger image */
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    /* TEXT */
+    .course-info h6 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 5px;
+        line-height: 22px;
+    }
 
-.course-info p {
-    font-size: 13px;
-    color: #777;
-    margin: 0;
-}
+    .course-info p {
+        font-size: 13px;
+        color: #777;
+        margin: 0;
+    }
+        #sticky-header .sub_menu li {
+        transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    #sticky-header .sub_menu li.menu-color-blue:hover,
+    #sticky-header .sub_menu li.menu-color-blue:hover > a {
+        background-color: #4285F4 !important;
+        color: #ffffff !important;
+    }
+
+    #sticky-header .sub_menu li.menu-color-red:hover,
+    #sticky-header .sub_menu li.menu-color-red:hover > a {
+        background-color: #EA4335 !important;
+        color: #ffffff !important;
+    }
+
+    #sticky-header .sub_menu li.menu-color-yellow:hover,
+    #sticky-header .sub_menu li.menu-color-yellow:hover > a {
+        background-color: #FBBC05 !important;
+        color: #202124 !important; /* dark text — yellow + white reads poorly */
+    }
+
+    #sticky-header .sub_menu li.menu-color-green:hover,
+    #sticky-header .sub_menu li.menu-color-green:hover > a {
+        background-color: #34A853 !important;
+        color: #ffffff !important;
+    }
+
     </style>
     <!--End of Tawk.to Script-->
     @vite(['resources/css/app.css', 'resources/js/app.js'])

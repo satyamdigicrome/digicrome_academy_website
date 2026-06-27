@@ -389,7 +389,7 @@
                             <div class="col-lg-6">
                                 <div class="about-item-box two">
                                     <div class="about-iteam-count">
-                                        <h3 class="counter">20</h3>
+                                        <h3 class="counter">20</h3
                                         <span>k+</span>
                                     </div>
                                     <div class="about-item-desc last">

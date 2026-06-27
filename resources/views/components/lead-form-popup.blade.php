@@ -46,6 +46,21 @@
         position: relative;
     }
 
+    /* Logo Section */
+    .df-logo-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 35px;
+    }
+
+    .df-logo-section img {
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
     /* Modern SVG Vector Graphic Illustration */
     .df-graphic-illustration {
         width: 120px;
@@ -217,6 +232,10 @@
 
         <!-- LEFT SIDE: Graphic Cover (Auto Hidden on Mobile Screens) -->
         <div class="df-modal-graphic">
+
+            <div class="df-logo-section">
+                <img src="{{ asset('assets/images/logonew.webp') }}" alt="Digicrome Logo">
+            </div>
             <div class="df-graphic-illustration">
                 <!-- Smart Minimalist Phone/Consultation Icon Vector -->
                 <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

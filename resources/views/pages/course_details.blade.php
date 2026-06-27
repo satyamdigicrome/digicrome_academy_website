@@ -60,10 +60,12 @@
         #sticky-header {
             margin-bottom: 80px !important;
         }
+
         .course-heading {
             margin-top: 4rem;
         }
-        h2{
+
+        h2 {
             display: block !important;
         }
     </style>
@@ -181,11 +183,12 @@
         </div>
         </div>
     @elseif($course->course_free == 3)
-    {{-- ===== DARK CYBER HERO — AI Security & similar courses ===== --}}
+        {{-- ===== DARK CYBER HERO — AI Security & similar courses ===== --}}
         <style>
             #sticky-header {
                 margin-bottom: 0px !important;
             }
+
             .cyber-hero {
                 position: relative;
                 z-index: 0;
@@ -193,47 +196,69 @@
                 min-height: auto;
                 background: linear-gradient(135deg, #050a18 0%, #0a1628 50%, #0d1f3c 100%);
                 overflow: hidden;
-                padding: 70px 0 18px;  /* compact: fits everything in 1 viewport */
+                padding: 70px 0 18px;
+                /* compact: fits everything in 1 viewport */
             }
+
             /* ---- Responsive padding ---- */
             @media (max-width: 991.98px) {
-                .cyber-hero { padding: 65px 0 16px; }
+                .cyber-hero {
+                    padding: 65px 0 16px;
+                }
             }
+
             @media (max-width: 767.98px) {
-                .cyber-hero { padding: 60px 0 14px; }
+                .cyber-hero {
+                    padding: 60px 0 14px;
+                }
             }
+
             .cyber-hero::before {
                 content: '';
                 position: absolute;
                 inset: 0;
                 z-index: 0;
                 background-image:
-                    linear-gradient(rgba(0,255,200,.04) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0,255,200,.04) 1px, transparent 1px);
+                    linear-gradient(rgba(0, 255, 200, .04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 200, .04) 1px, transparent 1px);
                 background-size: 48px 48px;
                 pointer-events: none;
             }
+
             .cyber-hero::after {
                 content: '';
                 position: absolute;
-                top: -80px; left: -80px;
+                top: -80px;
+                left: -80px;
                 z-index: 0;
-                width: 420px; height: 420px;
-                background: radial-gradient(circle, rgba(0,220,180,.18) 0%, transparent 70%);
+                width: 420px;
+                height: 420px;
+                background: radial-gradient(circle, rgba(0, 220, 180, .18) 0%, transparent 70%);
                 pointer-events: none;
                 animation: cyber-pulse 6s ease-in-out infinite;
             }
+
             @@keyframes cyber-pulse {
-                0%,100% { opacity: .6; transform: scale(1); }
-                50%      { opacity: 1;  transform: scale(1.12); }
+
+                0%,
+                100% {
+                    opacity: .6;
+                    transform: scale(1);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: scale(1.12);
+                }
             }
+
             /* ---- Badge ---- */
             .cyber-hero .cyber-badge {
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
-                background: rgba(0,220,180,.12);
-                border: 1px solid rgba(0,220,180,.35);
+                background: rgba(0, 220, 180, .12);
+                border: 1px solid rgba(0, 220, 180, .35);
                 color: #00ddb4;
                 font-size: .72rem;
                 font-weight: 600;
@@ -243,6 +268,7 @@
                 border-radius: 4px;
                 margin-bottom: 10px;
             }
+
             /* ---- Title ---- */
             .cyber-hero h2.cyber-title {
                 font-size: clamp(22px, 2.8vw, 34px);
@@ -251,10 +277,12 @@
                 line-height: 1.2;
                 margin-bottom: 10px;
             }
+
             .cyber-hero h2.cyber-title span.cyber-accent {
                 color: #00ddb4;
-                text-shadow: 0 0 16px rgba(0,220,180,.5);
+                text-shadow: 0 0 16px rgba(0, 220, 180, .5);
             }
+
             /* ---- Bullet points ---- */
             .cyber-hero .cyber-point {
                 display: flex;
@@ -264,7 +292,13 @@
                 font-size: .85rem;
                 margin-bottom: 7px;
             }
-            .cyber-hero .cyber-point i { margin-top: 2px; flex-shrink: 0; font-size: .8rem; }
+
+            .cyber-hero .cyber-point i {
+                margin-top: 2px;
+                flex-shrink: 0;
+                font-size: .8rem;
+            }
+
             /* ---- Buttons ---- */
             .cyber-hero .btn-cyber-primary {
                 background: linear-gradient(135deg, #00ddb4, #00a88a);
@@ -275,13 +309,15 @@
                 font-size: .88rem;
                 border-radius: 6px;
                 transition: all .25s;
-                box-shadow: 0 0 14px rgba(0,220,180,.35);
+                box-shadow: 0 0 14px rgba(0, 220, 180, .35);
             }
+
             .cyber-hero .btn-cyber-primary:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 0 24px rgba(0,220,180,.6);
+                box-shadow: 0 0 24px rgba(0, 220, 180, .6);
                 color: #050a18;
             }
+
             .cyber-hero .btn-cyber-outline {
                 background: transparent;
                 border: 2px solid #00ddb4;
@@ -292,10 +328,12 @@
                 border-radius: 6px;
                 transition: all .25s;
             }
+
             .cyber-hero .btn-cyber-outline:hover {
-                background: rgba(0,220,180,.12);
+                background: rgba(0, 220, 180, .12);
                 transform: translateY(-2px);
             }
+
             /* ---- Right image ---- */
             .cyber-hero .cyber-banner-wrap {
                 position: relative;
@@ -303,41 +341,70 @@
                 align-items: center;
                 justify-content: center;
             }
+
             .cyber-hero .cyber-banner-wrap img {
                 border-radius: 10px;
-                box-shadow: 0 0 30px rgba(0,220,180,.22), 0 0 60px rgba(0,100,200,.12);
+                box-shadow: 0 0 30px rgba(0, 220, 180, .22), 0 0 60px rgba(0, 100, 200, .12);
                 max-height: 300px;
                 object-fit: cover;
                 width: 100%;
             }
+
             /* ---- Corner brackets ---- */
             .cyber-corner {
                 position: absolute;
-                width: 22px; height: 22px;
+                width: 22px;
+                height: 22px;
                 border-color: #00ddb4;
                 border-style: solid;
                 opacity: .7;
             }
-            .cyber-corner.tl { top: -5px;    left: -5px;  border-width: 2px 0 0 2px; }
-            .cyber-corner.tr { top: -5px;    right: -5px; border-width: 2px 2px 0 0; }
-            .cyber-corner.bl { bottom: -5px; left: -5px;  border-width: 0 0 2px 2px; }
-            .cyber-corner.br { bottom: -5px; right: -5px; border-width: 0 2px 2px 0; }
+
+            .cyber-corner.tl {
+                top: -5px;
+                left: -5px;
+                border-width: 2px 0 0 2px;
+            }
+
+            .cyber-corner.tr {
+                top: -5px;
+                right: -5px;
+                border-width: 2px 2px 0 0;
+            }
+
+            .cyber-corner.bl {
+                bottom: -5px;
+                left: -5px;
+                border-width: 0 0 2px 2px;
+            }
+
+            .cyber-corner.br {
+                bottom: -5px;
+                right: -5px;
+                border-width: 0 2px 2px 0;
+            }
+
             /* ---- Stats strip — compact, always visible ---- */
             .cyber-stats {
-                background: rgba(255,255,255,.05);
-                border: 1px solid rgba(0,220,180,.18);
+                background: rgba(255, 255, 255, .05);
+                border: 1px solid rgba(0, 220, 180, .18);
                 border-radius: 8px;
                 padding: 12px 20px;
                 margin-top: 18px;
                 backdrop-filter: blur(6px);
             }
-            .cyber-stats .stat-item { text-align: center; }
+
+            .cyber-stats .stat-item {
+                text-align: center;
+            }
+
             .cyber-stats .stat-num {
                 font-size: 1.15rem;
                 font-weight: 800;
                 color: #00ddb4;
                 line-height: 1.1;
             }
+
             .cyber-stats .stat-label {
                 font-size: .67rem;
                 color: #8aa8c8;
@@ -345,43 +412,81 @@
                 letter-spacing: .05em;
                 margin-top: 2px;
             }
+
             /* ---- Dividers between stats ---- */
-            .cyber-stats .stat-item + .stat-item {
-                border-left: 1px solid rgba(0,220,180,.15);
+            .cyber-stats .stat-item+.stat-item {
+                border-left: 1px solid rgba(0, 220, 180, .15);
             }
 
             /* ---- Responsive: mobile ---- */
             @media (max-width: 575.98px) {
-                .cyber-hero .cyber-badge    { font-size: .65rem; }
-                .cyber-hero h1.cyber-title  { font-size: 21px; }
-                .cyber-hero .cyber-point    { font-size: .8rem; }
+                .cyber-hero .cyber-badge {
+                    font-size: .65rem;
+                }
+
+                .cyber-hero h1.cyber-title {
+                    font-size: 21px;
+                }
+
+                .cyber-hero .cyber-point {
+                    font-size: .8rem;
+                }
+
                 .cyber-hero .btn-cyber-primary,
-                .cyber-hero .btn-cyber-outline { width: 100%; text-align: center; }
-                .cyber-stats { padding: 10px 8px; margin-top: 12px; }
-                .cyber-stats .stat-num  { font-size: 1rem; }
-                .cyber-stats .stat-item + .stat-item { border-left: none; border-top: 1px solid rgba(0,220,180,.15); }
-            }
-            /* ---- Responsive: hide corners on mobile ---- */
-            @media (max-width: 767.98px) {
-                .cyber-corner { display: none; }
-                .cyber-hero .cyber-banner-wrap img { max-height: 220px; }
-            }
-            /* ---- Responsive: tablet ---- */
-            @media (min-width: 576px) and (max-width: 991.98px) {
-                .cyber-hero h1.cyber-title  { font-size: 26px; }
-                .cyber-stats .stat-num      { font-size: 1.05rem; }
+                .cyber-hero .btn-cyber-outline {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .cyber-stats {
+                    padding: 10px 8px;
+                    margin-top: 12px;
+                }
+
+                .cyber-stats .stat-num {
+                    font-size: 1rem;
+                }
+
+                .cyber-stats .stat-item+.stat-item {
+                    border-left: none;
+                    border-top: 1px solid rgba(0, 220, 180, .15);
+                }
             }
 
-            .cyber-hero { background:
-                linear-gradient(135deg, rgba(5,10,24,0.88) 0%, rgba(5,10,24,0.72) 100%),
-                url('{{ asset('assets/images/ds-withai-course/aiss-hero-bg.jpg') }}') no-repeat center center / cover; }
+            /* ---- Responsive: hide corners on mobile ---- */
+            @media (max-width: 767.98px) {
+                .cyber-corner {
+                    display: none;
+                }
+
+                .cyber-hero .cyber-banner-wrap img {
+                    max-height: 220px;
+                }
+            }
+
+            /* ---- Responsive: tablet ---- */
+            @media (min-width: 576px) and (max-width: 991.98px) {
+                .cyber-hero h1.cyber-title {
+                    font-size: 26px;
+                }
+
+                .cyber-stats .stat-num {
+                    font-size: 1.05rem;
+                }
+            }
+
+            .cyber-hero {
+                background:
+                    linear-gradient(135deg, rgba(5, 10, 24, 0.88) 0%, rgba(5, 10, 24, 0.72) 100%),
+                    url('{{ asset('assets/images/ds-withai-course/aiss-hero-bg.jpg') }}') no-repeat center center / cover;
+            }
 
             .visually-hidden {
                 position: absolute;
                 width: 1px;
                 height: 1px;
                 overflow: hidden;
-                clip: rect(0,0,0,0);
+                clip: rect(0, 0, 0, 0);
             }
         </style>
 
@@ -396,13 +501,14 @@
                         </div>
                         <h1 class="visually-hidden">Best AI Cybersecurity Course</h1>
                         <h2 class="cyber-title">
-                            Cyber Security: 
+                            Cyber Security:
                             <br><span class="cyber-accent">Security of AI</span>
                         </h2>
 
                         <div class="cyber-point">
                             <i class="fa-solid fa-shield-halved text-info"></i>
-                            <span>Get <strong style="color:#00ddb4;">100% Placement Assistance</strong> in {{ $course->name }}</span>
+                            <span>Get <strong style="color:#00ddb4;">100% Placement Assistance</strong> in
+                                {{ $course->name }}</span>
                         </div>
                         <div class="cyber-point">
                             <i class="fa-solid fa-briefcase" style="color:#00ddb4;"></i>
@@ -419,7 +525,8 @@
 
                         <div class="mt-2 d-flex flex-wrap gap-2">
                             @if ($course->browser)
-                                <a class="btn btn-cyber-outline" id="downloadBrochureBtn" onclick="openModal('downloadLeadPopup')">
+                                <a class="btn btn-cyber-outline" id="downloadBrochureBtn"
+                                    onclick="openModal('downloadLeadPopup')">
                                     <i class="fa fa-download me-1"></i>Download Brochure
                                 </a>
                             @endif
@@ -436,13 +543,11 @@
                         <div class="cyber-corner bl"></div>
                         <div class="cyber-corner br"></div>
                         @if ($course->banner_image)
-                            <img loading="lazy"
-                                 src="{{ asset('storage/' . $course->banner_image) }}"
-                                 alt="{{ $course->name }}"
-                                 title="{{ $course->name }}"
-                                 class="img-fluid" />
+                            <img loading="lazy" src="{{ asset('storage/' . $course->banner_image) }}"
+                                alt="{{ $course->name }}" title="{{ $course->name }}" class="img-fluid" />
                         @else
-                            <div style="width:100%;min-height:260px;background:rgba(0,220,180,.06);border:1px solid rgba(0,220,180,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                            <div
+                                style="width:100%;min-height:260px;background:rgba(0,220,180,.06);border:1px solid rgba(0,220,180,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;">
                                 <span style="color:rgba(0,220,180,.4);font-size:.9rem;">[Designer Banner Goes Here]</span>
                             </div>
                         @endif
@@ -466,7 +571,8 @@
                             <div class="stat-label">Live Online Classes</div>
                         </div>
                         <div class="col-6 col-md-3 stat-item py-1">
-                            <div class="stat-num" style="color:#f8b700;">{{ $course->course_online_payment ?? 'Upcoming' }}</div>
+                            <div class="stat-num" style="color:#f8b700;">
+                                {{ $course->course_online_payment ?? 'Upcoming' }}</div>
                             <div class="stat-label">Next Batch Starts</div>
                         </div>
                     </div>
@@ -489,7 +595,8 @@
                         </div>
 
 
-                        <h1 class="fw-bold text-capitalize text-dark course-heading" style="font-size: 43px;">{{ $course->name }}</h1>
+                        <h1 class="fw-bold text-capitalize text-dark course-heading" style="font-size: 43px;">
+                            {{ $course->name }}</h1>
 
                         <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
                             <i class="fa-solid fa-shield-halved text-primary me-2"></i>
@@ -514,8 +621,8 @@
 
                         <div class="mt-4 d-flex gap-3">
                             @if ($course->browser)
-                                <a class="btn btn-outline-primary" id="downloadBrochureBtn" onclick="openModal('downloadLeadPopup')"
-                                    style="background-color: green;">
+                                <a class="btn btn-outline-primary" id="downloadBrochureBtn"
+                                    onclick="openModal('downloadLeadPopup')" style="background-color: green;">
                                     <i class="fa fa-download me-2"></i>Download Brochure
                                 </a>
                             @endif
@@ -728,7 +835,8 @@
                     <div class="event-sidebar-wrapper" style="margin-top: 0px;">
                         <div class="event-sidebar">
                             <div class="event-sidebar-thumb">
-                                <img  style="border-radius: 10px;" loading="lazy"src="{{ asset('storage/' . $course->image) }}"
+                                <img style="border-radius: 10px;"
+                                    loading="lazy"src="{{ asset('storage/' . $course->image) }}"
                                     alt="event-sidebar-thumb" title="event-sidebar-thumb">
                             </div>
                             <div class="event-info">
@@ -1133,8 +1241,8 @@
                 </div>
             </div>
         </section>
-        @if($course->course_free != 3)
-        <x-mentor-popup :mentors="$mentors" />
+        @if ($course->course_free != 3)
+            <x-mentor-popup :mentors="$mentors" />
         @endif
         <section class="my-5">
             <div class="container">
@@ -1458,405 +1566,507 @@
         <!-- Bootstrap Modal -->
         <!-- Modal for Download Brochure (Lead Form) -->
         <!-- Modal for Download Brochure (Lead Form) -->
-{{-- ============================================================
+        {{-- ============================================================
      Download Brochure modal — redesigned
      Drop this in place of your existing #downloadLeadPopup block.
      The <style> and <script> are inline here for convenience —
      move them into your layout's main stylesheet / script bundle
      once you're happy with the design.
      ============================================================ --}}
-@push('styles')
-<style>
-  #downloadLeadPopup{
-    --lpx-ink:#060A12;
-    --lpx-panel-soft:#161F2B;
-    --lpx-line:rgba(255,255,255,.08);
-    --lpx-line-strong:rgba(255,255,255,.16);
-    --lpx-text:#F3F6FA;
-    --lpx-text-soft:#8C97A6;
-    --lpx-text-faint:#5C6675;
-    --lpx-amber:#F4B860;
-    --lpx-amber-deep:#C9853A;
-    --lpx-cyan:#54D7DD;
-  }
+        @push('styles')
+            <style>
+                #downloadLeadPopup {
+                    --lpx-ink: #060A12;
+                    --lpx-panel-soft: #161F2B;
+                    --lpx-line: rgba(255, 255, 255, .08);
+                    --lpx-line-strong: rgba(255, 255, 255, .16);
+                    --lpx-text: #F3F6FA;
+                    --lpx-text-soft: #8C97A6;
+                    --lpx-text-faint: #5C6675;
+                    --lpx-amber: #F4B860;
+                    --lpx-amber-deep: #C9853A;
+                    --lpx-cyan: #54D7DD;
+                }
 
-  #downloadLeadPopup.lpx-overlay{
-    position:fixed;
-    inset:0;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    background:
-      radial-gradient(circle at 50% 15%, rgba(244,184,96,.10), transparent 55%),
-      rgba(3,5,9,.82);
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-    z-index:999;
-    padding:20px;
-    opacity:0;
-    transition:opacity .25s ease;
-  }
-  #downloadLeadPopup.lpx-overlay.is-open{ display:flex; opacity:1; }
+                #downloadLeadPopup.lpx-overlay {
+                    position: fixed;
+                    inset: 0;
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    background:
+                        radial-gradient(circle at 50% 15%, rgba(244, 184, 96, .10), transparent 55%),
+                        rgba(3, 5, 9, .82);
+                    backdrop-filter: blur(8px);
+                    -webkit-backdrop-filter: blur(8px);
+                    z-index: 999;
+                    padding: 20px;
+                    opacity: 0;
+                    transition: opacity .25s ease;
+                }
 
-  #downloadLeadPopup .lpx-dialog{
-    perspective:1400px;
-    width:100%;
-    max-width:440px;
-    max-height:92vh;
-  }
+                #downloadLeadPopup.lpx-overlay.is-open {
+                    display: flex;
+                    opacity: 1;
+                }
 
-  #downloadLeadPopup .lpx-card{
-    position:relative;
-    max-height:92vh;
-    overflow-y:auto;
-    background: linear-gradient(165deg, #344863 0%, #22334f 100%);
-    border:1px solid var(--lpx-line-strong);
-    border-radius:26px;
-    padding:0;
-    box-shadow:0 30px 80px -20px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.02) inset;
-    transform-style:preserve-3d;
-    scrollbar-width:thin;
-  }
-  #downloadLeadPopup .lpx-card::-webkit-scrollbar{ width:6px; }
-  #downloadLeadPopup .lpx-card::-webkit-scrollbar-thumb{ background:var(--lpx-line-strong); border-radius:6px; }
+                #downloadLeadPopup .lpx-dialog {
+                    perspective: 1400px;
+                    width: 100%;
+                    max-width: 440px;
+                    max-height: 92vh;
+                }
 
-  #downloadLeadPopup .lpx-card.lpx-card-in{
-    animation:lpxCardIn .65s cubic-bezier(.16,1,.3,1) forwards;
-  }
-  @keyframes lpxCardIn{
-    0%{ transform:rotateY(-62deg) translateZ(-90px) scale(.86); opacity:0; }
-    100%{ transform:rotateY(0) translateZ(0) scale(1); opacity:1; }
-  }
+                #downloadLeadPopup .lpx-card {
+                    position: relative;
+                    max-height: 92vh;
+                    overflow-y: auto;
+                    background: linear-gradient(165deg, #152a46 0%, #080e19 100%);
+                    border: 1px solid var(--lpx-line-strong);
+                    border-radius: 26px;
+                    padding: 0;
+                    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .65), 0 0 0 1px rgba(255, 255, 255, .02) inset;
+                    transform-style: preserve-3d;
+                    scrollbar-width: thin;
+                }
 
-  #downloadLeadPopup .lpx-stripe{
-    height:13px;
-    border-radius:25px 25px 0 0;
-    background:linear-gradient(100deg,#caa05a 0%,#f4b860 22%,#fde9c8 38%,#54d7dd 52%,#f4b860 70%,#caa05a 100%);
-    background-size:220% 100%;
-    animation:lpxHoloSheen 8s linear infinite;
-  }
-  @keyframes lpxHoloSheen{
-    0%{ background-position:0% 0; }
-    100%{ background-position:220% 0; }
-  }
+                #downloadLeadPopup .lpx-card::-webkit-scrollbar {
+                    width: 6px;
+                }
 
-  #downloadLeadPopup .lpx-body{ padding:28px 32px 30px; font-family:'IBM Plex Sans',Arial,sans-serif; }
+                #downloadLeadPopup .lpx-card::-webkit-scrollbar-thumb {
+                    background: var(--lpx-line-strong);
+                    border-radius: 6px;
+                }
 
-  #downloadLeadPopup .lpx-head{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    margin-bottom:16px;
-  }
+                #downloadLeadPopup .lpx-card.lpx-card-in {
+                    animation: lpxCardIn .65s cubic-bezier(.16, 1, .3, 1) forwards;
+                }
 
-  #downloadLeadPopup .lpx-chip{
-    width:34px; height:25px;
-    border-radius:5px;
-    border:1px solid rgba(244,184,96,.4);
-    background:
-      repeating-linear-gradient(90deg, rgba(244,184,96,.55) 0 3px, transparent 3px 7px),
-      linear-gradient(135deg,#2b2418,#15110a);
-  }
+                @keyframes lpxCardIn {
+                    0% {
+                        transform: rotateY(-62deg) translateZ(-90px) scale(.86);
+                        opacity: 0;
+                    }
 
-  #downloadLeadPopup .lpx-close{
-    width:32px; height:32px;
-    border-radius:50%;
-    border:1px solid var(--lpx-line-strong);
-    background:rgba(255,255,255,.03);
-    color:var(--lpx-text-soft);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    font-size:16px;
-    line-height:1;
-    transition:transform .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;
-  }
-  #downloadLeadPopup .lpx-close:hover{
-    transform:rotate(90deg);
-    border-color:var(--lpx-cyan);
-    color:var(--lpx-cyan);
-    box-shadow:0 0 16px rgba(84,215,221,.35);
-  }
+                    100% {
+                        transform: rotateY(0) translateZ(0) scale(1);
+                        opacity: 1;
+                    }
+                }
 
-  #downloadLeadPopup .lpx-eyebrow{
-    font:11px/1 'IBM Plex Mono',monospace;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--lpx-amber);
-    margin:0 0 10px;
-  }
+                #downloadLeadPopup .lpx-stripe {
+                    height: 13px;
+                    border-radius: 25px 25px 0 0;
+                    background: linear-gradient(100deg, #caa05a 0%, #f4b860 22%, #fde9c8 38%, #54d7dd 52%, #f4b860 70%, #caa05a 100%);
+                    background-size: 220% 100%;
+                    animation: lpxHoloSheen 8s linear infinite;
+                }
 
-  #downloadLeadPopup h4.lpx-heading{
-    font:600 25px/1.15 'Space Grotesk',Arial,sans-serif;
-    color:var(--lpx-text);
-    margin:0 0 8px;
-  }
+                @keyframes lpxHoloSheen {
+                    0% {
+                        background-position: 0% 0;
+                    }
 
-  #downloadLeadPopup p.lpx-subtext{
-    font:14px/1.55 'IBM Plex Sans',Arial,sans-serif;
-    color:var(--lpx-text-soft);
-    margin:0 0 24px;
-  }
+                    100% {
+                        background-position: 220% 0;
+                    }
+                }
 
-  #downloadLeadPopup .lpx-field{ position:relative; margin-bottom:16px; }
+                #downloadLeadPopup .lpx-body {
+                    padding: 28px 32px 30px;
+                    font-family: 'IBM Plex Sans', Arial, sans-serif;
+                }
 
-  #downloadLeadPopup .lpx-field input.lpx-input{
-    width:100%;
-    background:var(--lpx-panel-soft);
-    border:1px solid var(--lpx-line);
-    border-radius:13px;
-    padding:19px 16px 9px;
-    font:15px/1.4 'IBM Plex Sans',Arial,sans-serif;
-    color:var(--lpx-text);
-    outline:none;
-    transition:border-color .2s ease, box-shadow .2s ease;
-  }
-  #downloadLeadPopup .lpx-field input.lpx-input::placeholder{ color:transparent; }
-  #downloadLeadPopup .lpx-field input.lpx-input:focus{
-    border-color:var(--lpx-cyan);
-    box-shadow:0 0 0 3px rgba(84,215,221,.15);
-  }
+                #downloadLeadPopup .lpx-head {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin-bottom: 16px;
+                }
 
-  #downloadLeadPopup .lpx-field label{
-    position:absolute;
-    left:16px; top:16px;
-    font:15px 'IBM Plex Sans',Arial,sans-serif;
-    color:var(--lpx-text-soft);
-    pointer-events:none;
-    transition:all .18s ease;
-  }
-  #downloadLeadPopup .lpx-field input:focus ~ label,
-  #downloadLeadPopup .lpx-field input:not(:placeholder-shown) ~ label{
-    top:8px;
-    font-size:10.5px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    font-family:'IBM Plex Mono',monospace;
-    color:var(--lpx-cyan);
-  }
+                #downloadLeadPopup .lpx-logo {
+                    display: flex;
+                    align-items: center;
+                }
 
-  #downloadLeadPopup .lpx-hint{
-    display:block;
-    margin:6px 0 0 4px;
-    font:11px 'IBM Plex Mono',monospace;
-    color:var(--lpx-text-faint);
-  }
+                #downloadLeadPopup .lpx-logo img {
+                    width: 60px;
+                    height: auto;
+                    display: block;
+                    object-fit: contain;
+                }
 
-  #downloadLeadPopup .lpx-field-select{ margin-bottom:20px; }
-  #downloadLeadPopup .lpx-select-label{
-    display:block;
-    margin:0 0 8px 2px;
-    font:10.5px 'IBM Plex Mono',monospace;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--lpx-text-soft);
-  }
-  #downloadLeadPopup select.lpx-input{
-    width:100%;
-    appearance:none;
-    -webkit-appearance:none;
-    background:var(--lpx-panel-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%238C97A6' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
-    border:1px solid var(--lpx-line);
-    border-radius:13px;
-    padding:14px 40px 14px 16px;
-    color:var(--lpx-text);
-    font:15px 'IBM Plex Sans',Arial,sans-serif;
-    outline:none;
-    transition:border-color .2s ease, box-shadow .2s ease;
-  }
-  #downloadLeadPopup select.lpx-input:focus{
-    border-color:var(--lpx-cyan);
-    box-shadow:0 0 0 3px rgba(84,215,221,.15);
-  }
-  #downloadLeadPopup select.lpx-input option{ background:#11161F; color:#fff; }
+                #downloadLeadPopup .lpx-close {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    border: 1px solid var(--lpx-line-strong);
+                    background: rgba(255, 255, 255, .03);
+                    color: var(--lpx-text-soft);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    font-size: 16px;
+                    line-height: 1;
+                    transition: transform .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;
+                }
 
-  #downloadLeadPopup .lpx-divider{
-    height:1px;
-    margin:8px 0 22px;
-    background-image:linear-gradient(90deg, var(--lpx-line-strong) 50%, transparent 50%);
-    background-size:9px 1px;
-  }
+                #downloadLeadPopup .lpx-close:hover {
+                    transform: rotate(90deg);
+                    border-color: var(--lpx-cyan);
+                    color: var(--lpx-cyan);
+                    box-shadow: 0 0 16px rgba(84, 215, 221, .35);
+                }
 
-  #downloadLeadPopup .lpx-submit{
-    position:relative;
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    background:linear-gradient(135deg, var(--lpx-amber) 0%, var(--lpx-amber-deep) 100%) !important;
-    color:#1A1206;
-    font:600 15px 'Space Grotesk',Arial,sans-serif;
-    border:none;
-    border-radius:13px;
-    padding:16px 20px;
-    cursor:pointer;
-    overflow:hidden;
-    box-shadow:0 10px 24px -8px rgba(244,184,96,.45);
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  #downloadLeadPopup .lpx-submit:hover{
-    transform:translateY(-2px);
-    box-shadow:0 16px 32px -10px rgba(244,184,96,.6);
-  }
-  #downloadLeadPopup .lpx-submit:active{ transform:translateY(0) scale(.98); }
-  #downloadLeadPopup .lpx-submit:disabled{ cursor:default; opacity:.85; transform:none; }
+                #downloadLeadPopup .lpx-eyebrow {
+                    font: 11px/1 'IBM Plex Mono', monospace;
+                    letter-spacing: .14em;
+                    text-transform: uppercase;
+                    color: var(--lpx-amber);
+                    margin: 0 0 10px;
+                }
 
-  #downloadLeadPopup .lpx-submit::after{
-    content:"";
-    position:absolute;
-    top:0; left:-60%;
-    width:35%; height:100%;
-    background:linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
-    transform:skewX(-20deg);
-    transition:left .55s ease;
-  }
-  #downloadLeadPopup .lpx-submit:hover::after{ left:130%; }
+                #downloadLeadPopup h4.lpx-heading {
+                    font: 600 25px/1.15 'Space Grotesk', Arial, sans-serif;
+                    color: var(--lpx-text);
+                    margin: 0 0 8px;
+                }
 
-  #downloadLeadPopup .lpx-arrow{ transition:transform .2s ease; font-style:normal; }
-  #downloadLeadPopup .lpx-submit:hover .lpx-arrow{ transform:translateX(4px); }
+                #downloadLeadPopup p.lpx-subtext {
+                    font: 14px/1.55 'IBM Plex Sans', Arial, sans-serif;
+                    color: var(--lpx-text-soft);
+                    margin: 0 0 24px;
+                }
 
-  #downloadLeadPopup .lpx-footnote{
-    margin:14px 0 0;
-    text-align:center;
-    font:11px 'IBM Plex Mono',monospace;
-    color:var(--lpx-text-faint);
-  }
+                #downloadLeadPopup .lpx-field {
+                    position: relative;
+                    margin-bottom: 16px;
+                }
 
-  @media (prefers-reduced-motion: reduce){
-    #downloadLeadPopup .lpx-card.lpx-card-in{ animation:none; opacity:1; }
-    #downloadLeadPopup .lpx-stripe{ animation:none; }
-    #downloadLeadPopup .lpx-submit::after{ transition:none; }
-  }
+                #downloadLeadPopup .lpx-field input.lpx-input {
+                    width: 100%;
+                    background: var(--lpx-panel-soft);
+                    border: 1px solid var(--lpx-line);
+                    border-radius: 13px;
+                    padding: 19px 16px 9px;
+                    font: 15px/1.4 'IBM Plex Sans', Arial, sans-serif;
+                    color: var(--lpx-text);
+                    outline: none;
+                    transition: border-color .2s ease, box-shadow .2s ease;
+                }
 
-  @media (max-width:480px){
-    #downloadLeadPopup .lpx-body{ padding:24px 22px 26px; }
-    #downloadLeadPopup h4.lpx-heading{ font-size:21px; }
-    #downloadLeadPopup .lpx-chip{ width:30px; height:22px; }
-  }
-</style>
-@endpush
-<div id="downloadLeadPopup" class="lpx-overlay">
-    <div class="lpx-dialog">
-        <div class="lpx-card" id="leadCard">
-            <div class="lpx-stripe" aria-hidden="true"></div>
-            <div class="lpx-body">
-                <div class="lpx-head">
-                    <div class="lpx-chip" aria-hidden="true"></div>
-                    <button type="button" class="lpx-close" onclick="closeModal('downloadLeadPopup')" aria-label="Close">&#10005;</button>
+                #downloadLeadPopup .lpx-field input.lpx-input::placeholder {
+                    color: transparent;
+                }
+
+                #downloadLeadPopup .lpx-field input.lpx-input:focus {
+                    border-color: var(--lpx-cyan);
+                    box-shadow: 0 0 0 3px rgba(84, 215, 221, .15);
+                }
+
+                #downloadLeadPopup .lpx-field label {
+                    position: absolute;
+                    left: 16px;
+                    top: 16px;
+                    font: 15px 'IBM Plex Sans', Arial, sans-serif;
+                    color: var(--lpx-text-soft);
+                    pointer-events: none;
+                    transition: all .18s ease;
+                }
+
+                #downloadLeadPopup .lpx-field input:focus~label,
+                #downloadLeadPopup .lpx-field input:not(:placeholder-shown)~label {
+                    top: 8px;
+                    font-size: 10.5px;
+                    letter-spacing: .06em;
+                    text-transform: uppercase;
+                    font-family: 'IBM Plex Mono', monospace;
+                    color: var(--lpx-cyan);
+                }
+
+                #downloadLeadPopup .lpx-hint {
+                    display: block;
+                    margin: 6px 0 0 4px;
+                    font: 11px 'IBM Plex Mono', monospace;
+                    color: var(--lpx-text-faint);
+                }
+
+                #downloadLeadPopup .lpx-field-select {
+                    margin-bottom: 20px;
+                }
+
+                #downloadLeadPopup .lpx-select-label {
+                    display: block;
+                    margin: 0 0 8px 2px;
+                    font: 10.5px 'IBM Plex Mono', monospace;
+                    letter-spacing: .06em;
+                    text-transform: uppercase;
+                    color: var(--lpx-text-soft);
+                }
+
+                #downloadLeadPopup select.lpx-input {
+                    width: 100%;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    background: var(--lpx-panel-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%238C97A6' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
+                    border: 1px solid var(--lpx-line);
+                    border-radius: 13px;
+                    padding: 14px 40px 14px 16px;
+                    color: var(--lpx-text);
+                    font: 15px 'IBM Plex Sans', Arial, sans-serif;
+                    outline: none;
+                    transition: border-color .2s ease, box-shadow .2s ease;
+                }
+
+                #downloadLeadPopup select.lpx-input:focus {
+                    border-color: var(--lpx-cyan);
+                    box-shadow: 0 0 0 3px rgba(84, 215, 221, .15);
+                }
+
+                #downloadLeadPopup select.lpx-input option {
+                    background: #11161F;
+                    color: #fff;
+                }
+
+                #downloadLeadPopup .lpx-divider {
+                    height: 1px;
+                    margin: 8px 0 22px;
+                    background-image: linear-gradient(90deg, var(--lpx-line-strong) 50%, transparent 50%);
+                    background-size: 9px 1px;
+                }
+
+                #downloadLeadPopup .lpx-submit {
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    background: linear-gradient(135deg, var(--lpx-amber) 0%, var(--lpx-amber-deep) 100%) !important;
+                    color: #1A1206;
+                    font: 600 15px 'Space Grotesk', Arial, sans-serif;
+                    border: none;
+                    border-radius: 13px;
+                    padding: 16px 20px;
+                    cursor: pointer;
+                    overflow: hidden;
+                    box-shadow: 0 10px 24px -8px rgba(244, 184, 96, .45);
+                    transition: transform .2s ease, box-shadow .2s ease;
+                }
+
+                #downloadLeadPopup .lpx-submit:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 16px 32px -10px rgba(244, 184, 96, .6);
+                }
+
+                #downloadLeadPopup .lpx-submit:active {
+                    transform: translateY(0) scale(.98);
+                }
+
+                #downloadLeadPopup .lpx-submit:disabled {
+                    cursor: default;
+                    opacity: .85;
+                    transform: none;
+                }
+
+                #downloadLeadPopup .lpx-submit::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: -60%;
+                    width: 35%;
+                    height: 100%;
+                    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .55), transparent);
+                    transform: skewX(-20deg);
+                    transition: left .55s ease;
+                }
+
+                #downloadLeadPopup .lpx-submit:hover::after {
+                    left: 130%;
+                }
+
+                #downloadLeadPopup .lpx-arrow {
+                    transition: transform .2s ease;
+                    font-style: normal;
+                }
+
+                #downloadLeadPopup .lpx-submit:hover .lpx-arrow {
+                    transform: translateX(4px);
+                }
+
+                #downloadLeadPopup .lpx-footnote {
+                    margin: 14px 0 0;
+                    text-align: center;
+                    font: 11px 'IBM Plex Mono', monospace;
+                    color: var(--lpx-text-faint);
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    #downloadLeadPopup .lpx-card.lpx-card-in {
+                        animation: none;
+                        opacity: 1;
+                    }
+
+                    #downloadLeadPopup .lpx-stripe {
+                        animation: none;
+                    }
+
+                    #downloadLeadPopup .lpx-submit::after {
+                        transition: none;
+                    }
+                }
+
+                @media (max-width:480px) {
+                    #downloadLeadPopup .lpx-body {
+                        padding: 24px 22px 26px;
+                    }
+
+                    #downloadLeadPopup h4.lpx-heading {
+                        font-size: 21px;
+                    }
+
+                    #downloadLeadPopup .lpx-logo img {
+                        width: 80px;
+                    }
+                }
+            </style>
+        @endpush
+        <div id="downloadLeadPopup" class="lpx-overlay">
+            <div class="lpx-dialog">
+                <div class="lpx-card" id="leadCard">
+                    <div class="lpx-stripe" aria-hidden="true"></div>
+                    <div class="lpx-body">
+                        <div class="lpx-head">
+                            <div class="lpx-logo">
+                                <img src="{{ asset('assets/images/logobg.png') }}" alt="Digicrome Logo">
+                            </div>
+                            <button type="button" class="lpx-close" onclick="closeModal('downloadLeadPopup')"
+                                aria-label="Close">&#10005;</button>
+                        </div>
+
+                        <p class="lpx-eyebrow">Digicrome &middot; course access</p>
+                        <h4 class="lpx-heading">Download brochure</h4>
+                        <p class="lpx-subtext">Enter your details and we&rsquo;ll send the full course breakdown to your
+                            inbox.</p>
+
+                        <form id="leadForm" action="{{ route('lead.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="course_id" value="{{ $course->id }}">
+
+                            <div class="lpx-field">
+                                <input type="text" id="lp-name" name="name" placeholder=" " class="lpx-input"
+                                    required>
+                                <label for="lp-name">Full name</label>
+                            </div>
+
+                            <div class="lpx-field">
+                                <input type="tel" id="lp-mobile" pattern="\d{10}"
+                                    title="Please enter a 10-digit mobile number" name="mobile" placeholder=" "
+                                    class="lpx-input" required>
+                                <label for="lp-mobile">Mobile number</label>
+                                <span class="lpx-hint">10 digits, no spaces</span>
+                            </div>
+
+                            <div class="lpx-field">
+                                <input type="email" id="lp-email" name="email" placeholder=" " class="lpx-input"
+                                    required>
+                                <label for="lp-email">Email address</label>
+                            </div>
+
+                            <div class="lpx-field">
+                                <input type="text" id="lp-address" name="address" placeholder=" " class="lpx-input"
+                                    required>
+                                <label for="lp-address">City</label>
+                            </div>
+
+                            <div class="lpx-field lpx-field-select">
+                                <select id="lp-title" name="title" class="lpx-input" required>
+                                    <option value="" disabled selected>Select course</option>
+                                    <option value="DS">Data Science & AI</option>
+                                    <option value="AISS">Cyber Security</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Hidden Fields -->
+                            <input type="text" name="our_custom" style="display:none;" value="digicrome">
+                            <input type="hidden" name="form_time" value="<?php echo time(); ?>">
+                            <input type="hidden" name="source" value="Website(broucher)">
+                            <input type="hidden" name="ib" value="">
+                            <input type="hidden" name="profession" value="NA">
+
+                            <div class="lpx-divider" aria-hidden="true"></div>
+
+                            <button type="submit" style="background: none;" class="lpx-submit" id="leadSubmitBtn">
+                                <span id="leadSubmitLabel">Get Brochure</span>
+                                <i class="lpx-arrow">&rarr;</i>
+                            </button>
+                            <p class="lpx-footnote">We&rsquo;ll only use this to send your brochure &mdash; no spam.</p>
+                        </form>
+                    </div>
                 </div>
-
-                <p class="lpx-eyebrow">Digicrome &middot; course access</p>
-                <h4 class="lpx-heading">Download brochure</h4>
-                <p class="lpx-subtext">Enter your details and we&rsquo;ll send the full course breakdown to your inbox.</p>
-
-                <form id="leadForm" action="{{ route('lead.store') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="course_id" value="{{ $course->id }}">
-
-                    <div class="lpx-field">
-                        <input type="text" id="lp-name" name="name" placeholder=" " class="lpx-input" required>
-                        <label for="lp-name">Full name</label>
-                    </div>
-
-                    <div class="lpx-field">
-                        <input type="tel" id="lp-mobile" pattern="\d{10}" title="Please enter a 10-digit mobile number"
-                            name="mobile" placeholder=" " class="lpx-input" required>
-                        <label for="lp-mobile">Mobile number</label>
-                        <span class="lpx-hint">10 digits, no spaces</span>
-                    </div>
-
-                    <div class="lpx-field">
-                        <input type="email" id="lp-email" name="email" placeholder=" " class="lpx-input" required>
-                        <label for="lp-email">Email address</label>
-                    </div>
-
-                    <div class="lpx-field">
-                        <input type="text" id="lp-address" name="address" placeholder=" " class="lpx-input" required>
-                        <label for="lp-address">City</label>
-                    </div>
-
-                    <div class="lpx-field lpx-field-select">
-                        <select id="lp-title" name="title" class="lpx-input" required>
-                            <option value="" disabled selected>Select course</option>
-                            <option value="DS">Data Science & AI</option>
-                            <option value="AISS">Cyber Security</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <!-- Hidden Fields -->
-                    <input type="text" name="our_custom" style="display:none;" value="digicrome">
-                    <input type="hidden" name="form_time" value="<?php echo time(); ?>">
-                    <input type="hidden" name="source" value="Website(broucher)">
-                    <input type="hidden" name="ib" value="">
-                    <input type="hidden" name="profession" value="NA">
-
-                    <div class="lpx-divider" aria-hidden="true"></div>
-
-                    <button type="submit" style="background: none;" class="lpx-submit" id="leadSubmitBtn">
-                        <span id="leadSubmitLabel">Get Brochure</span>
-                        <i class="lpx-arrow">&rarr;</i>
-                    </button>
-                    <p class="lpx-footnote">We&rsquo;ll only use this to send your brochure &mdash; no spam.</p>
-                </form>
             </div>
         </div>
-    </div>
-</div>
 
-<script>
-  (function () {
-    var popup = document.getElementById('downloadLeadPopup');
-    var card = document.getElementById('leadCard');
-    var dialog = card.closest('.lpx-dialog');
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    var tiltReady = reduceMotion;
+        <script>
+            (function() {
+                var popup = document.getElementById('downloadLeadPopup');
+                var card = document.getElementById('leadCard');
+                var dialog = card.closest('.lpx-dialog');
+                var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+                var tiltReady = reduceMotion;
 
-    var observer = new MutationObserver(function () {
-      if (popup.classList.contains('is-open')) {
-        card.classList.remove('lpx-card-in');
-        card.style.transform = '';
-        void card.offsetWidth;
-        card.classList.add('lpx-card-in');
-      }
-    });
-    observer.observe(popup, { attributes: true, attributeFilter: ['class'] });
+                var observer = new MutationObserver(function() {
+                    if (popup.classList.contains('is-open')) {
+                        card.classList.remove('lpx-card-in');
+                        card.style.transform = '';
+                        void card.offsetWidth;
+                        card.classList.add('lpx-card-in');
+                    }
+                });
+                observer.observe(popup, {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
 
-    card.addEventListener('animationend', function () {
-      card.classList.remove('lpx-card-in');
-      card.style.transform = '';
-      tiltReady = true;
-    });
+                card.addEventListener('animationend', function() {
+                    card.classList.remove('lpx-card-in');
+                    card.style.transform = '';
+                    tiltReady = true;
+                });
 
-    if (finePointer && !reduceMotion) {
-      dialog.addEventListener('mousemove', function (e) {
-        if (!tiltReady) return;
-        var rect = card.getBoundingClientRect();
-        var x = (e.clientX - rect.left) / rect.width - 0.5;
-        var y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = 'rotateY(' + (x * 9).toFixed(2) + 'deg) rotateX(' + (-y * 9).toFixed(2) + 'deg)';
-      });
-      dialog.addEventListener('mouseleave', function () {
-        card.style.transform = '';
-      });
-    }
+                if (finePointer && !reduceMotion) {
+                    dialog.addEventListener('mousemove', function(e) {
+                        if (!tiltReady) return;
+                        var rect = card.getBoundingClientRect();
+                        var x = (e.clientX - rect.left) / rect.width - 0.5;
+                        var y = (e.clientY - rect.top) / rect.height - 0.5;
+                        card.style.transform = 'rotateY(' + (x * 9).toFixed(2) + 'deg) rotateX(' + (-y * 9).toFixed(
+                            2) + 'deg)';
+                    });
+                    dialog.addEventListener('mouseleave', function() {
+                        card.style.transform = '';
+                    });
+                }
 
-    popup.addEventListener('click', function (e) {
-      if (e.target === popup) { closeModal('downloadLeadPopup'); }
-    });
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        closeModal('downloadLeadPopup');
+                    }
+                });
 
-    // Visual "sending" feedback only — does not block the real submit.
-    document.getElementById('leadForm').addEventListener('submit', function () {
-      var btn = document.getElementById('leadSubmitBtn');
-      var label = document.getElementById('leadSubmitLabel');
-      btn.disabled = true;
-      label.textContent = 'Sending...';
-    });
-  })();
-</script>
+                // Visual "sending" feedback only — does not block the real submit.
+                document.getElementById('leadForm').addEventListener('submit', function() {
+                    var btn = document.getElementById('leadSubmitBtn');
+                    var label = document.getElementById('leadSubmitLabel');
+                    btn.disabled = true;
+                    label.textContent = 'Sending...';
+                });
+            })();
+        </script>
         <!-- Styles -->
         <style>
             .modal-container {
@@ -1936,7 +2146,7 @@
         <script>
             function isAISSPage() {
                 return window.location.pathname
-                    .replace(/\/+$/, '')          // strip trailing slash
+                    .replace(/\/+$/, '') // strip trailing slash
                     .endsWith('/courses/ai-security-online-training');
             }
 
@@ -1961,7 +2171,7 @@
                             ibField.value = '';
                         }
                     }
-                }else{
+                } else {
                     var el = document.getElementById(modalId);
                     el.classList.add('is-open');
                     document.body.style.overflow = 'hidden';
@@ -1985,23 +2195,26 @@
                     }
                 }
             }
+
             function closeModal(modalId) {
-                if(modalId === 'downloadLeadPopup'){
+                if (modalId === 'downloadLeadPopup') {
                     var el = document.getElementById(modalId);
                     el.classList.remove('is-open');
                     document.body.style.overflow = '';
-                }else{                
+                } else {
                     var el = document.getElementById(modalId);
                     el.classList.remove('is-open');
                     document.body.style.overflow = '';
                 }
             }
-            document.getElementById('applyNowPopup').addEventListener('click', function(e){
-                if(e.target === this){ closeModal('applyNowPopup'); }
+            document.getElementById('applyNowPopup').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal('applyNowPopup');
+                }
             });
 
             var submitBtn = document.getElementById('applyNowSubmitBtn');
-            submitBtn.addEventListener('click', function(e){
+            submitBtn.addEventListener('click', function(e) {
                 var rect = submitBtn.getBoundingClientRect();
                 var size = Math.max(rect.width, rect.height) * 2;
                 var ripple = document.createElement('span');
@@ -2010,20 +2223,22 @@
                 ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
                 ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
                 submitBtn.appendChild(ripple);
-                setTimeout(function(){ ripple.remove(); }, 650);
+                setTimeout(function() {
+                    ripple.remove();
+                }, 650);
             });
 
-            document.getElementById('applyNowForm').addEventListener('submit', function(e){
+            document.getElementById('applyNowForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 var label = document.getElementById('applyNowSubmitLabel');
                 submitBtn.disabled = true;
                 label.textContent = 'Sending...';
-                setTimeout(function(){
-                label.textContent = 'Got it — we\u2019ll call you soon';
-                setTimeout(function(){
-                    label.textContent = 'Request callback';
-                    submitBtn.disabled = false;
-                }, 1800);
+                setTimeout(function() {
+                    label.textContent = 'Got it — we\u2019ll call you soon';
+                    setTimeout(function() {
+                        label.textContent = 'Request callback';
+                        submitBtn.disabled = false;
+                    }, 1800);
                 }, 900);
             });
         </script>
@@ -2031,341 +2246,626 @@
             <div class="qr-shell">
                 <div class="qr-card" id="applyNowCard">
 
-                <div class="qr-aside">
-                    <div class="qr-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <div class="qr-aside">
+                        <div class="qr-logo">
+                            <img src="{{ asset('assets/images/logobg.png') }}" alt="Digicrome Logo">
+                        </div>
+                        <div class="qr-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
 
-                    <div class="qr-badge"><span class="qr-dot"></span> Quick Response, 24×7 Support</div>
+                        <div class="qr-badge"><span class="qr-dot"></span> Quick Response, 24×7 Support</div>
 
-                    <h2 class="qr-aside-title">Quick Response</h2>
-                    <p class="qr-aside-text">Share a few details and our counsellor will get back to you fast — no waiting in line.</p>
-                    <ul class="qr-list">
-                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Personalized course guidance</li>
-                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Free career counselling</li>
-                    <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Hassle-free admission support</li>
-                    </ul>
-                </div>
-
-                <div class="qr-main">
-                    <button type="button" class="qr-close" onclick="closeModal('applyNowPopup')" aria-label="Close">&#10005;</button>
-                    <h3 class="qr-form-title">Your details</h3>
-
-                    <form method="POST" id="applyNowForm" action="{{ route('lead.store') }}">
-                        @csrf
-                    <div class="qr-field">
-                        <input type="text" id="qr-name" name="name" placeholder=" " class="qr-input" required>
-                        <label for="qr-name">Full name</label>
-                        <span class="qr-underline"></span>
+                        <h2 class="qr-aside-title">Quick Response</h2>
+                        <p class="qr-aside-text">Share a few details and our counsellor will get back to you fast — no
+                            waiting in line.</p>
+                        <ul class="qr-list">
+                            <li><svg width="14" height="14" viewBox="0 0 14 14">
+                                    <path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg> Personalized course guidance</li>
+                            <li><svg width="14" height="14" viewBox="0 0 14 14">
+                                    <path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg> Free career counselling</li>
+                            <li><svg width="14" height="14" viewBox="0 0 14 14">
+                                    <path d="M2 7L5.5 10.5L12 3" stroke="#9B8CFF" stroke-width="1.6" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg> Hassle-free admission support</li>
+                        </ul>
                     </div>
 
-                    <div class="qr-field">
-                        <input type="tel" id="qr-phone" pattern="\d{10}" title="Please enter a 10-digit mobile number" name="phone" placeholder=" " class="qr-input" required>
-                        <label for="qr-phone">Mobile number</label>
-                        <span class="qr-underline"></span>
-                    </div>
+                    <div class="qr-main">
+                        <button type="button" class="qr-close" onclick="closeModal('applyNowPopup')"
+                            aria-label="Close">&#10005;</button>
+                        <h3 class="qr-form-title">Your details</h3>
 
-                    <div class="qr-field">
-                        <input type="email" id="qr-email" name="email" placeholder=" " class="qr-input" required>
-                        <label for="qr-email">Email address</label>
-                        <span class="qr-underline"></span>
-                    </div>
+                        <form method="POST" id="applyNowForm" action="{{ route('lead.store') }}">
+                            @csrf
+                            <div class="qr-field">
+                                <input type="text" id="qr-name" name="name" placeholder=" " class="qr-input"
+                                    required>
+                                <label for="qr-name">Full name</label>
+                                <span class="qr-underline"></span>
+                            </div>
 
-                    <div class="qr-field">
-                        <input type="text" id="qr-address" name="address" placeholder=" " class="qr-input" required>
-                        <label for="qr-address">City</label>
-                        <span class="qr-underline"></span>
-                    </div>
+                            <div class="qr-field">
+                                <input type="tel" id="qr-phone" pattern="\d{10}"
+                                    title="Please enter a 10-digit mobile number" name="phone" placeholder=" "
+                                    class="qr-input" required>
+                                <label for="qr-phone">Mobile number</label>
+                                <span class="qr-underline"></span>
+                            </div>
 
-                    <div class="qr-field">
-                        <select id="qr-title" name="title" class="qr-input" required>
-                        <option value="" disabled selected>Select course</option>
-                        <option value="DS">Data Science &amp; AI</option>
-                        <option value="AISS">Cyber Security</option>
-                        <option value="other">Other</option>
-                        </select>
-                        <label for="qr-title">Course</label>
-                        <span class="qr-underline"></span>
-                    </div>
+                            <div class="qr-field">
+                                <input type="email" id="qr-email" name="email" placeholder=" " class="qr-input"
+                                    required>
+                                <label for="qr-email">Email address</label>
+                                <span class="qr-underline"></span>
+                            </div>
 
-                    <input type="hidden" name="qualification" value="NA">
-                    <input type="text" name="our_custom" style="display:none;" value="digicrome">
-                    <input type="hidden" name="form_time" value="0">
-                    <input type="hidden" name="experience" value="NA">
-                    <input type="hidden" name="ib" value="">
-                    <input type="hidden" name="page_name" value="Data Science &amp; AI Bootcamp">
-                    <input type="hidden" name="source" value="Website(Course)">
-                    <input type="hidden" name="course_id" value="42">
+                            <div class="qr-field">
+                                <input type="text" id="qr-address" name="address" placeholder=" " class="qr-input"
+                                    required>
+                                <label for="qr-address">City</label>
+                                <span class="qr-underline"></span>
+                            </div>
 
-                    <div class="qr-actions">
-                        <button type="submit" class="qr-submit" id="applyNowSubmitBtn">
-                        <span id="applyNowSubmitLabel">Request Callback</span>
-                        </button>
-                        <p class="qr-note">Get quick and reliable support anytime with our dedicated team.</p>
+                            <div class="qr-field">
+                                <select id="qr-title" name="title" class="qr-input" required>
+                                    <option value="" disabled selected>Select course</option>
+                                    <option value="DS">Data Science &amp; AI</option>
+                                    <option value="AISS">Cyber Security</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label for="qr-title">Course</label>
+                                <span class="qr-underline"></span>
+                            </div>
+
+                            <input type="hidden" name="qualification" value="NA">
+                            <input type="text" name="our_custom" style="display:none;" value="digicrome">
+                            <input type="hidden" name="form_time" value="0">
+                            <input type="hidden" name="experience" value="NA">
+                            <input type="hidden" name="ib" value="">
+                            <input type="hidden" name="page_name" value="Data Science &amp; AI Bootcamp">
+                            <input type="hidden" name="source" value="Website(Course)">
+                            <input type="hidden" name="course_id" value="42">
+
+                            <div class="qr-actions">
+                                <button type="submit" class="qr-submit" id="applyNowSubmitBtn">
+                                    <span id="applyNowSubmitLabel">Request Callback</span>
+                                </button>
+                                <p class="qr-note">Get quick and reliable support anytime with our dedicated team.</p>
+                            </div>
+                        </form>
                     </div>
-                    </form>
-                </div>
 
                 </div>
             </div>
-            </div>
-            <style>
-  :root{
-    --qr-ink:#0B0D10;
-    --qr-panel:#15191D;
-    --qr-panel-soft:#1B2024;
-    --qr-line:rgba(255,255,255,.09);
-    --qr-line-strong:rgba(255,255,255,.18);
-    --qr-text:#F5F6F7;
-    --qr-text-soft:#9AA1A9;
-    --qr-text-faint:#5B6268;
-    --qr-coral:#FF6B4A;
-    --qr-coral-deep:#E5532F;
-    --qr-violet:#9B8CFF;
-  }
-.qr-stage{ text-align:center; }
-  .qr-trigger{
-    background:transparent;
-    border:1px solid var(--qr-line-strong);
-    color:var(--qr-text);
-    font:500 14px 'Plus Jakarta Sans',sans-serif;
-    padding:14px 26px;
-    border-radius:12px;
-    cursor:pointer;
-    transition:border-color .2s, color .2s;
-  }
-  .qr-trigger:hover{ border-color:var(--qr-coral); color:var(--qr-coral); }
-  .qr-stage p{ margin-top:14px; font:12px 'JetBrains Mono',monospace; color:var(--qr-text-faint); }
+        </div>
+        <style>
+            :root {
+                --qr-ink: #0B0D10;
+                --qr-panel: #15191D;
+                --qr-panel-soft: #1B2024;
+                --qr-line: rgba(255, 255, 255, .09);
+                --qr-line-strong: rgba(255, 255, 255, .18);
+                --qr-text: #F5F6F7;
+                --qr-text-soft: #9AA1A9;
+                --qr-text-faint: #5B6268;
+                --qr-coral: #FF6B4A;
+                --qr-coral-deep: #E5532F;
+                --qr-violet: #9B8CFF;
+            }
 
-  /* ---------- modal ---------- */
+            .qr-stage {
+                text-align: center;
+            }
 
-  #applyNowPopup.qr-overlay{
-    position:fixed;
-    inset:0;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    background:rgba(4,5,7,.78);
-    backdrop-filter:blur(6px);
-    -webkit-backdrop-filter:blur(6px);
-    z-index:999;
-    padding:20px;
-    opacity:0;
-    transition:opacity .25s ease;
-  }
-  #applyNowPopup.qr-overlay.is-open{ display:flex; opacity:1; }
+            .qr-trigger {
+                background: transparent;
+                border: 1px solid var(--qr-line-strong);
+                color: var(--qr-text);
+                font: 500 14px 'Plus Jakarta Sans', sans-serif;
+                padding: 14px 26px;
+                border-radius: 12px;
+                cursor: pointer;
+                transition: border-color .2s, color .2s;
+            }
 
-  #applyNowPopup .qr-shell{ width:100%; max-width:860px; max-height:92vh; }
+            .qr-trigger:hover {
+                border-color: var(--qr-coral);
+                color: var(--qr-coral);
+            }
 
-  #applyNowPopup .qr-card{
-    display:flex;
-    background:var(--qr-panel);
-    border:1px solid var(--qr-line-strong);
-    border-radius:22px;
-    overflow:hidden;
-    max-height:92vh;
-    box-shadow:0 30px 80px -20px rgba(0,0,0,.6);
-    transform:translateY(36px) scale(.96);
-    opacity:0;
-  }
-  #applyNowPopup .qr-card.qr-card-in{
-    animation:qrRise .5s cubic-bezier(.22,1,.36,1) forwards;
-  }
-  @keyframes qrRise{ to{ transform:translateY(0) scale(1); opacity:1; } }
+            .qr-stage p {
+                margin-top: 14px;
+                font: 12px 'JetBrains Mono', monospace;
+                color: var(--qr-text-faint);
+            }
 
-  #applyNowPopup .qr-aside{
-    flex:0 0 38%;
-    position:relative;
-    padding:36px 30px;
-    background:
-      radial-gradient(circle at 30% 18%, rgba(255,107,74,.16), transparent 55%),
-      var(--qr-ink);
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
+            /* ---------- modal ---------- */
 
-  #applyNowPopup .qr-pulse{
-    position:absolute;
-    top:-40px; right:-60px;
-    width:220px; height:220px;
-    pointer-events:none;
-  }
-  #applyNowPopup .qr-pulse span{
-    position:absolute; inset:0;
-    border:1px solid rgba(255,107,74,.35);
-    border-radius:50%;
-    animation:qrPing 3.2s ease-out infinite;
-  }
-  #applyNowPopup .qr-pulse span:nth-child(2){ animation-delay:1.05s; }
-  #applyNowPopup .qr-pulse span:nth-child(3){ animation-delay:2.1s; }
-  @keyframes qrPing{
-    0%{ transform:scale(.3); opacity:.7; }
-    100%{ transform:scale(1.4); opacity:0; }
-  }
+            #applyNowPopup.qr-overlay {
+                position: fixed;
+                inset: 0;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                background: rgba(4, 5, 7, .78);
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
+                z-index: 999;
+                padding: 20px;
+                opacity: 0;
+                transition: opacity .25s ease;
+            }
 
-  #applyNowPopup .qr-badge{
-    display:inline-flex; align-items:center; gap:7px;
-    font:11px/1 'JetBrains Mono',monospace;
-    letter-spacing:.04em; text-transform:uppercase;
-    color:var(--qr-text-soft);
-    background:rgba(255,255,255,.05);
-    border:1px solid var(--qr-line);
-    border-radius:99px;
-    padding:7px 12px;
-    width:max-content;
-    margin-bottom:22px;
-    position:relative; z-index:1;
-  }
-  #applyNowPopup .qr-dot{
-    width:6px;height:6px;border-radius:50%;
-    background:var(--qr-coral);
-    animation:qrBlink 1.8s ease-in-out infinite;
-  }
-  @keyframes qrBlink{
-    0%,100%{ box-shadow:0 0 0 0 rgba(255,107,74,.5); }
-    50%{ box-shadow:0 0 0 5px rgba(255,107,74,0); }
-  }
+            #applyNowPopup.qr-overlay.is-open {
+                display: flex;
+                opacity: 1;
+            }
 
-  #applyNowPopup .qr-aside-title{ font:700 32px/1.15 'Sora',sans-serif; color:var(--qr-text); margin:0 0 12px; position:relative; z-index:1; }
-  #applyNowPopup .qr-aside-text{ font:14px/1.6 'Plus Jakarta Sans',sans-serif; color:var(--qr-text-soft); margin:0 0 22px; position:relative; z-index:1; }
+            #applyNowPopup .qr-shell {
+                width: 100%;
+                max-width: 860px;
+                max-height: 92vh;
+            }
 
-  #applyNowPopup .qr-course-tag{
-    display:inline-flex; align-items:center; gap:6px;
-    font:12px 'Plus Jakarta Sans',sans-serif; color:var(--qr-text);
-    background:rgba(255,255,255,.06);
-    border:1px solid var(--qr-line);
-    border-radius:10px;
-    padding:8px 12px;
-    margin-bottom:22px;
-    width:max-content;
-    max-width:100%;
-    position:relative; z-index:1;
-  }
-  #applyNowPopup .qr-course-tag b{ color:var(--qr-coral); font-weight:600; }
+            #applyNowPopup .qr-card {
+                display: flex;
+                background: var(--qr-panel);
+                border: 1px solid var(--qr-line-strong);
+                border-radius: 22px;
+                overflow: hidden;
+                max-height: 92vh;
+                box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .6);
+                transform: translateY(36px) scale(.96);
+                opacity: 0;
+            }
 
-  #applyNowPopup .qr-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; position:relative; z-index:1; }
-  #applyNowPopup .qr-list li{ display:flex; gap:10px; align-items:flex-start; font:13px/1.5 'Plus Jakarta Sans',sans-serif; color:var(--qr-text-soft); }
-  #applyNowPopup .qr-list svg{ flex-shrink:0; margin-top:2px; }
+            #applyNowPopup .qr-card.qr-card-in {
+                animation: qrRise .5s cubic-bezier(.22, 1, .36, 1) forwards;
+            }
 
-  #applyNowPopup .qr-main{
-    flex:1 1 auto;
-    position:relative;
-    padding:30px 34px;
-    overflow-y:auto;
-  }
-  #applyNowPopup .qr-main::-webkit-scrollbar{ width:6px; }
-  #applyNowPopup .qr-main::-webkit-scrollbar-thumb{ background:var(--qr-line-strong); border-radius:6px; }
+            @keyframes qrRise {
+                to {
+                    transform: translateY(0) scale(1);
+                    opacity: 1;
+                }
+            }
 
-  #applyNowPopup .qr-close{
-    position:absolute; top:20px; right:20px;
-    width:34px; height:34px; border-radius:50%;
-    border:1px solid var(--qr-line-strong);
-    background:rgba(255,255,255,.03);
-    color:var(--qr-text-soft);
-    font-size:18px; line-height:1;
-    display:flex; align-items:center; justify-content:center;
-    cursor:pointer;
-    transition:background .2s ease, color .2s ease, transform .2s ease;
-  }
-  #applyNowPopup .qr-close:hover{ background:rgba(255,255,255,.1); color:var(--qr-text); transform:scale(1.08); }
+            #applyNowPopup .qr-aside {
+                flex: 0 0 38%;
+                position: relative;
+                padding: 36px 30px;
+                background:
+                    radial-gradient(circle at 30% 18%, rgba(255, 107, 74, .16), transparent 55%),
+                    var(--qr-ink);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
 
-  #applyNowPopup .qr-form-title{ font:600 18px 'Sora',sans-serif; color:var(--qr-text); margin:0 0 20px; }
+            #applyNowPopup .qr-logo {
+                position: absolute;
+                top: 24px;
+                left: 24px;
+                z-index: 2;
+            }
 
-  #applyNowPopup .qr-field{ position:relative; margin-bottom:22px; opacity:0; transform:translateY(10px); }
-  #applyNowPopup .qr-card.qr-card-in .qr-field{ animation:qrFieldIn .45s ease forwards; }
-  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(1){ animation-delay:.12s; }
-  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(2){ animation-delay:.18s; }
-  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(3){ animation-delay:.24s; }
-  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(4){ animation-delay:.30s; }
-  #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(5){ animation-delay:.36s; }
-  @keyframes qrFieldIn{ to{ opacity:1; transform:translateY(0); } }
+            #applyNowPopup .qr-logo img {
+                width: 60px;
+                height: auto;
+                display: block;
+                object-fit: contain;
+            }
 
-  #applyNowPopup .qr-input{
-    width:100%;
-    background:transparent;
-    border:none;
-    border-bottom:1px solid var(--qr-line-strong);
-    padding:10px 2px 10px;
-    font:15px 'Plus Jakarta Sans',sans-serif;
-    color:var(--qr-text);
-    outline:none;
-  }
-  #applyNowPopup .qr-input::placeholder{ color:transparent; }
+            #applyNowPopup .qr-pulse {
+                position: absolute;
+                top: -40px;
+                right: -60px;
+                width: 220px;
+                height: 220px;
+                pointer-events: none;
+            }
 
-  #applyNowPopup .qr-field label{
-    position:absolute; left:2px; top:10px;
-    font:15px 'Plus Jakarta Sans',sans-serif;
-    color:var(--qr-text-soft);
-    pointer-events:none;
-    transition:all .18s ease;
-  }
-  #applyNowPopup .qr-input:focus ~ label,
-  #applyNowPopup .qr-input:not(:placeholder-shown) ~ label{
-    top:-14px; font-size:11px; letter-spacing:.03em; color:var(--qr-coral);
-  }
+            #applyNowPopup .qr-pulse span {
+                position: absolute;
+                inset: 0;
+                border: 1px solid rgba(255, 107, 74, .35);
+                border-radius: 50%;
+                animation: qrPing 3.2s ease-out infinite;
+            }
 
-  #applyNowPopup .qr-underline{
-    position:absolute; left:0; bottom:0; height:2px; width:0%;
-    background:linear-gradient(90deg, var(--qr-coral), var(--qr-violet));
-    transition:width .25s ease;
-  }
-  #applyNowPopup .qr-input:focus ~ .qr-underline{ width:100%; }
+            #applyNowPopup .qr-pulse span:nth-child(2) {
+                animation-delay: 1.05s;
+            }
 
-  #applyNowPopup select.qr-input{
-    appearance:none; -webkit-appearance:none;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%239AA1A9' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;
-    background-position:right 2px center;
-    padding-right:20px;
-  }
-  #applyNowPopup select.qr-input option{ background:#1B2024; color:#fff; }
+            #applyNowPopup .qr-pulse span:nth-child(3) {
+                animation-delay: 2.1s;
+            }
 
-  #applyNowPopup .qr-actions{ margin-top:8px; }
-  #applyNowPopup .qr-submit{
-    position:relative;
-    width:100%;
-    display:flex; align-items:center; justify-content:center; gap:8px;
-    background:linear-gradient(135deg, var(--qr-coral), var(--qr-coral-deep));
-    color:#1A0A04;
-    font:600 15px 'Sora',sans-serif;
-    border:none; border-radius:12px;
-    padding:15px 20px;
-    cursor:pointer;
-    overflow:hidden;
-    transition:transform .2s ease, box-shadow .2s ease;
-    box-shadow:0 10px 24px -10px rgba(255,107,74,.5);
-  }
-  #applyNowPopup .qr-submit:hover{ transform:translateY(-2px); box-shadow:0 16px 30px -10px rgba(255,107,74,.65); }
-  #applyNowPopup .qr-submit:active{ transform:translateY(0) scale(.98); }
-  #applyNowPopup .qr-submit:disabled{ cursor:default; opacity:.85; transform:none; }
+            @keyframes qrPing {
+                0% {
+                    transform: scale(.3);
+                    opacity: .7;
+                }
 
-  #applyNowPopup .qr-ripple{
-    position:absolute;
-    border-radius:50%;
-    background:rgba(255,255,255,.5);
-    transform:scale(0);
-    animation:qrRippleAnim .6s ease-out;
-    pointer-events:none;
-  }
-  @keyframes qrRippleAnim{ to{ transform:scale(2.6); opacity:0; } }
+                100% {
+                    transform: scale(1.4);
+                    opacity: 0;
+                }
+            }
 
-  #applyNowPopup .qr-note{ margin:12px 0 0; text-align:center; font:12px 'Plus Jakarta Sans',sans-serif; color:var(--qr-text-faint); }
+            #applyNowPopup .qr-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                font: 11px/1 'JetBrains Mono', monospace;
+                letter-spacing: .04em;
+                text-transform: uppercase;
+                color: var(--qr-text-soft);
+                background: rgba(255, 255, 255, .05);
+                border: 1px solid var(--qr-line);
+                border-radius: 99px;
+                padding: 7px 12px;
+                width: max-content;
+                margin-bottom: 22px;
+                position: relative;
+                z-index: 1;
+                margin-top: 50px;
+            }
 
-  @media (prefers-reduced-motion: reduce){
-    #applyNowPopup .qr-card.qr-card-in{ animation:none; opacity:1; transform:none; }
-    #applyNowPopup .qr-card.qr-card-in .qr-field{ animation:none; opacity:1; transform:none; }
-    #applyNowPopup .qr-pulse span{ animation:none; }
-    #applyNowPopup .qr-dot{ animation:none; }
-  }
+            #applyNowPopup .qr-dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--qr-coral);
+                animation: qrBlink 1.8s ease-in-out infinite;
+            }
 
-  @media (max-width:760px){
-    #applyNowPopup .qr-card{ flex-direction:column; }
-    #applyNowPopup .qr-aside{ flex:none; padding:26px 24px; }
-    #applyNowPopup .qr-pulse{ width:150px; height:150px; top:-30px; right:-40px; }
-    #applyNowPopup .qr-aside-title{ font-size:24px; }
-    #applyNowPopup .qr-main{ padding:26px 24px 28px; }
-  }
-</style>
+            @keyframes qrBlink {
+
+                0%,
+                100% {
+                    box-shadow: 0 0 0 0 rgba(255, 107, 74, .5);
+                }
+
+                50% {
+                    box-shadow: 0 0 0 5px rgba(255, 107, 74, 0);
+                }
+            }
+
+            #applyNowPopup .qr-aside-title {
+                font: 700 32px/1.15 'Sora', sans-serif;
+                color: var(--qr-text);
+                margin: 0 0 12px;
+                position: relative;
+                z-index: 1;
+            }
+
+            #applyNowPopup .qr-aside-text {
+                font: 14px/1.6 'Plus Jakarta Sans', sans-serif;
+                color: var(--qr-text-soft);
+                margin: 0 0 22px;
+                position: relative;
+                z-index: 1;
+            }
+
+            #applyNowPopup .qr-course-tag {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                font: 12px 'Plus Jakarta Sans', sans-serif;
+                color: var(--qr-text);
+                background: rgba(255, 255, 255, .06);
+                border: 1px solid var(--qr-line);
+                border-radius: 10px;
+                padding: 8px 12px;
+                margin-bottom: 22px;
+                width: max-content;
+                max-width: 100%;
+                position: relative;
+                z-index: 1;
+            }
+
+            #applyNowPopup .qr-course-tag b {
+                color: var(--qr-coral);
+                font-weight: 600;
+            }
+
+            #applyNowPopup .qr-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                position: relative;
+                z-index: 1;
+            }
+
+            #applyNowPopup .qr-list li {
+                display: flex;
+                gap: 10px;
+                align-items: flex-start;
+                font: 13px/1.5 'Plus Jakarta Sans', sans-serif;
+                color: var(--qr-text-soft);
+            }
+
+            #applyNowPopup .qr-list svg {
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+
+            #applyNowPopup .qr-main {
+                flex: 1 1 auto;
+                position: relative;
+                padding: 30px 34px;
+                overflow-y: auto;
+            }
+
+            #applyNowPopup .qr-main::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            #applyNowPopup .qr-main::-webkit-scrollbar-thumb {
+                background: var(--qr-line-strong);
+                border-radius: 6px;
+            }
+
+            #applyNowPopup .qr-close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                border: 1px solid var(--qr-line-strong);
+                background: rgba(255, 255, 255, .03);
+                color: var(--qr-text-soft);
+                font-size: 18px;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background .2s ease, color .2s ease, transform .2s ease;
+            }
+
+            #applyNowPopup .qr-close:hover {
+                background: rgba(255, 255, 255, .1);
+                color: var(--qr-text);
+                transform: scale(1.08);
+            }
+
+            #applyNowPopup .qr-form-title {
+                font: 600 18px 'Sora', sans-serif;
+                color: var(--qr-text);
+                margin: 0 0 20px;
+            }
+
+            #applyNowPopup .qr-field {
+                position: relative;
+                margin-bottom: 22px;
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            #applyNowPopup .qr-card.qr-card-in .qr-field {
+                animation: qrFieldIn .45s ease forwards;
+            }
+
+            #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(1) {
+                animation-delay: .12s;
+            }
+
+            #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(2) {
+                animation-delay: .18s;
+            }
+
+            #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(3) {
+                animation-delay: .24s;
+            }
+
+            #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(4) {
+                animation-delay: .30s;
+            }
+
+            #applyNowPopup .qr-card.qr-card-in .qr-field:nth-of-type(5) {
+                animation-delay: .36s;
+            }
+
+            @keyframes qrFieldIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            #applyNowPopup .qr-input {
+                width: 100%;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid var(--qr-line-strong);
+                padding: 10px 2px 10px;
+                font: 15px 'Plus Jakarta Sans', sans-serif;
+                color: var(--qr-text);
+                outline: none;
+            }
+
+            #applyNowPopup .qr-input::placeholder {
+                color: transparent;
+            }
+
+            #applyNowPopup .qr-field label {
+                position: absolute;
+                left: 2px;
+                top: 10px;
+                font: 15px 'Plus Jakarta Sans', sans-serif;
+                color: var(--qr-text-soft);
+                pointer-events: none;
+                transition: all .18s ease;
+            }
+
+            #applyNowPopup .qr-input:focus~label,
+            #applyNowPopup .qr-input:not(:placeholder-shown)~label {
+                top: -14px;
+                font-size: 11px;
+                letter-spacing: .03em;
+                color: var(--qr-coral);
+            }
+
+            #applyNowPopup .qr-underline {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                width: 0%;
+                background: linear-gradient(90deg, var(--qr-coral), var(--qr-violet));
+                transition: width .25s ease;
+            }
+
+            #applyNowPopup .qr-input:focus~.qr-underline {
+                width: 100%;
+            }
+
+            #applyNowPopup select.qr-input {
+                appearance: none;
+                -webkit-appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%239AA1A9' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 2px center;
+                padding-right: 20px;
+            }
+
+            #applyNowPopup select.qr-input option {
+                background: #1B2024;
+                color: #fff;
+            }
+
+            #applyNowPopup .qr-actions {
+                margin-top: 8px;
+            }
+
+            #applyNowPopup .qr-submit {
+                position: relative;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                background: linear-gradient(135deg, var(--qr-coral), var(--qr-coral-deep));
+                color: #1A0A04;
+                font: 600 15px 'Sora', sans-serif;
+                border: none;
+                border-radius: 12px;
+                padding: 15px 20px;
+                cursor: pointer;
+                overflow: hidden;
+                transition: transform .2s ease, box-shadow .2s ease;
+                box-shadow: 0 10px 24px -10px rgba(255, 107, 74, .5);
+            }
+
+            #applyNowPopup .qr-submit:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 16px 30px -10px rgba(255, 107, 74, .65);
+            }
+
+            #applyNowPopup .qr-submit:active {
+                transform: translateY(0) scale(.98);
+            }
+
+            #applyNowPopup .qr-submit:disabled {
+                cursor: default;
+                opacity: .85;
+                transform: none;
+            }
+
+            #applyNowPopup .qr-ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, .5);
+                transform: scale(0);
+                animation: qrRippleAnim .6s ease-out;
+                pointer-events: none;
+            }
+
+            @keyframes qrRippleAnim {
+                to {
+                    transform: scale(2.6);
+                    opacity: 0;
+                }
+            }
+
+            #applyNowPopup .qr-note {
+                margin: 12px 0 0;
+                text-align: center;
+                font: 12px 'Plus Jakarta Sans', sans-serif;
+                color: var(--qr-text-faint);
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                #applyNowPopup .qr-card.qr-card-in {
+                    animation: none;
+                    opacity: 1;
+                    transform: none;
+                }
+
+                #applyNowPopup .qr-card.qr-card-in .qr-field {
+                    animation: none;
+                    opacity: 1;
+                    transform: none;
+                }
+
+                #applyNowPopup .qr-pulse span {
+                    animation: none;
+                }
+
+                #applyNowPopup .qr-dot {
+                    animation: none;
+                }
+            }
+
+            @media (max-width:760px) {
+                #applyNowPopup .qr-card {
+                    flex-direction: column;
+                }
+
+                #applyNowPopup .qr-aside {
+                    flex: none;
+                    padding: 26px 24px;
+                }
+
+                #applyNowPopup .qr-logo {
+                    top: 18px;
+                    left: 18px;
+                }
+
+                #applyNowPopup .qr-logo img {
+                    width: 70px;
+                }
+
+                #applyNowPopup .qr-badge {
+                    margin-top: 40px;
+                }
+
+                #applyNowPopup .qr-pulse {
+                    width: 150px;
+                    height: 150px;
+                    top: -30px;
+                    right: -40px;
+                }
+
+                #applyNowPopup .qr-aside-title {
+                    font-size: 24px;
+                }
+
+                #applyNowPopup .qr-main {
+                    padding: 26px 24px 28px;
+                }
+            }
+        </style>
         <!-- JS to Control Modal -->
 
 

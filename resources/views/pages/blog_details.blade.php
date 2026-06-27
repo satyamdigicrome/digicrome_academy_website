@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $blog->meta_title ?? $blog->heading)
+@section('title', $blog->meta_title ?? $blog->heaing)
 @section('meta_description', $blog->meta_description ?? 'Digicrome')
 @section('meta_keywords', $blog->meta_keywords ?? 'Digicrome')
 @push('scripts')

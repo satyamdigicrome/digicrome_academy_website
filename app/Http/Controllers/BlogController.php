@@ -13,7 +13,7 @@ class BlogController extends Controller
     {
         $blogs = Blog::where('status', 'published')
             ->orderByDesc('created_at')
-            ->paginate(10);
+            ->paginate(9);
         $meta = Metatag::where('page_name', 'Blog')->first();
         return view('pages.blog', compact('blogs', 'meta'));
     }
