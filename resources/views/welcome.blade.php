@@ -1278,7 +1278,8 @@
             });
         </script>
     @endif
-    <div class="testimonial-area style-two mt-4">
+    @include('components.testimonial-partial', ['testimonials' => $testimonials])
+    {{-- <div class="testimonial-area style-two mt-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -1351,9 +1352,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <x-mentor-popup :mentors="$mentors" />
-    <div class="testimonial-area style-inner">
+    {{-- <div class="testimonial-area style-inner">
         <div class="container">
             <div class="row section-title-space">
                 <div class="col-xl-4 col-lg-12">
@@ -1419,7 +1420,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+    @include('components.success-story-partial', ['studentStories' => $studentStories])
     <section>
         <div class="container-fluid Learner-say-combine">
             <div class="container">

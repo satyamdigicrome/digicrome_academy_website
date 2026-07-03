@@ -1351,7 +1351,7 @@
         </div>
     </div>
 </section> --}}
-    <div class="testimonial-area style-two mt-4">
+    {{-- <div class="testimonial-area style-two mt-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -1426,7 +1426,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
+    @include('components.testimonial-partial', ['testimonials' => $testimonials])
     <section class="my-5">
 
 

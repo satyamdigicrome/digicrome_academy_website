@@ -508,11 +508,22 @@
             }
 
             .step-icon {
-                font-size: 30px;
-                margin-bottom: 4rem;
-                color: #2f3747;
-                transition: all .35s ease;
+                width: 64px;
+                height: 64px;
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
             }
+            .step-icon svg {
+                width: 36px;
+                height: 36px;
+            }
+            .step-icon-1 { background-color: #DBEAFE; }
+            .step-icon-2 { background-color: #F5F3FF; }
+            .step-icon-3 { background-color: #ECFEFF; }
+            .step-icon-4 { background-color: #FFF7ED; }
 
             .step-badge {
                 display: inline-block;
@@ -607,40 +618,39 @@
                     font-size: 16px;
                 }
             }
+
             .corporate-cta {
-            background: linear-gradient(
-                135deg,
-                #0f172a 0%,
-                #1e3a8a 35%,
-                #2563eb 70%,
-                #3b82f6 100%
-            );
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
+                background: linear-gradient(135deg,
+                        #0f172a 0%,
+                        #1e3a8a 35%,
+                        #2563eb 70%,
+                        #3b82f6 100%);
+                color: #fff;
+                position: relative;
+                overflow: hidden;
+            }
 
-        .corporate-cta::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 50%;
-        }
+            .corporate-cta::before {
+                content: '';
+                position: absolute;
+                top: -100px;
+                right: -100px;
+                width: 300px;
+                height: 300px;
+                background: rgba(255, 255, 255, 0.08);
+                border-radius: 50%;
+            }
 
-        .corporate-cta::after {
-            content: '';
-            position: absolute;
-            bottom: -120px;
-            left: -120px;
-            width: 350px;
-            height: 350px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-        }
+            .corporate-cta::after {
+                content: '';
+                position: absolute;
+                bottom: -120px;
+                left: -120px;
+                width: 350px;
+                height: 350px;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 50%;
+            }
         </style>
     @endpush
 
@@ -800,8 +810,15 @@
                 <!-- Step 1 -->
                 <div class="col-lg-3 col-md-6">
                     <div class="step-card">
-                        <div class="step-icon">
-                            <i class="bi bi-search"></i>
+                        <div class="step-icon step-icon-1">
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="26" cy="26" r="16" fill="#BFDBFE" stroke="#2563EB"
+                                    stroke-width="4" />
+                                <line x1="37" y1="37" x2="50" y2="50" stroke="#F59E0B"
+                                    stroke-width="6" stroke-linecap="round" />
+                                <path d="M19 26a7 7 0 0 1 7-7" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"
+                                    fill="none" />
+                            </svg>
                         </div>
 
                         <span class="step-badge">STEP 1</span>
@@ -818,10 +835,17 @@
                 <!-- Step 2 -->
                 <div class="col-lg-3 col-md-6">
                     <div class="step-card active">
-                        <div class="step-icon">
-                            <i class="bi bi-mortarboard"></i>
+                        <div class="step-icon step-icon-2">
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="32,14 58,26 32,38 6,26" fill="#7C3AED" />
+                                <polygon points="32,14 58,26 32,30 6,26" fill="#A78BFA" />
+                                <rect x="18" y="34" width="28" height="10" rx="3" fill="#1E293B" />
+                                <circle cx="32" cy="24" r="3" fill="#FBBF24" />
+                                <line x1="50" y1="27" x2="50" y2="42" stroke="#1E293B"
+                                    stroke-width="2" />
+                                <circle cx="50" cy="44" r="3" fill="#FBBF24" />
+                            </svg>
                         </div>
-
                         <span class="step-badge">STEP 2</span>
 
                         <h4>Build a Custom Learning Path</h4>
@@ -836,8 +860,18 @@
                 <!-- Step 3 -->
                 <div class="col-lg-3 col-md-6">
                     <div class="step-card">
-                        <div class="step-icon">
-                            <i class="bi bi-globe"></i>
+                        <div class="step-icon step-icon-3">
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="20" fill="#38BDF8" />
+                                <path d="M20 22c4 6 8 6 12 2s8 2 10-2" stroke="#FFFFFF" stroke-width="2" fill="none"
+                                    opacity="0.7" />
+                                <path d="M14 32h36" stroke="#FFFFFF" stroke-width="2" opacity="0.7" />
+                                <path d="M20 42c4-6 8-6 12-2s8-2 10 2" stroke="#FFFFFF" stroke-width="2" fill="none"
+                                    opacity="0.7" />
+                                <ellipse cx="24" cy="24" rx="6" ry="4" fill="#22C55E" />
+                                <ellipse cx="40" cy="38" rx="7" ry="5" fill="#22C55E" />
+                                <ellipse cx="26" cy="42" rx="4" ry="3" fill="#16A34A" />
+                            </svg>
                         </div>
 
                         <span class="step-badge">STEP 3</span>
@@ -854,8 +888,16 @@
                 <!-- Step 4 -->
                 <div class="col-lg-3 col-md-6">
                     <div class="step-card border-end-0">
-                        <div class="step-icon">
-                            <i class="bi bi-graph-up"></i>
+                        <div class="step-icon step-icon-4">
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="38" width="9" height="16" rx="2" fill="#3B82F6" />
+                                <rect x="23" y="28" width="9" height="26" rx="2" fill="#10B981" />
+                                <rect x="36" y="18" width="9" height="36" rx="2" fill="#F59E0B" />
+                                <rect x="49" y="10" width="9" height="44" rx="2" fill="#EF4444" />
+                                <path d="M10 36 L23 26 L36 16 L49 8" stroke="#1E293B" stroke-width="2"
+                                    stroke-linecap="round" fill="none" stroke-dasharray="2 3" />
+                                <polygon points="49,8 56,8 56,15" fill="#1E293B" />
+                            </svg>
                         </div>
 
                         <span class="step-badge">STEP 4</span>
