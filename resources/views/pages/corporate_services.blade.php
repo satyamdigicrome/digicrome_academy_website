@@ -915,6 +915,7 @@
 
         </div>
     </section>
+    @include('components.corporate-carousal')
     <!-- Services Section -->
     <section id="services" class="services-grid">
         <div class="container">

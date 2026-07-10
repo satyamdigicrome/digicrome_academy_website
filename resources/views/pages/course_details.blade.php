@@ -122,7 +122,7 @@
                             @endif
 
                             <a class="btn btn-primary" style="background-color: #1c1647;" id="quickResponseBtn"
-                                onclick="openModal('applyNowPopup')">
+                                onclick="openModal('applyNowPopup')" role="button">
                                 <i class="fa fa-paper-plane me-2"></i>Apply Now
                             </a>
 
@@ -530,7 +530,7 @@
                                     <i class="fa fa-download me-1"></i>Download Brochure
                                 </a>
                             @endif
-                            <a class="btn btn-cyber-primary" id="quickResponseBtn" onclick="openModal('applyNowPopup')">
+                            <a class="btn btn-cyber-primary" role="button" id="quickResponseBtn" onclick="openModal('applyNowPopup')">
                                 <i class="fa fa-paper-plane me-1"></i>Apply Now
                             </a>
                         </div>
@@ -627,7 +627,7 @@
                                 </a>
                             @endif
 
-                            <a id="quickResponseBtn" onclick="openModal('applyNowPopup')" class="btn btn-primary"
+                            <a id="quickResponseBtn" role="button" onclick="openModal('applyNowPopup')" class="btn btn-primary"
                                 style="background-color: green;">
                                 <i class="fa fa-paper-plane me-2"></i>Apply Now
                             </a>
@@ -887,7 +887,7 @@
                             <div class="event-info-btn">
                                 <a id="quickResponseBtn" onclick="openModal('applyNowPopup')"
                                     style="    background: green;
-                            color: #fff;">APPLY NOW<i
+                            color: #fff;" role="button">APPLY NOW<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>
                             {{--     <div class="course-share-title">

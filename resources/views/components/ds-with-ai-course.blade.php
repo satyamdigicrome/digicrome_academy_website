@@ -110,7 +110,7 @@
                      <h2 style="color:#fff;">Courses Features</h2>
                      <div class="fill-btn"
                          style="color: #fff;  background: green;
-                    border: 2px solid;">
+                    border: 2px solid;" role="button" onclick="openModal('downloadLeadPopup')">
                          <a id="downloadBrochureBtn" onclick="openModal('downloadLeadPopup')" download=""
                              style="color:#fff">Download
                              Brochure</a>
