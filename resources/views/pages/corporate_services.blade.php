@@ -516,14 +516,27 @@
                 justify-content: center;
                 margin-bottom: 1rem;
             }
+
             .step-icon svg {
                 width: 36px;
                 height: 36px;
             }
-            .step-icon-1 { background-color: #DBEAFE; }
-            .step-icon-2 { background-color: #F5F3FF; }
-            .step-icon-3 { background-color: #ECFEFF; }
-            .step-icon-4 { background-color: #FFF7ED; }
+
+            .step-icon-1 {
+                background-color: #DBEAFE;
+            }
+
+            .step-icon-2 {
+                background-color: #F5F3FF;
+            }
+
+            .step-icon-3 {
+                background-color: #ECFEFF;
+            }
+
+            .step-icon-4 {
+                background-color: #FFF7ED;
+            }
 
             .step-badge {
                 display: inline-block;
@@ -678,8 +691,8 @@
                         <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
                             {{-- <a href="#services" class="btn btn-corporate-primary">Explore Solutions <i
                                     class="fas fa-arrow-right ms-2"></i></a> --}}
-                            <a href="#contact" class="btn btn-corporate-secondary">Get Started <i
-                                    class="fas fa-play ms-2"></i></a>
+                            <a href="javascript:void(0);" onclick="openModal();" class="btn btn-corporate-secondary">Get
+                                Started <i class="fas fa-play ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -765,7 +778,8 @@
 
                         <!-- CTA Buttons -->
                         <div class="cta-buttons mt-4">
-                            <a href="#contact" class="btn btn-light btn-lg px-4 py-3 me-3">
+                            <a href="javascript:void(0);" onclick="openModal();"
+                                class="btn btn-light btn-lg px-4 py-3 me-3">
                                 Join the Program
                             </a>
 
@@ -997,7 +1011,7 @@
                 Schedule a free consultation with our corporate training experts
             </p>
             <div data-aos="zoom-in" data-aos-delay="400">
-                <a href="#contact" class="btn btn-dark btn-lg me-3 px-5 py-3">
+                <a href="javascript:void(0);" onclick="openModal();" class="btn btn-dark btn-lg me-3 px-5 py-3">
                     Book Your Seat
                 </a>
                 <a href="tel:+01204538125" class="btn btn-outline-light btn-lg px-5 py-3">

@@ -231,7 +231,7 @@
             <div class="container">
                 <div class="section-header">
                     <div class="sec-badge"><i class="fa-solid fa-users"></i> Completed Stories</div>
-                    <h2>Meet All Our <span>Champions</span></h2>
+                    <h2>Meet Our <span>Champions</span></h2>
                     <p>Every one of them started with a goal. Digicrome helped them achieve it.</p>
                     <div class="section-divider"></div>
                 </div>
