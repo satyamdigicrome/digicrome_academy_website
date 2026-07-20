@@ -27,7 +27,7 @@
     <link rel="dns-prefetch" href="https://player.vimeo.com">
     <link rel="dns-prefetch" href="https://f.vimeocdn.com">
 
-    <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
+    <link rel="icon" type="image/webp" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.webp') }}">
 
     {{-- Preload critical fonts to eliminate layout shifts --}}
     <link rel="preload" href="{{ asset('assets/fonts/Flaticon.woff2') }}" as="font" type="font/woff2"
