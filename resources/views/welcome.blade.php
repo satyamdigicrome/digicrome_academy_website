@@ -1238,6 +1238,7 @@
             </div>
         </div>
     </div> --}}
+    @include('components.linkedinreview',['feedbacks'=>$feedbacks])
     <x-mentor-popup :mentors="$mentors" />
     {{-- <div class="testimonial-area style-inner">
         <div class="container">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\LinkedinStudentReviewsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
@@ -202,6 +203,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::delete('/admin/mentor{id}', [MentorController::class, 'destroy'])->name('mentor.destroy');
         Route::get('/admin/mentor/{id}/edit', [MentorController::class, 'edit'])->name('admin.mentor.edit');
         Route::post('/admin/mentor/{id}', [MentorController::class, 'update'])->name('admin.mentor.update');
+    });
+
+    // Linkedin Student Reviews
+    Route::middleware('module:linkedin-student-reviews')->group(function () {
+        Route::get('/linkedin-student-reviews', [LinkedinStudentReviewsController::class, 'index'])->name('linkedin.student.reviews.index');
+        Route::post('/linkedin-student-reviews/store', [LinkedinStudentReviewsController::class, 'store'])->name('linkedin.student.reviews.store');
+        Route::delete('/linkedin-student-reviews/{id}', [LinkedinStudentReviewsController::class, 'destroy'])->name('linkedin.student.reviews.destroy');
+        Route::get('/admin/linkedin-student-reviews/{id}/edit', [LinkedinStudentReviewsController::class, 'edit'])->name('admin.linkedin.student.reviews.edit');
+        Route::post('/admin/linkedin-student-reviews/{id}', [LinkedinStudentReviewsController::class, 'update'])->name('admin.linkedin.student.reviews.update');
     });
 
     // ── Media Presence ─────────────────────────────────────────────────────

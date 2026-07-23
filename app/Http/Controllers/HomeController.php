@@ -10,6 +10,7 @@ use App\Models\Testimonial;
 use App\Models\Logo;
 use App\Models\Blog;
 use App\Models\Content;
+use App\Models\LinkedinStudentsReview;
 use App\Models\Metatag;
 use App\Models\Mentor;
 use App\Models\Video;
@@ -66,8 +67,9 @@ class HomeController extends Controller
     ->get();
     $mentors = Mentor::all();
     $videos = Video::latest()->get();
+    $feedbacks = LinkedinStudentsReview::latest()->take(3)->get();
 
-    return view('welcome', compact('collections', 'upcomingCourses', 'videos', 'mentors', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta'));
+    return view('welcome', compact('collections', 'upcomingCourses', 'videos', 'mentors', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta','feedbacks'));
 }
 
     public function privacy()

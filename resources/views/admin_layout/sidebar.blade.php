@@ -38,6 +38,13 @@
                 </a>
             @endif
 
+            @if ($user->hasModulePermission('linkedin-student-reviews'))
+                <a href="{{ route('linkedin.student.reviews.index') }}"
+                    class="nav-link-item {{ request()->routeIs('linkedin.student.reviews.*') ? 'active' : '' }}">
+                    <i class="bi bi-trophy"></i> LinkedIn Student Reviews
+                </a>
+            @endif
+
             @if ($user->hasModulePermission('testimonials'))
                 <a href="{{ route('testimonial') }}"
                     class="nav-link-item {{ request()->routeIs('testimonial') ? 'active' : '' }}">
