@@ -311,7 +311,7 @@
     <div class="container">
         <x-logo-slider :companyLogos="$companyLogos" />
     </div>
-    <section class="about-area style-one">
+    {{-- <section class="about-area style-one">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
@@ -331,10 +331,6 @@
                                     style="width:100%;height:auto;">
                             </picture>
                         </div>
-                        {{-- <div class="about-thumb-shape1 bounce-animate-3">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape1.webp') }}"
-                                alt="digicrome shape" title="digicrome shape">
-                        </div> --}}
                         <div class="about-thumb-shape2 rotateme">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape2.webp') }}"
                                 alt="diicrome shape" title="digicrome shapr">
@@ -404,12 +400,8 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="about-shape5">
-                <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="digicrome shape"
-                    title="digicrome shape">
-            </div> --}}
         </div>
-    </section>
+    </section> --}}
     @if ($userCountry === 'India')
         <div class="brand-area style-one">
             <div class="container">
@@ -623,7 +615,7 @@
     </div>
     {{-- @include('components.certification_partners_compact', ['certificate'=>$certificate]) --}}
     @include('components.course-partial')
-    <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
+    {{-- <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
@@ -699,12 +691,9 @@
                 <img loading="lazy"src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape1"
                     title="shape1">
             </div>
-            {{-- <div class="choose-shape2">
-                <img loading="lazy"src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape2"
-                    title="shape2">
-            </div> --}}
         </div>
-    </div>
+    </div> --}}
+    @include('components.linkedinreview',['feedbacks'=>$feedbacks])
     <div class="brand-area style-one mt-4">
         <div class="container">
             <div class="row">
@@ -1238,7 +1227,6 @@
             </div>
         </div>
     </div> --}}
-    @include('components.linkedinreview',['feedbacks'=>$feedbacks])
     <x-mentor-popup :mentors="$mentors" />
     {{-- <div class="testimonial-area style-inner">
         <div class="container">

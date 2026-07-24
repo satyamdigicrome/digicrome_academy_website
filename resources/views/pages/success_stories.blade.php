@@ -172,12 +172,13 @@
             </div>
         </div>
     </section>
+    @include('components.linkedinreview', ['feedbacks' => $feedbacks])
     @if ($studentStories->count() > 3)
         <section class="placement-section">
             <div class="container">
                 <div class="section-header">
                     <div class="sec-badge"><i class="fa-solid fa-briefcase"></i> Placement Highlights</div>
-                    <h2>Recently <span>Placed Students</span></h2>
+                    <h2 class="d-block">Recently <span>Placed Students</span></h2>
                     <p>A glimpse into where our students are now — roles across top organizations in India and beyond.</p>
                     <div class="section-divider"></div>
                 </div>

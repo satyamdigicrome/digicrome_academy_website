@@ -56,7 +56,7 @@
             @foreach ($collections as $collection)
                 @php $hue = $dgcHues[($loop->iteration) % count($dgcHues)]; @endphp
                 @foreach ($collection->courses as $course)
-                    <div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }} dgc-cell">
+                    <div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }} dgc-cell dgc-prehidden">
                         <article class="dgc-card" style="--accent: {{ $hue }}">
                             <div class="dgc-card-media">
                                 <img loading="lazy" src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" title="{{ $course->name }}">
@@ -105,7 +105,9 @@
     margin: 0 auto;
     padding: 0 24px;
 }
-
+.dgc-cell.dgc-prehidden {
+    display: none;
+}
 /* Header */
 .dgc-header {
     text-align: center;
@@ -369,9 +371,17 @@
 <script>
     window.addEventListener('load', function () {
         var grid = document.querySelector('.image_load');
+
+        // Remove the CSS pre-hide BEFORE Isotope takes over,
+        // so Isotope's own filter mechanism controls visibility from here on.
+        grid.querySelectorAll('.dgc-prehidden').forEach(function (el) {
+            el.classList.remove('dgc-prehidden');
+        });
+
         var iso = new Isotope(grid, {
             itemSelector: '.grid-item',
-            layoutMode: 'fitRows'
+            layoutMode: 'fitRows',
+            filter: '.Upcoming' // set initial filter directly on init, avoids double-arrange flash
         });
 
         var rail = document.getElementById('dgcTabRail');
@@ -392,9 +402,7 @@
             });
         });
 
-        // Position indicator under the default active tab once layout is ready.
         moveIndicator(rail.querySelector('.dgc-tab.is-active'));
-        iso.arrange({ filter: '.Upcoming' });
 
         window.addEventListener('resize', function () {
             moveIndicator(rail.querySelector('.dgc-tab.is-active'));

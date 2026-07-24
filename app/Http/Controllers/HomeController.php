@@ -20,57 +20,56 @@ use Stevebauman\Location\Facades\Location;
 class HomeController extends Controller
 {
     public function index(Request $request)
-{
-    $position = Location::get($request->ip());
-    $userCountry = $position->countryName ?? 'Unknown';
+    {
+        $position = Location::get($request->ip());
+        $userCountry = $position->countryName ?? 'Unknown';
 
-    $collections = Collection::with(['courses' => function ($query) {
-        $query->where('status', 1)->limit(4); 
-    }])->where('status', 1)->whereNotIn('id', [5, 6])->orderBy('position')->get();
-
-    // if ($userCountry === 'India') {
-        $upcomingCourses = Course::where('status', 1)
-                                 ->orderByRaw('ISNULL(position), position ASC')
-                                 ->limit(4)
-                                 ->get();
-    // } else {
-    //     $upcomingCourses = Course::where('status', 1)
-    //                              ->whereIn('id', [60, 58, 55, 61])
-    //                              ->get();
-    // }
-    // dd($upcomingCourses);
-    $companyLogos = Cache::remember('company_logos', 60, function () {
-            return Logo::where('type', 'companies')->get(['id', 'image']);
+        $collections = Collection::with(['courses' => function ($query) {
+            $query->where('status', 1)->limit(4); 
+        }])->where('status', 1)->whereNotIn('id', [5, 6])->orderBy('position')->get();
+        // if ($userCountry === 'India') {
+            $upcomingCourses = Course::where('status', 1)
+                                    ->orderByRaw('ISNULL(position), position ASC')
+                                    ->limit(4)
+                                    ->get();
+        // } else {
+        //     $upcomingCourses = Course::where('status', 1)
+        //                              ->whereIn('id', [60, 58, 55, 61])
+        //                              ->get();
+        // }
+        // dd($upcomingCourses);
+        $companyLogos = Cache::remember('company_logos', 60, function () {
+                return Logo::where('type', 'companies')->get(['id', 'image']);
+            });
+            $gallery = Cache::remember('gallery_' . $userCountry, 60, function () use ($userCountry) {
+                if ($userCountry === 'India') {
+                    return Logo::where('type', 'gallery')->where('country', 'IN')->get(['id', 'image', 'name']);
+                } else {
+                    return Logo::where('type', 'gallery')->where('country', 'US')->get(['id', 'image', 'name']);
+                }
+            });
+        
+        $associationLogos = Cache::remember('association_logos', 60, function () {
+            return Logo::where('type', 'association')->get(['id', 'image']);
         });
-        $gallery = Cache::remember('gallery_' . $userCountry, 60, function () use ($userCountry) {
-            if ($userCountry === 'India') {
-                return Logo::where('type', 'gallery')->where('country', 'IN')->get(['id', 'image', 'name']);
-            } else {
-                return Logo::where('type', 'gallery')->where('country', 'US')->get(['id', 'image', 'name']);
-            }
+        $certificate = Cache::remember('certification_partner', 60, function () {
+            return Logo::where('type', 'certification_partner')->get(['id', 'image']);
         });
-    
-    $associationLogos = Cache::remember('association_logos', 60, function () {
-        return Logo::where('type', 'association')->get(['id', 'image']);
-    });
-    $certificate = Cache::remember('certification_partner', 60, function () {
-        return Logo::where('type', 'certification_partner')->get(['id', 'image']);
-    });
-    $awords = Cache::remember('awords', 60, function () {
-        return Logo::where('type', 'awords')->get(['id', 'image']);
-    });
-    $studentStories = StudentStory::latest()->get(); 
-    $meta = Metatag::where('page_name', 'Home')->first();
-    $testimonials = Testimonial::latest()->get();
-    $blogs = Blog::where('status', 'published')
-    ->orderByDesc('created_at')
-    ->get();
-    $mentors = Mentor::all();
-    $videos = Video::latest()->get();
-    $feedbacks = LinkedinStudentsReview::latest()->take(3)->get();
+        $awords = Cache::remember('awords', 60, function () {
+            return Logo::where('type', 'awords')->get(['id', 'image']);
+        });
+        $studentStories = StudentStory::latest()->get(); 
+        $meta = Metatag::where('page_name', 'Home')->first();
+        $testimonials = Testimonial::latest()->get();
+        $blogs = Blog::where('status', 'published')
+        ->orderByDesc('created_at')
+        ->get();
+        $mentors = Mentor::all();
+        $videos = Video::latest()->get();
+        $feedbacks = LinkedinStudentsReview::latest()->take(3)->get();
 
-    return view('welcome', compact('collections', 'upcomingCourses', 'videos', 'mentors', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta','feedbacks'));
-}
+        return view('welcome', compact('collections', 'upcomingCourses', 'videos', 'mentors', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta','feedbacks'));
+    }
 
     public function privacy()
     {

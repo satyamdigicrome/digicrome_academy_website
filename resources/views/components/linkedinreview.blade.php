@@ -1,8 +1,9 @@
-<section class="cfb-section">
+<section class="cfb-section" {{ Route::currentRouteName() === 'success_stories' ? 'id=cfb-section' : '' }}>
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="cfb-title">Our Learners Are Making Their Mark</h2>
-            <p class="cfb-subtitle">Learners at Digicrome are showcasing their certifications, skills, and career achievements on LinkedIn after completing industry-focused programs.</p>
+            <p class="cfb-subtitle">Learners at Digicrome are showcasing their certifications, skills, and career
+                achievements on LinkedIn after completing industry-focused programs.</p>
         </div>
 
         <div class="row g-4">
@@ -30,6 +31,11 @@
                 </div>
             @endforelse
         </div>
+        @if(Route::currentRouteName() !== 'success_stories')
+            <div class="text-center mt-4">
+                <a href="{{ route('success_stories') }}#cfb-section" class="cfb-more-btn">See More Success Stories</a>
+            </div>
+        @endif
     </div>
 </section>
 
@@ -83,6 +89,23 @@
         display: block;
         pointer-events: none;
         /* card click takes priority, no scroll trap inside */
+    }
+
+    .cfb-more-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 24px;
+        border-radius: 50px;
+        background: #0a66c2;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background .2s ease;
+    }
+
+    .cfb-more-btn:hover {
+        background: #084e96;
     }
 
     .cfb-view-btn {
