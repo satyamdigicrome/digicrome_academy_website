@@ -127,7 +127,7 @@
 
 <script>
 function openEditModal(id, data) {
-    document.getElementById('editForm').action = '/admin/linkedin-student-reviews/' + id + '/update';
+    document.getElementById('editForm').action = '/admin/linkedin-student-reviews/' + id;
     document.getElementById('edit_iframe_link').value = data.iframe_link || '';
     document.getElementById('edit_post_link').value = data.post_link || '';
     new bootstrap.Modal(document.getElementById('editModal')).show();
