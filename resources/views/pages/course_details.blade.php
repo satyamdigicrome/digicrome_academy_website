@@ -507,7 +507,7 @@
 
                         <div class="cyber-point">
                             <i class="fa-solid fa-shield-halved text-info"></i>
-                            <span>Get <strong style="color:#00ddb4;">100% Placement Assistance</strong> in
+                            <span>Get <strong style="color:#00ddb4;">Placement Support</strong> in
                                 {{ $course->name }}</span>
                         </div>
                         <div class="cyber-point">
@@ -600,7 +600,7 @@
 
                         <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
                             <i class="fa-solid fa-shield-halved text-primary me-2"></i>
-                            Get 100% Placement Assistance in {{ $course->name }}
+                            Get Placement Support in {{ $course->name }}
                         </p>
 
                         <p class="text-dark fs-6 mb-2">
