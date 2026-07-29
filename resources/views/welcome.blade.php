@@ -6,11 +6,9 @@
     {{-- Preload the LCP hero image so the browser fetches it as early as possible --}}
     <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb3.webp') }}" fetchpriority="high">
     {{-- <link rel="preload"  as="image"  href="https://www.digicrome.com/assets/images/home-one/short.webp" type="image/webp" fetchpriority="high"> --}}
-    <link rel="preload" href="{{ asset('assets/css/home.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
-    </noscript>
+    {{-- Homepage layout styles — render-blocking on purpose, loading these
+         asynchronously flashes an unstyled page before they apply. --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
 @endpush
 @push('scripts')
     <script>
@@ -63,6 +61,55 @@
                 heroImage.addEventListener('click', openModal);
             }
         });
+
+        // Embedded players and autoplay video are the heaviest things on this page
+        // and all of them sit below the fold. Attach their sources only once they
+        // are about to be seen, so they stay out of the initial page load.
+        function activateDeferredMedia(el) {
+            if (el.dataset.activated) return;
+            el.dataset.activated = '1';
+
+            if (el.tagName === 'IFRAME') {
+                el.src = el.dataset.src;
+                return;
+            }
+
+            const source = document.createElement('source');
+            source.src = el.dataset.src;
+            source.type = 'video/mp4';
+            el.appendChild(source);
+            el.load();
+            const started = el.play();
+            if (started) started.catch(function() {});
+        }
+
+        function observeDeferredMedia() {
+            const targets = document.querySelectorAll(
+                '.js-deferred-iframe[data-src]:not([data-activated]), .js-deferred-video[data-src]:not([data-activated])'
+            );
+            if (!targets.length) return;
+
+            if (!('IntersectionObserver' in window)) {
+                targets.forEach(activateDeferredMedia);
+                return;
+            }
+
+            const observer = new IntersectionObserver(function(entries, obs) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) return;
+                    activateDeferredMedia(entry.target);
+                    obs.unobserve(entry.target);
+                });
+            }, {
+                rootMargin: '300px 0px'
+            });
+
+            targets.forEach(function(el) {
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', observeDeferredMedia);
     </script>
 @endpush
 @section('content')
@@ -260,9 +307,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div style="width:100%; max-width:600px;">
-                        <iframe loading="lazy"
-                            src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
-                            width="100%" height="340" frameborder="0"
+                        {{-- src is attached once the player scrolls into view; loading it
+                             up front pulls in the Vimeo SDK during the initial page load. --}}
+                        <iframe class="js-deferred-iframe" loading="lazy" src="about:blank"
+                            data-src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
+                            title="Digicrome overview" width="100%" height="340" frameborder="0"
                             allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
                         </iframe>
                     </div>
@@ -786,11 +835,12 @@
                                                 data-youtube="https://www.youtube.com/embed/{{ $video->video_link }}">
 
                                                 <div class="gif-container">
-                                                    <video class="gif-img" autoplay loop muted playsinline
-                                                        poster="{{ asset('storage/' . $video->image) }}">
-                                                        <source src="{{ asset('storage/' . $video->image) }}"
-                                                            type="video/mp4">
-                                                    </video>
+                                                    {{-- Sources are attached on scroll: autoplay video downloads
+                                                         immediately otherwise, one file per slide. --}}
+                                                    <video class="gif-img js-deferred-video" loop muted playsinline
+                                                        preload="none"
+                                                        data-src="{{ asset('storage/' . $video->image) }}"
+                                                        poster="{{ asset('storage/' . $video->image) }}"></video>
 
                                                     <div class="play-btn">▶</div>
                                                 </div>
@@ -1134,6 +1184,12 @@
                         disableOnInteraction: false
                     }
                 });
+                // Loop mode clones slides, so re-scan for the cloned <video>
+                // elements that did not exist when the observer first ran.
+                if (typeof observeDeferredMedia === 'function') {
+                    observeDeferredMedia();
+                }
+
                 const cards = document.querySelectorAll('.gif-wrapper');
                 const player = document.getElementById('youtubePlayer');
                 const modal = document.getElementById('youtubeModal');

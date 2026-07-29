@@ -19,35 +19,10 @@ use Stevebauman\Location\Facades\Location;
 
 class HomeController extends Controller
 {
-    /**
-     * Geo-lookup hits an external API (ip-api.com) over HTTP, which sits directly
-     * in the request's TTFB. Cache the answer per IP so only the first visitor
-     * from an address pays for it, and never let a slow/failed lookup break the page.
-     */
-    private function resolveCountry(?string $ip): string
-    {
-        $key = 'geo_country_' . md5((string) $ip);
-
-        if ($cached = Cache::get($key)) {
-            return $cached;
-        }
-
-        try {
-            $position = Location::get($ip);
-            $country = $position->countryName ?? null;
-        } catch (\Throwable $e) {
-            $country = null;
-        }
-
-        // Retry failed lookups soon; keep successful ones for a day.
-        Cache::put($key, $country ?: 'Unknown', $country ? now()->addDay() : now()->addMinutes(10));
-
-        return $country ?: 'Unknown';
-    }
-
     public function index(Request $request)
     {
-        $userCountry = $this->resolveCountry($request->ip());
+        $position = Location::get($request->ip());
+        $userCountry = $position->countryName ?? 'Unknown';
 
         $collections = Collection::with(['courses' => function ($query) {
             $query->where('status', 1)->limit(4); 
@@ -86,10 +61,8 @@ class HomeController extends Controller
         $studentStories = StudentStory::latest()->get(); 
         $meta = Metatag::where('page_name', 'Home')->first();
         $testimonials = Testimonial::latest()->get();
-        // The view only renders the three most recent posts.
         $blogs = Blog::where('status', 'published')
         ->orderByDesc('created_at')
-        ->take(3)
         ->get();
         $mentors = Mentor::all();
         $videos = Video::latest()->get();

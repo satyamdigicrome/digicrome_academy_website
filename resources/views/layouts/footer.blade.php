@@ -351,7 +351,14 @@
             }
         });
     });
-    window.addEventListener('load', function() {
+    // window.addEventListener('load', function() {
+    //     document.body.classList.add('loaded');
+    // });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+    } else {
         document.body.classList.add('loaded');
-    });
+    }
 </script>

@@ -34,51 +34,104 @@
         crossorigin="anonymous">
     <link rel="preload" href="{{ asset('assets/css/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2') }}"
         as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ asset('assets/webfonts/fa-solid-900.woff2') }}" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-    {{--
-        Layout-critical CSS. These MUST be render-blocking: loading them
-        asynchronously makes the browser paint raw, unstyled HTML first and
-        restyle it once the CSS lands (the flash of unstyled content).
-    --}}
+    {{-- Critical CSS: load synchronously (bootstrap + theme) --}}
+    <link rel="preload" href="{{ asset('assets/css/bootstrap.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ asset('assets/css/theme-default.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ asset('assets/css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/fonts-bunny.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-
-    {{--
-        Non-critical CSS (icon fonts, animations, decorations). `media="print"`
-        keeps these out of the render-blocking path; the onload handler promotes
-        them to `all` as soon as they arrive. Nothing here affects layout, so at
-        worst an icon or animation appears a beat late.
-    --}}
-    @php
-        $deferredStyles = [
-            'assets/css/all.min.css',
-            'assets/css/bootstrap-icons.css',
-            'assets/css/animate.css',
-            'assets/css/animated-text.css',
-            'assets/css/coustom-animation.css',
-            'assets/css/owl.transitions.css',
-            'assets/css/odometer-theme-default.css',
-            'assets/css/scroll-up.css',
-        ];
-    @endphp
-    @foreach ($deferredStyles as $style)
-        <link rel="stylesheet" href="{{ asset($style) }}" media="print" onload="this.media='all';this.onload=null">
-    @endforeach
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" media="print"
-        onload="this.media='all';this.onload=null">
-    <noscript>
-        @foreach ($deferredStyles as $style)
-            <link rel="stylesheet" href="{{ asset($style) }}">
-        @endforeach
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     </noscript>
+    
+    <link rel="preload" href="{{ asset('assets/css/google-fonts.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}">
+    </noscript>
+    <link rel="preload" href="{{ asset('assets/css/fonts-bunny.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/fonts-bunny.css') }}">
+    </noscript>
+    <link rel="preload" href="{{ asset('assets/css/all.min.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/bootstrap-icons.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/flaticon.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/owl.carousel.min.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/animate.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/animated-text.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/meanmenu.min.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/owl.transitions.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/responsive.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/coustom-animation.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/coustom-animation.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/odometer-theme-default.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}">
+    </noscript>
+
+    <link rel="preload" href="{{ asset('assets/css/scroll-up.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/scroll-up.css') }}">
+    </noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" media="print"
+        onload="this.media='all'">
     <script type="application/ld+json" >
       {
         "@context": "https://schema.org",
@@ -200,20 +253,18 @@
             }
         }
 
-        /* Reserve the bar's height up front so revealing it never shifts layout */
+        /* Hide mobile menu initially until page is fully loaded */
         .mobile-menu-area {
             visibility: hidden;
             opacity: 0;
-            min-height: 60px;
+            min-height:60px;
         }
 
-        /* Revealed on DOMContentLoaded — waiting for full window load kept the
-           mobile header invisible until every image and third-party script
-           finished, which on mobile was several seconds. */
+        /* Once page is fully loaded, show the mobile menu */
         body.loaded .mobile-menu-area {
             visibility: visible;
             opacity: 1;
-            transition: visibility 0s, opacity 0.3s ease-in;
+            transition: visibility 0s, opacity 0.5s ease-in;
         }
 
         @media (max-width: 767px) {
@@ -519,6 +570,5 @@
     }
 
     </style>
-    {{-- @if (request()->is('profile*', 'dashboard*', 'admin*')) --}}
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    {{-- @endif --}}
+    <!--End of Tawk.to Script-->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])

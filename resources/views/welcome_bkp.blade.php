@@ -3,65 +3,23 @@
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
-    <link href="{{ asset('assets/css/home.css') }}" type="text/css" media="all" as="style"
-        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
-    <style>
-        /* BACKDROP */
-        .christmas-offer-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 9998;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .christmas-offer-modal.active {
-            display: flex;
-        }
-
-        /* IMAGE CONTAINER */
-        .christmas-offer-content {
-            width: 90%;
-            max-width: 900px;
-            aspect-ratio: 16 / 9;
-            background: url('{{ asset('assets/images/website_special_offer.webp') }}') center center / contain no-repeat;
-            cursor: pointer;
-        }
-
-        /* CLOSE BUTTON */
-        .christmas-close-btn {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 32px;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
-            z-index: 9999;
-            line-height: 1;
-        }
-
-        .christmas-close-btn:hover {
-            color: #ffcc66;
-        }
-
-        /* MOBILE */
-        @media (max-width: 576px) {
-            .christmas-offer-content {
-                width: 95%;
-                aspect-ratio: 4 / 5;
-            }
-        }
-    </style>
+    {{-- Preload the LCP hero image so the browser fetches it as early as possible --}}
+    <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb3.webp') }}" fetchpriority="high">
+    {{-- <link rel="preload"  as="image"  href="https://www.digicrome.com/assets/images/home-one/short.webp" type="image/webp" fetchpriority="high"> --}}
+    <link rel="preload" href="{{ asset('assets/css/home.css') }}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+    </noscript>
 @endpush
 @push('scripts')
     <script>
         let modalSource = null;
-        // window.onload = function() {
-        //     openModal();
-        // };
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                openModal();
+            }, 3000);
+        });
 
         function openModal() {
             document.getElementById("formModal").style.display = "block";
@@ -81,27 +39,6 @@
 
         function closeModal() {
             document.getElementById("formModal").style.display = "none";
-        }
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document
-                    .getElementById('christmasOfferModal')
-                    .classList.add('active');
-            }, 3000);
-        });
-
-        function openFormFromOffer() {
-            document.getElementById('christmasOfferModal').style.display = 'none';
-            const sourceInput = document.querySelector('#formModal input[name="source"]');
-            if (sourceInput) {
-                sourceInput.value = 'Holi-sale';
-            }
-            openModal();
-        }
-
-        function closeChristmasModal(e) {
-            e.stopPropagation();
-            document.getElementById('christmasOfferModal').style.display = 'none';
         }
         window.onclick = function(event) {
             const modal = document.getElementById("formModal");
@@ -125,44 +62,28 @@
             if (heroImage) {
                 heroImage.addEventListener('click', openModal);
             }
-            const holioffer = document.querySelector('.new-holi-offer');
-            if (holioffer) {
-                holioffer.addEventListener('click', function() {
-                    const HoliSourceinput = document.querySelector('#formModal input[name="source"]');
-                    if (HoliSourceinput) {
-                        HoliSourceinput.value = 'Holi-sale';
-                    }
-                    openModal();
-                });
-            }
         });
     </script>
 @endpush
 @section('content')
-    <div id="christmasOfferModal" class="christmas-offer-modal" style="display: flex;">
-        <div class="christmas-offer-content" onclick="openFormFromOffer()">
-        </div>
-        <span class="christmas-close-btn" onclick="closeChristmasModal(event)">×</span>
-    </div>
     <section class="hero_area style-one d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-lg-6">
                     <div class="hero_content">
                         <h5><i class="bi bi-check2"></i>Enhance Your future skills with just a click</h5>
-                        <h1>Start building your<br>
+                        <h1 class="text-capitalize">Start building your<br>
                             future with a better career transition</h1>
                         @if ($userCountry === 'India')
                             <div style="text-align: left; margin: 10px 0; width: 60%;">
                                 <div
                                     style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
                                     <small style="font-size: 14px; color: #555;">In collaboration with</small>
-                                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}"
+                                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/msblack.webp') }}"
                                         class="ds-logo lazyload" alt="Microsoft Logo" title="Microsoft logo"
                                         style="width: 100%; height: auto; margin-top: 5px;">
                                 </div>
                             </div>
-                        @else
                         @endif
                         <p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and
                             position yourself as the top choice for employers in your industry.</p>
@@ -175,13 +96,13 @@
                                 style="border-color: #000000 !important;" role="button">
                                 <a href="https://vimeo.com/1166319733" target="_blank">CAMPUS TOUR<i
                                         class="fa-brands fa-youtube"
-                                        style="font-size: 18px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
+                                        style="display: inline-block; width: 22px; height: 22px;font-size: 18px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="hero-rating-box desktop-only2">
                         <div class="hero-rating-icon">
-                            <span>10k+</span>
+                            <span>20k+</span>
                         </div>
                         <div class="hero-rating-item-box">
                             <div class="hero-star-icon">
@@ -213,20 +134,20 @@
                 <div class="col-lg-6">
                     <div class="hero-thumb-wrapper">
                         <div class="hero-thumb">
-                            <img width="600" fetchpriority="high" height="400" rel="preload" as="image"
-                                loading="eager" src="{{ asset('assets/images/home-one/hero-thumb1.webp') }}"
-                                alt="Digicrome thumb" title="Digicrome thumb">
+                            <img width="600" height="400" fetchpriority="high" loading="eager"
+                                src="{{ asset('assets/images/home-one/hero-thumb3.webp') }}" alt="Digicrome thumb"
+                                title="Digicrome thumb">
                         </div>
                         <div class="hero-arrow-shape">
-                            <img rel="preload" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
+                            <img loading="lazy" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
-                        <div class="hero-dot-shape">
-                            <img rel="preload"
-                                style="width: 306px; height: auto; position: relative; top: -209px; left: 70px;"
+                        {{-- <div class="hero-dot-shape">
+                            <img fetchpriority="high" loading="eager" decoding="async"
+                                style="width: 306px; height: auto;   transform: translate(70px, -209px);"
                                 src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
                                 title="digicrome dot">
-                        </div>
+                        </div> --}}
                         {{-- <div class="hero-shape3 bounce-animate-3">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}"
                                 alt="digicrome shape" title="digicrome shape">
@@ -237,7 +158,7 @@
                                     alt="digicrome autor" title="digicrome author">
                             </div>
                             <div class="hero-autor-content">
-                                <h3 class="counter">130</h3>
+                                <span class="counter">130</span>
                                 <span>+</span>
                                 <p>Expert Instructor</p>
                             </div>
@@ -252,13 +173,12 @@
             <div class="row align-items-center section-title-space">
                 <div class="col-lg-6">
                     <div class="section-sub-title pt-6" style="    margin-top: 50px;">
-                        <h6>core features</h6>
+                        <h2>core features</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h2 style="font-size: 30px; font-weight: bold;">Get Expertise & Hands On Advancement </h2>
-                        <h2 style="font-size: 30px; font-weight: bold;">In Your Career With Best Industry Experts!</h2>
+                        <h3 style="font-size: 30px; font-weight: bold;">Get Expertise & Hands On Advancement In Your Career With Best Industry Experts!</h3>
                     </div>
                 </div>
             </div>
@@ -287,9 +207,9 @@
                                 alt="digicrome feature-icon" title="digicrome feature-icon">
                         </div>
                         <div class="feature-content">
-                            <h4 class="feature-title">45+ Industry-Relevant Projects</h4>
+                            <h4 class="feature-title">45+ Relevant Projects</h4>
                             <p class="feature-desc">Work on our industry-based live projects to harness top-level industry
-                                experience and make way to a winning career.</p>
+                                experience and make way to a winning career opportunity.</p>
                         </div>
                         <div class="educate-hover-box hover-bx"></div>
                         <div class="educate-hover-box hover-bx2"></div>
@@ -304,7 +224,7 @@
                                 alt="digicrome feature-icon" title="digicrome feature-icon">
                         </div>
                         <div class="feature-content">
-                            <h4 class="feature-title">60+ Topic-Wise Case Studies</h4>
+                            <h4 class="feature-title">60+ Case Studies</h4>
                             <p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong
                                 foundation. Get 24/7 assistance available for assignments.</p>
                         </div>
@@ -322,7 +242,7 @@
                         </div>
                         <div class="feature-content">
                             <h4 class="feature-title">Job Ready Program</h4>
-                            <p class="feature-desc">Exclusive placement cell dedicated to students completing the course,
+                            <p class="feature-desc">Placement cell dedicated to students completing the course,
                                 we
                                 help secure job opportunities. So far, 5,000+ students have been employed.</p>
                         </div>
@@ -335,33 +255,50 @@
             </div>
         </div>
     </section>
-    <div class="hero-section">
-        <div class="hero-section" style="position: relative;">
-            <picture>
-                {{-- Mobile --}}
-                <source media="(max-width: 768px)"
-                    srcset="
-                    {{ asset('assets/images/home-one/ai-summit-480.webp') }} 480w,
-                    {{ asset('assets/images/home-one/ai-summit-768.webp') }} 768w
-                "
-                    sizes="100vw">
-                {{-- AVIF Desktop --}}
-                <source type="image/avif" srcset="{{ asset('assets/images/home-one/ai-summit.avif') }}">
-
-                {{-- WebP Desktop Fallback --}}
-                <source type="image/webp" srcset="{{ asset('assets/images/home-one/ai-summit.webp') }}">
-                {{-- <source srcset="{{ asset('assets/images/home-one/ai-summit-mob2.webp') }}" media="(max-width: 768px)"> --}}
-                <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="Hero Banner" width="1200"
-                    height="400" decoding="async" style="width:100%;height:auto;">
-            </picture>
-        </div>
-        {{-- <div class="container">
-            <div class="both-btn">
-                <button type="button" class="btn button-repfirst" onclick="openModal()" style="">
-                    CONNECT WITH US
-                </button>
+    <div class="course-design-offer-area style-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="width:100%; max-width:600px;">
+                        <iframe loading="lazy"
+                            src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
+                            width="100%" height="340" frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-course-offer-box">
+                        <div class="course-offer-content">
+                            <h6>Digicrome</h6>
+                            <h4>Data Science With</h4>
+                            <h4>Artificial Intelligence</h4>
+                            <div class="offer-rating">
+                                <ul>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
+                                </ul>
+                                <div class="offer-rating-rate">
+                                    <span>(4.8 Ratings)</span>
+                                </div>
+                                <br><br>
+                            </div>
+                            <div class="course-offer-btn">
+                                <a href="javascript:void(0);" onclick="openModal()">EXPLORE NOW<i
+                                        class="flaticon flaticon-right-arrow"></i></a>
+                            </div>
+                        </div>
+                        <div class="offer-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
+                                alt="offer-thumb" title="offer-thumb">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div> --}}
+        </div>
     </div>
     {{-- <section class="ai-banner-section">
 
@@ -374,18 +311,25 @@
     <div class="container">
         <x-logo-slider :companyLogos="$companyLogos" />
     </div>
-    <section class="about-area style-one">
+    {{-- <section class="about-area style-one">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="about-thumb-wrapper">
                         <div class="about-thumb">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-thumb1.webp') }}"
-                                alt="digicrome thumb" title="digicrome thumb">
-                        </div>
-                        <div class="about-thumb-shape1 bounce-animate-3">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape1.webp') }}"
-                                alt="digicrome shape" title="digicrome shape">
+                            <picture>
+                                <source
+                                    media="(max-width: 767px)"
+                                    srcset="{{ asset('assets/images/home-one/about-thumb1-mobile.webp') }}">
+                                <img
+                                    loading="lazy"
+                                    src="{{ asset('assets/images/home-one/about-thumb1.webp') }}"
+                                    alt="digicrome thumb"
+                                    title="digicrome thumb"
+                                    width="600"
+                                    height="400"
+                                    style="width:100%;height:auto;">
+                            </picture>
                         </div>
                         <div class="about-thumb-shape2 rotateme">
                             <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape2.webp') }}"
@@ -400,10 +344,10 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="about_content">
                         <div class="section-sub-title">
-                            <h6>ABOUT US</h6>
+                            <h2>ABOUT US</h2>
                         </div>
                         <div class="section_title">
-                            <h2 class="heading-like-h1">Who Are We – Introduction to Digicrome Online Platform</h2>
+                            <h3 class="heading-like-h1">Who Are We</h3>
                         </div>
                         <div class="section-title-desc">
                             <p>We are a globally reputed online educational academy. We skill up students and professionals
@@ -441,7 +385,7 @@
                             <div class="col-lg-6">
                                 <div class="about-item-box two">
                                     <div class="about-iteam-count">
-                                        <h3 class="counter">19</h3>
+                                        <h3 class="counter">20</h3
                                         <span>k+</span>
                                     </div>
                                     <div class="about-item-desc last">
@@ -456,12 +400,8 @@
                     </div>
                 </div>
             </div>
-            <div class="about-shape5">
-                <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape5.webp') }}" alt="digicrome shape"
-                    title="digicrome shape">
-            </div>
         </div>
-    </section>
+    </section> --}}
     @if ($userCountry === 'India')
         <div class="brand-area style-one">
             <div class="container">
@@ -495,15 +435,14 @@
                     <img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="digicrome arrow"
                         title="digicrome arrow">
                 </div>
-                <div class="brand-star-shape">
+                {{-- <div class="brand-star-shape">
                     <img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
                         title="digicrome star">
-                </div>
+                </div> --}}
             </div>
         </div>
-    @else
     @endif
-    <section class="about-area style-five">
+    <section class="about-area style-five pt-5 pb-0">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6">
@@ -552,6 +491,7 @@
                             opacity: 0;
                             transform: scale(0.8);
                             transition: opacity 1.5s ease, transform 1.5s ease;
+                            /* aspect-ratio: 3/4; */
                         }
 
                         .zoom-sequence .image.show {
@@ -594,11 +534,11 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="about_content">
                         <div class="section-sub-title">
-                            <h6>Our Achievement</h6>
+                            <h2>Our Achievement</h2>
                         </div>
                         <div class="section_title">
-                            <h2 class="heading-like-h1"> Digicrome wins Best Edtech award <br>in online digital education
-                                at the <br> Bharat Gaurav summit 2026</h2>
+                            <h3 class="heading-like-h1 text-capitalize"> Digicrome wins Best Edtech award in online digital education
+                                at the Bharat Gaurav summit 2026</h3>
 
                         </div>
                         <div class="section-title-desc two">
@@ -650,8 +590,8 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="section_title mb-4">
-                        <h2 class="heading-like-h1">Our Certification Partners</h2>
+                    <div class="section_title">
+                        <h2 class="heading-like-h1 text-capitalize">Our Certification Partners</h2>
                     </div>
                     <p class="mb-4">
                         Empowering learners through globally recognized certifications with industry-leading organizations.
@@ -673,131 +613,18 @@
             </div>
         </div>
     </div>
-    <div class="case-study-area style-one">
-        <div class="container">
-            <div class="row align-items-center section-title-space">
-                <div class="col-lg-6">
-                    <div class="section-sub-title">
-                        <h6>OUR COURSES</h6>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="section_title">
-                        <h2 class="heading-like-h1">Our Courses – Comprehensive</br>
-                            Available all programs</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row case-study-bg">
-                <div class="col-lg-12 col-sm-12">
-                    <div class="case_study_nav">
-                        <div class="case_study_menu">
-                            <ul class="menu-filtering">
-                                <li class="current_menu_item" data-filter=".Upcoming">Upcoming Courses</li>
-                                @foreach ($collections as $collection)
-                                    <li data-filter=".{{ Str::slug($collection->name) }}">{{ $collection->name }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var grid = document.querySelector('.image_load');
-                var iso = new Isotope(grid, {
-                    itemSelector: '.grid-item',
-                    layoutMode: 'fitRows'
-                });
-                var filterButtons = document.querySelectorAll('.menu-filtering li');
-                filterButtons.forEach(function(button) {
-                    button.addEventListener('click', function() {
-                        filterButtons.forEach(btn => btn.classList.remove('current_menu_item'));
-                        this.classList.add('current_menu_item');
-                        var filterValue = this.getAttribute('data-filter');
-                        iso.arrange({
-                            filter: filterValue
-                        });
-                    });
-                });
-                iso.arrange({
-                    filter: '.Upcoming'
-                });
-            });
-        </script>
-        <div class="container">
-            <div class="row image_load">
-                @foreach ($upcomingCourses as $course)
-                    <div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming">
-                        <div class="case-study-single-box">
-                            <div class="case-study-thumb">
-                                <img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="case-study-thumb"
-                                    title="case-study-thumb">
-                            </div>
-                            <div class="case-study-content">
-                                <h5>Courses</h5>
-                                <h4><a
-                                        href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
-                                </h4>
-                                <div class="case-rating">
-
-                                    <div class="case-rating-num">
-                                        <span>Duration: {{ $course->course_duration }}</span>
-                                    </div>
-                                </div>
-
-                                <br><br>
-                                <div class="course-btn">
-                                    <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
-                                            class="flaticon flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                @foreach ($collections as $collection)
-                    @foreach ($collection->courses as $course)
-                        <div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }}">
-                            <div class="case-study-single-box">
-                                <div class="case-study-thumb">
-                                    <img loading="lazy" src="{{ asset('storage/' . $course->image) }}"
-                                        alt="case-study-thumb" title="case-study-thumb">
-                                </div>
-                                <div class="case-study-content">
-                                    <h5>{{ $collection->name }}</h5>
-                                    <h4><a
-                                            href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
-                                    </h4>
-                                    <div class="case-rating">
-
-                                        <div class="case-rating-num">
-                                            <span>Duration: {{ $course->course_duration }}</span>
-                                        </div>
-                                    </div>
-                                    <br><br>
-                                    <div class="course-btn">
-                                        <a href="{{ route('course_details', ['slug' => $course->slug]) }}">EXPLORE NOW<i
-                                                class="flaticon flaticon-right-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                @endforeach
-            </div>
-        </div>
-    </div>
-    <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
+    {{-- @include('components.certification_partners_compact', ['certificate'=>$certificate]) --}}
+    @include('components.course-partial')
+    {{-- <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="choose-content">
                         <div class="section-sub-title">
-                            <h6>why choose us?</h6>
+                            <h2>why choose us?</h2>
                         </div>
                         <div class="section_title">
-                            <h2 class="heading-like-h1">We Bring You Closer To<br>A Successful Career</h2>
+                            <h3 class="heading-like-h1">We Bring You Closer To<br>A Successful Career</h3>
                         </div>
                         <div class="section-title-desc">
                             <p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we
@@ -864,12 +691,9 @@
                 <img loading="lazy"src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape1"
                     title="shape1">
             </div>
-            {{-- <div class="choose-shape2">
-                <img loading="lazy"src="{{ asset('assets/images/home-one/choose-circle.webp') }}" alt="shape2"
-                    title="shape2">
-            </div> --}}
         </div>
-    </div>
+    </div> --}}
+    @include('components.linkedinreview',['feedbacks'=>$feedbacks])
     <div class="brand-area style-one mt-4">
         <div class="container">
             <div class="row">
@@ -899,57 +723,12 @@
                             <div class="col-lg-12">
                                 <div class="single-brand-box">
                                     <div class="brand-thumb">
-                                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
+                                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
                                             title="brand-thumb">
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="course-design-offer-area style-one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div style="width:100%; max-width:600px;">
-                        <iframe
-                            src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
-                            width="100%" height="340" frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-course-offer-box">
-                        <div class="course-offer-content">
-                            <h6>Digicrome</h6>
-                            <h4>Data Science With</h4>
-                            <h4>Artificial Intelligence</h4>
-                            <div class="offer-rating">
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-                                </ul>
-                                <div class="offer-rating-rate">
-                                    <span>(4.8 Ratings)</span>
-                                </div>
-                                <br><br>
-                            </div>
-                            <div class="course-offer-btn">
-                                <a href="javascript:void(0);" onclick="openModal()">EXPLORE NOW<i
-                                        class="flaticon flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                        <div class="offer-thumb">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
-                                alt="offer-thumb" title="offer-thumb">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -961,7 +740,7 @@
                 <div class="container">
                     <div class="row py-5 align-items-start">
                         <div class="col-lg-3 order-1 order-lg-1 mb-4 mb-lg-0">
-                            <h3 class="section-title">Our 3 Steps</h3>
+                            <h2 class="section-title">Our 3 Steps</h2>
                             <p class="section-sub">Recruitment Process</p>
                             <div class="steps-wrapper">
                                 <div class="step-item">
@@ -969,7 +748,7 @@
                                         <i class="fa-solid fa-user"></i>
                                     </div>
                                     <div class="step-content">
-                                        <h6>Profile Building</h6>
+                                        <h3>Profile Building</h3>
                                         <small>Strong ATS-Friendly Resume</small>
                                         <small>Optimize LinkedIn Profile</small>
                                     </div>
@@ -979,7 +758,7 @@
                                         <i class="fa-solid fa-comments"></i>
                                     </div>
                                     <div class="step-content">
-                                        <h6>Mock Interviews</h6>
+                                        <h3>Mock Interviews</h3>
                                         <small>Technical Interviews</small>
                                         <small>Interview Strategy</small>
                                     </div>
@@ -989,7 +768,7 @@
                                         <i class="fa-solid fa-briefcase"></i>
                                     </div>
                                     <div class="step-content">
-                                        <h6>Right Opportunity</h6>
+                                        <h3>Right Opportunity</h3>
                                         <small>Job Mapping</small>
                                         <small>Interview Scheduling</small>
                                     </div>
@@ -1022,7 +801,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3 order-3 order-lg-3 mt-5 mt-lg-0">
-                            <h4 class="section-title">Beyond Courses:</h4>
+                            <h2 class="section-title">Beyond Courses:</h2>
                             <p class="section-sub">Additional Support We Provide</p>
                             <div class="beyond-grid">
                                 <div class="beyond-box">
@@ -1326,8 +1105,7 @@
             }
         </style>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-
+            window.addEventListener('load', function () {
                 const swiper = new Swiper(".mySwiper", {
                     effect: "coverflow",
                     grabCursor: true,
@@ -1374,17 +1152,18 @@
             });
         </script>
     @endif
-    <div class="testimonial-area style-two mt-4">
+    @include('components.testimonial-partial', ['testimonials' => $testimonials])
+    {{-- <div class="testimonial-area style-two mt-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="section-sub-title two">
-                        <h6><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
-                                alt="subtitle-icon" title="subtitle-icon">TESTIMONIALS</h6>
+                        <h2 style="font-size: 16px; line-height: 30px; color: var(--primary-color); border-radius: 18px; background-color: rgb(30 194 142 / 10%); padding: 3px 16px; margin-bottom: 25px;"><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
+                                alt="subtitle-icon" title="subtitle-icon">TESTIMONIALS</h2>
                     </div>
                     <div class="section_title two">
-                        <h2 class="heading-like-h1">What Students Say About</br>
-                            Digicrome Experience</h2>
+                        <h3 class="heading-like-h1">What Students Say About
+                            Digicrome</h3>
                     </div>
                     <div class="section-title-desc two">
                         <p>Students love the hands-on learning, expert mentors, and real-world projects that make the
@@ -1447,22 +1226,21 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <x-mentor-popup :mentors="$mentors" />
-    <div class="testimonial-area style-inner">
+    {{-- <div class="testimonial-area style-inner">
         <div class="container">
             <div class="row section-title-space">
                 <div class="col-xl-4 col-lg-12">
                     <div class="section-sub-title three">
-                        <h6><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
+                        <h2 style="color:var(--primary-color);"><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
                                 alt="sub-title2" title="sub-title2">Success Stories
-                        </h6>
+                        </h2>
                     </div>
                     <div class="section_title">
-                        <h2 class="heading-like-h1">All Real Experiences
-                            <br>From Our Dedicated</br>
-                            Learners
-                        </h2>
+                        <h3 class="heading-like-h1">All Real Experiences
+                            From Our Dedicated Learners
+                        </h3>
                     </div>
                     <div class="testi-review-box">
                         <div class="review-image">
@@ -1516,13 +1294,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+    @include('components.success-story-partial', ['studentStories' => $studentStories])
     <section>
         <div class="container-fluid Learner-say-combine">
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h4>See What Our Learners Say!</h4>
+                        <h2>See What Our Learners Say!</h2>
                         <div class="social-media-links">
                             <div class="first-card">
                                 <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
@@ -1569,11 +1348,11 @@
                                         src="{{ asset('assets/images/see_what/google_home.svg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.2</p> <img alt="Star icon representing rating" width="15"
+                                            <p>4.8</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
-                                            <p>1499+ Google Reviews</p>
+                                            <p>399+ Google Reviews</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1596,15 +1375,15 @@
                             <!-- Google Review Section 3 -->
                             <div class="inner-div-icon">
                                 <div class="cover-google"> <img alt="Sikhao logo" loading="lazy" class="lazyload10"
-                                        src="{{ asset('assets/images/see_what/sikhao_home.svg') }}">
+                                        src="{{ asset('assets/images/see_what/ambition-box.jpeg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.5</p> <img alt="Star icon representing rating" width="15"
+                                            <p>4.3</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy" class="lazyload10"
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
-                                            <p>456+ Shiksha Reviews</p>
+                                            <p>50+ Ambition Box Reviews</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1620,7 +1399,7 @@
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
-                                            <p>730+ MouthShut Reviews</p>
+                                            <p>230+ MouthShut Reviews</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1628,15 +1407,15 @@
                             <!-- Google Review Section 5 -->
                             <div class="inner-div-icon last-switchupicon-hide">
                                 <div class="cover-google"> <img alt="Face icon representing a review" loading="lazy"
-                                        src="{{ asset('assets/images/see_what/switchup.png') }}">
+                                        src="{{ asset('assets/images/see_what/favicon.ico') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.9</p> <img alt="Star icon representing rating" width="15"
+                                            <p>4.0</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy"
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
-                                            <p>2370+ Switchup Reviews</p>
+                                            <p>100+ Glassdoor Reviews</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1663,11 +1442,10 @@
                 <div class="col-lg-7">
                     <div class="choose-content">
                         <div class="section-sub-title">
-                            <h6>Explore Career Opportunities in the most future-oriented sector</h6>
+                            <h2 style="font-size:14px;">Explore Career Opportunities in the most future-oriented sector</h2>
                         </div>
                         <div class="section_title">
-                            <h2>Build Skills. Grab Opportunities.</br>
-                                Start Now.</h2>
+                            <h3>Build Skills. Grab Opportunities.</h3>
                         </div>
                         <div class="section-title-desc">
                             <p>Become a professional at what you learn. Start from scratch and make your way to a career
@@ -1723,13 +1501,13 @@
             <div class="row align-items-center section-title-space">
                 <div class="col-lg-6">
                     <div class="section-sub-title">
-                        <h6>LATEST BLOGS</h6>
+                        <h2>LATEST BLOGS</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h2 class="heading-like-h1">Read out our latest updates</br>
-                            from digicrome</h2>
+                        <h3 class="heading-like-h1 text-capitalize">Read out our latest updates</br>
+                            from digicrome</h3>
                     </div>
                 </div>
             </div>
@@ -1753,7 +1531,7 @@
                                             @if ($blog->author_image)
                                                 <img loading="lazy"src="{{ asset('storage/' . $blog->author_image) }}"
                                                     alt="author-img" title="author-img"
-                                                    style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                                                    style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: white;">
                                             @endif
                                             {{ $blog->author_name }}
                                         </h4>
@@ -1762,7 +1540,7 @@
                                     <div class="blog-title">
                                         <h3>
                                             <a href="{{ route('blog.details', $blog->slug) }}">
-                                                {{ $blog->heading }}
+                                                {{ Str::words($blog->heading, 7, '...') }}
                                             </a>
                                         </h3>
                                     </div>
