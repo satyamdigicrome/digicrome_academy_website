@@ -180,7 +180,7 @@
     style="min-height: 600px; width: 100%; padding:0px background: none;">
 
     <!-- Desktop background image (only visible md and up) -->
-    <img loading="lazy" src="{{ asset('assets/images/bann.webp') }}" alt="background"
+    <img width="1920" height="720" loading="lazy" src="{{ asset('assets/images/bann.webp') }}" alt="background"
         class="img-fluid w-100 h-80 position-absolute top-0 start-0 object-cover d-none d-md-block"
         style="z-index: 1; padding-top: 12%;" />
 
@@ -256,7 +256,7 @@
                     <!-- Box 1 -->
                     <div class="features-box text-center flex-fill min-w-0">
                         <div class="date-border">
-                            <img loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-1.png') }}"
+                            <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-1.png') }}"
                                 class="lazyload mb-2" alt="data science program institute"
                                 title="data science program institute">
                             <p class="icon-plus">5000</p>
@@ -267,7 +267,7 @@
                     <!-- Box 2 -->
                     <div class="features-box text-center flex-fill min-w-0">
                         <div class="date-border">
-                            <img loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-2.png') }}"
+                            <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-2.png') }}"
                                 class="lazyload mb-2" alt="data science programs" title="data science programs">
                             <p>Internship Possibility</p>
                             <span>Based on Performance</span>
@@ -277,7 +277,7 @@
                     <!-- Box 3 -->
                     <div class="features-box text-center flex-fill min-w-0">
                         <div class="date-border">
-                            <img loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}"
+                            <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}"
                                 class="lazyload mb-2" alt="best online data science programs"
                                 title="best online data science programs">
                             <p>06 Months</p>
@@ -288,7 +288,7 @@
                     <!-- Box 4 -->
                     <div class="features-box text-center flex-fill min-w-0">
                         <div class="date-border">
-                            <img loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}"
+                            <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}"
                                 class="lazyload mb-2" alt="data science programs near me"
                                 title="data science programs near me">
                             <p style="color: #003087">Next Batch starts from</p>
@@ -499,7 +499,7 @@
                         </div>
                         <!-- Right: Company Image -->
                         <div class="col-md-6 text-center">
-    <img 
+    <img width="616" height="403" 
         loading="lazy"
         src="{{ asset('assets/images/gp.webp') }}" 
         alt="Company Image"
@@ -537,7 +537,7 @@
                     <div class="col-lg-4">
                         <!-- section title -->
                         <div class="section-sub-title two">
-                            <h6><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
+                            <h6><img width="22" height="18" loading="lazy" src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
                                     alt="icon" title="icon" style="color: #003087">TESTIMONIALS</h6>
                         </div>
                         <div class="section_title two">
@@ -592,7 +592,7 @@
                                         </div>
                                         <div class="testi-autor-box">
                                             <div class="testi-autor">
-                                                <img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}"
+                                                <img loading="lazy" src="{{ asset('storage/' . $testimonial->image) }}"
                                                     alt="testi-author" title="testi-author"
                                                     style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
                                             </div>
@@ -673,7 +673,7 @@
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3 d-flex justify-content-center">
                                     <div class="single-brand-box text-center">
                                         <div class="brand-thumb">
-                                            <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}"
+                                            <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}"
                                                 alt="brand-thumb" title="event-sidebar-thumb" class="img-fluid"
                                                 style="max-height: 60px;">
                                         </div>
@@ -701,7 +701,7 @@
 
                         <!-- Image -->
                         <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-                            <img loading="lazy" src="{{ asset('assets/images/Outcomes.webp') }}"
+                            <img width="781" height="781" loading="lazy" src="{{ asset('assets/images/Outcomes.webp') }}"
                                 alt="Program Outcome Image" title="Program Outcome Image" class="img-fluid"
                                 style="max-width: 300px; height: auto;">
                         </div>
@@ -801,7 +801,7 @@
 
                 <!-- Image Section -->
                 <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-                    <img src="{{ asset('assets/images/l2.webp') }}" alt="Career Support"
+                    <img loading="lazy" width="1563" height="1563" src="{{ asset('assets/images/l2.webp') }}" alt="Career Support"
                         title="Career Support & Guidance" class="img-fluid"
                         style="width: 300px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 </div>
@@ -929,7 +929,7 @@
 
                 <!-- Right Side Image -->
                 <div class="col-md-6 text-center">
-                    <img src="{{ asset('assets/images/last.webp') }}" alt="Tech Career Boost"
+                    <img loading="lazy" width="1080" height="1080" src="{{ asset('assets/images/last.webp') }}" alt="Tech Career Boost"
                         title="Accelerate Tech Career" class="img-fluid" style="max-width: 100%; height: auto;">
                 </div>
 

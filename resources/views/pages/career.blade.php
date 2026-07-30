@@ -351,7 +351,7 @@
 </style>
 
 <div class="custom-hero-banner">
-  <img src="{{ asset('assets/images/carrer.webp') }}" alt="Career Banner" class="hero-img" loading="lazy">
+  <img width="2095" height="750" src="{{ asset('assets/images/carrer.webp') }}" alt="Career Banner" class="hero-img" loading="lazy">
 
   <div class="container banner-text">
     <div class="breadcumb-content">
@@ -400,7 +400,7 @@
           Here, we help you transform your career into a well and top tech companies by upgrading your skills with our best courses on the latest technologies: AI, ML, Data Science, and Cybersecurity.        </span>
       </div>
       <div id="teem" class="col-lg-6 col-md-12" style="padding-top: 70px;">
-        <img loading="lazy" src="{{ asset('assets/images/dc/1d.webp')}}" alt="Image" title="Image"
+        <img width="1600" height="1066" loading="lazy" src="{{ asset('assets/images/dc/1d.webp')}}" alt="Image" title="Image"
           style="float: right; border-radius: 3%;">
       </div>
     </div>
@@ -418,7 +418,7 @@
     <div class="row">
       <div class="col-lg-3 col-md-12 text-center" style="padding-top: 30px;">
         <div>
-          <img loading="lazy" src="{{ asset('assets/images/dc/1e.webp')}}" alt="digicrome_Image" title="digicrome_Image"
+          <img width="108" height="108" loading="lazy" src="{{ asset('assets/images/dc/1e.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 38%;">
           <h3 style="padding-top:20px; ">Make an Impact</h3>
           <p
@@ -429,7 +429,7 @@
       </div>
       <div class="col-lg-3 col-md-12 text-center" style="padding-top: 30px;">
         <div>
-          <img loading="lazy" src="{{ asset('assets/images/dc/1f.webp')}}" alt="digicrome_Image" title="digicrome_Image"
+          <img width="108" height="108" loading="lazy" src="{{ asset('assets/images/dc/1f.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 35%;">
           <h3 style="padding-top:20px; ">Growth & Learning Culture</h3>
           <p
@@ -439,7 +439,7 @@
       </div>
       <div class="col-lg-3 col-md-12 text-center" style="padding-top: 30px;">
         <div>
-          <img loading="lazy" src="{{ asset('assets/images/dc/1g.webp')}}" alt="digicrome_Image" title="digicrome_Image"
+          <img width="108" height="108" loading="lazy" src="{{ asset('assets/images/dc/1g.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 35%;">
           <h3 style="padding-top:20px; ">Grow Together</h3>
           <p
@@ -449,7 +449,7 @@
       </div>
       <div class="col-lg-3 col-md-12 text-center" style="padding-top: 30px;">
         <div>
-          <img loading="lazy" src="{{ asset('assets/images/dc/1e.webp')}}" alt="digicrome_Image" title="digicrome_Image"
+          <img width="108" height="108" loading="lazy" src="{{ asset('assets/images/dc/1e.webp')}}" alt="digicrome_Image" title="digicrome_Image"
             style="width: 110px; height: 110px; border-radius: 5%; background-color:orange; margin-left: 38%;">
           <h3 style="padding-top:20px; ">Flexible & Inclusive</h3>
           <p

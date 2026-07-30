@@ -11,6 +11,25 @@
         .custom-hero-banner {
             position: relative;
             width: 100%;
+            /*
+             * owl.carousel.css ships `.owl-carousel{display:none}` and only reveals
+             * it once JS adds `.owl-loaded`, so this hero contributed zero height
+             * until the script ran and then jumped to full size — 0.289 CLS,
+             * shoving every section below it down by 260px.
+             *
+             * Reserve the slide's box here, on the wrapper, which owl never hides.
+             * The value has to track the hero's own sizing rules: 70vh on desktop
+             * (.hero-slide height), and the mobile image's aspect ratio below the
+             * 767px breakpoint where those rules switch to height:auto.
+             */
+            min-height: 70vh;
+        }
+
+        @media (max-width: 767px) {
+            .custom-hero-banner {
+                min-height: 0;
+                aspect-ratio: 1507 / 1044;
+            }
         }
 
         .hero-slider,
@@ -319,7 +338,10 @@
             right: 0;
             width: 100%;
             height: 100%;
-            background-image: url('{{ asset('assets/images/media-bg-texture.png') }}');
+            /* Was a 5824x3264 PNG weighing 12.34 MB — 85% of this page's entire
+               transfer — for a texture rendered at 10% opacity. The quarter-scale
+               WebP is 94 KB and indistinguishable at that opacity. */
+            background-image: url('{{ asset('assets/images/media-bg-texture.webp') }}');
             opacity: 0.1;
             pointer-events: none;
         }
@@ -485,9 +507,19 @@
     <div class="custom-hero-banner">
         <div class="owl-carousel hero-slider">
             <div class="hero-slide">
+                {{--
+                    The <source> carries its own width/height. Without them the
+                    browser sizes the box from the <img> attributes (2076x757,
+                    aspect 2.74) while actually loading the mobile file
+                    (1507x1044, aspect 1.44) — so the hero grew by ~120px the
+                    moment it decoded, shoving the whole page down. That single
+                    mismatch measured 0.289 CLS on a 375px viewport.
+                --}}
                 <picture>
-                    <source media="(max-width: 767px)" srcset="{{ asset('assets/images/mediamainmob.webp') }}">
-                    <img src="{{ asset('assets/images/mediamain.webp') }}" alt="Digicrome Banner" class="hero-img">
+                    <source media="(max-width: 767px)" width="1507" height="1044"
+                        srcset="{{ asset('assets/images/mediamainmob.webp') }}">
+                    <img loading="eager" fetchpriority="high" width="2076" height="757"
+                        src="{{ asset('assets/images/mediamain.webp') }}" alt="Digicrome Banner" class="hero-img">
                 </picture>
             </div>
         </div>
@@ -506,7 +538,7 @@
             <div class="logo-grid">
                 @foreach ($images as $logo)
                     <div class="logo-item">
-                        <img src="{{ asset('storage/' . $logo->image) }}" alt="Media Logo" class="img-fluid">
+                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="Media Logo" class="img-fluid">
                     </div>
                 @endforeach
             </div>
@@ -532,7 +564,7 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="about-image-wrapper">
-                        <img src="{{ asset('assets/images/certificate.webp') }}" alt="About Digicrome Team"
+                        <img width="1200" height="900" src="{{ asset('assets/images/certificate.webp') }}" alt="About Digicrome Team"
                             class="img-fluid rounded-3 shadow-sm">
                     </div>
                 </div>
@@ -561,7 +593,7 @@
                 <div class="col-lg-5 d-flex flex-column justify-content-center">
                     <div class="video-description-box p-3">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="{{ asset('assets/images/footer-logo.webp') }}" alt="Logo" width="150"
+                            <img loading="lazy" height="48" src="{{ asset('assets/images/footer-logo.webp') }}" alt="Logo" width="150"
                                 class="me-3">
                             <h4 class="mb-0 text-white fs-3 fw-3">Excellence in EdTech | Digicrome</h4>
                         </div>
@@ -620,7 +652,7 @@
                     <div class="col-md-6 col-lg-4 story-item {{ $loop->index >= 6 ? 'd-none' : '' }}">
                         <div class="story-card h-100 shadow-sm border-0 rounded-3 bg-white p-4 d-flex flex-column">
                             <div class="media-logo-wrapper mb-3">
-                                <img src="{{ asset('uploads/articles/' . $article->image) }}" alt="{{ $article->heading }}"
+                                <img loading="lazy" src="{{ asset('uploads/articles/' . $article->image) }}" alt="{{ $article->heading }}"
                                     class="img-fluid" style="max-height: 40px; object-fit: contain;">
                             </div>
 
@@ -667,7 +699,7 @@
         @foreach ($data as $index => $entry)
             <div class="row align-items-center award-section {{ $index % 2 == 1 ? 'flex-md-row-reverse' : '' }}">
                 <div class="col-md-6">
-                    <img src="{{ asset('storage/' . $entry->image) }}" alt="{{ $entry->heading }}"
+                    <img loading="lazy" src="{{ asset('storage/' . $entry->image) }}" alt="{{ $entry->heading }}"
                         class="award-image img-fluid">
                 </div>
                 <div class="col-md-6 award-content">
@@ -680,7 +712,8 @@
 @endsection
 @push('scripts')
     <script>
-        $(document).ready(function() {
+        {{-- jQuery is deferred, so wait for DOMContentLoaded rather than calling $ mid-parse. --}}
+        document.addEventListener('DOMContentLoaded', function() {
             $(".hero-slider").owlCarousel({
                 items: 1,
                 loop: true,

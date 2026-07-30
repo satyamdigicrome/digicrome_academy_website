@@ -234,7 +234,7 @@
         <div class="df-modal-graphic">
 
             <div class="df-logo-section">
-                <img src="{{ asset('assets/images/logonew.webp') }}" alt="Digicrome Logo">
+                <img loading="lazy" width="247" height="79" src="{{ asset('assets/images/logonew.webp') }}" alt="Digicrome Logo">
             </div>
             <div class="df-graphic-illustration">
                 <!-- Smart Minimalist Phone/Consultation Icon Vector -->

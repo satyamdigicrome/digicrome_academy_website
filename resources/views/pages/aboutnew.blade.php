@@ -582,7 +582,7 @@
                             @foreach ($departments as $department)
                                 <div class="swiper-slide">
 
-                                    <img src="{{ asset($department['image']) }}" class="img-fluid rounded-4 shadow-lg w-100">
+                                    <img loading="lazy" src="{{ asset($department['image']) }}" class="img-fluid rounded-4 shadow-lg w-100">
 
                                 </div>
                             @endforeach
@@ -710,7 +710,7 @@
 
                         <div class="vision-center">
 
-                            <img src="{{ asset('assets/images/853.webp') }}" alt="AI Innovation">
+                            <img loading="lazy" width="900" height="566" src="{{ asset('assets/images/853.webp') }}" alt="AI Innovation">
 
                         </div>
 
@@ -783,7 +783,7 @@
                 @foreach ($teamMembers as $member)
                     <div class="gallery-item">
 
-                        <img src="{{ asset('storage/' . $member->image) }}" alt="{{ $member->name }}">
+                        <img loading="lazy" src="{{ asset('storage/' . $member->image) }}" alt="{{ $member->name }}">
 
                         <div class="gallery-overlay">
 
@@ -809,6 +809,8 @@
 
 @push('scripts')
     <script>
+        {{-- jQuery and Swiper are both deferred, so nothing here can run mid-parse. --}}
+        document.addEventListener('DOMContentLoaded', function() {
         $('.counter').each(function() {
 
             let $this = $(this);
@@ -879,5 +881,6 @@
 
         imageSwiper.controller.control = contentSwiper;
         contentSwiper.controller.control = imageSwiper;
+        });
     </script>
 @endpush

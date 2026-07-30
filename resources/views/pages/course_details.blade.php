@@ -82,8 +82,8 @@
                     <!-- Left Column -->
                     <div class="col-md-6">
                         <div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4">
-                            {{-- <img loading="lazy"src="{{ asset('assets/images/card11.webp') }}" width="190" height="120" alt="card1" title="card1" /> --}}
-                            <img loading="lazy"src="{{ asset('assets/images/Card.webp') }}" width="319" height="58"
+                            {{-- <img loading="lazy" src="{{ asset('assets/images/card11.webp') }}" width="190" height="120" alt="card1" title="card1" /> --}}
+                            <img loading="lazy" src="{{ asset('assets/images/Card.webp') }}" width="319" height="58"
                                 alt="card" title="card" style="border: 2px solid #f29c12; border-radius: 5px;" />
                         </div>
 
@@ -131,7 +131,7 @@
                             is being offered.</p>
                     </div>
                     <div class="col-md-6 text-end">
-                        <img loading="lazy"src="{{ asset('assets/images/3.webp') }}" class="img-fluid" alt="CIBOP"
+                        <img width="555" height="792" loading="lazy" src="{{ asset('assets/images/3.webp') }}" class="img-fluid" alt="CIBOP"
                             title="CIBOP" />
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                             class="white-strip shadow-lg rounded-4 p-4 d-flex flex-wrap justify-content-between align-items-center gap-4">
                             <div class="features-box text-center flex-fill min-w-0">
                                 <div class="date-border">
-                                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-1.png') }}"
+                                    <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-1.png') }}"
                                         class="lazyload" alt="data science program institute"
                                         title="data science program institute">
                                     <p class="icon-plus">5000</p>
@@ -150,7 +150,7 @@
                             </div>
                             <div class="features-box text-center flex-fill min-w-0">
                                 <div class="date-border">
-                                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-2.png') }}"
+                                    <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-2.png') }}"
                                         class="lazyload" alt="data science programs" title="data science programs">
                                     <p> Internship Possibility</p>
                                     <span> Based on Performance</span>
@@ -158,7 +158,7 @@
                             </div>
                             <div class="features-box text-center flex-fill min-w-0">
                                 <div class="date-border">
-                                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}"
+                                    <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}"
                                         class="lazyload" alt="best online data science programs"
                                         title="best online data science programs">
                                     <p>{{ $course->course_duration ?? '06 Months' }}</p>
@@ -167,7 +167,7 @@
                             </div>
                             <div class="features-box text-center flex-fill min-w-0">
                                 <div class="date-border">
-                                    <img loading="lazy"
+                                    <img width="75" height="75" loading="lazy"
                                         src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}"
                                         class="lazyload" alt="data science programs near me"
                                         title="data science programs near me">
@@ -588,9 +588,9 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4">
-                            {{-- <img loading="lazy"src="{{ asset('assets/images/card2.webp') }}" width="190" height="120"
+                            {{-- <img loading="lazy" src="{{ asset('assets/images/card2.webp') }}" width="190" height="120"
                                 alt="card1" title="card1" /> --}}
-                            {{-- <img loading="lazy"src="{{ asset('assets/images/Card.webp') }}" width="319" height="58" alt="card" title="card"
+                            {{-- <img loading="lazy" src="{{ asset('assets/images/Card.webp') }}" width="319" height="58" alt="card" title="card"
                          style="border: 2px solid #f29c12; border-radius: 5px;" /> --}}
                         </div>
 
@@ -640,7 +640,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="breadcumb-autor-box">
                                     {{-- <div class="breadcumb-autor">
-                                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-autor.webp') }}" alt="autor">
+                                <img width="56" height="56" loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-autor.webp') }}" alt="autor">
                             </div> --}}
                                     {{-- <div class="breadcumb-autor-content">
                                 <h5>John D. Alexon</h5>
@@ -676,7 +676,7 @@
                     <div class="col-xl-6 col-lg-4"></div>
                 </div>
                 {{-- <div class="bread-dot">
-            <img loading="lazy"src="{{ asset('assets/images/inner-img/bread-dot.webp') }}" alt="dot">
+            <img width="213" height="142" loading="lazy" src="{{ asset('assets/images/inner-img/bread-dot.webp') }}" alt="dot">
         </div> --}}
             </div>
         </div>
@@ -698,7 +698,7 @@
                         @foreach ($chunk as $keypoint)
                             <div class="col-md-3 mb-3">
                                 <div class="d-flex align-items-center">
-                                    <img loading="lazy"src="{{ asset('assets/images/tik.png') }}"
+                                    <img width="225" height="225" loading="lazy" src="{{ asset('assets/images/tik.png') }}"
                                         alt="{{ $keypoint->name }}" title="{{ $keypoint->name }}" loading="lazy"
                                         class="keyimg">
                                     <span>{{ $keypoint->name }}</span>
@@ -725,7 +725,7 @@
                     </div>
                     <!-- Right: Company Image -->
                     <div class="col-md-6 text-center">
-                        <img loading="lazy" src="{{ asset('assets/images/gp.webp') }}" alt="Company Image"
+                        <img width="616" height="403" loading="lazy" src="{{ asset('assets/images/gp.webp') }}" alt="Company Image"
                             title="Company Image" class="img-fluid"
                             style="
             max-width: 90%;
@@ -736,7 +736,7 @@
         "
                             onmouseover="this.style.transform='scale(1.02) perspective(1000px) rotateX(0deg) rotateY(0deg)'"
                             onmouseout="this.style.transform='perspective(1000px) rotateX(5deg) rotateY(-5deg)'">
-                        {{-- <img loading="lazy"src="{{ asset('assets/images/About-Page.webp') }}" alt="Company Image" title="Company Image" class="img-fluid"> --}}
+                        {{-- <img width="616" height="403" loading="lazy" src="{{ asset('assets/images/About-Page.webp') }}" alt="Company Image" title="Company Image" class="img-fluid"> --}}
                     </div>
                 </div>
             </div>
@@ -746,7 +746,7 @@
                         <div class="item">
                             <div class="card shadow rounded-4 mb-4 h-100">
                                 <div class="card-body text-center">
-                                    <img loading="lazy"src="{{ asset('storage/' . $apart->image) }}"
+                                    <img loading="lazy" src="{{ asset('storage/' . $apart->image) }}"
                                         class="mb-3 mx-auto d-block" alt="image1" title="image1"
                                         style="height: 70px; width: 70px;">
                                     <h5 class="card-title">{{ $apart->heading }}</h5>
@@ -836,7 +836,7 @@
                         <div class="event-sidebar">
                             <div class="event-sidebar-thumb">
                                 <img style="border-radius: 10px;"
-                                    loading="lazy"src="{{ asset('storage/' . $course->image) }}"
+                                    loading="lazy" src="{{ asset('storage/' . $course->image) }}"
                                     alt="event-sidebar-thumb" title="event-sidebar-thumb">
                             </div>
                             <div class="event-info">
@@ -1072,7 +1072,7 @@
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3 d-flex justify-content-center">
                                     <div class="single-brand-box text-center">
                                         <div class="brand-thumb">
-                                            <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}"
+                                            <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}"
                                                 alt="brand-thumb" title="event-sidebar-thumb" class="img-fluid"
                                                 style="max-height: 60px;">
                                         </div>
@@ -1150,7 +1150,7 @@
                             <div class="col-lg-12">
                                 <div class="single-brand-box">
                                     <div class="brand-thumb">
-                                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
+                                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
                                             title="brand-thumb">
                                     </div>
                                 </div>
@@ -1171,7 +1171,7 @@
                 <div class="placement-box" style="padding: 5px;">
                     <div
                         style="border-radius: 6px; overflow: hidden; box-shadow: 0 0 5px rgba(0,0,0,0.1); background: #fff;">
-                        <img loading="lazy"src="{{ asset('storage/' . $placement->image) }}"
+                        <img loading="lazy" src="{{ asset('storage/' . $placement->image) }}"
                             alt="{{ $placement->name }}" title="{{ $placement->name }}"
                             style="width: 100%; height: auto;">
                         <div class="placement-overlay p-2">
@@ -1285,13 +1285,13 @@
 				<div class="col-lg-6">
 					<div class="testi-thumb-wrapper">
 						<div class="testimonial-thumb">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="testimonial-thumb" title="testimonial-thumb">
+							<img width="495" height="640" loading="lazy" src="{{ asset('assets/images/home-one/testi-thumb.webp') }}" alt="testimonial-thumb" title="testimonial-thumb">
 						</div>
 						<div class="testi-dot-shape">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="testi-dot-shape" title="testi-dot-shape">
+							<img width="73" height="73" loading="lazy" src="{{ asset('assets/images/home-one/testi-dot.webp') }}" alt="testi-dot-shape" title="testi-dot-shape">
 						</div>
 						<div class="testi-map-shape">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="testi-map-shape" title="testi-map-shape">
+							<img width="668" height="639" loading="lazy" src="{{ asset('assets/images/home-one/testi-map.webp') }}" alt="testi-map-shape" title="testi-map-shape">
 						</div>
 					</div>
 				</div>
@@ -1303,7 +1303,7 @@
     <div class="testi-box">
         <div class="single-testi-box">
             <div class="testi-quote">
-                <img loading="lazy"src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="testi-quote" title="testi-quote">
+                <img width="44" height="32" loading="lazy" src="{{ asset('assets/images/home-one/testi-quote.webp') }}" alt="testi-quote" title="testi-quote">
             </div>
             <div class="testi-title">
                 <h3>{{ $testimonial->tagline }}</h3>
@@ -1327,7 +1327,7 @@
         </div>
         <div class="testi-autor-box">
             <div class="testi-autor">   
-                <img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}" alt="testi-author" title="testi-author" style="width: 60px; height: 60px; border-radius: 50%;">
+                <img loading="lazy" src="{{ asset('storage/' . $testimonial->image) }}" alt="testi-author" title="testi-author" style="width: 60px; height: 60px; border-radius: 50%;">
             </div>
             <div class="testi-autor-content">
                 <h5 class="autor-title">{{ $testimonial->name }}</h5>
@@ -1357,7 +1357,7 @@
                 <div class="col-lg-4">
                     <!-- section title -->
                     <div class="section-sub-title two">
-                        <h6><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
+                        <h6><img width="22" height="18" loading="lazy" src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
                                 alt="icon" title="icon">TESTIMONIALS</h6>
                     </div>
                     <div class="section_title two">
@@ -1409,7 +1409,7 @@
                                     </div>
                                     <div class="testi-autor-box">
                                         <div class="testi-autor">
-                                            <img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}"
+                                            <img loading="lazy" src="{{ asset('storage/' . $testimonial->image) }}"
                                                 alt="testi-author" title="testi-author"
                                                 style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
                                         </div>
@@ -1471,7 +1471,7 @@
             </div>
         </div>
         <section class="container-fluid p-20" style="border: 1px solid #ddd;">
-            <img loading="lazy"src="{{ asset('assets/images/Start-Here-Course-Page-01.webp') }} " alt="Full Screen Image"
+            <img width="11521" height="4500" loading="lazy" src="{{ asset('assets/images/Start-Here-Course-Page-01.webp') }} " alt="Full Screen Image"
                 title="Full Screen Image">
         </section>
         <div class="bg-light py-5 mt-20">
@@ -1489,7 +1489,7 @@
                         @if ($index % 2 == 0)
                             {{-- Image Left, Text Right --}}
                             <div class="col-md-6 text-center">
-                                <img loading="lazy"src="{{ asset('storage/' . $feature->image) }}"
+                                <img loading="lazy" src="{{ asset('storage/' . $feature->image) }}"
                                     alt="{{ $feature->heading }}" title="{{ $feature->heading }}" class="session-img">
                             </div>
                             <div class="col-md-6 session-text">
@@ -1503,7 +1503,7 @@
                                 <p>{!! $feature->paragraph !!}</p>
                             </div>
                             <div class="col-md-6 text-center">
-                                <img loading="lazy"src="{{ asset('storage/' . $feature->image) }}"
+                                <img loading="lazy" src="{{ asset('storage/' . $feature->image) }}"
                                     alt="{{ $feature->heading }}" title="{{ $feature->heading }}" class="session-img">
                             </div>
                         @endif
@@ -1942,7 +1942,7 @@
                     <div class="lpx-body">
                         <div class="lpx-head">
                             <div class="lpx-logo">
-                                <img src="{{ asset('assets/images/logobg.png') }}" alt="Digicrome Logo">
+                                <img loading="lazy" width="969" height="933" src="{{ asset('assets/images/logobg.png') }}" alt="Digicrome Logo">
                             </div>
                             <button type="button" class="lpx-close" onclick="closeModal('downloadLeadPopup')"
                                 aria-label="Close">&#10005;</button>
@@ -2250,7 +2250,7 @@
 
                     <div class="qr-aside">
                         <div class="qr-logo">
-                            <img src="{{ asset('assets/images/logobg.png') }}" alt="Digicrome Logo">
+                            <img loading="lazy" width="969" height="933" src="{{ asset('assets/images/logobg.png') }}" alt="Digicrome Logo">
                         </div>
                         <div class="qr-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
 

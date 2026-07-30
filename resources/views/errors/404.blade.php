@@ -21,16 +21,16 @@
 						<a href="/"><i class="bi bi-house-door-fill"></i>Back to Home</a>
 					</div>
 					<div class="error_shape1 bounce-animate">
-						<img loading="lazy"src="{{ asset('assets/images/inner-img/error_shape2.webp') }}" alt="">
+						<img width="89" height="88" loading="lazy" src="{{ asset('assets/images/inner-img/error_shape2.webp') }}" alt="">
 					</div>
 					<div class="error_shape2 dance">
-						<img loading="lazy"src="{{ asset('assets/images/inner-img/error_shape3.webp') }}" alt="">
+						<img width="121" height="77" loading="lazy" src="{{ asset('assets/images/inner-img/error_shape3.webp') }}" alt="">
 					</div>
 					<div class="error_shape3 dance2">
-						<img loading="lazy"src="{{ asset('assets/images/inner-img/404_shape1.webp') }}" alt="">
+						<img width="271" height="271" loading="lazy" src="{{ asset('assets/images/inner-img/404_shape1.webp') }}" alt="">
 					</div>
 					<div class="error_shape4 dance3">
-						<img loading="lazy"src="{{ asset('assets/images/inner-img/404_shape2.webp') }}" alt="">
+						<img width="114" height="113" loading="lazy" src="{{ asset('assets/images/inner-img/404_shape2.webp') }}" alt="">
 					</div>
 				</div>
 			</div>

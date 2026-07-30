@@ -1,0 +1,151 @@
+/*
+ * Layout-shift guards for images whose size is not known at build time.
+ *
+ * Every <img> pointing at a static file under public/assets carries explicit
+ * width/height attributes, so the browser reserves its box before the bytes
+ * arrive. The images below are uploaded through the admin panel, so their
+ * intrinsic size varies per record and no attribute can be written into the
+ * template. Pinning an aspect-ratio on the slot does the same job: the box is
+ * reserved at first layout and the image is fitted into it once it loads.
+ *
+ * object-fit: cover keeps the crop consistent across records rather than
+ * letting one tall upload stretch a card out of line with its neighbours.
+ */
+
+/* --- Blog cards (blog listing, about page) --- */
+.style-one .single-blog-thumb,
+.single-blog-box .single-blog-thumb {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.style-one .single-blog-thumb > img,
+.single-blog-box .single-blog-thumb > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Blog detail hero --- */
+.single-blog-dtls-box .blog-thumb {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+}
+
+.single-blog-dtls-box .blog-thumb > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Course cards (course listing) --- */
+.course-details-box .course-details-thumb {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    position: relative;
+}
+
+.course-details-box .course-details-thumb > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Course detail page hero thumbnail --- */
+.style-inner .course-details-thumb > img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* --- Media-presence article cards --- */
+.media-presence-card img,
+.article-card img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/*
+ * --- No stray horizontal scrollbar ---
+ *
+ * The header dropdowns (.sub_menu, min-width 650px) are hidden with
+ * `visibility: hidden; opacity: 0` rather than `display: none`, so they still take
+ * part in layout. "More" is the last item in the bar, and its panel is anchored
+ * `left: 0` against it, which put the right edge at ~1528px on a 1265px viewport
+ * and gave every page a 29px horizontal scroll — visible as a scrollbar, and on
+ * touch as a page that drifts sideways.
+ *
+ * Anchoring the last dropdown to the right of its own item keeps it on screen and
+ * removes the overflow at its source. Every earlier item has room to open
+ * leftwards as before, so only the last one changes.
+ */
+.header-menu ul li.menu-align-right .sub_menu:not(.mega-menu) {
+    left: auto;
+    right: 0;
+}
+
+/*
+ * Belt and braces for anything else that overhangs: clip rather than hide.
+ * `overflow: hidden` here would turn the body into a scroll container and
+ * silently break `position: sticky` on the header; `clip` discards the overflow
+ * without creating one, and leaves vertical scrolling on the viewport.
+ */
+body {
+    overflow-x: clip;
+}
+
+/*
+ * --- Decorative "shine" sweep: move it with transform, not `left` ---
+ *
+ * The theme puts a gloss highlight on card thumbnails as an absolutely
+ * positioned ::before offset by a percentage (`left: -75%`), and sweeps it
+ * across on hover by animating `left` to 100%.
+ *
+ * `left` is a layout property, so every frame of that animation — and every
+ * recalculation of the percentage as images and fonts settle the grid's width —
+ * registers as a layout shift. On the course listing that measured 54 shifts
+ * totalling 0.151 CLS, more than the entire rest of the page.
+ *
+ * Same visual effect, expressed as a transform: transforms are composited and
+ * explicitly excluded from layout-shift accounting. The element is 50% of its
+ * container's width, so container-relative -75%/100% become -150%/200% of the
+ * element's own width. The skew is part of the original look and is preserved.
+ */
+.style-five .course-thumb::before,
+.style-four .program-thumb::before,
+.style-inner .course-details-thumb::before,
+.style-one .case-study-thumb::before,
+.style-one .course-design-thumb::before,
+.style-one .single-blog-thumb::before,
+.style-three .about-thumb::before,
+.style-three .campus-life-thumb::before,
+.style-two .course-design-thumb::before,
+.style-two .course-thumb::before {
+    left: 0;
+    transform: translateX(-150%) skewX(-25deg);
+    will-change: transform;
+}
+
+.style-five .course-single-box:hover .course-thumb::before,
+.style-four .program-thumb:hover::before,
+.style-inner .course-details-box:hover .course-details-thumb::before,
+.style-one .case-study-single-box:hover .case-study-thumb::before,
+.style-one .course-design-thumb:hover::before,
+.style-one .single-blog-box:hover .single-blog-thumb::before,
+.style-three .about-thumb:hover::before,
+.style-three .campus-life-thumb:hover::before,
+.style-two .course-design-thumb:hover::before,
+.style-two .course-single-box:hover .course-thumb::before {
+    animation: 0.8s cls-safe-shine;
+}
+
+@keyframes cls-safe-shine {
+    100% {
+        transform: translateX(200%) skewX(-25deg);
+    }
+}

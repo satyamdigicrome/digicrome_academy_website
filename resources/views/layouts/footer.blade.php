@@ -94,7 +94,7 @@
                     </div>
                     <div class="footer-contact-info">
                         <div class="footer-contact-phone">
-                            <p><img loading="lazy"src="{{ asset('assets/images/home-one/footer-call.webp') }}"
+                            <p><img width="24" height="20" loading="lazy" src="{{ asset('assets/images/home-one/footer-call.webp') }}"
                                     alt="call">01204538104</p>
                         </div>
                         <div class="footer-contact-address">
@@ -110,17 +110,17 @@
                     </div>
                     <div class="footer-widget-menu">
                         <ul>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('about') }}">About Us</a></li>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('course') }}">All
                                     Courses</a></li>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('corporate_services') }}">Corporate Services</a>
                             </li>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('blog') }}">Blog</a></li>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('payments') }}">Payments</a></li>
                         </ul>
                     </div>
@@ -133,16 +133,16 @@
                     </div>
                     <div class="footer-widget-menu">
                         <ul>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('who_we_are') }}">Who we are</a></li>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('success_stories') }}">Success stories</a></li>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('terms-and-conditions') }}">Terms And
                                     Conditions</a></li>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
-                            <li><img loading="lazy"src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
+                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
                                     alt="icon"><a href="{{ route('privacy-policy') }}">Privacy-Policy</a></li>
                         </ul>
                     </div>
@@ -156,7 +156,7 @@
                 <div class="footer-widget-blog">
                     <div class="footer-widget-blog-thumb">
                         <a href="https://apps.apple.com/in/app/digicrome-academy/id6503241441">
-                            <img loading="lazy"src="{{ asset('assets/images/apple.png') }}" alt="recent-img"
+                            <img width="360" height="110" loading="lazy" src="{{ asset('assets/images/apple.png') }}" alt="recent-img"
                                 class="ap-logo"></a>
                     </div>
                 </div>
@@ -269,23 +269,47 @@
 </div>
 
 <script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/vendor/jquery-3.6.2.min.js') }}"></script>
-<script src="{{ asset('assets/js/popper.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/owl.carousel.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/jquery.counterup.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/waypoints.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/wow.js') }}" defer></script>
-<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/animated-text.js') }}" defer></script>
-<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/jquery.meanmenu.js') }}" defer></script>
-<script src="{{ asset('assets/js/jquery.scrollUp.js') }}" defer></script>
-<script src="{{ asset('assets/js/jquery.barfiller.js') }}" defer></script>
-<script src="{{ asset('assets/js/theme.js') }}" defer></script>
+@php
+    /*
+     * The theme's script chain, in dependency order — jQuery first, then the
+     * plugins that extend it, then theme.js which initialises them all.
+     *
+     * Every one of these is deferred. Deferred scripts still execute in document
+     * order and always before DOMContentLoaded, so the chain holds and the inline
+     * blocks further down (which wait for that event) find `$` and its plugins
+     * already present.
+     *
+     * AssetBundle concatenates them into one hashed file, turning fifteen round
+     * trips into one. If it cannot write the bundle — read-only deploy, missing
+     * source — it returns null and we emit the individual tags, so a failure
+     * costs request count, never correctness.
+     */
+    $themeScripts = [
+        'assets/js/vendor/jquery-3.6.2.min.js',
+        'assets/js/popper.min.js',
+        'assets/js/bootstrap.min.js',
+        'assets/js/owl.carousel.min.js',
+        'assets/js/jquery.counterup.min.js',
+        'assets/js/waypoints.min.js',
+        'assets/js/wow.js',
+        'assets/js/imagesloaded.pkgd.min.js',
+        'assets/js/animated-text.js',
+        'assets/js/isotope.pkgd.min.js',
+        'assets/js/jquery.meanmenu.js',
+        'assets/js/jquery.scrollUp.js',
+        'assets/js/jquery.barfiller.js',
+        'assets/js/theme.js',
+        'assets/js/deferred-media.js',
+    ];
+
+    $themeBundle = \App\Support\AssetBundle::js($themeScripts);
+@endphp
+@foreach ($themeBundle ? [$themeBundle] : $themeScripts as $script)
+    <script src="{{ asset($script) }}" defer></script>
+@endforeach
 <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
-    $(document).ready(function() {
+    document.addEventListener('DOMContentLoaded', function() {
         let allheader_courses = @json($header_courses);
         $('.category-link').on('click', function() {
             let ids = $(this).data('ids').toString().split(',');
@@ -299,7 +323,7 @@
                                 <div class="card border-0 shadow-sm rounded-3 p-2 mb-2">
                                     <div class="d-flex align-items-center">
                                     <a href="/courses/${course.slug}">
-                                        <img loading="lazy"src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+                                        <img loading="lazy" src="/storage/${course.image}" alt="${course.name}" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
                                         <div class="ms-3 flex-grow-1">
                                             <h6 class="fw-semibold" style="line-height: 24px;">${course.name}</h6></a>
                                             <p class="text-muted small">Duration: ${course.course_duration ?? 'N/A'}</p></a>
@@ -328,7 +352,7 @@
                             data.forEach(course => {
                                 results.append(`
                                 <a href="/courses/${course.slug}" class="d-flex align-items-center mb-2 text-dark text-decoration-none">
-                                    <img loading="lazy"src="/storage/${course.image}" class="me-2" width="50" height="50" style="object-fit: cover; border-radius: 6px;">
+                                    <img loading="lazy" src="/storage/${course.image}" class="me-2" width="50" height="50" style="object-fit: cover; border-radius: 6px;">
                                     <div>
                                         <div><strong>${course.name}</strong></div>
                                         <small class="text-muted">${course.tag_line}</small>

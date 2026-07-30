@@ -59,8 +59,12 @@
 
     <div class="contact-hero">
         <picture>
-            <source srcset="{{ asset('assets/images/contactnewmob.webp') }}" media="(max-width: 768px)">
-            <img src="{{ asset('assets/images/contactnew.webp') }}" alt="Contact Digicrome" loading="eager">
+            {{-- width/height on the <source> so the reserved box matches the file the
+             browser actually picks. Without them it sizes from the desktop <img>
+             attributes and the hero jumps when the mobile image decodes. --}}
+            <source srcset="{{ asset('assets/images/contactnewmob.webp') }}" media="(max-width: 768px)"
+                width="1507" height="1044">
+            <img width="1986" height="792" src="{{ asset('assets/images/contactnew.webp') }}" alt="Contact Digicrome" loading="eager">
         </picture>
     </div>
     <!--==================================================-->
@@ -674,7 +678,7 @@
                 content.innerHTML = `
                     <div class="row">
                         <div class="col-md-6 d-flex justify-content-center align-items-center">
-                            <img loading="lazy" src="{{ asset('assets/images/cot1.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
+                            <img width="2820" height="1844" loading="lazy" src="{{ asset('assets/images/cot1.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
                         </div>
                         <div class="col-md-6">
                             <br>
@@ -735,7 +739,7 @@
                 content.innerHTML = `<div class="container mt-5">
                     <div class="row align-items-center">
                         <div class="col-md-6 d-flex justify-content-center align-items-center">
-                            <img loading="lazy"src="{{ asset('assets/images/location.svg') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
+                            <img width="414" height="414" loading="lazy" src="{{ asset('assets/images/location.svg') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
                         </div>
                         <div class="col-md-6">
                             <h2>Locate Us</h2>
@@ -745,7 +749,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="d-flex align-items-center">
-                                                <img loading="lazy"src="{{ asset('assets/images/us_logo.svg') }}" alt="US Flag" title="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+                                                <img width="1235" height="650" loading="lazy" src="{{ asset('assets/images/us_logo.svg') }}" alt="US Flag" title="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
                                                 <h5 class="card-title">Office in the US</h5>
                                             </div>
                                             <br>
@@ -757,7 +761,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="d-flex align-items-center">
-                                                <img loading="lazy"src="{{ asset('assets/images/indialogo.svg') }}" alt="India Flag" title="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+                                                <img width="900" height="600" loading="lazy" src="{{ asset('assets/images/indialogo.svg') }}" alt="India Flag" title="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
                                                 <h5 class="card-title">Office in India</h5>
                                             </div>
                                             <br>
@@ -777,7 +781,7 @@
                 content.innerHTML = `<div class="container mt-5">
                     <div class="row align-items-center">
                         <div class="col-md-6">
-                            <img loading="lazy"src="{{ asset('assets/images/whatsap.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
+                            <img width="304" height="331" loading="lazy" src="{{ asset('assets/images/whatsap.png') }}" alt="Customer Service" title="Customer Service" class="img-fluid">
                         </div>
                         <div class="col-md-6">
                             <div class="border p-4 rounded">
@@ -794,7 +798,7 @@
                 content.innerHTML = `<div class="container mt-5">
                     <div class="row align-items-center chat-box">
                         <div class="col-md-5 text-center">
-                            <img loading="lazy"src="{{ asset('assets/images/chat.png') }}" alt="Chat Image" title="Chat Image">
+                            <img width="452" height="452" loading="lazy" src="{{ asset('assets/images/chat.png') }}" alt="Chat Image" title="Chat Image">
                         </div>
                         <div class="col-md-7 chat-text">
                             <h2>Have more queries?</h2>
@@ -809,7 +813,7 @@
                 content.innerHTML = `<div class="container mt-5">
                     <div class="row align-items-center contact-box">
                         <div class="col-md-5 text-center">
-                            <img loading="lazy"src="{{ asset('assets/images/coustome.svg') }}" alt="Contact Image" title="Contact Image">
+                            <img width="400" height="400" loading="lazy" src="{{ asset('assets/images/coustome.svg') }}" alt="Contact Image" title="Contact Image">
                         </div>
                         <div class="col-md-7">
                             <h3 class="fs-4">Customer Contact Number</h3>
@@ -1071,7 +1075,7 @@
                 </div>
             </div>
             <div class="contact_shape2 dance2">
-                <img loading="lazy" src="assets/images/inner-img/contact-shape.webp" alt="shape" title="shape">
+                <img width="214" height="210" loading="lazy" src="assets/images/inner-img/contact-shape.webp" alt="shape" title="shape">
             </div>
         </div>
     </section>

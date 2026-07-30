@@ -698,7 +698,7 @@
                 </div>
                 <div class="col-lg-5 text-center">
                     <div class="hero-float" data-aos="fade-left" data-aos-delay="400">
-                        <img src="{{ asset('assets/images/cor.webp') }}" alt="Corporate Training"
+                        <img loading="lazy" width="1254" height="1254" src="{{ asset('assets/images/cor.webp') }}" alt="Corporate Training"
                             class="img-fluid rounded-5 shadow-lg"
                             style="max-height: 500px; width: 100%; object-fit: cover;">
                     </div>
@@ -725,7 +725,7 @@
                     @foreach ($companyLogos as $logo)
                         <div class="swiper-slide">
                             <div class="logo-item p-4 border rounded-3 d-flex align-items-center justify-content-center">
-                                <img src="{{ asset('storage/' . $logo->image) }}" alt="{{ $logo->name ?? 'Partner' }}"
+                                <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="{{ $logo->name ?? 'Partner' }}"
                                     class="img-fluid">
                             </div>
                         </div>

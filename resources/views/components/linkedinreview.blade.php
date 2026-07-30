@@ -14,8 +14,15 @@
                         onkeypress="if(event.key==='Enter'){cfbRedirect(event, '{{ $feedback->post_link }}')}">
 
                         <div class="cfb-iframe-wrap">
-                            <iframe src="{{ $feedback->iframe_link }}" height="500" frameborder="0" allowfullscreen=""
-                                title="embedded-post">
+                            {{--
+                                These embeds pull a full LinkedIn document each and sit well
+                                below the fold, but were fetched during initial page load.
+                                loading="lazy" holds them back until the card is nearly in
+                                view; .cfb-card is a fixed 520px so nothing shifts. The
+                                explicit width/height give the frame a box before it loads.
+                            --}}
+                            <iframe src="{{ $feedback->iframe_link }}" width="504" height="500" loading="lazy"
+                                frameborder="0" allowfullscreen="" title="embedded-post">
                             </iframe>
                         </div>
 

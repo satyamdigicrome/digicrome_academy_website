@@ -37,11 +37,11 @@
         </div>
        </div> -->
             <div class="breadcumb-shape">
-                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot"
+                <img width="213" height="142" loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot"
                     title="dot">
             </div>
             <div class="breadcumb-shape2">
-                <img loading="lazy"src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball"
+                <img width="68" height="76" loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball"
                     title="ball">
             </div>
         </div>
@@ -60,7 +60,7 @@
                     <div class="row blogs-pr">
                         <div class="single-blog-dtls-box">
                             <div class="blog-thumb">
-                                <img loading="lazy"src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb"
+                                <img loading="lazy" src="{{ asset('storage/' . $blog->blog_image) }}" alt="thumb"
                                     title="thumb">
                                 <div class="meta-blog">
                                     <a href="#">{{ $blog->meta_title ?? 'Blog' }}</a>
@@ -69,7 +69,7 @@
                             <div class="blog-content">
                                 <ul class="blog-author">
                                     <li class="autor-name" style="display: flex; align-items: center; gap: 10px;">
-                                        <img loading="lazy"src="{{ asset('storage/' . $blog->author_image) }}"
+                                        <img loading="lazy" src="{{ asset('storage/' . $blog->author_image) }}"
                                             alt="author" title="author"
                                             style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
                                         <span>{{ $blog->author_name }}</span>
@@ -142,14 +142,14 @@
 								<!-- pagination item -->
 								<div class="pagination_item">
 									<div class="pagination_btn">
-										<a href="#"><img loading="lazy"src="assets/images/inner-img/pagination_icon1.webp" alt="pagination" title="pagination">Previous
+										<a href="#"><img width="60" height="12" loading="lazy" src="assets/images/inner-img/pagination_icon1.webp" alt="pagination" title="pagination">Previous
 											Posts</a>
 									</div>
 								</div>
 								<!-- pagination item -->
 								<div class="pagination_item">
 									<div class="pagination_btn style_right">
-										<a href="#">Next Posts<img loading="lazy"src="assets/images/inner-img/pagination_icon2.webp"
+										<a href="#">Next Posts<img width="60" height="12" loading="lazy" src="assets/images/inner-img/pagination_icon2.webp"
 												alt="pagination2" title="pagination2"></a>
 									</div>
 								</div>

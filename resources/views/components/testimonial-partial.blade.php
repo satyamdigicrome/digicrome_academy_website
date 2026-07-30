@@ -16,7 +16,7 @@
         {{-- centered header --}}
         <div class="mtst-header mtst-reveal" data-reveal="up">
             <div class="mtst-badge">
-                <img loading="lazy" src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
+                <img width="22" height="18" loading="lazy" src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
                     alt="subtitle-icon" title="subtitle-icon">
                 <span>Testimonials</span>
             </div>

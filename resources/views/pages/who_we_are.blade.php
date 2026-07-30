@@ -9,9 +9,20 @@
 
 
 
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+    {{--
+        Poppins used to arrive via `@import` inside the <style> block below, which
+        cannot be discovered until the surrounding stylesheet is parsed. As a
+        <link> the request starts a round trip earlier.
 
+        Still render-blocking: swapping the real font in after first paint reflows
+        every heading on the page, which measured far worse on CLS than the paint
+        delay costs.
+    --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+    <style>
         *,
         *::before,
         *::after {
@@ -408,10 +419,10 @@
                 </div>
             </div>
             {{-- <div class="breadcumb-shape">
-            <img loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
+            <img width="213" height="142" loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-dot.webp') }}" alt="dot" title="dot">
         </div> --}}
             <div class="breadcumb-shape2">
-                <img loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball"
+                <img width="68" height="76" loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-ball.webp') }}" alt="ball"
                     title="ball">
             </div>
         </div>
@@ -436,7 +447,7 @@
 
                 </div>
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%;">
-                    <img loading="lazy" src="{{ asset('assets/images/dc/tools1.webp') }}" alt="digicrome_tools"
+                    <img width="1080" height="1080" loading="lazy" src="{{ asset('assets/images/dc/tools1.webp') }}" alt="digicrome_tools"
                         title="digicrome_tools" style=" border-radius: 3%; height:338px; width:345px;">
                 </div>
             </div>
@@ -507,7 +518,7 @@
                     Also Include Yourself &nbsp;</b></h3>
         </div>
         <div class="map">
-            <img loading="lazy" src="{{ asset('assets/images/dc/map.webp') }}" alt="map" title="map" />
+            <img width="1010" height="666" loading="lazy" src="{{ asset('assets/images/dc/map.webp') }}" alt="map" title="map" />
             <div class="pin south">
                 <span>From 2 LPA to 2 Lacs per<br>
                     month salary, Digicrome<br>
@@ -583,7 +594,7 @@
 
                 </div>
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%; padding-top:20px;">
-                    <img loading="lazy" src="{{ asset('assets/images/dc/img121.webp') }}" alt="digicrome_Image"
+                    <img width="1080" height="1080" loading="lazy" src="{{ asset('assets/images/dc/img121.webp') }}" alt="digicrome_Image"
                         title="digicrome_Image"
                         style="box-shadow: 5px 5px 10px rgba(21, 0, 0, 83.2); border-radius: 3%; height:318px; width:325px;">
                 </div>
@@ -599,7 +610,7 @@
             </div>
             <div class="row">
                 <div id="teem" class="col-lg-6 col-md-12" style="padding-left: 10%; padding-bottom:20px;">
-                    <img loading="lazy" src="{{ asset('assets/images/dc/report.webp') }}" alt="digicrome_report"
+                    <img width="1080" height="1080" loading="lazy" src="{{ asset('assets/images/dc/report.webp') }}" alt="digicrome_report"
                         title="digicrome_report"
                         style="border-radius: 3%; box-shadow: 5px 5px 10px rgba(21, 0, 0, 7.2); height: 338px; width: 345px;">
                 </div>

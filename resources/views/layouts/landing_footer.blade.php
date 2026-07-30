@@ -4,7 +4,7 @@
 		<div class="row subscribe align-items-center">
 			<div class="col-lg-6 col-md-12">
 				<div class="footer-logo">
-					<a href="#"><img loading="lazy"src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
+					<a href="#"><img width="108" height="36" loading="lazy" src="{{ asset('assets/images/home-one/footer-logo.webp') }}" alt="logo"></a>
 				</div>
 				<br>
 				<div class="section_title six" >

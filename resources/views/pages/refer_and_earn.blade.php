@@ -569,9 +569,13 @@
     @include('components.lead-form-popup')
     <section class="refer-banner scroll-to-form">
         <picture>
-            <source srcset="{{ asset('assets/images/rfnmob.webp') }}" media="(max-width: 768px)">
+            {{-- width/height on the <source> so the reserved box matches the file the
+             browser actually picks. Without them it sizes from the desktop <img>
+             attributes and the hero jumps when the mobile image decodes. --}}
+            <source srcset="{{ asset('assets/images/rfnmob.webp') }}" media="(max-width: 768px)"
+                width="1531" height="1027">
 
-            <img src="{{ asset('assets/images/rfnweb.webp') }}" alt="Refer & Earn" loading="eager">
+            <img width="1942" height="810" src="{{ asset('assets/images/rfnweb.webp') }}" alt="Refer & Earn" loading="eager">
         </picture>
     </section>
     <section class="refer-how-it-works py-5">

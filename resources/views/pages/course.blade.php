@@ -151,7 +151,7 @@
                     <source srcset="{{ asset('assets/images/home-three/course-bg.webp') }}" media="(max-width: 991px)">
 
                     <!-- Desktop & Large Screens: Viewports 992px and up -->
-                    <img src="{{ asset('assets/images/home-three/course-bg.webp') }}" class="df-hero-slide-responsive-graphic"
+                    <img loading="eager" fetchpriority="high" width="1942" height="810" src="{{ asset('assets/images/home-three/course-bg.webp') }}" class="df-hero-slide-responsive-graphic"
                         alt="Digicrome Expert-Led Courses Banner">
                 </picture>
             </div>
@@ -182,7 +182,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="course-details-box">
                             <div class="course-details-thumb">
-                                <img loading="lazy"src="{{ asset('storage/' . $course->image) }}" alt="thumb"
+                                <img loading="lazy" src="{{ asset('storage/' . $course->image) }}" alt="thumb"
                                     title="thumb">
                                 <div class="course-meta-top">
                                     <span>{{ $course->tag_line }}</span>

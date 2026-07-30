@@ -137,10 +137,10 @@
 				</div>
 			</div>
 			<div class="breadcumb-shape">
-				<img loading="lazy"src="assets/images/inner-img/breadcumb-dot.webp" alt="dot" title="dot">
+				<img width="213" height="142" loading="lazy" src="assets/images/inner-img/breadcumb-dot.webp" alt="dot" title="dot">
 			</div>
 			<div class="breadcumb-shape2">
-				<img loading="lazy"src="assets/images/inner-img/breadcumb-ball.webp" alt="ball" title="ball">
+				<img width="68" height="76" loading="lazy" src="assets/images/inner-img/breadcumb-ball.webp" alt="ball" title="ball">
 			</div>
 		</div>
 	</div> --}}
@@ -151,14 +151,14 @@
                     <picture>
                         <!-- Mobile -->
                         <source srcset="{{ asset('assets/images/home-three/blog-mobile-bg.webp') }}"
-                            media="(max-width: 576px)">
+                            media="(max-width: 576px)" width="1586" height="992">
 
                         <!-- Tablet -->
                         <source srcset="{{ asset('assets/images/home-three/blog-tablet-bg.webp') }}"
-                            media="(max-width: 991px)">
+                            media="(max-width: 991px)" width="1200" height="600">
 
                         <!-- Desktop -->
-                        <img src="{{ asset('assets/images/home-three/blog-bg3.webp') }}" class="df-hero-responsive-img"
+                        <img loading="eager" fetchpriority="high" width="2109" height="745" src="{{ asset('assets/images/home-three/blog-bg3.webp') }}" class="df-hero-responsive-img"
                             alt="Hero Banner">
                     </picture>
                 </div>
@@ -273,7 +273,7 @@
                                         <div class="blog-btn">
                                             <a href="{{ route('blog.details', $blog->slug) }}">
                                                 Continue Reading
-                                                <img loading="lazy"
+                                                <img width="20" height="20" loading="lazy"
                                                     src="{{ asset('assets/images/home-one/blog-icon1.webp') }}"
                                                     alt="icon" title="icon">
                                             </a>

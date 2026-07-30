@@ -23,10 +23,10 @@
             </div>
         </div>
         <div class="breadcumb-shape">
-            <img loading="lazy" src="assets/images/inner-img/breadcumb-dot.webp" alt="dot" title="dot">
+            <img width="213" height="142" loading="lazy" src="assets/images/inner-img/breadcumb-dot.webp" alt="dot" title="dot">
         </div>
         <div class="breadcumb-shape2">
-            <img loading="lazy" src="assets/images/inner-img/breadcumb-ball.webp" alt="ball" title="ball">
+            <img width="68" height="76" loading="lazy" src="assets/images/inner-img/breadcumb-ball.webp" alt="ball" title="ball">
         </div>
     </div>
 </div>

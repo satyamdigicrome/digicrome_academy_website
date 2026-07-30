@@ -96,8 +96,12 @@
     </style>
     <section class="about-banner-wrapper">
         <picture>
-            <source media="(max-width: 767px)" srcset="{{ asset('assets/images/about-banner-mobile.webp') }}">
-            <img src="{{ asset('assets/images/about-banner-desktop.webp') }}" alt="About Us Banner" class="about-banner-image">
+            {{-- width/height on the <source> so the reserved box matches the file the
+             browser actually picks. Without them it sizes from the desktop <img>
+             attributes and the hero jumps when the mobile image decodes. --}}
+            <source media="(max-width: 767px)" width="1532" height="1026"
+                srcset="{{ asset('assets/images/about-banner-mobile.webp') }}">
+            <img loading="eager" fetchpriority="high" width="1942" height="809" src="{{ asset('assets/images/about-banner-desktop.webp') }}" alt="About Us Banner" class="about-banner-image">
         </picture>
     </section>
     <section class="about-area style-three inner">
@@ -107,9 +111,10 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="about-thumb-single">
                         <picture>
-                            <source media="(max-width: 767px)" srcset="{{ asset('assets/images/founders/bothmb.webp') }}">
+                            <source media="(max-width: 767px)" width="600" height="800"
+                                srcset="{{ asset('assets/images/founders/bothmb.webp') }}">
 
-                            <img loading="lazy" src="{{ asset('assets/images/founders/both.webp') }}" alt="About Digicrome"
+                            <img width="928" height="1120" loading="lazy" src="{{ asset('assets/images/founders/both.webp') }}" alt="About Digicrome"
                                 class="img-fluid w-100">
                         </picture>
 
@@ -143,25 +148,25 @@
                         </div>
                         <div class="about-iteam-list mt-3">
                             <ul>
-                                <li><img loading="lazy" src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
+                                <li><img width="22" height="22" loading="lazy" src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
                                         alt="icon31" title="icon31">Course
                                     Catalog & Program Information</li>
-                                <li><img loading="lazy" src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
+                                <li><img width="22" height="22" loading="lazy" src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
                                         alt="icon31" title="icon31">Online
                                     Application & Admission Process</li>
-                                <li><img loading="lazy" src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
+                                <li><img width="22" height="22" loading="lazy" src="{{ asset('assets/images/home-three/about-icon31.webp') }}"
                                         alt="icon31" title="icon31">Financial Aid and Scholarships</li>
                             </ul>
                         </div>
                         <div class="about-iteam-phone">
-                            <p><span><img loading="lazy" src="{{ asset('assets/images/home-three/about-call.webp') }}"
+                            <p><span><img width="34" height="34" loading="lazy" src="{{ asset('assets/images/home-three/about-call.webp') }}"
                                         alt="call" title="call"></span>
                                 01204538125</p>
                         </div>
 
 
                         <div class="about-shape31">
-                            <img loading="lazy" src="{{ asset('assets/images/home-three/about-shape31.webp') }}"
+                            <img width="235" height="271" loading="lazy" src="{{ asset('assets/images/home-three/about-shape31.webp') }}"
                                 alt="shape" title="shape">
                         </div>
 
@@ -181,7 +186,7 @@
         <div class="container mb-5">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <img loading="lazy" src="{{ asset('assets/images/home-one/msme.webp') }}" alt="Education Image"
+                    <img width="851" height="315" loading="lazy" src="{{ asset('assets/images/home-one/msme.webp') }}" alt="Education Image"
                         title="Education Image" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-md-6">
@@ -202,7 +207,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6">
                     <div class="single-feature-box box-1">
                         <div class="feature-icon">
-                            <img loading="lazy" src="{{ asset('assets/images/home-three/feature-icon21.webp') }}"
+                            <img width="60" height="42" loading="lazy" src="{{ asset('assets/images/home-three/feature-icon21.webp') }}"
                                 alt="feature-icon" title="feature-icon">
                         </div>
                         <div class="feature-content">
@@ -216,7 +221,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6">
                     <div class="single-feature-box box-2">
                         <div class="feature-icon">
-                            <img loading="lazy" src="{{ asset('assets/images/home-three/feature-icon22.webp') }}"
+                            <img width="50" height="44" loading="lazy" src="{{ asset('assets/images/home-three/feature-icon22.webp') }}"
                                 alt="feature-icon" title="feature-icon">
                         </div>
                         <div class="feature-content">
@@ -230,7 +235,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6">
                     <div class="single-feature-box box-3">
                         <div class="feature-icon">
-                            <img loading="lazy" src="{{ asset('assets/images/home-three/feature-icon23.webp') }}"
+                            <img width="56" height="50" loading="lazy" src="{{ asset('assets/images/home-three/feature-icon23.webp') }}"
                                 alt="feature-icon" title="feature-icon">
                         </div>
                         <div class="feature-content">
@@ -260,7 +265,7 @@
                 </div>
             </div>
             <div class="call-to-shape31">
-                <img loading="lazy" src="{{ asset('assets/images/home-three/call-to-arrow2.webp') }}" alt="shape" title="shape">
+                <img width="53" height="74" loading="lazy" src="{{ asset('assets/images/home-three/call-to-arrow2.webp') }}" alt="shape" title="shape">
             </div>
         </div>
     </div> --}}
@@ -279,7 +284,7 @@
                 </p>
             </div>
             <div class="achievement-banner">
-                <img src="{{ asset('assets/images/aboutmilestone.webp') }}" alt="Digicrome Achievements"
+                <img loading="lazy" width="1744" height="902" src="{{ asset('assets/images/aboutmilestone.webp') }}" alt="Digicrome Achievements"
                     title="Digicrome Achievements" class="img-fluid">
             </div>
 
@@ -300,7 +305,7 @@
 					<div class="call-to-wrapper">
 						<div class="call-to-box">
 							<div class="call-to-icon">
-								<img loading="lazy"src="{{ asset('assets/images/home-one/call-icon.webp') }}" alt="call-to-icon" title="call-to-icon" >
+								<img width="80" height="80" loading="lazy" src="{{ asset('assets/images/home-one/call-icon.webp') }}" alt="call-to-icon" title="call-to-icon" >
 							</div>
 							<div class="call-to-content">
 								<h6>Call Anytime</h6>
@@ -308,14 +313,14 @@
 							</div>
 						</div>
 						<div class="call-to-arrow">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/call-arrow.webp') }}" alt="call-to-arrow" title="call-to-arrow">
+							<img width="50" height="46" loading="lazy" src="{{ asset('assets/images/home-one/call-arrow.webp') }}" alt="call-to-arrow" title="call-to-arrow">
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-3 col-lg-4">
 					<div class="call-logo-box">
 						<div class="call-to-logo">
-							<img loading="lazy"src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="call-to-logo" title="call-to-logo">
+							<img width="166" height="41" loading="lazy" src="{{ asset('assets/images/home-one/call-logo.webp') }}" alt="call-to-logo" title="call-to-logo">
 						</div>
 						<div class="call-rating">
 							<p><span>890+</span> Trustpilot 4.9 Ratings</p>
@@ -375,7 +380,7 @@
                                 <div class="blog-btn">
                                     <a href="{{ route('blog.details', $blog->slug) }}">
                                         Continue Reading
-                                        <img loading="lazy" src="{{ asset('assets/images/home-one/blog-icon1.webp') }}"
+                                        <img width="20" height="20" loading="lazy" src="{{ asset('assets/images/home-one/blog-icon1.webp') }}"
                                             alt="icon" title="icon">
                                     </a>
                                 </div>

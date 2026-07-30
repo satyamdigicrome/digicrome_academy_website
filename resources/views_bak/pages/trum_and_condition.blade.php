@@ -1,0 +1,39 @@
+@extends('layouts.app')
+@section('title', $meta->title ?? 'Digicrome')
+@section('meta_description', $meta->description ?? 'Digicrome')
+@section('meta_keywords', $meta->keywords ?? 'Digicrome')
+@section('content')
+@include('components.lead-form-popup')
+<style>
+    #sticky-header {
+        margin-bottom: 80px !important;
+    }
+</style>
+<div class="breadcumb-area d-flex">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="breadcumb-content">
+                    <div class="breadcumb-title">
+                        <h1 class="display-5 fw-bold">Terms & Conditions</h1>
+                    </div>
+   
+                </div>
+            </div>
+        </div>
+        <div class="breadcumb-shape">
+            <img loading="lazy" src="assets/images/inner-img/breadcumb-dot.webp" alt="dot" title="dot">
+        </div>
+    </div>
+</div>
+<section>
+    <div class="container">
+        @foreach($contents as $content)
+        <div class="mb-4">
+            {!! $content->content !!}
+        </div>
+        @endforeach
+    </div>
+</section>
+
+@endsection

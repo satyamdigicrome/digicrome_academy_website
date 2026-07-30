@@ -10,7 +10,7 @@
     border-bottom: 1px solid #eee;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
         <div style="flex: 1;">
-            <img src="{{ asset('assets/images/logo.webp') }}" alt="Logo" style="height: 45px; width: auto;">
+            <img loading="eager" width="219" height="74" src="{{ asset('assets/images/logo.webp') }}" alt="Logo" style="height: 45px; width: auto;">
         </div>
         <div style="flex: 1; text-align: center; display: none;" class="phone-number-desktop">
             <span style="font-weight: 600; color: #1c1647; font-size: 16px;">

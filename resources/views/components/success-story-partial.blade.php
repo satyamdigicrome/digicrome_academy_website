@@ -14,7 +14,7 @@
         {{-- centered header --}}
         <div class="ssst-header ssst-reveal" data-reveal="up">
             <div class="ssst-eyebrow">
-                <img loading="lazy" src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
+                <img width="24" height="18" loading="lazy" src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
                     alt="sub-title2" title="sub-title2">
                 <span>Success Stories</span>
             </div>
@@ -23,7 +23,7 @@
 
             <div class="ssst-review-box">
                 <div class="ssst-review-image">
-                    <img loading="lazy" src="{{ asset('assets/images/home-three/course-instructor.webp') }}"
+                    <img width="130" height="56" loading="lazy" src="{{ asset('assets/images/home-three/course-instructor.webp') }}"
                         alt="course-instructor" title="course-instructor">
                 </div>
                 <div class="ssst-review-content">

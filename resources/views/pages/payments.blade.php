@@ -42,15 +42,18 @@
 
     <section class="payment-hero-banner">
         <picture>
+            {{-- width/height on the <source> so the reserved box matches the file the
+             browser actually picks. Without them it sizes from the desktop <img>
+             attributes and the hero jumps when the mobile image decodes. --}}
             {{-- Mobile --}}
-            <source media="(max-width: 575px)"
+            <source media="(max-width: 575px)" width="1532" height="1027"
                 srcset="{{ asset('assets/images/payment-mobile.webp') }}">
 
             {{-- Tablet --}}
-            <source media="(max-width: 991px)"
+            <source media="(max-width: 991px)" width="1532" height="1027"
                 srcset="{{ asset('assets/images/payment-mobile.webp') }}">
 
-            <img src="{{ asset('assets/images/payment-laptop.webp') }}" alt="payment-banner" title="payment-banner">
+            <img loading="eager" fetchpriority="high" width="2001" height="786" src="{{ asset('assets/images/payment-laptop.webp') }}" alt="payment-banner" title="payment-banner">
         </picture>
     </section>
 
@@ -94,7 +97,7 @@
                     col.forEach(country => {
                         const link = document.createElement('a');
                         link.innerHTML = `
-              <img loading="lazy"src="${country.flag}" alt="${country.name} title="{country.name}" flag">
+              <img loading="lazy" src="${country.flag}" alt="${country.name} title="{country.name}" flag">
               ${country.name}
             `;
                         link.onclick = () => {
@@ -119,7 +122,7 @@
             });
 
         function setCountry(name, flag) {
-            selectedCountryBtn.innerHTML = `<img loading="lazy"src="${flag}" alt="${name} title="{name}" flag"> ${name}`;
+            selectedCountryBtn.innerHTML = `<img loading="lazy" src="${flag}" alt="${name} title="{name}" flag"> ${name}`;
             selectedCountryInput.value = name;
 
             // Toggle content based on selected country
@@ -310,14 +313,14 @@
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
 
                     <div style="width: 90%; max-width: 700px; text-align: center;">
-                        <img loading="lazy"src="{{ asset('assets/images/upi.webp') }}" alt="Pay via QR Code"
+                        <img width="1920" height="1080" loading="lazy" src="{{ asset('assets/images/upi.webp') }}" alt="Pay via QR Code"
                             title="Pay via QR Code"
                             style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         <p style="margin-top: 10px; font-size: 18px; color: #333;">Scan to Pay via QR</p>
                     </div>
                     <div style="width: 90%; max-width: 700px; text-align: center;">
                         <a href="https://rzp.io/l/MBT3RH7">
-                            <img loading="lazy"src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay"
+                            <img width="2000" height="1273" loading="lazy" src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay"
                                 title="Pay with Razorpay"
                                 style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         </a>
@@ -326,7 +329,7 @@
 
                     <div style="width: 90%; max-width: 700px; text-align: center;">
                         <a href="https://pmny.in/UrN1I4c33yXF">
-                            <img loading="lazy"src="{{ asset('assets/images/payu.webp') }}" alt="Pay with PayU"
+                            <img width="2000" height="1273" loading="lazy" src="{{ asset('assets/images/payu.webp') }}" alt="Pay with PayU"
                                 title="Pay with PayU"
                                 style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         </a>
@@ -342,7 +345,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="payment-card green-card">
                                 <div class="card-bg">
-                                    <img src="{{ asset('assets/images/icons8-bank-100.svg') }}" alt="Bank Image" class="card-icon">
+                                    <img loading="lazy" width="100" height="100" src="{{ asset('assets/images/icons8-bank-100.svg') }}" alt="Bank Image" class="card-icon">
                                 </div>
 
                                 <div class="card-content">
@@ -360,7 +363,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="payment-card orange-card">
                                 <div class="card-bg">
-                                    <img src="{{ asset('assets/images/upi.webp') }}" alt="UPI Image" class="card-icon"
+                                    <img loading="lazy" width="1920" height="1080" src="{{ asset('assets/images/upi.webp') }}" alt="UPI Image" class="card-icon"
                                         style="border-radius: 0px 10px 10px 0px;">
                                 </div>
 
@@ -382,7 +385,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="payment-card blue-card">
                                 <div class="card-bg">
-                                    <img src="{{ asset('assets/images/razorpay-icon.svg') }}" alt="Razorpay Payment" class="card-icon">
+                                    <img loading="lazy" width="361" height="325" src="{{ asset('assets/images/razorpay-icon.svg') }}" alt="Razorpay Payment" class="card-icon">
                                 </div>
 
                                 <div class="card-content">
@@ -468,7 +471,7 @@
                     <div class="row">
                         <div style="width: 90%; max-width: 700px; text-align: center;">
                             <a href="https://rzp.io/rzp/nUTt5wT">
-                                <img loading="lazy"src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay"
+                                <img width="2000" height="1273" loading="lazy" src="{{ asset('assets/images/rezorpay.webp') }}" alt="Pay with Razorpay"
                                     title="Pay with Razorpay"
                                     style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                             </a>
@@ -485,7 +488,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-center p-4">
                 <h4>Scan & Pay (UPI)</h4>
-                <img src="{{ asset('assets/images/upiqr.webp') }}" alt="UPI QR"
+                <img loading="lazy" width="1521" height="2344" src="{{ asset('assets/images/upiqr.webp') }}" alt="UPI QR"
                     style="width:100%; max-width:280px; margin:20px auto;">
                 <p>Use Google Pay / PhonePe / Paytm</p>
                 <button class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>

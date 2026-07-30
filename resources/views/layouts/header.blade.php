@@ -22,10 +22,10 @@
     <div class="position-relative w-100 d-flex align-items-center justify-content-between overflow-hidden cursor-pointer new-holi-offer"
         style="background:#FFEDFA; height:55px;cursor:pointer;">
         <div class="d-none d-md-flex position-relative">
-            <img src="{{ asset('assets/images/splash.webp') }}"
+            <img width="311" height="272" src="{{ asset('assets/images/splash.webp') }}"
                 class="position-relative"
                 style="width:311px; height:272px; top:-95px; left:-60px;" alt="bg">
-            <img src="{{ asset('assets/images/splash.webp') }}"
+            <img width="311" height="272" src="{{ asset('assets/images/splash.webp') }}"
                 class="position-relative"
                 style="width:311px; height:272px; top:90px; left:-220px;" alt="bg">
         </div>
@@ -45,11 +45,11 @@
             </p>
         </div>
         <div class="d-none d-md-flex position-relative">
-            <img src="{{ asset('assets/images/splash.webp') }}"
+            <img width="311" height="272" src="{{ asset('assets/images/splash.webp') }}"
                 class="position-relative"
                 style="width:311px; height:272px; top:100px; right:90px; transform:rotate(-210deg) scaleX(-1);"
                 alt="bg">
-            <img src="{{ asset('assets/images/splash.webp') }}"
+            <img width="311" height="272" src="{{ asset('assets/images/splash.webp') }}"
                 class="position-relative"
                 style="width:311px; height:272px; top:-70px; right:20px; transform:rotate(-40deg) scaleX(-1);"
                 alt="bg">
@@ -64,7 +64,7 @@
                     <a class="active_logo" href="/"><img loading="lazy"
                             src="{{ asset('assets/images/logo.webp') }}" width="150" height="50"
                             alt="logo"></a>
-                    <a class="logo_two" href="/"><img class="footer-logo11" loading="lazy"
+                    <a class="logo_two" href="/"><img width="247" height="79" class="footer-logo11" loading="lazy"
                             src="{{ asset('assets/images/logonew.webp') }}" alt="logo"></a>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                                             @if (isset($header_courses[$id]))
                                                 @php $course = $header_courses[$id]; @endphp
                                                 <a href="{{ route('course_details', $course->slug) }}" class="course-item">
-                                                    <img src="{{ asset('storage/'.$course->image) }}" alt="">
+                                                    <img loading="lazy" src="{{ asset('storage/'.$course->image) }}" alt="">
                                                     <div class="course-info">
                                                         <h6>{{ $course->name }}</h6>
                                                         <p>{{ $course->course_duration ?? 'N/A' }}</p>
@@ -148,7 +148,10 @@
                 <li><a href="{{ route('blog') }}">Blog </a></li>
                 <li><a href="{{ route('payments') }}">Payments </a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
-                <li><a href="#">More<i class="bi bi-chevron-down"></i></a>
+                {{-- menu-align-right: this panel is 650px wide and sits at the right end of
+                     the bar, so anchoring it left ran it past the viewport and gave the
+                     page a horizontal scrollbar. It opens leftwards instead. --}}
+                <li class="menu-align-right"><a href="#">More<i class="bi bi-chevron-down"></i></a>
                     <ul class="sub_menu">
                         {{-- <li><a href="{{ route('who_we_are') }}">Who we are</a></li> --}}
                         <li class="menu-color-blue"><a href="{{ route('corporate_services') }}">Corporate Services </a></li>
@@ -208,7 +211,7 @@
     <div class="mobile-menu">
         <nav class="header-menu">
             <div class="mobile-logo" style="z-index: -9;">
-                <img class="footer-logo11" loading="lazy" src="{{ asset('assets/images/logonew.webp') }}"
+                <img width="247" height="79" class="footer-logo11" loading="lazy" src="{{ asset('assets/images/logonew.webp') }}"
                     alt="logo">
             </div>
             <ul class="nav_scroll">
@@ -245,7 +248,10 @@
                 <li><a href="{{ route('payments') }}">Payments </a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
                 <li><a href="{{ route('media_presence') }}">Media Presence</a></li>
-                <li><a href="#">More<i class="bi bi-chevron-down"></i></a>
+                {{-- menu-align-right: this panel is 650px wide and sits at the right end of
+                     the bar, so anchoring it left ran it past the viewport and gave the
+                     page a horizontal scrollbar. It opens leftwards instead. --}}
+                <li class="menu-align-right"><a href="#">More<i class="bi bi-chevron-down"></i></a>
                     <ul class="sub_menu">
                         {{-- <li><a href="{{ route('who_we_are') }}">Who we are</a></li> --}}
                         <li><a href="{{ route('corporate_services') }}">Corporate Services </a></li>
@@ -285,7 +291,7 @@
                 <div class="sidebar-info-contents">
                     <div class="content-inner">
                         <div class="nav-logo">
-                            <a href="/"><img loading="lazy" src="{{ asset('assets/images/logonew.webp') }}"
+                            <a href="/"><img width="247" height="79" loading="lazy" src="{{ asset('assets/images/logonew.webp') }}"
                                     alt="logo"></a>
                         </div>
                         <div class="content-box">

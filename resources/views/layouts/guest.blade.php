@@ -313,7 +313,7 @@
     {{-- Card --}}
     <div class="login-wrapper">
         <div class="login-card">
-            <img src="{{ asset('assets/images/logo.webp') }}" alt="DigiCrome" class="login-logo">
+            <img loading="eager" width="219" height="74" src="{{ asset('assets/images/logo.webp') }}" alt="DigiCrome" class="login-logo">
             <h1 class="login-title">Welcome back</h1>
             <p class="login-subtitle">Sign in to your CMS dashboard</p>
 

@@ -18,7 +18,9 @@
                      <div class="course-heading-banner col-flex">
                          <h1 style="color: #fff;">{{ $course->name }}<br> </h1> <small
                              style=" font-size: 20px; color: #fff;">in collaboration with</small>
-                         <img loading="lazy" src='{{ asset('assets/images/ds-withai-course/mswhite.webp') }}' alt="Microsoft Logo" class='ds-logo lazyload'>
+                         <img width="4434" height="882" loading="lazy"
+                             src='{{ asset('assets/images/ds-withai-course/mswhite.webp') }}' alt="Microsoft Logo"
+                             class='ds-logo lazyload'>
                          <div class="black-box">
                              <span class="yellow-text">Aligned with competency standards set by Microsoft & PMI.</span>
                              <span class="green-text" style="color:#fff;">In Collaboration with Industry and approved by
@@ -35,11 +37,13 @@
                          <div class="cont text-center">
                              <span>In Curriculum</span>
                              <h3>Chat<span>GPT</span></h3>
-                             <img loading="lazy"src='{{ asset('assets/images/ds-withai-course/deep.png') }}'
+                             <img width="418" height="224" loading="lazy"
+                                 src='{{ asset('assets/images/ds-withai-course/deep.png') }}'
                                  class="aiimg" alt="ChatGPT">
                          </div>
                          <div class="img">
-                             <img loading="lazy"src='{{ asset('assets/images/ds-withai-course/ai.png') }}'
+                             <img width="237" height="336" loading="lazy"
+                                 src='{{ asset('assets/images/ds-withai-course/ai.png') }}'
                                  class="aiimg" alt="ai">
                          </div>
                      </div>
@@ -60,7 +64,7 @@
                          <div class="collab-deatil">
                              <ul>
                                  <li><strong>Silver</strong><br> Business <br>Partner</li>
-                                 <li><img loading="lazy"src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}"
+                                 <li><img width="4434" height="882" loading="lazy" src="{{ asset('assets/images/ds-withai-course/mslogo.png') }}"
                                          class="lazyload" alt="Microsoft Logo">
                                  </li>
                              </ul>
@@ -118,32 +122,32 @@
                      <!--<button type="button" class="fill-btn" href="#form1">Apply Now</button>-->
                  </div>
                  <div class="date-border">
-                     <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-1.png') }}"
+                     <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-1.png') }}"
                          class="lazyload" alt="data science program institute">
                      <p class="icon-plus">5000</p>
                      <span>Career Transformed</span>
                  </div>
                  <div class="date-border">
-                     <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-2.png') }}"
+                     <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-2.png') }}"
                          class="lazyload" alt="data science programs">
                      <p>12 Months</p>
                      <span>Live Internship</span>
                  </div>
                  <div class="date-border">
-                     <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}"
+                     <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-3.png') }}"
                          class="lazyload" alt="best online data science programs">
                      <p>11 Months</p>
                      <span>Live Online Classes</span>
                  </div>
                  <div class="date-border">
-                     <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}"
+                     <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}"
                          class="lazyload" alt="data science programs near me">
                      <p style="color: #f8b700">
                          {{ $course->course_online_payment }} </p>
                      <span>Next Batch starts on</span>
                  </div>
                  <div class="date-border">
-                     <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/banner-icon-5.png') }}"
+                     <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-5.png') }}"
                          class="lazyload" alt="data science program online">
                      <p>500+</p>
                      <span>Hiring Partners</span>

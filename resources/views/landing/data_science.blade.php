@@ -889,8 +889,10 @@
         display: flex;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        margin-right: -15px;
-        margin-left: -15px;
+        /* Bootstrap already gives .row its gutter-matched negative margins
+           (-12px, paired with 12px of padding on .col-*). Overriding them to
+           -15px over-pulled by 3px a side, which made every row 6px wider than
+           the viewport and put the page into horizontal scroll on mobile. */
     }
 
     .card-body {
@@ -971,9 +973,11 @@
         #numberrow {
             display: flex;
             flex-wrap: wrap;
-            margin-right: -15px;
-            margin-left: -15px;
-        }
+        /* Bootstrap already gives .row its gutter-matched negative margins
+           (-12px, paired with 12px of padding on .col-*). Overriding them to
+           -15px over-pulled by 3px a side, which made every row 6px wider than
+           the viewport and put the page into horizontal scroll on mobile. */
+    }
 
         #numbercol {
             flex: 0 0 33%;
@@ -1386,7 +1390,11 @@
             <div style="background-color: #124aa1;">
                 <header class="header">
                     <div class="logo1">
-                        <img src="{{ asset('assets/landing/logo.svg') }}" alt="Logo" width="10%">
+                        {{-- width="10%" is not a legal width attribute, so the browser
+                             reserved no space for the logo. The real intrinsic size is
+                             629x200; the CSS below scales it down. --}}
+                        <img width="629" height="200" src="{{ asset('assets/landing/logo.svg') }}" alt="Logo"
+                            loading="eager" fetchpriority="high" style="width: 10%; height: auto;">
                     </div>
                     <button style="font-size: 10px;" id="headerbutton" class="enroll-button"
                         onclick="openModal()">Download Brochure</button>
@@ -1549,11 +1557,26 @@
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        document.querySelector(".seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds;
-        document.querySelector(".minutes").innerHTML = minutes < 10 ? '0' + minutes : minutes;
-        document.querySelector(".hours").innerHTML = hours < 10 ? '0' + hours : hours;
-        document.querySelector(".days").innerHTML = days < 10 ? '0' + days : days;
-        document.querySelector(".months").innerHTML = months < 10 ? '0' + months : months;
+        // Not every layout renders all five units, and assigning straight to
+        // querySelector(...).innerHTML threw on the missing one — once per second,
+        // forever, burning main-thread time and filling the console. Write only
+        // what exists, and stop the timer entirely if none of them do.
+        var written = 0;
+        [
+            ['.seconds', seconds],
+            ['.minutes', minutes],
+            ['.hours', hours],
+            ['.days', days],
+            ['.months', months],
+        ].forEach(function (pair) {
+            var el = document.querySelector(pair[0]);
+            if (!el) return;
+            var value = pair[1];
+            el.innerHTML = value < 10 ? '0' + value : value;
+            written++;
+        });
+
+        if (!written) clearInterval(countdown);
     }, 1000);
 </script>
 
@@ -1561,12 +1584,16 @@
         </section>
         <section class="company-form contactpage-form"
             style=" background-size: cover; background-position: center; width: 100%; height: 100%;">
+            {{-- width was a hard 459px, wider than a 375px phone, which pushed the
+                 page into horizontal scroll. Caps at the same size on desktop and
+                 shrinks to fit below that. --}}
             <div id="mob1"
-                style="background-image: url('{{ asset('assets/landing/strip.svg') }}'); 
-                    background-size: cover; 
+                style="background-image: url('{{ asset('assets/landing/strip.svg') }}');
+                    background-size: cover;
                     background-repeat: no-repeat;
                     padding: 4px;
-                    width: 459px;">
+                    width: 100%;
+                    max-width: 459px;">
                 <strong style="padding: 10px; color:#fff;">Get 40% off on the Data Science & AI course</strong>
             </div>
             </div>
@@ -1989,14 +2016,14 @@
                 <div class="custom-box">
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img src="{{ asset('assets/landing/boxa.svg') }}" alt="Image 1">
+                            <img loading="lazy" width="1024" height="1024" src="{{ asset('assets/landing/boxa.svg') }}" alt="Image 1">
                         </div>
                         <h4>60+ Case Studies & Assignments</h4>
                         <p>Work on 45+ Case studies and Assignments with 24/7 Assignment support.</p>
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img src="{{ asset('assets/landing/boxc.svg') }}" alt="Image 2">
+                            <img loading="lazy" width="1024" height="1024" src="{{ asset('assets/landing/boxc.svg') }}" alt="Image 2">
                         </div>
                         <h4>
                             25+ Industry Graded Projects</h4>
@@ -2004,7 +2031,7 @@
                     </div>
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img src="{{ asset('assets/landing/boxb.svg') }}" alt="Image 3">
+                            <img loading="lazy" width="1024" height="1024" src="{{ asset('assets/landing/boxb.svg') }}" alt="Image 3">
                         </div>
                         <h4>
                             Tied-up with 150+ Companies</h4>
@@ -2012,7 +2039,7 @@
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img src="{{ asset('assets/landing/boxe.svg') }}" alt="Image 4">
+                            <img loading="lazy" width="1024" height="1024" src="{{ asset('assets/landing/boxe.svg') }}" alt="Image 4">
                         </div>
                         <h4>Job Readiness Program:</h4>
                         <p> Includes a dedicated placement cell for participants who have successfully completed the
@@ -2033,7 +2060,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg1.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2050,7 +2077,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg2.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2067,7 +2094,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg3.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2086,7 +2113,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;" src="{{ asset('assets/landing/svg4.svg') }}" alt="">
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;" src="{{ asset('assets/landing/svg4.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
                                             <p>Get Access to Industry Based Course Curriculum
@@ -2101,7 +2128,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg5.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2117,7 +2144,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg6.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2136,7 +2163,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg7.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2152,7 +2179,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg8.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2169,7 +2196,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg9.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2187,7 +2214,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg10.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2203,7 +2230,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg11.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2220,7 +2247,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/svg12.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-8">
@@ -2254,7 +2281,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/mod1.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-9">
@@ -2277,7 +2304,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/mod2.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-9">
@@ -2301,7 +2328,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/mod3.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-9">
@@ -2325,7 +2352,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
-                                            <img style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" width="120" height="80" style="max-width: 100%; height: auto;"
                                                 src="{{ asset('assets/landing/mod4.svg') }}" alt="">
                                         </div>
                                         <div class="col-lg-9">
@@ -2546,38 +2573,38 @@
                         <div class="row" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool1.svg') }}" alt="">
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool1.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool2.svg') }}" alt="">
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool2.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool3.svg') }}" alt="">
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool3.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool4.svg') }}" alt="">
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool4.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool5.svg') }}" alt="">
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool5.svg') }}" alt="">
                             </div>
                             <div class="col-lg-1" id="lg1"></div>
                         </div>
                         <div class="row" style="margin-top: 20px" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool6.svg') }}" alt="">
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool6.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool7.svg') }}" alt="">
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool7.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool8.svg') }}" alt="">
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool8.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool9.svg') }}" alt="">
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool9.svg') }}" alt="">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img id="toolimg" src="{{ asset('assets/landing/tool10.svg') }}"
+                                <img loading="lazy" width="160" height="70" id="toolimg" src="{{ asset('assets/landing/tool10.svg') }}"
                                     alt="">
                             </div>
                             <div class="col-lg-1" id="lg1"></div>
@@ -2641,7 +2668,7 @@
                         </ul><br>
                     </div>
                     <div class="col-lg-6">
-                        <img style="padding: 20px 20px;" src="{{ asset('assets/landing/cirt1111.png') }}"
+                        <img loading="lazy" width="2000" height="1414" style="padding: 20px 20px;" src="{{ asset('assets/landing/cirt1111.png') }}"
                             alt="">
                     </div>
                 </div>
@@ -2787,7 +2814,7 @@
                 <div class="container">
                     <div class="row gx-5">
                         <div class="col-lg-2 col-md-6">
-                            <img src="{{ asset('assets/landing/logo2.png') }}" alt=""
+                            <img loading="lazy" width="1036" height="500" src="{{ asset('assets/landing/logo2.png') }}" alt=""
                                 class="img-fluid mt-4">
                         </div>
                         <div class="col-lg-10 col-md-12 pt-5 mb-5">

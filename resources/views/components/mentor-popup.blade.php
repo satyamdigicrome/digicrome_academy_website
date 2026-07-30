@@ -50,7 +50,7 @@
 
         <div class="modal-grid">
             <div class="modal-img">
-                <img id="mentorImg" src="">
+                <img loading="lazy" id="mentorImg" src="">
             </div>
             <div class="modal-info">
                 <h3 id="mentorName"></h3>
@@ -226,7 +226,8 @@ RESPONSIVE
 </style>
 @push('scripts')
     <script>
-        $(document).ready(function() {
+        {{-- jQuery is deferred, so wait for DOMContentLoaded rather than calling $ mid-parse. --}}
+        document.addEventListener('DOMContentLoaded', function() {
 
             $(".mentor-carousel").owlCarousel({
                 loop: true,

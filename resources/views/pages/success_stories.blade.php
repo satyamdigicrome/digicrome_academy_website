@@ -3,8 +3,15 @@
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
-    <link rel="preload" href="{{ asset('assets/css/success-story.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
+    {{--
+        Render-blocking on purpose. This file holds the layout for this page's
+        hero and section grid (.banner-section-bg, .banner-left-section,
+        .college-column-section, .work-alimini-section, .four-btn-sect), so
+        loading it asynchronously painted the page unstyled and then reflowed it —
+        0.564 CLS on mobile, the worst score on the site. It is 17 KB; blocking on
+        it costs far less than the reflow it prevents.
+    --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/success-story.css') }}">
 @endpush
 @section('content')
     <section>
@@ -21,37 +28,42 @@
                         <div class="work-alimini-section">
                             <div class="marquee-content">
                                 <!-- Original Set of Images -->
-                                <div class="first-box"><img src="{{ asset('assets/images/company/deloite.webp') }}"
+                                <div class="first-box"><img width="65" height="13" src="{{ asset('assets/images/company/deloite.webp') }}"
                                         alt="deloite" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/flipkart.webp') }}"
+                                <div class="first-box"><img width="69" height="19" src="{{ asset('assets/images/company/flipkart.webp') }}"
                                         alt="flipkart" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/microsoft.webp') }}"
+                                <div class="first-box"><img width="79" height="17" src="{{ asset('assets/images/company/microsoft.webp') }}"
                                         alt="microsoft" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/accenture.webp') }}"
+                                <div class="first-box"><img width="67" height="18" src="{{ asset('assets/images/company/accenture.webp') }}"
                                         alt="accenture" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/tcs.webp') }}"
+                                <div class="first-box"><img width="66" height="27" src="{{ asset('assets/images/company/tcs.webp') }}"
                                         alt="tcs" loading="eager"></div>
-                                {{-- <div class="first-box"><img src="{{ asset('assets/images/company/ibm.webp') }}"
+                                {{-- <div class="first-box"><img width="43" height="17" src="{{ asset('assets/images/company/ibm.webp') }}"
                                         alt="ibm" loading="eager"></div> --}}
                                 <!-- Duplicate Set of Images (to create seamless effect) -->
-                                <div class="first-box"><img src="{{ asset('assets/images/company/deloite.webp') }}"
+                                <div class="first-box"><img width="65" height="13" src="{{ asset('assets/images/company/deloite.webp') }}"
                                         alt="deloite" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/flipkart.webp') }}"
+                                <div class="first-box"><img width="69" height="19" src="{{ asset('assets/images/company/flipkart.webp') }}"
                                         alt="flipkart" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/microsoft.webp') }}"
+                                <div class="first-box"><img width="79" height="17" src="{{ asset('assets/images/company/microsoft.webp') }}"
                                         alt="microsoft" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/accenture.webp') }}"
+                                <div class="first-box"><img width="67" height="18" src="{{ asset('assets/images/company/accenture.webp') }}"
                                         alt="accenture" loading="eager"></div>
-                                <div class="first-box"><img src="{{ asset('assets/images/company/tcs.webp') }}"
+                                <div class="first-box"><img width="66" height="27" src="{{ asset('assets/images/company/tcs.webp') }}"
                                         alt="tcs" loading="eager"></div>
-                                {{-- <div class="first-box"><img src="{{ asset('assets/images/company/ibm.webp') }}"
+                                {{-- <div class="first-box"><img width="43" height="17" src="{{ asset('assets/images/company/ibm.webp') }}"
                                         alt="ibm" loading="eager"></div> --}}
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5 college-column-section">
-                        <img src="{{ asset('assets/images/team/success_banner.webp') }}" alt="sucess-story-short-image"
-                            loading="eager" width="90%">
+                        {{-- width="90%" is not a legal width attribute, so the browser
+                             paired it with height="1698" and reserved nothing sensible for
+                             a full-height hero. Real intrinsic size is 1700x1698; the 90%
+                             sizing moves to CSS where it belongs. --}}
+                        <img width="1700" height="1698" src="{{ asset('assets/images/team/success_banner.webp') }}"
+                            alt="sucess-story-short-image" loading="eager" fetchpriority="high"
+                            style="width: 90%; height: auto;">
                     </div>
                 </div>
             </div>
@@ -88,7 +100,7 @@
                                 <div class="first-running-marquee">
                                     <div class="marquee-wrapper">
                                         @foreach ($placements->take(10) as $p)
-                                            <div class="box1"> <img src="{{ asset('storage/' . $p->image) }}"
+                                            <div class="box1"> <img loading="lazy" src="{{ asset('storage/' . $p->image) }}"
                                                     alt="{{ $p->name }}" style="width: 163px;"> </div>
                                         @endforeach
                                     </div>
@@ -98,10 +110,19 @@
                                 <div class="second-video-running sumantest">
                                     @foreach ($videos as $t)
                                         <div class="box">
-                                            <video class="gif-img" autoplay loop muted playsinline loading="eager"
-                                                style="width: 163px;" poster="{{ asset('storage/' . $t->image) }}">
-                                                <source src="{{ asset('storage/' . $t->image) }}" type="video/mp4">
-                                            </video>
+                                            {{--
+                                                Deferred: with the <source> inline, every clip in this
+                                                marquee downloaded on page load — the same eager video
+                                                weight the homepage carousel was fixed for. The source
+                                                is attached when the box scrolls into view.
+
+                                                No poster either: $t->image *is* the .webm, so pointing
+                                                poster at it made the browser fetch each clip anyway
+                                                and then discard it as an invalid image.
+                                            --}}
+                                            <video class="gif-img js-deferred-video" loop muted playsinline
+                                                preload="none" style="width: 163px; aspect-ratio: 9 / 16;"
+                                                data-src="{{ asset('storage/' . $t->image) }}"></video>
                                             <a href="javascript:void(0);" rel="noopener noreferrer"
                                                 data-bs-toggle="modal" data-bs-target="#youtubeModal" class="youtubeopen"
                                                 data-youtube="https://www.youtube.com/embed/{{ $t->video_link }}">
@@ -130,7 +151,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center flex-column">
                     <div class="real-section d-flex">
-                        <h2>Real</h2> <img src="{{ asset('assets/images/start.webp') }}" alt="star" loading="eager"
+                        <h2>Real</h2> <img width="96" src="{{ asset('assets/images/start.webp') }}" alt="star" loading="eager"
                             height="73px">
                     </div>
                     <div class="story-text-section d-flex">
@@ -208,7 +229,7 @@
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-8 d-flex gap-3 offer-letter-col">
-                        <div class="file-offer-letter"> <img src="{{ asset('assets/images/cta-new.webp') }}"
+                        <div class="file-offer-letter"> <img width="142" height="156" src="{{ asset('assets/images/cta-new.webp') }}"
                                 alt="file-offer-letter" loading="eager"> </div>
                         <div class="offer-letter-text">
                             <p>From Students to Success</p>
@@ -302,7 +323,9 @@
                 <button type="button" class="btn-close btn-close-white custom-close-btn" data-bs-dismiss="modal"
                     aria-label="Close"></button>
                 <div class="youtube-video-wrapper">
-                    <iframe id="youtubePlayer" loading="lazy" src="" frameborder="0"
+                    {{-- No src attribute: src="" resolves against the current document,
+                         so the browser loaded this whole page again inside the modal. --}}
+                    <iframe id="youtubePlayer" loading="lazy" frameborder="0"
                         allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
@@ -324,7 +347,8 @@
             });
 
             modal.addEventListener('hidden.bs.modal', function() {
-                player.src = '';
+                // about:blank, not '' — an empty src reloads this whole page.
+                player.src = 'about:blank';
             });
             const revealEls = document.querySelectorAll(
                 '.champion-card, .champ-grid-card, .stat-card, .placement-highlight-card, .review-banner-card');

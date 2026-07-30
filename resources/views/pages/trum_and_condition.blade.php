@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="breadcumb-shape">
-            <img loading="lazy" src="assets/images/inner-img/breadcumb-dot.webp" alt="dot" title="dot">
+            <img width="213" height="142" loading="lazy" src="assets/images/inner-img/breadcumb-dot.webp" alt="dot" title="dot">
         </div>
     </div>
 </div>

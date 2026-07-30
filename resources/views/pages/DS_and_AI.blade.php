@@ -303,7 +303,7 @@
         <
         !--
     </script>-->
-    <!--<noscript><img loading="lazy"height="1" width="1" style="display:none"-->
+    <!--<noscript><img loading="lazy" height="1" width="1" style="display:none"-->
     <!--        src="https://www.facebook.com/tr?id=800802711004426&ev=PageView&noscript=1" /></noscript>-->
     <!-- End Meta Pixel Code -->
 
@@ -331,7 +331,7 @@
         fbq('init', '178563895069569');
         fbq('track', 'PageView');
     </script>
-    <noscript><img loading="lazy"height="1" width="1" style="display:none"
+    <noscript><img loading="lazy" height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=178563895069569&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 
@@ -1617,11 +1617,11 @@
                 <!--<div class="container" style="    padding: 10px;">-->
                 <!--    <div class="row">-->
                 <!--        <div class="col-lg-3" id="mob2">-->
-                <!--<img loading="lazy"style="width: 25%;" src="https://us.digicrome.com/public/www/images/google.png">-->
-                <!--<img loading="lazy"style="width: 25%;" src="https://us.digicrome.com/public/www/images/Microsoft (1).png">-->
+                <!--<img loading="lazy" style="width: 25%;" src="https://us.digicrome.com/public/www/images/google.png">-->
+                <!--<img loading="lazy" style="width: 25%;" src="https://us.digicrome.com/public/www/images/Microsoft (1).png">-->
                 <!--        </div>-->
                 <!--        <div class="col-lg-9" id="mob3" style="color: #fff;">-->
-                <!--                                    <img loading="lazy"id="mob2" style="width: 10%;" src="https://us.digicrome.com/public/www/images/Microsoft.png">-->
+                <!--                                    <img loading="lazy" id="mob2" style="width: 10%;" src="https://us.digicrome.com/public/www/images/Microsoft.png">-->
 
                 <!--       <span >  With Generative AI module and Microsoft Power BI Data Analyst Training Program</span>-->
                 <!--    </div>-->
@@ -1651,7 +1651,7 @@
                     </script>-->
 
                     <div class="logo1">
-                        <img loading="lazy"style="width: 20vh;" src="https://us.digicrome.com/public/web/img/logo.svg"
+                        <img loading="lazy" style="width: 20vh;" src="https://us.digicrome.com/public/web/img/logo.svg"
                             alt="Logo" title="Logo" width="10%">
                     </div>
                     <button id="headerbutton" class="enroll-button" onclick="openModal()">Download Brochure</button>
@@ -2328,7 +2328,7 @@
                 <div class="custom-box">
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxa.svg"
+                            <img loading="lazy" src="https://us.digicrome.com/public/www/images/boxa.svg"
                                 alt="Image 1" title="Image 1">
                         </div>
                         <h4>60+ Case Studies & Assignments</h4>
@@ -2336,7 +2336,7 @@
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxc.svg"
+                            <img loading="lazy" src="https://us.digicrome.com/public/www/images/boxc.svg"
                                 alt="Image 2" title="Image 2">
                         </div>
                         <h4>
@@ -2345,7 +2345,7 @@
                     </div>
                     <div class="custom-box-orange">
                         <div class="custom-icon">
-                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxb.svg"
+                            <img loading="lazy" src="https://us.digicrome.com/public/www/images/boxb.svg"
                                 alt="Image 3" title="Image 3">
                         </div>
                         <h4>
@@ -2354,7 +2354,7 @@
                     </div>
                     <div class="custom-box-blue">
                         <div class="custom-icon">
-                            <img loading="lazy"src="https://us.digicrome.com/public/www/images/boxe.svg"
+                            <img loading="lazy" src="https://us.digicrome.com/public/www/images/boxe.svg"
                                 alt="Image 4" title="Image 4">
                         </div>
                         <h4>Job Readiness Program:</h4>
@@ -2376,7 +2376,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg1.svg"
                                                 alt="img1" title="img1">
 
@@ -2397,7 +2397,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg2.svg"
                                                 alt="img2" title="img2">
 
@@ -2418,7 +2418,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg3.svg"
                                                 alt="img3" title="img3">
 
@@ -2441,7 +2441,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg4.svg"
                                                 alt="img4" title="img4">
 
@@ -2461,7 +2461,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg5.svg"
                                                 alt="img5" title="img5">
 
@@ -2481,7 +2481,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg6.svg"
                                                 alt="img6" title="img6">
 
@@ -2504,7 +2504,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg7.svg"
                                                 alt="img7" title="img7">
 
@@ -2524,7 +2524,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg8.svg"
                                                 alt="img8" title="img8">
 
@@ -2545,7 +2545,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg9.svg"
                                                 alt="img9" title="img9">
 
@@ -2567,7 +2567,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg10.svg"
                                                 alt="img10" title="img10">
 
@@ -2587,7 +2587,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg11.svg"
                                                 alt="img11" title="img11">
 
@@ -2608,7 +2608,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-4" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/svg12.svg"
                                                 alt="img12" title="img12">
 
@@ -2649,7 +2649,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/mod1.svg"
                                                 alt="img13" title="img13">
 
@@ -2676,7 +2676,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/mod2.svg"
                                                 alt="img14" title="img14">
 
@@ -2704,7 +2704,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/mod3.svg"
                                                 alt="img16" title="img16">
 
@@ -2733,7 +2733,7 @@
                                 <div class="card-body">
                                     <div class="row" id="innerrow">
                                         <div class="col-lg-3" id="innercol">
-                                            <img loading="lazy"style="max-width: 100%; height: auto;"
+                                            <img loading="lazy" style="max-width: 100%; height: auto;"
                                                 src="https://us.digicrome.com/public/www/images/mod4.svg"
                                                 alt="img17" title="img17">
 
@@ -2970,27 +2970,27 @@
                         <div class="row" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool1.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool2.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool3.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool4.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool5.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
@@ -2999,27 +2999,27 @@
                         <div class="row" style="margin-top: 20px" id="r1">
                             <div class="col-lg-1" id="lg1"></div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool6.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool7.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool8.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool9.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
                             <div class="col-lg-2" id="lg2">
-                                <img loading="lazy"id="toolimg"
+                                <img loading="lazy" id="toolimg"
                                     src="https://us.digicrome.com/public/www/images/tool10.svg" alt="toolimg"
                                     title="toolimg">
                             </div>
@@ -3087,7 +3087,7 @@
                         </ul><br>
                     </div>
                     <div class="col-lg-6">
-                        <img loading="lazy"style="padding: 20px 20px;"
+                        <img loading="lazy" style="padding: 20px 20px;"
                             src="https://us.digicrome.com/public/www/images/cirt1111.png" alt="cirt1"
                             title="cirt1">
                     </div>
@@ -3234,7 +3234,7 @@
                         <!--<div><span-->
                         <!--        style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span-->
                         <!--            style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">-->
-                        <!--            <img loading="lazy"style="display:block;max-width:100%;width:67%;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"-->
+                        <!--            <img loading="lazy" style="display:block;max-width:100%;width:67%;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"-->
                         <!--                alt="" aria-hidden="true" src="https://us.digicrome.com/public/www/images/cot1.svg"></span>-->
                         <!--        </noscript></span></div>-->
                     </div>
@@ -3487,7 +3487,7 @@
                 <div class="container">
                     <div class="row gx-5">
                         <div class="col-lg-2 col-md-6">
-                            <img loading="lazy"src="https://us.digicrome.com/public/web/img/logo2.png"
+                            <img loading="lazy" src="https://us.digicrome.com/public/web/img/logo2.png"
                                 alt="logo" title="logo" class="img-fluid mt-4">
                         </div>
                         <div class="col-lg-10 col-md-12 pt-5 mb-5">

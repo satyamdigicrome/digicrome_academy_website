@@ -85,9 +85,24 @@
     </div>
 </section>
 
+{{--
+    These three families used to arrive via `@import` inside the <style> block
+    below. An @import cannot even be discovered until the stylesheet around it has
+    been fetched and parsed, so it added a serialized round trip; as a <link> the
+    browser starts the request as soon as it parses this line, and the preconnects
+    warm the connection ahead of it.
+
+    It stays render-blocking on purpose. Loading it asynchronously measured 0.247
+    CLS on mobile against 0.0006 blocking: the card text reflows when the real
+    metrics replace the fallback font's, and this grid is tall enough that the
+    reflow moves the whole rest of the page.
+--}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
 /* === Digicrome Courses (dgc-) — scoped, prefixed to avoid collisions === */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap');
 
 .dgc-courses {
     --dgc-bg: #F5F7FB;

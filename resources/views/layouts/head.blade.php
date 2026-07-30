@@ -21,8 +21,6 @@
     <link rel="canonical" href="{{ url()->current() }}" />
 
     {{-- Preconnect to external origins for faster font/CDN loading --}}
-    <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.bunny.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://player.vimeo.com">
     <link rel="dns-prefetch" href="https://f.vimeocdn.com">
@@ -35,28 +33,35 @@
     <link rel="preload" href="{{ asset('assets/css/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2') }}"
         as="font" type="font/woff2" crossorigin="anonymous">
 
-    {{--
-        Layout-critical CSS. These MUST be render-blocking: loading them
-        asynchronously makes the browser paint raw, unstyled HTML first and
-        restyle it once the CSS lands (the flash of unstyled content).
-    --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/fonts-bunny.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-
-    {{--
-        Non-critical CSS (icon fonts, animations, decorations). `media="print"`
-        keeps these out of the render-blocking path; the onload handler promotes
-        them to `all` as soon as they arrive. Nothing here affects layout, so at
-        worst an icon or animation appears a beat late.
-    --}}
     @php
+        /*
+         * Layout-critical CSS. These MUST be render-blocking: loading them
+         * asynchronously makes the browser paint raw, unstyled HTML first and
+         * restyle it once the CSS lands (the flash of unstyled content).
+         *
+         * What they must NOT be is nine separate requests. AssetBundle
+         * concatenates them into one hashed file; if it cannot write the
+         * bundle (read-only deploy) we fall back to the individual links, so
+         * the page still renders correctly, just with the old request count.
+         */
+        $criticalStyles = [
+            'assets/css/bootstrap.min.css',
+            'assets/css/theme-default.css',
+            'assets/css/style.css',
+            'assets/css/responsive.css',
+            'assets/css/google-fonts.css',
+            'assets/css/flaticon.css',
+            'assets/css/meanmenu.min.css',
+            'assets/css/owl.carousel.min.css',
+            'assets/css/cls-fixes.css',
+        ];
+
+        /*
+         * Non-critical CSS (icon fonts, animations, decorations). `media="print"`
+         * keeps these out of the render-blocking path; the onload handler promotes
+         * them to `all` as soon as they arrive. Nothing here affects layout, so at
+         * worst an icon or animation appears a beat late.
+         */
         $deferredStyles = [
             'assets/css/all.min.css',
             'assets/css/bootstrap-icons.css',
@@ -67,14 +72,22 @@
             'assets/css/odometer-theme-default.css',
             'assets/css/scroll-up.css',
         ];
+
+        $criticalBundle = \App\Support\AssetBundle::css($criticalStyles);
+        $deferredBundle = \App\Support\AssetBundle::css($deferredStyles);
     @endphp
-    @foreach ($deferredStyles as $style)
+
+    @foreach ($criticalBundle ? [$criticalBundle] : $criticalStyles as $style)
+        <link rel="stylesheet" href="{{ asset($style) }}">
+    @endforeach
+
+    @foreach ($deferredBundle ? [$deferredBundle] : $deferredStyles as $style)
         <link rel="stylesheet" href="{{ asset($style) }}" media="print" onload="this.media='all';this.onload=null">
     @endforeach
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" media="print"
         onload="this.media='all';this.onload=null">
     <noscript>
-        @foreach ($deferredStyles as $style)
+        @foreach ($deferredBundle ? [$deferredBundle] : $deferredStyles as $style)
             <link rel="stylesheet" href="{{ asset($style) }}">
         @endforeach
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
@@ -154,6 +167,8 @@
             }
         </script>
     <script>
+        // Google Tag Manager waits for the load event so it and everything it
+        // orchestrates stay off the critical rendering path.
         window.addEventListener('load', function() {
             (function(w, d, s, l, i) {
                 w[l] = w[l] || [];
@@ -169,19 +184,48 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                 f.parentNode.insertBefore(j, f);
             })(window, document, 'script', 'dataLayer', 'GTM-NLXJ6MV');
+        });
 
-            var Tawk_API = Tawk_API || {},
-                Tawk_LoadStart = new Date();
-            (function() {
-                var s1 = document.createElement("script"),
-                    s0 = document.getElementsByTagName("script")[0];
+        // The chat widget runs persistent background scripts, so it is one of
+        // the larger contributors to blocking time. Hold it back until the
+        // visitor actually does something, or five seconds have passed —
+        // whichever comes first. Nobody opens chat in the first few seconds,
+        // and by then the page is fully interactive.
+        (function() {
+            var loaded = false;
+            var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+
+            function loadTawk() {
+                if (loaded) return;
+                loaded = true;
+
+                events.forEach(function(name) {
+                    window.removeEventListener(name, loadTawk);
+                });
+
+                window.Tawk_API = window.Tawk_API || {};
+                window.Tawk_LoadStart = new Date();
+
+                var s1 = document.createElement('script'),
+                    s0 = document.getElementsByTagName('script')[0];
                 s1.async = true;
                 s1.src = 'https://embed.tawk.to/68f9d2f2d84f3b1958008620/1j87u01d2';
                 s1.charset = 'UTF-8';
                 s1.setAttribute('crossorigin', '*');
                 s0.parentNode.insertBefore(s1, s0);
-            })();
-        });
+            }
+
+            events.forEach(function(name) {
+                window.addEventListener(name, loadTawk, {
+                    passive: true,
+                    once: true
+                });
+            });
+
+            window.addEventListener('load', function() {
+                setTimeout(loadTawk, 5000);
+            });
+        })();
     </script>
     <style>
         body {
