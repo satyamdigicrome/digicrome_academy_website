@@ -64,126 +64,128 @@
                     <a class="active_logo" href="/"><img loading="lazy"
                             src="{{ asset('assets/images/logo.webp') }}" width="150" height="50"
                             alt="logo"></a>
-                    <a class="logo_two" href="/"><img width="247" height="79" class="footer-logo11" loading="lazy"
-                            src="{{ asset('assets/images/logonew.webp') }}" alt="logo"></a>
+                    <a class="logo_two" href="/"><img width="247" height="79" class="footer-logo11"
+                            loading="lazy" src="{{ asset('assets/images/logonew.webp') }}" alt="logo"></a>
                 </div>
             </div>
             <div class="col-lg-8">
                 <div class="header-menu">
                     <ul class="nav_scroll">
-                    <li class="menu-item-has-children">
-                        <a href="#"
-                            style="background:#1c1647; border:2px solid #fff; border-radius:8px; padding:3px 7px; color:#fff; display:flex; align-items:center; gap:5px;">
-                            <i class="bi bi-journal-bookmark-fill text-light"></i>
-                            Courses
-                            <i class="bi bi-chevron-down text-light"></i>
-                        </a>
+                        <li class="menu-item-has-children">
+                            <a href="#"
+                                style="background:#1c1647; border:2px solid #fff; border-radius:8px; padding:3px 7px; color:#fff; display:flex; align-items:center; gap:5px;">
+                                <i class="bi bi-journal-bookmark-fill text-light"></i>
+                                Courses
+                                <i class="bi bi-chevron-down text-light"></i>
+                            </a>
 
-                    <!-- 🔥 ONLY THIS submenu is mega-menu -->
-                    <ul class="sub_menu mega-menu">
-                        <li>
-                            <div class="mega-wrapper">
+                            <!-- 🔥 ONLY THIS submenu is mega-menu -->
+                            <ul class="sub_menu mega-menu">
+                                <li>
+                                    <div class="mega-wrapper">
 
-                                <div class="mega-left">
-                                    <h6>Popular Categories</h6>
-                                    <ul>
-                                        <li>
-                                            <a href="{{ route('course.category', 'data-science-course') }}"
-                                                class="text-dark d-flex justify-content-between align-items-center">
-                                                Data Science & AI <i class="bi bi-chevron-right"></i>
-                                            </a>
-                                        </li>
+                                        <div class="mega-left">
+                                            <h6>Popular Categories</h6>
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ route('course.category', 'data-science-course') }}"
+                                                        class="text-dark d-flex justify-content-between align-items-center">
+                                                        Data Science & AI <i class="bi bi-chevron-right"></i>
+                                                    </a>
+                                                </li>
 
-                                        <li>
-                                            <a href="{{ route('course_details', 'ai-security-online-training') }}" class="text-dark d-flex justify-content-between align-items-center">
-                                                Cyber Security: Security of AI
-                                                <i class="bi bi-chevron-right"></i>
-                                            </a>
-                                        </li>
+                                                <li>
+                                                    <a href="{{ route('course_details', 'ai-security-online-training') }}"
+                                                        class="text-dark d-flex justify-content-between align-items-center">
+                                                        Cyber Security: Security of AI
+                                                        <i class="bi bi-chevron-right"></i>
+                                                    </a>
+                                                </li>
+                                                @foreach ($header_collections->whereNotIn('id', [5, 6]) as $collection)
+                                                    <li>
+                                                        <a href="{{ route('course.category', $collection->slug) }}"
+                                                            class="text-dark d-flex justify-content-between align-items-center">
+                                                            {{ $collection->name }}
+                                                            <i class="bi bi-chevron-right"></i>
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        <div class="mega-right">
+                                            <h6>Top Courses</h6>
+                                            <div class="course-list">
+                                                @foreach ([1, 3, 85, 55] as $id)
+                                                    @if (isset($header_courses[$id]))
+                                                        @php $course = $header_courses[$id]; @endphp
+                                                        <a href="{{ route('course_details', $course->slug) }}"
+                                                            class="course-item">
+                                                            <img loading="lazy"
+                                                                src="{{ asset('storage/' . $course->image) }}"
+                                                                alt="">
+                                                            <div class="course-info">
+                                                                <h6>{{ $course->name }}</h6>
+                                                                <p>{{ $course->course_duration ?? 'N/A' }}</p>
+                                                            </div>
 
-                                        <li>
-                                            <a href="http://digicromeuniversity.com" class="text-dark d-flex justify-content-between align-items-center">
-                                                UG/PG Courses <i class="bi bi-chevron-right"></i>
-                                            </a>
-                                        </li>
+                                                        </a>
+                                                    @endif
+                                                @endforeach
+                                            </div>
 
-                                        @foreach ($header_collections->whereNotIn('id', [5, 6]) as $collection)
-                                            <li>
-                                                <a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
-                                                    {{ $collection->name }}
-                                                    <i class="bi bi-chevron-right"></i>
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                <div class="mega-right">
-                                    <h6>Top Courses</h6>
-                                    <div class="course-list">
-                                        @foreach ([1,3,85,55] as $id)
-                                            @if (isset($header_courses[$id]))
-                                                @php $course = $header_courses[$id]; @endphp
-                                                <a href="{{ route('course_details', $course->slug) }}" class="course-item">
-                                                    <img loading="lazy" src="{{ asset('storage/'.$course->image) }}" alt="">
-                                                    <div class="course-info">
-                                                        <h6>{{ $course->name }}</h6>
-                                                        <p>{{ $course->course_duration ?? 'N/A' }}</p>
-                                                    </div>
+                                        </div>
 
-                                                </a>
-                                            @endif
-                                        @endforeach
                                     </div>
-
-                                </div>
-
-                            </div>
+                                </li>
+                            </ul>
                         </li>
-                    </ul>
-                </li>
-                <li><a href="/">Home</a>
-                </li>
-                <li><a href="{{ route('about') }}">About Us</a></li>
-                <li><a href="{{ route('success_stories') }}">Success stories</a></li>
-                <li><a href="{{ route('blog') }}">Blog </a></li>
-                <li><a href="{{ route('payments') }}">Payments </a></li>
-                <li><a href="{{ route('contact') }}">Contact</a></li>
-                {{-- menu-align-right: this panel is 650px wide and sits at the right end of
+                        <li><a href="/">Home</a>
+                        </li>
+                        <li><a href="{{ route('about') }}">About Us</a></li>
+                        <li><a href="{{ route('success_stories') }}">Success stories</a></li>
+                        <li><a href="{{ route('blog') }}">Blog </a></li>
+                        <li><a href="{{ route('payments') }}">Payments </a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
+                        {{-- menu-align-right: this panel is 650px wide and sits at the right end of
                      the bar, so anchoring it left ran it past the viewport and gave the
                      page a horizontal scrollbar. It opens leftwards instead. --}}
-                <li class="menu-align-right"><a href="#">More<i class="bi bi-chevron-down"></i></a>
-                    <ul class="sub_menu">
-                        {{-- <li><a href="{{ route('who_we_are') }}">Who we are</a></li> --}}
-                        <li class="menu-color-blue"><a href="{{ route('corporate_services') }}">Corporate Services </a></li>
-                        <li class="menu-color-red"><a href="{{ route('refer_and_earn') }}">Refer & Earn</a></li>
-                        <li class="menu-color-yellow"><a href="{{ route('career') }}">Career</a></li>
-                        <li class="menu-color-green"><a href="{{ route('media_presence') }}">Media Presence</a></li>
+                        <li class="menu-align-right"><a href="#">More<i class="bi bi-chevron-down"></i></a>
+                            <ul class="sub_menu">
+                                {{-- <li><a href="{{ route('who_we_are') }}">Who we are</a></li> --}}
+                                <li class="menu-color-blue"><a href="{{ route('corporate_services') }}">Corporate
+                                        Services </a></li>
+                                <li class="menu-color-red"><a href="{{ route('refer_and_earn') }}">Refer & Earn</a>
+                                </li>
+                                <li class="menu-color-yellow"><a href="{{ route('career') }}">Career</a></li>
+                                <li class="menu-color-green"><a href="{{ route('media_presence') }}">Media Presence</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="header-src-btn">
+                                <div class="search-box-btn search-box-outer"><i
+                                        class="fa-solid fa-magnifying-glass"></i></div>
+                            </div>&nbsp;&nbsp;
+                        </li>
                     </ul>
-                </li>
-                <li>
-                    <div class="header-src-btn">
-                        <div class="search-box-btn search-box-outer"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    </div>&nbsp;&nbsp;
-                </li>
-                </ul>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="header-right-wrapper">
-                <div class="header-sidebar">
-                    <div class="header-btn">
-                        <a href="javascript:void(0);"
-                            onclick="{{ Route::is('course_details') ? 'openModal(\'applyNowPopup\')' : 'openModal()' }}"
-                            style="display: inline-block;border: 2px solid #fff;color: #fff;background-color: #1c1647;padding: 8px 20px;font-size: 14px;white-space: nowrap;min-width: 120px;text-align: center;">
-                            ENROLL NOW
-                        </a>
+            <div class="col-lg-2">
+                <div class="header-right-wrapper">
+                    <div class="header-sidebar">
+                        <div class="header-btn">
+                            <a href="javascript:void(0);"
+                                onclick="{{ Route::is('course_details') ? 'openModal(\'applyNowPopup\')' : 'openModal()' }}"
+                                style="display: inline-block;border: 2px solid #fff;color: #fff;background-color: #1c1647;padding: 8px 20px;font-size: 14px;white-space: nowrap;min-width: 120px;text-align: center;">
+                                ENROLL NOW
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
 </div>
 
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
@@ -211,8 +213,8 @@
     <div class="mobile-menu">
         <nav class="header-menu">
             <div class="mobile-logo" style="z-index: -9;">
-                <img width="247" height="79" class="footer-logo11" loading="lazy" src="{{ asset('assets/images/logonew.webp') }}"
-                    alt="logo">
+                <img width="247" height="79" class="footer-logo11" loading="lazy"
+                    src="{{ asset('assets/images/logonew.webp') }}" alt="logo">
             </div>
             <ul class="nav_scroll">
                 <li><a href="/">Home</a></li>
@@ -291,8 +293,8 @@
                 <div class="sidebar-info-contents">
                     <div class="content-inner">
                         <div class="nav-logo">
-                            <a href="/"><img width="247" height="79" loading="lazy" src="{{ asset('assets/images/logonew.webp') }}"
-                                    alt="logo"></a>
+                            <a href="/"><img width="247" height="79" loading="lazy"
+                                    src="{{ asset('assets/images/logonew.webp') }}" alt="logo"></a>
                         </div>
                         <div class="content-box">
                             <h2>About Us</h2>
