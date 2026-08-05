@@ -254,8 +254,8 @@
             </div>
 
             <div class="df-form-body">
-                <form class="form" method="post" action="https://demo.digicrome.in/post_lead.php">
-                    <input type="hidden" name="_token" value="dummy_or_blade_token_field">
+                <form class="form" method="post" action="{{ route('website.lead') }}">
+                    @csrf
 
                     <div class="df-input-group">
                         <input type="text" id="name" name="name" class="df-input-field" placeholder="Name" required autocomplete="name" />
@@ -285,7 +285,7 @@
                     <input type="text" name="our_custom" style="display:none;" value="digicrome">
                     <input type="hidden" name="form_time" value="<?php echo time(); ?>">
                     <input type="hidden" name="profession" value="NA" />
-                    <input type="hidden" name="source" value="Home Page" id="sourceInput" />
+                    <input type="hidden" name="source" value="Course Page" id="sourceInput" />
                     <input type="hidden" name="country" value="india" />
                     <input type="hidden" name="comp_name" value="" />
                     <input type="hidden" name="state" value="" />

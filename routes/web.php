@@ -330,6 +330,10 @@ Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy
 Route::post('/store-lead', [LeadsController::class, 'store'])->name('store.lead');
 Route::post('/leads', [LeadsController::class, 'leadsstore'])->name('lead.store');
 Route::post('/landingstore', [LeadsController::class, 'landingstore'])->name('landing.store');
+Route::middleware('throttle:60,1')
+    ->withoutMiddleware([\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class])
+    ->post('/website-leads', [LeadsController::class, 'websiteLead'])
+    ->name('website.lead');
 Route::post('/submit-referral', [ReferController::class, 'submit'])->name('referral.submit');
 Route::post('/vacancy/apply', [CareerController::class, 'apply'])->name('vacancy.apply');
 Route::get('/investment-banking-course', [LandingPageController::class, 'index'])->name('landing.ib');

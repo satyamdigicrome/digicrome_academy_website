@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'lead_integration' => [
+        'url' => env('LEAD_INTEGRATION_URL', 'https://demo.digicrome.in/api/leads/submit'),
+        'api_key' => env('LEAD_INTEGRATION_API_KEY'),
+        'api_secret' => env('LEAD_INTEGRATION_API_SECRET'),
+        'timeout' => (int) env('LEAD_INTEGRATION_TIMEOUT', 10),
+    ],
+
 ];

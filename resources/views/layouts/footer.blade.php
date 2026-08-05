@@ -4,14 +4,14 @@
             <div class="col-lg-6 col-md-12">
                 <div class="footer-logo">
                     <a href="#"><img loading="lazy" width="150" height="79"
-                            src="{{ asset('assets/images/logonew.webp') }}" alt="logo"
-                            class="footer-logo11" style="width:150px;height:auto;max-width:100%;"></a>
+                            src="{{ asset('assets/images/logonew.webp') }}" alt="logo" class="footer-logo11"
+                            style="width:150px;height:auto;max-width:100%;"></a>
                 </div>
                 <br>
                 <div class="section_title six">
                     <h2 style="color: #fff; font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;">
-                        Let’s Connect and 
-                    {{-- </h2>
+                        Let’s Connect and
+                        {{-- </h2>
                     <h2 style="color: #fff; font-size: 36px; font-weight: bold; line-height: 1.2; margin-bottom: 20px;"> --}}
                         Grow Your Future Together!</h2>
                 </div>
@@ -23,7 +23,7 @@
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="contact-form-box style_six">
-                    <form id="professionalForm" method="post" action="https://demo.digicrome.in/post_lead.php"
+                    <form id="professionalForm" method="post" action="{{ route('website.lead') }}"
                         style="width:100%; margin:0;">
                         @csrf
                         <div class="row">
@@ -42,26 +42,20 @@
                                 <input type="tel" name="mobile" placeholder="Mobile Number" required
                                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
 
-                                <input type="text" name="title" placeholder="Qualification"
+                                <input type="text" name="profession" placeholder="Qualification"
                                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
 
-                                <select name="profession" required
+                                <select name="title" required
                                     style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-                                    <option value="" disabled selected hidden>Select Experience</option>
-                                    <option value="Working Professional - Technincal Roles">Working Professional -
-                                        Technincal Roles</option>
-                                    <option value="Working Professional - Non Technincal">Working Professional - Non
-                                        Technincal</option>
-                                    <option value="College Student - Final Year">College Student - Final Year</option>
-                                    <option value="College Student - 1st to pre-final Year">College Student - 1st to
-                                        pre-final Year</option>
-                                    <option value="Other">Other</option>
+                                    <option value="DS">Data Science & AI</option>
+                                    <option value="AISS">Cyber Security</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
                         </div>
 
                         <input type="hidden" name="ib" value="">
-                        <input type="hidden" name="source" value="Website">
+                        <input type="hidden" name="source" value="Website (Footer)">
                         <input type="hidden" name="country" value="india">
                         <input type="hidden" name="comp_name" value="">
                         <input type="hidden" name="state" value="">
@@ -94,7 +88,8 @@
                     </div>
                     <div class="footer-contact-info">
                         <div class="footer-contact-phone">
-                            <p><img width="24" height="20" loading="lazy" src="{{ asset('assets/images/home-one/footer-call.webp') }}"
+                            <p><img width="24" height="20" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-call.webp') }}"
                                     alt="call">01204538104</p>
                         </div>
                         <div class="footer-contact-address">
@@ -110,18 +105,23 @@
                     </div>
                     <div class="footer-widget-menu">
                         <ul>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('about') }}">About Us</a></li>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('course') }}">All
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('about') }}">About Us</a></li>
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('course') }}">All
                                     Courses</a></li>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('corporate_services') }}">Corporate Services</a>
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('corporate_services') }}">Corporate Services</a>
                             </li>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('blog') }}">Blog</a></li>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('payments') }}">Payments</a></li>
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('blog') }}">Blog</a></li>
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('payments') }}">Payments</a></li>
                         </ul>
                     </div>
                 </div>
@@ -133,17 +133,22 @@
                     </div>
                     <div class="footer-widget-menu">
                         <ul>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('who_we_are') }}">Who we are</a></li>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('success_stories') }}">Success stories</a></li>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('terms-and-conditions') }}">Terms And
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('who_we_are') }}">Who we are</a></li>
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('success_stories') }}">Success stories</a></li>
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('terms-and-conditions') }}">Terms And
                                     Conditions</a></li>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
-                            <li><img width="14" height="14" loading="lazy" src="{{ asset('assets/images/home-one/footer-icon.webp') }}"
-                                    alt="icon"><a href="{{ route('privacy-policy') }}">Privacy-Policy</a></li>
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('disclaimer') }}">Disclaimer</a></li>
+                            <li><img width="14" height="14" loading="lazy"
+                                    src="{{ asset('assets/images/home-one/footer-icon.webp') }}" alt="icon"><a
+                                    href="{{ route('privacy-policy') }}">Privacy-Policy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -272,34 +277,34 @@
 @php
     /*
      * The theme's script chain, in dependency order — jQuery first, then the
-     * plugins that extend it, then theme.js which initialises them all.
-     *
-     * Every one of these is deferred. Deferred scripts still execute in document
-     * order and always before DOMContentLoaded, so the chain holds and the inline
-     * blocks further down (which wait for that event) find `$` and its plugins
-     * already present.
-     *
-     * AssetBundle concatenates them into one hashed file, turning fifteen round
-     * trips into one. If it cannot write the bundle — read-only deploy, missing
-     * source — it returns null and we emit the individual tags, so a failure
-     * costs request count, never correctness.
-     */
-    $themeScripts = [
-        'assets/js/vendor/jquery-3.6.2.min.js',
-        'assets/js/popper.min.js',
-        'assets/js/bootstrap.min.js',
-        'assets/js/owl.carousel.min.js',
-        'assets/js/jquery.counterup.min.js',
-        'assets/js/waypoints.min.js',
-        'assets/js/wow.js',
-        'assets/js/imagesloaded.pkgd.min.js',
-        'assets/js/animated-text.js',
-        'assets/js/isotope.pkgd.min.js',
-        'assets/js/jquery.meanmenu.js',
-        'assets/js/jquery.scrollUp.js',
-        'assets/js/jquery.barfiller.js',
-        'assets/js/theme.js',
-        'assets/js/deferred-media.js',
+ * plugins that extend it, then theme.js which initialises them all.
+ *
+ * Every one of these is deferred. Deferred scripts still execute in document
+ * order and always before DOMContentLoaded, so the chain holds and the inline
+ * blocks further down (which wait for that event) find `$` and its plugins
+ * already present.
+ *
+ * AssetBundle concatenates them into one hashed file, turning fifteen round
+ * trips into one. If it cannot write the bundle — read-only deploy, missing
+ * source — it returns null and we emit the individual tags, so a failure
+ * costs request count, never correctness.
+ */
+$themeScripts = [
+    'assets/js/vendor/jquery-3.6.2.min.js',
+    'assets/js/popper.min.js',
+    'assets/js/bootstrap.min.js',
+    'assets/js/owl.carousel.min.js',
+    'assets/js/jquery.counterup.min.js',
+    'assets/js/waypoints.min.js',
+    'assets/js/wow.js',
+    'assets/js/imagesloaded.pkgd.min.js',
+    'assets/js/animated-text.js',
+    'assets/js/isotope.pkgd.min.js',
+    'assets/js/jquery.meanmenu.js',
+    'assets/js/jquery.scrollUp.js',
+    'assets/js/jquery.barfiller.js',
+    'assets/js/theme.js',
+    'assets/js/deferred-media.js',
     ];
 
     $themeBundle = \App\Support\AssetBundle::js($themeScripts);

@@ -683,7 +683,7 @@
                         <div class="col-md-6">
                             <br>
                             <h3>Want a callback? Enter your details.</h3>
-                            <form id="frm123" method="post" action="https://demo.digicrome.in/post_lead.php">
+                            <form id="frm123" method="post" action="{{ route('website.lead') }}">
                                 <div class="mb-3">
                                     <input class="form-control" style="border-radius: 20px; padding: 12px;" placeholder="Enter your name" name="name" type="text">
                                 </div>
@@ -1002,7 +1002,7 @@
                         </div>
 
                         <form style="width:100%; background:transparent; margin:0px;" class="form" method="post"
-                            action="https://demo.digicrome.in/post_lead.php">
+                            action="{{ route('website.lead') }}">
                             @csrf
                             <div class="form-field">
                                 <!--<label style="color:#fff;" for="name">Name:</label> -->

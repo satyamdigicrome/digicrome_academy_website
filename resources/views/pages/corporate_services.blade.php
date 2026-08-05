@@ -1028,7 +1028,7 @@
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="contact-form-box">
                         <h3 class="mb-4">Let's Discuss Your Training Needs</h3>
-                        <form method="post" action="https://demo.digicrome.in/post_lead.php" class="row g-3">
+                        <form method="post" action="{{ route('website.lead') }}" class="row g-3">
                             @csrf
                             <input type="hidden" name="source" value="corporate_services">
                             <div class="col-12">

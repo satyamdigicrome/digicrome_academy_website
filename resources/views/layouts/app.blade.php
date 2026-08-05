@@ -22,7 +22,7 @@
             <p style="font-size:14px; color:#fff; margin-bottom:15px;">Need help? Call us at
                 <strong>01204538104</strong><br>or fill the form below.
             </p>
-            <form id="professionalForm" method="post" action="https://demo.digicrome.in/post_lead.php"
+            <form id="professionalForm" method="post" action="{{ route('website.lead') }}"
                 style="width:100%; margin:0;">
                 @csrf
                 <input type="text" name="name" placeholder="Name" required
@@ -68,7 +68,7 @@
                     Call us at
                     <strong>01204538104
                 </p>
-                <form id="placementprofessionalForm" method="post" action="https://demo.digicrome.in/post_lead.php"
+                <form id="placementprofessionalForm" method="post" action="{{ route('website.lead') }}"
                     style="width:100%; margin:0;">
                     @csrf
                     <input type="text" name="name" placeholder="Name" required
