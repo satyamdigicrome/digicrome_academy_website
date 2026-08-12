@@ -3,12 +3,187 @@
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
-    {{-- Preload the LCP hero image so the browser fetches it as early as possible --}}
-    <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb3.webp') }}" fetchpriority="high">
+    {{-- The offer banner sits above the hero, so it is the LCP element now.
+         Only the variant that will actually be used gets preloaded. --}}
+    <link rel="preload" as="image" href="{{ asset('assets/images/independence-mobile.webp') }}"
+        media="(max-width: 767.98px)" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('assets/images/independence-desktop.webp') }}"
+        media="(min-width: 768px)" fetchpriority="high">
+    {{-- Hero image is still above the fold on desktop, but no longer the largest
+         paint, so it preloads at normal priority rather than competing. --}}
+    <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb3.webp') }}">
     {{-- <link rel="preload"  as="image"  href="https://www.digicrome.com/assets/images/home-one/short.webp" type="image/webp" fetchpriority="high"> --}}
     {{-- Homepage layout styles — render-blocking on purpose, loading these
          asynchronously flashes an unstyled page before they apply. --}}
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+
+    {{-- Offer banner. Above the fold, so these rules belong in the head. --}}
+    <style>
+        .id-offer {
+            padding: 12px 0 4px;
+        }
+
+        /* Animated tricolour edge */
+        .id-offer__frame {
+            padding: 3px;
+            border-radius: 20px;
+            background: linear-gradient(120deg, #ff9933, #ffffff, #138808, #ff9933);
+            background-size: 300% 300%;
+            animation: idOfferBorder 9s ease infinite;
+        }
+
+        .id-offer__inner {
+            /* CTA hotspot, measured off the mobile artwork */
+            --cta-left: 34.22%;
+            --cta-top: 89.34%;
+            --cta-w: 31.56%;
+            --cta-h: 7.99%;
+
+            position: relative;
+            border-radius: 17px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #fdf4e3;
+            box-shadow: 0 12px 30px rgba(26, 20, 71, .18);
+            transition: transform .35s ease, box-shadow .35s ease;
+            animation: idOfferIn .7s cubic-bezier(.22, .9, .3, 1) both;
+        }
+
+        .id-offer__inner:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(26, 20, 71, .26);
+        }
+
+        /* Light sweep across the artwork */
+        .id-offer__inner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, .5) 50%, transparent 58%);
+            transform: translateX(-120%);
+            animation: idOfferShine 5s ease-in-out 1.4s infinite;
+            pointer-events: none;
+        }
+
+        /* aspect-ratio reserves the height before the image decodes, so the
+           hero below never jumps. One ratio per artwork. */
+        .id-offer__img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 900 / 563;
+        }
+
+        /* Real, focusable button sitting exactly on the drawn "Enroll Now" pill.
+           Transparent so the artwork shows through — the glow is the affordance. */
+        .id-offer__cta {
+            position: absolute;
+            left: var(--cta-left);
+            top: var(--cta-top);
+            width: var(--cta-w);
+            height: var(--cta-h);
+            padding: 0;
+            border: 0;
+            background: transparent;
+            border-radius: 999px;
+            cursor: pointer;
+        }
+
+        .id-offer__cta::before {
+            content: "";
+            position: absolute;
+            inset: -5px;
+            border-radius: 999px;
+            box-shadow: 0 0 0 0 rgba(242, 156, 18, .7);
+            animation: idOfferPulse 2.4s ease-out infinite;
+        }
+
+        .id-offer__cta:hover::before {
+            animation: none;
+            box-shadow: 0 0 0 6px rgba(242, 156, 18, .35);
+        }
+
+        .id-offer__cta:focus-visible {
+            outline: 3px solid #1a1447;
+            outline-offset: 4px;
+        }
+
+        .id-offer__cta-label {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @keyframes idOfferBorder {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes idOfferIn {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes idOfferShine {
+            0% { transform: translateX(-120%); }
+            35%, 100% { transform: translateX(120%); }
+        }
+
+        @keyframes idOfferPulse {
+            0% { box-shadow: 0 0 0 0 rgba(242, 156, 18, .7); }
+            70% { box-shadow: 0 0 0 14px rgba(242, 156, 18, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(242, 156, 18, 0); }
+        }
+
+        @media (min-width: 768px) {
+            .id-offer {
+                padding: 18px 0 6px;
+            }
+
+            .id-offer__inner {
+                /* CTA hotspot, measured off the desktop artwork */
+                --cta-left: 75.56%;
+                --cta-top: 85.59%;
+                --cta-w: 21.50%;
+                --cta-h: 8.93%;
+            }
+
+            .id-offer__img {
+                aspect-ratio: 1600 / 694;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .id-offer__frame,
+            .id-offer__inner,
+            .id-offer__inner::after,
+            .id-offer__cta::before {
+                animation: none;
+            }
+
+            .id-offer__inner {
+                transition: none;
+            }
+
+            .id-offer__inner::after {
+                display: none;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .id-offer {
+                margin-top: 110px;
+            }
+            .hero_area{
+                height: 687px;
+            }
+        }
+    </style>
 @endpush
 @push('scripts')
     <script>
@@ -19,8 +194,21 @@
             }, 3000);
         });
 
-        function openModal() {
+        // `source` is optional and always reset, so a lead opened from the offer
+        // banner is not still attributed to the offer the next time the modal is
+        // opened from somewhere else. Guarded with a typeof check because
+        // openModal is also used directly as a click listener, which would
+        // otherwise pass an Event object in here.
+        function openModal(source) {
+            const sourceInput = document.querySelector('#formModal input[name="source"]');
+            if (sourceInput) {
+                sourceInput.value = (typeof source === 'string' && source) ? source : 'Website(Home Page)';
+            }
             document.getElementById("formModal").style.display = "block";
+        }
+
+        function openIndependenceOfferModal() {
+            openModal('Website Home Page Independence Day Offer');
         }
 
         function openPlacementModal() {
@@ -62,13 +250,78 @@
             }
         });
 
-        // The deferred video/iframe loader now lives in assets/js/deferred-media.js
-        // (bundled with the footer scripts) because the success-stories carousel
-        // needs the same behaviour. It exposes window.initDeferredMedia() for
-        // re-scanning after a carousel clones slides.
+        // Embedded players and autoplay video are the heaviest things on this page
+        // and all of them sit below the fold. Attach their sources only once they
+        // are about to be seen, so they stay out of the initial page load.
+        function activateDeferredMedia(el) {
+            if (el.dataset.activated) return;
+            el.dataset.activated = '1';
+
+            if (el.tagName === 'IFRAME') {
+                el.src = el.dataset.src;
+                return;
+            }
+
+            const source = document.createElement('source');
+            source.src = el.dataset.src;
+            source.type = 'video/mp4';
+            el.appendChild(source);
+            el.load();
+            const started = el.play();
+            if (started) started.catch(function() {});
+        }
+
+        function observeDeferredMedia() {
+            const targets = document.querySelectorAll(
+                '.js-deferred-iframe[data-src]:not([data-activated]), .js-deferred-video[data-src]:not([data-activated])'
+            );
+            if (!targets.length) return;
+
+            if (!('IntersectionObserver' in window)) {
+                targets.forEach(activateDeferredMedia);
+                return;
+            }
+
+            const observer = new IntersectionObserver(function(entries, obs) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) return;
+                    activateDeferredMedia(entry.target);
+                    obs.unobserve(entry.target);
+                });
+            }, {
+                rootMargin: '300px 0px'
+            });
+
+            targets.forEach(function(el) {
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', observeDeferredMedia);
     </script>
 @endpush
 @section('content')
+    <section class="id-offer" aria-label="Independence Day special offer">
+        <div class="container">
+            <div class="id-offer__frame">
+                {{-- The whole banner is clickable for convenience; the button below
+                     is the real control that keyboard and screen reader users get. --}}
+                <div class="id-offer__inner" onclick="openIndependenceOfferModal()">
+                    <picture>
+                        <source media="(min-width: 768px)"
+                            srcset="{{ asset('assets/images/independence-desktop.webp') }}">
+                        <img class="id-offer__img" src="{{ asset('assets/images/independence-mobile.webp') }}"
+                            width="900" height="563" fetchpriority="high" loading="eager" decoding="async"
+                            alt="Digicrome Independence Day special offer — flat 40% off, valid till 13th August"
+                            title="Digicrome Independence Day special offer">
+                    </picture>
+                    <button type="button" class="id-offer__cta" onclick="event.stopPropagation(); openIndependenceOfferModal();">
+                        <span class="id-offer__cta-label">Enroll now — Independence Day offer, flat 40% off</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="hero_area style-one d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
@@ -82,7 +335,7 @@
                                 <div
                                     style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
                                     <small style="font-size: 14px; color: #555;">In collaboration with</small>
-                                    <img width="4434" height="882" loading="lazy" src="{{ asset('assets/images/ds-withai-course/msblack.webp') }}"
+                                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/msblack.webp') }}"
                                         class="ds-logo lazyload" alt="Microsoft Logo" title="Microsoft logo"
                                         style="width: 100%; height: auto; margin-top: 5px;">
                                 </div>
@@ -137,27 +390,27 @@
                 <div class="col-lg-6">
                     <div class="hero-thumb-wrapper">
                         <div class="hero-thumb">
-                            <img width="600" height="400" fetchpriority="high" loading="eager"
+                            <img width="600" height="400" loading="eager" decoding="async"
                                 src="{{ asset('assets/images/home-one/hero-thumb3.webp') }}" alt="Digicrome thumb"
                                 title="Digicrome thumb">
                         </div>
                         <div class="hero-arrow-shape">
-                            <img width="67" height="61" loading="lazy" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
+                            <img loading="lazy" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
                                 alt="digicrome arrow" title="Digicrome arrow">
                         </div>
                         {{-- <div class="hero-dot-shape">
-                            <img width="306" height="673" fetchpriority="high" loading="eager" decoding="async"
+                            <img fetchpriority="high" loading="eager" decoding="async"
                                 style="width: 306px; height: auto;   transform: translate(70px, -209px);"
                                 src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
                                 title="digicrome dot">
                         </div> --}}
                         {{-- <div class="hero-shape3 bounce-animate-3">
-                            <img width="42" height="39" loading="lazy" src="{{ asset('assets/images/home-one/hero-shape3.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}"
                                 alt="digicrome shape" title="digicrome shape">
                         </div> --}}
                         <div class="hero-autor-box">
                             <div class="autor-thumb">
-                                <img width="130" height="56" loading="lazy" src="{{ asset('assets/images/home-one/hero-autor.webp') }}"
+                                <img loading="lazy"src="{{ asset('assets/images/home-one/hero-autor.webp') }}"
                                     alt="digicrome autor" title="digicrome author">
                             </div>
                             <div class="hero-autor-content">
@@ -189,7 +442,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                     <div class="single-feature-box box-3">
                         <div class="feature-icon">
-                            <img width="60" height="42" loading="lazy" src="{{ asset('assets/images/home-one/feature-icon1.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon1.webp') }}"
                                 alt="digicrome feature-icon" title="digicrome feature-icon">
                         </div>
                         <div class="feature-content">
@@ -206,7 +459,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                     <div class="single-feature-box box-3">
                         <div class="feature-icon">
-                            <img width="50" height="42" loading="lazy" src="{{ asset('assets/images/home-one/feature-icon2.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon2.webp') }}"
                                 alt="digicrome feature-icon" title="digicrome feature-icon">
                         </div>
                         <div class="feature-content">
@@ -223,7 +476,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                     <div class="single-feature-box box-3">
                         <div class="feature-icon">
-                            <img width="54" height="46" loading="lazy" src="{{ asset('assets/images/home-one/feature-icon3.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}"
                                 alt="digicrome feature-icon" title="digicrome feature-icon">
                         </div>
                         <div class="feature-content">
@@ -240,7 +493,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                     <div class="single-feature-box box-3">
                         <div class="feature-icon">
-                            <img width="54" height="46" loading="lazy" src="{{ asset('assets/images/home-one/feature-icon3.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/feature-icon3.webp') }}"
                                 alt="digicrome feature-icon" title="digicrome feature-icon">
                         </div>
                         <div class="feature-content">
@@ -297,7 +550,7 @@
                             </div>
                         </div>
                         <div class="offer-thumb">
-                            <img width="327" height="450" loading="lazy" src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
                                 alt="offer-thumb" title="offer-thumb">
                         </div>
                     </div>
@@ -311,7 +564,7 @@
             <a href="#" class="connect-btn">Connect With Us</a>
         </div>
 
-        <img width="1366" height="470" src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="AI Summit Banner" class="ai-banner-img">
+        <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="AI Summit Banner" class="ai-banner-img">
     </section> --}}
     <div class="container">
         <x-logo-slider :companyLogos="$companyLogos" />
@@ -337,11 +590,11 @@
                             </picture>
                         </div>
                         <div class="about-thumb-shape2 rotateme">
-                            <img width="363" height="365" loading="lazy" src="{{ asset('assets/images/home-one/about-shape2.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape2.webp') }}"
                                 alt="diicrome shape" title="digicrome shapr">
                         </div>
                         <div class="about-thumb-shape3">
-                            <img width="92" height="80" loading="lazy" src="{{ asset('assets/images/home-one/about-shape3.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape3.webp') }}"
                                 alt="digicrome shape" title="diicrome shape">
                         </div>
                     </div>
@@ -362,14 +615,14 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="about-item-list">
-                                    <span><img width="22" height="22" loading="lazy" src="{{ asset('assets/images/home-one/about-icon.webp') }}"
+                                    <span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
                                             alt="digicrome icon" title="digicrome icon">Globally Recognized
                                         Certifications</span>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="about-item-list">
-                                    <span><img width="22" height="22" loading="lazy" src="{{ asset('assets/images/home-one/about-icon.webp') }}"
+                                    <span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
                                             alt="digicrome icon" title="digicrome icon">Industry-Approved
                                         Curriculum</span>
                                 </div>
@@ -427,7 +680,7 @@
                                 <div class="col-lg-12">
                                     <div class="single-brand-box">
                                         <div class="brand-thumb">
-                                            <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}"
+                                            <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}"
                                                 alt="digicrome brand" title="digicrome brand">
                                         </div>
                                     </div>
@@ -437,11 +690,11 @@
                     </div>
                 </div>
                 <div class="brand-arrow-shape">
-                    <img width="67" height="61" loading="lazy" src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="digicrome arrow"
+                    <img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="digicrome arrow"
                         title="digicrome arrow">
                 </div>
                 {{-- <div class="brand-star-shape">
-                    <img width="27" height="27" loading="lazy" src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
+                    <img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
                         title="digicrome star">
                 </div> --}}
             </div>
@@ -454,21 +707,21 @@
                     <div class="about-thumb-wrapper">
                         <div class="about-thumb zoom-sequence">
                             <div class="image-container">
-                                <img width="490" height="587" class="image" loading="lazy" src="{{ asset('assets/images/p3.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p3.webp') }}"
                                     alt="First image" title="First image">
-                                <img width="490" height="587" class="image" loading="lazy" src="{{ asset('assets/images/p4.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p4.webp') }}"
                                     alt="Second image" title="Second image">
-                                <img width="490" height="587" class="image" loading="lazy" src="{{ asset('assets/images/p5.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p5.webp') }}"
                                     alt="Third image" title="Third image">
-                                <img width="490" height="587" class="image" loading="lazy" src="{{ asset('assets/images/p1.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p1.webp') }}"
                                     alt="Fouth image" title="Fourth image">
-                                <img width="490" height="587" class="image" loading="lazy" src="{{ asset('assets/images/p2.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p2.webp') }}"
                                     alt="Fifth image" title="Fifth image">
-                                <img width="490" height="587" class="image" loading="lazy" src="{{ asset('assets/images/p6.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p6.webp') }}"
                                     alt="Sixth image" title="Sixth image">
-                                <img width="490" height="587" class="image" loading="lazy" src="{{ asset('assets/images/p7.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p7.webp') }}"
                                     alt="Seven image" title="Seven image">
-                                <img width="490" height="587" class="image" loading="lazy" src="{{ asset('assets/images/p8.webp') }}"
+                                <img class="image" loading="lazy" src="{{ asset('assets/images/p8.webp') }}"
                                     alt="Eight image" title="Eight image">
                             </div>
                         </div>
@@ -586,7 +839,7 @@
                             <div class="col-lg-12">
                                 <div class="single-brand-box">
                                     <div class="brand-thumb">
-                                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
+                                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
                                             title="brand-thumb">
                                     </div>
                                 </div>
@@ -639,26 +892,26 @@
                         </div>
                         <div class="choose-item-menu">
                             <ul>
-                                <li><img width="20" height="18" loading="lazy" src="{{ asset('assets/images/home-one/choose-icon1.webp') }}"
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon1.webp') }}"
                                         alt="choose-item-menu" title="choose-item-menu">Weekend
                                     Live Sessions
                                 </li>
-                                <li><img width="20" height="18" loading="lazy" src="{{ asset('assets/images/home-one/choose-icon2.webp') }}"
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon2.webp') }}"
                                         alt="choose-item-menu" title="choose-item-menu">Select a
                                     convenient batch time
                                 </li>
-                                <li><img width="20" height="18" loading="lazy" src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
                                         alt="choose-item-menu" title="choose-item-menu">Get
                                     Placement Aid
                                 </li>
-                                <li><img width="20" height="18" loading="lazy" src="{{ asset('assets/images/home-one/choose-icon4.webp') }}"
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon4.webp') }}"
                                         alt="choose-item-menu" title="choose-item-menu">Get a
                                     Salary Hike
                                 </li>
                             </ul>
                         </div>
-                        <p class="choose-suport-des"><img width="16" height="16"
-                                loading="lazy" src="{{ asset('assets/images/home-one/top-star.webp') }}" alt="top-star"
+                        <p class="choose-suport-des"><img
+                                loading="lazy"src="{{ asset('assets/images/home-one/top-star.webp') }}" alt="top-star"
                                 title="top-star">24/7 Mentor Support Available </p>
                         <div class="choose-btn">
                             <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
@@ -668,11 +921,11 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="choose-thumb">
-                        <img width="585" height="543" loading="lazy" src="{{ asset('assets/images/home-one/choose-thumb1.webp') }}"
+                        <img loading="lazy"src="{{ asset('assets/images/home-one/choose-thumb1.webp') }}"
                             alt="choose-thumb" title="choose-thumb">
                         <div class="choose-skill-box">
                             <div class="choose-skill-icon">
-                                <img width="36" height="36" loading="lazy" src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}"
+                                <img loading="lazy"src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}"
                                     alt="choose-skill-icon" title="choose-skill-icon">
                             </div>
                             <div class="choose-skill-content">
@@ -682,18 +935,18 @@
                             </div>
                         </div>
                         <div class="choose-shape-dot">
-                            <img width="65" height="50" loading="lazy" src="{{ asset('assets/images/home-one/choose-dot.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/choose-dot.webp') }}"
                                 alt="shape-dot" title="shape-dot">
                         </div>
                         <div class="choose-shape-star">
-                            <img width="70" height="70" loading="lazy" src="{{ asset('assets/images/home-one/choose-star.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/choose-star.webp') }}"
                                 alt="shape-star" title="shape-star">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="choose-shape1">
-                <img width="88" height="40" loading="lazy" src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape1"
+                <img loading="lazy"src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape1"
                     title="shape1">
             </div>
         </div>
@@ -792,16 +1045,11 @@
 
                                                 <div class="gif-container">
                                                     {{-- Sources are attached on scroll: autoplay video downloads
-                                                         immediately otherwise, one file per slide.
-
-                                                         No poster attribute: $video->image is the .webm itself, and
-                                                         pointing poster at it made the browser start fetching all 29
-                                                         clips on load, then discard them as invalid images — the exact
-                                                         eager download the deferral exists to avoid. .gif-container is
-                                                         a fixed 250x420 box, so the empty slot shifts nothing. --}}
+                                                         immediately otherwise, one file per slide. --}}
                                                     <video class="gif-img js-deferred-video" loop muted playsinline
                                                         preload="none"
-                                                        data-src="{{ asset('storage/' . $video->image) }}"></video>
+                                                        data-src="{{ asset('storage/' . $video->image) }}"
+                                                        poster="{{ asset('storage/' . $video->image) }}"></video>
 
                                                     <div class="play-btn">▶</div>
                                                 </div>
@@ -850,13 +1098,7 @@
                         <button type="button" class="btn-close btn-close-white custom-close-btn" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                         <div class="youtube-video-wrapper">
-                            {{--
-                                No src attribute at all. src="" resolves against the current
-                                document, so the browser loaded this entire page a second time
-                                inside the modal on every visit. The player URL is assigned on
-                                click and reset to about:blank on close.
-                            --}}
-                            <iframe id="youtubePlayer" loading="lazy" frameborder="0"
+                            <iframe id="youtubePlayer" loading="lazy" src="" frameborder="0"
                                 allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -1153,8 +1395,8 @@
                 });
                 // Loop mode clones slides, so re-scan for the cloned <video>
                 // elements that did not exist when the observer first ran.
-                if (typeof window.initDeferredMedia === 'function') {
-                    window.initDeferredMedia();
+                if (typeof observeDeferredMedia === 'function') {
+                    observeDeferredMedia();
                 }
 
                 const cards = document.querySelectorAll('.gif-wrapper');
@@ -1169,9 +1411,7 @@
                 });
 
                 modal.addEventListener('hidden.bs.modal', function() {
-                    // about:blank, not '' — an empty src reloads this whole page
-                    // into the frame.
-                    player.src = 'about:blank';
+                    player.src = '';
                 });
 
             });
@@ -1183,7 +1423,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="section-sub-title two">
-                        <h2 style="font-size: 16px; line-height: 30px; color: var(--primary-color); border-radius: 18px; background-color: rgb(30 194 142 / 10%); padding: 3px 16px; margin-bottom: 25px;"><img width="22" height="18" loading="lazy" src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
+                        <h2 style="font-size: 16px; line-height: 30px; color: var(--primary-color); border-radius: 18px; background-color: rgb(30 194 142 / 10%); padding: 3px 16px; margin-bottom: 25px;"><img loading="lazy"src="{{ asset('assets/images/home-two/subtitle-icon.webp') }}"
                                 alt="subtitle-icon" title="subtitle-icon">TESTIMONIALS</h2>
                     </div>
                     <div class="section_title two">
@@ -1234,7 +1474,7 @@
                                     </div>
                                     <div class="testi-autor-box">
                                         <div class="testi-autor">
-                                            <img loading="lazy" src="{{ asset('storage/' . $testimonial->image) }}"
+                                            <img loading="lazy"src="{{ asset('storage/' . $testimonial->image) }}"
                                                 alt="testi-autor"
                                                 style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #f29c12;">
                                         </div>
@@ -1258,7 +1498,7 @@
             <div class="row section-title-space">
                 <div class="col-xl-4 col-lg-12">
                     <div class="section-sub-title three">
-                        <h2 style="color:var(--primary-color);"><img width="24" height="18" loading="lazy" src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
+                        <h2 style="color:var(--primary-color);"><img loading="lazy"src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
                                 alt="sub-title2" title="sub-title2">Success Stories
                         </h2>
                     </div>
@@ -1269,7 +1509,7 @@
                     </div>
                     <div class="testi-review-box">
                         <div class="review-image">
-                            <img width="130" height="56" loading="lazy" src="{{ asset('assets/images/home-three/course-instructor.webp') }}"
+                            <img loading="lazy"src="{{ asset('assets/images/home-three/course-instructor.webp') }}"
                                 alt="course-instructor" title="course-instructor">
                         </div>
                         <div class="testi-review-content">
@@ -1287,7 +1527,7 @@
                                     <div class="testi-box">
                                         <div class="single-testi-box">
                                             <div class="testi-quote">
-                                                <img width="44" height="32" loading="lazy" src="{{ asset('assets/images/home-three/testi-quote.webp') }}"
+                                                <img loading="lazy"src="{{ asset('assets/images/home-three/testi-quote.webp') }}"
                                                     alt="testi-quote" title="testi-quote">
                                             </div>
 
@@ -1297,7 +1537,7 @@
 
                                             <div class="testi-autor-box">
                                                 <div class="testi-autor">
-                                                    <img loading="lazy" src="{{ asset('storage/' . $story->image) }}"
+                                                    <img loading="lazy"src="{{ asset('storage/' . $story->image) }}"
                                                         alt="testi-author" title="testi-author"
                                                         class="rounded-circle img-fluid"
                                                         style="width: 70px; height: 70px; ">
@@ -1369,11 +1609,11 @@
                         <div class="iocn-google-review-section mt-4">
                             <!-- Google Review Section 1 -->
                             <div class="inner-div-icon">
-                                <div class="cover-google"> <img width="45" height="45" alt="Google logo" loading="lazy"
+                                <div class="cover-google"> <img alt="Google logo" loading="lazy"
                                         src="{{ asset('assets/images/see_what/google_home.svg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.8</p> <img height="15" alt="Star icon representing rating" width="15"
+                                            <p>4.8</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
@@ -1384,11 +1624,11 @@
                             </div>
                             <!-- Google Review Section 2 -->
                             <div class="inner-div-icon">
-                                <div class="cover-google"> <img width="30" height="30" alt="Course Report logo" loading="lazy"
+                                <div class="cover-google"> <img alt="Course Report logo" loading="lazy"
                                         src="{{ asset('assets/images/see_what/course-report.png') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.8</p> <img height="15" alt="Star icon representing rating" width="15"
+                                            <p>4.8</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
                                         <div class="text-review0-section">
@@ -1399,11 +1639,11 @@
                             </div>
                             <!-- Google Review Section 3 -->
                             <div class="inner-div-icon">
-                                <div class="cover-google"> <img width="515" height="315" alt="Sikhao logo" loading="lazy" class="lazyload10"
+                                <div class="cover-google"> <img alt="Sikhao logo" loading="lazy" class="lazyload10"
                                         src="{{ asset('assets/images/see_what/ambition-box.jpeg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.3</p> <img height="15" alt="Star icon representing rating" width="15"
+                                            <p>4.3</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy" class="lazyload10"
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
@@ -1415,11 +1655,11 @@
                             </div>
                             <!-- Google Review Section 4 -->
                             <div class="inner-div-icon">
-                                <div class="cover-google"> <img width="44" height="44" alt="Muth Shout logo" loading="lazy"
+                                <div class="cover-google"> <img alt="Muth Shout logo" loading="lazy"
                                         src="{{ asset('assets/images/see_what/muthshout_home.svg') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.5</p> <img height="15" alt="Star icon representing rating" width="15"
+                                            <p>4.5</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy"
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
@@ -1431,11 +1671,11 @@
                             </div>
                             <!-- Google Review Section 5 -->
                             <div class="inner-div-icon last-switchupicon-hide">
-                                <div class="cover-google"> <img width="48" height="48" alt="Face icon representing a review" loading="lazy"
+                                <div class="cover-google"> <img alt="Face icon representing a review" loading="lazy"
                                         src="{{ asset('assets/images/see_what/favicon.ico') }}">
                                     <div class="start-icon">
                                         <div class="rating-section">
-                                            <p>4.0</p> <img height="15" alt="Star icon representing rating" width="15"
+                                            <p>4.0</p> <img alt="Star icon representing rating" width="15"
                                                 loading="lazy"
                                                 src="{{ asset('assets/images/see_what/star_home.svg') }}">
                                         </div>
@@ -1457,7 +1697,7 @@
             <h2 class="text-center mb-4" style="font-size: 2rem;">
                 Our <span style="color: #f29c12;">Data Science with AI </span> Certification Course Journey
             </h2>
-            <img width="1800" height="458" loading="lazy" src="{{ asset('assets/images/home-one/phase.webp') }}" alt="Vision Image"
+            <img loading="lazy"src="{{ asset('assets/images/home-one/phase.webp') }}" alt="Vision Image"
                 title="Vision Image" class="img-fluid rounded shadow-lg" />
         </div>
     </section>
@@ -1479,22 +1719,22 @@
                         </div>
                         <div class="choose-item-menu">
                             <ul>
-                                <li><img width="20" height="18" loading="lazy" src="{{ asset('assets/images/home-one/choose-icon1.webp') }}"
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon1.webp') }}"
                                         alt="choose-icon1" title="choose-icon1">500 +
                                     Global Companies</li>
-                                <li><img width="20" height="18" loading="lazy" src="{{ asset('assets/images/home-one/choose-icon2.webp') }}"
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon2.webp') }}"
                                         alt="choose-icon2" title="choose-icon2">12-15 LPA
                                     Average CTC</li>
-                                <li><img width="20" height="18" loading="lazy" src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
                                         alt="choose-icon3" title="choose-icon3">25-27 LPA
                                     Highest CTC</li>
-                                <li><img width="20" height="18" loading="lazy" src="{{ asset('assets/images/home-one/choose-icon4.webp') }}"
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon4.webp') }}"
                                         alt="choose-icon4" title="choose-icon4">80 %
                                     Average Hike</li>
                             </ul>
                         </div>
-                        <p class="choose-suport-des"><img width="16" height="16"
-                                loading="lazy" src="{{ asset('assets/images/home-one/top-star.webp') }}" alt="top-star"
+                        <p class="choose-suport-des"><img
+                                loading="lazy"src="{{ asset('assets/images/home-one/top-star.webp') }}" alt="top-star"
                                 title="top-star">Don't Stay Stuck, Expand Your Potential Today
                         </p>
                         <div class="choose-btn">
@@ -1505,7 +1745,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="choose-thumb">
-                        <img width="1223" height="614" loading="lazy" src="{{ asset('assets/images/home-one/roles.webp') }}" alt="roles"
+                        <img loading="lazy"src="{{ asset('assets/images/home-one/roles.webp') }}" alt="roles"
                             title="roles">
 
                         <div class="choose-shape-dot">
@@ -1544,7 +1784,7 @@
                         <div class="col-xl-4 col-lg-12 col-md-4">
                             <div class="single-blog-box box-1">
                                 <div class="single-blog-thumb">
-                                    <img loading="lazy" src="{{ asset('storage/' . $blog->blog_image) }}"
+                                    <img loading="lazy"src="{{ asset('storage/' . $blog->blog_image) }}"
                                         alt="single-blog-thumb" title="single-blog-thumb" class="img-fluid">
                                     <div class="blog-meta-top">
                                         <span>{{ \Carbon\Carbon::parse($blog->created_at)->format('d M') }}</span>
@@ -1554,7 +1794,7 @@
                                     <div class="blog-author">
                                         <h4 style="display: flex; align-items: center; gap: 10px;">
                                             @if ($blog->author_image)
-                                                <img loading="lazy" src="{{ asset('storage/' . $blog->author_image) }}"
+                                                <img loading="lazy"src="{{ asset('storage/' . $blog->author_image) }}"
                                                     alt="author-img" title="author-img"
                                                     style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: white;">
                                             @endif
@@ -1572,7 +1812,7 @@
                                     <div class="blog-btn">
                                         <a href="{{ route('blog.details', $blog->slug) }}">
                                             Continue Reading
-                                            <img width="20" height="20" loading="lazy" src="{{ asset('assets/images/home-one/blog-icon1.webp') }}"
+                                            <img loading="lazy"src="{{ asset('assets/images/home-one/blog-icon1.webp') }}"
                                                 alt="blog-icon1" title="blog-icon1">
                                         </a>
                                     </div>
@@ -1595,7 +1835,7 @@
             @foreach ($gallery as $photo)
                 <div class="item">
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
-                        <img loading="lazy" src="{{ asset('storage/' . $photo->image) }}" class="gal-siz-1"
+                        <img loading="lazy"src="{{ asset('storage/' . $photo->image) }}" class="gal-siz-1"
                             alt="digicrome_image" title="digicrome_image" loading="lazy">
                         <div class="txt">
                             <span>Digicrome</span>
