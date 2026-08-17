@@ -301,11 +301,9 @@
     </script>
 @endpush
 @section('content')
-    <section class="id-offer" aria-label="Independence Day special offer">
+    {{-- <section class="id-offer" aria-label="Independence Day special offer">
         <div class="container">
             <div class="id-offer__frame">
-                {{-- The whole banner is clickable for convenience; the button below
-                     is the real control that keyboard and screen reader users get. --}}
                 <div class="id-offer__inner" onclick="openIndependenceOfferModal()">
                     <picture>
                         <source media="(min-width: 768px)"
@@ -321,7 +319,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="hero_area style-one d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
