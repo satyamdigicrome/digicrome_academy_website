@@ -208,7 +208,7 @@
         }
 
         function openIndependenceOfferModal() {
-            openModal('Website Home Page Independence Day Offer');
+            openModal('Website Home Page Special Offer');
         }
 
         function openPlacementModal() {
@@ -301,25 +301,22 @@
     </script>
 @endpush
 @section('content')
-    {{-- <section class="id-offer" aria-label="Independence Day special offer">
+    <section class="id-offer" aria-label="Independence Day special offer">
         <div class="container">
             <div class="id-offer__frame">
                 <div class="id-offer__inner" onclick="openIndependenceOfferModal()">
                     <picture>
                         <source media="(min-width: 768px)"
-                            srcset="{{ asset('assets/images/independence-desktop.webp') }}">
-                        <img class="id-offer__img" src="{{ asset('assets/images/independence-mobile.webp') }}"
+                            srcset="{{ asset('assets/images/offer-banner.webp') }}">
+                        <img class="id-offer__img" src="{{ asset('assets/images/offer-banner-mob.webp') }}"
                             width="900" height="563" fetchpriority="high" loading="eager" decoding="async"
-                            alt="Digicrome Independence Day special offer — flat 40% off, valid till 13th August"
-                            title="Digicrome Independence Day special offer">
+                            alt="Digicrome special offer"
+                            title="Digicrome special offer">
                     </picture>
-                    <button type="button" class="id-offer__cta" onclick="event.stopPropagation(); openIndependenceOfferModal();">
-                        <span class="id-offer__cta-label">Enroll now — Independence Day offer, flat 40% off</span>
-                    </button>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <section class="hero_area style-one d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">

@@ -73,7 +73,7 @@
                      <div class="course-specification">
                          <div class="box">
                              <p>
-                                 {{ $course->course_online_payment }} </p>
+                                 {{ $course->batchLabel() }} </p>
                              <span>Next Batch <br> starts on</span>
                          </div>
                          <div class="box">
@@ -143,7 +143,7 @@
                      <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-4.png') }}"
                          class="lazyload" alt="data science programs near me">
                      <p style="color: #f8b700">
-                         {{ $course->course_online_payment }} </p>
+                         {{ $course->batchLabel() }} </p>
                      <span>Next Batch starts on</span>
                  </div>
                  <div class="date-border">

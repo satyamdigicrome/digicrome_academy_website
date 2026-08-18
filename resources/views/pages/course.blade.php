@@ -230,7 +230,7 @@
 
                                     {{-- Duration --}}
                                     @if ($course->course_duration)
-                                        <p style="font-size: 14px; color: #2d3e5f; margin-bottom: 0;">
+                                        <p style="font-size: 14px; color: #000; font-weight: 700; margin-bottom: 0;">
                                             <i class="fa fa-clock-o"></i> Duration: {{ $course->course_duration }}
                                         </p>
                                     @endif

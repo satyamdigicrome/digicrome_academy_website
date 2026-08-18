@@ -172,7 +172,7 @@
                                         class="lazyload" alt="data science programs near me"
                                         title="data science programs near me">
                                     <p style="color: #f8b700">
-                                        {{ $course->course_online_payment }} </p>
+                                        {{ $course->batchLabel() }} </p>
                                     <span>Next Batch starts on</span>
                                 </div>
                             </div>
@@ -572,7 +572,7 @@
                         </div>
                         <div class="col-6 col-md-3 stat-item py-1">
                             <div class="stat-num" style="color:#f8b700;">
-                                {{ $course->course_online_payment ?? 'Upcoming' }}</div>
+                                {{ $course->batchLabel() }}</div>
                             <div class="stat-label">Next Batch Starts</div>
                         </div>
                     </div>
@@ -681,6 +681,10 @@
             </div>
         </div>
     @endif
+    {{-- Sits just below the hero so every course_free variant gets it in the
+        same place, without touching four different hero layouts. --}}
+    <x-batch-countdown :course="$course" />
+
     <!--==================================================-->
     <!-- my coustom section start -->
     <!--==================================================-->
