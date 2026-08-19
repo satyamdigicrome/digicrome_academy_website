@@ -292,7 +292,7 @@
                                 <li><span class="icon flaticon-email"></span>B-49, First Floor, Block B, Sector 59,
                                     Noida, Uttar Pradesh 201301</li>
                                 <li><span> <i class="bi bi-telephone-inbound"></i> </span> 01204538125</li>
-                                <li><span><i class="bi bi-geo-alt"></i></span>info@`.com</li>
+                                <li><span><i class="bi bi-geo-alt"></i></span>info@digicrome.com</li>
                                 <li><span><i class="bi bi-clock"></i></span>Week Days: 10.30 to 19.00 Sunday: Closed
                                 </li>
                             </ul>

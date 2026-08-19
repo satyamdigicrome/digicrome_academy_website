@@ -179,7 +179,7 @@
             </div>
             <div class="row">
                 @foreach ($courses as $course)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="col-xl-4 col-lg-6 col-md-6" onclick="window.location.href='{{ route('course_details', ['slug' => $course->slug]) }}'">
                         <div class="course-details-box">
                             <div class="course-details-thumb">
                                 <img loading="lazy" src="{{ asset('storage/' . $course->image) }}" alt="thumb"
