@@ -70,8 +70,8 @@
             @endif
 
             <div class="batch-cd__action">
-                <a href="javascript:void(0);" onclick="openModal()" class="batch-cd__btn">
-                    {{ $isUpcoming ? 'Reserve My Seat' : 'Enquire Now' }}
+                <a href="javascript:void(0);" onclick="openModal('applyNowPopup')" class="batch-cd__btn">
+                    {{ 'Apply Now' }}
                 </a>
             </div>
 

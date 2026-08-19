@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
                     'header_collections' => Collection::where('status', 1)
                         ->orderBy('position')
                         ->get(['id', 'name', 'slug']),
-                    'header_courses' => Course::whereIn('id', [1, 3, 55, 85, 86])
+                    'header_courses' => Course::whereIn('id', [1, 55, 85, 86, 3])
                         ->get(['id', 'name', 'slug', 'image', 'course_duration'])
                         ->keyBy('id'),
                 ];

@@ -9,6 +9,134 @@
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLXJ6MV" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
+    <style>
+        .site-offer-marquee {
+            --offer-navy: #171341;
+            --offer-gold: #ffc135;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            min-height: 46px;
+            overflow: hidden;
+            color: #fff;
+            background:
+                radial-gradient(circle at 8% 50%, rgba(255, 193, 53, .35), transparent 24%),
+                radial-gradient(circle at 92% 50%, rgba(113, 219, 255, .25), transparent 22%),
+                linear-gradient(100deg, #100c31, #2b1a68 52%, #15103d);
+            box-shadow: 0 4px 14px rgba(18, 12, 54, .22);
+        }
+
+        .site-offer-marquee::before,
+        .site-offer-marquee::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            width: 78px;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .site-offer-marquee::before { left: 0; background: linear-gradient(90deg, var(--offer-navy), transparent); }
+        .site-offer-marquee::after { right: 0; background: linear-gradient(270deg, var(--offer-navy), transparent); }
+
+        .site-offer-marquee__track {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            animation: siteOfferMarquee 18s linear infinite;
+            will-change: transform;
+        }
+
+        .site-offer-marquee:hover .site-offer-marquee__track { animation-play-state: paused; }
+
+        .site-offer-marquee__item {
+            display: inline-flex;
+            flex: 0 0 auto;
+            align-items: center;
+            gap: 10px;
+            border: 0;
+            padding: 9px 38px;
+            color: #fff;
+            background: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .15px;
+            white-space: nowrap;
+        }
+
+        .site-offer-marquee__badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 9px;
+            border-radius: 999px;
+            color: #1b124b;
+            background: var(--offer-gold);
+            box-shadow: 0 0 16px rgba(255, 193, 53, .45);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .8px;
+        }
+
+        .site-offer-marquee__bell { color: var(--offer-gold); font-size: 17px; }
+
+        body { padding-top: 46px; }
+        #sticky-header.sticky { top: 46px !important; }
+        .mobile-menu-area.sticky { top: 46px !important; }
+
+        @keyframes siteOfferMarquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 767.98px) {
+            .site-offer-marquee { min-height: 40px; }
+            .site-offer-marquee__item { padding: 8px 24px; font-size: 12px; gap: 7px; }
+            .site-offer-marquee__badge { padding: 3px 7px; font-size: 9px; }
+            body { padding-top: 40px; }
+            #sticky-header.sticky, .mobile-menu-area.sticky { top: 40px !important; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .site-offer-marquee__track { animation: none; }
+        }
+    </style>
+    <div class="site-offer-marquee" aria-label="Special price drop offer">
+        <div class="site-offer-marquee__track">
+            @for ($item = 0; $item < 2; $item++)
+                <button class="site-offer-marquee__item" type="button" onclick="openSiteOfferModal()">
+                    <span class="site-offer-marquee__bell" aria-hidden="true">🔔</span>
+                    <span class="site-offer-marquee__badge">PRICE DROP ALERT</span>
+                    <span>Data Science &amp; AI Course price dropped — now only ₹84,999</span>
+                </button>
+                <button class="site-offer-marquee__item" type="button" onclick="openSiteOfferModal()">
+                    <span class="site-offer-marquee__bell" aria-hidden="true">🔔</span>
+                    <span class="site-offer-marquee__badge">PRICE DROP ALERT</span>
+                    <span>Data Science &amp; AI Course price dropped — now only ₹84,999</span>
+                </button>
+            @endfor
+        </div>
+    </div>
+    <script>
+        function openSiteOfferModal() {
+            if (typeof openModal === 'function') {
+                openModal(document.getElementById('applyNowPopup') ? 'applyNowPopup' : undefined);
+                return;
+            }
+
+            const applyNowPopup = document.getElementById('applyNowPopup');
+            if (applyNowPopup && window.bootstrap && window.bootstrap.Modal) {
+                window.bootstrap.Modal.getOrCreateInstance(applyNowPopup).show();
+            }
+        }
+    </script>
+    @stack('before-header')
     @if (empty($hideHeader) || $hideHeader === false)
         @include('layouts.header')
     @endif

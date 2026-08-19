@@ -8,6 +8,7 @@
              margin-top: 0px;
          }
      }
+
  </style>
  <div class="nedesign">
      <section class="courses-details ds-banner ds-banner-mobile"
