@@ -28,11 +28,13 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function ($view) use (&$shared) {
             if ($shared === null) {
+                $courseIds = [1, 55, 85, 86, 3];
                 $shared = [
                     'header_collections' => Collection::where('status', 1)
                         ->orderBy('position')
                         ->get(['id', 'name', 'slug']),
-                    'header_courses' => Course::whereIn('id', [1, 55, 85, 86, 3])
+                    'header_courses' => Course::whereIn('id', $courseIds)
+                        ->orderByRaw('FIELD(id, ' . implode(',', $courseIds) . ')')
                         ->get(['id', 'name', 'slug', 'image', 'course_duration'])
                         ->keyBy('id'),
                 ];
