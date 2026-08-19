@@ -100,13 +100,6 @@
                                                 <i class="bi bi-chevron-right"></i>
                                             </a>
                                         </li>
-
-                                        <li>
-                                            <a href="http://digicromeuniversity.com" class="text-dark d-flex justify-content-between align-items-center">
-                                                UG/PG Courses <i class="bi bi-chevron-right"></i>
-                                            </a>
-                                        </li>
-
                                         @foreach ($header_collections->whereNotIn('id', [5, 6]) as $collection)
                                             <li>
                                                 <a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
@@ -299,7 +292,7 @@
                                 <li><span class="icon flaticon-email"></span>B-49, First Floor, Block B, Sector 59,
                                     Noida, Uttar Pradesh 201301</li>
                                 <li><span> <i class="bi bi-telephone-inbound"></i> </span> 01204538125</li>
-                                <li><span><i class="bi bi-geo-alt"></i></span>info@digicrome.com</li>
+                                <li><span><i class="bi bi-geo-alt"></i></span>info@`.com</li>
                                 <li><span><i class="bi bi-clock"></i></span>Week Days: 10.30 to 19.00 Sunday: Closed
                                 </li>
                             </ul>
