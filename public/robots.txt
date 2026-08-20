@@ -1,5 +1,184 @@
-User-agent: *
+# robots.txt - Digicrome (digicrome.com)
+# Includes rules for major AI crawlers/bots (2026), same disallow rules as your Google (User-agent: *) block.
 
+# ------------------------------
+# Google (existing / generic)
+# ------------------------------
+User-agent: *
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# OpenAI - GPTBot (model training crawler)
+# ------------------------------
+User-agent: GPTBot
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# OpenAI - ChatGPT-User (live browsing when a user asks ChatGPT to fetch a page)
+User-agent: ChatGPT-User
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# OpenAI - OAI-SearchBot (SearchGPT indexing)
+User-agent: OAI-SearchBot
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# Anthropic - ClaudeBot (Claude training crawler)
+# ------------------------------
+User-agent: ClaudeBot
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# Anthropic - Claude-User (live browsing when a user asks Claude to fetch a page)
+User-agent: Claude-User
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# Google AI - Google-Extended (Gemini / Vertex AI training, separate from classic Googlebot)
+# ------------------------------
+User-agent: Google-Extended
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# Perplexity AI - PerplexityBot
+# ------------------------------
+User-agent: PerplexityBot
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# Perplexity AI - Perplexity-User (live browsing)
+User-agent: Perplexity-User
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# Apple - Applebot-Extended (Siri / Apple Intelligence training)
+# ------------------------------
+User-agent: Applebot-Extended
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# Meta - Meta-ExternalAgent (Llama training / Meta AI)
+# ------------------------------
+User-agent: Meta-ExternalAgent
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# ByteDance - Bytespider (TikTok / Doubao AI training)
+# ------------------------------
+User-agent: Bytespider
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# Common Crawl - CCBot (dataset used by many AI labs)
+# ------------------------------
+User-agent: CCBot
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# Amazon - Amazonbot (Alexa AI)
+# ------------------------------
+User-agent: Amazonbot
+Disallow: /?search-field=
+Disallow: /upcoming-courses/
+Disallow: /upcoming-courses
+Disallow: /public/
+Disallow: /public
+Disallow: /blog?page=
+Disallow: /our-courses/postgraduate-and-master-programs?page=
+Disallow: /courses?page=
+
+# ------------------------------
+# Microsoft/Bing Copilot - Bingbot (used for Copilot too, no separate AI-only agent)
+# ------------------------------
+User-agent: Bingbot
 Disallow: /?search-field=
 Disallow: /upcoming-courses/
 Disallow: /upcoming-courses

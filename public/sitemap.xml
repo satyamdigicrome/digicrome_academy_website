@@ -14,6 +14,7 @@
 <url><loc>https://www.digicrome.com/blog</loc><priority>0.8</priority></url>
 <url><loc>https://www.digicrome.com/terms-and-conditions</loc><priority>0.3</priority></url>
 <url><loc>https://www.digicrome.com/privacy-policy</loc><priority>0.3</priority></url>
+<url><loc>https://www.digicrome.com/disclaimer</loc><priority>0.3</priority></url>
 
 <!-- Course Category Pages -->
 <url><loc>https://www.digicrome.com/our-courses/postgraduate-and-master-programs</loc><priority>0.8</priority></url>
@@ -65,6 +66,7 @@
 <url><loc>https://www.digicrome.com/courses/online-data-analytics-and-machine-learning-program</loc><priority>0.7</priority></url>
 <url><loc>https://www.digicrome.com/courses/Power-bi-Tableau</loc><priority>0.7</priority></url>
 <url><loc>https://www.digicrome.com/courses/ai-security-online-training</loc><priority>0.7</priority></url>
+<url><loc>https://www.digicrome.com/courses/ai-tools-certification-course</loc><priority>0.7</priority></url>
 <url><loc>https://www.digicrome.com/courses/aws-certified-developer-associate</loc><priority>0.7</priority></url>
 <url><loc>https://www.digicrome.com/courses/aws-certified-solutions-architect-associate</loc><priority>0.7</priority></url>
 <url><loc>https://www.digicrome.com/courses/aws-certified-solutions-architect-professional</loc><priority>0.7</priority></url>
@@ -92,6 +94,8 @@
 <url><loc>https://www.digicrome.com/courses/japanese-language-n4-minna-no-nihongo</loc><priority>0.6</priority></url>
 <url><loc>https://www.digicrome.com/courses/japanese-language-n5-basic-minna-no-nihongo</loc><priority>0.6</priority></url>
 <url><loc>https://www.digicrome.com/courses/korean-language-training-c1and-c2</loc><priority>0.6</priority></url>
+<url><loc>https://www.digicrome.com/courses/machine-learning-course-in-noida</loc><priority>0.7</priority></url>
+<url><loc>https://www.digicrome.com/courses/machine-learning-training-course-in-delhi</loc><priority>0.7</priority></url>
 <url><loc>https://www.digicrome.com/courses/mandarin-language-training-a1anda2</loc><priority>0.6</priority></url>
 <url><loc>https://www.digicrome.com/courses/mandarin-language-training-b1andb2</loc><priority>0.6</priority></url>
 <url><loc>https://www.digicrome.com/courses/spanish-language-training-b1-intermediate-level</loc><priority>0.6</priority></url>
@@ -107,6 +111,7 @@
 <url><loc>https://www.digicrome.com/blog/ai-bubble-2026-industry-impact</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/ai-engineer-roadmap-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/ai-engineer-salary-india</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/ai-hallucinations-causes-types-examples</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/ai-is-changing-everything-change-with-it</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/ai-ml-engineer-salary-freshers-experienced-delhi-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/ai-powered-phishing-attacks</loc><priority>0.5</priority></url>
@@ -120,11 +125,13 @@
 <url><loc>https://www.digicrome.com/blog/ai-security-systems-defend-against-adversarial-attacks</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/ai-tools-for-data-analysts</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/ai-trends-2026-27-future-of-business-transformation-and-best-ai-training-course-in-noida</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/ai-watermarking-explained-anthropic-claude</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/are-ai-security-jobs-in-demand-for-a-progressive-career</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/artificial-intelligence-best-project-ideas-for-final-year-students</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/artificial-intelligence-that-nobody-owns-and-nobody-can-switch-off</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/ask-smarter-get-better-answers-write-prompt-like-a-pro</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/autonomous-ai-cyber-attacks</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/aws-vs-azure-vs-gcp-for-data-scientists-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/become-ai-engineer-fast-today</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/become-data-scientist-no-degree</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/best-ai-job-roles-for-data-science-career</loc><priority>0.5</priority></url>
@@ -159,6 +166,7 @@
 <url><loc>https://www.digicrome.com/blog/data-science-in-2026-importance-applications-projects-future</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-science-in-edge-ai-the-future-of-intelligent-technology</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-science-in-healthcare-2025-26-trends-and-career-opportunities</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/data-science-in-indias-logistics-industry</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-science-interview-questions-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-science-interview-questions-and-syllabus-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-science-machine-learning-self-study-vs-guided-learning</loc><priority>0.5</priority></url>
@@ -170,6 +178,7 @@
 <url><loc>https://www.digicrome.com/blog/data-science-vs-software-engineering</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-science-without-coding-ai-agents-automation-prompt-engineering</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-science-workflow-complete-guide-steps</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/data-scientist-salary-in-india-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-scientist-salary-in-noida</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-warehouse-vs-data-lake-for-data-science-students</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/data-wrangling-eda-model-deployment-complete-guide</loc><priority>0.5</priority></url>
@@ -178,6 +187,7 @@
 <url><loc>https://www.digicrome.com/blog/deepseek-ai-vs-other-ai-coding-tools-why-developers-are-switching</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/deepseeks-impact-on-global-ai-markets-insights-for-data-science-professionals</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/diff-b-w-data-science-and-artificial-intelligence-exploring-their-core-differences</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/difference-between-data-scientist-and-data-engineer</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/difference-between-machine-learning-and-deep-learning-career-opportunities-and-importance</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/digicrome-43-week-data-science-roadmap</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/edge-ai-important-topics-for-data-scientists</loc><priority>0.5</priority></url>
@@ -198,6 +208,7 @@
 <url><loc>https://www.digicrome.com/blog/gemini-ai-2026-next-generation-artificial-intelligence</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/generative-ai-transforming-creativity-technology-and-business</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/get-the-power-of-deep-learning-in-ai-overview-of-ai-and-ml-technology</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/git-github-data-science-projects</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/google-deepmind-ai-2026-revolution-in-machine-intelligence</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/google-gemini-vs-chatgpt-which-ai-is-better-for-data-analysis-work</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/google-pomelli-ai-2026</loc><priority>0.5</priority></url>
@@ -225,6 +236,8 @@
 <url><loc>https://www.digicrome.com/blog/identity-access-management-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/india-ai-impact-summit-2026-global-ai-careers</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/investment-banking-certification-course-india-career-gateway</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/is-data-science-worth-pursuing-in-india-2026</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/jupyter-notebook-tutorial-data-science-and-visualization</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/kimi-ai-features-guide</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/know-best-data-modeling-techniques</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/know-data-integration-in-data-science-and-its-difficulty</loc><priority>0.5</priority></url>
@@ -245,10 +258,12 @@
 <url><loc>https://www.digicrome.com/blog/pandas-data-cleaning-preprocessing-guide</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/perplexity-ai-for-research-and-content</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/perplexity-ai-for-web-developers-2026</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/power-bi-roadmap-beginners-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/power-bi-tool-guide-practical-uses-projects-research-scope</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/project-genie-ai-for-data-scientist</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/python-data-science-tutorial</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/python-in-data-science-and-machine-learning-full-guide</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/python-interview-questions-and-answers</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/python-matplotlib-data-visualization-future-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/python-vs-java-comparison-for-ai-development</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/python-web-framework-tutorial-build-scale-shape-career-2026</loc><priority>0.5</priority></url>
@@ -277,8 +292,11 @@
 <url><loc>https://www.digicrome.com/blog/top-5-trending-data-science-topics-2026-career-growth</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/top-6-data-science-projects-for-data-learners-with-real-impact</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/top-9-data-science-major-trends-in-upcoming-years</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/top-ai-companies-2026-models-infrastructure-tooling</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/top-ai-tools-for-business-2026</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/top-cybersecurity-tools-to-know-in-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/top-data-science-apps-2026-for-engineers-and-analysts</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/top-data-science-skills-in-demand-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/top-databases-for-data-science-course-in-mumbai</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/top-machine-learning-algorithms-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/top-skills-for-successful-investment-banking-career</loc><priority>0.5</priority></url>
@@ -288,6 +306,7 @@
 <url><loc>https://www.digicrome.com/blog/understand-data-wrangling-applications-industry-use-cases-career-paths</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/understanding-ai-agent-frameworks-comprehensive-guide-for-developers</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/upskilling-for-the-future-continuous-learning</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/vs-code-setup-data-science-ai</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/what-are-ethical-issues-in-information-technology-it-a-simple-guide-for-2026</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/what-are-tpu-and-gpu-in-artificial-intelligence-and-why-do-they-matter</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/what-does-a-data-scientist-do</loc><priority>0.5</priority></url>
@@ -300,6 +319,7 @@
 <url><loc>https://www.digicrome.com/blog/what-is-data-visualization-and-its-main-tools-and-techniques</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/what-is-deepseek-ai-and-how-it-works</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/what-is-deepseek-ai-china-s-power-move-in-the-global-ai-race</loc><priority>0.5</priority></url>
+<url><loc>https://www.digicrome.com/blog/what-is-edge-ai-how-does-it-work</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/what-is-ethical-hacking-skills-careers-training</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/what-is-gemini-ai-power-of-google-s-advanced-ai-model</loc><priority>0.5</priority></url>
 <url><loc>https://www.digicrome.com/blog/what-is-generative-ai-and-how-generative-ai-is-transforming-content-creation</loc><priority>0.5</priority></url>
