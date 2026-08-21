@@ -13,8 +13,12 @@
         <div class="batch-cd__panel">
 
             <div class="batch-cd__lead">
-                <span class="batch-cd__watch" aria-hidden="true">
-                    <span class="batch-cd__watch-dial"></span>
+                <span class="batch-cd__hourglass" aria-hidden="true">
+                    <span class="batch-cd__hourglass-glass">
+                        <span class="batch-cd__sand batch-cd__sand--top"></span>
+                        <span class="batch-cd__sand-stream"></span>
+                        <span class="batch-cd__sand batch-cd__sand--bottom"></span>
+                    </span>
                 </span>
                 <div class="batch-cd__headings">
                     @if ($isUpcoming)
@@ -47,23 +51,23 @@
                     </span>
                     <div class="batch-cd__units" aria-hidden="true">
                         <div class="batch-cd__unit">
-                            <span class="batch-cd__num" data-cd-days>--</span>
-                            <span class="batch-cd__label">Days</span>
+                            <span class="batch-cd__num" data-cd-days><span class="batch-cd__num-current">--</span></span>
+                            <span class="batch-cd__label">Days left</span>
                         </div>
                         <span class="batch-cd__sep">:</span>
                         <div class="batch-cd__unit">
-                            <span class="batch-cd__num" data-cd-hours>--</span>
-                            <span class="batch-cd__label">Hours</span>
+                            <span class="batch-cd__num" data-cd-hours><span class="batch-cd__num-current">--</span></span>
+                            <span class="batch-cd__label">Hours left</span>
                         </div>
                         <span class="batch-cd__sep">:</span>
                         <div class="batch-cd__unit">
-                            <span class="batch-cd__num" data-cd-minutes>--</span>
-                            <span class="batch-cd__label">Mins</span>
+                            <span class="batch-cd__num" data-cd-minutes><span class="batch-cd__num-current">--</span></span>
+                            <span class="batch-cd__label">Minutes left</span>
                         </div>
                         <span class="batch-cd__sep">:</span>
                         <div class="batch-cd__unit">
-                            <span class="batch-cd__num" data-cd-seconds>--</span>
-                            <span class="batch-cd__label">Secs</span>
+                            <span class="batch-cd__num" data-cd-seconds><span class="batch-cd__num-current">--</span></span>
+                            <span class="batch-cd__label">Seconds left</span>
                         </div>
                     </div>
                 </div>
@@ -106,39 +110,75 @@
                 min-width: 0;
             }
 
-            /* Stopwatch mark: ring, crown and a hand that sweeps once per minute */
-            .batch-cd__watch {
+            /* Animated hourglass: sand falls continuously, then the glass turns. */
+            .batch-cd__hourglass {
                 position: relative;
                 flex: 0 0 auto;
-                width: 46px;
-                height: 46px;
-                border: 3px solid #f29c12;
-                border-radius: 50%;
+                width: 42px;
+                height: 52px;
+                display: grid;
+                place-items: center;
             }
 
-            .batch-cd__watch::before {
-                content: "";
+            .batch-cd__hourglass::before,
+            .batch-cd__hourglass::after {
+                content: '';
                 position: absolute;
-                top: -9px;
-                left: 50%;
-                width: 14px;
-                height: 6px;
-                transform: translateX(-50%);
+                left: 3px;
+                width: 36px;
+                height: 5px;
                 background: #f29c12;
-                border-radius: 2px;
+                border-radius: 999px;
+                box-shadow: 0 1px 0 rgba(255, 255, 255, .35) inset;
             }
 
-            .batch-cd__watch-dial {
+            .batch-cd__hourglass::before { top: 1px; }
+            .batch-cd__hourglass::after { bottom: 1px; }
+
+            .batch-cd__hourglass-glass {
                 position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 2px;
-                height: 14px;
-                background: #fff;
-                border-radius: 2px;
+                inset: 6px 7px;
+                overflow: hidden;
+                border: 2px solid rgba(255, 255, 255, .88);
+                clip-path: polygon(0 0, 100% 0, 62% 50%, 100% 100%, 0 100%, 38% 50%);
+                filter: drop-shadow(0 0 4px rgba(242, 156, 18, .35));
+                animation: batchCdTurn 7s cubic-bezier(.65, 0, .35, 1) infinite;
+            }
+
+            .batch-cd__sand {
+                position: absolute;
+                left: 3px;
+                width: calc(100% - 6px);
+                background: linear-gradient(90deg, #f7ba42, #ffe29a 52%, #ed9412);
+            }
+
+            .batch-cd__sand--top {
+                top: 3px;
+                height: 16px;
+                clip-path: polygon(0 0, 100% 0, 62% 100%, 38% 100%);
+                transform-origin: top center;
+                animation: batchCdTopSand 7s linear infinite;
+            }
+
+            .batch-cd__sand--bottom {
+                bottom: 3px;
+                height: 16px;
+                clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
                 transform-origin: bottom center;
-                transform: translate(-50%, -100%);
-                animation: batchCdSweep 60s steps(60, end) infinite;
+                animation: batchCdBottomSand 7s linear infinite;
+            }
+
+            .batch-cd__sand-stream {
+                position: absolute;
+                z-index: 1;
+                top: 16px;
+                left: calc(50% - 1px);
+                width: 2px;
+                height: 18px;
+                border-radius: 999px;
+                background: #ffce5a;
+                transform-origin: top;
+                animation: batchCdSandFall 7s linear infinite;
             }
 
             .batch-cd__headings {
@@ -185,6 +225,11 @@
             }
 
             .batch-cd__num {
+                position: relative;
+                display: block;
+                min-width: 2.35ch;
+                height: 1.15em;
+                overflow: hidden;
                 font-size: 26px;
                 line-height: 1.1;
                 font-weight: 700;
@@ -192,6 +237,24 @@
                 /* Digits keep an equal width so the row does not jitter each tick */
                 font-variant-numeric: tabular-nums;
                 font-feature-settings: "tnum";
+            }
+
+            .batch-cd__num-current,
+            .batch-cd__num-next {
+                display: block;
+                width: 100%;
+                will-change: transform, opacity;
+            }
+
+            .batch-cd__num-current--leaving {
+                position: absolute;
+                inset: 0;
+                animation: batchCdFlipOut .38s ease-in forwards;
+            }
+
+            .batch-cd__num-next {
+                animation: batchCdFlipIn .38s cubic-bezier(.2, .8, .2, 1) forwards;
+                transform-origin: center top;
             }
 
             .batch-cd__label {
@@ -252,8 +315,33 @@
                 margin-left: auto;
             }
 
-            @keyframes batchCdSweep {
-                to { transform: translate(-50%, -100%) rotate(360deg); }
+            @keyframes batchCdFlipIn {
+                from { opacity: 0; transform: translateY(-110%) rotateX(-70deg); }
+                to { opacity: 1; transform: translateY(0) rotateX(0); }
+            }
+
+            @keyframes batchCdFlipOut {
+                to { opacity: 0; transform: translateY(38%) rotateX(55deg); }
+            }
+
+            @keyframes batchCdTopSand {
+                0%, 72% { transform: scaleY(1); }
+                88%, 100% { transform: scaleY(.04); }
+            }
+
+            @keyframes batchCdBottomSand {
+                0%, 72% { transform: scaleY(.08); }
+                88%, 100% { transform: scaleY(1); }
+            }
+
+            @keyframes batchCdSandFall {
+                0%, 8%, 88%, 100% { opacity: 0; transform: scaleY(.1); }
+                14%, 76% { opacity: 1; transform: scaleY(1); }
+            }
+
+            @keyframes batchCdTurn {
+                0%, 82% { transform: rotate(0deg); }
+                96%, 100% { transform: rotate(180deg); }
             }
 
             @keyframes batchCdBlink {
@@ -306,8 +394,12 @@
             }
 
             @media (prefers-reduced-motion: reduce) {
-                .batch-cd__watch-dial,
-                .batch-cd__sep {
+                .batch-cd__hourglass-glass,
+                .batch-cd__sand,
+                .batch-cd__sand-stream,
+                .batch-cd__sep,
+                .batch-cd__num-current--leaving,
+                .batch-cd__num-next {
                     animation: none;
                 }
 
@@ -325,6 +417,35 @@
                     return n < 10 ? '0' + n : String(n);
                 }
 
+                function setValue(node, value, animate) {
+                    var current = node.querySelector('.batch-cd__num-current');
+
+                    if (!current) {
+                        node.innerHTML = '<span class="batch-cd__num-current"></span>';
+                        current = node.firstElementChild;
+                    }
+
+                    if (current.textContent === value) return;
+
+                    // Populate the first reading without movement. Each later
+                    // change brings its new value down from above like a calendar page.
+                    if (!animate) {
+                        current.textContent = value;
+                        return;
+                    }
+
+                    var next = document.createElement('span');
+                    next.className = 'batch-cd__num-next';
+                    next.textContent = value;
+                    node.appendChild(next);
+                    current.classList.add('batch-cd__num-current--leaving');
+
+                    window.setTimeout(function() {
+                        if (current.parentNode === node) current.remove();
+                        next.className = 'batch-cd__num-current';
+                    }, 390);
+                }
+
                 function start(el) {
                     // Guard against a second interval being attached to the same
                     // element; two would race and fight over the digits.
@@ -337,14 +458,17 @@
                     var days = el.querySelector('[data-cd-days]'),
                         hours = el.querySelector('[data-cd-hours]'),
                         minutes = el.querySelector('[data-cd-minutes]'),
-                        seconds = el.querySelector('[data-cd-seconds]');
+                        seconds = el.querySelector('[data-cd-seconds]'),
+                        hasTicked = false;
 
                     function tick() {
                         var left = deadline - Date.now();
 
                         if (left <= 0) {
-                            days.textContent = hours.textContent = minutes.textContent =
-                                seconds.textContent = '00';
+                            setValue(days, '00', hasTicked);
+                            setValue(hours, '00', hasTicked);
+                            setValue(minutes, '00', hasTicked);
+                            setValue(seconds, '00', hasTicked);
                             // Zero here means the batch date has run out, since
                             // the deadline is the end of that day.
                             var section = el.closest('.batch-cd');
@@ -357,10 +481,11 @@
                         }
 
                         var s = Math.floor(left / 1000);
-                        days.textContent = pad(Math.floor(s / 86400));
-                        hours.textContent = pad(Math.floor(s / 3600) % 24);
-                        minutes.textContent = pad(Math.floor(s / 60) % 60);
-                        seconds.textContent = pad(s % 60);
+                        setValue(days, pad(Math.floor(s / 86400)), hasTicked);
+                        setValue(hours, pad(Math.floor(s / 3600) % 24), hasTicked);
+                        setValue(minutes, pad(Math.floor(s / 60) % 60), hasTicked);
+                        setValue(seconds, pad(s % 60), hasTicked);
+                        hasTicked = true;
                     }
 
                     var timer = setInterval(tick, 1000);
