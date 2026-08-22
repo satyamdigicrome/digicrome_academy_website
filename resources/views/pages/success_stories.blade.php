@@ -232,15 +232,15 @@
                         <div class="file-offer-letter"> <img width="142" height="156" src="{{ asset('assets/images/cta-new.webp') }}"
                                 alt="file-offer-letter" loading="eager"> </div>
                         <div class="offer-letter-text">
-                            <p>From Students to Success</p>
-                            <h2>See the Offer Letters That<br> Made It Happen</h2>
+                            <p>From Zero to Success</p>
+                            <h2>EXPLORE THE SUCCESS STORIES <br>THAT MADE IT HAPPEN</h2>
                         </div>
                     </div>
                     <div class="col-lg-4 view-all-offer-btn-for-mob">
                         <a href="javascript:void(0);" onclick="openModal()"
                             class="view-all-offer-btn button-repfirst buttontitle  audi-review-btn first-btn-selected"
                             style="background-color: white; color: rgb(3, 75, 165);">
-                            View All Offer Letter
+                            View Success Stories
                         </a>
                     </div>
                 </div>
@@ -252,7 +252,7 @@
         <section class="meet-champions-section">
             <div class="container">
                 <div class="section-header">
-                    <div class="sec-badge"><i class="fa-solid fa-users"></i> Completed Stories</div>
+                    {{-- <div class="sec-badge"><i class="fa-solid fa-users"></i> Completed Stories</div> --}}
                     <h2>Meet Our <span>Champions</span></h2>
                     <p>Every one of them started with a goal. Digicrome helped them achieve it.</p>
                     <div class="section-divider"></div>

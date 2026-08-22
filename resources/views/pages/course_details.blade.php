@@ -580,6 +580,106 @@
 
             </div>
         </div>
+    @elseif($course->course_free == 4)
+        <div class="breadcumb-area two d-flex"
+            @if ($course->banner_image) style="background: url('{{ asset('storage/' . $course->banner_image) }}') no-repeat center center / cover;" @endif>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="d-flex flex-column flex-md-row align-items-center gap-3 mb-4">
+                            {{-- <img loading="lazy" src="{{ asset('assets/images/card2.webp') }}" width="190" height="120"
+                                alt="card1" title="card1" /> --}}
+                            {{-- <img loading="lazy" src="{{ asset('assets/images/Card.webp') }}" width="319" height="58" alt="card" title="card"
+                         style="border: 2px solid #f29c12; border-radius: 5px;" /> --}}
+                        </div>
+
+
+                        <h1 class="fw-bold text-capitalize text-dark course-heading" style="font-size: 43px;">
+                            {{ $course->name }}</h1>
+
+                        <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
+                            <i class="fa-solid fa-shield-halved text-primary me-2"></i>
+                            🕐 45 Days Practical AI Tools Training
+                        </p>
+
+                        <p class="text-dark fs-6 mb-2">
+                            <i class="fa-solid fa-briefcase text-success me-2"></i>
+                            💡 Master Powerful AI Tools & Upgrade Your Skills
+                        </p>
+
+                        <p class="text-dark fs-6 mb-2">
+                            <i class="fa-solid fa-clock text-warning me-2"></i>
+                            🌍 Perfect for Anyone Looking to Skill Up in Any Background
+                        </p>
+
+                        <p class="text-dark fs-6 mb-0">
+                            <i class="fa-solid fa-trophy text-danger me-2"></i>
+                            🚀 Learn Practical AI Skills for Work, Business & Everyday Life
+                        </p>
+
+
+                        <div class="mt-4 d-flex gap-3">
+                            @if ($course->browser)
+                                <a class="btn btn-outline-primary" id="downloadBrochureBtn"
+                                    onclick="openModal('downloadLeadPopup')" style="background-color: green;">
+                                    <i class="fa fa-download me-2"></i>Download Brochure
+                                </a>
+                            @endif
+
+                            <a id="quickResponseBtn" role="button" onclick="openModal('applyNowPopup')" class="btn btn-primary"
+                                style="background-color: green;">
+                                <i class="fa fa-paper-plane me-2"></i>Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="row breadcumb-autor">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="breadcumb-autor-box">
+                                    {{-- <div class="breadcumb-autor">
+                                <img width="56" height="56" loading="lazy" src="{{ asset('assets/images/inner-img/breadcumb-autor.webp') }}" alt="autor">
+                            </div> --}}
+                                    {{-- <div class="breadcumb-autor-content">
+                                <h5>John D. Alexon</h5>
+                                <p>Instractor</p>
+                            </div> --}}
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                {{-- <div class="breadcumb-category">
+                            <span>Course Category</span>
+                            <h6>Business</h6>
+                        </div> --}}
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                {{-- <div class="breadcumb-ratting">
+                            <div class="reviews"><span>3 Ratings</span></div>
+                            <div class="breadcumb-star">
+                                <ul>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
+                                </ul>
+                            </div>
+                            <div class="breadcumb-ratting-num">
+                                <span>(4.5)</span>
+                            </div>
+                        </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-4"></div>
+                </div>
+                {{-- <div class="bread-dot">
+            <img width="213" height="142" loading="lazy" src="{{ asset('assets/images/inner-img/bread-dot.webp') }}" alt="dot">
+        </div> --}}
+            </div>
+        </div>
     @else
         <div class="breadcumb-area two d-flex"
             @if ($course->banner_image) style="background: url('{{ asset('storage/' . $course->banner_image) }}') no-repeat center center / cover;" @endif>

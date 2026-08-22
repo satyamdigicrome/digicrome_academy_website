@@ -113,12 +113,12 @@
                 <button class="site-offer-marquee__item" type="button" onclick="openSiteOfferModal()">
                     <span class="site-offer-marquee__bell" aria-hidden="true">🔔</span>
                     <span class="site-offer-marquee__badge">PRICE DROP ALERT</span>
-                    <span>Data Science &amp; AI Course price dropped — now only ₹84,999, few seats available</span>
+                    <span>Data Science &amp; AI Course Biggest Offer is Live — now only ₹84,999, <span class="fw-bolder">Few Seats Available</span></span>
                 </button>
                 <button class="site-offer-marquee__item" type="button" onclick="openSiteOfferModal()">
                     <span class="site-offer-marquee__bell" aria-hidden="true">🔔</span>
                     <span class="site-offer-marquee__badge">PRICE DROP ALERT</span>
-                    <span>Data Science &amp; AI Course price dropped — now only ₹84,999, few seats available</span>
+                    <span>Data Science &amp; AI Course Biggest Offer is Live — now only ₹84,999, <span class="fw-bolder"></span>Few Seats Available</span></span>
                 </button>
             @endfor
         </div>
