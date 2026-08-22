@@ -599,22 +599,18 @@
                             {{ $course->name }}</h1>
 
                         <p class="fs-5 fw-semibold text-secondary mt-3 mb-3">
-                            <i class="fa-solid fa-shield-halved text-primary me-2"></i>
                             🕐 45 Days Practical AI Tools Training
                         </p>
 
                         <p class="text-dark fs-6 mb-2">
-                            <i class="fa-solid fa-briefcase text-success me-2"></i>
                             💡 Master Powerful AI Tools & Upgrade Your Skills
                         </p>
 
                         <p class="text-dark fs-6 mb-2">
-                            <i class="fa-solid fa-clock text-warning me-2"></i>
                             🌍 Perfect for Anyone Looking to Skill Up in Any Background
                         </p>
 
                         <p class="text-dark fs-6 mb-0">
-                            <i class="fa-solid fa-trophy text-danger me-2"></i>
                             🚀 Learn Practical AI Skills for Work, Business & Everyday Life
                         </p>
 
