@@ -9,7 +9,7 @@
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLXJ6MV" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <style>
+    {{-- <style>
         .site-offer-marquee {
             --offer-navy: #171341;
             --offer-gold: #ffc135;
@@ -135,7 +135,7 @@
                 window.bootstrap.Modal.getOrCreateInstance(applyNowPopup).show();
             }
         }
-    </script>
+    </script> --}}
     @stack('before-header')
     @if (empty($hideHeader) || $hideHeader === false)
         @include('layouts.header')

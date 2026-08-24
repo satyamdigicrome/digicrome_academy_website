@@ -193,12 +193,6 @@
                 openModal();
             }, 3000);
         });
-
-        // `source` is optional and always reset, so a lead opened from the offer
-        // banner is not still attributed to the offer the next time the modal is
-        // opened from somewhere else. Guarded with a typeof check because
-        // openModal is also used directly as a click listener, which would
-        // otherwise pass an Event object in here.
         function openModal(source) {
             const sourceInput = document.querySelector('#formModal input[name="source"]');
             if (sourceInput) {
@@ -207,9 +201,9 @@
             document.getElementById("formModal").style.display = "block";
         }
 
-        function openIndependenceOfferModal() {
-            openModal('Website Home Page Special Offer');
-        }
+        // function openIndependenceOfferModal() {
+        //     openModal('Website Home Page Special Offer');
+        // }
 
         function openPlacementModal() {
             const PlacementsourceInput = document.querySelector('#placementformModal input[name="source"]');
@@ -301,7 +295,7 @@
     </script>
 @endpush
 @section('content')
-    <section class="id-offer" aria-label="Independence Day special offer">
+    {{-- <section class="id-offer" aria-label="Independence Day special offer">
         <div class="container">
             <div class="id-offer__frame">
                 <div class="id-offer__inner" onclick="openIndependenceOfferModal()">
@@ -316,7 +310,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="hero_area style-one d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
