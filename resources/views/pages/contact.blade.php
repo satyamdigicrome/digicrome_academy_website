@@ -206,7 +206,7 @@
                                 <div class="icon"><i class="fas fa-envelope-open"></i></div>
                                 <h4 class="mt-3 mb-1" style="color:#1a1447; font-weight:900; font-size:16px;">Email Support
                                 </h4>
-                                <p style="font-size:13px;">info@digicrome.com</p>
+                                <p style="font-size:13px;">support@digicrome.com</p>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -749,11 +749,11 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="d-flex align-items-center">
-                                                <img width="1235" height="650" loading="lazy" src="{{ asset('assets/images/us_logo.svg') }}" alt="US Flag" title="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
-                                                <h5 class="card-title">Office in the US</h5>
+                                                <img width="900" height="600" loading="lazy" src="{{ asset('assets/images/indialogo.svg') }}" alt="India Flag" title="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+                                                <h5 class="card-title">Office in India</h5>
                                             </div>
                                             <br>
-                                            <p class="card-text"> 30 N Gould St Ste R Sheridan, Wyoming 82801</p>
+                                            <p class="card-text">B-49, First Floor, Block B, Sector 59, Noida, Uttar Pradesh 201301</p>
                                         </div>
                                     </div>
                                 </div>
@@ -761,11 +761,11 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="d-flex align-items-center">
-                                                <img width="900" height="600" loading="lazy" src="{{ asset('assets/images/indialogo.svg') }}" alt="India Flag" title="India Flag" style="width: 40px; height: 30px; margin-right: 10px;">
-                                                <h5 class="card-title">Office in India</h5>
+                                                <img width="1235" height="650" loading="lazy" src="{{ asset('assets/images/us_logo.svg') }}" alt="US Flag" title="US Flag" style="width: 40px; height: 30px; margin-right: 10px;">
+                                                <h5 class="card-title">Office in the US</h5>
                                             </div>
                                             <br>
-                                            <p class="card-text">B-49, First Floor, Block B, Sector 59, Noida, Uttar Pradesh 201301</p>
+                                            <p class="card-text"> 30 N Gould St Ste R Sheridan, Wyoming 82801</p>
                                         </div>
                                     </div>
                                 </div>
@@ -826,7 +826,7 @@
                                     <div class="info-box">
                                         <h4>For Admission Queries</h4>
                                         <p><i class="fas fa-phone"></i> 01204538125</p>
-                                        <p><i class="fas fa-envelope"></i> info@digicrome.com</p>
+                                        <p><i class="fas fa-envelope"></i> support@digicrome.com</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
