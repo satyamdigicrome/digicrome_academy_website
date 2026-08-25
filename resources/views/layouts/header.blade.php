@@ -10,7 +10,7 @@
             <div class="col-xxl-6 col-xl-4 col-lg-4">
                 <div class="header-top-right">
                     <div class="text-white text-right">
-                        Welcome to Digicrome - 01204538125
+                        Quick Enquiry - <span class="fw-bolder">01204538125</span>
                     </div>
 
                 </div>
