@@ -39,6 +39,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MLQN7DF5');</script>
 <!-- End Google Tag Manager -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-18024221657/ReJbCPmmku0cENmXz5JD'});
+</script>
 @endpush
 
 @section('content')
