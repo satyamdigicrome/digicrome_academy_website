@@ -714,7 +714,7 @@
                 <div class="col-lg-8">
                     <h2 data-aos="fade-up" style="text-transform: none;">Trusted by leading organisations worldwide</h2>
                     <p data-aos="fade-up" data-aos-delay="200" class="lead">
-                        Join 250+ organizations who've transformed their workforce with our training programs
+                        Join 250+ organisations that have transformed their workforce with our training programs
                     </p>
                 </div>
             </div>
@@ -813,9 +813,7 @@
 
                 <div class="col-lg-5 d-flex align-items-end">
                     <p class="section-desc mb-0">
-                        From training needs analysis to measurable results, we take a structured method to upskilling your
-                        workforce in Data Science, AI, Machine Learning, Cybersecurity, and digital skills.
-                    </p>
+                        From training needs analysis to measurable results, we take a structured approach to upskill your workforce in Data Science, AI, Machine Learning, Cybersecurity, and Digital Skills.                    </p>
                 </div>
             </div>
 
@@ -840,8 +838,7 @@
                         <h4>Understand Your Training Needs</h4>
 
                         <p>
-                            We start by identifying skill gaps in your teams and aligning them with your business goals and
-                            the specific roles you are hiring or developing for.
+                            We start by identifying skill gaps in your teams and aligning them with your business goals and the specific roles you are hiring for or developing for.
                         </p>
                     </div>
                 </div>
@@ -865,8 +862,7 @@
                         <h4>Build a Custom Learning Path</h4>
 
                         <p>
-                            We design structured learning programmes according to your workforce and covering the right
-                            tools, technologies, and domain knowledge your teams actually need.
+                            We design structured learning programmes according to your workforce and cover the right tools, technologies, and domain knowledge your teams actually need.
                         </p>
                     </div>
                 </div>

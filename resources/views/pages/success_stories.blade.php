@@ -24,7 +24,7 @@
                         <h2>That Drive You!</h2>
                         <p> <span>Career Progress isn’t about luck or shortcuts.</span><br>It’s about smart work, sacrifice,
                             and patience that pays off.<br> Create the career you actually love! </p>
-                        <h3>Digicrome alumni build rewarding careers at top firms.</h3>
+                        <h3>Digicrome alumni build rewarding careers at top companies.</h3>
                         <div class="work-alimini-section">
                             <div class="marquee-content">
                                 <!-- Original Set of Images -->

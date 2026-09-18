@@ -397,7 +397,7 @@
         <span style="text-align: justify; font-size: 22px; color: white; font-family:arial; mt-6">
           We’re a team of passionate educators, tech enthusiasts, creators, and innovators. We all work together to transform the way professionals upskill and grow.<br><br>
           If you're living with purpose, inspired by change, looking for more than just a job, and want to be a tech expert, Welcome to Digicrome.<br><br>
-          Here, we help you transform your career into a well and top tech companies by upgrading your skills with our best courses on the latest technologies: AI, ML, Data Science, and Cybersecurity.        </span>
+          Here, we help you transform your career into a well-rounded professional at top tech companies by upgrading your skills with our best courses on the latest technologies: AI, ML, Data Science, and Cybersecurity.</span>
       </div>
       <div id="teem" class="col-lg-6 col-md-12" style="padding-top: 70px;">
         <img width="1600" height="1066" loading="lazy" src="{{ asset('assets/images/dc/1d.webp')}}" alt="Image" title="Image"

@@ -123,28 +123,13 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="about_content">
                         <div class="section-title-desc mb-2">
-                            <p>Digicrome is a leading Digital EdTech platform founded by Mr. Parichit Bhamri and Mr. Ranvir
-                                Rawal, with a vision to provide access to online education for students and working
-                                professionals. We have a dedicated team of experts who
-                                empower and motivate students and working professionals by delivering them high-quality,
-                                industry-based knowledge with the best certification courses. We are equipped with the
-                                latest technologies, which provide learners with positive learning experiences. Our
-                                environment is where knowledge is experienced, appropriate, and future-ready. </p>
+                            <p>Digicrome is a leading Digital EdTech platform founded by Mr Parichit Bhamri and Mr Ranvir Rawal, with a vision to provide access to online education for students and working professionals. We have a dedicated team of experts who empower and motivate students and working professionals by delivering high-quality, industry-based knowledge with the best certification courses. We are equipped with the latest technologies, which provide learners with positive learning experiences. Our environment is where knowledge is experienced, appropriate, and future-ready. </p>
                         </div>
                         <div class="section-title-desc mb-2">
-                            <p>Our programs have equipped 20,000+ learners with in-demand skills across domains such as Data
-                                Science, Artificial Intelligence, and Cybersecurity. We ensure they stay passionate in a
-                                fast-changing workplace around the world. At the center of Digicrome’s principles is
-                                experiential subject learning. Through live doubt sessions, 30+ real-world projects, and a
-                                full-time internship facility, our learners gain industry-level knowledge. </p>
+                            <p>Our programs have equipped 20,000+ learners with in-demand skills across domains such as Data Science, Artificial Intelligence, and Cybersecurity. We ensure they stay passionate in a fast-changing workplace around the world. At the centre of Digicrome’s principles is experiential subject learning. Through live doubt sessions, 30+ real-world projects, and a full-time internship facility, our learners gain industry-level knowledge. </p>
                         </div>
                         <div class="section-title-desc">
-                            <p>Our courses help them prepare for real-world challenges. This approach not only enhances
-                                their knowledge but also builds their logical, critical thinking, and professional skills.
-                                We trust that education should lead to profitable results. With an increasing global
-                                community and expanding 500+ industry partnerships, Digicrome continues to lead in the
-                                digital or online education sector. This makes us more approachable, realistic, and aligned
-                                with today’s every industry's needs. </p>
+                            <p>Our courses help them prepare for real-world challenges. This approach not only enhances their knowledge but also builds their logical, critical-thinking, and professional skills. We trust that education should lead to profitable results. With an increasing global community and expanding 500+ industry partnerships, Digicrome continues to lead in the digital or online education sector. This makes us more approachable, realistic, and aligned with today’s every industry's needs.</p>
                         </div>
                         <div class="about-iteam-list mt-3">
                             <ul>
@@ -193,7 +178,7 @@
                     <div class="p-3">
                         <h2 class="mb-3" style="font-style: italic;">Certified - Online Learning Platform </h2>
                         <p class="text-muted">
-                            We are proud to be MSME and MCA certified, ensuring credibility and trust.
+                            We are MSME- and MCA- certified, which ensures credibility and trust.
                         </p>
                     </div>
                 </div>

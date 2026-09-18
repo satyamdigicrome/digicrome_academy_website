@@ -423,7 +423,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="section_title">
-                        <h3 style="font-size: 30px; font-weight: bold;">Get Expertise & Hands On Advancement In Your Career With Best Industry Experts!</h3>
+                        <h3 style="font-size: 30px; font-weight: bold;">Gain Expertise & Hands-On Advancement in Your Career with the Best Industry Experts!</h3>
                     </div>
                 </div>
             </div>
@@ -436,8 +436,7 @@
                         </div>
                         <div class="feature-content">
                             <h4 class="feature-title">500+ Hiring Partners</h4>
-                            <p class="feature-desc">We placement assistance, so we have tied up with 500+ global
-                                partners to assist students in securing job opportunities.</p>
+                            <p class="feature-desc">We provide placement assistance and have partnered with 500+ global companies to help students find job opportunities.</p>
                         </div>
                         <div class="educate-hover-box hover-bx"></div>
                         <div class="educate-hover-box hover-bx2"></div>
@@ -453,8 +452,7 @@
                         </div>
                         <div class="feature-content">
                             <h4 class="feature-title">45+ Relevant Projects</h4>
-                            <p class="feature-desc">Work on our industry-based live projects to harness top-level industry
-                                experience and make way to a winning career opportunity.</p>
+                            <p class="feature-desc">Work on our industry-based live projects to harness top-level industry experience and make your way to a winning career opportunity.</p>
                         </div>
                         <div class="educate-hover-box hover-bx"></div>
                         <div class="educate-hover-box hover-bx2"></div>
@@ -470,8 +468,7 @@
                         </div>
                         <div class="feature-content">
                             <h4 class="feature-title">60+ Case Studies</h4>
-                            <p class="feature-desc">Access 60+ relevant case studies and assignments to achieve a strong
-                                foundation. Get 24/7 assistance available for assignments.</p>
+                            <p class="feature-desc">Access 60+ relevant case studies and assignments to build a strong foundation. Get 24/7 assistance available for assignments.</p>
                         </div>
                         <div class="educate-hover-box hover-bx"></div>
                         <div class="educate-hover-box hover-bx2"></div>
@@ -487,9 +484,7 @@
                         </div>
                         <div class="feature-content">
                             <h4 class="feature-title">Job Ready Program</h4>
-                            <p class="feature-desc">Placement cell dedicated to students completing the course,
-                                we
-                                help secure job opportunities. So far, 5,000+ students have been employed.</p>
+                            <p class="feature-desc">The placement cell is dedicated to students completing the course; we help secure job opportunities. So far, 5,000+ students have been employed.</p>
                         </div>
                         <div class="educate-hover-box hover-bx"></div>
                         <div class="educate-hover-box hover-bx2"></div>
@@ -659,8 +654,7 @@
                         </div>
                         <div class="section-sub-title">
                             <h6 style="text-transform: capitalize; position: static; line-height: 30px; padding: 0px;">
-                                Government affiliated program , that shapes the learner’s future and approach towards
-                                industry ready !</h6 style=" line-height: 30px;">
+                                Government-affiliated program that shapes the learner’s future and approach towards industry-readiness!</h6 style=" line-height: 30px;">
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -801,13 +795,7 @@
                                 empowering learners across the globe. --}}
                             </p>
                             <p>
-                                Combining a rich tradition with modern technology, we foster both academic and individual
-                                progress. Skillfully architecting meta-duties through excellent whiteboard education
-                                experiences, we strive to set new benchmarks in the educational domain.
-                                {{-- Combining a rich legacy with cutting-edge technology, we foster both academic and personal
-                                growth.
-                                Conveniently architecting meta-services through world-class whiteboard learning experiences,
-                                we continue to set new benchmarks in the education sector. --}}
+                                Combining a rich tradition with modern technology, we provide both academic and individual progress. Skillfully architecting meta-duties through excellent whiteboard education experiences, we strive to set new benchmarks in the educational domain.
                             </p>
                         </div>
                         <div class="about-btn">

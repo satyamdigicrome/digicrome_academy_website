@@ -598,12 +598,8 @@
                             <h4 class="mb-0 text-white fs-3 fw-3">Excellence in EdTech | Digicrome</h4>
                         </div>
                         <p class="text-light">
-                            Nowadays, without coding, we cannot imagine any digital elements. Coding has become a crucial
-                            part of tasks like developing websites, mobile applications, and other software. Coding skills
-                            are crucial and in demand now. The opportunities in every tech field are increasing day by day.
-                            <br><br> Digicrome is the solution here. We consist of a number of courses like Data Science
-                            with AI, AI Security, Machine Learning, and Cybersecurity programs. These in-demand courses
-                            ensure your career in the growing job market in the 21st century.
+                            Nowadays, without coding, we cannot imagine any digital elements. Coding has become a crucial part of tasks like developing websites, mobile applications, and other software. Coding skills are crucial and in demand now. The opportunities in every tech field are increasing day by day.
+                            <br><br> Digicrome is the solution here. We offer a number of courses like Data Science with AI, AI Security, Machine Learning, and Cybersecurity programs. These in-demand courses ensure your career in the growing job market in the 21st century.
                         </p>
                     </div>
                 </div>

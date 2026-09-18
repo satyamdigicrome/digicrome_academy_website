@@ -631,8 +631,7 @@
                             <div class="step-content">
                                 <h4>Share & Refer</h4>
                                 <p>
-                                    Share your unique referral
-                                    link with friends and network.
+                                   Share your unique referral link with friends and your network.
                                 </p>
                             </div>
 
@@ -915,7 +914,7 @@
 
                     <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#referFaq">
                         <div class="accordion-body">
-                            Rewards are processed after the referred student completes the enrollment process and fulfills the program eligibility requirements.
+                            Rewards are processed after the referred student completes the enrollment process and fulfils the program eligibility requirements.
                         </div>
                     </div>
                 </div>
@@ -946,7 +945,7 @@
 
                     <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#referFaq">
                         <div class="accordion-body">
-                            No. Referral rewards are applicable only for new candidates who have not previously registered, submitted an inquiry, attended counseling sessions, or enrolled in any Digicrome program.
+                            No. Referral rewards are applicable only to new candidates who have not previously registered, submitted an inquiry, attended counselling sessions, or enrolled in any Digicrome program.
                         </div>
                     </div>
                 </div>
