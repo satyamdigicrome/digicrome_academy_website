@@ -29,7 +29,7 @@ class AdminCourseController extends Controller
             'collection_id' => 'required|exists:collections,id',
             'name' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:courses',
-            'sku' => 'required|string|max:255|unique:courses',
+            'sku' => 'required|string|max:255',
             'tag_line' => 'nullable|string|max:255',
             'corporate' => 'required|boolean',
             'description' => 'required|string',
@@ -45,7 +45,7 @@ class AdminCourseController extends Controller
             'meta_title' => 'nullable|string|max:255',
             'meta_keywords' => 'nullable|string',
             'meta_description' => 'nullable|string',
-            'about' => 'nullable|string|max:255',
+            'about' => 'nullable|string',
             'has_faqs' => 'required|boolean',
             'status' => 'required|boolean',
             'course_image' => 'required|image|mimes:webp|max:2048',
@@ -55,7 +55,7 @@ class AdminCourseController extends Controller
 
         $imagePath = $request->file('banner_image')->store('courses', 'public');
 
-        $imagePath = $request->file('course_image')->store('courses', 'public');
+        $imagePath2 = $request->file('course_image')->store('courses', 'public');
 
         $course = new Course();
         $course->collection_id = $request->collection_id;
@@ -81,7 +81,7 @@ class AdminCourseController extends Controller
         $course->has_faqs = $request->has_faqs;
         $course->status = $request->status;
         $course->user_id = Auth::id(); 
-        $course->image = $imagePath; 
+        $course->image = $imagePath2; 
         $course->banner_image = $imagePath; 
 
 
@@ -97,7 +97,7 @@ class AdminCourseController extends Controller
         return view('admin.manage_courses.edit', compact('course','collections')); 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request,int $id)
     {
         $request->validate([
             'name' => 'required|string|max:255',

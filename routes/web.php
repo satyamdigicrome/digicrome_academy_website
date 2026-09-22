@@ -40,6 +40,7 @@ use App\Http\Controllers\Admin\MediaPresenceController as AdminMediaPresenceCont
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
@@ -300,6 +301,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::delete('/roles/{role}', [RoleController::class, 'destroy'])->name('roles.destroy');
     });
 });
+/*
+|--------------------------------------------------------------------------
+| XML Sitemap
+|--------------------------------------------------------------------------
+| Generated from the database on request — see SitemapController. These only
+| resolve while no matching file sits in public/, because .htaccess serves a
+| real file in preference to the front controller; that is why the old
+| public/sitemap.xml was removed.
+*/
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap.index');
+Route::get('/sitemap-pages.xml', [SitemapController::class, 'pages'])->name('sitemap.pages');
+Route::get('/sitemap-courses.xml', [SitemapController::class, 'courses'])->name('sitemap.courses');
+Route::get('/sitemap-blogs.xml', [SitemapController::class, 'blogs'])->name('sitemap.blogs');
+
 Route::get('/search-courses', [CourseController::class, 'searchCourses'])->name('search.courses');
 Route::get('/about-us', [AboutController::class, 'index'])->name('about');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
