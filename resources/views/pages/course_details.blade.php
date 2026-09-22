@@ -56,6 +56,12 @@
 }
 </script>
     <link href="{{ asset('assets/css/courses.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/course-curriculum-faq.css') }}?v=1" rel="stylesheet">
+    {{-- Flags JS as available so the curriculum/FAQ CSS may collapse panels.
+         Without JS the class never lands and both sections render fully open. --}}
+    <script>
+        document.documentElement.classList.add('dc-js');
+    </script>
     <style>
         #sticky-header {
             margin-bottom: 80px !important;
@@ -1055,42 +1061,173 @@
         <div class="container">
             <div class="row">
                 @if ($course->modules->count())
-                    <div class="container text-center">
-                        <h2 class="text-center mb-2" style="font-size: 2rem;">
-                            Our <span style="color: #f29c12;">Course </span> Curriculum
-                        </h2>
-                        <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                            100% Trusted And Golden Opportunities With Key Features That will Help You To Transform Your
-                            Career
-                        </p>
-                    </div>
+                    @php
+                        /*
+                         * A module "answer" is free text typed in the admin panel —
+                         * normally one topic per line, sometimes already bulleted.
+                         * Splitting it lets the section render a real checklist
+                         * instead of a wall of <br>s. Single-line answers fall back
+                         * to a paragraph.
+                         */
+                        $dcSplitTopics = static function ($text) {
+                            $topics = [];
+                            foreach (preg_split('/\r\n|\r|\n/', (string) $text) ?: [] as $line) {
+                                $line = trim(preg_replace('/^\s*(?:[-–—•*▪●◦·]+|\d+[.)])\s*/u', '', $line));
+                                if ($line !== '') {
+                                    $topics[] = $line;
+                                }
+                            }
+                            return $topics;
+                        };
 
-                    <div class="tab_container">
-                        <div id="tab1" class="tab_content">
-                            <div class="accordion my-4" id="moduleAccordion">
-                                @foreach ($course->modules as $index => $module)
-                                    <div class="accordion-item border border-warning-subtle">
-                                        <h2 class="accordion-header" id="heading{{ $index }}">
-                                            <button class="accordion-button {{ $index !== 0 ? 'collapsed' : '' }}"
-                                                type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapse{{ $index }}"
-                                                aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
-                                                aria-controls="collapse{{ $index }}" style="color: #f29c12;">
-                                                {{ $module->question }}
+                        $dcModules = [];
+                        $dcTopicTotal = 0;
+                        foreach ($course->modules as $dcModule) {
+                            $dcTopics = $dcSplitTopics($dcModule->answer);
+                            $dcTopicTotal += count($dcTopics);
+                            $dcModules[] = ['model' => $dcModule, 'topics' => $dcTopics];
+                        }
+
+                        $dcModuleCount = count($dcModules);
+                        $dcProjectCount = $course->projects->count();
+                        $dcDuration = trim((string) $course->course_duration);
+                    @endphp
+
+                    <div class="col-12">
+                        <section class="dc-curriculum" id="course-curriculum">
+                            <div class="dc-curr-head dc-reveal">
+                                <h2 class="dc-curr-title">
+                                    Our <span>Course</span> Curriculum
+                                </h2>
+                                <p class="dc-curr-sub">
+                                    100% Trusted And Golden Opportunities With Key Features That will Help You To
+                                    Transform Your Career
+                                </p>
+                            </div>
+
+                            <div class="dc-stats dc-reveal">
+                                <div class="dc-stat">
+                                    <i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i>
+                                    <span class="dc-stat-num" data-dc-count="{{ $dcModuleCount }}">0</span>
+                                    <span class="dc-stat-label">Modules</span>
+                                </div>
+
+                                @if ($dcTopicTotal > $dcModuleCount)
+                                    <div class="dc-stat">
+                                        <i class="bi bi-list-check" aria-hidden="true"></i>
+                                        <span class="dc-stat-num" data-dc-count="{{ $dcTopicTotal }}">0</span>
+                                        <span class="dc-stat-label">Topics Covered</span>
+                                    </div>
+                                @endif
+
+                                @if ($dcProjectCount)
+                                    <div class="dc-stat">
+                                        <i class="bi bi-kanban-fill" aria-hidden="true"></i>
+                                        <span class="dc-stat-num" data-dc-count="{{ $dcProjectCount }}">0</span>
+                                        <span class="dc-stat-label">Projects</span>
+                                    </div>
+                                @endif
+
+                                @if ($dcDuration !== '')
+                                    <div class="dc-stat">
+                                        <i class="bi bi-clock-fill" aria-hidden="true"></i>
+                                        <span class="dc-stat-num">{{ $dcDuration }}</span>
+                                        <span class="dc-stat-label">Duration</span>
+                                    </div>
+                                @endif
+                            </div>
+
+                            <div class="dc-toolbar dc-reveal">
+                                <div class="dc-search">
+                                    <i class="bi bi-search" aria-hidden="true"></i>
+                                    <label class="visually-hidden" for="dcModuleSearch">
+                                        Search modules and topics
+                                    </label>
+                                    <input type="search" id="dcModuleSearch" autocomplete="off"
+                                        placeholder="Search a module or topic..." data-dc-search
+                                        data-dc-target="#dcModuleAccordion">
+                                </div>
+                                <div class="dc-toolbar-actions">
+                                    <button type="button" class="dc-chip-btn" data-dc-expand
+                                        data-dc-target="#dcModuleAccordion">
+                                        Expand all
+                                    </button>
+                                    <button type="button" class="dc-chip-btn" data-dc-collapse
+                                        data-dc-target="#dcModuleAccordion">
+                                        Collapse all
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="dc-modules" id="dcModuleAccordion" data-dc-accordion>
+                                @foreach ($dcModules as $dcIndex => $dcItem)
+                                    <div class="dc-mod {{ $dcIndex === 0 ? 'is-open' : '' }}" data-dc-item
+                                        id="module-{{ $dcIndex + 1 }}">
+                                        <div class="dc-mod-node" aria-hidden="true">{{ $dcIndex + 1 }}</div>
+
+                                        <div class="dc-mod-card">
+                                            <button type="button" class="dc-mod-btn" data-dc-toggle
+                                                aria-expanded="{{ $dcIndex === 0 ? 'true' : 'false' }}"
+                                                aria-controls="dc-module-panel-{{ $dcIndex }}">
+                                                <span class="dc-mod-btn-copy">
+                                                    <span class="dc-mod-tag">Module {{ $dcIndex + 1 }}</span>
+                                                    <span class="dc-mod-title">{{ $dcItem['model']->question }}</span>
+                                                </span>
+                                                <span class="dc-mod-meta">
+                                                    @if (count($dcItem['topics']) > 1)
+                                                        <span class="dc-count-chip">
+                                                            {{ count($dcItem['topics']) }} topics
+                                                        </span>
+                                                    @endif
+                                                    <span class="dc-mod-caret">
+                                                        <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                </span>
                                             </button>
-                                        </h2>
-                                        <div id="collapse{{ $index }}"
-                                            class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
-                                            aria-labelledby="heading{{ $index }}"
-                                            data-bs-parent="#moduleAccordion">
-                                            <div class="accordion-body">
-                                                {!! nl2br(e($module->answer)) !!}
+
+                                            <div class="dc-mod-panel" id="dc-module-panel-{{ $dcIndex }}"
+                                                data-dc-panel role="region"
+                                                aria-label="{{ $dcItem['model']->question }}">
+                                                <div class="dc-mod-panel-inner">
+                                                    <div class="dc-mod-divider" aria-hidden="true"></div>
+
+                                                    @if (count($dcItem['topics']) > 1)
+                                                        <ul class="dc-topics">
+                                                            @foreach ($dcItem['topics'] as $dcTopicIndex => $dcTopic)
+                                                                <li class="dc-topic"
+                                                                    style="--dc-i: {{ $dcTopicIndex }}">
+                                                                    <i class="bi bi-check-circle-fill text-success"
+                                                                        aria-hidden="true"></i>
+                                                                    <span>{{ $dcTopic }}</span>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @else
+                                                        <p class="dc-mod-prose">
+                                                            {!! nl2br(e($dcItem['model']->answer)) !!}
+                                                        </p>
+                                                    @endif
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
+
+                                <div class="dc-empty" data-dc-empty>
+                                    <i class="bi bi-search" aria-hidden="true"></i>
+                                    No module matches that search. Try a broader keyword.
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="dc-curr-foot dc-reveal">
+                                <p>Want the detailed syllabus with tools and project briefs?</p>
+                                <button type="button" class="dc-fill-btn"
+                                    onclick="openModal('downloadLeadPopup')">
+                                    <i class="bi bi-download" aria-hidden="true"></i>
+                                    Download Curriculum
+                                </button>
+                            </div>
+                        </section>
                     </div>
                 @endif
 
@@ -1615,49 +1752,109 @@
         <!--End educate-details-course-area -->
         <!--==================================================-->
         @if ($course->faqs->count())
-            <h2 class="text-center mb-2" style="font-size: 2rem;">
-                <span style="color: #f29c12;">Our </span> FAQs
-            </h2>
-            <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">
-                Imperative FAQs About Us!
-            </p>
-        @endif
-        <section>
-            <div class="container">
-                <div class="tab_container">
-                    <div id="tab1" class="tab_content">
-                        <div class="accordion" id="marketingAccordion">
-                            @if ($course->faqs->count())
-                                <div class="accordion my-4" id="faqAccordion">
-                                    @foreach ($course->faqs as $index => $faq)
-                                        <div class="accordion-item border border-warning-subtle">
-                                            <h2 class="accordion-header" id="heading{{ $index }}">
-                                                <button class="accordion-button {{ $index !== 0 ? 'collapsed' : '' }}"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapse{{ $index }}"
-                                                    aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
-                                                    aria-controls="collapse{{ $index }}" style="color: #f29c12;">
-                                                    {{ $faq->question }}
-                                                </button>
-                                            </h2>
-                                            <div id="collapse{{ $index }}"
-                                                class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
-                                                aria-labelledby="heading{{ $index }}"
-                                                data-bs-parent="#faqAccordion">
-                                                <div class="accordion-body" style="list-style: disc;">
-                                                    {!! nl2br(e($faq->answer)) !!}
-                                                </div>
+            <section class="dc-faq" id="course-faqs">
+                <div class="container">
+                    <div class="dc-faq-head dc-reveal">
+                        <span class="dc-eyebrow">
+                            <i class="bi bi-patch-check-fill" aria-hidden="true"></i>
+                            {{ $course->faqs->count() }} answers &middot; Admissions &amp; programme
+                        </span>
+                        <h2 class="dc-faq-title">
+                            Frequently Asked <span>Questions</span>
+                        </h2>
+                        <p class="dc-faq-sub">
+                            Everything learners ask us before they enrol — eligibility, delivery, mentorship,
+                            placement support and fees. Search below or browse the list.
+                        </p>
+                    </div>
+
+                    <div class="dc-faq-grid">
+                        {{-- help card --}}
+                        <aside class="dc-faq-aside dc-reveal" style="--dc-delay: 80ms">
+                            <div class="dc-aside-icon">
+                                <i class="bi bi-headset" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="dc-aside-title">Still have a question?</h3>
+                            <p class="dc-aside-text">
+                                Tell us what you want to know about
+                                <strong>{{ $course->name }}</strong> and our admissions team will walk you
+                                through the curriculum, batches and fee options.
+                            </p>
+                            <div class="dc-aside-actions">
+                                <button type="button" class="dc-btn dc-btn--solid"
+                                    onclick="openModal('applyNowPopup')">
+                                    <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                                    Talk to a Counsellor
+                                </button>
+                                <button type="button" class="dc-btn dc-btn--ghost"
+                                    onclick="openModal('downloadLeadPopup')">
+                                    <i class="bi bi-download" aria-hidden="true"></i>
+                                    Download Brochure
+                                </button>
+                            </div>
+                            <p class="dc-aside-note">
+                                <i class="bi bi-patch-check-fill" aria-hidden="true"></i>
+                                Curriculum, batches &amp; fees — in one call.
+                            </p>
+                        </aside>
+
+                        {{-- questions --}}
+                        <div class="dc-faq-panelbox">
+                            <div class="dc-faq-search dc-reveal">
+                                <i class="bi bi-search" aria-hidden="true"></i>
+                                <label class="visually-hidden" for="dcFaqSearch">Search the FAQs</label>
+                                <input type="search" id="dcFaqSearch" autocomplete="off"
+                                    placeholder="Search a question (e.g. fees, eligibility, placement)"
+                                    data-dc-search data-dc-target="#dcFaqAccordion">
+                            </div>
+
+                            <div class="dc-faq-list" id="dcFaqAccordion" data-dc-accordion data-dc-single="true">
+                                @foreach ($course->faqs as $dcFaqIndex => $faq)
+                                    <div class="dc-faq-item dc-reveal {{ $dcFaqIndex === 0 ? 'is-open' : '' }}"
+                                        data-dc-item id="faq-{{ $dcFaqIndex + 1 }}"
+                                        style="--dc-delay: {{ min($dcFaqIndex, 6) * 55 }}ms">
+                                        <button type="button" class="dc-faq-btn" data-dc-toggle
+                                            aria-expanded="{{ $dcFaqIndex === 0 ? 'true' : 'false' }}"
+                                            aria-controls="dc-faq-panel-{{ $dcFaqIndex }}">
+                                            <span class="dc-q-badge" aria-hidden="true">
+                                                {{ str_pad($dcFaqIndex + 1, 2, '0', STR_PAD_LEFT) }}
+                                            </span>
+                                            <span class="dc-q-text">{{ $faq->question }}</span>
+                                            <span class="dc-plusminus" aria-hidden="true">
+                                                <span></span>
+                                                <span></span>
+                                            </span>
+                                        </button>
+
+                                        <div class="dc-faq-panel" id="dc-faq-panel-{{ $dcFaqIndex }}" data-dc-panel
+                                            role="region" aria-label="{{ $faq->question }}">
+                                            <div class="dc-faq-panel-inner">
+                                                <p class="dc-answer">{!! nl2br(e($faq->answer)) !!}</p>
                                             </div>
                                         </div>
-                                    @endforeach
+                                    </div>
+                                @endforeach
+
+                                <div class="dc-empty" data-dc-empty>
+                                    <i class="bi bi-search" aria-hidden="true"></i>
+                                    No question matches that search — try a different keyword, or ask us directly.
                                 </div>
-                            @endif
-                            <!-- Add other sections similarly -->
+                            </div>
+
+                            <p class="dc-faq-foot">
+                                Can&rsquo;t find your answer?
+                                <a href="javascript:void(0)" onclick="openModal('applyNowPopup')">Ask our team</a>
+                                and we&rsquo;ll get back to you.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
+
+        @push('scripts')
+            <script src="{{ asset('assets/js/course-curriculum-faq.js') }}?v=1" defer></script>
+        @endpush
         <!--==================================================-->
         <!-- Start educate-details-course-area style-inner -->
         <!--==================================================-->

@@ -1,0 +1,1086 @@
+/* ==========================================================================
+   Course detail page — Curriculum + FAQ sections
+   Scoped under .dc-curriculum / .dc-faq so nothing here leaks into the rest
+   of the page. Every collapse/animation rule is gated behind .dc-js (set on
+   <html> by an inline head script), so with JS off the sections degrade to a
+   plain, fully readable list.
+
+   The curriculum deliberately reuses the page's existing visual language:
+   white cards with a #f29c12 left border and a soft shadow (as .project-box),
+   orange circle step numbers (as .circle-step), green check bullets and the
+   .fill-btn button — so it reads as part of the page, not a separate widget.
+   ========================================================================== */
+
+.dc-curriculum,
+.dc-faq {
+    --dc-accent: #f29c12;
+    --dc-accent-2: #ff6a00;
+    --dc-text: #eaf0ff;
+    --dc-dim: #9dabc9;
+    --dc-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --dc-ease: cubic-bezier(.2, .7, .3, 1);
+}
+
+/* ---------- shared scroll reveal ----------
+   The hidden state is gated behind .dc-js (set by an inline head script) so a
+   visitor without JS still sees every word. */
+.dc-js .dc-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s var(--dc-ease), transform .7s var(--dc-ease);
+    transition-delay: var(--dc-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.dc-reveal.is-in {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- shared pieces (the FAQ aside re-skins these) ---------- */
+.dc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(242, 156, 18, .38);
+    background: rgba(242, 156, 18, .10);
+    color: #ffc76b;
+    font-family: var(--dc-mono);
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.dc-eyebrow .dc-pulse {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #35d07f;
+    flex: none;
+    animation: dcPulse 2.2s infinite;
+}
+
+@keyframes dcPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(53, 208, 127, .65);
+    }
+
+    70% {
+        box-shadow: 0 0 0 9px rgba(53, 208, 127, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(53, 208, 127, 0);
+    }
+}
+
+.dc-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 22px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    font-size: .93rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform .25s var(--dc-ease), box-shadow .25s var(--dc-ease), background-color .25s, border-color .25s, color .25s;
+}
+
+.dc-btn:focus-visible {
+    outline: 2px solid #ffd27d;
+    outline-offset: 3px;
+}
+
+.dc-btn--solid {
+    background: linear-gradient(95deg, var(--dc-accent) 0%, var(--dc-accent-2) 100%);
+    color: #1a1204;
+    box-shadow: 0 14px 30px -14px rgba(242, 156, 18, .85);
+}
+
+.dc-btn--solid:hover,
+.dc-btn--solid:focus {
+    color: #1a1204;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 38px -14px rgba(242, 156, 18, .95);
+}
+
+.dc-btn--solid::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .55), transparent);
+    transform: skewX(-18deg);
+    transition: left .7s var(--dc-ease);
+}
+
+.dc-btn--solid:hover::after {
+    left: 140%;
+}
+
+.dc-btn--ghost {
+    background: rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .16);
+    color: var(--dc-text);
+}
+
+.dc-btn--ghost:hover,
+.dc-btn--ghost:focus {
+    background: rgba(255, 255, 255, .10);
+    border-color: rgba(242, 156, 18, .5);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.dc-empty {
+    display: none;
+    padding: 26px 20px;
+    text-align: center;
+    color: #6b7689;
+    font-size: .95rem;
+    border: 1px dashed #e0e0e0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.dc-empty.is-shown {
+    display: block;
+}
+
+.dc-empty i {
+    color: var(--dc-accent);
+    margin-right: 6px;
+}
+
+/* ==========================================================================
+   1. CURRICULUM  — light, matching the rest of the page
+   ========================================================================== */
+
+.dc-curriculum {
+    padding: 10px 0 20px;
+}
+
+/* ---------- heading ---------- */
+.dc-curr-head {
+    max-width: 780px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.dc-curriculum .dc-curr-title {
+    margin: 0 0 12px;
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #333;
+}
+
+.dc-curriculum .dc-curr-title span {
+    color: var(--dc-accent);
+}
+
+.dc-curriculum .dc-curr-sub {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* ---------- stats ---------- */
+.dc-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 26px;
+}
+
+.dc-stat {
+    padding: 18px 16px;
+    text-align: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.dc-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+}
+
+.dc-stat i {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    color: var(--dc-accent);
+}
+
+.dc-stat-num {
+    display: block;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #333;
+    font-variant-numeric: tabular-nums;
+}
+
+.dc-stat-label {
+    display: block;
+    margin-top: 4px;
+    font-size: .88rem;
+    color: #6c757d;
+}
+
+/* ---------- toolbar ---------- */
+.dc-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.dc-search {
+    position: relative;
+    flex: 1 1 260px;
+    min-width: 0;
+}
+
+.dc-search i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #9aa3ae;
+    pointer-events: none;
+}
+
+.dc-search input {
+    width: 100%;
+    padding: 12px 16px 12px 42px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    color: #333;
+    font-size: .97rem;
+    transition: border-color .25s, box-shadow .25s;
+}
+
+.dc-search input::placeholder {
+    color: #9aa3ae;
+}
+
+.dc-search input:focus {
+    outline: none;
+    border-color: var(--dc-accent);
+    box-shadow: 0 0 0 3px rgba(242, 156, 18, .15);
+}
+
+.dc-toolbar-actions {
+    display: flex;
+    gap: 8px;
+    flex: none;
+}
+
+.dc-chip-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 16px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    color: #555;
+    font-size: .9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color .25s, border-color .25s, box-shadow .25s;
+}
+
+.dc-chip-btn:hover {
+    color: var(--dc-accent);
+    border-color: var(--dc-accent);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .06);
+}
+
+.dc-chip-btn:focus-visible {
+    outline: 2px solid var(--dc-accent);
+    outline-offset: 2px;
+}
+
+/* ---------- module list ---------- */
+.dc-modules {
+    position: relative;
+}
+
+/* the step rail linking the numbered circles */
+.dc-modules::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 19px;
+    width: 2px;
+    background: #f5ddb9;
+}
+
+.dc-mod {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.dc-mod:last-of-type {
+    margin-bottom: 0;
+}
+
+.dc-mod.is-hidden {
+    display: none;
+}
+
+/* number circle — same idiom as the page's .circle-step */
+.dc-mod-node {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    flex: none;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dc-accent);
+    background: #fff;
+    border: 2px solid var(--dc-accent);
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.dc-mod.is-open .dc-mod-node {
+    background: var(--dc-accent);
+    color: #fff;
+}
+
+/* card — same idiom as the page's .project-box */
+.dc-mod-card {
+    background: #fff;
+    border-radius: 12px;
+    border-left: 5px solid var(--dc-accent);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.dc-mod:hover .dc-mod-card {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.dc-mod.is-open .dc-mod-card {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.dc-mod-btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 18px 20px;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dc-mod-btn:focus-visible {
+    outline: 2px solid var(--dc-accent);
+    outline-offset: -4px;
+    border-radius: 12px;
+}
+
+.dc-mod-btn-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.dc-mod-tag {
+    display: block;
+    margin-bottom: 4px;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--dc-accent);
+}
+
+.dc-curriculum .dc-mod-title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #2c3e50;
+}
+
+.dc-mod-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: none;
+}
+
+.dc-count-chip {
+    font-size: .85rem;
+    color: #6c757d;
+    white-space: nowrap;
+}
+
+.dc-mod-caret {
+    width: 30px;
+    height: 30px;
+    flex: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(242, 156, 18, .12);
+    color: var(--dc-accent);
+    font-size: .8rem;
+    transition: transform .35s ease, background-color .3s ease, color .3s ease;
+}
+
+.dc-mod.is-open .dc-mod-caret {
+    transform: rotate(180deg);
+    background: var(--dc-accent);
+    color: #fff;
+}
+
+.dc-mod-panel {
+    overflow: hidden;
+    transition: max-height .4s var(--dc-ease);
+}
+
+.dc-js .dc-mod-panel {
+    max-height: 0;
+}
+
+.dc-mod-panel-inner {
+    padding: 0 20px 20px 20px;
+}
+
+.dc-mod-divider {
+    height: 1px;
+    margin-bottom: 16px;
+    background: #eee;
+}
+
+/* topic checklist — same bullets the page uses elsewhere */
+.dc-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dc-topic {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.dc-topic i {
+    flex: none;
+    margin-top: .25em;
+    font-size: .95rem;
+}
+
+.dc-js .dc-topic {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+.dc-js .dc-mod.is-open .dc-topic {
+    animation: dcTopicIn .45s var(--dc-ease) forwards;
+    animation-delay: calc(var(--dc-i, 0) * 40ms);
+}
+
+@keyframes dcTopicIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dc-mod-prose {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ---------- footer CTA ---------- */
+.dc-curr-foot {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.dc-curr-foot p {
+    margin: 0 0 14px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Same values as the site's .fill-btn, spelled out here because that rule
+   lives inside a nested .nedesign{} block in courses.css and so never
+   applies on this page. */
+.dc-fill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: 2px solid var(--dc-accent);
+    background-color: var(--dc-accent);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.dc-fill-btn:hover,
+.dc-fill-btn:focus {
+    background-color: #dd8a08;
+    border-color: #dd8a08;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(242, 156, 18, .35);
+}
+
+.dc-fill-btn:focus-visible {
+    outline: 2px solid #8a5a04;
+    outline-offset: 2px;
+}
+
+.dc-hl {
+    background: rgba(242, 156, 18, .3);
+    color: inherit;
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+@media (max-width: 575.98px) {
+    .dc-stats {
+        grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+        gap: 12px;
+    }
+
+    .dc-stat {
+        padding: 14px 10px;
+    }
+
+    .dc-stat-num {
+        font-size: 1.4rem;
+    }
+
+    .dc-stat-label {
+        font-size: .8rem;
+    }
+
+    .dc-toolbar-actions {
+        width: 100%;
+    }
+
+    .dc-toolbar-actions .dc-chip-btn {
+        flex: 1 1 0;
+        justify-content: center;
+    }
+
+    .dc-mod {
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .dc-mod-node {
+        width: 34px;
+        height: 34px;
+        font-size: .88rem;
+    }
+
+    .dc-modules::before {
+        left: 16px;
+    }
+
+    .dc-mod-btn {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .dc-curriculum .dc-mod-title {
+        font-size: 1.02rem;
+    }
+
+    .dc-mod-panel-inner {
+        padding: 0 15px 16px;
+    }
+
+    .dc-count-chip {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   2. FAQ
+   ========================================================================== */
+
+.dc-faq {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(40px, 6vw, 78px) 0;
+    background:
+        radial-gradient(760px 360px at 88% -5%, rgba(242, 156, 18, .13), transparent 62%),
+        radial-gradient(640px 320px at 6% 100%, rgba(56, 182, 255, .10), transparent 62%),
+        linear-gradient(180deg, #ffffff 0%, #fffaf2 100%);
+}
+
+.dc-faq::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .55;
+    background-image: radial-gradient(rgba(10, 16, 32, .085) 1px, transparent 1px);
+    background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(90% 60% at 50% 50%, #000 10%, transparent 75%);
+    mask-image: radial-gradient(90% 60% at 50% 50%, #000 10%, transparent 75%);
+}
+
+.dc-faq>.container {
+    position: relative;
+    z-index: 1;
+}
+
+.dc-faq-head {
+    max-width: 720px;
+    margin: 0 auto clamp(26px, 4vw, 44px);
+    text-align: center;
+}
+
+.dc-faq .dc-eyebrow {
+    border-color: rgba(242, 156, 18, .35);
+    background: rgba(242, 156, 18, .10);
+    color: #b7700a;
+}
+
+.dc-faq .dc-faq-title {
+    margin: 15px 0 10px;
+    font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -.02em;
+    color: #0e1626;
+}
+
+.dc-faq .dc-faq-title span {
+    background: linear-gradient(95deg, var(--dc-accent) 0%, var(--dc-accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.dc-faq .dc-faq-sub {
+    margin: 0;
+    color: #5b6880;
+    font-size: 1.02rem;
+    line-height: 1.65;
+}
+
+.dc-faq-grid {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+/* ---------- sticky help card ---------- */
+.dc-faq-aside {
+    position: sticky;
+    top: 110px;
+    overflow: hidden;
+    padding: 28px 24px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    background:
+        radial-gradient(520px 260px at 20% 0%, rgba(242, 156, 18, .28), transparent 65%),
+        linear-gradient(165deg, #0c1322 0%, #111b30 100%);
+    box-shadow: 0 34px 62px -40px rgba(8, 15, 34, .85);
+    color: var(--dc-text);
+    isolation: isolate;
+}
+
+.dc-faq-aside::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    -webkit-mask-image: radial-gradient(100% 70% at 50% 0%, #000, transparent 85%);
+    mask-image: radial-gradient(100% 70% at 50% 0%, #000, transparent 85%);
+}
+
+.dc-aside-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #1a1204;
+    background: linear-gradient(140deg, var(--dc-accent), var(--dc-accent-2));
+    box-shadow: 0 16px 30px -16px rgba(242, 156, 18, .95);
+}
+
+.dc-faq .dc-aside-title {
+    margin: 18px 0 8px;
+    font-size: 1.28rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.dc-aside-text {
+    margin: 0 0 20px;
+    color: var(--dc-dim);
+    font-size: .95rem;
+    line-height: 1.65;
+}
+
+.dc-aside-actions {
+    display: grid;
+    gap: 10px;
+}
+
+.dc-aside-actions .dc-btn {
+    width: 100%;
+}
+
+.dc-aside-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 18px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, .09);
+    color: var(--dc-dim);
+    font-family: var(--dc-mono);
+    font-size: .72rem;
+    letter-spacing: .06em;
+}
+
+.dc-aside-note i {
+    color: #35d07f;
+}
+
+/* ---------- faq list ---------- */
+.dc-faq-panelbox {
+    min-width: 0;
+}
+
+.dc-faq-search {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.dc-faq-search i {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    color: #94a1b8;
+    pointer-events: none;
+}
+
+.dc-faq-search input {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    border-radius: 14px;
+    border: 1px solid #e7e2d8;
+    background: #fff;
+    color: #0e1626;
+    font-size: .95rem;
+    box-shadow: 0 10px 26px -22px rgba(14, 22, 38, .6);
+    transition: border-color .25s, box-shadow .25s;
+}
+
+.dc-faq-search input::placeholder {
+    color: #97a3b6;
+}
+
+.dc-faq-search input:focus {
+    outline: none;
+    border-color: rgba(242, 156, 18, .7);
+    box-shadow: 0 0 0 4px rgba(242, 156, 18, .15);
+}
+
+.dc-faq-list {
+    display: grid;
+    gap: 12px;
+}
+
+.dc-faq-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid #ece6db;
+    background: #fff;
+    box-shadow: 0 14px 34px -28px rgba(14, 22, 38, .55);
+    transition: transform .3s var(--dc-ease), border-color .3s, box-shadow .3s;
+}
+
+.dc-faq-item.is-hidden {
+    display: none;
+}
+
+.dc-faq-item::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--dc-accent), var(--dc-accent-2));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .4s var(--dc-ease);
+}
+
+.dc-faq-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(242, 156, 18, .45);
+    box-shadow: 0 24px 44px -30px rgba(242, 156, 18, .7);
+}
+
+.dc-faq-item.is-open {
+    border-color: rgba(242, 156, 18, .5);
+    box-shadow: 0 26px 50px -32px rgba(242, 156, 18, .65);
+}
+
+.dc-faq-item.is-open::before {
+    transform: scaleY(1);
+}
+
+.dc-faq-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 18px 20px;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dc-faq-btn:focus-visible {
+    outline: 2px solid var(--dc-accent);
+    outline-offset: -4px;
+    border-radius: 18px;
+}
+
+.dc-q-badge {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--dc-mono);
+    font-size: .8rem;
+    font-weight: 700;
+    color: #b7700a;
+    background: rgba(242, 156, 18, .12);
+    border: 1px solid rgba(242, 156, 18, .28);
+    transition: color .3s, background .3s, border-color .3s, transform .3s var(--dc-ease);
+}
+
+.dc-faq-item.is-open .dc-q-badge {
+    color: #1a1204;
+    background: linear-gradient(140deg, var(--dc-accent), var(--dc-accent-2));
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
+.dc-faq .dc-q-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+    font-size: clamp(.98rem, 1.4vw, 1.08rem);
+    font-weight: 700;
+    line-height: 1.5;
+    color: #0e1626;
+    letter-spacing: -.01em;
+    transition: color .25s;
+}
+
+.dc-faq-item.is-open .dc-q-text {
+    color: #b7700a;
+}
+
+/* plus to minus morph */
+.dc-plusminus {
+    position: relative;
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    border: 1px solid #e7e2d8;
+    background: #fbf8f3;
+    transition: background .3s, border-color .3s, transform .4s var(--dc-ease);
+}
+
+.dc-plusminus span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 13px;
+    height: 2px;
+    border-radius: 2px;
+    background: #6b7689;
+    transform: translate(-50%, -50%);
+    transition: transform .4s var(--dc-ease), background .3s, opacity .3s;
+}
+
+.dc-plusminus span:last-child {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.dc-faq-item.is-open .dc-plusminus {
+    background: linear-gradient(140deg, var(--dc-accent), var(--dc-accent-2));
+    border-color: transparent;
+    transform: rotate(180deg);
+}
+
+.dc-faq-item.is-open .dc-plusminus span {
+    background: #1a1204;
+}
+
+.dc-faq-item.is-open .dc-plusminus span:last-child {
+    transform: translate(-50%, -50%) rotate(180deg);
+    opacity: 0;
+}
+
+.dc-faq-panel {
+    overflow: hidden;
+    transition: max-height .45s var(--dc-ease);
+}
+
+.dc-js .dc-faq-panel {
+    max-height: 0;
+}
+
+.dc-faq-panel-inner {
+    padding: 0 20px 20px 70px;
+}
+
+.dc-faq .dc-answer {
+    margin: 0;
+    padding-top: 2px;
+    color: #4d5a72;
+    font-size: .97rem;
+    line-height: 1.78;
+}
+
+.dc-faq .dc-answer a {
+    color: #b7700a;
+    text-decoration: underline;
+}
+
+.dc-faq .dc-empty {
+    color: #6b7689;
+    border-color: #e3ddd1;
+}
+
+.dc-faq-foot {
+    margin-top: 18px;
+    text-align: center;
+    color: #6b7689;
+    font-size: .9rem;
+}
+
+@media (max-width: 991.98px) {
+    .dc-faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .dc-faq-aside {
+        position: static;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .dc-faq-btn {
+        padding: 15px;
+        gap: 11px;
+    }
+
+    .dc-faq-panel-inner {
+        padding: 0 15px 16px;
+    }
+
+    .dc-q-badge {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+        font-size: .72rem;
+    }
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    .dc-curriculum *,
+    .dc-faq * {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+    .dc-js .dc-reveal,
+    .dc-js .dc-topic {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* When a search filters everything out, the timeline rail has nothing to
+   connect — hide it so the empty state reads cleanly. */
+.dc-modules:has([data-dc-empty].is-shown)::before {
+    opacity: 0;
+}
