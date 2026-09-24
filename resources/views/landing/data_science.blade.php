@@ -1722,7 +1722,7 @@
 
                         <div class="row" id="numberrow" style="margin-top: 25px">
                             <div class="col-lg-4" id="numbercol">
-                                <h2 style=" font-size: 1.5rem;   font-weight: 600;">350+</h2>
+                                <h2 style=" font-size: 1.5rem;   font-weight: 600;">450+</h2>
                                 <h6>Hiring Partners</h6>
                             </div>
                             <div class="col-lg-4" id="numbercol">
@@ -2219,7 +2219,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <p>
-                                                Tied up with 250+ Hiring Partners</p>
+                                                Tied up with 450+ Hiring Partners</p>
                                         </div>
                                     </div>
                                 </div>

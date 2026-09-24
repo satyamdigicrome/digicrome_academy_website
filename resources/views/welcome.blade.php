@@ -435,8 +435,8 @@
                                 alt="digicrome feature-icon" title="digicrome feature-icon">
                         </div>
                         <div class="feature-content">
-                            <h4 class="feature-title">500+ Hiring Partners</h4>
-                            <p class="feature-desc">We provide placement assistance and have partnered with 500+ global companies to help students find job opportunities.</p>
+                            <h4 class="feature-title">450+ Hiring Partners</h4>
+                            <p class="feature-desc">We provide placement assistance and have partnered with 450+ global companies to help students find job opportunities.</p>
                         </div>
                         <div class="educate-hover-box hover-bx"></div>
                         <div class="educate-hover-box hover-bx2"></div>

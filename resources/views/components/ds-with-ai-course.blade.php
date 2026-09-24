@@ -150,7 +150,7 @@
                  <div class="date-border">
                      <img width="75" height="75" loading="lazy" src="{{ asset('assets/images/ds-withai-course/banner-icon-5.png') }}"
                          class="lazyload" alt="data science program online">
-                     <p>500+</p>
+                     <p>450+</p>
                      <span>Hiring Partners</span>
                  </div>
              </div>

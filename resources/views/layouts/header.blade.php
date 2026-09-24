@@ -100,7 +100,7 @@
                                                 <i class="bi bi-chevron-right"></i>
                                             </a>
                                         </li>
-                                        @foreach ($header_collections->whereNotIn('id', [5, 6]) as $collection)
+                                        @foreach ($header_collections->whereNotIn('id', [3, 5, 6]) as $collection)
                                             <li>
                                                 <a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
                                                     {{ $collection->name }}
