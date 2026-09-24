@@ -956,25 +956,25 @@
                                         <div class="label">
                                             Price
                                         </div>
-                                        <span class="value-dollar"> {{ number_format($course->price, 0) }} + GST</span>
+                                        <span class="value-dollar"> {{ is_string($course->price) ? $course->price : number_format($course->price, 0) }} + GST</span>
                                     </li>
                                     <li>
                                         <div class="label">
                                             US Price
                                         </div>
-                                        <span class="value-dollar">${{ $course->us_price }}</span>
+                                        <span class="value-dollar">${{ is_string($course->us_price) ? $course->us_price : number_format($course->us_price, 2) }}</span>
                                     </li>
                                     <li>
                                         <div class="label">
                                             UAE Price
                                         </div>
-                                        <span class="value-dollar">{{ $course->dubai_price }}AED</span>
+                                        <span class="value-dollar">{{ is_string($course->dubai_price) ? $course->dubai_price : number_format($course->dubai_price, 0) }}AED</span>
                                     </li>
                                     <li>
                                         <div class="label">
                                             Singapore Price
                                         </div>
-                                        <span class="value-dollar">{{ $course->singapore_price }}SGD</span>
+                                        <span class="value-dollar">{{ is_string($course->singapore_price) ? $course->singapore_price : number_format($course->singapore_price, 2) }}SGD</span>
                                     </li>
                                     <li>
                                         <div class="label">
