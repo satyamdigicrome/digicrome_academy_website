@@ -231,6 +231,27 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h5 style="color: #ccc"><u>Machine Learning Training Course</u></h5>
+                <p>
+                    <a href="{{ url('/') }}/courses/machine-learning-course-in-noida" style="color: #fff">Machine Learning Training Course in Noida</a> |
+                    <a href="{{ url('/') }}/courses/machine-learning-training-course-in-delhi" style="color: #fff">Machine Learning Training Course in Delhi</a> |
+                    <a href="{{ url('/') }}/courses/machine-learning-training-in-pune" style="color: #fff">Machine Learning Training Course in Pune</a> |
+                    <a href="{{ url('/') }}/courses/machine-learning-certification-course-in-hyderabad" style="color: #fff">Machine Learning Training Course in Hyderabad</a> |
+                    <a href="{{ url('/') }}/courses/machine-learning-course-in-bangalore" style="color: #fff">Machine Learning Training Course in Bangalore</a> |
+                    <a href="{{ url('/') }}/courses/machine-learning-course-in-gurgaon" style="color: #fff">Machine Learning Training Course in Gurgaon</a> |
+                    <a href="{{ url('/') }}/courses/machine-learning-certification-course-in-mumbai" style="color: #fff">Machine Learning Training Course in Mumbai</a> |
+                    <a href="{{ url('/') }}/courses/ml-training-course-in-kolkata" style="color: #fff">Machine Learning Training Course in Kolkata</a> |
+                    <a href="{{ url('/') }}/courses/machine-learning-training-in-jaipur" style="color: #fff">Machine Learning Training Course in Jaipur</a> |
+                    <a href="{{ url('/') }}/courses/ml-training-course-in-chennai" style="color: #fff">Machine Learning Training Course in Chennai</a>
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
     <div class="footer-bottom-area">
         <div class="container">
             <div class="row footer-bottom">
