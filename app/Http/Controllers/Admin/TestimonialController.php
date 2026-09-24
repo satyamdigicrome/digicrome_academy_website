@@ -26,6 +26,7 @@ class TestimonialController extends Controller
             'name' => 'required|string|max:255',
             'profession' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:webp|max:2048',
+            'redirect_url' => 'nullable|url|max:2048',
         ]);
 
         $imagePath = null;
@@ -42,6 +43,7 @@ class TestimonialController extends Controller
             'name' => $request->name,
             'profession' => $request->profession,
             'image' => $imagePath,
+            'redirect_url' => $request->redirect_url,
             'user_id' => $userId,
         ]);
         return redirect()->back()->with('success', 'Testimonial added successfully!');
@@ -63,6 +65,7 @@ class TestimonialController extends Controller
             'rating'     => 'required|integer|min:1|max:5',
             'name'       => 'required|string|max:255',
             'profession' => 'required|string|max:255',
+            'redirect_url' => 'nullable|url|max:2048',
             'image'      => 'nullable|image|max:2048',
         ]);
 
@@ -80,6 +83,7 @@ class TestimonialController extends Controller
             'rating'     => $request->rating,
             'name'       => $request->name,
             'profession' => $request->profession,
+            'redirect_url' => $request->redirect_url,
         ]);
 
         return redirect()->back()->with('success', 'Testimonial updated successfully!');

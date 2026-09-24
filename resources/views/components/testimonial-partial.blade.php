@@ -59,7 +59,9 @@
                         @for ($mtstHalf = 0; $mtstHalf < 2; $mtstHalf++)
                             @for ($mtstRepeat = 0; $mtstRepeat < $mtstHalfRepeats; $mtstRepeat++)
                             @foreach ($mtstItems as $testimonial)
-                                <div class="mtst-card">
+                                <a class="mtst-card" href="{{ $testimonial->redirect_url ?: '#' }}" @if ($testimonial->redirect_url) target="_blank" rel="noopener noreferrer" @else aria-disabled="true" onclick="return false" @endif>
+
+                                    <img class="mtst-google-icon" src="{{ asset('assets/images/see_what/google_home.svg') }}" alt="Google review" loading="lazy">
 
                                     <div class="mtst-card-rating">
                                         @for ($i = 1; $i <= 5; $i++)
@@ -93,7 +95,7 @@
                                         </div>
                                     @endif
 
-                                </div>
+                                </a>
                             @endforeach
                             @endfor
                         @endfor
@@ -248,6 +250,16 @@
         box-shadow: 0 6px 16px -12px rgba(16, 32, 58, .18);
         border: 1px solid rgba(16, 32, 58, .06);
         transition: box-shadow .3s ease, border-color .3s ease, transform .3s ease;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    #mtst-testimonials .mtst-google-icon {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        align-self: flex-end;
+        margin-bottom: 8px;
     }
 
     #mtst-testimonials .mtst-card:hover {

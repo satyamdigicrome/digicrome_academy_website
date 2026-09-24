@@ -38,6 +38,10 @@
                         <textarea name="review" class="form-control" rows="4" placeholder="Customer review..." required></textarea>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label fw-semibold">Review URL <small class="text-muted">(optional)</small></label>
+                        <input type="url" name="redirect_url" class="form-control" placeholder="https://...">
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label fw-semibold">Rating (1–5) <span class="text-danger">*</span></label>
                         <input type="number" name="rating" class="form-control" min="1" max="5" placeholder="5" required>
                     </div>
@@ -163,6 +167,10 @@
                             <textarea name="review" id="edit_review" class="form-control" rows="4" required></textarea>
                         </div>
                         <div class="col-12">
+                            <label class="form-label fw-semibold">Review URL <small class="text-muted">(optional)</small></label>
+                            <input type="url" name="redirect_url" id="edit_redirect_url" class="form-control" placeholder="https://...">
+                        </div>
+                        <div class="col-12">
                             <label class="form-label fw-semibold">Photo <small class="text-muted">(leave blank to keep current)</small></label>
                             <input type="file" name="image" accept="image/*" class="form-control">
                             <div id="edit_current_image" class="mt-2"></div>
@@ -187,6 +195,7 @@ function openEditModal(id, data) {
     document.getElementById('edit_profession').value = data.profession || '';
     document.getElementById('edit_tagline').value = data.tagline || '';
     document.getElementById('edit_review').value = data.review || '';
+    document.getElementById('edit_redirect_url').value = data.redirect_url || '';
     document.getElementById('edit_rating').value = data.rating || '';
 
     var imgDiv = document.getElementById('edit_current_image');

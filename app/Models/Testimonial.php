@@ -17,5 +17,6 @@ class Testimonial extends Model
         'profession',
         'user_id',
         'image',
+        'redirect_url',
     ];
 }

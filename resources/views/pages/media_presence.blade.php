@@ -533,7 +533,7 @@
 
     <section class="press-room py-5">
         <div class="container text-center">
-            <h1>Media Presence</h1>
+            <h1 style="font-size: 2.5rem;">Media Presence</h1>
             <h2 class="section-title-alt mb-5">Digicrome Press Room</h2>
             <div class="logo-grid">
                 @foreach ($images as $logo)

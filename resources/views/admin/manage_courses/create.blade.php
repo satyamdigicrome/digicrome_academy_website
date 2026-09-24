@@ -92,25 +92,25 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="number" class="form-control" id="price" name="price" required>
+                    <input type="text" class="form-control" id="price" name="price" required>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="dubai_price">Dubai Price</label>
-                    <input type="number" class="form-control" id="dubai_price" name="dubai_price" required>
+                    <input type="text" class="form-control" id="dubai_price" name="dubai_price" required>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="us_price">US Price</label>
-                    <input type="number" class="form-control" id="us_price" name="us_price" required>
+                    <input type="text" class="form-control" id="us_price" name="us_price" required>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="singapore_price">Singapore Price</label>
-                    <input type="number" class="form-control" id="singapore_price" name="singapore_price" required>
+                    <input type="text" class="form-control" id="singapore_price" name="singapore_price" required>
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="discount">Discount</label>
-                    <input type="number" class="form-control" id="discount" name="discount" required>
+                    <input type="text" class="form-control" id="discount" name="discount" required>
                 </div>
             </div>
             <div class="col-md-4">
