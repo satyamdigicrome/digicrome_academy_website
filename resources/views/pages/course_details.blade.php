@@ -956,19 +956,19 @@
                                         <div class="label">
                                             Price
                                         </div>
-                                        <span class="value-dollar"> {{ is_string($course->price) ? $course->price : number_format($course->price, 0) }} + GST</span>
+                                        <span class="value-dollar"> {{ is_string($course->price) ? $course->price : number_format($course->price, 0).' + GST' }}</span>
                                     </li>
                                     <li>
                                         <div class="label">
                                             US Price
                                         </div>
-                                        <span class="value-dollar">${{ is_string($course->us_price) ? $course->us_price : number_format($course->us_price, 2) }}</span>
+                                        <span class="value-dollar">{{ is_string($course->us_price) ? $course->us_price : '$'.number_format($course->us_price, 2) }}</span>
                                     </li>
                                     <li>
                                         <div class="label">
                                             UAE Price
                                         </div>
-                                        <span class="value-dollar">{{ is_string($course->dubai_price) ? $course->dubai_price : number_format($course->dubai_price, 0) }}AED</span>
+                                        <span class="value-dollar">{{ is_string($course->dubai_price) ? $course->dubai_price : number_format($course->dubai_price, 0).'AED' }}</span>
                                     </li>
                                     <li>
                                         <div class="label">
