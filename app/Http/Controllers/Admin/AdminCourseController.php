@@ -83,8 +83,7 @@ class AdminCourseController extends Controller
         $course->user_id = Auth::id(); 
         $course->image = $imagePath2; 
         $course->banner_image = $imagePath; 
-
-
+        $course->created_at = now();
         $course->save();
 
         return redirect()->route('admin.manage_courses')->with('success', 'Course added successfully!');
