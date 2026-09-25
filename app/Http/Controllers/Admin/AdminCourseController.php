@@ -11,6 +11,29 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminCourseController extends Controller
 {
+    private const ROLE_FIELDS = ['title', 'avg_salary', 'salary_range', 'experience', 'tag', 'description'];
+    private const ELIGIBILITY_FIELDS = ['icon', 'title', 'description'];
+
+    private const CAREER_RULES = [
+        'career_roles' => 'nullable|array',
+        'career_roles.*.title' => 'nullable|string|max:255',
+        'career_roles.*.avg_salary' => 'nullable|string|max:100',
+        'career_roles.*.salary_range' => 'nullable|string|max:100',
+        'career_roles.*.experience' => 'nullable|string|max:100',
+        'career_roles.*.tag' => 'nullable|string|max:50',
+        'career_roles.*.description' => 'nullable|string|max:500',
+        'eligibility' => 'nullable|array',
+        'eligibility.*.icon' => 'nullable|string|max:50',
+        'eligibility.*.title' => 'nullable|string|max:255',
+        'eligibility.*.description' => 'nullable|string|max:500',
+    ];
+
+    private function applyCareerData(Course $course, Request $request): void
+    {
+        $course->career_roles = Course::cleanRows($request->input('career_roles'), self::ROLE_FIELDS, 'title');
+        $course->eligibility = Course::cleanRows($request->input('eligibility'), self::ELIGIBILITY_FIELDS, 'title');
+    }
+
     public function index()
     {
         $courses = Course::all(); 
@@ -50,8 +73,7 @@ class AdminCourseController extends Controller
             'status' => 'required|boolean',
             'course_image' => 'required|image|mimes:webp|max:2048',
             'banner_image' => 'required|image|mimes:webp|max:2048',
-
-        ]);
+        ] + self::CAREER_RULES);
 
         $imagePath = $request->file('banner_image')->store('courses', 'public');
 
@@ -83,6 +105,7 @@ class AdminCourseController extends Controller
         $course->user_id = Auth::id(); 
         $course->image = $imagePath2; 
         $course->banner_image = $imagePath; 
+        $this->applyCareerData($course, $request);
         $course->created_at = now();
         $course->save();
 
@@ -123,14 +146,13 @@ class AdminCourseController extends Controller
             'image' => 'nullable|image|mimes:webp|max:2048',
             'banner_image' => 'nullable|image|mimes:webp|max:2048',
             'browser' => 'nullable|mimes:pdf|max:5120', 
-
-
-        ]);
+        ] + self::CAREER_RULES);
 
         $course = Course::findOrFail($id);
         $course->slug = $request->input('slug');
 
-        $course->update($request->except('image', 'banner_image'));
+        $course->update($request->except('image', 'banner_image', 'career_roles', 'eligibility'));
+        $this->applyCareerData($course, $request);
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('courses', 'public');

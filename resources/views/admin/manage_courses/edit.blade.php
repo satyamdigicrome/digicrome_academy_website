@@ -241,6 +241,8 @@
             </div>
         </div>
         
+        @include('admin.manage_courses._career_eligibility', ['course' => $course])
+
         <!-- Include CKEditor CDN -->
        
         

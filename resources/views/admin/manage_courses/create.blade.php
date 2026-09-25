@@ -204,6 +204,8 @@
         
         
 
+        @include('admin.manage_courses._career_eligibility')
+
         <button type="submit" class="btn-cms-primary">Add Course</button>
         <a href="{{ route('admin.manage_courses') }}" class="btn-cms-secondary">Cancel</a>
     </form>

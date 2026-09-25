@@ -90,7 +90,50 @@ class Course extends Model
         'image',
         'browser',
         'banner_image',
+        'career_roles',
+        'eligibility',
     ];
+
+    protected $casts = [
+        'career_roles' => 'array',
+        'eligibility' => 'array',
+    ];
+
+    /** Icons the CMS offers for eligibility cards (Bootstrap Icons class => label). */
+    public const ELIGIBILITY_ICONS = [
+        'bi-mortarboard-fill' => 'Graduate / Student',
+        'bi-briefcase-fill' => 'Working Professional',
+        'bi-arrow-left-right' => 'Career Switcher',
+        'bi-code-slash' => 'Developer / IT',
+        'bi-bar-chart-line-fill' => 'Analyst',
+        'bi-person-workspace' => 'Freelancer',
+        'bi-rocket-takeoff-fill' => 'Entrepreneur',
+        'bi-lightbulb-fill' => 'Curious Learner',
+        'bi-calculator-fill' => 'Maths / Stats',
+        'bi-laptop' => 'Laptop / Setup',
+        'bi-patch-check-fill' => 'General',
+    ];
+
+    /**
+     * Normalise the repeatable rows posted from the CMS: trims every field and
+     * drops rows whose required key is blank, so an untouched "add row" never
+     * reaches the site as an empty card.
+     */
+    public static function cleanRows(?array $rows, array $fields, string $requiredKey): ?array
+    {
+        $clean = [];
+        foreach ($rows ?? [] as $row) {
+            $item = [];
+            foreach ($fields as $field) {
+                $item[$field] = trim((string) ($row[$field] ?? ''));
+            }
+            if ($item[$requiredKey] !== '') {
+                $clean[] = $item;
+            }
+        }
+
+        return $clean ?: null;
+    }
     public function collection()
 {
     return $this->belongsTo(Collection::class);

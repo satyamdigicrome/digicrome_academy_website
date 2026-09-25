@@ -1,0 +1,629 @@
+/* ==========================================================================
+   Course detail page — Career Outcomes (salaries) + Eligibility sections
+   Scoped under .cs-career / .cs-elig. Brand: navy #1c1647, orange #f29c12.
+   Reveal animations are gated behind .dc-js (set in the page head) so the
+   content stays fully visible without JS.
+   ========================================================================== */
+
+.cs-career,
+.cs-elig {
+    --cs-navy: #1c1647;
+    --cs-navy-2: #2d2470;
+    --cs-accent: #f29c12;
+    --cs-accent-2: #ff6a00;
+    --cs-ease: cubic-bezier(.2, .7, .3, 1);
+}
+
+/* ---------- reveal ---------- */
+.dc-js .cs-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .7s var(--cs-ease), transform .7s var(--cs-ease);
+    transition-delay: var(--cs-delay, 0ms);
+}
+
+.dc-js .cs-reveal.cs-in {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- shared heading pieces ---------- */
+.cs-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(242, 156, 18, .45);
+    background: rgba(242, 156, 18, .12);
+    color: #ffc76b;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.cs-eyebrow-dark {
+    color: #b86e00;
+    background: #fff3df;
+}
+
+.cs-title {
+    margin: 16px 0 12px;
+    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.cs-title span {
+    background: linear-gradient(90deg, var(--cs-accent), var(--cs-accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.cs-sub {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.cs-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1.5px solid var(--cs-accent);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+
+.cs-cta:hover {
+    color: #fff;
+    background: var(--cs-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(242, 156, 18, .35);
+}
+
+.cs-cta i {
+    transition: transform .3s ease;
+}
+
+.cs-cta:hover i {
+    transform: translateX(4px);
+}
+
+.cs-cta-solid {
+    border: 0;
+    background: linear-gradient(90deg, var(--cs-accent), var(--cs-accent-2));
+    box-shadow: 0 10px 24px rgba(242, 156, 18, .3);
+}
+
+/* ==========================================================================
+   Career outcomes
+   ========================================================================== */
+.cs-career {
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+    padding: 80px 0 70px;
+    color: #eaf0ff;
+    background:
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .06) 1px, transparent 0) 0 0 / 26px 26px,
+        linear-gradient(135deg, #140f38 0%, var(--cs-navy) 45%, var(--cs-navy-2) 100%);
+}
+
+.cs-career-glow {
+    position: absolute;
+    top: -180px;
+    right: -120px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 156, 18, .28), transparent 65%);
+    pointer-events: none;
+}
+
+.cs-career .cs-head {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    text-align: center;
+}
+
+.cs-career .cs-title {
+    color: #fff;
+}
+
+.cs-career .cs-sub {
+    color: #b7c1de;
+}
+
+/* summary strip */
+.cs-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.cs-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .06);
+    backdrop-filter: blur(6px);
+}
+
+.cs-summary-item > i {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--cs-accent), var(--cs-accent-2));
+}
+
+.cs-summary-item strong {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.cs-summary-item .cs-summary-text {
+    font-size: 1.05rem;
+}
+
+.cs-summary-item span {
+    font-size: .82rem;
+    color: #9dabc9;
+}
+
+/* role cards */
+.cs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* an orphan last-row card sits centred, not left-hung */
+    gap: 22px;
+}
+
+.cs-grid > .cs-card {
+    flex: 1 1 280px;
+    max-width: calc((100% - 44px) / 3);
+}
+
+@media (max-width: 991.98px) {
+    .cs-grid > .cs-card {
+        max-width: calc((100% - 22px) / 2);
+    }
+}
+
+.cs-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 22px 22px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: linear-gradient(160deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .03));
+    backdrop-filter: blur(8px);
+    transition: transform .35s var(--cs-ease), border-color .35s ease, box-shadow .35s ease;
+}
+
+/* Cards are revealed AND hoverable: keep both transitions, and drop the
+   stagger delay once shown so hover responds instantly. */
+.dc-js .cs-card.cs-reveal,
+.dc-js .cs-elig-card.cs-reveal {
+    transition: opacity .7s var(--cs-ease), transform .5s var(--cs-ease),
+        border-color .35s ease, box-shadow .35s ease;
+}
+
+.dc-js .cs-card.cs-reveal.cs-in:hover,
+.dc-js .cs-elig-card.cs-reveal.cs-in:hover {
+    transition-delay: 0ms;
+}
+
+.dc-js .cs-card.cs-reveal.cs-in:hover,
+.cs-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(242, 156, 18, .6);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .35), 0 0 0 1px rgba(242, 156, 18, .25);
+}
+
+.cs-card.is-top {
+    border-color: rgba(242, 156, 18, .7);
+    background: linear-gradient(160deg, rgba(242, 156, 18, .18), rgba(255, 255, 255, .04));
+}
+
+.cs-ribbon {
+    position: absolute;
+    top: -12px;
+    right: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #1c1647;
+    background: linear-gradient(90deg, #ffd27a, var(--cs-accent));
+    box-shadow: 0 6px 16px rgba(242, 156, 18, .4);
+}
+
+.cs-card-top {
+    min-height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.cs-index {
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    color: rgba(255, 255, 255, .4);
+}
+
+.cs-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 11px;
+    border-radius: 999px;
+    font-size: .74rem;
+    font-weight: 700;
+    color: #7ff0b3;
+    background: rgba(53, 208, 127, .14);
+    border: 1px solid rgba(53, 208, 127, .35);
+}
+
+.cs-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #35d07f;
+    animation: csPulse 2.2s infinite;
+}
+
+@keyframes csPulse {
+    0% { box-shadow: 0 0 0 0 rgba(53, 208, 127, .6); }
+    70% { box-shadow: 0 0 0 8px rgba(53, 208, 127, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(53, 208, 127, 0); }
+}
+
+.cs-role {
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.cs-salary {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 12px;
+}
+
+.cs-salary-label {
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #9dabc9;
+}
+
+.cs-salary-value {
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.15;
+    background: linear-gradient(90deg, #ffd27a, var(--cs-accent) 55%, var(--cs-accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.cs-bar {
+    height: 8px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .1);
+    overflow: hidden;
+}
+
+.cs-bar span {
+    display: block;
+    height: 100%;
+    width: var(--cs-w);
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--cs-accent), var(--cs-accent-2));
+    box-shadow: 0 0 12px rgba(242, 156, 18, .6);
+}
+
+.dc-js .cs-reveal .cs-bar span {
+    width: 0;
+    transition: width 1.2s var(--cs-ease) .25s;
+}
+
+.dc-js .cs-reveal.cs-in .cs-bar span {
+    width: var(--cs-w);
+}
+
+.cs-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.cs-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: .82rem;
+    color: #d6ddf3;
+    background: rgba(255, 255, 255, .07);
+}
+
+.cs-meta i {
+    color: var(--cs-accent);
+}
+
+.cs-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: auto 0 0;
+    padding: 12px 0 0;
+    list-style: none;
+    border-top: 1px dashed rgba(255, 255, 255, .15);
+}
+
+.cs-skills li {
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: .76rem;
+    color: #ffd9a0;
+    border: 1px solid rgba(242, 156, 18, .35);
+}
+
+.cs-desc {
+    margin: auto 0 0;
+    padding-top: 12px;
+    font-size: .92rem;
+    line-height: 1.55;
+    color: #b7c1de;
+    border-top: 1px dashed rgba(255, 255, 255, .15);
+}
+
+.cs-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 34px;
+}
+
+.cs-foot p {
+    margin: 0;
+    font-size: .82rem;
+    color: #8d98b8;
+}
+
+/* ==========================================================================
+   Eligibility
+   ========================================================================== */
+.cs-elig {
+    padding: 70px 0;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(242, 156, 18, .10), transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(28, 22, 71, .07), transparent 45%),
+        #fcfbff;
+}
+
+.cs-elig-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 40px;
+    align-items: center;
+}
+
+.cs-elig .cs-title {
+    color: var(--cs-navy);
+}
+
+.cs-elig .cs-sub {
+    color: #5b6275;
+    margin-bottom: 24px;
+}
+
+.cs-elig-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    padding: 12px 18px 12px 12px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(28, 22, 71, .08);
+}
+
+.cs-elig-count strong {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, var(--cs-navy), var(--cs-navy-2));
+}
+
+.cs-elig-count span {
+    font-size: .88rem;
+    line-height: 1.35;
+    color: #5b6275;
+}
+
+.cs-elig-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.cs-elig-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 40px 20px 18px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid #eceaf6;
+    box-shadow: 0 6px 18px rgba(28, 22, 71, .06);
+    transition: transform .35s var(--cs-ease), box-shadow .35s ease, border-color .35s ease;
+    overflow: hidden;
+}
+
+.cs-elig-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--cs-accent), var(--cs-accent-2));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .35s var(--cs-ease);
+}
+
+.dc-js .cs-elig-card.cs-reveal.cs-in:hover,
+.cs-elig-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(242, 156, 18, .45);
+    box-shadow: 0 16px 34px rgba(28, 22, 71, .12);
+}
+
+.cs-elig-card:hover::before {
+    transform: scaleY(1);
+}
+
+.cs-elig-icon {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    font-size: 1.35rem;
+    color: var(--cs-accent);
+    background: #fff3df;
+    transition: background .35s ease, color .35s ease, transform .35s ease;
+}
+
+.cs-elig-card:hover .cs-elig-icon {
+    color: #fff;
+    background: linear-gradient(135deg, var(--cs-accent), var(--cs-accent-2));
+    transform: rotate(-6deg);
+}
+
+.cs-elig-body h3 {
+    margin: 2px 0 6px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--cs-navy);
+}
+
+.cs-elig-body p {
+    margin: 0;
+    font-size: .9rem;
+    line-height: 1.55;
+    color: #5b6275;
+}
+
+.cs-elig-check {
+    position: absolute;
+    top: 16px;
+    right: 14px;
+    font-size: 1.05rem;
+    color: #35d07f;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 991.98px) {
+    .cs-elig-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .cs-elig-intro {
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .cs-career {
+        padding: 56px 0 50px;
+    }
+
+    .cs-elig {
+        padding: 50px 0;
+    }
+
+    .cs-elig-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-grid > .cs-card {
+        max-width: 100%;
+    }
+
+    .cs-foot {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dc-js .cs-reveal,
+    .dc-js .cs-reveal .cs-bar span {
+        transition: none;
+    }
+
+    .dc-js .cs-reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .dc-js .cs-reveal .cs-bar span {
+        width: var(--cs-w);
+    }
+
+    .cs-dot {
+        animation: none;
+    }
+}

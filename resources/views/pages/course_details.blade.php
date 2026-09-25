@@ -57,6 +57,7 @@
 </script>
     <link href="{{ asset('assets/css/courses.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/course-curriculum-faq.css') }}?v=1" rel="stylesheet">
+    <link href="{{ asset('assets/css/course-career.css') }}?v=1" rel="stylesheet">
     {{-- Flags JS as available so the curriculum/FAQ CSS may collapse panels.
          Without JS the class never lands and both sections render fully open. --}}
     <script>
@@ -1057,6 +1058,7 @@
             </div>
         </div>
     </section>
+    @include('components.course-eligibility', ['course' => $course])
     <section>
         <div class="container">
             <div class="row">
@@ -1350,6 +1352,7 @@
         </section>
     @endif
 
+    @include('components.course-career-roles', ['course' => $course])
 
     <x-trusted-brands />
     <div class="brand-area style-one mt-4">
