@@ -993,7 +993,7 @@
                             </div>
                             <div class="event-info-btn">
                                 <a id="quickResponseBtn" onclick="openModal('applyNowPopup')"
-                                    style="    background: green;
+                                    style="background: green;
                             color: #fff;" role="button">APPLY NOW<i
                                         class="flaticon flaticon-right-arrow"></i></a>
                             </div>

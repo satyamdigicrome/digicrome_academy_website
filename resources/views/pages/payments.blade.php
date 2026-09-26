@@ -342,7 +342,7 @@
                     <div class="row g-4 justify-content-center">
 
                         <!-- BANK -->
-                        <div class="col-lg-4 col-md-6">
+                        {{-- <div class="col-lg-4 col-md-6">
                             <div class="payment-card green-card">
                                 <div class="card-bg">
                                     <img loading="lazy" width="100" height="100" src="{{ asset('assets/images/icons8-bank-100.svg') }}" alt="Bank Image" class="card-icon">
@@ -357,10 +357,10 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <!-- UPI -->
-                        <div class="col-lg-4 col-md-6">
+                        {{-- <div class="col-lg-4 col-md-6">
                             <div class="payment-card orange-card">
                                 <div class="card-bg">
                                     <img loading="lazy" width="1920" height="1080" src="{{ asset('assets/images/upi.webp') }}" alt="UPI Image" class="card-icon"
@@ -369,9 +369,6 @@
 
                                 <div class="card-content">
                                     <h3>UPI Payments</h3>
-
-                                    {{-- <img src="" sclass="upi-qr"> --}}
-
                                     <p>Google Pay / PhonePe</p>
 
                                     <button class="pay-btn orange-btn" data-bs-toggle="modal" data-bs-target="#upiModal">
@@ -379,7 +376,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <!-- RAZORPAY -->
                         <div class="col-lg-4 col-md-6">
