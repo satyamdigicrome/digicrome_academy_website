@@ -360,7 +360,7 @@
                         </div> --}}
 
                         <!-- UPI -->
-                        {{-- <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-4 col-md-6">
                             <div class="payment-card orange-card">
                                 <div class="card-bg">
                                     <img loading="lazy" width="1920" height="1080" src="{{ asset('assets/images/upi.webp') }}" alt="UPI Image" class="card-icon"
@@ -376,7 +376,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
 
                         <!-- RAZORPAY -->
                         <div class="col-lg-4 col-md-6">
