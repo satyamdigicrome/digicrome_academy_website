@@ -75,7 +75,7 @@
                                         @endfor
                                     </div>
 
-                                    <p class="mtst-card-desc">&ldquo;{{ $testimonial->review }}&rdquo;</p>
+                                    <p class="mtst-card-desc">&ldquo;{{ \Illuminate\Support\Str::words($testimonial->review, 25, '...') }}&rdquo;</p>
 
                                     <div class="mtst-card-footer">
                                         <div class="mtst-author-avatar">

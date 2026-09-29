@@ -47,6 +47,20 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
+        return view('welcome', $this->homeData($request));
+    }
+
+    /**
+     * Alternate homepage (Home Page 2). Same data as the primary homepage,
+     * rendered with the redesigned hero, ratings, alumni and footer sections.
+     */
+    public function home2(Request $request)
+    {
+        return view('home2', $this->homeData($request));
+    }
+
+    private function homeData(Request $request): array
+    {
         $userCountry = $this->resolveCountry($request->ip());
 
         $collections = Collection::with(['courses' => function ($query) {
@@ -95,7 +109,7 @@ class HomeController extends Controller
         $videos = Video::latest()->get();
         $feedbacks = LinkedinStudentsReview::latest()->take(3)->get();
 
-        return view('welcome', compact('collections', 'upcomingCourses', 'videos', 'mentors', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta','feedbacks'));
+        return compact('collections', 'upcomingCourses', 'videos', 'mentors', 'gallery', 'userCountry', 'companyLogos','studentStories','testimonials','associationLogos','blogs','certificate','awords','meta','feedbacks');
     }
 
     public function privacy()

@@ -140,7 +140,7 @@
     @if (empty($hideHeader) || $hideHeader === false)
         @include('layouts.header')
     @endif
-    @if (request()->is('/') || request()->is('success-stories'))
+    @if (request()->is('/') || request()->is('home-2') || request()->is('success-stories'))
     <div id="formModal" class="modal" id="mm">
         <div class="modal-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
@@ -184,7 +184,7 @@
         </div>
     </div>
     @endif
-    @if (request()->is('/'))
+    @if (request()->is('/') || request()->is('home-2'))
         <div id="placementformModal" class="modal" id="mm">
             <div class="modal-content">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">

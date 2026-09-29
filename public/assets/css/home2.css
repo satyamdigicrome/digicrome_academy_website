@@ -1,0 +1,564 @@
+/* ==========================================================================
+   Home Page 2 — hero, "trusted by learners" ratings, alumni/managers marquee
+   and footer wordmark. Every class is prefixed "h2-" so nothing here can leak
+   into the shared theme styles.
+   ========================================================================== */
+
+:root {
+    --h2-navy: #1a1447;
+    --h2-navy-deep: #0e0a2b;
+    --h2-navy-soft: #2a2166;
+    --h2-orange: #f29c12;
+    --h2-orange-2: #ff853f;
+    --h2-text-muted: rgba(255, 255, 255, .72);
+    --h2-border: rgba(255, 255, 255, .14);
+}
+
+/* ---------------------------------------------------------------- HERO --- */
+
+.h2-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 56px 0 64px;
+    color: #fff;
+    background:
+        radial-gradient(ellipse 60% 55% at 28% 48%, rgba(242, 156, 18, .20), transparent 70%),
+        radial-gradient(ellipse 45% 60% at 85% 20%, rgba(92, 72, 214, .35), transparent 70%),
+        linear-gradient(180deg, var(--h2-navy-deep) 0%, var(--h2-navy) 100%);
+}
+
+/* faint vertical light streaks, like the reference */
+.h2-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 90px);
+    pointer-events: none;
+}
+
+.h2-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.h2-hero__left {
+    text-align: center;
+}
+
+.h2-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    border: 1px solid rgba(242, 156, 18, .45);
+    border-radius: 999px;
+    background: rgba(242, 156, 18, .10);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.h2-pill i {
+    color: var(--h2-orange);
+}
+
+.h2-hero__title {
+    margin: 18px auto 0;
+    max-width: 620px;
+    color: #fff;
+    font-size: clamp(32px, 4.4vw, 54px);
+    font-weight: 800;
+    line-height: 1.12;
+    background: linear-gradient(180deg, #ffffff 30%, #ffd79a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.h2-hero__title span {
+    background: linear-gradient(90deg, var(--h2-orange), var(--h2-orange-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* --- hero video --- */
+.h2-visual {
+    position: relative;
+    width: min(100%, 640px);
+    margin: 18px auto 0;
+    aspect-ratio: 4096 / 2592; /* matches the video, reserves space so nothing shifts */
+    overflow: hidden;
+    /* soft fade into the hero background instead of a hard video edge */
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 62%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 62%, transparent 100%);
+}
+
+.h2-visual__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- tools marquee --- */
+.h2-tools {
+    margin-top: 12px;
+}
+
+.h2-tools__label {
+    margin: 0 0 12px;
+    color: var(--h2-text-muted);
+    font-size: 15px;
+}
+
+.h2-marquee {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.h2-marquee__track {
+    display: flex;
+    width: max-content;
+    gap: 36px;
+    animation: h2Marquee 26s linear infinite;
+}
+
+.h2-marquee:hover .h2-marquee__track {
+    animation-play-state: paused;
+}
+
+.h2-tool {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: .9;
+}
+
+.h2-tool i {
+    color: var(--h2-orange);
+}
+
+/* --- lead form card --- */
+.h2-form {
+    padding: 26px 26px 20px;
+    border: 1px solid var(--h2-border);
+    border-radius: 20px;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(120, 100, 255, .30), transparent 70%),
+        linear-gradient(180deg, rgba(42, 33, 102, .85), rgba(14, 10, 43, .92));
+    box-shadow: 0 30px 60px rgba(0, 0, 0, .40);
+}
+
+.h2-form h2 {
+    margin: 0 0 16px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.h2-form__label {
+    display: block;
+    margin: 14px 0 8px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.h2-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 9px;
+    color: rgba(255, 255, 255, .88);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.h2-radio input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--h2-orange);
+}
+
+.h2-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 8px;
+    background: rgba(8, 6, 26, .55);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.h2-input::placeholder {
+    color: rgba(255, 255, 255, .45);
+}
+
+.h2-input:focus {
+    border-color: var(--h2-orange);
+    box-shadow: 0 0 0 3px rgba(242, 156, 18, .20);
+}
+
+select.h2-input option {
+    color: #111;
+}
+
+.h2-form__submit {
+    width: 100%;
+    height: 48px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--h2-orange), var(--h2-orange-2));
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.h2-form__submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(242, 156, 18, .40);
+}
+
+.h2-form__note {
+    margin: 12px 0 0;
+    color: rgba(255, 255, 255, .55);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.h2-form__note a {
+    color: var(--h2-orange);
+}
+
+.h2-form__error {
+    margin: 0 0 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(255, 80, 80, .15);
+    color: #ffb4b4;
+    font-size: 13px;
+}
+
+/* ----------------------------------------------------- TRUSTED / RATINGS --- */
+
+.h2-trust {
+    padding: 70px 0;
+    background: #fff;
+}
+
+.h2-trust__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 3vw, 40px);
+}
+
+.h2-laurel {
+    flex: 0 0 auto;
+    width: clamp(60px, 9vw, 120px);
+    height: auto;
+}
+
+.h2-laurel--right {
+    transform: scaleX(-1);
+}
+
+.h2-trust__content {
+    max-width: 780px;
+    text-align: center;
+}
+
+.h2-trust__content h2 {
+    margin: 0;
+    color: var(--h2-navy);
+    font-size: clamp(28px, 3.4vw, 42px);
+    font-weight: 800;
+}
+
+.h2-trust__content > p {
+    margin: 10px auto 0;
+    max-width: 620px;
+    color: #616161;
+    font-size: 16px;
+}
+
+.h2-ratings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 42px;
+    margin-top: 30px;
+}
+
+.h2-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+.h2-rating__icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: var(--h2-navy);
+    color: var(--h2-orange);
+    font-size: 22px;
+}
+
+.h2-rating__value {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--h2-navy);
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.h2-rating__value i {
+    color: var(--h2-orange);
+    font-size: 16px;
+}
+
+.h2-rating__label {
+    color: #616161;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------- ALUMNI / MANAGERS --- */
+
+.h2-alumni {
+    padding: 30px 0 70px;
+}
+
+.h2-alumni__panel {
+    position: relative;
+    overflow: hidden;
+    padding: 48px 0 44px;
+    border-radius: 28px;
+    color: #fff;
+    background:
+        radial-gradient(ellipse 50% 70% at 0% 0%, rgba(242, 156, 18, .22), transparent 70%),
+        radial-gradient(ellipse 50% 70% at 100% 100%, rgba(92, 72, 214, .35), transparent 70%),
+        linear-gradient(135deg, var(--h2-navy-deep), var(--h2-navy));
+}
+
+.h2-alumni__head {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 0 48px;
+}
+
+.h2-alumni__head h2 {
+    margin: 14px 0 0;
+    color: #fff;
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.h2-alumni__head h2 span {
+    color: var(--h2-orange);
+}
+
+.h2-perks {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.h2-perks li {
+    display: flex;
+    gap: 14px;
+}
+
+.h2-perks i {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(242, 156, 18, .15);
+    color: var(--h2-orange);
+    font-size: 18px;
+}
+
+.h2-perks h3 {
+    margin: 0 0 2px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.h2-perks p {
+    margin: 0;
+    color: var(--h2-text-muted);
+    font-size: 14px;
+}
+
+.h2-alumni__rows {
+    display: grid;
+    gap: 18px;
+    margin-top: 36px;
+}
+
+.h2-alumni__rows .h2-marquee__track {
+    gap: 18px;
+    animation-duration: 45s;
+}
+
+.h2-alumni__rows .h2-marquee--reverse .h2-marquee__track {
+    animation-direction: reverse;
+}
+
+.h2-person {
+    position: relative;
+    flex: 0 0 auto;
+    width: 210px;
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid var(--h2-border);
+    border-radius: 18px;
+    background: var(--h2-navy-soft);
+}
+
+.h2-person img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform .4s ease;
+}
+
+.h2-person:hover img {
+    transform: scale(1.05);
+}
+
+.h2-person__meta {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 40px 14px 14px;
+    background: linear-gradient(180deg, transparent, rgba(10, 7, 32, .95) 60%);
+}
+
+.h2-person__meta strong {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.h2-person__meta span {
+    display: block;
+    margin-top: 2px;
+    color: var(--h2-orange);
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+/* ------------------------------------------------------ FOOTER WORDMARK --- */
+
+.h2-wordmark {
+    overflow: hidden;
+    padding-top: 10px;
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+}
+
+.h2-wordmark span {
+    display: inline-block;
+    font-size: clamp(64px, 17vw, 260px);
+    line-height: .82;
+    letter-spacing: -.04em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .22) 0%, rgba(255, 255, 255, 0) 92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.h2-wordmark .h2-wordmark__bold {
+    font-weight: 800;
+}
+
+.h2-wordmark .h2-wordmark__light {
+    font-weight: 300;
+    background: linear-gradient(180deg, rgba(242, 156, 18, .40) 0%, rgba(242, 156, 18, 0) 92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* ------------------------------------------------------------ KEYFRAMES --- */
+
+@keyframes h2Marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .h2-marquee__track {
+        animation: none;
+    }
+}
+
+/* ----------------------------------------------------------- RESPONSIVE --- */
+
+@media (max-width: 991.98px) {
+    .h2-hero {
+        padding: 36px 0 48px;
+    }
+
+    .h2-form {
+        margin-top: 28px;
+    }
+
+    .h2-alumni__head {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .h2-trust {
+        padding: 48px 0;
+    }
+
+    .h2-laurel {
+        display: none;
+    }
+
+    .h2-rating {
+        width: 100%;
+        max-width: 240px;
+    }
+
+    .h2-alumni__panel {
+        border-radius: 20px;
+        padding: 32px 0;
+    }
+
+    .h2-person {
+        width: 160px;
+        height: 200px;
+    }
+}

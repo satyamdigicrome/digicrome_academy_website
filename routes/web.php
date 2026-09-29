@@ -52,6 +52,7 @@ use Illuminate\Support\Facades\Redirect;
 //     return view('welcome');
 // });
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/home-2', [HomeController::class, 'home2'])->name('home2');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

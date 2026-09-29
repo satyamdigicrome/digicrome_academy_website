@@ -110,16 +110,6 @@
                                 <div class="second-video-running sumantest">
                                     @foreach ($videos as $t)
                                         <div class="box">
-                                            {{--
-                                                Deferred: with the <source> inline, every clip in this
-                                                marquee downloaded on page load — the same eager video
-                                                weight the homepage carousel was fixed for. The source
-                                                is attached when the box scrolls into view.
-
-                                                No poster either: $t->image *is* the .webm, so pointing
-                                                poster at it made the browser fetch each clip anyway
-                                                and then discard it as an invalid image.
-                                            --}}
                                             <video class="gif-img js-deferred-video" loop muted playsinline
                                                 preload="none" style="width: 163px; aspect-ratio: 9 / 16;"
                                                 data-src="{{ asset('storage/' . $t->image) }}"></video>
@@ -299,7 +289,7 @@
             </div>
             <div class="cta-stats-row">
                 <div class="cta-stat-item">
-                    <span class="num">5000+</span>
+                    <span class="num">10000+</span>
                     <div class="lbl">Students Placed</div>
                 </div>
                 <div class="cta-stat-item">

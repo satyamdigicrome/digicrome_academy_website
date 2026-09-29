@@ -3,196 +3,20 @@
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
-    {{-- The offer banner sits above the hero, so it is the LCP element now.
-         Only the variant that will actually be used gets preloaded. --}}
-    <link rel="preload" as="image" href="{{ asset('assets/images/independence-mobile.webp') }}"
-        media="(max-width: 767.98px)" fetchpriority="high">
-    <link rel="preload" as="image" href="{{ asset('assets/images/independence-desktop.webp') }}"
-        media="(min-width: 768px)" fetchpriority="high">
-    {{-- Hero image is still above the fold on desktop, but no longer the largest
-         paint, so it preloads at normal priority rather than competing. --}}
-    <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb3.webp') }}">
-    {{-- <link rel="preload"  as="image"  href="https://www.digicrome.com/assets/images/home-one/short.webp" type="image/webp" fetchpriority="high"> --}}
-    {{-- Homepage layout styles — render-blocking on purpose, loading these
-         asynchronously flashes an unstyled page before they apply. --}}
+    {{-- Home Page 2: an alternate homepage (served at /home-2). The primary
+         homepage is still welcome.blade.php; this page reuses its sections
+         but swaps in the hero, ratings, alumni and footer wordmark from
+         resources/views/home2/. --}}
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
-
-    {{-- Offer banner. Above the fold, so these rules belong in the head. --}}
-    <style>
-        .id-offer {
-            padding: 12px 0 4px;
-        }
-
-        /* Animated tricolour edge */
-        .id-offer__frame {
-            padding: 3px;
-            border-radius: 20px;
-            background: linear-gradient(120deg, #ff9933, #ffffff, #138808, #ff9933);
-            background-size: 300% 300%;
-            animation: idOfferBorder 9s ease infinite;
-        }
-
-        .id-offer__inner {
-            /* CTA hotspot, measured off the mobile artwork */
-            --cta-left: 34.22%;
-            --cta-top: 89.34%;
-            --cta-w: 31.56%;
-            --cta-h: 7.99%;
-
-            position: relative;
-            border-radius: 17px;
-            overflow: hidden;
-            cursor: pointer;
-            background: #fdf4e3;
-            box-shadow: 0 12px 30px rgba(26, 20, 71, .18);
-            transition: transform .35s ease, box-shadow .35s ease;
-            animation: idOfferIn .7s cubic-bezier(.22, .9, .3, 1) both;
-        }
-
-        .id-offer__inner:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 40px rgba(26, 20, 71, .26);
-        }
-
-        /* Light sweep across the artwork */
-        .id-offer__inner::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, .5) 50%, transparent 58%);
-            transform: translateX(-120%);
-            animation: idOfferShine 5s ease-in-out 1.4s infinite;
-            pointer-events: none;
-        }
-
-        /* aspect-ratio reserves the height before the image decodes, so the
-           hero below never jumps. One ratio per artwork. */
-        .id-offer__img {
-            display: block;
-            width: 100%;
-            height: auto;
-            aspect-ratio: 900 / 563;
-        }
-
-        /* Real, focusable button sitting exactly on the drawn "Enroll Now" pill.
-           Transparent so the artwork shows through — the glow is the affordance. */
-        .id-offer__cta {
-            position: absolute;
-            left: var(--cta-left);
-            top: var(--cta-top);
-            width: var(--cta-w);
-            height: var(--cta-h);
-            padding: 0;
-            border: 0;
-            background: transparent;
-            border-radius: 999px;
-            cursor: pointer;
-        }
-
-        .id-offer__cta::before {
-            content: "";
-            position: absolute;
-            inset: -5px;
-            border-radius: 999px;
-            box-shadow: 0 0 0 0 rgba(242, 156, 18, .7);
-            animation: idOfferPulse 2.4s ease-out infinite;
-        }
-
-        .id-offer__cta:hover::before {
-            animation: none;
-            box-shadow: 0 0 0 6px rgba(242, 156, 18, .35);
-        }
-
-        .id-offer__cta:focus-visible {
-            outline: 3px solid #1a1447;
-            outline-offset: 4px;
-        }
-
-        .id-offer__cta-label {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        @keyframes idOfferBorder {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes idOfferIn {
-            from { opacity: 0; transform: translateY(18px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes idOfferShine {
-            0% { transform: translateX(-120%); }
-            35%, 100% { transform: translateX(120%); }
-        }
-
-        @keyframes idOfferPulse {
-            0% { box-shadow: 0 0 0 0 rgba(242, 156, 18, .7); }
-            70% { box-shadow: 0 0 0 14px rgba(242, 156, 18, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(242, 156, 18, 0); }
-        }
-
-        @media (min-width: 768px) {
-            .id-offer {
-                padding: 18px 0 6px;
-            }
-
-            .id-offer__inner {
-                /* CTA hotspot, measured off the desktop artwork */
-                --cta-left: 75.56%;
-                --cta-top: 85.59%;
-                --cta-w: 21.50%;
-                --cta-h: 8.93%;
-            }
-
-            .id-offer__img {
-                aspect-ratio: 1600 / 694;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .id-offer__frame,
-            .id-offer__inner,
-            .id-offer__inner::after,
-            .id-offer__cta::before {
-                animation: none;
-            }
-
-            .id-offer__inner {
-                transition: none;
-            }
-
-            .id-offer__inner::after {
-                display: none;
-            }
-        }
-        @media (max-width: 767.98px) {
-            .id-offer {
-                margin-top: 110px;
-            }
-            .hero_area{
-                height: 687px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('assets/css/home2.css') }}">
+@endpush
+@push('footer_bottom')
+    @include('home2.footer-wordmark')
 @endpush
 @push('scripts')
     <script>
         let modalSource = null;
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                openModal();
-            }, 3000);
-        });
+        // No timed popup here: the hero already carries the lead form.
         function openModal(source) {
             const sourceInput = document.querySelector('#formModal input[name="source"]');
             if (sourceInput) {
@@ -295,124 +119,8 @@
     </script>
 @endpush
 @section('content')
-    {{-- <section class="id-offer" aria-label="Independence Day special offer">
-        <div class="container">
-            <div class="id-offer__frame">
-                <div class="id-offer__inner" onclick="openIndependenceOfferModal()">
-                    <picture>
-                        <source media="(min-width: 768px)"
-                            srcset="{{ asset('assets/images/offer-banner.webp') }}">
-                        <img class="id-offer__img" src="{{ asset('assets/images/offer-banner-mob.webp') }}"
-                            width="900" height="563" fetchpriority="high" loading="eager" decoding="async"
-                            alt="Digicrome special offer"
-                            title="Digicrome special offer">
-                    </picture>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <section class="hero_area style-one d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-center flex-column-reverse flex-lg-row">
-                <div class="col-lg-6">
-                    <div class="hero_content">
-                        <h5><i class="bi bi-check2"></i>Enhance Your future skills with just a click</h5>
-                        <h1 class="text-capitalize">Start building your<br>
-                            future with a better career transition</h1>
-                        @if ($userCountry === 'India')
-                            <div style="text-align: left; margin: 10px 0; width: 60%;">
-                                <div
-                                    style="display: inline-block; background-color: #FCFCFCBA; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px;">
-                                    <small style="font-size: 14px; color: #555;">In collaboration with</small>
-                                    <img loading="lazy"src="{{ asset('assets/images/ds-withai-course/msblack.webp') }}"
-                                        class="ds-logo lazyload" alt="Microsoft Logo" title="Microsoft logo"
-                                        style="width: 100%; height: auto; margin-top: 5px;">
-                                </div>
-                            </div>
-                        @endif
-                        <p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and
-                            position yourself as the top choice for employers in your industry.</p>
-                        <div class="hero-button d-flex">
-                            <div class="hero-btn">
-                                <a href="javascript:void(0);" onclick="openPlacementModal();">PLACEMENT REPORT<i
-                                        class="flaticon flaticon-right-arrow"></i></a>
-                            </div>
-                            <div class="border rounded px-3 py-2 text-secondary campus-tour-btn d-lg-none"
-                                style="border-color: #000000 !important;" role="button">
-                                <a href="https://vimeo.com/1166319733" target="_blank">CAMPUS TOUR<i
-                                        class="fa-brands fa-youtube"
-                                        style="display: inline-block; width: 22px; height: 22px;font-size: 18px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-rating-box desktop-only2">
-                        <div class="hero-rating-icon">
-                            <span>20k+</span>
-                        </div>
-                        <div class="hero-rating-item-box">
-                            <div class="hero-star-icon">
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="hero-rating-num">
-                                <span>(4.8 Ratings)</span>
-                            </div>
-                            <div class="hero-rating-des">
-                                <p>Successful Learners</p>
-                            </div>
-                        </div>
-                        <div class="hero-button">
-                            <div class="border rounded px-3 py-2 text-secondary mt-4"
-                                style="border-color: #000000 !important;" role="button">
-                                <a href="https://vimeo.com/1166319733" target="_blank">CAMPUS TOUR<i
-                                        class="fa-brands fa-youtube"
-                                        style="font-size: 22px; margin-left: 9px; line-height: 0; position: relative; top: 3px;color:#FF0033;"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="hero-thumb-wrapper">
-                        <div class="hero-thumb">
-                            <img width="600" height="400" loading="eager" decoding="async"
-                                src="{{ asset('assets/images/home-one/hero-thumb3.webp') }}" alt="Digicrome thumb"
-                                title="Digicrome thumb">
-                        </div>
-                        <div class="hero-arrow-shape">
-                            <img loading="lazy" src="{{ asset('assets/images/home-one/hero-arrow.webp') }}"
-                                alt="digicrome arrow" title="Digicrome arrow">
-                        </div>
-                        {{-- <div class="hero-dot-shape">
-                            <img fetchpriority="high" loading="eager" decoding="async"
-                                style="width: 306px; height: auto;   transform: translate(70px, -209px);"
-                                src="{{ asset('assets/images/home-one/short.webp') }}" alt="digicrome dot"
-                                title="digicrome dot">
-                        </div> --}}
-                        {{-- <div class="hero-shape3 bounce-animate-3">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/hero-shape3.webp') }}"
-                                alt="digicrome shape" title="digicrome shape">
-                        </div> --}}
-                        <div class="hero-autor-box">
-                            <div class="autor-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/home-one/hero-autor.webp') }}"
-                                    alt="digicrome autor" title="digicrome author">
-                            </div>
-                            <div class="hero-autor-content">
-                                <span class="counter">130</span>
-                                <span>+</span>
-                                <p>Expert Instructor</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('home2.hero')
+    @include('home2.trusted')
     <section class="feature-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">
@@ -1469,7 +1177,7 @@
             </div>
         </div>
     </div> --}}
-    <x-mentor-popup :mentors="$mentors" />
+    @include('home2.alumni', ['mentors' => $mentors])
     {{-- <div class="testimonial-area style-inner">
         <div class="container">
             <div class="row section-title-space">
@@ -1538,7 +1246,137 @@
         </div>
     </div> --}}
     @include('components.success-story-partial', ['studentStories' => $studentStories])
-    @include('components.trusted-learners')
+    <section>
+        <div class="container-fluid Learner-say-combine">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>See What Our Learners Say!</h2>
+                        <div class="social-media-links">
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="whatsapp-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/whatsappicon.png') }}"></a>
+                            </div>
+
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="linkedin-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/linkedinicon.png') }}"></a>
+
+                            </div>
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="quora-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/quoraicon.png') }}"></a>
+
+                            </div>
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="facebook-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/facebookicon.png') }}"></a>
+
+                            </div>
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="google-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/googleicon.png') }}"></a>
+
+                            </div>
+                            <div class="first-card">
+                                <a href="{{ route('success_stories') }}" target="_blank" rel="noopener noreferrer"><img
+                                        width="150" height="58" alt="mouthshut-icon" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/mouthshuticon.png') }}"></a>
+
+                            </div>
+                        </div>
+
+                        <div class="iocn-google-review-section mt-4">
+                            <!-- Google Review Section 1 -->
+                            <div class="inner-div-icon">
+                                <div class="cover-google"> <img alt="Google logo" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/google_home.svg') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.8</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>399+ Google Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Google Review Section 2 -->
+                            <div class="inner-div-icon">
+                                <div class="cover-google"> <img alt="Course Report logo" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/course-report.png') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.8</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy" src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>1568+ Course Report Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Google Review Section 3 -->
+                            <div class="inner-div-icon">
+                                <div class="cover-google"> <img alt="Sikhao logo" loading="lazy" class="lazyload10"
+                                        src="{{ asset('assets/images/see_what/ambition-box.jpeg') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.3</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy" class="lazyload10"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>50+ Ambition Box Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Google Review Section 4 -->
+                            <div class="inner-div-icon">
+                                <div class="cover-google"> <img alt="Muth Shout logo" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/muthshout_home.svg') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.5</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>230+ MouthShut Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Google Review Section 5 -->
+                            <div class="inner-div-icon last-switchupicon-hide">
+                                <div class="cover-google"> <img alt="Face icon representing a review" loading="lazy"
+                                        src="{{ asset('assets/images/see_what/favicon.ico') }}">
+                                    <div class="start-icon">
+                                        <div class="rating-section">
+                                            <p>4.0</p> <img alt="Star icon representing rating" width="15"
+                                                loading="lazy"
+                                                src="{{ asset('assets/images/see_what/star_home.svg') }}">
+                                        </div>
+                                        <div class="text-review0-section">
+                                            <p>100+ Glassdoor Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="py-5">
         <div class="container text-center">
             <h2 class="text-center mb-4" style="font-size: 2rem;">
@@ -1567,7 +1405,7 @@
                         <div class="choose-item-menu">
                             <ul>
                                 <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon1.webp') }}"
-                                        alt="choose-icon1" title="choose-icon1">450 +
+                                        alt="choose-icon1" title="choose-icon1">500 +
                                     Global Companies</li>
                                 <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon2.webp') }}"
                                         alt="choose-icon2" title="choose-icon2">12-15 LPA

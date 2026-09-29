@@ -106,7 +106,7 @@
             <div class="col-xl-4 col-lg-3 col-md-6">
                 <div class="footer-widget-content">
                     <div class="footer-widget-title">
-                        <h4>Online Platform</h4>
+                        <h4>Explore More</h4>
                     </div>
                     <div class="footer-widget-menu">
                         <ul>
@@ -163,9 +163,51 @@
             </div> --}}
         </div>
     </div>
+    <style>
+        /* Plain black footer */
+        .footer-area {
+            background: #000 !important;
+        }
+
+        .footer-course-links {
+            margin-bottom: 12px !important;
+        }
+
+        .footer-course-links h5 {
+            font-size: 15px !important;
+            line-height: 1.4 !important;
+            margin-bottom: 6px;
+        }
+
+        .footer-course-links p,
+        .footer-course-links p a {
+            font-size: 12.5px !important;
+            line-height: 1.7;
+        }
+
+        .footer-course-links p {
+            margin-bottom: 10px;
+        }
+
+        .footer-course-links hr {
+            margin: 0;
+        }
+
+        .footer-widget-menu ul li {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-widget-menu ul li img {
+            display: inline-block !important;
+            flex-shrink: 0;
+            width: 14px;
+            height: 14px;
+        }
+    </style>
     <div class="container">
         <div class="row">
-            <div class="col-12 mb-4">
+            <div class="col-12 mb-4 footer-course-links">
                 <h5 style="color: #ccc"><u>Data Science And AI</u></h5>
                 <p>
                     <a href="{{ url('/') }}/courses/data-science-training-course-in-noida" style="color: #fff">
@@ -202,7 +244,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-12 mb-4">
+            <div class="col-12 mb-4 footer-course-links">
                 <h5 style="color: #ccc"><u>Artificial Intelligence Training Course</u></h5>
                 <p>
                     <a href="{{ url('/') }}/courses/ai-training-course-in-noida" style="color: #fff">Artificial
@@ -233,7 +275,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 mb-4">
+            <div class="col-12 mb-4 footer-course-links">
                 <h5 style="color: #ccc"><u>Machine Learning Training Course</u></h5>
                 <p>
                     <a href="{{ url('/') }}/courses/machine-learning-course-in-noida" style="color: #fff">Machine Learning Training Course in Noida</a> |
@@ -287,6 +329,13 @@
             </div>
         </div>
     </div>
+    {{-- Pages can add content under the copyright bar (Home Page 2 adds its wordmark);
+         every other page gets the shining DIGICROME wordmark. --}}
+    @if (trim($__env->yieldPushContent('footer_bottom')) !== '')
+        @stack('footer_bottom')
+    @else
+        <x-footer-shine />
+    @endif
 </div>
 
 <script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}" defer></script>
