@@ -131,7 +131,7 @@
             "url": "https://www.digicrome.com",
             "logo": "https://www.digicrome.com/logo.png",
             "image": "https://www.digicrome.com/logo.png",
-            "telephone": "+91-7011101972",
+            "telephone": "01204538104",
             "priceRange": "₹₹",
             "address": {
             "@type": "PostalAddress",

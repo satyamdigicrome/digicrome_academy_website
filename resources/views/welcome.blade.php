@@ -317,8 +317,8 @@
                 <div class="col-lg-6">
                     <div class="hero_content">
                         <h5><i class="bi bi-check2"></i>Enhance Your future skills with just a click</h5>
-                        <h1 class="text-capitalize">Start building your<br>
-                            future with a better career transition</h1>
+                        <h1 class="text-capitalize">Career-Ready Online<br>
+                            Programs in Tech, Data & Business</h1>
                         @if ($userCountry === 'India')
                             <div style="text-align: left; margin: 10px 0; width: 60%;">
                                 <div
