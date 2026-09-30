@@ -957,7 +957,7 @@
                                 $cpMoney = fn ($n) => is_string($n) ? $n : number_format($n, floor($n) == $n ? 0 : 2);
                                 $cpFees = [
                                     ['country' => 'India', 'currency' => 'INR', 'icon' => 'fa-solid fa-indian-rupee-sign',
-                                        'value' => $cpMoney($course->price), 'gst' => !is_string($course->price)],
+                                        'value' => $cpMoney($course->price), 'gst' => is_numeric($course->price)],
                                     ['country' => 'United States', 'currency' => 'USD', 'icon' => 'fa-solid fa-dollar-sign',
                                         'value' => $cpMoney($course->us_price), 'gst' => false],
                                     ['country' => 'UAE', 'currency' => 'AED', 'symbol' => 'د.إ',
