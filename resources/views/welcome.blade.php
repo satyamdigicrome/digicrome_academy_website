@@ -778,9 +778,7 @@
                             <h2>Our Achievement</h2>
                         </div>
                         <div class="section_title">
-                            <h3 class="heading-like-h1 text-capitalize"> Digicrome wins Best Edtech award in online digital education
-                                at the Bharat Gaurav summit 2026</h3>
-
+                            <h3 class="heading-like-h1 text-capitalize"> Digicrome Wins Best EdTech Award at Bharat Gaurav Summit 2026</h3>
                         </div>
                         <div class="section-title-desc two">
                             <p>

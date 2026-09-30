@@ -401,13 +401,14 @@
                 display: block;
             }
 
+            /* WhatsApp and Call side by side in the bottom-left corner */
             .mobile-contact-icons {
                 position: fixed;
                 left: 15px;
                 bottom: 20px;
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
+                display: flex !important; /* beats the generic ".mobile-only { display: block !important }" */
+                flex-direction: row;
+                gap: 12px;
                 z-index: 1000;
             }
 

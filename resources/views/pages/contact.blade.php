@@ -179,12 +179,12 @@
                         </p>
 
                         <div class="mt-4 d-flex flex-wrap gap-2">
-                            <a href="javascript:void(0)" onclick="showContent('contact')"
+                            <a href="tel:+911204538125"
                                 class="btn btn-cta btn-primary-digi">
                                 <i class="fas fa-phone"></i> Contact Options
                             </a>
-                            <a href="#"
-                                onclick="document.querySelector('.contact_area').scrollIntoView({behavior:'smooth'})"
+                            <a href="#contact-request-form"
+                                onclick="document.getElementById('contact-request-form').scrollIntoView({behavior:'smooth'})"
                                 class="btn btn-cta btn-ghost-digi">
                                 <i class="fas fa-paper-plane"></i> Send a Request
                             </a>
@@ -953,7 +953,7 @@
         }
     </style>
 
-    <section class="contact_area inner_section">
+    <section class="contact_area inner_section" id="contact-request-form">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">

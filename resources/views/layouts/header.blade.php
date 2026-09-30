@@ -10,7 +10,7 @@
             <div class="col-xxl-6 col-xl-4 col-lg-4">
                 <div class="header-top-right">
                     <div class="text-white text-right">
-                        Quick Enquiry - <span class="fw-bolder">01204538125</span>
+                        Quick Enquiry - <span class="fw-bolder">0120-453-8125</span>
                     </div>
 
                 </div>
@@ -178,7 +178,7 @@
         <div class="row align-items-center py-1">
             <!-- Left side: Contact Number -->
             <div class="col-6 text-start">
-                <span class="text-white fw-bold small">01204538104</span>
+                <span class="text-white fw-bold small"><i class="fas fa-phone"></i>&nbsp;0120-453-8104</span>
             </div>
 
             <!-- Right side: "Get Started" Button -->

@@ -951,32 +951,163 @@
                                     <h3>Course Includes :</h3>
                                 </div>
                             </div>
+                            @php
+                                // Admin can enter plain numbers or pre-formatted text; format numbers only.
+                                // Whole amounts drop the ".00".
+                                $cpMoney = fn ($n) => is_string($n) ? $n : number_format($n, floor($n) == $n ? 0 : 2);
+                                $cpFees = [
+                                    ['country' => 'India', 'currency' => 'INR', 'icon' => 'fa-solid fa-indian-rupee-sign',
+                                        'value' => $cpMoney($course->price), 'gst' => !is_string($course->price)],
+                                    ['country' => 'United States', 'currency' => 'USD', 'icon' => 'fa-solid fa-dollar-sign',
+                                        'value' => $cpMoney($course->us_price), 'gst' => false],
+                                    ['country' => 'UAE', 'currency' => 'AED', 'symbol' => 'د.إ',
+                                        'value' => $cpMoney($course->dubai_price), 'gst' => false],
+                                    ['country' => 'Singapore', 'currency' => 'SGD', 'symbol' => 'S$',
+                                        'value' => $cpMoney($course->singapore_price), 'gst' => false],
+                                ];
+                                $cpFees = array_filter($cpFees, fn ($f) => trim((string) $f['value']) !== '');
+                            @endphp
+                            <div class="cp-fee">
+                                <div class="cp-fee__title"><i class="fa-solid fa-tag"></i> Course Fee</div>
+                                <table class="cp-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Country</th>
+                                            <th scope="col">Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($cpFees as $fee)
+                                            <tr>
+                                                <td>
+                                                    <span class="cp-country">
+                                                        <span class="cp-cur-icon" title="{{ $fee['currency'] }}">
+                                                            @isset($fee['icon'])
+                                                                <i class="{{ $fee['icon'] }}"></i>
+                                                            @else
+                                                                {{ $fee['symbol'] }}
+                                                            @endisset
+                                                        </span>
+                                                        {{ $fee['country'] }}
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="cp-amount">{{ $fee['value'] }}</span>
+                                                    <span class="cp-code">{{ $fee['currency'] }}</span>
+                                                    @if ($fee['gst'])
+                                                        <span class="cp-gst">+ GST</span>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <style>
+                                .cp-fee {
+                                    margin: 6px 0 22px;
+                                }
+
+                                .cp-fee__title {
+                                    margin-bottom: 10px;
+                                    color: #1a1447;
+                                    font-size: 17px;
+                                    font-weight: 700;
+                                }
+
+                                .cp-fee__title i {
+                                    margin-right: 4px;
+                                    color: #f66c3b;
+                                }
+
+                                .cp-table {
+                                    width: 100%;
+                                    margin: 0;
+                                    border: 1px solid #e6e4f0;
+                                    border-collapse: separate;
+                                    border-spacing: 0;
+                                    border-radius: 10px;
+                                    overflow: hidden;
+                                    background: #fff;
+                                    font-size: 14px;
+                                }
+
+                                .cp-table th {
+                                    padding: 10px 14px;
+                                    background: #1a1447;
+                                    color: #fff;
+                                    font-size: 13px;
+                                    font-weight: 700;
+                                    letter-spacing: .03em;
+                                    text-align: left;
+                                }
+
+                                .cp-table th:last-child,
+                                .cp-table td:last-child {
+                                    text-align: right;
+                                }
+
+                                .cp-table td {
+                                    padding: 11px 14px;
+                                    border-top: 1px solid #eeecf5;
+                                    color: #1a1447;
+                                    vertical-align: middle;
+                                }
+
+                                .cp-table tbody tr:nth-child(even) td {
+                                    background: #faf9fd;
+                                }
+
+                                .cp-country {
+                                    display: inline-flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    font-weight: 600;
+                                }
+
+                                .cp-cur-icon {
+                                    display: inline-grid;
+                                    flex: 0 0 28px;
+                                    place-items: center;
+                                    width: 28px;
+                                    height: 28px;
+                                    border-radius: 50%;
+                                    background: #fff1eb;
+                                    color: #f66c3b;
+                                    font-size: 12px;
+                                    font-weight: 800;
+                                    line-height: 1;
+                                }
+
+                                .cp-amount {
+                                    font-size: 15px;
+                                    font-weight: 800;
+                                    white-space: nowrap;
+                                }
+
+                                .cp-code {
+                                    margin-left: 4px;
+                                    color: #8a86a3;
+                                    font-size: 11px;
+                                    font-weight: 700;
+                                }
+
+                                .cp-gst {
+                                    display: inline-block;
+                                    margin-left: 6px;
+                                    padding: 2px 7px;
+                                    border-radius: 5px;
+                                    background: #1a1447;
+                                    color: #fff;
+                                    font-size: 11px;
+                                    font-weight: 700;
+                                    white-space: nowrap;
+                                }
+                            </style>
+
                             <div class="event-info-list">
                                 <ul>
-                                    <li>
-                                        <div class="label">
-                                            Price
-                                        </div>
-                                        <span class="value-dollar"> {{ is_string($course->price) ? $course->price : number_format($course->price, 0).' + GST' }}</span>
-                                    </li>
-                                    <li>
-                                        <div class="label">
-                                            US Price
-                                        </div>
-                                        <span class="value-dollar">{{ is_string($course->us_price) ? $course->us_price : '$'.number_format($course->us_price, 2) }}</span>
-                                    </li>
-                                    <li>
-                                        <div class="label">
-                                            UAE Price
-                                        </div>
-                                        <span class="value-dollar">{{ is_string($course->dubai_price) ? $course->dubai_price : number_format($course->dubai_price, 0).'AED' }}</span>
-                                    </li>
-                                    <li>
-                                        <div class="label">
-                                            Singapore Price
-                                        </div>
-                                        <span class="value-dollar">{{ is_string($course->singapore_price) ? $course->singapore_price : number_format($course->singapore_price, 2) }}SGD</span>
-                                    </li>
                                     <li>
                                         <div class="label">
                                             <i class="fa-regular fa-circle-check"></i>Certifications

@@ -40,8 +40,8 @@
                 @if ($side === 'right')
                     <div class="tl-content">
                         <h2 id="tl-heading">Trusted by learners</h2>
-                        <p class="tl-sub">Thousands of learners have chosen Digicrome to advance their careers.</p>
-
+                        <p class="tl-sub">Thousands of learners have chosen Digicrome to advance their careers
+                                by turning their skills into career opportunities.</p>
                         <div class="tl-reviews">
                             @foreach ($tlReviews as $review)
                                 <a class="tl-review" href="{{ route('success_stories') }}">
