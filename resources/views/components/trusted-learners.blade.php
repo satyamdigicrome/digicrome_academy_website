@@ -10,7 +10,7 @@
         ['logo' => 'assets/images/see_what/google_home.svg', 'name' => 'Google', 'rating' => 4.8, 'count' => '399+ Google reviews'],
         ['logo' => 'assets/images/see_what/course-report.png', 'name' => 'Course Report', 'rating' => 4.8, 'count' => '1568+ Course Report reviews'],
         ['logo' => 'assets/images/see_what/ambition-box.jpeg', 'name' => 'AmbitionBox', 'rating' => 4.3, 'count' => '50+ AmbitionBox reviews'],
-        ['logo' => 'assets/images/see_what/muthshout_home.svg', 'name' => 'MouthShut', 'rating' => 4.5, 'count' => '230+ MouthShut reviews'],
+        // ['logo' => 'assets/images/see_what/muthshout_home.svg', 'name' => 'MouthShut', 'rating' => 4.5, 'count' => '230+ MouthShut reviews'],
         ['logo' => 'assets/images/see_what/favicon.ico', 'name' => 'Glassdoor', 'rating' => 4.0, 'count' => '100+ Glassdoor reviews'],
     ];
 
@@ -40,8 +40,7 @@
                 @if ($side === 'right')
                     <div class="tl-content">
                         <h2 id="tl-heading">Trusted by learners</h2>
-                        <p class="tl-sub">20,000+ successful Digicrome learners, with 5,000+ placed across 450+
-                            hiring partners</p>
+                        <p class="tl-sub">Thousands of learners have chosen Digicrome to advance their careers.</p>
 
                         <div class="tl-reviews">
                             @foreach ($tlReviews as $review)
@@ -71,13 +70,16 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="tlGold-{{ $side }}" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0" stop-color="#fff1b8" />
-                            <stop offset=".45" stop-color="#f5c542" />
-                            <stop offset="1" stop-color="#b8860b" />
+                            {{-- metallic pure gold: deep gold -> bright highlight -> deep gold --}}
+                            <stop offset="0" stop-color="#bf953f" />
+                            <stop offset=".3" stop-color="#fcf6ba" />
+                            <stop offset=".55" stop-color="#d4af37" />
+                            <stop offset=".8" stop-color="#fbf5b7" />
+                            <stop offset="1" stop-color="#aa771c" />
                         </linearGradient>
                     </defs>
                     <path d="M{{ $tlStemStart[0] }} {{ $tlStemStart[1] }} A128 128 0 0 1 {{ $tlStemEnd[0] }} {{ $tlStemEnd[1] }}"
-                        fill="none" stroke="#d4a017" stroke-width="3" stroke-linecap="round" />
+                        fill="none" stroke="#d4af37" stroke-width="3" stroke-linecap="round" />
                     @foreach ($tlLeaves as [$lx, $ly, $angle, $rx, $ry])
                         <ellipse cx="{{ $rx }}" cy="0" rx="{{ $rx }}" ry="{{ $ry }}"
                             transform="translate({{ $lx }} {{ $ly }}) rotate({{ $angle }})"
@@ -109,7 +111,7 @@
         flex: 0 0 auto;
         width: clamp(56px, 8vw, 110px);
         height: auto;
-        filter: drop-shadow(0 0 12px rgba(245, 197, 66, .25));
+        filter: drop-shadow(0 0 12px rgba(212, 175, 55, .35));
     }
 
     .tl-laurel--right {

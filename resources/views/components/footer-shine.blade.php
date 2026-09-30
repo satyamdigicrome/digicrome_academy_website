@@ -1,18 +1,7 @@
-{{--
-    FOOTER DIAGONAL SHINE WORDMARK
-    "DIGICROME" stretched edge to edge (an SVG with textLength, so it always
-    fits the device width exactly and no letter gets cut). The whole word is
-    always faintly visible; a slanted beam of light (a wide beam followed by a
-    thin one) sweeps across it, lighting up the letters it passes over, then
-    rests for a moment before the next sweep.
-    Everything is prefixed "dcs-" so it can't collide with other footer styles.
---}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-{{-- media="print" + onload keeps this font from blocking the footer scripts that follow --}}
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@1000&text=DIGCROME&display=swap" rel="stylesheet"
     media="print" onload="this.media='all'">
-
 <div class="dcs-stage" aria-hidden="true">
     <svg class="dcs-svg" viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -70,7 +59,9 @@
     .dcs-svg {
         display: block;
         width: 100%;
+        max-width: 800px; /* caps the text size on wide screens; phones still use the full width */
         height: auto;
+        margin: 0 auto;
         overflow: visible;
     }
 

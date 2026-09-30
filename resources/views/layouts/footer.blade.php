@@ -22,63 +22,92 @@
 
             </div>
             <div class="col-lg-6 col-md-12">
-                <div class="contact-form-box style_six">
-                    <form id="professionalForm" method="post" action="https://demo.digicrome.in/post_lead.php"
-                        style="width:100%; margin:0;">
+                {{-- Lead form styled after the Coding Ninjas hero form; sends to the CRM via website.lead.
+                     On Corporate Services it asks for the company instead of experience/qualification. --}}
+                @php($isCorporateFooter = request()->routeIs('corporate_services'))
+                <div class="contact-form-box style_six cnf">
+                    <form id="professionalForm" method="post" action="{{ route('website.lead') }}">
                         @csrf
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" name="name" placeholder="Name" required
-                                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-
-                                <input type="email" name="email" placeholder="E-mail ID" required
-                                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-
-                                <input type="text" name="address" placeholder="City"
-                                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
+                        @error('lead')
+                            <p class="cnf-error">{{ $message }}</p>
+                        @enderror
+                        @if ($isCorporateFooter)
+                            <input type="hidden" name="profession" value="Corporate">
+                        @else
+                        <div class="cnf-field" role="radiogroup" aria-labelledby="cnf-exp-label">
+                            <span class="cnf-label" id="cnf-exp-label">Experience</span>
+                            <div class="cnf-radios">
+                                @foreach ([
+                                    'Working Professional - Technincal Roles' => 'Working Professional - Technical Roles',
+                                    'Working Professional - Non Technincal' => 'Working Professional - Non Technical',
+                                    'College Student - Final Year' => 'College Student - Final Year',
+                                    'College Student - 1st to pre-final Year' => 'College Student - 1st to Pre-final Year',
+                                    'Other' => 'Other',
+                                ] as $value => $label)
+                                    <label class="cnf-radio">
+                                        <input type="radio" name="profession" value="{{ $value }}" required>
+                                        <span class="cnf-radio__circle"></span>
+                                        <span>{{ $label }}</span>
+                                    </label>
+                                @endforeach
                             </div>
+                        </div>
+                        @endif
 
-                            <div class="col-md-6">
-                                <input type="tel" name="mobile" placeholder="Mobile Number" required
-                                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-
-                                <input type="text" name="title" placeholder="Qualification"
-                                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-
-                                <select name="profession" required
-                                    style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; background:rgba(255,255,255,0.8);">
-                                    <option value="" disabled selected hidden>Select Experience</option>
-                                    <option value="Working Professional - Technincal Roles">Working Professional -
-                                        Technincal Roles</option>
-                                    <option value="Working Professional - Non Technincal">Working Professional - Non
-                                        Technincal</option>
-                                    <option value="College Student - Final Year">College Student - Final Year</option>
-                                    <option value="College Student - 1st to pre-final Year">College Student - 1st to
-                                        pre-final Year</option>
-                                    <option value="Other">Other</option>
-                                </select>
+                        <div class="cnf-grid">
+                            <div class="cnf-field">
+                                <label class="cnf-label" for="cnf-name">Name</label>
+                                <input class="cnf-input" id="cnf-name" type="text" name="name"
+                                    placeholder="Enter name" required>
                             </div>
+                            <div class="cnf-field">
+                                <label class="cnf-label" for="cnf-mobile">Phone Number</label>
+                                <input class="cnf-input" id="cnf-mobile" type="tel" name="mobile"
+                                    placeholder="Enter phone number" required>
+                            </div>
+                            <div class="cnf-field">
+                                <label class="cnf-label" for="cnf-email">Email</label>
+                                <input class="cnf-input" id="cnf-email" type="email" name="email"
+                                    placeholder="Enter email" required>
+                            </div>
+                            <div class="cnf-field">
+                                <label class="cnf-label" for="cnf-city">City</label>
+                                <input class="cnf-input" id="cnf-city" type="text" name="address"
+                                    placeholder="Enter city">
+                            </div>
+                            @if ($isCorporateFooter)
+                                <div class="cnf-field cnf-field--full">
+                                    <label class="cnf-label" for="cnf-company">Company Name</label>
+                                    <input class="cnf-input" id="cnf-company" type="text" name="comp_name"
+                                        placeholder="Enter company name" required>
+                                </div>
+                            @else
+                                <div class="cnf-field cnf-field--full">
+                                    <label class="cnf-label" for="cnf-title">Qualification</label>
+                                    <input class="cnf-input" id="cnf-title" type="text" name="title"
+                                        placeholder="Enter qualification">
+                                </div>
+                            @endif
                         </div>
 
                         <input type="hidden" name="ib" value="">
-                        <input type="hidden" name="source" value="Website">
+                        <input type="hidden" name="source"
+                            value="{{ $isCorporateFooter ? 'Corporate Services (Footer)' : 'Website' }}">
                         <input type="hidden" name="country" value="india">
-                        <input type="hidden" name="comp_name" value="">
+                        @unless ($isCorporateFooter)
+                            <input type="hidden" name="comp_name" value="">
+                        @endunless
                         <input type="hidden" name="state" value="">
                         <input type="hidden" name="altr_mobile" value="">
 
-                        <p style="font-size:12px; line-height:18px; color:#fff;">
+                        <button type="submit" class="cnf-submit">Submit</button>
+
+                        <p class="cnf-terms">
                             By submitting the form, you agree to our
-                            <a href="#" style="color:#f29c12;">Terms</a> and
-                            <a href="https://digicrome.com/privacy-policy" style="color:#f29c12;">Privacy Policy</a>.
+                            <a href="#">Terms</a> and
+                            <a href="https://digicrome.com/privacy-policy">Privacy Policy</a>.
                         </p>
-
-                        <button type="submit"
-                            style="width:100%; padding:10px; background:#f29c12; color:white; border:none; border-radius:5px; font-weight:bold; margin-top:10px;">
-                            Submit
-                        </button>
                     </form>
-
                 </div>
             </div>
         </div>
@@ -163,7 +192,187 @@
             </div> --}}
         </div>
     </div>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
     <style>
+        /* ===== Footer lead form — Coding Ninjas hero-form look ===== */
+        .cnf,
+        .cnf * {
+            font-family: "Mulish", Arial, sans-serif;
+        }
+
+        .cnf form {
+            width: 100%;
+            margin: 0;
+        }
+
+        .cnf .cnf-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 0;
+            margin: 0 0 20px;
+            padding: 0;
+            border: 0;
+        }
+
+        .cnf .cnf-error {
+            margin: 0 0 16px;
+            padding: 10px 14px;
+            border: 1px solid rgba(255, 99, 71, .5);
+            border-radius: 8px;
+            background: rgba(255, 99, 71, .1);
+            color: #ff8a73;
+            font-size: 13px;
+        }
+
+        .cnf .cnf-label {
+            display: block;
+            float: none;
+            width: auto;
+            margin: 0;
+            padding: 0;
+            color: #fafafa;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 18px;
+        }
+
+        .cnf .cnf-radios {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .cnf .cnf-radio {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            cursor: pointer;
+        }
+
+        .cnf .cnf-radio input {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            pointer-events: none;
+        }
+
+        .cnf .cnf-radio__circle {
+            position: relative;
+            flex: 0 0 20px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #838485;
+            border-radius: 50%;
+            transition: border-color .15s ease;
+        }
+
+        .cnf .cnf-radio__circle::after {
+            content: "";
+            position: absolute;
+            inset: 3px;
+            border-radius: 50%;
+            background: #fff;
+            transform: scale(0);
+            transition: transform .15s ease;
+        }
+
+        .cnf .cnf-radio input:checked+.cnf-radio__circle {
+            border-color: #fff;
+        }
+
+        .cnf .cnf-radio input:checked+.cnf-radio__circle::after {
+            transform: scale(1);
+        }
+
+        .cnf .cnf-radio input:focus-visible+.cnf-radio__circle {
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, .15);
+        }
+
+        .cnf .cnf-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 16px;
+        }
+
+        .cnf .cnf-field--full {
+            grid-column: 1 / -1;
+        }
+
+        .cnf .cnf-input {
+            width: 100%;
+            height: 40px;
+            margin: 0;
+            padding: 0 16px;
+            border: 1px solid #838485;
+            border-radius: 8px;
+            background: #1f1f1f;
+            color: #fafafa;
+            font-size: 14px;
+            box-shadow: none;
+            outline: none;
+            transition: border-color .15s ease;
+        }
+
+        .cnf .cnf-input::placeholder {
+            color: #838485;
+            opacity: 1;
+        }
+
+        .cnf .cnf-input:hover {
+            border-color: #bdbdbd;
+        }
+
+        .cnf .cnf-input:focus {
+            border-color: #fafafa;
+        }
+
+        .cnf .cnf-submit {
+            display: block;
+            width: 100%;
+            height: 48px;
+            margin: 4px 0 0;
+            padding: 12px 24px;
+            border: 0;
+            border-radius: 8px;
+            background: #f66c3b;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color .15s ease;
+        }
+
+        .cnf .cnf-submit:hover {
+            background: #e85a28;
+        }
+
+        .cnf .cnf-terms {
+            margin: 12px 0 0;
+            color: #969696;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        .cnf .cnf-terms a {
+            color: #fafafa;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 575.98px) {
+            .cnf .cnf-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Plain black footer */
         .footer-area {
             background: #000 !important;
@@ -183,6 +392,16 @@
         .footer-course-links p a {
             font-size: 12.5px !important;
             line-height: 1.7;
+        }
+
+        .footer-course-links p a {
+            text-decoration: underline !important;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba(255, 255, 255, .45);
+        }
+
+        .footer-course-links p a:hover {
+            text-decoration-color: #fff;
         }
 
         .footer-course-links p {
@@ -208,7 +427,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mb-4 footer-course-links">
-                <h5 style="color: #ccc"><u>Data Science And AI</u></h5>
+                <h5 style="color: #ccc">Data Science And AI</h5>
                 <p>
                     <a href="{{ url('/') }}/courses/data-science-training-course-in-noida" style="color: #fff">
                         Data Science Training Course in Noida</a> |
@@ -245,7 +464,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mb-4 footer-course-links">
-                <h5 style="color: #ccc"><u>Artificial Intelligence Training Course</u></h5>
+                <h5 style="color: #ccc">Artificial Intelligence Training Course</h5>
                 <p>
                     <a href="{{ url('/') }}/courses/ai-training-course-in-noida" style="color: #fff">Artificial
                         Intelligence Training Course in Noida</a> |
@@ -276,7 +495,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mb-4 footer-course-links">
-                <h5 style="color: #ccc"><u>Machine Learning Training Course</u></h5>
+                <h5 style="color: #ccc">Machine Learning Training Course</h5>
                 <p>
                     <a href="{{ url('/') }}/courses/machine-learning-course-in-noida" style="color: #fff">Machine Learning Training Course in Noida</a> |
                     <a href="{{ url('/') }}/courses/machine-learning-training-course-in-delhi" style="color: #fff">Machine Learning Training Course in Delhi</a> |

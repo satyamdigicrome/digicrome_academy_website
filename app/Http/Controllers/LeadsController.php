@@ -146,6 +146,7 @@ class LeadsController extends Controller
             'experience' => 'nullable|string|max:255',
             'title' => 'nullable|string|max:255',
             'qualification' => 'nullable|string|max:255',
+            'comp_name' => 'nullable|string|max:255',
             'course' => 'nullable|string|max:255',
             'page_name' => 'nullable|string|max:255',
             'source' => 'nullable|string|max:255',
@@ -161,7 +162,8 @@ class LeadsController extends Controller
             'state' => ' ',
             'country' => $request->input('country', 'India'),
             'profession' => $request->input('profession') ?: $request->input('experience') ?? '',
-            'designation' => ' ',
+            // The CRM has no company field; corporate leads carry the company name here.
+            'designation' => $request->input('comp_name') ?: ' ',
             'course_id' => $request->title == 'AISS' ? '2' : '1',
             'lead_source' => 'Website',
             'lead_source_details' => $request->input('page_name') ?: $request->input('source'),
