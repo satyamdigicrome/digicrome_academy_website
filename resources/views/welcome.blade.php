@@ -1009,6 +1009,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 order-2 order-lg-2">
+                            <span class="interview-highlight">Unlimited Interviews Opportunities</span>
                             <div class="swiper mySwiper">
                                 <div class="swiper-wrapper">
 
@@ -1098,6 +1099,16 @@
                 font-size: 24px;
             }
 
+            .interview-highlight {
+                display: inline-block;
+                background: linear-gradient(90deg, #ffffff 0%, #FFE08A 50%, #EF9F1B 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 800;
+                font-size: 22px;
+                filter: brightness(1.15);
+            }
             .section-sub {
                 color: #fff;
                 font-size: 16px;
