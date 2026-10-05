@@ -8,7 +8,8 @@
  * markup, whether or not the visitor ever scrolls that far.
  *
  * Markup contract:
- *   <video class="js-deferred-video" preload="none" data-src="..." [data-type="video/mp4"]>
+ *   <video class="js-deferred-video" preload="none" data-src="..." [data-type="video/webm"]>
+ *   (data-type is optional; it is inferred from the file extension when omitted)
  *   <iframe class="js-deferred-iframe" data-src="...">
  *
  * Give the element (or its container) a fixed size or aspect-ratio, since nothing
@@ -23,6 +24,14 @@
     var SELECTOR = '.js-deferred-iframe[data-src]:not([data-activated]),' +
         '.js-deferred-video[data-src]:not([data-activated])';
 
+    // A wrong type makes the browser skip the source, so infer it from the extension.
+    function guessType(src) {
+        var ext = (src.split(/[?#]/)[0].split('.').pop() || '').toLowerCase();
+        if (ext === 'webm') return 'video/webm';
+        if (ext === 'ogg' || ext === 'ogv') return 'video/ogg';
+        return 'video/mp4';
+    }
+
     function activate(el) {
         if (el.dataset.activated) return;
         el.dataset.activated = '1';
@@ -34,7 +43,7 @@
 
         var source = document.createElement('source');
         source.src = el.dataset.src;
-        source.type = el.dataset.type || 'video/mp4';
+        source.type = el.dataset.type || guessType(el.dataset.src);
         el.appendChild(source);
         el.load();
 

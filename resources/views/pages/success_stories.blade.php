@@ -323,6 +323,8 @@
     </div>
 @endsection
 @push('scripts')
+    {{-- Attaches the real source to the .js-deferred-video clips above; without it they stay empty. --}}
+    <script src="{{ asset('assets/js/deferred-media.js') }}" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const cards = document.querySelectorAll('.youtubeopen');
