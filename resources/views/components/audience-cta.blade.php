@@ -10,8 +10,8 @@
 
         <div class="acta-panel" data-acta-panel="learners">
             <span class="acta-badge">FOR LEARNERS</span>
-            <h2 class="acta-title">Build Your Career in Data & AI</h2>
-            <p class="acta-sub">Learn. Build. Get Career-Ready.</p>
+            <h2 class="acta-title">Build A Career in Data & AI</h2>
+            <p class="acta-sub">Be Career-Ready.</p>
             <a href="{{ route('course') }}" class="acta-btn acta-btn-dark">Explore All Courses</a>
         </div>
 
@@ -87,7 +87,7 @@
     .acta-title,
     .acta-sub {
         margin: 0;
-        font-size: clamp(28px, 3.4vw, 42px);
+        font-size: clamp(22px, 2.6vw, 30px);
         line-height: 1.12;
         letter-spacing: -.02em;
         font-weight: 500;
