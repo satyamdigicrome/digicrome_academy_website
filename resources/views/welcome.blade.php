@@ -1557,6 +1557,7 @@
                 title="Vision Image" class="img-fluid rounded shadow-lg" />
         </div>
     </section>
+    @include('components.audience-cta')
     <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
         <div class="container">
             <div class="row align-items-center">
