@@ -10,7 +10,7 @@
 
         <div class="acta-panel" data-acta-panel="learners">
             <span class="acta-badge">FOR LEARNERS</span>
-            <h2 class="acta-title">Build A Career in Data & AI</h2>
+            <h2 class="acta-title">Launch A Career in Data & AI</h2>
             <p class="acta-sub">Be Career-Ready.</p>
             <a href="{{ route('course') }}" class="acta-btn acta-btn-dark">Explore All Courses</a>
         </div>
