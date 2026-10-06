@@ -59,7 +59,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding: 48px 24px;
+        padding: 48px 18px;
     }
 
     .acta-panel+.acta-panel::before {
@@ -86,6 +86,7 @@
 
     .acta-title,
     .acta-sub {
+        width: 100%;
         margin: 0;
         font-size: clamp(22px, 2.6vw, 30px);
         line-height: 1.12;
@@ -171,7 +172,7 @@
         }
 
         .acta-panel {
-            padding: 44px 20px;
+            padding: 44px 16px;
             min-height: 280px;
         }
 
@@ -247,14 +248,34 @@
 
         // Learners: a pair of curly braces — "code / data" framing the content.
         function drawBraces(o, w, h) {
-            const size = Math.min(h * 0.95, w * 0.62);
-            o.font = '300 ' + size + 'px Georgia, "Times New Roman", serif';
-            o.textAlign = 'center';
-            o.textBaseline = 'middle';
-            o.lineWidth = 2.5;
-            const gap = Math.min(w * 0.37, 260);
-            o.strokeText('{', w / 2 - gap, h / 2 + size * 0.03);
-            o.strokeText('}', w / 2 + gap, h / 2 + size * 0.03);
+            const top = h * 0.10;
+            const bottom = h * 0.90;
+            const mid = h * 0.50;
+            const inset = Math.min(w * 0.075, 40);
+            const left = inset;
+            const right = w - inset;
+            const pinch = Math.min(w * 0.065, 34);
+
+            o.strokeStyle = '#000';
+            o.lineWidth = Math.max(4, Math.min(6, w * 0.012));
+            o.lineCap = 'round';
+            o.lineJoin = 'round';
+
+            o.beginPath();
+            o.moveTo(left + pinch, top);
+            o.bezierCurveTo(left, top, left, top + 8, left, top + h * 0.20);
+            o.bezierCurveTo(left, mid - h * 0.09, left + pinch, mid - h * 0.08, left + pinch, mid);
+            o.bezierCurveTo(left + pinch, mid + h * 0.08, left, mid + h * 0.09, left, bottom - h * 0.20);
+            o.bezierCurveTo(left, bottom - 8, left, bottom, left + pinch, bottom);
+            o.stroke();
+
+            o.beginPath();
+            o.moveTo(right - pinch, top);
+            o.bezierCurveTo(right, top, right, top + 8, right, top + h * 0.20);
+            o.bezierCurveTo(right, mid - h * 0.09, right - pinch, mid - h * 0.08, right - pinch, mid);
+            o.bezierCurveTo(right - pinch, mid + h * 0.08, right, mid + h * 0.09, right, bottom - h * 0.20);
+            o.bezierCurveTo(right, bottom - 8, right, bottom, right - pinch, bottom);
+            o.stroke();
         }
 
         // Organizations: six small rings of varied size floating around the content,
@@ -389,8 +410,8 @@
                     tx = sx + Math.sin(time * 0.8 + p.phase) * 0.8 + (mouse.x - sx) * 0.012;
                     ty = sy + Math.cos(time * 0.7 + p.phase) * 0.8 + (mouse.y - sy) * 0.012;
                 } else {
-                    tx = p.hx + Math.sin(time * 0.25 + p.phase) * 4;
-                    ty = p.hy + Math.cos(time * 0.2 + p.phase) * 4;
+                    tx = p.hx + Math.sin(time * 0.25 + p.phase) * 5;
+                    ty = p.hy + Math.cos(time * 0.2 + p.phase) * 5;
                 }
 
                 // Gentle spring toward target.

@@ -1009,7 +1009,14 @@
                             </div>
                         </div>
                         <div class="col-lg-6 order-2 order-lg-2">
-                            <span class="interview-highlight">Unlimited Interviews Opportunities</span>
+                            <h2 class="interview-highlight" aria-label="Get unlimited interview opportunities">
+                                <span class="interview-highlight-get">Get</span>
+                                <span class="interview-highlight-copy">
+                                    <span>unlimited</span>
+                                    <span>interview</span>
+                                    <span>opportunities</span>
+                                </span>
+                            </h2>
                             <div class="swiper mySwiper">
                                 <div class="swiper-wrapper">
 
@@ -1100,14 +1107,51 @@
             }
 
             .interview-highlight {
-                display: inline-block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: clamp(10px, 2vw, 22px);
+                margin: 0 0 24px;
+                text-align: left;
+                line-height: 1;
+                filter: brightness(1.15);
+            }
+
+            .interview-highlight-get {
                 background: linear-gradient(90deg, #ffffff 0%, #FFE08A 50%, #EF9F1B 100%);
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
+                font-size: clamp(48px, 6vw, 76px);
+                font-weight: 900;
+                letter-spacing: -0.07em;
+            }
+
+            .interview-highlight-copy {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                color: #fff;
+                font-size: clamp(15px, 1.65vw, 21px);
                 font-weight: 800;
-                font-size: 22px;
-                filter: brightness(1.15);
+                letter-spacing: 0.015em;
+                line-height: 1.08;
+                text-transform: uppercase;
+            }
+
+            @media (max-width: 575.98px) {
+                .interview-highlight {
+                    gap: 12px;
+                    margin-bottom: 18px;
+                }
+
+                .interview-highlight-get {
+                    font-size: clamp(44px, 14vw, 64px);
+                }
+
+                .interview-highlight-copy {
+                    font-size: clamp(14px, 4vw, 18px);
+                }
             }
             .section-sub {
                 color: #fff;
