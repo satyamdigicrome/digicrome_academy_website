@@ -10,6 +10,7 @@
             <div class="col-xxl-6 col-xl-4 col-lg-4">
                 <div class="header-top-right">
                     <div class="text-white text-right">
+                        @include('components.festive-header-greeting')
                         Quick Enquiry - <span class="fw-bolder">0120-453-8125</span>
                     </div>
 
@@ -57,6 +58,8 @@
     </div>
 </div> --}}
 <div class="educate-header-area" id="sticky-header">
+    {{-- Festive falling lights: render nothing outside the dates in config/festive.php --}}
+    @include('components.festive-header-fx')
     <div class="container-fluid">
         <div class="row header-wrap align-items-center">
             <div class="col-lg-2">
@@ -174,6 +177,7 @@
 </div>
 
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
+    @include('components.festive-header-fx', ['count' => 16])
     <div class="container-fluid">
         <div class="row align-items-center py-1">
             <!-- Left side: Contact Number -->

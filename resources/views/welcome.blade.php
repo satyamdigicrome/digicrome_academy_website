@@ -3,12 +3,9 @@
 @section('meta_description', $meta->description ?? 'Digicrome')
 @section('meta_keywords', $meta->keywords ?? 'Digicrome')
 @push('styles')
-    {{-- The offer banner sits above the hero, so it is the LCP element now.
-         Only the variant that will actually be used gets preloaded. --}}
-    <link rel="preload" as="image" href="{{ asset('assets/images/independence-mobile.webp') }}"
-        media="(max-width: 767.98px)" fetchpriority="high">
-    <link rel="preload" as="image" href="{{ asset('assets/images/independence-desktop.webp') }}"
-        media="(min-width: 768px)" fetchpriority="high">
+    {{-- When a banner sits above the hero (components/festive-banner), it is the
+         LCP element and preloads its own image; nothing else is preloaded at
+         high priority here. --}}
     {{-- Hero image is still above the fold on desktop, but no longer the largest
          paint, so it preloads at normal priority rather than competing. --}}
     <link rel="preload" as="image" href="{{ asset('assets/images/home-one/hero-thumb3.webp') }}">
@@ -311,7 +308,11 @@
             </div>
         </div>
     </section> --}}
+    {{-- Festive banner (click opens the enquiry form). Renders nothing outside the dates in config/festive.php --}}
+    @include('components.festive-banner')
     <section class="hero_area style-one d-flex align-items-center">
+        {{-- Festive light canopy: renders nothing outside the dates in config/festive.php --}}
+        {{-- @include('components.festive-lights') --}}
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-lg-6">
@@ -413,6 +414,8 @@
             </div>
         </div>
     </section>
+    {{-- Festive greeting + quotes. Renders nothing outside the dates in config/festive.php --}}
+    {{-- @include('components.festive-greeting') --}}
     <section class="feature-area style-one">
         <div class="container">
             <div class="row align-items-center section-title-space">

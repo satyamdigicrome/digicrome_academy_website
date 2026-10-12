@@ -140,6 +140,8 @@
     @if (empty($hideHeader) || $hideHeader === false)
         @include('layouts.header')
     @endif
+    {{-- Festive theme (toran + petal shower). Renders nothing outside the dates in config/festive.php --}}
+    @include('components.festive-season')
     @if (request()->is('/') || request()->is('home-2') || request()->is('success-stories'))
     <div id="formModal" class="modal" id="mm">
         <div class="modal-content">
