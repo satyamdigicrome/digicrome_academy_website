@@ -78,66 +78,44 @@
                         <a href="#"
                             style="background:#1c1647; border:2px solid #fff; border-radius:8px; padding:3px 7px; color:#fff; display:flex; align-items:center; gap:5px;">
                             <i class="bi bi-journal-bookmark-fill text-light"></i>
-                            Courses
+                            Programs
                             <i class="bi bi-chevron-down text-light"></i>
                         </a>
 
-                    <!-- 🔥 ONLY THIS submenu is mega-menu -->
                     <ul class="sub_menu mega-menu">
                         <li>
-                            <div class="mega-wrapper">
-
-                                <div class="mega-left">
-                                    <h6>Popular Categories</h6>
-                                    <ul>
-                                        <li>
-                                            <a href="{{ route('course.category', 'data-science-course') }}"
-                                                class="text-dark d-flex justify-content-between align-items-center">
-                                                Data Science & AI <i class="bi bi-chevron-right"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{ route('course_details', 'ai-security-online-training') }}" class="text-dark d-flex justify-content-between align-items-center">
-                                                Cyber Security: Security of AI
-                                                <i class="bi bi-chevron-right"></i>
-                                            </a>
-                                        </li>
-                                        @foreach ($header_collections->whereNotIn('id', [3, 5, 6]) as $collection)
-                                            <li>
-                                                <a href="{{ route('course.category', $collection->slug) }}" class="text-dark d-flex justify-content-between align-items-center">
-                                                    {{ $collection->name }}
-                                                    <i class="bi bi-chevron-right"></i>
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
+                            @php
+                                [$header_cyber_courses, $header_ds_courses] = $header_courses->partition(
+                                    fn ($c) => \Illuminate\Support\Str::contains(strtolower($c->name . ' ' . $c->slug), ['security', 'cyber'])
+                                );
+                                @endphp
+                            <div class="mega-columns">
+                                <div class="mega-col">
+                                    <a href="{{ route('course.category', 'data-science-course') }}" class="mega-col-title">Data Science &amp; AI</a>
+                                    @foreach ($header_ds_courses as $course)
+                                        <a href="{{ route('course_details', $course->slug) }}" class="mega-link">
+                                            <div class="mega-link-name">{{ $course->name }}</div>
+                                            <div class="mega-link-sub">{{ $course->course_duration ?? 'For working professionals' }}</div>
+                                        </a>
+                                    @endforeach
                                 </div>
-                                <div class="mega-right">
-                                    <h6>Top Courses</h6>
-                                    <div class="course-list">
-                                        @foreach ($header_courses as $course)
-                                            <a href="{{ route('course_details', $course->slug) }}" class="course-item">
-                                                <img src="{{ asset('storage/'.$course->image) }}" loading="lazy"
-                                                    alt="{{ $course->name }}">
-                                                <div class="course-info">
-                                                    <h6>{{ $course->name }}</h6>
-                                                    <p>{{ $course->course_duration ?? 'N/A' }}</p>
-                                                </div>
-                                            </a>
-                                        @endforeach
-                                    </div>
-
+                                <div class="mega-col">
+                                    <a href="{{ route('course_details', 'ai-security-online-training') }}" class="mega-col-title">Cyber Security</a>
+                                    @foreach ($header_cyber_courses as $course)
+                                        <a href="{{ route('course_details', $course->slug) }}" class="mega-link">
+                                            <div class="mega-link-name">{{ $course->name }}</div>
+                                            <div class="mega-link-sub">{{ $course->course_duration ?? 'For working professionals' }}</div>
+                                        </a>
+                                    @endforeach
                                 </div>
-
                             </div>
                         </li>
                     </ul>
                 </li>
-                <li><a href="/">Home</a>
+                {{-- <li><a href="/">Home</a> --}}
                 </li>
                 <li><a href="{{ route('about') }}">About Us</a></li>
-                <li><a href="{{ route('success_stories') }}">Success stories</a></li>
+                <li><a href="{{ route('success_stories') }}">Career Outcomes</a></li>
                 <li><a href="{{ route('blog') }}">Blog </a></li>
                 <li><a href="{{ route('payments') }}">Payments </a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
@@ -208,7 +186,7 @@
             <ul class="nav_scroll">
                 <li><a href="/">Home</a></li>
                 <li><a href="{{ route('about') }}">About Us</a></li>
-                <li><a href="#">Courses<i class="bi bi-chevron-down"></i></a>
+                <li><a href="#">Programs<i class="bi bi-chevron-down"></i></a>
                     <ul class="sub_menu">
                         <li>
                             <a href="{{ route('course.category', 'data-science-course') }}">

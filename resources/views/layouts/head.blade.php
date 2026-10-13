@@ -448,6 +448,73 @@
         box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         z-index: 999;
     }
+    /* Column layout: one column per category */
+    .header-menu .sub_menu.mega-menu .mega-columns {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+    .header-menu .sub_menu.mega-menu .mega-col-title {
+        display: block;
+        padding: 0 8px;
+        margin-bottom: 14px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        color: #6b88c4;
+        text-decoration: none;
+    }
+    .header-menu .sub_menu.mega-menu .mega-columns,
+    .header-menu .sub_menu.mega-menu .mega-col {
+        text-align: left;
+    }
+    .header-menu .sub_menu.mega-menu .mega-link {
+        display: block;
+        line-height: 1.3;
+        white-space: normal;
+        text-transform: none;
+        padding: 10px 8px;
+        margin-bottom: 6px;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background .2s;
+    }
+    .header-menu .sub_menu.mega-menu .mega-link:hover {
+        background: #f0f5ff;
+    }
+    /* Undo theme submenu-link styles (padding, hover shift, dot bullet) */
+    .header-menu ul .sub_menu.mega-menu li a.mega-link,
+    .sticky .header-menu ul .sub_menu.mega-menu li a.mega-link {
+        padding: 10px 8px !important;
+        margin-left: 0 !important;
+    }
+    .header-menu ul .sub_menu.mega-menu li a.mega-col-title,
+    .sticky .header-menu ul .sub_menu.mega-menu li a.mega-col-title {
+        padding: 0 8px !important;
+        margin-left: 0 !important;
+        font-size: 14px;
+        color: #6b88c4 !important;
+    }
+    .header-menu ul .sub_menu.mega-menu li a.mega-link:before,
+    .header-menu ul .sub_menu.mega-menu li a.mega-col-title:before {
+        display: none;
+    }
+    .header-menu .sub_menu.mega-menu .mega-link-name {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: #1c1647;
+    }
+    .header-menu .sub_menu.mega-menu .mega-link-sub {
+        display: block;
+        margin-top: 4px;
+        font-size: 13px;
+        font-style: italic;
+        color: #888;
+    }
+
     /* Wrapper */
     .mega-wrapper {
         display: flex;
