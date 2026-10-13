@@ -12,7 +12,7 @@
         <svg class="fest-chip__spark" viewBox="-10 -10 20 20" aria-hidden="true" focusable="false">
             <path d="M0-9L2-2 9 0 2 2 0 9-2 2-9 0-2-2z" />
         </svg>
-        <span class="fest-chip__text">{{ $festive['eyebrow'] }}<span class="fest-chip__more"> &middot; Gift a friend Data Science</span></span>
+        <span class="fest-chip__text">{{ $festive['eyebrow'] }}</span>
     </a>
 
     @once
