@@ -14,17 +14,18 @@
         {{-- centered header --}}
         <div class="ssst-header ssst-reveal" data-reveal="up">
             <div class="ssst-eyebrow">
-                <img width="24" height="18" loading="lazy" src="{{ asset('assets/images/inner-img/sub-title2.webp') }}"
-                    alt="sub-title2" title="sub-title2">
+                <img width="24" height="18" loading="lazy"
+                    src="{{ asset('assets/images/inner-img/sub-title2.webp') }}" alt="sub-title2" title="sub-title2">
                 <span>Success Stories</span>
             </div>
-            <h3 class="ssst-heading">All Real Experiences From Our Dedicated Learners</h3>
+            <h3 class="ssst-heading">Stories that Speak for Themeselves.</h3>
             <p class="ssst-subheading">Trusted. Proven. Loved by our learners.</p>
 
             <div class="ssst-review-box">
                 <div class="ssst-review-image">
-                    <img width="130" height="56" loading="lazy" src="{{ asset('assets/images/home-three/course-instructor.webp') }}"
-                        alt="course-instructor" title="course-instructor">
+                    <img width="130" height="56" loading="lazy"
+                        src="{{ asset('assets/images/home-three/course-instructor.webp') }}" alt="course-instructor"
+                        title="course-instructor">
                 </div>
                 <div class="ssst-review-content">
                     <h4 class="ssst-counter" data-count-target="250">0</h4>
@@ -71,25 +72,24 @@
                              enough times to always overflow the viewport width --}}
                         @for ($ssstHalf = 0; $ssstHalf < 2; $ssstHalf++)
                             @for ($ssstRepeat = 0; $ssstRepeat < $ssstHalfRepeats; $ssstRepeat++)
-                            @foreach ($ssstItems as $story)
-                                <div class="ssst-card">
-                                    <p class="ssst-card-desc">{!! $story->stoire !!}</p>
-                                    <div class="ssst-card-author">
-                                        <div class="ssst-author-avatar">
-                                            <img loading="lazy" src="{{ asset('storage/' . $story->image) }}"
-                                                alt="{{ $story->studentname }}"
-                                                title="{{ $story->studentname }}"
-                                                class="rounded-circle img-fluid">
-                                        </div>
-                                        <div class="ssst-author-content">
-                                            <h5 class="ssst-author-name">{{ $story->studentname }}</h5>
-                                            <p class="ssst-author-role">
-                                                {{ $story->position }} at {{ $story->companyname }}
-                                            </p>
+                                @foreach ($ssstItems as $story)
+                                    <div class="ssst-card">
+                                        <p class="ssst-card-desc">{!! $story->stoire !!}</p>
+                                        <div class="ssst-card-author">
+                                            <div class="ssst-author-avatar">
+                                                <img loading="lazy" src="{{ asset('storage/' . $story->image) }}"
+                                                    alt="{{ $story->studentname }}" title="{{ $story->studentname }}"
+                                                    class="rounded-circle img-fluid">
+                                            </div>
+                                            <div class="ssst-author-content">
+                                                <h5 class="ssst-author-name">{{ $story->studentname }}</h5>
+                                                <p class="ssst-author-role">
+                                                    {{ $story->position }} at {{ $story->companyname }}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
                             @endfor
                         @endfor
                     </div>
@@ -344,29 +344,35 @@
 </style>
 
 <script>
-    (function () {
+    (function() {
         // ---- scroll reveal ----
         var revealEls = document.querySelectorAll('#ssst-success-stories .ssst-reveal');
         if ('IntersectionObserver' in window) {
-            var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
+            var io = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('ssst-in-view');
                         io.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.15 });
-            revealEls.forEach(function (el) { io.observe(el); });
+            }, {
+                threshold: 0.15
+            });
+            revealEls.forEach(function(el) {
+                io.observe(el);
+            });
         } else {
-            revealEls.forEach(function (el) { el.classList.add('ssst-in-view'); });
+            revealEls.forEach(function(el) {
+                el.classList.add('ssst-in-view');
+            });
         }
 
         // ---- animated counter (250+) ----
         var counterEl = document.querySelector('#ssst-success-stories .ssst-counter[data-count-target]');
         if (counterEl && 'IntersectionObserver' in window) {
             var counted = false;
-            var counterIo = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
+            var counterIo = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting && !counted) {
                         counted = true;
                         var target = parseInt(counterEl.getAttribute('data-count-target'), 10) || 0;
@@ -388,7 +394,9 @@
                         counterIo.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.5 });
+            }, {
+                threshold: 0.5
+            });
             counterIo.observe(counterEl);
         } else if (counterEl) {
             counterEl.textContent = counterEl.getAttribute('data-count-target');
