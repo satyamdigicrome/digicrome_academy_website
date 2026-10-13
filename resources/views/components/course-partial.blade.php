@@ -1,7 +1,8 @@
 @php
-    // Category accent palette — cycles if there are more collections than colors.
-    // Index 0 is reserved for "Upcoming Courses".
-    $dgcHues = ['#F5A623', '#5B5FEF', '#0EA5A0', '#F0587C', '#8B5CF6', '#22B573'];
+    // Same 5 programs as the header "Programs" menu: Data Science & AI first, Cyber Security last.
+    $dgcCourses = $header_courses->sortBy(
+        fn ($c) => \Illuminate\Support\Str::contains(strtolower($c->name . ' ' . $c->slug), ['security', 'cyber']) ? 1 : 0
+    );
 @endphp
 
 <section class="dgc-courses">
@@ -12,28 +13,16 @@
             <h3 class="dgc-title">Comprehensive, career-ready <span class="dgc-title-accent">programs</span></h3>
         </div>
 
-        <div class="dgc-tabbar">
-            <div class="dgc-tabbar-rail" id="dgcTabRail">
-                <button type="button" class="dgc-tab is-active" data-filter=".Upcoming" style="--dot:{{ $dgcHues[0] }}">
-                    <span class="dgc-tab-dot"></span>Upcoming Courses
-                </button>
-                @foreach ($collections as $collection)
-                    <button type="button" class="dgc-tab" data-filter=".{{ Str::slug($collection->name) }}" style="--dot:{{ $dgcHues[($loop->iteration) % count($dgcHues)] }}">
-                        <span class="dgc-tab-dot"></span>{{ $collection->name }}
-                    </button>
-                @endforeach
-                <span class="dgc-tab-indicator" id="dgcTabIndicator"></span>
-            </div>
-        </div>
-
-        <div class="row dgc-grid image_load">
-
-            @foreach ($upcomingCourses as $course)
-                <div class="col-xl-3 col-lg-6 col-md-6 grid-item Upcoming dgc-cell">
-                    <article class="dgc-card" style="--accent: {{ $dgcHues[0] }}">
+        <div class="row dgc-grid justify-content-center">
+            @foreach ($dgcCourses as $course)
+                @php
+                    $isCyber = \Illuminate\Support\Str::contains(strtolower($course->name . ' ' . $course->slug), ['security', 'cyber']);
+                @endphp
+                <div class="col-xl-3 col-lg-6 col-md-6 dgc-cell">
+                    <article class="dgc-card" style="--accent: {{ $isCyber ? '#F0587C' : '#5B5FEF' }}">
                         <div class="dgc-card-media">
                             <img loading="lazy" src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" title="{{ $course->name }}">
-                            <span class="dgc-card-chip">Courses</span>
+                            <span class="dgc-card-chip">{{ $isCyber ? 'Cyber Security' : 'Data Science & AI' }}</span>
                         </div>
                         <div class="dgc-card-body">
                             <h4 class="dgc-card-title">
@@ -52,35 +41,6 @@
                     </article>
                 </div>
             @endforeach
-
-            @foreach ($collections as $collection)
-                @php $hue = $dgcHues[($loop->iteration) % count($dgcHues)]; @endphp
-                @foreach ($collection->courses as $course)
-                    <div class="col-xl-3 col-lg-6 col-md-6 grid-item {{ Str::slug($collection->name) }} dgc-cell dgc-prehidden">
-                        <article class="dgc-card" style="--accent: {{ $hue }}">
-                            <div class="dgc-card-media">
-                                <img loading="lazy" src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->name }}" title="{{ $course->name }}">
-                                <span class="dgc-card-chip">{{ $collection->name }}</span>
-                            </div>
-                            <div class="dgc-card-body">
-                                <h4 class="dgc-card-title">
-                                    <a href="{{ route('course_details', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
-                                </h4>
-                                <div class="dgc-card-footer">
-                                    <span class="dgc-duration">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
-                                        {{ $course->course_duration }}
-                                    </span>
-                                    <a href="{{ route('course_details', ['slug' => $course->slug]) }}" class="dgc-card-cta" aria-label="Explore {{ $course->name }}">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                @endforeach
-            @endforeach
-
         </div>
     </div>
 </section>
@@ -382,45 +342,3 @@
     }
 }
 </style>
-
-<script>
-    window.addEventListener('load', function () {
-        var grid = document.querySelector('.image_load');
-
-        // Remove the CSS pre-hide BEFORE Isotope takes over,
-        // so Isotope's own filter mechanism controls visibility from here on.
-        grid.querySelectorAll('.dgc-prehidden').forEach(function (el) {
-            el.classList.remove('dgc-prehidden');
-        });
-
-        var iso = new Isotope(grid, {
-            itemSelector: '.grid-item',
-            layoutMode: 'fitRows',
-            filter: '.Upcoming' // set initial filter directly on init, avoids double-arrange flash
-        });
-
-        var rail = document.getElementById('dgcTabRail');
-        var indicator = document.getElementById('dgcTabIndicator');
-        var tabs = rail.querySelectorAll('.dgc-tab');
-
-        function moveIndicator(el) {
-            indicator.style.width = el.offsetWidth + 'px';
-            indicator.style.transform = 'translateX(' + el.offsetLeft + 'px)';
-        }
-
-        tabs.forEach(function (tab) {
-            tab.addEventListener('click', function () {
-                tabs.forEach(function (t) { t.classList.remove('is-active'); });
-                this.classList.add('is-active');
-                moveIndicator(this);
-                iso.arrange({ filter: this.getAttribute('data-filter') });
-            });
-        });
-
-        moveIndicator(rail.querySelector('.dgc-tab.is-active'));
-
-        window.addEventListener('resize', function () {
-            moveIndicator(rail.querySelector('.dgc-tab.is-active'));
-        });
-    });
-</script>
