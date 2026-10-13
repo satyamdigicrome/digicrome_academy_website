@@ -190,10 +190,15 @@
                 openModal();
             }, 3000);
         });
-        function openModal(source) {
+        function openModal(source, title) {
             const sourceInput = document.querySelector('#formModal input[name="source"]');
             if (sourceInput) {
                 sourceInput.value = (typeof source === 'string' && source) ? source : 'Website(Home Page)';
+            }
+            const heading = document.querySelector('#formModal h3');
+            if (heading) {
+                heading.dataset.defaultTitle = heading.dataset.defaultTitle || heading.textContent;
+                heading.textContent = title || heading.dataset.defaultTitle;
             }
             document.getElementById("formModal").style.display = "block";
         }
@@ -333,10 +338,14 @@
                         @endif
                         <p>Master the <strong>most sought-after skills</strong> for today's and tomorrow's job market, and
                             position yourself as the top choice for employers in your industry.</p>
-                        <div class="hero-button d-flex">
+                        <div class="hero-button d-flex flex-wrap" style="row-gap: 14px;">
                             <div class="hero-btn">
                                 <a href="javascript:void(0);" onclick="openPlacementModal();">PLACEMENT REPORT<i
-                                        class="flaticon flaticon-right-arrow"></i></a>
+                                        class="fa-solid fa-download"></i></a>
+                            </div>
+                            <div class="hero-btn">
+                                <a href="javascript:void(0);" onclick="openModal('Download Syllabus Home Page', 'Download Syllabus');">DOWNLOAD SYLLABUS<i
+                                        class="fa-solid fa-download"></i></a>
                             </div>
                             <div class="border rounded px-3 py-2 text-secondary campus-tour-btn d-lg-none"
                                 style="border-color: #000000 !important;" role="button">

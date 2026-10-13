@@ -18,6 +18,13 @@
     </div>
 
     @if ($mentorCount > 0)
+        <div class="educators-slider">
+        <button type="button" class="educators-arrow educators-arrow--prev" aria-label="Previous mentors">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button type="button" class="educators-arrow educators-arrow--next" aria-label="Next mentors">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
         <div class="educators-marquee">
             <div class="educators-track" style="--educators-duration: {{ $mentorDuration }}s">
                 @for ($half = 0; $half < 2; $half++)
@@ -44,6 +51,7 @@
                     </div>
                 @endfor
             </div>
+        </div>
         </div>
     @endif
 </section>
@@ -132,6 +140,49 @@
 
     .educators-marquee:hover .educators-track {
         animation-play-state: paused;
+    }
+
+    /* JS drives the track (auto-scroll + arrow jumps); CSS animation is the no-JS fallback */
+    .educators-track.is-js {
+        animation: none;
+        will-change: transform;
+    }
+
+    .educators-slider {
+        position: relative;
+    }
+
+    .educators-arrow {
+        position: absolute;
+        top: 150px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 50%;
+        background: rgba(23, 23, 31, 0.9);
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .educators-arrow:hover,
+    .educators-arrow:focus-visible {
+        background: #ff8a3d;
+        border-color: #ff8a3d;
+    }
+
+    .educators-arrow--prev {
+        left: 24px;
+    }
+
+    .educators-arrow--next {
+        right: 24px;
     }
 
     .educators-group {
@@ -244,6 +295,21 @@
         .educator-img {
             height: 240px;
         }
+
+        .educators-arrow {
+            top: 130px;
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+        }
+
+        .educators-arrow--prev {
+            left: 10px;
+        }
+
+        .educators-arrow--next {
+            right: 10px;
+        }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -322,6 +388,61 @@ MODAL DESIGN
 @push('scripts')
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+
+            // Mentor strip: auto-scrolls like the CSS marquee, pauses on hover,
+            // and the arrows jump it one card at a time.
+            (function() {
+                const marquee = document.querySelector(".educators-marquee");
+                const track = marquee && marquee.querySelector(".educators-track");
+                const group = track && track.querySelector(".educators-group");
+                if (!group) return;
+
+                const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                const duration = parseFloat(getComputedStyle(track).getPropertyValue("--educators-duration")) || 40;
+                let half = group.offsetWidth; // one full copy of the list
+                let pos = 0; // px, always within (-half, 0]
+                let pending = 0; // remaining arrow-jump distance, eased in per frame
+                let paused = false;
+                let last = performance.now();
+
+                track.classList.add("is-js");
+                if (reduceMotion) marquee.style.overflowX = "hidden";
+
+                function step() {
+                    const card = group.querySelector(".educator-card");
+                    return card ? card.offsetWidth + 24 : 284; // card + gap
+                }
+
+                function frame(now) {
+                    const dt = Math.min(now - last, 100) / 1000;
+                    last = now;
+
+                    if (!paused && !reduceMotion) pos -= (half / duration) * dt;
+                    if (pending) {
+                        const d = Math.abs(pending) < 0.5 ? pending : pending * 0.15;
+                        pos += d;
+                        pending -= d;
+                    }
+                    while (pos <= -half) pos += half;
+                    while (pos > 0) pos -= half;
+
+                    track.style.transform = "translateX(" + pos + "px)";
+                    requestAnimationFrame(frame);
+                }
+
+                document.querySelector(".educators-arrow--prev").addEventListener("click", function() {
+                    pending += step();
+                });
+                document.querySelector(".educators-arrow--next").addEventListener("click", function() {
+                    pending -= step();
+                });
+
+                marquee.addEventListener("mouseenter", function() { paused = true; });
+                marquee.addEventListener("mouseleave", function() { paused = false; });
+                window.addEventListener("resize", function() { half = group.offsetWidth; });
+
+                requestAnimationFrame(frame);
+            })();
 
             document.querySelectorAll(".mentor-trigger").forEach(card => {
                 card.addEventListener("click", function() {
