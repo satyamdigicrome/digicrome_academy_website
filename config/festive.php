@@ -61,8 +61,8 @@ return [
             'eyebrow' => 'Happy Diwali',
 
             'banner' => [
-                'desktop' => ['src' => 'assets/images/festive/diwali-banner-desktop.svg', 'width' => 1600, 'height' => 600],
-                'mobile' => ['src' => 'assets/images/festive/diwali-banner-mobile.svg', 'width' => 900, 'height' => 760],
+                'desktop' => ['src' => 'assets/images/festive/durga-puja-banner-desktop.webp', 'width' => 1600, 'height' => 600],
+                'mobile' => ['src' => 'assets/images/festive/durga-puja-banner-mobile.webp', 'width' => 900, 'height' => 760],
                 'alt' => 'Happy Diwali from Digicrome: this Diwali, gift a friend Data Science & AI. Enquire now.',
             ],
 
