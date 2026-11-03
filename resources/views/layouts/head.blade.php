@@ -120,7 +120,7 @@
             {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Digicrome Academy",
+            "name": "Digicrome",
             "url": "https://www.digicrome.com",
             "logo": "https://www.digicrome.com/logo.png",
             "image": "https://www.digicrome.com/logo.png",
