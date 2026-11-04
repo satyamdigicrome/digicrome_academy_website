@@ -530,10 +530,55 @@
             </a>
         </div> --}}
     </div>
+    <!-- Stories Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h1 style="font-size: 2.5rem;text-align:center;">Media Presence</h1>
+            <h2 class="fw-bold mb-4" style="font-size: 2rem; color: #333;">Stories</h2>
 
+            <div class="row g-4" id="stories-grid">
+                @foreach ($articles as $article)
+                    <!-- Hide items with index 6 or higher (7th item onwards) -->
+                    <div class="col-md-6 col-lg-4 story-item {{ $loop->index >= 6 ? 'd-none' : '' }}">
+                        <div class="story-card h-100 shadow-sm border-0 rounded-3 bg-white p-4 d-flex flex-column">
+                            <div class="media-logo-wrapper mb-3">
+                                <img loading="lazy" src="{{ asset('uploads/articles/' . $article->image) }}" alt="{{ $article->heading }}"
+                                    class="img-fluid" style="max-height: 40px; object-fit: contain;">
+                            </div>
+
+                            <div class="story-content mb-4">
+                                <h5 class="fw-bold mb-3" style="color: #333; line-height: 1.4;">
+                                    {{ $article->heading }}
+                                </h5>
+                                <p class="text-muted small"
+                                    style="line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+                                    {!! strip_tags($article->description) !!}
+                                </p>
+                            </div>
+
+                            <div class="mt-auto">
+                                <a href="{{ $article->link }}" class="story-link fw-bold" target="_blank" rel="nofollow">
+                                    See More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <!-- Toggle Button Container -->
+            @if (count($articles) > 6)
+                <div class="text-center mt-5">
+                    <button id="toggle-stories-btn" class="more-stories-btn fw-bold border-0 bg-transparent">
+                        <span class="btn-text">More Stories</span>
+                        <i class="fa fa-chevron-down ms-1 btn-icon"></i>
+                    </button>
+                </div>
+            @endif
+        </div>
+    </section>
     <section class="press-room py-5">
         <div class="container text-center">
-            <h1 style="font-size: 2.5rem;">Media Presence</h1>
             <h2 class="section-title-alt mb-5">Digicrome Press Room</h2>
             <div class="logo-grid">
                 @foreach ($images as $logo)
@@ -637,52 +682,6 @@
     </section>
 
     <!-- Stories Section -->
-    <!-- Stories Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="fw-bold mb-4" style="font-size: 2rem; color: #333;">Stories</h2>
-
-            <div class="row g-4" id="stories-grid">
-                @foreach ($articles as $article)
-                    <!-- Hide items with index 6 or higher (7th item onwards) -->
-                    <div class="col-md-6 col-lg-4 story-item {{ $loop->index >= 6 ? 'd-none' : '' }}">
-                        <div class="story-card h-100 shadow-sm border-0 rounded-3 bg-white p-4 d-flex flex-column">
-                            <div class="media-logo-wrapper mb-3">
-                                <img loading="lazy" src="{{ asset('uploads/articles/' . $article->image) }}" alt="{{ $article->heading }}"
-                                    class="img-fluid" style="max-height: 40px; object-fit: contain;">
-                            </div>
-
-                            <div class="story-content mb-4">
-                                <h5 class="fw-bold mb-3" style="color: #333; line-height: 1.4;">
-                                    {{ $article->heading }}
-                                </h5>
-                                <p class="text-muted small"
-                                    style="line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
-                                    {!! strip_tags($article->description) !!}
-                                </p>
-                            </div>
-
-                            <div class="mt-auto">
-                                <a href="{{ $article->link }}" class="story-link fw-bold" target="_blank" rel="nofollow">
-                                    See More
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-
-            <!-- Toggle Button Container -->
-            @if (count($articles) > 6)
-                <div class="text-center mt-5">
-                    <button id="toggle-stories-btn" class="more-stories-btn fw-bold border-0 bg-transparent">
-                        <span class="btn-text">More Stories</span>
-                        <i class="fa fa-chevron-down ms-1 btn-icon"></i>
-                    </button>
-                </div>
-            @endif
-        </div>
-    </section>
 
     <div class="container">
         <div class="text-center py-5">
