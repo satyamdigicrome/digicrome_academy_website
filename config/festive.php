@@ -66,6 +66,16 @@ return [
                 'alt' => 'Happy Diwali from Digicrome: this Diwali, gift a friend Data Science & AI. Enquire now.',
             ],
 
+            // Countdown shown just below the banner. 'ends' is a date-time in
+            // Asia/Kolkata (e.g. '2026-11-10 23:59:59'); leave it null to count
+            // down to the end of the current day (it rolls over at midnight).
+            // Remove this block to hide the countdown.
+            'countdown' => [
+                'label' => 'Festive offer ends in',
+                'ends' => null,
+                'cta' => 'Claim Offer',
+            ],
+
             'title' => 'This Diwali, light up a friend’s career with Data Science',
             'text' => 'A diya lights one home; a skill lights a whole future. Gift a friend the reward of learning Data Science & AI this festive season — and earn exciting rewards when they enroll.',
             'lead_source' => 'Website Festive offer',
