@@ -73,6 +73,7 @@ return [
             'countdown' => [
                 'label' => 'Festive offer ends in',
                 'ends' => null,
+                'suffix' => 'Left',
                 'cta' => 'Claim Offer',
             ],
 

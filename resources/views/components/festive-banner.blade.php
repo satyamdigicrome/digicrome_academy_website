@@ -56,6 +56,7 @@
                                     <span class="fest-countdown__sep" data-sep="{{ $unit }}">:</span>
                                 @endif
                             @endforeach
+                            <span class="fest-countdown__left">{{ $countdown['suffix'] ?? 'Left' }}</span>
                         </div>
                         <button type="button" class="fest-countdown__cta" data-fest-banner="{{ $festive['lead_source'] }}">
                             {{ $countdown['cta'] ?? 'Claim Offer' }}
@@ -300,6 +301,21 @@
             animation: festCountBlink 1s steps(1) infinite;
         }
 
+        /* "Left" after the timer, sitting level with the digit tiles */
+        .fest-countdown__left {
+            align-self: flex-start;
+            margin-left: 4px;
+            padding-top: 10px;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ffe08a, #ffb347, #ff8a5c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
         .fest-countdown__cta {
             flex-shrink: 0;
             padding: 12px 22px;
@@ -347,6 +363,7 @@
             }
 
             .fest-countdown__sep { font-size: 22px; padding-top: 7px; }
+            .fest-countdown__left { font-size: 17px; padding-top: 11px; margin-left: 2px; }
             .fest-countdown__cta { width: 100%; }
         }
 
