@@ -5,7 +5,7 @@
     quotes live in config/festive.php. Every class is prefixed "fest-greet".
 --}}
 @php
-    $festive = \App\Support\FestiveSeason::current();
+    $festive = \App\Support\FestiveSeason::decor();
     $isDurga = $festive && $festive['key'] === 'durga-puja';
 @endphp
 

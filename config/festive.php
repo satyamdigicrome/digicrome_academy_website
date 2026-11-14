@@ -90,6 +90,27 @@ return [
             ],
         ],
 
+        // "Something big is coming" teaser. Not a festival: 'banner_only'
+        // shows just the homepage banner above the hero, without the lights,
+        // sparkle shower or header greeting. Change 'ends' to the launch date
+        // (or delete this block) to take it down.
+        'coming-soon' => [
+            'starts' => '2026-11-13',
+            'ends' => '2026-12-31',
+
+            'banner_only' => true,
+
+            'eyebrow' => 'Coming Soon',
+
+            'banner' => [
+                'desktop' => ['src' => 'assets/images/festive/coming-soon-banner-desktop.webp', 'width' => 2172, 'height' => 724],
+                'mobile' => ['src' => 'assets/images/festive/coming-soon-banner-mobile.webp', 'width' => 1672, 'height' => 941],
+                'alt' => 'Coming soon: something big is coming. A milestone built by our learners. Get ready to meet the people who changed their careers.',
+            ],
+
+            'lead_source' => 'Website Coming Soon banner',
+        ],
+
     ],
 
 ];

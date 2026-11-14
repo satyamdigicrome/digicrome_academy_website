@@ -9,7 +9,7 @@
     (config/festive.php).
 --}}
 @php
-    $festive = \App\Support\FestiveSeason::current();
+    $festive = \App\Support\FestiveSeason::decor();
 @endphp
 
 @if ($festive)

@@ -26,7 +26,7 @@
             media="(min-width: 768px)" fetchpriority="high">
     @endprepend
 
-    <section class="fest-banner" aria-label="{{ $festive['eyebrow'] }} banner">
+    <section class="fest-banner fest-banner--{{ $festive['key'] }}" aria-label="{{ $festive['eyebrow'] }} banner">
         <div class="container">
             <button type="button" class="fest-banner__frame" data-fest-banner="{{ $festive['lead_source'] }}">
                 <picture class="fest-banner__picture">
@@ -88,6 +88,21 @@
             cursor: pointer;
             transition: transform .35s ease, box-shadow .35s ease;
             animation: festBannerEdge 8s ease infinite;
+        }
+
+        /* The coming-soon artwork is deep indigo with glowing orange waves, so
+           its edge runs through the same colours */
+        .fest-banner--coming-soon .fest-banner__frame {
+            background-image: linear-gradient(120deg, #ff8a1f, #ffb347, #3a1c9e, #120d3a, #ff6a00, #ff8a1f);
+            box-shadow: 0 14px 34px -14px rgba(18, 13, 58, .6), 0 0 26px -10px rgba(255, 138, 31, .55);
+        }
+
+        .fest-banner--coming-soon .fest-banner__frame:hover {
+            box-shadow: 0 20px 42px -14px rgba(18, 13, 58, .7), 0 0 32px -8px rgba(255, 138, 31, .65);
+        }
+
+        .fest-banner--coming-soon .fest-banner__frame:focus-visible {
+            outline-color: #ff8a1f;
         }
 
         .fest-banner__frame:hover {

@@ -10,7 +10,7 @@
     homepage greeting card in components/festive-greeting.
 --}}
 @php
-    $festive = \App\Support\FestiveSeason::current();
+    $festive = \App\Support\FestiveSeason::decor();
 
     if ($festive) {
         $isDurga = $festive['key'] === 'durga-puja';

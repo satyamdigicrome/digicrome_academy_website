@@ -31,6 +31,17 @@ class FestiveSeason
         return self::$current;
     }
 
+    /**
+     * The active phase for the festive decorations (lights, shower, greetings),
+     * or null when nothing is on or the phase is a plain 'banner_only' one.
+     */
+    public static function decor(): ?array
+    {
+        $current = self::current();
+
+        return empty($current['banner_only']) ? $current : null;
+    }
+
     private static function resolve(): ?array
     {
         if (!config('festive.enabled')) {
