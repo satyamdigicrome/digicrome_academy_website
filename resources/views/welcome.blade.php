@@ -507,53 +507,6 @@
             </div>
         </div>
     </section>
-    <div class="course-design-offer-area style-one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div style="width:100%; max-width:600px;">
-                        {{-- src is attached once the player scrolls into view; loading it
-                             up front pulls in the Vimeo SDK during the initial page load. --}}
-                        <iframe class="js-deferred-iframe" loading="lazy" src="about:blank"
-                            data-src="https://player.vimeo.com/video/1164337631?title=0&byline=0&portrait=0&badge=0&share=0&watchlater=0&controls=1&autopause=0&autoplay=1&loop=1&muted=1"
-                            title="Digicrome overview" width="100%" height="340" frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-course-offer-box">
-                        <div class="course-offer-content">
-                            <h6>Digicrome</h6>
-                            <h4>Data Science With</h4>
-                            <h4>Artificial Intelligence</h4>
-                            <div class="offer-rating">
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-classic fa-solid fa-star-half-stroke fa-fw"></i></li>
-                                </ul>
-                                <div class="offer-rating-rate">
-                                    <span>(4.8 Ratings)</span>
-                                </div>
-                                <br><br>
-                            </div>
-                            <div class="course-offer-btn">
-                                <a href="javascript:void(0);" onclick="openModal()">EXPLORE NOW<i
-                                        class="flaticon flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                        <div class="offer-thumb">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/offer-thumb.webp') }}"
-                                alt="offer-thumb" title="offer-thumb">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     {{-- <section class="ai-banner-section">
 
         <div class="connect-btn-wrapper">
@@ -563,421 +516,7 @@
         <img src="{{ asset('assets/images/home-one/ai-summit.webp') }}" alt="AI Summit Banner" class="ai-banner-img">
     </section> --}}
     <div class="container">
-        <x-logo-slider :companyLogos="$companyLogos" />
-    </div>
-    {{-- <section class="about-area style-one">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-12">
-                    <div class="about-thumb-wrapper">
-                        <div class="about-thumb">
-                            <picture>
-                                <source
-                                    media="(max-width: 767px)"
-                                    srcset="{{ asset('assets/images/home-one/about-thumb1-mobile.webp') }}">
-                                <img
-                                    loading="lazy"
-                                    src="{{ asset('assets/images/home-one/about-thumb1.webp') }}"
-                                    alt="digicrome thumb"
-                                    title="digicrome thumb"
-                                    width="600"
-                                    height="400"
-                                    style="width:100%;height:auto;">
-                            </picture>
-                        </div>
-                        <div class="about-thumb-shape2 rotateme">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape2.webp') }}"
-                                alt="diicrome shape" title="digicrome shapr">
-                        </div>
-                        <div class="about-thumb-shape3">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape3.webp') }}"
-                                alt="digicrome shape" title="diicrome shape">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-12">
-                    <div class="about_content">
-                        <div class="section-sub-title">
-                            <h2>ABOUT US</h2>
-                        </div>
-                        <div class="section_title">
-                            <h3 class="heading-like-h1">Who Are We</h3>
-                        </div>
-                        <div class="section-title-desc">
-                            <p>We are a globally reputed online educational academy. We skill up students and professionals
-                                with must-have IT and Business skills. Through expert-led, certification-backed training, we
-                                bridge the gap between learning and industry demands.</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="about-item-list">
-                                    <span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
-                                            alt="digicrome icon" title="digicrome icon">Globally Recognized
-                                        Certifications</span>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="about-item-list">
-                                    <span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
-                                            alt="digicrome icon" title="digicrome icon">Industry-Approved
-                                        Curriculum</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row about-border">
-                            <div class="col-lg-6">
-                                <div class="about-item-box">
-                                    <div class="about-item-count">
-                                        <h3 class="counter">30</h3>
-                                        <span>+</span>
-                                    </div>
-                                    <div class="about-item-desc">
-                                        <p>Expert Trainers with Industry Experience</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="about-item-box two">
-                                    <div class="about-iteam-count">
-                                        <h3 class="counter">20</h3
-                                        <span>k+</span>
-                                    </div>
-                                    <div class="about-item-desc last">
-                                        <p>Students from Across the Globe </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="about-btn">
-                            <a href="{{ route('about') }}">more about<i class="flaticon flaticon-right-arrow"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    @if ($userCountry === 'India')
-        <div class="brand-area style-one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="section_title">
-                            <h2 class="heading-like-h1">In Association With:</h2>
-                        </div>
-                        <div class="section-sub-title">
-                            <h6 style="text-transform: capitalize; position: static; line-height: 30px; padding: 0px;">
-                                Government-affiliated program that shapes the learner’s future and approach towards industry-readiness!</h6 style=" line-height: 30px;">
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="brand-list owl-carousel">
-                            @foreach ($associationLogos as $logo)
-                                <div class="col-lg-12">
-                                    <div class="single-brand-box">
-                                        <div class="brand-thumb">
-                                            <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}"
-                                                alt="digicrome brand" title="digicrome brand">
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="brand-arrow-shape">
-                    <img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="digicrome arrow"
-                        title="digicrome arrow">
-                </div>
-                {{-- <div class="brand-star-shape">
-                    <img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
-                        title="digicrome star">
-                </div> --}}
-            </div>
-        </div>
-    @endif
-    <section class="about-area style-five pt-5 pb-0">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-lg-6">
-                    <div class="about-thumb-wrapper">
-                        <div class="about-thumb zoom-sequence">
-                            <div class="image-container">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p3.webp') }}"
-                                    alt="First image" title="First image">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p4.webp') }}"
-                                    alt="Second image" title="Second image">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p5.webp') }}"
-                                    alt="Third image" title="Third image">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p1.webp') }}"
-                                    alt="Fouth image" title="Fourth image">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p2.webp') }}"
-                                    alt="Fifth image" title="Fifth image">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p6.webp') }}"
-                                    alt="Sixth image" title="Sixth image">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p7.webp') }}"
-                                    alt="Seven image" title="Seven image">
-                                <img class="image" loading="lazy" src="{{ asset('assets/images/p8.webp') }}"
-                                    alt="Eight image" title="Eight image">
-                            </div>
-                        </div>
-                    </div>
-                    <style>
-                        .zoom-sequence {
-                            position: relative;
-                        }
-
-                        .image-container {
-                            width: 100%;
-                            max-width: 500px;
-                            aspect-ratio: 2/3;
-                        }
-
-                        .about-call-box {
-                            z-index: 5;
-                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-                        }
-
-                        .zoom-sequence .image {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            opacity: 0;
-                            transform: scale(0.8);
-                            transition: opacity 1.5s ease, transform 1.5s ease;
-                            /* aspect-ratio: 3/4; */
-                        }
-
-                        .zoom-sequence .image.show {
-                            opacity: 1;
-                            transform: scale(1);
-                            z-index: 2;
-                        }
-
-                        .zoom-sequence .image.hide {
-                            opacity: 0;
-                            transform: scale(0.8);
-                            z-index: 1;
-                        }
-                    </style>
-                    <script>
-                        window.addEventListener('DOMContentLoaded', () => {
-                            const images = document.querySelectorAll('.zoom-sequence .image');
-                            let current = 0;
-
-                            function showImage(index) {
-                                images.forEach((img, i) => {
-                                    if (i === index) {
-                                        img.classList.add('show');
-                                        img.classList.remove('hide');
-                                    } else {
-                                        img.classList.remove('show');
-                                        img.classList.add('hide');
-                                    }
-                                });
-                            }
-                            showImage(current);
-                            setInterval(() => {
-                                current = (current + 1) % images.length;
-                                showImage(current);
-                            }, 5000);
-
-                        });
-                    </script>
-                </div>
-                <div class="col-xl-6 col-lg-6">
-                    <div class="about_content">
-                        <div class="section-sub-title">
-                            <h2>Our Achievement</h2>
-                        </div>
-                        <div class="section_title">
-                            <h3 class="heading-like-h1 text-capitalize"> Digicrome Wins Best EdTech Award at Bharat Gaurav Summit 2026</h3>
-                        </div>
-                        <div class="section-title-desc two">
-                            <p>
-                                Digicrome has been proudly honoured as <strong>Best EdTech in Online & Digital Education
-                                    2026</strong> at the
-                                <strong>Bharat Gaurav Education Summit & Awards</strong>, showing our excellence in
-                                innovative instruction,
-                                learners' success, and reformation in technical data knowledge.
-                                {{-- Digicrome was honored with the prestigious <strong>Excellency Iconic Award 2025</strong> for
-                                its outstanding contribution to innovative and accessible education.
-                                This recognition celebrates our commitment to delivering high-quality training and
-                                empowering learners across the globe. --}}
-                            </p>
-                            <p>
-                                Combining a rich tradition with modern technology, we provide both academic and individual progress. Skillfully architecting meta-duties through excellent whiteboard education experiences, we strive to set new benchmarks in the educational domain.
-                            </p>
-                        </div>
-                        <div class="about-btn">
-                            <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
-                                    class="flaticon flaticon-right-arrow"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="brand-area style-one mt-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 mt-4">
-                    <div class="brand-list owl-carousel">
-                        @foreach ($certificate as $logo)
-                            <div class="col-lg-12">
-                                <div class="single-brand-box">
-                                    <div class="brand-thumb">
-                                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
-                                            title="brand-thumb">
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="section_title">
-                        <h2 class="heading-like-h1 text-capitalize">Our Certification Partners</h2>
-                    </div>
-                    <p class="mb-4">
-                        Empowering learners through globally recognized certifications with industry-leading organizations.
-                    </p>
-                    <ul class="list-unstyled">
-                        <li class="d-flex align-items-start mb-2">
-                            <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                            <span><b> Trusted Collaboration: </b> We work with top-tier certification bodies to ensure every
-                                course meets international standards.</span>
-                        </li>
-                        <li class="d-flex align-items-start">
-                            <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                            <span><b>Career-Boosting Credentials: </b> Earn certifications that enhance your professional
-                                profile and open doors to global opportunities.
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- @include('components.certification_partners_compact', ['certificate'=>$certificate]) --}}
-    @include('components.course-partial')
-    {{-- <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="choose-content">
-                        <div class="section-sub-title">
-                            <h2>why choose us?</h2>
-                        </div>
-                        <div class="section_title">
-                            <h3 class="heading-like-h1">We Bring You Closer To<br>A Successful Career</h3>
-                        </div>
-                        <div class="section-title-desc">
-                            <p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we
-                                support you from basic to advanced. As one of the best Data Science institutes in India, and
-                                the top Data science institute in Metropolitan cities, we make career shifts smooth. Quickly
-                                apply and work for your success.</p>
-                        </div>
-                        <div class="choose-item-menu">
-                            <ul>
-                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon1.webp') }}"
-                                        alt="choose-item-menu" title="choose-item-menu">Weekend
-                                    Live Sessions
-                                </li>
-                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon2.webp') }}"
-                                        alt="choose-item-menu" title="choose-item-menu">Select a
-                                    convenient batch time
-                                </li>
-                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
-                                        alt="choose-item-menu" title="choose-item-menu">Get
-                                    Placement Aid
-                                </li>
-                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon4.webp') }}"
-                                        alt="choose-item-menu" title="choose-item-menu">Get a
-                                    Salary Hike
-                                </li>
-                            </ul>
-                        </div>
-                        <p class="choose-suport-des"><img
-                                loading="lazy"src="{{ asset('assets/images/home-one/top-star.webp') }}" alt="top-star"
-                                title="top-star">24/7 Mentor Support Available </p>
-                        <div class="choose-btn">
-                            <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
-                                    class="flaticon flaticon-right-arrow"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="choose-thumb">
-                        <img loading="lazy"src="{{ asset('assets/images/home-one/choose-thumb1.webp') }}"
-                            alt="choose-thumb" title="choose-thumb">
-                        <div class="choose-skill-box">
-                            <div class="choose-skill-icon">
-                                <img loading="lazy"src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}"
-                                    alt="choose-skill-icon" title="choose-skill-icon">
-                            </div>
-                            <div class="choose-skill-content">
-                                <h3 class="counter">10</h3>
-                                <span>+</span>
-                                <p>Years of Experiences</p>
-                            </div>
-                        </div>
-                        <div class="choose-shape-dot">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/choose-dot.webp') }}"
-                                alt="shape-dot" title="shape-dot">
-                        </div>
-                        <div class="choose-shape-star">
-                            <img loading="lazy"src="{{ asset('assets/images/home-one/choose-star.webp') }}"
-                                alt="shape-star" title="shape-star">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="choose-shape1">
-                <img loading="lazy"src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape1"
-                    title="shape1">
-            </div>
-        </div>
-    </div> --}}
-    @include('components.linkedinreview',['feedbacks'=>$feedbacks])
-    <div class="brand-area style-one mt-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="section_title mb-4">
-                        <h2 class="heading-like-h1">Moments of Honour</h2>
-                    </div>
-                    <p class="mb-4">
-                        In our EdTech journey of <b> more than a decade,</b> we have received numerous awards.<br>
-                        Some of the recent notable awards we have received are:
-                    </p>
-                    <ul class="list-unstyled">
-                        <li class="d-flex align-items-start mb-2">
-                            <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                            <span><b> Bharat Gaurav Awards 2026 </b> for Best EdTech in Online and Digital Education</span>
-                        </li>
-                        <li class="d-flex align-items-start">
-                            <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
-                            <span>DigiCrome as <b>Most Promising Online Education EdTech Platform 2026</b> famous for its
-                                quality and innovation.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-7 mt-4">
-                    <div class="brand-list owl-carousel">
-                        @foreach ($awords as $logo)
-                            <div class="col-lg-12">
-                                <div class="single-brand-box">
-                                    <div class="brand-thumb">
-                                        <img loading="lazy" src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
-                                            title="brand-thumb">
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-trusted-companies :companyLogos="$companyLogos" />
     </div>
     @if (count($videos) > 0)
         <section class="custom-testimonial-section">
@@ -1459,6 +998,259 @@
             });
         </script>
     @endif
+    {{-- <section class="about-area style-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-12">
+                    <div class="about-thumb-wrapper">
+                        <div class="about-thumb">
+                            <picture>
+                                <source
+                                    media="(max-width: 767px)"
+                                    srcset="{{ asset('assets/images/home-one/about-thumb1-mobile.webp') }}">
+                                <img
+                                    loading="lazy"
+                                    src="{{ asset('assets/images/home-one/about-thumb1.webp') }}"
+                                    alt="digicrome thumb"
+                                    title="digicrome thumb"
+                                    width="600"
+                                    height="400"
+                                    style="width:100%;height:auto;">
+                            </picture>
+                        </div>
+                        <div class="about-thumb-shape2 rotateme">
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape2.webp') }}"
+                                alt="diicrome shape" title="digicrome shapr">
+                        </div>
+                        <div class="about-thumb-shape3">
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/about-shape3.webp') }}"
+                                alt="digicrome shape" title="diicrome shape">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-12">
+                    <div class="about_content">
+                        <div class="section-sub-title">
+                            <h2>ABOUT US</h2>
+                        </div>
+                        <div class="section_title">
+                            <h3 class="heading-like-h1">Who Are We</h3>
+                        </div>
+                        <div class="section-title-desc">
+                            <p>We are a globally reputed online educational academy. We skill up students and professionals
+                                with must-have IT and Business skills. Through expert-led, certification-backed training, we
+                                bridge the gap between learning and industry demands.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="about-item-list">
+                                    <span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
+                                            alt="digicrome icon" title="digicrome icon">Globally Recognized
+                                        Certifications</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="about-item-list">
+                                    <span><img loading="lazy"src="{{ asset('assets/images/home-one/about-icon.webp') }}"
+                                            alt="digicrome icon" title="digicrome icon">Industry-Approved
+                                        Curriculum</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row about-border">
+                            <div class="col-lg-6">
+                                <div class="about-item-box">
+                                    <div class="about-item-count">
+                                        <h3 class="counter">30</h3>
+                                        <span>+</span>
+                                    </div>
+                                    <div class="about-item-desc">
+                                        <p>Expert Trainers with Industry Experience</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="about-item-box two">
+                                    <div class="about-iteam-count">
+                                        <h3 class="counter">20</h3
+                                        <span>k+</span>
+                                    </div>
+                                    <div class="about-item-desc last">
+                                        <p>Students from Across the Globe </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-btn">
+                            <a href="{{ route('about') }}">more about<i class="flaticon flaticon-right-arrow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+    @if ($userCountry === 'India')
+        <div class="brand-area style-one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="section_title">
+                            <h2 class="heading-like-h1">In Association With:</h2>
+                        </div>
+                        <div class="section-sub-title">
+                            <h6 style="text-transform: capitalize; position: static; line-height: 30px; padding: 0px;">
+                                Government-affiliated program that shapes the learner’s future and approach towards industry-readiness!</h6 style=" line-height: 30px;">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="brand-list owl-carousel">
+                            @foreach ($associationLogos as $logo)
+                                <div class="col-lg-12">
+                                    <div class="single-brand-box">
+                                        <div class="brand-thumb">
+                                            <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}"
+                                                alt="digicrome brand" title="digicrome brand">
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="brand-arrow-shape">
+                    <img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="digicrome arrow"
+                        title="digicrome arrow">
+                </div>
+                {{-- <div class="brand-star-shape">
+                    <img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
+                        title="digicrome star">
+                </div> --}}
+            </div>
+        </div>
+    @endif
+    <x-awards-showcase :awords="$awords" />
+    <div class="brand-area style-one mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mt-4">
+                    <div class="brand-list owl-carousel">
+                        @foreach ($certificate as $logo)
+                            <div class="col-lg-12">
+                                <div class="single-brand-box">
+                                    <div class="brand-thumb">
+                                        <img loading="lazy"src="{{ asset('storage/' . $logo->image) }}" alt="brand-thumb"
+                                            title="brand-thumb">
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="section_title">
+                        <h2 class="heading-like-h1 text-capitalize">Our Certification Partners</h2>
+                    </div>
+                    <p class="mb-4">
+                        Empowering learners through globally recognized certifications with industry-leading organizations.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
+                            <span><b> Trusted Collaboration: </b> We work with top-tier certification bodies to ensure every
+                                course meets international standards.</span>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="bi bi-trophy-fill text-warning me-2 mt-1"></i>
+                            <span><b>Career-Boosting Credentials: </b> Earn certifications that enhance your professional
+                                profile and open doors to global opportunities.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- @include('components.certification_partners_compact', ['certificate'=>$certificate]) --}}
+    @include('components.course-partial')
+    {{-- <div class="why-choose-area style-one" style="background: rgb(240 251 255)">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="choose-content">
+                        <div class="section-sub-title">
+                            <h2>why choose us?</h2>
+                        </div>
+                        <div class="section_title">
+                            <h3 class="heading-like-h1">We Bring You Closer To<br>A Successful Career</h3>
+                        </div>
+                        <div class="section-title-desc">
+                            <p>Get that Ideal career with better pay—even without an IT degree. Whatever your background, we
+                                support you from basic to advanced. As one of the best Data Science institutes in India, and
+                                the top Data science institute in Metropolitan cities, we make career shifts smooth. Quickly
+                                apply and work for your success.</p>
+                        </div>
+                        <div class="choose-item-menu">
+                            <ul>
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon1.webp') }}"
+                                        alt="choose-item-menu" title="choose-item-menu">Weekend
+                                    Live Sessions
+                                </li>
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon2.webp') }}"
+                                        alt="choose-item-menu" title="choose-item-menu">Select a
+                                    convenient batch time
+                                </li>
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon3.webp') }}"
+                                        alt="choose-item-menu" title="choose-item-menu">Get
+                                    Placement Aid
+                                </li>
+                                <li><img loading="lazy"src="{{ asset('assets/images/home-one/choose-icon4.webp') }}"
+                                        alt="choose-item-menu" title="choose-item-menu">Get a
+                                    Salary Hike
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="choose-suport-des"><img
+                                loading="lazy"src="{{ asset('assets/images/home-one/top-star.webp') }}" alt="top-star"
+                                title="top-star">24/7 Mentor Support Available </p>
+                        <div class="choose-btn">
+                            <a href="javascript:void(0);" onclick="openModal()">GET STARTED<i
+                                    class="flaticon flaticon-right-arrow"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="choose-thumb">
+                        <img loading="lazy"src="{{ asset('assets/images/home-one/choose-thumb1.webp') }}"
+                            alt="choose-thumb" title="choose-thumb">
+                        <div class="choose-skill-box">
+                            <div class="choose-skill-icon">
+                                <img loading="lazy"src="{{ asset('assets/images/home-one/choose-rat-icon.webp') }}"
+                                    alt="choose-skill-icon" title="choose-skill-icon">
+                            </div>
+                            <div class="choose-skill-content">
+                                <h3 class="counter">10</h3>
+                                <span>+</span>
+                                <p>Years of Experiences</p>
+                            </div>
+                        </div>
+                        <div class="choose-shape-dot">
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/choose-dot.webp') }}"
+                                alt="shape-dot" title="shape-dot">
+                        </div>
+                        <div class="choose-shape-star">
+                            <img loading="lazy"src="{{ asset('assets/images/home-one/choose-star.webp') }}"
+                                alt="shape-star" title="shape-star">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="choose-shape1">
+                <img loading="lazy"src="{{ asset('assets/images/home-one/choose-shape1.webp') }}" alt="shape1"
+                    title="shape1">
+            </div>
+        </div>
+    </div> --}}
+    @include('components.linkedinreview',['feedbacks'=>$feedbacks])
     @include('components.testimonial-partial', ['testimonials' => $testimonials])
     {{-- <div class="testimonial-area style-two mt-4">
         <div class="container">
