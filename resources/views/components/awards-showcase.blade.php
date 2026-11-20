@@ -13,11 +13,10 @@
             <div class="as-head-text">
                 <span class="as-eyebrow"><i class="bi bi-trophy-fill" aria-hidden="true"></i> Awards &amp; recognition</span>
                 <h2 id="as-title" class="as-title">
-                    Celebrated for <span class="as-accent">excellence</span> in education
+                    Recognising  <span class="as-accent">Our Journey </span> of Excellence
                 </h2>
                 <p class="as-lead">
-                    In our EdTech journey of more than a decade, Digicrome has been honoured on national stages for
-                    innovative teaching, learner success and quality digital education.
+                    For over a decade, Digicrome has been recognised for transforming learning through innovative education, impactful training and outstanding learner success.
                 </p>
             </div>
             <div class="as-stats">
@@ -32,8 +31,8 @@
                     </div>
                 @endif
                 <div class="as-stat">
-                    <span class="as-stat-num"><span class="as-count" data-to="2026">2026</span></span>
-                    <span class="as-stat-label">Best EdTech winner</span>
+                    <span class="as-stat-num"><span class="as-count" data-to="20">20</span>K+</span>
+                    <span class="as-stat-label">Career Transitions</span>
                 </div>
             </div>
         </div>
@@ -65,7 +64,7 @@
             <div class="as-card as-feature as-reveal" style="--as-delay: .15s">
                 <div class="as-feature-top">
                     <span class="as-medal" aria-hidden="true"><i class="bi bi-award-fill"></i></span>
-                    <span class="as-chip">Featured award · 2026</span>
+                    <span class="as-chip">Featured Award · 2026</span>
                 </div>
                 <h3 class="as-feature-title">Best EdTech in Online &amp; Digital Education</h3>
                 <p class="as-feature-sub">Bharat Gaurav Education Summit &amp; Awards</p>

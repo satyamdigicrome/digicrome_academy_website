@@ -11,12 +11,12 @@
     <div class="tc-panel">
         <div class="tc-head">
             <div>
-                <span class="tc-eyebrow"><span class="tc-dot"></span>Where our learners work</span>
+                <span class="tc-eyebrow"><span class="tc-dot"></span>WHERE OUR LEARNERS GROW</span>
                 <h2 id="tc-title" class="tc-title">
-                    Trusted by <span class="tc-accent">world's best</span> organisations
+                    Our <span class="tc-accent">Alumni</span> at Leading Companies
                 </h2>
             </div>
-            <p class="tc-sub">Our alumni build careers at leading companies across tech, finance, consulting and more.</p>
+            <p class="tc-sub">Our alumni build successful careers across technology, finance, consulting and many other industries worldwide.</p>
         </div>
 
         <div class="tc-rows">

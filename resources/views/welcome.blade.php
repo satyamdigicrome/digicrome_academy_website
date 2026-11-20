@@ -1118,8 +1118,8 @@
                     </div>
                 </div>
                 <div class="brand-arrow-shape">
-                    <img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="digicrome arrow"
-                        title="digicrome arrow">
+                    {{-- <img loading="lazy"src="{{ asset('assets/images/home-one/brand-arrow.webp') }}" alt="digicrome arrow"
+                        title="digicrome arrow"> --}}
                 </div>
                 {{-- <div class="brand-star-shape">
                     <img loading="lazy"src="{{ asset('assets/images/home-one/brand-star.webp') }}" alt="digicrome star"
@@ -1536,7 +1536,7 @@
             </h2>
         </div>
 
-        <div class=" galary owl-carousel ">
+        <div class="galary owl-carousel ">
             @foreach ($gallery as $photo)
                 <div class="item">
                     <div class="gal-im animate animate__animated animate__slower" data-ani="animate__flipInX">
